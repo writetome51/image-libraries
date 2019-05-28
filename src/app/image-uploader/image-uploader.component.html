@@ -1,0 +1,7 @@
+<input type="file" multiple (change)="processInput($event.target.files)" value="choose image"/>
+<ng-container *ngIf="imagesReady">
+	<div *ngFor="let img of images">
+		<img [src]="img.src" alt="{{img.description}}" width="180px"/>
+	</div>
+</ng-container>
+
