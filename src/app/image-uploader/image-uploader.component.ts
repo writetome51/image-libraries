@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { append } from '@writetome51/array-append-prepend';
+import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Component({
@@ -10,15 +12,14 @@ import { notEmpty } from '@writetome51/is-empty-not-empty';
 export class ImageUploaderComponent {
 
     public files: any[];
-    public images: { src: string, name: string }[] = [];
+    public images: { name: '', src: '', description: '', caption: '' }[] = [];
     public imagesReady = false;
-    private __initialImage = {name: '', src: '', description: '', caption: ''};
     public storedImages = new ObjectInLocalStorage('__storedImages');
 
 
     processInput(files: FileList) {
         if (notEmpty(files)) {
-            this.set_srces_toDataURL(files);
+            this.set_srces_toDataURLs(files);
         }
     }
 
@@ -26,10 +27,10 @@ export class ImageUploaderComponent {
     // Converts `file` to a data url, and assigns that to the 'src' property of `element`.
     // Does not modify file.
 
-    set_srces_toDataURL(files) {
-        [].forEach.call(files, doThis);
-
+    set_srces_toDataURLs(files) {
         let self = this;
+
+        [].forEach.call(files, doThis);
 
 
         function doThis(file, i) {
@@ -37,13 +38,21 @@ export class ImageUploaderComponent {
             const reader = new FileReader();
 
             reader.onload = (ev) => {
-                console.log(self);
                 self.images.push({name: '', src: '', description: '', caption: ''});
                 self.images[i].name = file.name;
+
                 // @ts-ignore
                 self.images[i].src = reader.result; // sets src to a data url.
+
                 if (self.images.length === files.length) {
-                    self.storedImages.set(self.images);
+                    let retrievedImages: any = self.storedImages.get();
+                    if (noValue(retrievedImages)) {
+                        retrievedImages = [];
+                    }
+
+                    append(self.images, retrievedImages);
+                    self.storedImages.set(retrievedImages);
+
                     self.imagesReady = true;
                 }
             };
