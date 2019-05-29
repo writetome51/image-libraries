@@ -8,7 +8,4 @@ export class ImageStoreService {
 
     public images = [];
 
-
-    constructor() {
-    }
 }

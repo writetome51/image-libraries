@@ -6,6 +6,7 @@ import { ImageStoreService } from './image-store.service';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { NgModule } from '@angular/core';
 import { DataURLExtractorService } from './data-urlextractor.service';
+import { JSONFileSaverService } from './jsonfile-saver.service';
 
 
 
@@ -18,7 +19,7 @@ import { DataURLExtractorService } from './data-urlextractor.service';
         BrowserModule,
         AppRoutingModule
     ],
-    providers: [ImageReaderService, ImageStoreService, DataURLExtractorService],
+    providers: [ImageReaderService, ImageStoreService, DataURLExtractorService, JSONFileSaverService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
