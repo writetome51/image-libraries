@@ -1,11 +1,20 @@
-<p>Choose Images to add to library:</p>
-<input type="file" multiple (change)="addToLibrary($event.target.files)"/>
-
-
-<p>View library:</p>
-<input type="file" (change)="readImageLibrary($event.target.files[0])"/>
 <ng-container *ngIf="imagesReady">
+	<p>Choose Images to add to library:</p>
+	<input type="file" multiple (change)="addToLibrary($event.target.files)"/>
+</ng-container>
+
+<ng-container *ngIf="!(doneReading)">
+	<p>Choose library to view:</p>
+	<input type="file" (change)="readLibrary($event.target.files[0])"/>
+</ng-container>
+
+<ng-container *ngIf="doneReading">
 	<div *ngFor="let img of imagesForViewing">
 		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
 	</div>
+</ng-container>
+
+<!--   Clicking this saves changes to file that downloads to computer.    -->
+<ng-container>
+	<button>Save Changes</button>
 </ng-container>

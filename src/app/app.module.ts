@@ -1,9 +1,11 @@
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { ImageReaderService } from './image-reader.service';
+import { ImageStoreService } from './image-store.service';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 
 @NgModule({
@@ -15,7 +17,7 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
         BrowserModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [ImageReaderService, ImageStoreService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
