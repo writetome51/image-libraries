@@ -16,7 +16,6 @@ export class ImageProcessorService {
     private __images: { name: '', src: '', description: '' }[] = [];
 
 
-
     constructor(
         private __imageStore: ImageStoreService,
         private __dataURLExtractor: DataURLExtractorService
