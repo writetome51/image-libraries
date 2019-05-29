@@ -1,0 +1,6 @@
+<ng-container *ngIf="doneReading">
+	<div *ngFor="let img of images">
+		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
+	</div>
+</ng-container>
+

@@ -8,13 +8,8 @@
 	<input type="file" (change)="readLibrary($event.target.files[0])"/>
 </ng-container>
 
-<ng-container *ngIf="doneReading">
-	<div *ngFor="let img of imagesForViewing">
-		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
-	</div>
-</ng-container>
 
 <!--   Clicking this saves changes to file that downloads to computer.    -->
 <ng-container>
-	<button>Save Changes</button>
+	<button (click)="saveChanges()">Save Changes</button>
 </ng-container>
