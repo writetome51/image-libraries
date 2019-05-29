@@ -11,11 +11,10 @@ export class ImageUploaderComponent {
 
     // Have user save all photo data to json file on their own machine.
     // Provide form allowing them to re-upload json file, then this component
-    // reads it and shows images.
+    // reads it and shows __images.
 
 
     public doneReading = false;
-    public storedImages = [];
 
 
     constructor() {

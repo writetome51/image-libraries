@@ -6,15 +6,15 @@ import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 
 
-
 @Injectable({
     providedIn: 'root'
 })
-export class ImageReaderService {
+export class ImageProcessorService {
 
 
-    public images: { name: '', src: '', description: '' }[] = [];
-    public doneReading = false;
+    public doneProcessing = false;
+    private __images: { name: '', src: '', description: '' }[] = [];
+
 
 
     constructor(
@@ -24,7 +24,7 @@ export class ImageReaderService {
     }
 
 
-    read(files: FileList) {
+    process(files: FileList) {
         if (notEmpty(files)) {
 
             this.__dataURLExtractor.extract(files);
@@ -37,19 +37,20 @@ export class ImageReaderService {
 
 
     private __set_images(files: FileList) {
-        this.images = [];
+        this.__images = [];
 
         [].forEach.call(files, (file, index, files) => {
-                this.images.push({name: '', src: '', description: ''});
+            this.__images.push({name: '', src: '', description: ''});
 
-                this.images[index].name = file.name;
-                this.images[index].src = this.__dataURLExtractor.dataURLs[index];
+            this.__images[index].name = file.name;
+            this.__images[index].src = this.__dataURLExtractor.dataURLs[index];
 
-                if (this.images.length === files.length) { // If finished reading each file...
-                    append(this.images, this.__imageStore.images);
-                }
+            if (this.__images.length === files.length) { // If finished reading each file...
+
+                append(this.__images, this.__imageStore.images);
+                this.doneProcessing = true;
             }
-        );
+        });
     }
 
 

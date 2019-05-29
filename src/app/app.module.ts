@@ -1,13 +1,12 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ImageReaderService } from './image-reader.service';
+import { DataURLExtractorService } from './data-urlextractor.service';
+import { ImageProcessorService } from './image-processor.service';
 import { ImageStoreService } from './image-store.service';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
-import { NgModule } from '@angular/core';
-import { DataURLExtractorService } from './data-urlextractor.service';
 import { JSONFileSaverService } from './jsonfile-saver.service';
-
+import { NgModule } from '@angular/core';
 
 
 @NgModule({
@@ -19,7 +18,10 @@ import { JSONFileSaverService } from './jsonfile-saver.service';
         BrowserModule,
         AppRoutingModule
     ],
-    providers: [ImageReaderService, ImageStoreService, DataURLExtractorService, JSONFileSaverService],
+    providers: [
+        ImageProcessorService, ImageStoreService, DataURLExtractorService,
+        JSONFileSaverService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

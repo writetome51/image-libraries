@@ -1,6 +1,6 @@
-import { ImageStoreService } from './image-store.service';
 // @ts-ignore
 const FileSaver = require('file-saver');
+import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 
 
