@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { append } from '@writetome51/array-append-prepend';
 
 
 @Injectable({
@@ -17,21 +16,15 @@ export class DataURLExtractorService {
     }
 
 
-    private __doThis(file) {
+    private __doThis(file, index, files) {
 
         const reader = new FileReader();
 
         reader.onload = () => {
+            this.dataURLs.push(reader.result);
 
-            let lastIndex = self.images.length - 1;
-            this.images[lastIndex].name = file.name;
-
-            // @ts-ignore
-            self.images[lastIndex].src = reader.result; // sets src to a data url.
-
-            if (self.images.length === files.length) { // If finished reading each file...
-
-
+            if (this.dataURLs.length === files.length) { // If finished reading each file...
+                this.doneExtracting = true;
             }
         };
         reader.readAsDataURL(file);
