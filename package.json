@@ -24,7 +24,11 @@
     "@writetome51/item-in-browser-storage": "^2.0.1",
     "@writetome51/object-in-browser-storage": "^3.0.1",
     "@writetome51/object-in-local-storage": "^0.0.1",
+    "get-object-from-json": "^1.0.3",
+    "constants": "0.0.2",
     "core-js": "^2.6.9",
+    "file-saver": "^2.0.2",
+    "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

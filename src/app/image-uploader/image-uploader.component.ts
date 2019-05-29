@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
+import { getObjectFromJSON } from 'get-object-from-json';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { append } from '@writetome51/array-append-prepend';
 import { noValue } from '@writetome51/has-value-no-value';
+// @ts-ignore
+const FileSaver = require('file-saver');
+
 
 
 @Component({
@@ -11,16 +14,38 @@ import { noValue } from '@writetome51/has-value-no-value';
 })
 export class ImageUploaderComponent {
 
-    public files: any[];
-    public images: { name: '', src: '', description: '', caption: '' }[] = [];
+    // Have user save all photo data to json file on their own machine.
+    // Provide form allowing them to re-upload json file, then this component
+    // reads it and shows images.
+
+
+    public imagesToStore: { name: '', src: '', description: '', caption: '' }[] = [];
     public imagesReady = false;
-    public storedImages = new ObjectInLocalStorage('__storedImages');
+    public storedImages = [];
 
 
-    processInput(files: FileList) {
+    get imagesForViewing() {
+        return this.storedImages;
+    }
+
+
+    addToLibrary(files: FileList) {
         if (notEmpty(files)) {
             this.set_srces_toDataURLs(files);
         }
+    }
+
+
+    readImageLibrary(file){
+        console.log(file);
+        const reader = new FileReader();
+        reader.onload = () => {
+            let json: any = reader.result;
+            this.storedImages = getObjectFromJSON(json);
+            this.imagesReady = true;
+        };
+
+        reader.readAsText(file, 'utf-8')
     }
 
 
@@ -28,7 +53,8 @@ export class ImageUploaderComponent {
     // Does not modify file.
 
     set_srces_toDataURLs(files) {
-        let self = this;
+        let self = this; // Have to do this b/c (`this` === reader) inside reader.onload().
+        self.imagesToStore.length = 0;
 
         [].forEach.call(files, doThis);
 
@@ -37,23 +63,21 @@ export class ImageUploaderComponent {
 
             const reader = new FileReader();
 
-            reader.onload = (ev) => {
-                self.images.push({name: '', src: '', description: '', caption: ''});
-                self.images[i].name = file.name;
+            reader.onload = () => {
+                self.imagesToStore.push({name: '', src: '', description: '', caption: ''});
+                let lastIndex = self.imagesToStore.length - 1;
+                self.imagesToStore[lastIndex].name = file.name;
 
                 // @ts-ignore
-                self.images[i].src = reader.result; // sets src to a data url.
+                self.imagesToStore[lastIndex].src = reader.result; // sets src to a data url.
 
-                if (self.images.length === files.length) {
-                    let retrievedImages: any = self.storedImages.get();
-                    if (noValue(retrievedImages)) {
-                        retrievedImages = [];
-                    }
+                if (self.imagesToStore.length === files.length) { // If finished reading each file...
 
-                    append(self.images, retrievedImages);
-                    self.storedImages.set(retrievedImages);
+                    append(self.imagesToStore, self.storedImages);
+                    let dataToWrite = JSON.stringify(self.storedImages);
 
-                    self.imagesReady = true;
+                    let f = new File([dataToWrite], 'image_library.txt', {type: 'text/plain;charset=utf-8'});
+                    FileSaver.saveAs(f);
                 }
             };
             reader.readAsDataURL(file);
