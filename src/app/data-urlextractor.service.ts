@@ -12,11 +12,13 @@ export class DataURLExtractorService {
 
 
     extract(files: FileList) {
-        [].forEach.call(files, this.__doThis);
+        this.dataURLs = [];
+
+        [].forEach.call(files, this.__extract);
     }
 
 
-    private __doThis(file, index, files) {
+    private __extract(file, index, files) {
 
         const reader = new FileReader();
 
@@ -27,6 +29,7 @@ export class DataURLExtractorService {
                 this.doneExtracting = true;
             }
         };
+
         reader.readAsDataURL(file);
     }
 

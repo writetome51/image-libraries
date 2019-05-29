@@ -18,6 +18,10 @@ export class ImageUploaderComponent {
     public storedImages = [];
 
 
+    constructor() {
+    }
+
+
     get imagesForViewing() {
         return this.storedImages;
     }
