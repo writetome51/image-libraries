@@ -1,6 +1,6 @@
-import { getDateTime } from './getDateTime';
 // @ts-ignore
 const FileSaver = require('file-saver');
+import { getDateTime } from './getDateTime';
 import { ImageProcessorService } from './image-processor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
@@ -30,6 +30,7 @@ export class JSONFileSaverService {
         }
         let txtToWrite = JSON.stringify(this.__imageStore.images);
         this.__fileName += (getDateTime() + this.__extension);
+
         let file = new File([txtToWrite], this.__fileName, this.__writeOptions);
         FileSaver.saveAs(file);
     }
