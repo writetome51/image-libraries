@@ -16,7 +16,7 @@ export class LibraryProcessorService {
     }
 
 
-    process(library: File) {
+    process(library: File): void {
         const reader = new FileReader();
 
         reader.onload = () => {

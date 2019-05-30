@@ -23,7 +23,7 @@ export class ImageProcessorService {
     }
 
 
-    process(files: FileList) {
+    process(files: FileList): void {
         if (notEmpty(files)) {
 
             this.__dataURLExtractor.extract(files);

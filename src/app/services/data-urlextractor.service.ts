@@ -11,7 +11,7 @@ export class DataURLExtractorService {
     doneExtracting = false;
 
 
-    extract(files: FileList) {
+    extract(files: FileList): void {
         this.dataURLs = [];
 
         [].forEach.call(files, this.__extract);

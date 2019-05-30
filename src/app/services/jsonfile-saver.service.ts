@@ -1,3 +1,4 @@
+import { getDateTime } from './getDateTime';
 // @ts-ignore
 const FileSaver = require('file-saver');
 import { ImageProcessorService } from './image-processor.service';
@@ -11,6 +12,11 @@ import { not } from '@writetome51/not';
 })
 export class JSONFileSaverService {
 
+    private __fileName = 'image_library-';
+    private __extension = '.json';
+    private __writeOptions = {type: 'text/plain;charset=utf-8'};
+
+
     constructor(
         private __imageStore: ImageStoreService,
         private __imageProcessor: ImageProcessorService
@@ -18,14 +24,14 @@ export class JSONFileSaverService {
     }
 
 
-    save() {
+    save(): void {
         while (not(this.__imageProcessor.doneProcessing)) {
             // do nothing.
         }
-        let dataToWrite = JSON.stringify(this.__imageStore.images);
-
-        let f = new File([dataToWrite], 'image_library.json', {type: 'text/plain;charset=utf-8'});
-        FileSaver.saveAs(f);
+        let txtToWrite = JSON.stringify(this.__imageStore.images);
+        this.__fileName += (getDateTime() + this.__extension);
+        let file = new File([txtToWrite], this.__fileName, this.__writeOptions);
+        FileSaver.saveAs(file);
     }
 
 
