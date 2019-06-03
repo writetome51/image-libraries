@@ -23,6 +23,7 @@
     "@writetome51/get-date-time-id": "^0.0.1",
     "@writetome51/has-value-no-value": "^1.0.2",
     "constants": "0.0.2",
+    "copy-object": "^1.0.0",
     "core-js": "^2.6.9",
     "file-saver": "^2.0.2",
     "get-object-from-json": "^1.0.3",

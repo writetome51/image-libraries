@@ -4,7 +4,6 @@ import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { ImageProcessorService } from './image-processor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
-import { not } from '@writetome51/not';
 
 
 @Injectable({
@@ -25,9 +24,6 @@ export class JSONFileSaverService {
 
 
     save(): void {
-        while (not(this.__imageProcessor.__doneProcessing)) {
-            // do nothing.
-        }
         let txtToWrite = JSON.stringify(this.__imageStore.images);
         let fileName = (this.__fileNamePrefix + getDateTimeID() + this.__extension);
 

@@ -8,7 +8,12 @@ export class DataURLExtractorService {
 
 
     dataURLs = [];
-    doneExtracting = false;
+    private __doneExtracting = false;
+
+
+    get doneExtracting(): boolean {
+        return this.__doneExtracting;
+    }
 
 
     extract(files: FileList): void {
@@ -26,7 +31,7 @@ export class DataURLExtractorService {
             this.dataURLs.push(reader.result);
 
             if (this.dataURLs.length === files.length) { // If finished reading each file...
-                this.doneExtracting = true;
+                this.__doneExtracting = true;
             }
         };
 

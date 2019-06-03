@@ -9,13 +9,15 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { JSONFileSaverService } from './services/jsonfile-saver.service';
 import { LibraryProcessorService } from './services/library-processor.service';
 import { NgModule } from '@angular/core';
+import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         ImageUploaderComponent,
-        ImageViewerComponent
+        ImageViewerComponent,
+        LibraryChooserComponent
     ],
     imports: [
         BrowserModule,

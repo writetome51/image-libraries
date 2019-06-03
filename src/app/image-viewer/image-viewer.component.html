@@ -1,6 +1,11 @@
-<ng-container *ngIf="doneReading">
+<ng-container *ngIf="doneProcessing">
 	<div *ngFor="let img of images">
 		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
 	</div>
 </ng-container>
 
+
+<!--   Clicking this saves changes to file that downloads to computer.    -->
+<ng-container>
+	<button (click)="saveChanges()">Save Changes</button>
+</ng-container>
