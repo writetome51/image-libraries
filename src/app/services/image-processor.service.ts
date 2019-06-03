@@ -1,4 +1,3 @@
-import { append } from '@writetome51/array-append-prepend';
 import { DataURLExtractorService } from './data-urlextractor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
@@ -12,14 +11,18 @@ import { notEmpty } from '@writetome51/is-empty-not-empty';
 export class ImageProcessorService {
 
 
-    public doneProcessing = false;
-    private __images: { name: '', src: '', description: '' }[] = [];
+    private __doneProcessing = false;
 
 
     constructor(
         private __imageStore: ImageStoreService,
         private __dataURLExtractor: DataURLExtractorService
     ) {
+    }
+
+
+    get doneProcessing(): boolean {
+        return this.__doneProcessing;
     }
 
 
@@ -30,26 +33,25 @@ export class ImageProcessorService {
             while (not(this.__dataURLExtractor.doneExtracting)) {
                 // do nothing.
             }
-            this.__set_images(files);
+            this.__sendTo__imageStore(files);
         }
     }
 
 
-    private __set_images(files: FileList) {
-        this.__images = [];
+    private __sendTo__imageStore(files: FileList) {
 
-        [].forEach.call(files, (file, index, files) => {
-            this.__images.push({name: '', src: '', description: ''});
-
-            this.__images[index].name = file.name;
-            this.__images[index].src = this.__dataURLExtractor.dataURLs[index];
-
-            if (this.__images.length === files.length) { // If finished reading each file...
-
-                append(this.__images, this.__imageStore.images);
-                this.doneProcessing = true;
-            }
+        [].forEach.call(files, (file, index) => {
+            this.__addImageToStore(file, index);
         });
+        this.__doneProcessing = true;
+    }
+
+
+    private __addImageToStore(file, index) {
+        this.__imageStore.images.push({name: '', src: '', description: ''});
+
+        this.__imageStore.images[index].name = file.name;
+        this.__imageStore.images[index].src = this.__dataURLExtractor.dataURLs[index];
     }
 
 

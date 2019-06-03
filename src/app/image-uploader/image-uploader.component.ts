@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Component({
@@ -15,6 +14,9 @@ export class ImageUploaderComponent {
 
     constructor() {
     }
+
+
+    saveChanges(){}
 
 
 }

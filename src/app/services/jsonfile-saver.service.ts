@@ -25,7 +25,7 @@ export class JSONFileSaverService {
 
 
     save(): void {
-        while (not(this.__imageProcessor.doneProcessing)) {
+        while (not(this.__imageProcessor.__doneProcessing)) {
             // do nothing.
         }
         let txtToWrite = JSON.stringify(this.__imageStore.images);

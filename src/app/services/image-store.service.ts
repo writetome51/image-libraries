@@ -6,6 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class ImageStoreService {
 
-    images = [];
+    images: { name: string, src: string, description: string }[] = [];
 
 }
