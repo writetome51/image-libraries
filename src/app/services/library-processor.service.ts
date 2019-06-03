@@ -9,10 +9,15 @@ import { ImageStoreService } from './image-store.service';
 export class LibraryProcessorService {
 
 
-    public doneProcessing = false;
+    private __doneProcessing = false;
 
 
     constructor(private __imageStore: ImageStoreService) {
+    }
+
+
+    get doneProcessing(): boolean {
+        return this.__doneProcessing;
     }
 
 
@@ -22,7 +27,7 @@ export class LibraryProcessorService {
         reader.onload = () => {
             let json: any = reader.result;
             this.__imageStore.images = getObjectFromJSON(json);
-            this.doneProcessing = true;
+            this.__doneProcessing = true;
         };
 
         reader.readAsText(library, 'utf-8');

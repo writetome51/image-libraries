@@ -31,9 +31,10 @@ export class ImageProcessorService {
 
             this.__dataURLExtractor.extract(files);
             while (not(this.__dataURLExtractor.doneExtracting)) {
-                // do nothing.
+                // The extraction is asynchronous process, so we must wait.
             }
             this.__sendTo__imageStore(files);
+            this.__doneProcessing = true;
         }
     }
 
@@ -43,15 +44,15 @@ export class ImageProcessorService {
         [].forEach.call(files, (file, index) => {
             this.__addImageToStore(file, index);
         });
-        this.__doneProcessing = true;
     }
 
 
     private __addImageToStore(file, index) {
-        this.__imageStore.images.push({name: '', src: '', description: ''});
+        let image = {name: '', src: '', description: ''};
 
-        this.__imageStore.images[index].name = file.name;
-        this.__imageStore.images[index].src = this.__dataURLExtractor.dataURLs[index];
+        image.name = file.name;
+        image.src = this.__dataURLExtractor.dataURLs[index];
+        this.__imageStore.images.push(image);
     }
 
 
