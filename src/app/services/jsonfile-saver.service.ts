@@ -1,7 +1,6 @@
 // @ts-ignore
 const FileSaver = require('file-saver');
 import { getDateTimeID } from '@writetome51/get-date-time-id';
-import { ImageProcessorService } from './image-processor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 
@@ -16,10 +15,7 @@ export class JSONFileSaverService {
     private __writeOptions = {type: 'text/plain;charset=utf-8'};
 
 
-    constructor(
-        private __imageStore: ImageStoreService,
-        private __imageProcessor: ImageProcessorService
-    ) {
+    constructor(private __imageStore: ImageStoreService) {
     }
 
 

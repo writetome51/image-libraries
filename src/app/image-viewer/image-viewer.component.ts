@@ -8,7 +8,11 @@ import { LibraryProcessorService } from '../services/library-processor.service';
     selector: 'image-viewer',
     templateUrl: './image-viewer.component.html'
 })
-export class ImageViewerComponent implements OnInit {
+export class ImageViewerComponent {
+
+    public description = '';
+    private __optionsVisible = false;
+
 
     constructor(
         private __imageStore: ImageStoreService,
@@ -18,22 +22,34 @@ export class ImageViewerComponent implements OnInit {
     }
 
 
-    ngOnInit() {
+    get optionsVisible(): boolean {
+        return this.__optionsVisible;
     }
 
 
-    get doneProcessing() {
+    get doneProcessing(): boolean {
         return this.__libraryProcessor.doneProcessing;
     }
 
 
-    get images() {
+    get images(): any[] {
         return this.__imageStore.images;
     }
 
 
     saveChanges() {
-
+        this.__jsonFileSaver.save();
     }
+
+
+    showOptions() {
+        this.__optionsVisible = true;
+    }
+
+
+    hideOptions() {
+        this.__optionsVisible = false;
+    }
+
 
 }

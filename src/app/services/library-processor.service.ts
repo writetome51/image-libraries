@@ -22,6 +22,7 @@ export class LibraryProcessorService {
 
 
     process(library: File): void {
+        this.__doneProcessing = false;
         const reader = new FileReader();
 
         reader.onload = () => {

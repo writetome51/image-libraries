@@ -1,4 +1,4 @@
-<ng-container *ngIf="!(doneProcessing)">
-	<p>Choose library to view:</p>
+<ng-container>
+	<p>{{prompt}}</p>
 	<input type="file" (change)="processLibrary($event.target.files[0])"/>
 </ng-container>

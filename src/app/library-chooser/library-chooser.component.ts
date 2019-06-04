@@ -6,17 +6,18 @@ import { LibraryProcessorService } from '../services/library-processor.service';
     selector: 'library-chooser',
     templateUrl: './library-chooser.component.html'
 })
-export class LibraryChooserComponent implements OnInit {
+export class LibraryChooserComponent {
 
     constructor(private __libraryProcessor: LibraryProcessorService) {
     }
 
 
-    ngOnInit() {
+    get prompt(): string {
+        return (this.doneProcessing ? 'Choose different library:' : 'Choose library:');
     }
 
 
-    get doneProcessing(){
+    get doneProcessing(): boolean {
         return this.__libraryProcessor.doneProcessing;
     }
 

@@ -1,7 +1,15 @@
 <ng-container *ngIf="doneProcessing">
-	<div *ngFor="let img of images">
+	<div *ngFor="let img of images" (mouseenter)="showOptions()" (mouseleave)="hideOptions()">
 		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
+
+		<ng-container *ngIf="optionsVisible">
+
+			<input type="text" [(ngModel)]="description" placeholder="Add Description"/>
+
+		</ng-container>
 	</div>
+
+
 </ng-container>
 
 
