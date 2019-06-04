@@ -3,7 +3,7 @@ import { ImageProcessorService } from '../services/image-processor.service';
 
 
 @Component({
-    selector: 'image-uploader',
+    selector: 'image-chooser',
     templateUrl: './image-chooser.component.html'
 })
 export class ImageChooserComponent {
