@@ -9,6 +9,6 @@
     transition-timing-function: ease-in-out;
 }
 
-.invisible {
+.being-dragged {
     color:red;
 }
