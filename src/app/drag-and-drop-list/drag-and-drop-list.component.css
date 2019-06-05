@@ -1,0 +1,14 @@
+.row-shift-down {
+    padding-top: 13px;
+    transition: 400ms;
+    transition-timing-function: ease-in-out;
+}
+.row-shift-up{
+    padding-bottom: 13px;
+    transition: 400ms;
+    transition-timing-function: ease-in-out;
+}
+
+.invisible {
+    color:red;
+}

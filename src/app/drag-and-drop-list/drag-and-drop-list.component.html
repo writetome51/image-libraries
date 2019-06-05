@@ -1,0 +1,12 @@
+<div>
+	<ul>
+		<li *ngFor="let item of list; let i = index" draggable="true"
+			(dragstart)="set_indexBeingDragged(i)" (dragover)="prepareForDrop($event, i)"
+			(drop)="reorder($event, i)" [class.row-dragged-over]="rowDraggedOver === i"
+			[class.row-shift-down]="rowShiftDown === i"  [class.row-shift-up]="rowShiftUp === i"
+			[class.invisible]="indexBeingDragged === i">
+
+			{{item}}
+		</li>
+	</ul>
+</div>
