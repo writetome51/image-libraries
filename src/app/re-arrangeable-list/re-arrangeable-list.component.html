@@ -1,9 +1,12 @@
 <div>
 	<ul>
-		<li *ngFor="let item of list; let i = index" mwlDraggable
+		<li *ngFor="let item of list; let i = index"
+			mwlDraggable
 			(dragStart)="set_indexBeingDragged(i)"
 			[class.being-dragged]="indexBeingDragged === i"
-			mwlDroppable (drop)="reorder(i)" dragOverClass="row-dragged-over">
+
+			mwlDroppable (drop)="reorder(i)" dragOverClass="item-dragged-over"
+		>
 
 			{{item}}
 		</li>
