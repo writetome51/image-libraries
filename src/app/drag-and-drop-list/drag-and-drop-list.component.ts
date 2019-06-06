@@ -12,45 +12,16 @@ export class DragAndDropListComponent {
 
     list = ['coffee', 'beer', 'soda', 'water', 'tea', 'milk'];
     indexBeingDragged: number;
-    rowDraggedOver: number;
-    rowShiftDown: number;
-    rowShiftUp: number;
-    droppedData: string;
-
-
-    dragEnd(event) {
-        /******************
-         `event` is object:
-         {
-             x: numPixelsDraggedHorizontal, // negative if dragged left.
-             y: numPixelsDraggedVertically, // negative if dragged up.
-             dragCancelled: boolean // don't know to how to cancel drag.
-         }
-         *******************/
-        console.log('Element was dragged', event);
-
-    }
-
-
-    logDrop(dropData) {
-        console.log(dropData);
-    }
 
 
     reorder(newIndex) {
         moveByIndex(this.indexBeingDragged, newIndex, this.list);
-        this.rowDraggedOver = -1;
         this.indexBeingDragged = -1;
     }
 
 
     set_indexBeingDragged(i) {
         this.indexBeingDragged = i;
-    }
-
-
-    prepareForDrop(index) {
-        this.rowDraggedOver = index;
     }
 
 

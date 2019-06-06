@@ -1,17 +1,16 @@
-li{
-    padding:1px;
-    border:2px solid rgba(0, 0, 0, 0.0);
+li {
+    padding: 1px;
+    border: 2px solid rgba(0, 0, 0, 0.0);
     border-collapse: collapse;
     cursor: move;
     list-style: none;
 }
 
+.row-dragged-over {
+    border: 2px solid #b5ffb7;
+    color: #b7b7b7;
+}
 
 .being-dragged {
     color: red;
 }
-
-.row-dragged-over {
-    border: 2px solid #b5ffb7;
-}
-
