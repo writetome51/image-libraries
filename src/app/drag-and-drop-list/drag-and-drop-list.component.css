@@ -7,10 +7,10 @@ li {
 }
 
 .row-dragged-over {
-    border: 2px solid #b5ffb7;
+    border: 2px solid #11d400;
     color: #b7b7b7;
 }
 
 .being-dragged {
-    color: red;
+    color: #e20000;
 }
