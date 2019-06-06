@@ -8,10 +8,10 @@ li {
 }
 
 .item-dragged-over {
-    border: 2px solid #11d400;
+    border: 2px solid #56d456;
     color: #b7b7b7;
 }
 
 .being-dragged {
-    color: #e20000;
+    color: rgb(255, 94, 94);
 }

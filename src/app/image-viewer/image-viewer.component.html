@@ -1,6 +1,8 @@
 <ng-container *ngIf="doneProcessing">
+
 	<div *ngFor="let img of images" (click)="showOptions()" (mouseleave)="hideOptions()">
 		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
+
 
 		<ng-container *ngIf="optionsVisible">
 
