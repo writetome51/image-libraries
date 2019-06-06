@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 
 
