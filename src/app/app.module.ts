@@ -2,8 +2,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DataURLExtractorService } from './services/data-urlextractor.service';
-import { DragAndDropListComponent } from './drag-and-drop-list/drag-and-drop-list.component';
 import { DragAndDropModule } from 'angular-draggable-droppable';
+import { FormsModule } from '@angular/forms';
 import { ImageProcessorService } from './services/image-processor.service';
 import { ImageStoreService } from './services/image-store.service';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
@@ -12,8 +12,7 @@ import { JSONFileSaverService } from './services/jsonfile-saver.service';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibraryProcessorService } from './services/library-processor.service';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { ReArrangeableListComponent } from './re-arrangeable-list/re-arrangeable-list.component';
 
 
 @NgModule({
@@ -22,7 +21,7 @@ import { FormsModule } from '@angular/forms';
         ImageChooserComponent,
         ImageViewerComponent,
         LibraryChooserComponent,
-        DragAndDropListComponent
+        ReArrangeableListComponent
     ],
     imports: [
         BrowserModule,

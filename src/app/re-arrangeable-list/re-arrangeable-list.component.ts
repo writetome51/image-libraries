@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 
 
 @Component({
-    selector: 'drag-and-drop-list',
-    templateUrl: './drag-and-drop-list.component.html',
-    styleUrls: ['./drag-and-drop-list.component.css']
+    selector: 're-arrangeable-list',
+    templateUrl: './re-arrangeable-list.component.html',
+    styleUrls: ['./re-arrangeable-list.component.css']
 })
-export class DragAndDropListComponent {
+export class ReArrangeableListComponent {
+
+
+    @Input() items;
 
 
     list = ['coffee', 'beer', 'soda', 'water', 'tea', 'milk'];
