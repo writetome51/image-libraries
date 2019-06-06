@@ -2,7 +2,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DataURLExtractorService } from './services/data-urlextractor.service';
-// import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DragAndDropListComponent } from './drag-and-drop-list/drag-and-drop-list.component';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 import { ImageProcessorService } from './services/image-processor.service';
 import { ImageStoreService } from './services/image-store.service';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
@@ -12,7 +13,6 @@ import { LibraryChooserComponent } from './library-chooser/library-chooser.compo
 import { LibraryProcessorService } from './services/library-processor.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DragAndDropListComponent } from './drag-and-drop-list/drag-and-drop-list.component';
 
 
 
@@ -28,7 +28,7 @@ import { DragAndDropListComponent } from './drag-and-drop-list/drag-and-drop-lis
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-    //	DragDropModule
+        DragAndDropModule
     ],
     providers: [
         ImageProcessorService, ImageStoreService, DataURLExtractorService,

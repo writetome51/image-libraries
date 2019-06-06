@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
-import { getAndRemoveByIndex } from '@writetome51/array-get-and-remove-by-index';
-import { insertAt } from '@writetome51/array-insert-at';
 
 
 @Component({
@@ -9,7 +7,7 @@ import { insertAt } from '@writetome51/array-insert-at';
     templateUrl: './drag-and-drop-list.component.html',
     styleUrls: ['./drag-and-drop-list.component.css']
 })
-export class DragAndDropListComponent implements OnInit {
+export class DragAndDropListComponent {
 
 
     list = ['coffee', 'beer', 'soda', 'water', 'tea', 'milk'];
@@ -17,19 +15,32 @@ export class DragAndDropListComponent implements OnInit {
     rowDraggedOver: number;
     rowShiftDown: number;
     rowShiftUp: number;
+    droppedData: string;
 
 
-    ngOnInit() {
+    dragEnd(event) {
+        /******************
+         `event` is object:
+         {
+             x: numPixelsDraggedHorizontal, // negative if dragged left.
+             y: numPixelsDraggedVertically, // negative if dragged up.
+             dragCancelled: boolean // don't know to how to cancel drag.
+         }
+         *******************/
+        console.log('Element was dragged', event);
+
     }
 
 
-    reorder(event, newIndex) {
-        event.preventDefault();
+    logDrop(dropData) {
+        console.log(dropData);
+    }
+
+
+    reorder(newIndex) {
         moveByIndex(this.indexBeingDragged, newIndex, this.list);
         this.rowDraggedOver = -1;
         this.indexBeingDragged = -1;
-        this.rowShiftUp = -1;
-        this.rowShiftDown = -1;
     }
 
 
@@ -38,17 +49,9 @@ export class DragAndDropListComponent implements OnInit {
     }
 
 
-    prepareForDrop(event, index) {
-        event.preventDefault();
+    prepareForDrop(index) {
         this.rowDraggedOver = index;
-        if (index < this.indexBeingDragged) {
-            this.rowShiftDown = index;
-            this.rowShiftUp = -1;
-        }
-        if (index > this.indexBeingDragged) {
-            this.rowShiftUp = index;
-            this.rowShiftDown = -1;
-        }
     }
+
 
 }

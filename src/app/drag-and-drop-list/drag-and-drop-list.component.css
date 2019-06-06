@@ -1,14 +1,17 @@
-.row-shift-down {
-    padding-top: 13px;
-    transition: 400ms;
-    transition-timing-function: ease-in-out;
-}
-.row-shift-up{
-    padding-bottom: 13px;
-    transition: 400ms;
-    transition-timing-function: ease-in-out;
+li{
+    padding:1px;
+    border:2px solid rgba(0, 0, 0, 0.0);
+    border-collapse: collapse;
+    cursor: move;
+    list-style: none;
 }
 
+
 .being-dragged {
-    color:red;
+    color: red;
 }
+
+.row-dragged-over {
+    border: 2px solid #b5ffb7;
+}
+
