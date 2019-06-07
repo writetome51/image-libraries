@@ -4,7 +4,7 @@
 
 		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
-			<div (click)="showOptions()" (mouseleave)="hideOptions()">
+			<div (click)="showOptions(i)" (mouseleave)="hideOptions()">
 
 				<!--  Setting draggable to false on the img prevents a ghost-image from being
 				dragged.   -->
@@ -12,7 +12,7 @@
 					 [title]="img.name"/>
 
 
-				<ng-container *ngIf="optionsVisible">
+				<ng-container *ngIf="i === indexWithOptionsVisible">
 
 					<input type="text" [(ngModel)]="img.description" placeholder="Add Description"/>
 
