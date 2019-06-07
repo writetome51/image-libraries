@@ -9,6 +9,8 @@
 
 # dependencies
 /node_modules
+/src/bootstrap_3_4_0.min.js
+
 
 # profiling files
 chrome-profiler-events.json

@@ -1,6 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
-import * as $ from 'jquery-ui';
+import './node_modules/jquery-ui-dist/jquery.min.js';
+
+
+var $: any = $;
 
 
 @Component({
@@ -8,23 +11,18 @@ import * as $ from 'jquery-ui';
     templateUrl: './re-arrangeable-list.component.html',
     styleUrls: ['./re-arrangeable-list.component.css']
 })
-export class ReArrangeableListComponent {
+export class ReArrangeableListComponent implements AfterViewInit {
 
 
     @Input() items;
     list = ['coffee', 'beer', 'soda', 'water', 'tea', 'milk'];
     indexBeingDragged: number;
 
-    private $: any;
 
-
-    reArrange(){
+    ngAfterViewInit(): void {
         let panelList = $('#draggablePanelList');
 
         panelList.sortable({
-            // Only make the .panel-heading child elements support dragging.
-            // Omit this to make then entire <li>...</li> draggable.
-            handle: '.panel-heading',
             update: function() {
                 $('.panel', panelList).each(function(index, elem) {
                     var $listItem = $(elem),

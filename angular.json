@@ -29,7 +29,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/jquery-ui-dist/external/jquery/jquery.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.min.css",
+              "./src/bootstrap_3_4_0.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -86,7 +91,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/jquery-ui-dist/external/jquery/jquery.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.min.css",
+              "./src/bootstrap_3_4_0.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
