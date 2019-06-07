@@ -10,7 +10,9 @@ li {
 .item-dragged-over {
     border: 2px solid #56d456;
     color: #b7b7b7;
+    opacity: 0.5;
 }
+
 
 .being-dragged {
     color: rgb(255, 94, 94);

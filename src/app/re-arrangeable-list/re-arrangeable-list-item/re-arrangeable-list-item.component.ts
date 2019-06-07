@@ -24,6 +24,11 @@ export class ReArrangeableListItemComponent {
     }
 
 
+    unset_isBeingDragged(){
+        this.isBeingDragged = false;
+    }
+
+
     dropDraggedItemHere() {
         this.__listItemMover.moveItemTo(this.index);
     }

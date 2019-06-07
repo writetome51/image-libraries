@@ -1,9 +1,13 @@
 <!--    mwlDraggable makes this item draggable.   -->
 <li
-		mwlDraggable (dragStart)="set_isBeingDragged()"
+		mwlDraggable (dragStart)="set_isBeingDragged()"  (dragEnd)="unset_isBeingDragged()"
 		[class.being-dragged]="isBeingDragged"
 
 		mwlDroppable (drop)="dropDraggedItemHere()" dragOverClass="item-dragged-over">
 	<!--  mwlDroppable allows you to drop a different item onto this item.
-	The (drop) event happens when you drop that different item onto this item.   -->
+	The (drop) event happens when you drop that different item onto this item.
+	  -->
+	
+	<ng-content></ng-content>
+
 </li>

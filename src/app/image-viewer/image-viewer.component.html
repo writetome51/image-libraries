@@ -1,16 +1,20 @@
-<ng-container *ngIf="doneProcessing">
+<div><!--  *ngIf="doneProcessing"    -->
 
 	<re-arrangeable-list [list]="images">
 
 		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
 			<div (click)="showOptions()" (mouseleave)="hideOptions()">
-				<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
+
+				<!--  Setting draggable to false on the img prevents a ghost-image from being
+				dragged.   -->
+				<img draggable="false" [src]="img.src" alt="{{img.description}}" width="180px"
+					 [title]="img.name"/>
 
 
 				<ng-container *ngIf="optionsVisible">
 
-					<input type="text" [(ngModel)]="description" placeholder="Add Description"/>
+					<input type="text" [(ngModel)]="img.description" placeholder="Add Description"/>
 
 				</ng-container>
 			</div>
@@ -19,7 +23,7 @@
 
 	</re-arrangeable-list>
 
-</ng-container>
+</div>
 
 
 <!--   Clicking this saves changes to file that downloads to computer.    -->
