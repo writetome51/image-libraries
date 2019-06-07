@@ -1,8 +1,5 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
-import { ImageStoreService } from '../services/image-store.service';
-
-
-// declare var $: any;
+import { Component, Input } from '@angular/core';
+import { ListItemMoverService } from '../services/list-item-mover.service';
 
 
 @Component({
@@ -13,35 +10,28 @@ import { ImageStoreService } from '../services/image-store.service';
 export class ReArrangeableListItemComponent {
 
 
+    @Input() set list(value) {
+        this.__listItemMover.list = value;
+    }
+
+
     @Input() index: number;
-    indexBeingDragged: number;
+    isBeingDragged = false;
 
 
-    constructor(private __imageStore: ImageStoreService) {
+    constructor(private  __listItemMover: ListItemMoverService) {
     }
 
 
-    set_indexBeingDragged(i) {
-        this.indexBeingDragged = i;
+    set_isBeingDragged() {
+        this.isBeingDragged = true;
+        this.__listItemMover.indexBeingMoved = this.index;
     }
 
 
-    /****
-     ngAfterViewInit(): void {
-        let panelList = $('#draggablePanelList');
-
-        panelList.sortable({
-            update: function() {
-                $('.panel', panelList).each(function(index, elem) {
-                    var $listItem = $(elem),
-                        newIndex = $listItem.index();
-
-                    // Persist the new indices.
-                });
-            }
-        });
+    dropDraggedItemHere() {
+        this.__listItemMover.moveItemTo(this.index);
     }
-     ****/
 
 
 }

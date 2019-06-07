@@ -1,7 +1,9 @@
+<!--    mwlDraggable makes this item draggable.   -->
 <li
-	mwlDraggable
-	(dragStart)="set_indexBeingDragged(index)"
-	[class.being-dragged]="indexBeingDragged === index"
-	mwlDroppable (drop)="reorder(index)" dragOverClass="item-dragged-over"
->
+		mwlDraggable (dragStart)="set_isBeingDragged()"
+		[class.being-dragged]="isBeingDragged"
+
+		mwlDroppable (drop)="dropDraggedItemHere()" dragOverClass="item-dragged-over">
+	<!--  mwlDroppable allows you to drop a different item onto this item.
+	The (drop) event happens when you drop that different item onto this item.   -->
 </li>
