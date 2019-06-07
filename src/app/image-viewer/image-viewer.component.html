@@ -1,8 +1,8 @@
 <ng-container *ngIf="doneProcessing">
 
-	<ul>
-		<re-arrangeable-list-item *ngFor="let img of images;let i = index;"
-								  [index]="i" [list]="images">
+	<re-arrangeable-list [list]="images">
+
+		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
 			<div (click)="showOptions()" (mouseleave)="hideOptions()">
 				<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
@@ -16,7 +16,8 @@
 			</div>
 
 		</re-arrangeable-list-item>
-	</ul>
+
+	</re-arrangeable-list>
 
 </ng-container>
 

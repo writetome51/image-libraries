@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ListItemMoverService } from '../services/list-item-mover.service';
+import { ListItemMoverService } from '../../services/list-item-mover.service';
 
 
 @Component({
@@ -8,11 +8,6 @@ import { ListItemMoverService } from '../services/list-item-mover.service';
     styleUrls: ['./re-arrangeable-list-item.component.css']
 })
 export class ReArrangeableListItemComponent {
-
-
-    @Input() set list(value) {
-        this.__listItemMover.list = value;
-    }
 
 
     @Input() index: number;
