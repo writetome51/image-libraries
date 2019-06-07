@@ -1,16 +1,21 @@
 <ng-container *ngIf="doneProcessing">
 
-	<div *ngFor="let img of images" (click)="showOptions()" (mouseleave)="hideOptions()">
-		<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
+	<ul>
+		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
+
+			<div (click)="showOptions()" (mouseleave)="hideOptions()">
+				<img [src]="img.src" alt="{{img.description}}" width="180px" [title]="img.name"/>
 
 
-		<ng-container *ngIf="optionsVisible">
+				<ng-container *ngIf="optionsVisible">
 
-			<input type="text" [(ngModel)]="description" placeholder="Add Description"/>
+					<input type="text" [(ngModel)]="description" placeholder="Add Description"/>
 
-		</ng-container>
-	</div>
+				</ng-container>
+			</div>
 
+		</re-arrangeable-list-item>
+	</ul>
 
 </ng-container>
 

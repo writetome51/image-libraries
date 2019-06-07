@@ -32,6 +32,8 @@
     "core-js": "^2.6.9",
     "file-saver": "^2.0.2",
     "get-object-from-json": "^1.0.3",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",

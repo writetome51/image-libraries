@@ -11,8 +11,10 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { JSONFileSaverService } from './services/jsonfile-saver.service';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibraryProcessorService } from './services/library-processor.service';
+import { ListReArrangingService } from './services/list-re-arranging.service';
 import { NgModule } from '@angular/core';
-import { ReArrangeableListComponent } from './re-arrangeable-list/re-arrangeable-list.component';
+import { ReArrangeableListItemComponent }
+    from './re-arrangeable-list-item/re-arrangeable-list-item.component';
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { ReArrangeableListComponent } from './re-arrangeable-list/re-arrangeable
         ImageChooserComponent,
         ImageViewerComponent,
         LibraryChooserComponent,
-        ReArrangeableListComponent
+        ReArrangeableListItemComponent
     ],
     imports: [
         BrowserModule,
@@ -31,7 +33,7 @@ import { ReArrangeableListComponent } from './re-arrangeable-list/re-arrangeable
     ],
     providers: [
         ImageProcessorService, ImageStoreService, DataURLExtractorService,
-        JSONFileSaverService, LibraryProcessorService
+        JSONFileSaverService, LibraryProcessorService, ListReArrangingService
     ],
     bootstrap: [AppComponent]
 })

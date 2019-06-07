@@ -1,0 +1,7 @@
+<li
+	mwlDraggable
+	(dragStart)="set_indexBeingDragged(index)"
+	[class.being-dragged]="indexBeingDragged === index"
+	mwlDroppable (drop)="reorder(index)" dragOverClass="item-dragged-over"
+>
+</li>
