@@ -10,8 +10,8 @@ import { LibraryProcessorService } from '../services/library-processor.service';
 })
 export class ImageViewerComponent {
 
-    public description = '';
-    private __indexWithOptionsVisible = -1;
+//    public description = '';
+    private __imageWithOptionsVisible = -1;
 
 
     constructor(
@@ -22,8 +22,8 @@ export class ImageViewerComponent {
     }
 
 
-    get indexWithOptionsVisible() {
-        return this.__indexWithOptionsVisible;
+    get imageWithOptionsVisible() {
+        return this.__imageWithOptionsVisible;
     }
 
 
@@ -43,12 +43,12 @@ export class ImageViewerComponent {
 
 
     showOptions(index) {
-        this.__indexWithOptionsVisible = index;
+        this.__imageWithOptionsVisible = index;
     }
 
 
     hideOptions() {
-        this.__indexWithOptionsVisible = -1;
+        this.__imageWithOptionsVisible = -1;
     }
 
 
