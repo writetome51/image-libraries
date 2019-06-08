@@ -8,8 +8,24 @@ import { ImageProcessorService } from '../services/image-processor.service';
 })
 export class ImageChooserComponent {
 
+    private __urlToAdd = '';
+
 
     constructor(private __imageProcessor: ImageProcessorService) {
+    }
+
+
+    get doneProcessing(){
+        return this.__imageProcessor.doneProcessing;
+    }
+
+
+    set urlToAdd(value){
+        this.__urlToAdd = value.trim();
+    }
+
+    get urlToAdd(){
+        return this.__urlToAdd;
     }
 
 
