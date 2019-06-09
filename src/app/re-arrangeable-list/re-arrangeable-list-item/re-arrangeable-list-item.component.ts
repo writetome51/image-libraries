@@ -10,8 +10,8 @@ import { ListItemMoverService } from '../list-item-mover.service';
 export class ReArrangeableListItemComponent {
 
 
-    @Input() index: number;
-    @Input() isDisplayedAsBlock = false;
+    @Input() index: number; // required
+    @Input() isDisplayedAsBlock = false; // optional
     isBeingDragged = false;
     isBeingDraggedOnto = false;
 
