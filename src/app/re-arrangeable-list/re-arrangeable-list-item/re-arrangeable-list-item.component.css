@@ -8,6 +8,11 @@ li {
 }
 
 
+.display-as-block {
+	display: block;
+}
+
+
 .being-dragged {
 	color: rgb(255, 94, 94);
 	opacity: 1;

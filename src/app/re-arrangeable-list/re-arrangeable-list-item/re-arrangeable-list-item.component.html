@@ -1,15 +1,15 @@
 <!--    mwlDraggable makes this item draggable.   -->
-<li
-		mwlDraggable (dragStart)="set_isBeingDragged()" (dragEnd)="unset_isBeingDragged()"
-		[class.being-dragged]="isBeingDragged"
+<li [class.display-as-block]="isDisplayedAsBlock"
+	mwlDraggable (dragStart)="set_isBeingDragged()" (dragEnd)="unset_isBeingDragged()"
+	[class.being-dragged]="isBeingDragged"
 
-		mwlDroppable (drop)="dropDraggedItemHere()" (dragOver)="set_isBeingDraggedOnto()"
-		(dragLeave)="unset_isBeingDraggedOnto()"
-		dragOverClass="item-dragged-onto"
-		[class.item-dragged-onto-from-left]="draggedOntoFromLeft"
-		[class.item-dragged-onto-from-right]="draggedOntoFromRight"
-		[class.item-dragged-onto-from-top]="draggedOntoFromTop"
-		[class.item-dragged-onto-from-bottom]="draggedOntoFromBottom"
+	mwlDroppable (drop)="dropDraggedItemHere()" (dragOver)="set_isBeingDraggedOnto()"
+	(dragLeave)="unset_isBeingDraggedOnto()"
+	dragOverClass="item-dragged-onto"
+	[class.item-dragged-onto-from-left]="draggedOntoFromLeft"
+	[class.item-dragged-onto-from-right]="draggedOntoFromRight"
+	[class.item-dragged-onto-from-top]="draggedOntoFromTop"
+	[class.item-dragged-onto-from-bottom]="draggedOntoFromBottom"
 >
 	<!--  mwlDroppable allows you to drop a different item onto this item.
 	The (drop) event happens when you drop that different item onto this item.
