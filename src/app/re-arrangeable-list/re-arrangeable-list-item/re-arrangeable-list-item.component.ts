@@ -11,7 +11,7 @@ export class ReArrangeableListItemComponent {
 
 
     @Input() index: number; // required
-    @Input() isDisplayedAsBlock = false; // optional
+    @Input() displayAsBlock = false; // optional
     isBeingDragged = false;
     isBeingDraggedOnto = false;
 
@@ -36,19 +36,18 @@ export class ReArrangeableListItemComponent {
 
     unset_isBeingDragged() {
         this.isBeingDragged = false;
-        this.__listItemMover.indexBeingMoved = -1;
     }
 
 
     set_isBeingDraggedOnto() {
         this.isBeingDraggedOnto = true;
         if (this.index < this.__listItemMover.indexBeingMoved) {
-            if (this.isDisplayedAsBlock) this.draggedOntoFromBottom = true;
+            if (this.displayAsBlock) this.draggedOntoFromBottom = true;
             else this.draggedOntoFromRight = true;
 
         }
         else if (this.index > this.__listItemMover.indexBeingMoved) {
-            if (this.isDisplayedAsBlock) this.draggedOntoFromTop = true;
+            if (this.displayAsBlock) this.draggedOntoFromTop = true;
             else this.draggedOntoFromLeft = true;
         }
     }
@@ -65,6 +64,7 @@ export class ReArrangeableListItemComponent {
 
     dropDraggedItemHere() {
         this.__listItemMover.moveItemTo(this.index);
+		this.__listItemMover.indexBeingMoved = -1;
         this.unset_isBeingDraggedOnto();
     }
 

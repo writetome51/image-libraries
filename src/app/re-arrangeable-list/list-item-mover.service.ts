@@ -4,29 +4,31 @@ import { errorIfNotInteger } from 'error-if-not-integer';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class ListItemMoverService extends PublicArrayContainer {
 
-
-    private __indexBeingMoved: number;
-
-
-    set indexBeingMoved(value) {
-        errorIfNotInteger(value);
-        this.__indexBeingMoved = value;
-    }
+	constructor() {
+		super();
+	}
 
 
-    get indexBeingMoved() {
-        return this.__indexBeingMoved;
-    }
+	private __indexBeingMoved: number;
 
 
-    moveItemTo(newIndex) {
-        moveByIndex(this.indexBeingMoved, newIndex, this.data);
-    }
+	set indexBeingMoved(value) {
+		errorIfNotInteger(value);
+		this.__indexBeingMoved = value;
+	}
+
+
+	get indexBeingMoved() {
+		return this.__indexBeingMoved;
+	}
+
+
+	moveItemTo(newIndex) {
+		moveByIndex(this.indexBeingMoved, newIndex, this.data);
+	}
 
 
 }
