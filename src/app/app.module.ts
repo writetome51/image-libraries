@@ -11,7 +11,8 @@ import { JSONFileSaverService } from './services/jsonfile-saver.service';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibraryProcessorService } from './services/library-processor.service';
 import { NgModule } from '@angular/core';
-import { ReArrangeableListModule } from './re-arrangeable-list/re-arrangeable-list.module';
+import { ReArrangeableListModule }
+	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
 
 
 @NgModule({
