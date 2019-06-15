@@ -1,4 +1,4 @@
-<div><!--  *ngIf="doneProcessing"    -->
+<div *ngIf="images.length > 0">
 
 	<re-arrangeable-list [list]="images">
 
@@ -23,10 +23,9 @@
 
 	</re-arrangeable-list>
 
+	<!--   Clicking this saves changes to file that downloads to computer.    -->
+	<ng-container>
+		<button (click)="saveChanges()">Save Changes</button>
+	</ng-container>
+
 </div>
-
-
-<!--   Clicking this saves changes to file that downloads to computer.    -->
-<ng-container>
-	<button (click)="saveChanges()">Save Changes</button>
-</ng-container>
