@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { ImageStoreService } from './services/image-store.service';
 
 
 @Component({
@@ -11,6 +12,15 @@ export class AppComponent {
 	title = 'Image Library';
 	createNewLibrary = false;
 	showLibraryChooser = false;
+
+
+	constructor(private __imageStore: ImageStoreService) {
+	}
+
+
+	get images(): any[] {
+		return this.__imageStore.images;
+	}
 
 
 	// Adds keyup listener to document.
