@@ -1,7 +1,7 @@
+import { getDataURLs } from '@writetome51/get-data-urls';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { getDataURLs } from '../../getDataURLs';
 
 
 @Injectable({
@@ -31,7 +31,6 @@ export class ImageProcessorService {
 			let dataURLs = await getDataURLs(files);
 			this.__sendTo__imageStore(files, dataURLs);
 		}
-
 		this.__doneProcessing = true;
 	}
 
@@ -45,10 +44,8 @@ export class ImageProcessorService {
 
 
 	private __addImageToStore(file, dataURL) {
-		let image = {name: '', src: '', description: ''};
+		let image = {name: file.name, src: dataURL, description: ''};
 
-		image.name = file.name;
-		image.src = dataURL;
 		this.__imageStore.images.push(image);
 	}
 
