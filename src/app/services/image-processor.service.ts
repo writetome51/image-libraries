@@ -1,7 +1,7 @@
-import { DataURLExtractorService } from './data-urlextractor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { getDataURLs } from '../../getDataURLs';
 
 
 @Injectable({
@@ -14,8 +14,7 @@ export class ImageProcessorService {
 
 
 	constructor(
-		private __imageStore: ImageStoreService,
-		private __dataURLExtractor: DataURLExtractorService
+		private __imageStore: ImageStoreService
 	) {
 	}
 
@@ -29,7 +28,7 @@ export class ImageProcessorService {
 		this.__doneProcessing = false;
 
 		if (notEmpty(files)) {
-			let dataURLs = await this.__dataURLExtractor.extract(files);
+			let dataURLs = await getDataURLs(files);
 			this.__sendTo__imageStore(files, dataURLs);
 		}
 

@@ -1,7 +1,6 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { DataURLExtractorService } from './services/data-urlextractor.service';
 import { FormsModule } from '@angular/forms';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { ImageProcessorService } from './services/image-processor.service';
@@ -29,7 +28,7 @@ import { ReArrangeableListModule }
 		ReArrangeableListModule
 	],
 	providers: [
-		DataURLExtractorService, ImageProcessorService, ImageStoreService,
+		 ImageProcessorService, ImageStoreService,
 		JSONFileSaverService, LibraryProcessorService
 	],
 	bootstrap: [AppComponent]
