@@ -16,10 +16,12 @@ import { ReArrangeableListItemComponent }
 		CommonModule,
 		DragAndDropModule,
 	],
+
 	providers: [ListItemMoverService],
+
 	exports: [
-		ReArrangeableListItemComponent,
-		ReArrangeableListComponent
+		ReArrangeableListComponent,
+		ReArrangeableListItemComponent
 	]
 })
 export class ReArrangeableListModule {

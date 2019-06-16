@@ -13,7 +13,7 @@ export class ImageViewerComponent {
 	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device 
 	downloads a new version of the library.`;
 
-	private __imageWithOptionsVisible = -1;
+	private __imageWithOptionsVisible = -1; // The index of the image.
 
 
 	constructor(
