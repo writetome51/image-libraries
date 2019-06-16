@@ -1,61 +1,57 @@
 import { DataURLExtractorService } from './data-urlextractor.service';
 import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
-import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class ImageProcessorService {
 
 
-    private __doneProcessing = true;
+	private __doneProcessing = false;
 
 
-    constructor(
-        private __imageStore: ImageStoreService,
-        private __dataURLExtractor: DataURLExtractorService
-    ) {
-    }
+	constructor(
+		private __imageStore: ImageStoreService,
+		private __dataURLExtractor: DataURLExtractorService
+	) {
+	}
 
 
-    get doneProcessing(): boolean {
-        return this.__doneProcessing;
-    }
+	get doneProcessing(): boolean {
+		return this.__doneProcessing;
+	}
 
 
-    process(files: FileList): void {
-        this.__doneProcessing = false;
+	async process(files: FileList) {
+		this.__doneProcessing = false;
 
-        if (notEmpty(files)) {
+		if (notEmpty(files)) {
+			let dataURLs = await this.__dataURLExtractor.extract(files);
+			this.__sendTo__imageStore(files, dataURLs);
+		}
 
-            this.__dataURLExtractor.extract(files);
-            while (not(this.__dataURLExtractor.doneExtracting)) {
-                // The extraction is asynchronous process, so we must wait.
-            }
-            this.__sendTo__imageStore(files, this.__dataURLExtractor.dataURLs);
-        }
-        this.__doneProcessing = true;
-    }
+		this.__doneProcessing = true;
+	}
 
 
-    private __sendTo__imageStore(files: FileList, dataURLs) {
+	private __sendTo__imageStore(files: FileList, dataURLs) {
 
-        [].forEach.call(files, (file, index) => {
-            this.__addImageToStore(file, dataURLs[index]);
-        });
-    }
+		for (let i = 0; i < files.length; ++i) {
+			this.__addImageToStore(files[i], dataURLs[i]);
+		}
+	}
 
 
-    private __addImageToStore(file, dataURL) {
-        let image = {name: '', src: '', description: ''};
+	private __addImageToStore(file, dataURL) {
+		let image = {name: '', src: '', description: ''};
 
-        image.name = file.name;
-        image.src = dataURL;
-        this.__imageStore.images.push(image);
-    }
+		image.name = file.name;
+		image.src = dataURL;
+		this.__imageStore.images.push(image);
+	}
 
 
 }

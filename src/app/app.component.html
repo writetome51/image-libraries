@@ -1,7 +1,8 @@
 <div style="text-align:center;">
-	<h1>
-		Welcome to {{ title }}
-	</h1>
+
+	<h1>{{ title }}</h1>
+
+	<p>{{introduction}}</p>
 
 	<p *ngIf="!(showLibraryChooser) && !(createNewLibrary)">
 		You can create a new library, or open an existing library to view.

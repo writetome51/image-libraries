@@ -3,35 +3,39 @@ import { ImageProcessorService } from '../services/image-processor.service';
 
 
 @Component({
-    selector: 'image-chooser',
-    templateUrl: './image-chooser.component.html'
+	selector: 'image-chooser',
+	templateUrl: './image-chooser.component.html'
 })
 export class ImageChooserComponent {
 
-    private __urlToAdd = '';
+	gettingImagesInstructions = `The images can come from somewhere else in the web or from your 
+	own device.`;
+
+	private __urlToAdd = '';
 
 
-    constructor(private __imageProcessor: ImageProcessorService) {
-    }
+	constructor(private __imageProcessor: ImageProcessorService) {
+	}
 
 
-    get doneProcessing(){
-        return this.__imageProcessor.doneProcessing;
-    }
+	get doneProcessing() {
+		return this.__imageProcessor.doneProcessing;
+	}
 
 
-    set urlToAdd(value){
-        this.__urlToAdd = value.trim();
-    }
-
-    get urlToAdd(){
-        return this.__urlToAdd;
-    }
+	set urlToAdd(value) {
+		this.__urlToAdd = value.trim();
+	}
 
 
-    addToLibrary(images: FileList) {
-        this.__imageProcessor.process(images);
-    }
+	get urlToAdd() {
+		return this.__urlToAdd;
+	}
+
+
+	addToLibrary(images: FileList) {
+		this.__imageProcessor.process(images);
+	}
 
 
 }
