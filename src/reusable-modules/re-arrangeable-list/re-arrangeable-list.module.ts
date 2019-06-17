@@ -16,9 +16,7 @@ import { ReArrangeableListItemComponent }
 		CommonModule,
 		DragAndDropModule,
 	],
-
 	providers: [ListItemMoverService],
-
 	exports: [
 		ReArrangeableListComponent,
 		ReArrangeableListItemComponent

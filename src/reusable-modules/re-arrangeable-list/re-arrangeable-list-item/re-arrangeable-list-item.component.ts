@@ -3,70 +3,66 @@ import { ListItemMoverService } from '../list-item-mover.service';
 
 
 @Component({
-    selector: 're-arrangeable-list-item',
-    templateUrl: './re-arrangeable-list-item.component.html',
-    styleUrls: ['./re-arrangeable-list-item.component.css']
+	selector: 're-arrangeable-list-item',
+	templateUrl: './re-arrangeable-list-item.component.html',
+	styleUrls: ['./re-arrangeable-list-item.component.css']
 })
 export class ReArrangeableListItemComponent {
 
 
-    @Input() index: number; // required
-    @Input() displayAsBlock = false; // optional
-    isBeingDragged = false;
-    isBeingDraggedOnto = false;
+	@Input() index: number; // required
+	@Input() displayAsBlock = false; // optional
+	isBeingDragged = false;
 
-    // If list items are displayed as block, one item per line:
-    draggedOntoFromTop = false;
-    draggedOntoFromBottom = false;
+	// If list items are displayed as block, one item per line:
+	draggedOntoFromTop = false;
+	draggedOntoFromBottom = false;
 
-    // If list items are displayed inline or grid:
-    draggedOntoFromRight = false;
-    draggedOntoFromLeft = false;
-
-
-    constructor(private  __listItemMover: ListItemMoverService) {
-    }
+	// If list items are displayed inline or grid:
+	draggedOntoFromRight = false;
+	draggedOntoFromLeft = false;
 
 
-    set_isBeingDragged() {
-        this.isBeingDragged = true;
-        this.__listItemMover.indexBeingMoved = this.index;
-    }
+	constructor(private  __listItemMover: ListItemMoverService) {
+	}
 
 
-    unset_isBeingDragged() {
-        this.isBeingDragged = false;
-    }
+	set_isBeingDragged() {
+		this.isBeingDragged = true;
+		this.__listItemMover.indexBeingMoved = this.index;
+	}
 
 
-    set_isBeingDraggedOnto() {
-        this.isBeingDraggedOnto = true;
-        if (this.index < this.__listItemMover.indexBeingMoved) {
-            if (this.displayAsBlock) this.draggedOntoFromBottom = true;
-            else this.draggedOntoFromRight = true;
-
-        }
-        else if (this.index > this.__listItemMover.indexBeingMoved) {
-            if (this.displayAsBlock) this.draggedOntoFromTop = true;
-            else this.draggedOntoFromLeft = true;
-        }
-    }
+	unset_isBeingDragged() {
+		this.isBeingDragged = false;
+	}
 
 
-    unset_isBeingDraggedOnto() {
-        this.isBeingDraggedOnto = false;
-        this.draggedOntoFromRight = false;
-        this.draggedOntoFromLeft = false;
-        this.draggedOntoFromTop = false;
-        this.draggedOntoFromBottom = false;
-    }
+	set_isBeingDraggedOnto() {
+		if (this.index < this.__listItemMover.indexBeingMoved) {
+			if (this.displayAsBlock) this.draggedOntoFromBottom = true;
+			else this.draggedOntoFromRight = true;
+		}
+		else if (this.index > this.__listItemMover.indexBeingMoved) {
+			if (this.displayAsBlock) this.draggedOntoFromTop = true;
+			else this.draggedOntoFromLeft = true;
+		}
+	}
 
 
-    dropDraggedItemHere() {
-        this.__listItemMover.moveItemTo(this.index);
+	unset_isBeingDraggedOnto() {
+		this.draggedOntoFromRight = false;
+		this.draggedOntoFromLeft = false;
+		this.draggedOntoFromTop = false;
+		this.draggedOntoFromBottom = false;
+	}
+
+
+	dropDraggedItemHere() {
+		this.__listItemMover.moveItemTo(this.index);
 		this.__listItemMover.indexBeingMoved = -1;
-        this.unset_isBeingDraggedOnto();
-    }
+		this.unset_isBeingDraggedOnto();
+	}
 
 
 }
