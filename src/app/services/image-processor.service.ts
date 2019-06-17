@@ -10,28 +10,23 @@ import { notEmpty } from '@writetome51/is-empty-not-empty';
 export class ImageProcessorService {
 
 
-	private __doneProcessing = false;
-
-
 	constructor(
 		private __imageStore: ImageStoreService
 	) {
 	}
 
 
-	get doneProcessing(): boolean {
-		return this.__doneProcessing;
-	}
-
-
 	async process(files: FileList) {
-		this.__doneProcessing = false;
 
 		if (notEmpty(files)) {
 			let dataURLs = await getDataURLs(files);
 			this.__sendTo__imageStore(files, dataURLs);
 		}
-		this.__doneProcessing = true;
+	}
+
+
+	processImageURL(url) {
+		this.__imageStore.images.push({name: '', src: url, description: ''});
 	}
 
 

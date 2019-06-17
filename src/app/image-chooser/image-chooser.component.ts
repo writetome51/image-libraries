@@ -11,29 +11,30 @@ export class ImageChooserComponent {
 	gettingImagesInstructions = `The images can come from somewhere else in the web or from your 
 	own device.`;
 
-	private __urlToAdd = '';
+	private __imgURL = '';
 
 
 	constructor(private __imageProcessor: ImageProcessorService) {
 	}
 
 
-	get doneProcessing() {
-		return this.__imageProcessor.doneProcessing;
+	set imgURL(value) {
+		this.__imgURL = value.trim();
 	}
 
 
-	set urlToAdd(value) {
-		this.__urlToAdd = value.trim();
+	get imgURL() {
+		return this.__imgURL;
 	}
 
 
-	get urlToAdd() {
-		return this.__urlToAdd;
+	addURLToLibrary() {
+		this.__imageProcessor.processImageURL(this.imgURL);
+		this.__imgURL = '';
 	}
 
 
-	addToLibrary(images: FileList) {
+	addImagesToLibrary(images: FileList) {
 		this.__imageProcessor.process(images);
 	}
 
