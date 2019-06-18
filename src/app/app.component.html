@@ -1,20 +1,9 @@
-<div class="container-fluid"  style="text-align:center;">
+<div class="container-fluid" style="text-align:center;">
 
 	<h1>{{ title }}</h1>
 
-	<p>{{introduction}}</p>
+	<router-outlet></router-outlet>
 
-	<p *ngIf="!(showLibraryChooser) && !(createNewLibrary)">
-		You can create a new library, or open an existing library to view.
-	</p>
-
-	<div *ngIf="!(createNewLibrary)">
-		<button (click)="createNewLibrary = true">Create New Library</button>
-	</div>
-
-	<div *ngIf="!(showLibraryChooser)">
-		<button (click)="showLibraryChooser = true">Open Existing Library</button>
-	</div>
 
 	<image-chooser *ngIf="createNewLibrary"></image-chooser>
 
@@ -22,7 +11,5 @@
 
 	<image-viewer *ngIf="images.length > 0"></image-viewer>
 
-
-	<router-outlet></router-outlet>
 
 </div>

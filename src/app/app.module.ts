@@ -12,6 +12,8 @@ import { LibraryProcessorService } from './services/library-processor.service';
 import { NgModule } from '@angular/core';
 import { ReArrangeableListModule }
 	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ReArrangeableListModule }
 		AppComponent,
 		ImageChooserComponent,
 		ImageViewerComponent,
-		LibraryChooserComponent
+		LibraryChooserComponent,
+		PageNotFoundComponent,
+		IntroductionComponent
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +32,7 @@ import { ReArrangeableListModule }
 		ReArrangeableListModule
 	],
 	providers: [
-		 ImageProcessorService, ImageStoreService,
+		ImageProcessorService, ImageStoreService,
 		JSONFileSaverService, LibraryProcessorService
 	],
 	bootstrap: [AppComponent]

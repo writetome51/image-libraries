@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageProcessorService } from '../services/image-processor.service';
+import { isEmpty } from '@writetome51/is-empty-not-empty';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class ImageChooserComponent {
 
 
 	addURLToLibrary() {
+		if (isEmpty(this.__imgURL)) return;
 		this.__imageProcessor.processImageURL(this.imgURL);
 		this.__imgURL = '';
 	}
