@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageStoreService } from '../services/image-store.service';
 import { JSONFileSaverService } from '../services/jsonfile-saver.service';
-import { LibraryProcessorService } from '../services/library-processor.service';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { LibraryProcessorService } from '../services/library-processor.service';
 export class ImageViewerComponent {
 
 	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device 
-	downloads a new version of the library.`;
+	downloads a new version.`;
 	imageWidth = 200;
 
 	private __imageWithOptionsVisible = -1; // The index of the image.
@@ -19,8 +18,7 @@ export class ImageViewerComponent {
 
 	constructor(
 		private __imageStore: ImageStoreService,
-		private __jsonFileSaver: JSONFileSaverService,
-		private __libraryProcessor: LibraryProcessorService
+		private __jsonFileSaver: JSONFileSaverService
 	) {
 	}
 
