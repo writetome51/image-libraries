@@ -1,5 +1,8 @@
 <div>
 
+	Change size: <input type="range" name="points" min="0" max="400" [(ngModel)]="imageWidth">
+	Current size: {{imageWidth}}
+
 	<re-arrangeable-list [list]="images">
 
 		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
@@ -8,7 +11,7 @@
 
 				<!--  Setting draggable to false on the img prevents a ghost-image from being
 				dragged.   -->
-				<img draggable="false" [src]="img.src" alt="{{img.description}}" [height]="imageHeight"
+				<img draggable="false" [src]="img.src" alt="{{img.description}}" [width]="imageWidth"
 					 [title]="img.name"/>
 
 
