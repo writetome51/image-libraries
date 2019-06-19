@@ -12,6 +12,7 @@ export class ImageViewerComponent {
 
 	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device 
 	downloads a new version of the library.`;
+	imageHeight = 100;
 
 	private __imageWithOptionsVisible = -1; // The index of the image.
 
@@ -31,11 +32,6 @@ export class ImageViewerComponent {
 
 	get imageWithOptionsVisible(): number {
 		return this.__imageWithOptionsVisible;
-	}
-
-
-	get doneProcessing(): boolean {
-		return this.__libraryProcessor.doneProcessing;
 	}
 
 

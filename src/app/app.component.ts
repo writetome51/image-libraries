@@ -10,7 +10,6 @@ import { ImageStoreService } from './services/image-store.service';
 export class AppComponent {
 
 	title = 'Image Library';
-	createNewLibrary = false;
 	showLibraryChooser = false;
 
 

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
+import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
 	{
 		path: 'choose-images',
 		component: ImageChooserComponent
+	},
+	{
+		path: 'open-library',
+		component: LibraryChooserComponent
 	},
 	{path: '**', component: PageNotFoundComponent}
 ];

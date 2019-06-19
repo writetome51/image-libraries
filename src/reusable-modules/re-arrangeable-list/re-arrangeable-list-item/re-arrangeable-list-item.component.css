@@ -1,46 +1,62 @@
 li {
 	display: inline-grid;
+	position: relative;
 	padding: 1px;
-	border: 3px solid rgba(0, 0, 0, 0.0);
-	border-collapse: collapse;
 	cursor: move;
 	list-style: none;
+	margin: 0;
+}
+
+
+li div {
+	display: flex;
+	height: 100%;
+}
+
+
+div.spacer {
+	height: 100%;
+	padding: 0 3px;
+	background-color: rgba(0, 0, 0, 0.0);
+	transition: padding 300ms;
 }
 
 
 .display-as-block {
 	display: block;
+	width: auto;
 }
 
 
 .being-dragged {
 	color: rgb(255, 94, 94);
-	opacity: 1;
+	opacity: 0.65;
 	z-index: 1000;
+	position: static;
 }
 
 
 .item-dragged-onto {
 	z-index: 10;
-	opacity: 0.65;
+	opacity: 0.5;
 }
 
 
-.item-dragged-onto-from-right {
-	border-left: 3px solid #00ff00;
+.item-dragged-onto-from-right div.spacer.left-spacer,
+.item-dragged-onto-from-left div.spacer.right-spacer {
+	padding: 0 40px;
+	background-color: rgba(0, 255, 0, 0.9);
 }
 
 
-.item-dragged-onto-from-left {
-	border-right: 3px solid #00ff00;
+.item-dragged-onto-from-top div.spacer.top-spacer,
+.item-dragged-onto-from-bottom div.spacer.bottom-spacer
+{
+	padding: 40px 0;
+	background-color: rgba(0, 255, 0, 0.9);
 }
 
 
-.item-dragged-onto-from-top {
-	border-bottom: 3px solid #00ff00;
-}
+ {
 
-
-.item-dragged-onto-from-bottom {
-	border-top: 3px solid #00ff00;
 }

@@ -11,14 +11,7 @@ export class ReArrangeableListItemComponent {
 
 
 	@Input() index: number; // required
-	@Input() displayAsBlock = false; // optional
 	isBeingDragged = false;
-
-	// If list items are displayed as block, one item per line:
-	draggedOntoFromTop = false;
-	draggedOntoFromBottom = false;
-
-	// If list items are displayed inline or grid:
 	draggedOntoFromRight = false;
 	draggedOntoFromLeft = false;
 
@@ -40,12 +33,10 @@ export class ReArrangeableListItemComponent {
 
 	set_isBeingDraggedOnto() {
 		if (this.index < this.__listItemMover.indexBeingMoved) {
-			if (this.displayAsBlock) this.draggedOntoFromBottom = true;
-			else this.draggedOntoFromRight = true;
+			this.draggedOntoFromRight = true;
 		}
 		else if (this.index > this.__listItemMover.indexBeingMoved) {
-			if (this.displayAsBlock) this.draggedOntoFromTop = true;
-			else this.draggedOntoFromLeft = true;
+			this.draggedOntoFromLeft = true;
 		}
 	}
 
@@ -53,8 +44,6 @@ export class ReArrangeableListItemComponent {
 	unset_isBeingDraggedOnto() {
 		this.draggedOntoFromRight = false;
 		this.draggedOntoFromLeft = false;
-		this.draggedOntoFromTop = false;
-		this.draggedOntoFromBottom = false;
 	}
 
 

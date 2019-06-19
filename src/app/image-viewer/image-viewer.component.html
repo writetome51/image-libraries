@@ -8,7 +8,7 @@
 
 				<!--  Setting draggable to false on the img prevents a ghost-image from being
 				dragged.   -->
-				<img draggable="false" [src]="img.src" alt="{{img.description}}" width="180px"
+				<img draggable="false" [src]="img.src" alt="{{img.description}}" [height]="imageHeight"
 					 [title]="img.name"/>
 
 
@@ -23,7 +23,8 @@
 
 	</re-arrangeable-list>
 
-	<!--   Clicking this saves changes to file that downloads to computer.    -->
+
+	<!--   Saves changes to file that downloads to computer.    -->
 	<ng-container>
 		<button (click)="saveChanges()">Save Changes</button>
 		{{fileSavingInfo}}
