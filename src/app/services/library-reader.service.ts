@@ -4,35 +4,35 @@ import { ImageStoreService } from './image-store.service';
 
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class LibraryReaderService {
 
 
-    private __doneReading = false;
+	private __doneReading = false;
 
 
-    constructor(private __imageStore: ImageStoreService) {
-    }
+	constructor(private __imageStore: ImageStoreService) {
+	}
 
 
-    get doneReading(): boolean {
-        return this.__doneReading;
-    }
+	get doneReading(): boolean {
+		return this.__doneReading;
+	}
 
 
-    async read(library: File) {
-        const reader = new FileReader();
+	async read(library: File) {
+		const reader = new FileReader();
 
-        reader.onload = () => {
+		reader.onload = () => {
 			this.__doneReading = false;
-            let json: any = reader.result;
-            this.__imageStore.images = getObjectFromJSON(json);
-            this.__doneReading = true;
-        };
+			let json: any = reader.result;
+			this.__imageStore.images = getObjectFromJSON(json);
+			this.__doneReading = true;
+		};
 
-        reader.readAsText(library, 'utf-8');
-    }
+		reader.readAsText(library, 'utf-8');
+	}
 
 
 }
