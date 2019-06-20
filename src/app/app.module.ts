@@ -3,12 +3,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
-import { ImageProcessorService } from './services/image-processor.service';
+import { ImagesProcessorService } from './services/images-processor.service';
+import { ImageURLProcessorService } from './services/image-url-processor.service';
 import { ImageStoreService } from './services/image-store.service';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
-import { JSONFileSaverService } from './services/jsonfile-saver.service';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
-import { LibraryProcessorService } from './services/library-processor.service';
+import { LibraryReaderService } from './services/library-reader.service';
+import { LibrarySaverService } from './services/library-saver.service';
 import { NgModule } from '@angular/core';
 import { ReArrangeableListModule }
 	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
@@ -32,8 +33,8 @@ import { IntroductionComponent } from './introduction/introduction.component';
 		ReArrangeableListModule
 	],
 	providers: [
-		ImageProcessorService, ImageStoreService,
-		JSONFileSaverService, LibraryProcessorService
+		ImagesProcessorService, ImageURLProcessorService, ImageStoreService,
+		LibraryReaderService, LibrarySaverService
 	],
 	bootstrap: [AppComponent]
 })

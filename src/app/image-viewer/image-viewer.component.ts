@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageStoreService } from '../services/image-store.service';
-import { JSONFileSaverService } from '../services/jsonfile-saver.service';
+import { LibrarySaverService } from '../services/library-saver.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class ImageViewerComponent {
 
 	constructor(
 		private __imageStore: ImageStoreService,
-		private __jsonFileSaver: JSONFileSaverService
+		private __librarySaver: LibrarySaverService
 	) {
 	}
 
@@ -34,7 +34,7 @@ export class ImageViewerComponent {
 
 
 	saveChanges() {
-		this.__jsonFileSaver.save();
+		this.__librarySaver.save();
 	}
 
 

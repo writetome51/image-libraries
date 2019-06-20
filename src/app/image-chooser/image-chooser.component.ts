@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageProcessorService } from '../services/image-processor.service';
+import { ImagesProcessorService } from '../services/images-processor.service';
+import { ImageURLProcessorService } from '../services/image-url-processor.service';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 
 
@@ -15,7 +16,10 @@ export class ImageChooserComponent {
 	private __imgURL = '';
 
 
-	constructor(private __imageProcessor: ImageProcessorService) {
+	constructor(
+		private __imagesProcessor: ImagesProcessorService,
+		private __imageURLProcessor: ImageURLProcessorService
+	) {
 	}
 
 
@@ -30,14 +34,14 @@ export class ImageChooserComponent {
 
 
 	addURLToLibrary() {
-		if (isEmpty(this.__imgURL)) return;
-		this.__imageProcessor.processImageURL(this.imgURL);
+		if (isEmpty(this.imgURL)) return;
+		this.__imageURLProcessor.process(this.imgURL);
 		this.__imgURL = '';
 	}
 
 
-	addImagesToLibrary(images: FileList) {
-		this.__imageProcessor.process(images);
+	addImagesToLibrary(images: FileList | File[]) {
+		this.__imagesProcessor.process(images);
 	}
 
 

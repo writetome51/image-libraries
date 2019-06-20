@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class JSONFileSaverService {
+export class LibrarySaverService {
 
     private __fileNamePrefix = 'image-library-';
     private __extension = '.json';

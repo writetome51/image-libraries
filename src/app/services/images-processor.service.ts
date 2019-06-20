@@ -7,7 +7,7 @@ import { notEmpty } from '@writetome51/is-empty-not-empty';
 @Injectable({
 	providedIn: 'root'
 })
-export class ImageProcessorService {
+export class ImagesProcessorService {
 
 
 	constructor(
@@ -16,7 +16,7 @@ export class ImageProcessorService {
 	}
 
 
-	async process(files: FileList) {
+	async process(files: FileList | File[]) {
 
 		if (notEmpty(files)) {
 			let dataURLs = await getDataURLs(files);
@@ -25,12 +25,7 @@ export class ImageProcessorService {
 	}
 
 
-	processImageURL(url) {
-		this.__imageStore.images.push({name: '', src: url, description: ''});
-	}
-
-
-	private __sendTo__imageStore(files: FileList, dataURLs) {
+	private __sendTo__imageStore(files: FileList  | File[], dataURLs) {
 
 		for (let i = 0; i < files.length; ++i) {
 			this.__addImageToStore(files[i], dataURLs[i]);

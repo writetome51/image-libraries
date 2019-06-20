@@ -1,29 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { LibraryProcessorService } from '../services/library-processor.service';
+import { Component} from '@angular/core';
+import { LibraryReaderService } from '../services/library-reader.service';
 
 
 @Component({
-    selector: 'library-chooser',
-    templateUrl: './library-chooser.component.html'
+	selector: 'library-chooser',
+	templateUrl: './library-chooser.component.html'
 })
 export class LibraryChooserComponent {
 
-    constructor(private __libraryProcessor: LibraryProcessorService) {
-    }
+	constructor(private __libraryReader: LibraryReaderService) {
+	}
 
 
-    get prompt(): string {
-        return (this.doneProcessing ? 'Choose different library:' : 'Choose library:');
-    }
+	get prompt(): string {
+		return (this.__libraryReader.doneReading ? 'Choose different library:' : 'Choose library:');
+	}
 
 
-    get doneProcessing(): boolean {
-        return this.__libraryProcessor.doneProcessing;
-    }
-
-
-    processLibrary(library: File) {
-        this.__libraryProcessor.process(library);
-    }
+	readLibrary(library: File) {
+		this.__libraryReader.read(library);
+	}
 
 }

@@ -6,29 +6,29 @@ import { ImageStoreService } from './image-store.service';
 @Injectable({
     providedIn: 'root'
 })
-export class LibraryProcessorService {
+export class LibraryReaderService {
 
 
-    private __doneProcessing = false;
+    private __doneReading = false;
 
 
     constructor(private __imageStore: ImageStoreService) {
     }
 
 
-    get doneProcessing(): boolean {
-        return this.__doneProcessing;
+    get doneReading(): boolean {
+        return this.__doneReading;
     }
 
 
-    process(library: File): void {
-        this.__doneProcessing = false;
+    async read(library: File) {
         const reader = new FileReader();
 
         reader.onload = () => {
+			this.__doneReading = false;
             let json: any = reader.result;
             this.__imageStore.images = getObjectFromJSON(json);
-            this.__doneProcessing = true;
+            this.__doneReading = true;
         };
 
         reader.readAsText(library, 'utf-8');

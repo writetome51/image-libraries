@@ -8,13 +8,14 @@ import { LibraryChooserComponent } from './library-chooser/library-chooser.compo
 
 const routes: Routes = [
 
-//	{ path: 'crisis-center',  component: CrisisListComponent },
-//  { path: 'hero/:id',  component: HeroDetailComponent },
-//  	{
-// 		path: 'heroes',
-//		component: HeroListComponent,
-//		data: { title: 'Heroes List' }
-//	},
+	/********************
+  	{ path: 'hero/:id',  component: HeroDetailComponent },
+  	{
+ 		path: 'heroes',
+		component: HeroListComponent,
+		data: { title: 'Heroes List' }
+	},
+	 *******************/
 	{
 		path: '',
 		component: IntroductionComponent,
@@ -36,7 +37,7 @@ const routes: Routes = [
 	imports: [
 		RouterModule.forRoot(
 			routes,
-			{enableTracing: true} // <-- debugging purposes only
+			//	{enableTracing: true} // <-- debugging purposes only
 		)
 	],
 	exports: [RouterModule]
