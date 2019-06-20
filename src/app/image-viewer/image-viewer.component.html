@@ -1,7 +1,11 @@
 <div>
 
-	Change size: <input type="range" name="points" min="0" max="400" [(ngModel)]="imageWidth">
+	<!--  size slider    -->
+	Change size: <input type="range" min="0" max="400" [(ngModel)]="imageWidth">
+	<!-- / size slider   -->
+
 	Current image width: {{imageWidth}}px
+
 
 	<re-arrangeable-list [list]="images">
 
