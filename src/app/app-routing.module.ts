@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { IntroductionComponent } from './introduction/introduction.component';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
+import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './page-not-found.component';
+import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [

@@ -4,11 +4,7 @@ import { ListItemMoverService } from './list-item-mover.service';
 
 @Component({
 	selector: 're-arrangeable-list',
-	template: `
-		<ul>
-			<ng-content></ng-content>
-		</ul>
-	`
+	template: `<ul><ng-content></ng-content></ul>`
 })
 export class ReArrangeableListComponent {
 
