@@ -1,7 +1,9 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { DeleteImageButtonComponent } from './delete-image-button/delete-image-button.component';
 import { FormsModule } from '@angular/forms';
+import { ImageSizeSliderComponent } from './image-size-slider/image-size-slider.component';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { ImagesProcessorService } from './services/images-processor.service';
 import { ImageURLProcessorService } from './services/image-url-processor.service';
@@ -12,15 +14,17 @@ import { LibraryChooserComponent } from './library-chooser/library-chooser.compo
 import { LibraryReaderService } from './services/library-reader.service';
 import { LibrarySaverService } from './services/library-saver.service';
 import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableListModule }
 	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
-import { PageNotFoundComponent } from './page-not-found.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		DeleteImageButtonComponent,
 		ImageChooserComponent,
+		ImageSizeSliderComponent,
 		ImageViewerComponent,
 		IntroductionComponent,
 		LibraryChooserComponent,

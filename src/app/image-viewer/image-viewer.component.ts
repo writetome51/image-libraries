@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ImageStoreService } from '../services/image-store.service';
 import { LibrarySaverService } from '../services/library-saver.service';
+import { ImageSettingsService } from '../services/image-settings.service';
 
 
 @Component({
@@ -11,13 +12,16 @@ export class ImageViewerComponent {
 
 	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device 
 	downloads a new version.`;
-	imageWidth = 200;
+
+	editMode = false;
+	hovered = -1;
 
 	private __imageWithOptionsVisible = -1; // The index of the image.
 
 
 	constructor(
 		private __imageStore: ImageStoreService,
+		private __imageSettings:ImageSettingsService,
 		private __librarySaver: LibrarySaverService
 	) {
 	}
@@ -25,6 +29,11 @@ export class ImageViewerComponent {
 
 	get images(): any[] {
 		return this.__imageStore.images;
+	}
+
+
+	get imageWidth(): number {
+		return this.__imageSettings.width;
 	}
 
 
@@ -45,6 +54,16 @@ export class ImageViewerComponent {
 
 	hideOptions() {
 		this.__imageWithOptionsVisible = -1;
+	}
+
+
+	set_hovered(index) {
+		this.hovered = index;
+	}
+
+
+	unset_hovered() {
+		this.hovered = -1;
 	}
 
 
