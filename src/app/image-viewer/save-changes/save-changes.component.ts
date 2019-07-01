@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibrarySaverService } from '../services/library-saver.service';
+import { LibrarySaverService } from '../../services/library-saver.service';
 
 
 @Component({

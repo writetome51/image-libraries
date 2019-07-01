@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageStoreService } from '../services/image-store.service';
-import { ImageSettingsService } from '../services/image-settings.service';
+import { ImageStoreService } from '../../services/image-store.service';
+import { ImageSettingsService } from '../../services/image-settings.service';
 
 
 @Component({
