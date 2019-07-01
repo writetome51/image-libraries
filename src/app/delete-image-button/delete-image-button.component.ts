@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
 	template: `<span class="glyphicon glyphicon-remove-circle"></span>`
 })
 export class DeleteImageButtonComponent {
-
-	constructor() {
-	}
-
-
 }

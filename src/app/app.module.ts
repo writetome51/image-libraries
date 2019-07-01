@@ -17,6 +17,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableListModule }
 	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
+import { ImageListComponent } from './image-list/image-list.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReArrangeableListModule }
 		AppComponent,
 		DeleteImageButtonComponent,
 		ImageChooserComponent,
+		ImageListComponent,
 		ImageSizeSliderComponent,
 		ImageViewerComponent,
 		IntroductionComponent,

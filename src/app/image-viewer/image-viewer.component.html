@@ -2,33 +2,7 @@
 
 	<image-size-slider></image-size-slider>
 
-	<re-arrangeable-list [list]="images">
-
-		<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
-
-			<div (click)="showOptions(i)" (mouseover)="set_hovered(i)" (mouseleave)="unset_hovered()"
-				 class="image-container"
-			>
-
-				<delete-image-button  [class.invisible]="!(hovered === i)"></delete-image-button>
-
-				<!--  Setting draggable to false on the img prevents a ghost-image from being
-				dragged.   -->
-				<img draggable="false" [src]="img.src" alt="{{img.description}}" [width]="imageWidth"
-					 [title]="img.name"/>
-
-
-				<ng-container *ngIf="i === imageWithOptionsVisible">
-
-					<input type="text" [(ngModel)]="img.description" placeholder="Add Description"/>
-
-				</ng-container>
-			</div>
-
-		</re-arrangeable-list-item>
-
-	</re-arrangeable-list>
-
+	<image-list></image-list>
 
 	<!--   Saves changes to file that downloads to computer.    -->
 	<ng-container>
