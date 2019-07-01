@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableListModule }
 	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
 import { ImageListComponent } from './image-list/image-list.component';
+import { SaveChangesComponent } from './save-changes/save-changes.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ImageListComponent } from './image-list/image-list.component';
 		ImageViewerComponent,
 		IntroductionComponent,
 		LibraryChooserComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		SaveChangesComponent
 	],
 	imports: [
 		AppRoutingModule,
