@@ -1,0 +1,15 @@
+re-arrangeable-grid-list-item img {
+	margin: 10px 5px;
+}
+
+
+.image-container {
+	display: inline-block;
+}
+
+
+delete-image-button {
+	cursor: default;
+}
+
+

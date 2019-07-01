@@ -18,7 +18,7 @@ import { LibrarySaverService } from './services/library-saver.service';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableGridListModule }
-	from '../reusable-modules/re-arrangeable-list/re-arrangeable-grid-list.module';
+	from '../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.component';
 
 

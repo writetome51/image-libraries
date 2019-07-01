@@ -3,24 +3,6 @@ a, a:hover {
 }
 
 
-.glyphicon-remove-circle {
-	font-size: 22px;
-	display: inline-block;
-	padding: 0;
-	position: relative;
-	top: -40%;
-}
-
-
 .invisible {
 	visibility: hidden;
-}
-
-
-.image-container {
-	display: inline-block;
-}
-
-#image-size-control{
-	margin-bottom: 20px;
 }

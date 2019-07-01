@@ -15,6 +15,8 @@ export class ImageURLProcessorService {
 
 
 	process(url) {
+		// Before adding it to image store, check if `url`, when requested, gets 404 error.
+
 		this.__imageStore.images.push({name: '', src: url, description: ''});
 	}
 

@@ -6,7 +6,7 @@ import { ImageSettingsService } from '../../services/image-settings.service';
 @Component({
 	selector: 'image-list',
 	templateUrl: './image-list.component.html',
-	styleUrls: ['./image-list.component.sass']
+	styleUrls: ['./image-list.component.css']
 })
 export class ImageListComponent {
 
@@ -33,16 +33,6 @@ export class ImageListComponent {
 
 	get imageWithOptionsVisible(): number {
 		return this.__imageWithOptionsVisible;
-	}
-
-
-	showOptions(index) {
-		this.__imageWithOptionsVisible = index;
-	}
-
-
-	hideOptions() {
-		this.__imageWithOptionsVisible = -1;
 	}
 
 
