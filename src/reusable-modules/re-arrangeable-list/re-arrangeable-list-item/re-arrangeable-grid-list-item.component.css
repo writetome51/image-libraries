@@ -22,12 +22,6 @@ div.spacer {
 }
 
 
-.display-as-block {
-	display: block;
-	width: auto;
-}
-
-
 .being-dragged {
 	opacity: 0.65;
 	z-index: 1000;

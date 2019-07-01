@@ -17,8 +17,8 @@ import { LibraryReaderService } from './services/library-reader.service';
 import { LibrarySaverService } from './services/library-saver.service';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ReArrangeableListModule }
-	from '../reusable-modules/re-arrangeable-list/re-arrangeable-list.module';
+import { ReArrangeableGridListModule }
+	from '../reusable-modules/re-arrangeable-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.component';
 
 
@@ -39,7 +39,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 		AppRoutingModule,
 		BrowserModule,
 		FormsModule,
-		ReArrangeableListModule
+		ReArrangeableGridListModule
 	],
 	providers: [
 		ImagesProcessorService, ImageURLProcessorService, ImageStoreService,

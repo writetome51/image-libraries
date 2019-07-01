@@ -3,10 +3,10 @@ import { ListItemMoverService } from './list-item-mover.service';
 
 
 @Component({
-	selector: 're-arrangeable-list',
+	selector: 're-arrangeable-grid-list',
 	template: `<ul><ng-content></ng-content></ul>`
 })
-export class ReArrangeableListComponent {
+export class ReArrangeableGridListComponent {
 
 	constructor(private  __listItemMover: ListItemMoverService) {
 	}

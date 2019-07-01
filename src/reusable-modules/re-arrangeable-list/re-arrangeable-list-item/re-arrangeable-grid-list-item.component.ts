@@ -3,11 +3,11 @@ import { ListItemMoverService } from '../list-item-mover.service';
 
 
 @Component({
-	selector: 're-arrangeable-list-item',
-	templateUrl: './re-arrangeable-list-item.component.html',
-	styleUrls: ['./re-arrangeable-list-item.component.css']
+	selector: 're-arrangeable-grid-list-item',
+	templateUrl: './re-arrangeable-grid-list-item.component.html',
+	styleUrls: ['./re-arrangeable-grid-list-item.component.css']
 })
-export class ReArrangeableListItemComponent {
+export class ReArrangeableGridListItemComponent {
 
 
 	@Input() index: number; // required

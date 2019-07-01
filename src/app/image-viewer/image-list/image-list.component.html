@@ -1,6 +1,6 @@
-<re-arrangeable-list [list]="images">
+<re-arrangeable-grid-list [list]="images">
 
-	<re-arrangeable-list-item *ngFor="let img of images;let i = index;" [index]="i">
+	<re-arrangeable-grid-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
 		<div (click)="showOptions(i)" (mouseover)="set_hovered(i)" (mouseleave)="unset_hovered()"
 			 class="image-container"
@@ -21,6 +21,6 @@
 			</ng-container>
 		</div>
 
-	</re-arrangeable-list-item>
+	</re-arrangeable-grid-list-item>
 
-</re-arrangeable-list>
+</re-arrangeable-grid-list>
