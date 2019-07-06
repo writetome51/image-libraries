@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageSettingsService } from '../../services/image-settings.service';
+import { ImageDisplaySettingsService } from '../../services/image-display-settings.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { ImageSettingsService } from '../../services/image-settings.service';
 export class ImageSizeSliderComponent {
 
 
-	constructor(private __imageSettings: ImageSettingsService) {
+	constructor(private __imageSettings: ImageDisplaySettingsService) {
 	}
 
 

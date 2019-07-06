@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageStoreService } from '../../services/image-store.service';
-import { ImageSettingsService } from '../../services/image-settings.service';
+import { ImageDisplaySettingsService } from '../../services/image-display-settings.service';
 
 
 @Component({
@@ -12,11 +12,10 @@ export class ImageListComponent {
 
 	hovered = -1;
 
-	private __imageWithOptionsVisible = -1; // The index of the image.
 
 	constructor(
 		private __imageStore: ImageStoreService,
-		private __imageSettings: ImageSettingsService
+		private __imageDisplaySettings: ImageDisplaySettingsService
 	) {
 	}
 
@@ -27,12 +26,7 @@ export class ImageListComponent {
 
 
 	get imageWidth(): number {
-		return this.__imageSettings.width;
-	}
-
-
-	get imageWithOptionsVisible(): number {
-		return this.__imageWithOptionsVisible;
+		return this.__imageDisplaySettings.width;
 	}
 
 
