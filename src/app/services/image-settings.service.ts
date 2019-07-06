@@ -8,5 +8,4 @@ export class ImageSettingsService {
 
 	width = 150;
 
-
 }

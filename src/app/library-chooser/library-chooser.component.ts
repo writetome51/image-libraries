@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LibraryReaderService } from '../services/library-reader.service';
-import { LoadedLibraryStoreService } from '../services/loaded-library-store.service';
 
 
 @Component({
@@ -9,10 +8,11 @@ import { LoadedLibraryStoreService } from '../services/loaded-library-store.serv
 })
 export class LibraryChooserComponent {
 
+	private __loadedLibrary: File;
+
 
 	constructor(
-		private __libraryReader: LibraryReaderService,
-		private __loadedLibraryStore: LoadedLibraryStoreService
+		private __libraryReader: LibraryReaderService
 	) {
 	}
 
@@ -23,13 +23,13 @@ export class LibraryChooserComponent {
 
 
 	readLibrary(library: File) {
-		this.__loadedLibraryStore.library = library;
+		this.__loadedLibrary = library;
 		this.__libraryReader.read(library);
 	}
 
 
 	reloadLibrary() {
-		this.__libraryReader.read(this.__loadedLibraryStore.library);
+		this.__libraryReader.read(this.__loadedLibrary);
 	}
 
 }

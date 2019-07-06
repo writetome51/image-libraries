@@ -16,7 +16,7 @@ export class ImageURLProcessorService {
 
 	async process(url) {
 		// Before adding it to image store, check if `url`, when requested, gets 404 error.
-		let isFound = await this.resourceFound(url, 'GET');
+		let isFound = await this.__resourceFound(url, 'GET');
 		if (isFound) {
 			this.__imageStore.images.push({name: '', src: url, description: ''});
 		}
@@ -24,7 +24,7 @@ export class ImageURLProcessorService {
 	}
 
 
-	async resourceFound(url, requestMethod): Promise<boolean> {
+	private async __resourceFound(url, requestMethod): Promise<boolean> {
 
 		return new Promise((returnData) => {
 			let request = new XMLHttpRequest();

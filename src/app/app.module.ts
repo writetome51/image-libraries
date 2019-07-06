@@ -8,7 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { ImageListComponent } from './image-viewer/image-list/image-list.component';
 import { ImagesProcessorService } from './services/images-processor.service';
-import { ImageSizeSliderComponent } from './image-viewer/image-size-slider/image-size-slider.component';
+import { ImageSizeSliderComponent } 
+	from './image-viewer/image-size-slider/image-size-slider.component';
 import { ImageStoreService } from './services/image-store.service';
 import { ImageURLProcessorService } from './services/image-url-processor.service';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
