@@ -22,6 +22,8 @@ export class LibraryReaderService {
 
 
 	async read(library: File) {
+		if (!library) return;
+
 		const reader = new FileReader();
 
 		reader.onload = () => {
