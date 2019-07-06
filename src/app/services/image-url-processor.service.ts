@@ -14,10 +14,29 @@ export class ImageURLProcessorService {
 	}
 
 
-	process(url) {
+	async process(url) {
 		// Before adding it to image store, check if `url`, when requested, gets 404 error.
+		let isFound = await this.resourceFound(url, 'GET');
+		if (isFound) {
+			this.__imageStore.images.push({name: '', src: url, description: ''});
+		}
 
-		this.__imageStore.images.push({name: '', src: url, description: ''});
+	}
+
+
+	async resourceFound(url, requestMethod): Promise<boolean> {
+
+		return new Promise((returnData) => {
+			let request = new XMLHttpRequest();
+			request.onreadystatechange = function() {
+				if (this.readyState === 4) {
+					returnData(this.status === 200);
+				}
+			};
+			request.open(requestMethod, url, true);
+			request.send();
+		});
+
 	}
 
 

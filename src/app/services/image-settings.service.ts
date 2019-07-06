@@ -9,6 +9,4 @@ export class ImageSettingsService {
 	width = 150;
 
 
-	constructor() {
-	}
 }

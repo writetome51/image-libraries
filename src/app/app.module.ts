@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DeleteImageButtonComponent }
 	from './image-viewer/image-list/delete-image-button/delete-image-button.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { ImageListComponent } from './image-viewer/image-list/image-list.component';
 import { ImagesProcessorService } from './services/images-processor.service';
@@ -39,6 +40,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 		AppRoutingModule,
 		BrowserModule,
 		FormsModule,
+		HttpClientModule,
 		ReArrangeableGridListModule
 	],
 	providers: [
