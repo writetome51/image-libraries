@@ -2,5 +2,5 @@
 	<p>{{prompt}}</p>
 	<input type="file" (change)="readLibrary($event.target.files[0])"/>
 
-	<button (click)="reloadLibrary()">Reload Library</button>
+	<button *ngIf="libraryLoaded" (click)="reloadLibrary()">Undo Changes</button>
 </div>

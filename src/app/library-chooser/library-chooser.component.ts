@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LibraryReaderService } from '../services/library-reader.service';
+import { LoadedLibraryService } from '../services/loaded-library.service';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 
 
 @Component({
@@ -8,10 +10,9 @@ import { LibraryReaderService } from '../services/library-reader.service';
 })
 export class LibraryChooserComponent {
 
-	private __loadedLibrary: File;
-
 
 	constructor(
+		private __loadedLibrary: LoadedLibraryService,
 		private __libraryReader: LibraryReaderService
 	) {
 	}
@@ -22,14 +23,21 @@ export class LibraryChooserComponent {
 	}
 
 
+	get libraryLoaded(): boolean {
+		return hasValue(this.__loadedLibrary.file);
+	}
+
+
 	readLibrary(library: File) {
-		this.__loadedLibrary = library;
+		if (noValue(library)) return;
+
 		this.__libraryReader.read(library);
+		this.__loadedLibrary.file = library;
 	}
 
 
 	reloadLibrary() {
-		this.__libraryReader.read(this.__loadedLibrary);
+		this.__libraryReader.read(this.__loadedLibrary.file);
 	}
 
 }

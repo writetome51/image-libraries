@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ImagesProcessorService } from '../services/images-processor.service';
 import { ImageURLProcessorService } from '../services/image-url-processor.service';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
+import { LibrarySaverService } from '../services/library-saver.service';
 
 
 @Component({
@@ -18,8 +19,19 @@ export class ImageChooserComponent {
 
 	constructor(
 		private __imagesProcessor: ImagesProcessorService,
-		private __imageURLProcessor: ImageURLProcessorService
+		private __imageURLProcessor: ImageURLProcessorService,
+		private __librarySaver: LibrarySaverService
 	) {
+	}
+
+
+	set libraryName(value){
+		this.__librarySaver.libraryName = value.trim();
+	}
+
+
+	get libraryName(): string {
+		return this.__librarySaver.libraryName;
 	}
 
 

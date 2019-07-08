@@ -6,3 +6,7 @@ a, a:hover {
 .invisible {
 	visibility: hidden;
 }
+
+input{
+	margin:auto;
+}

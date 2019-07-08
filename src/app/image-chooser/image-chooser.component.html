@@ -1,12 +1,16 @@
 <ng-container>
+	<input type="text" [(ngModel)]="libraryName" placeholder="Name library..."/>
 	<p>{{gettingImagesInstructions}}</p>
 
-	<p>Choose Images to add to library:</p>
-	<input type="file" multiple (change)="addImagesToLibrary($event.target.files)"/>
+	<div>
+		<p>Choose Images to add to library:</p>
+		<input type="file" multiple (change)="addImagesToLibrary($event.target.files)"/>
+	</div>
+
 </ng-container>
 
 <ng-container>
 	<p>Or, enter Image URL if Image is stored elsewhere:</p>
-	<input type="text" [(ngModel)]="imgURL"  placeholder="enter URL..."/>
+	<input type="text" [(ngModel)]="imgURL" placeholder="enter URL..."/>
 	<button (click)="addURLToLibrary()">Add</button>
 </ng-container>

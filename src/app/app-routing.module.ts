@@ -9,8 +9,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	/********************
-  	{ path: 'hero/:id',  component: HeroDetailComponent },
-  	{
+	 { path: 'hero/:id',  component: HeroDetailComponent },
+	 {
  		path: 'heroes',
 		component: HeroListComponent,
 		data: { title: 'Heroes List' }

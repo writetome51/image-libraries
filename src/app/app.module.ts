@@ -7,16 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { ImageListComponent } from './image-viewer/image-list/image-list.component';
-import { ImagesProcessorService } from './services/images-processor.service';
 import { ImageSizeSliderComponent } 
 	from './image-viewer/image-size-slider/image-size-slider.component';
-import { ImageStoreService } from './services/image-store.service';
-import { ImageURLProcessorService } from './services/image-url-processor.service';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
-import { LibraryReaderService } from './services/library-reader.service';
-import { LibrarySaverService } from './services/library-saver.service';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableGridListModule }
@@ -44,10 +39,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 		HttpClientModule,
 		ReArrangeableGridListModule
 	],
-	providers: [
-		ImagesProcessorService, ImageURLProcessorService, ImageStoreService,
-		LibraryReaderService, LibrarySaverService
-	],
+	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule {
