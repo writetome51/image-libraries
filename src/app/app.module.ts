@@ -39,7 +39,6 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 		HttpClientModule,
 		ReArrangeableGridListModule
 	],
-	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

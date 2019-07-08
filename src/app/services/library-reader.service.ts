@@ -22,7 +22,7 @@ export class LibraryReaderService {
 
 
 	async read(library: File) {
-		if (!library) return;
+		if (!library) throw new Error(`The library to read is a falsy value.`);
 
 		const reader = new FileReader();
 

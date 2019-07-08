@@ -20,6 +20,7 @@ export class ImageURLProcessorService {
 		if (isFound) {
 			this.__imageStore.images.push({name: '', src: url, description: ''});
 		}
+		else alert('The URL you entered is either not real, or access is denied.');
 
 	}
 

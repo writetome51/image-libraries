@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ImagesProcessorService } from '../services/images-processor.service';
 import { ImageURLProcessorService } from '../services/image-url-processor.service';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { LibrarySaverService } from '../services/library-saver.service';
+import { LibraryService } from '../services/library.service';
 
 
 @Component({
@@ -11,8 +11,8 @@ import { LibrarySaverService } from '../services/library-saver.service';
 })
 export class ImageChooserComponent {
 
-	gettingImagesInstructions = `The images can come from somewhere else in the web or from your 
-	own device.`;
+	gettingImagesInstructions = `The images can come from your own device or from somewhere 
+	else in the web.`;
 
 	private __imgURL = '';
 
@@ -20,18 +20,18 @@ export class ImageChooserComponent {
 	constructor(
 		private __imagesProcessor: ImagesProcessorService,
 		private __imageURLProcessor: ImageURLProcessorService,
-		private __librarySaver: LibrarySaverService
+		private __library: LibraryService
 	) {
 	}
 
 
-	set libraryName(value){
-		this.__librarySaver.libraryName = value.trim();
+	set libraryName(value) {
+		this.__library.name = value.trim();
 	}
 
 
 	get libraryName(): string {
-		return this.__librarySaver.libraryName;
+		return this.__library.name.trim();
 	}
 
 
@@ -41,12 +41,15 @@ export class ImageChooserComponent {
 
 
 	get imgURL() {
-		return this.__imgURL;
+		return this.__imgURL.trim();
 	}
 
 
-	addURLToLibrary() {
-		if (isEmpty(this.imgURL)) return;
+	addURLToLibrary(): void {
+		if (isEmpty(this.imgURL)) {
+			alert('Please enter a URL first.');
+			return;
+		}
 		this.__imageURLProcessor.process(this.imgURL);
 		this.__imgURL = '';
 	}

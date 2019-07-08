@@ -11,8 +11,6 @@ import { isEmpty } from '@writetome51/is-empty-not-empty';
 })
 export class LibrarySaverService {
 
-	libraryName = '';
-
 	private __extension = '.json';
 	private __writeOptions = {type: 'text/plain;charset=utf-8'};
 
@@ -21,13 +19,13 @@ export class LibrarySaverService {
 	}
 
 
-	save(): void {
-		if (isEmpty(this.libraryName)) {
+	save(libraryName: string): void {
+		if (isEmpty(libraryName)) {
 			throw new Error(`The library must be given a name before you save it`);
 		}
 
 		let txtToWrite = JSON.stringify(this.__imageStore.images);
-		let fileName = (this.libraryName + '-' + getDateTimeID() + this.__extension);
+		let fileName = (libraryName + '-' + getDateTimeID() + this.__extension);
 
 		let file = new File([txtToWrite], fileName, this.__writeOptions);
 		FileSaver.saveAs(file);
