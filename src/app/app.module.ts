@@ -17,12 +17,17 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableGridListModule }
 	from '../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.component';
+import { ChooseImagesFromDeviceComponent } 
+	from './choose-images-from-device/choose-images-from-device.component';
+import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		ChooseImagesFromDeviceComponent,
 		DeleteImageButtonComponent,
+		EnterImageURLComponent,
 		ImageChooserComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,

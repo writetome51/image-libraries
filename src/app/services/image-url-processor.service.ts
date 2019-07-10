@@ -1,4 +1,3 @@
-import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 
 
@@ -9,18 +8,18 @@ export class ImageURLProcessorService {
 
 
 	constructor(
-		private __imageStore: ImageStoreService
+		private __library: LibraryService
 	) {
 	}
 
 
 	async process(url) {
-		// Before adding it to image store, check if `url`, when requested, gets 404 error.
+		// Before adding it to image store, check if `url`, when requested, doesn't return 200 ok.
 		let isFound = await this.__resourceFound(url, 'GET');
 		if (isFound) {
-			this.__imageStore.images.push({name: '', src: url, description: ''});
+			this.__library.images.push({name: '', src: url, description: ''});
 		}
-		else alert('The URL you entered is either not real, or access is denied.');
+		else alert('The URL you entered is either not connected to a resource, or access is denied.');
 
 	}
 

@@ -1,5 +1,4 @@
 import { getDataURLs } from '@writetome51/get-data-urls';
-import { ImageStoreService } from './image-store.service';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 
@@ -11,7 +10,7 @@ export class ImagesProcessorService {
 
 
 	constructor(
-		private __imageStore: ImageStoreService
+		private __library: LibraryService
 	) {
 	}
 
@@ -20,23 +19,23 @@ export class ImagesProcessorService {
 
 		if (notEmpty(files)) {
 			let dataURLs = await getDataURLs(files);
-			this.__sendTo__imageStore(files, dataURLs);
+			this.__sendTo__library(files, dataURLs);
 		}
 	}
 
 
-	private __sendTo__imageStore(files: FileList  | File[], dataURLs) {
+	private __sendTo__library(files: FileList  | File[], dataURLs) {
 
 		for (let i = 0; i < files.length; ++i) {
-			this.__addImageToStore(files[i], dataURLs[i]);
+			this.__addImageToLibrary(files[i], dataURLs[i]);
 		}
 	}
 
 
-	private __addImageToStore(file, dataURL) {
+	private __addImageToLibrary(file, dataURL) {
 		let image = {name: file.name, src: dataURL, description: ''};
 
-		this.__imageStore.images.push(image);
+		this.__library.images.push(image);
 	}
 
 

@@ -4,14 +4,9 @@
 </ng-container>
 
 <ng-container>
-	<div>
-		<p>Choose Image files from your own device:</p>
-		<input type="file" multiple (change)="addImagesToLibrary($event.target.files)"/>
-	</div>
 
-	<div>
-		<p>Or, enter Image URL if Image is stored elsewhere:</p>
-		<input type="text" [(ngModel)]="imgURL" placeholder="enter URL..."/>
-		<button (click)="addURLToLibrary()">Add</button>
-	</div>
+	<choose-images-from-device></choose-images-from-device>
+
+	<enter-image-url></enter-image-url>
+
 </ng-container>

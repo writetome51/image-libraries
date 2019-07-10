@@ -1,6 +1,6 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
-import { ImageStoreService } from './image-store.service';
+import { LibraryService } from './library.service';
 
 
 @Injectable({
@@ -12,7 +12,9 @@ export class LibraryReaderService {
 	private __doneReading = false;
 
 
-	constructor(private __imageStore: ImageStoreService) {
+	constructor(
+		private __library: LibraryService
+	) {
 	}
 
 
@@ -28,8 +30,7 @@ export class LibraryReaderService {
 
 		reader.onload = () => {
 			this.__doneReading = false;
-			let json: any = reader.result;
-			this.__imageStore.images = getObjectFromJSON(json);
+			this.__library.contents = getObjectFromJSON(reader.result);
 			this.__doneReading = true;
 		};
 

@@ -27,9 +27,14 @@ export class LibraryChooserComponent {
 	}
 
 
+	get images(): any[] {
+		return this.__library.images;
+	}
+
+
 	readLibrary(library: File) {
-		this.__libraryReader.read(library);
 		this.__library.file = library;
+		this.__libraryReader.read(library);
 	}
 
 

@@ -8,17 +8,33 @@ import { Injectable } from '@angular/core';
 export class LibraryService {
 
 	file: File;
+	contents: {
+		name: string,
+		images: { name: string, src: string, description: string }[]
+	};
 	private __unsavedName = '';
 
 
 	set name(value) {
-		if (!(this.isSaved)) this.__unsavedName = value;
+		if (!(this.isSaved)) {
+			this.__unsavedName = value;
+		} else {
+			this.contents.name = value;
+		}
 	}
 
 
 	get name(): string {
-		if (this.isSaved) return this.file.name;
-		else return this.__unsavedName;
+		if (this.isSaved) {
+			return this.contents.name;
+		} else {
+			return this.__unsavedName;
+		}
+	}
+
+
+	get images(): any[] {
+		return this.contents.images;
 	}
 
 
