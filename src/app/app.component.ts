@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { DocumentDBService } from './services/db.service';
+import { DocumentDBService } from './services/document-db.service';
 
 
 @Component({
