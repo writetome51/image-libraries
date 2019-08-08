@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageStoreService } from '../../services/image-store.service';
 import { ImageDisplaySettingsService } from '../../services/image-display-settings.service';
+import { LibraryService } from '../../services/library.service';
 
 
 @Component({
@@ -14,14 +14,14 @@ export class ImageListComponent {
 
 
 	constructor(
-		private __imageStore: ImageStoreService,
+		private __library: LibraryService,
 		private __imageDisplaySettings: ImageDisplaySettingsService
 	) {
 	}
 
 
 	get images(): any[] {
-		return this.__imageStore.images;
+		return this.__library.images;
 	}
 
 

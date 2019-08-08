@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ImageStoreService } from '../../../services/image-store.service';
 import { errorIfNotInteger } from 'error-if-not-integer';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
+import { LibraryService } from '../../../services/library.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class DeleteImageButtonComponent {
 	private __index: number;
 
 
-	constructor(private __imageStore: ImageStoreService) {
+	constructor(private __library: LibraryService) {
 
 	}
 
@@ -26,7 +26,7 @@ export class DeleteImageButtonComponent {
 
 
 	deleteImage() {
-		removeByIndex(this.__index, this.__imageStore.images);
+		removeByIndex(this.__index, this.__library.images);
 	}
 
 }

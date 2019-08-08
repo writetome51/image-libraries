@@ -38,6 +38,7 @@
     "file-saver": "^2.0.2",
     "get-object-from-json": "^1.0.3",
     "mongodb": "^3.1.0-beta4",
+    "mongodb-stitch-browser-sdk": "~4.5.0",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
