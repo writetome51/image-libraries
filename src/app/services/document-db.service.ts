@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { mongoDBStitch } from './mongo-db-stitch-config/stitch-client-config';
-import * as stitchAuth from './mongo-db-stitch-config/stitch-client-authentication';
+//import { mongoDBStitch } from './mongo-db-stitch-config/stitch-client-config';
+//import * as stitchAuth from './mongo-db-stitch-config/stitch-client-authentication';
 
 
 @Injectable({
