@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { DocumentDBService } from './services/document-db.service';
 
 
 @Component({
@@ -11,7 +10,7 @@ export class AppComponent {
 	title = 'Image Library';
 
 
-	constructor(public db: DocumentDBService) {
+	constructor() {
 	}
 
 
