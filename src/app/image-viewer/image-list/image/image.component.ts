@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LibraryImage } from '../../../../types/library-image';
 
 
 @Component({
@@ -6,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: './image.component.html',
 	styleUrls: ['./image.component.sass']
 })
-export class ImageComponent implements OnInit {
+export class ImageComponent {
+
+
+	@Input() image: LibraryImage;
+	@Input() index: number;
+
 
 	constructor() {
 	}
 
-
-	ngOnInit() {
-	}
 
 }

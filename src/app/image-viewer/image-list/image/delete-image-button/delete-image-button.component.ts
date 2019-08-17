@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { errorIfNotInteger } from 'error-if-not-integer';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { LibraryService } from '../../../services/library.service';
+import { LibraryService } from '../../../../services/library.service';
 
 
 @Component({

@@ -1,5 +1,6 @@
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
+import { LibraryImage } from '../../types/library-image';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class LibraryService {
 	file: File;
 	contents: {
 		name: string,
-		images: { name: string, src: string, description: string }[]
+		images: LibraryImage[]
 	};
 	private __unsavedName = '';
 

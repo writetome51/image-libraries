@@ -2,7 +2,7 @@
 
 	<re-arrangeable-grid-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
-		<app-image></app-image>
+		<app-image [image]="img" [index]="i"></app-image>
 
 	</re-arrangeable-grid-list-item>
 
