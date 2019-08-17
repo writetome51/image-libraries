@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ImageDisplaySettingsService } from '../../services/image-display-settings.service';
 import { LibraryService } from '../../services/library.service';
 
 
@@ -10,12 +9,9 @@ import { LibraryService } from '../../services/library.service';
 })
 export class ImageListComponent {
 
-	hovered = -1;
-
 
 	constructor(
-		private __library: LibraryService,
-		private __imageDisplaySettings: ImageDisplaySettingsService
+		private __library: LibraryService
 	) {
 	}
 
@@ -24,19 +20,5 @@ export class ImageListComponent {
 		return this.__library.images;
 	}
 
-
-	get imageWidth(): number {
-		return this.__imageDisplaySettings.width;
-	}
-
-
-	set_hovered(index) {
-		this.hovered = index;
-	}
-
-
-	unset_hovered() {
-		this.hovered = -1;
-	}
 
 }
