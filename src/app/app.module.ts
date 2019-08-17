@@ -20,6 +20,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 import { ChooseImagesFromDeviceComponent } 
 	from './choose-images-from-device/choose-images-from-device.component';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
+import { ImageComponent } from './image-viewer/image-list/image/image.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { EnterImageURLComponent } from './enter-image-url/enter-image-url.compon
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		ImageChooserComponent,
+		ImageComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		ImageViewerComponent,

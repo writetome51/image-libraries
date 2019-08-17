@@ -2,17 +2,7 @@
 
 	<re-arrangeable-grid-list-item *ngFor="let img of images;let i = index;" [index]="i">
 
-		<div class="image-container" (mouseover)="set_hovered(i)" (mouseleave)="unset_hovered()">
-
-			<delete-image-button [index]="i" [class.invisible]="!(hovered === i)"></delete-image-button>
-
-			<!--  Setting draggable to false on the img prevents a ghost-image from being
-			dragged.   -->
-			<img draggable="false" [src]="img.src" alt="{{img.description}}" [width]="imageWidth"
-				 [title]="img.name"
-			/>
-
-		</div>
+		<app-image></app-image>
 
 	</re-arrangeable-grid-list-item>
 
