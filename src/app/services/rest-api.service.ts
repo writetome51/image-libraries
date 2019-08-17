@@ -1,5 +1,3 @@
-// @ts-ignore
-const getObjectCopy = require('copy-object');
 import { getURLQuery } from '../../functions/get-url-query';
 import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
@@ -12,13 +10,13 @@ export class RestAPIService {
 	private __baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
-	private __getUserURL = `${this.__baseURL}get-user`;
-	private __createUserURL = `${this.__baseURL}create-user`;
-	private __createLibraryURL = `${this.__baseURL}create-library`;
-	private __deleteUserURL = `${this.__baseURL}delete-user`;
-	private __deleteLibraryURL = `${this.__baseURL}delete-library`;
-	private __changePasswordURL = `${this.__baseURL}change-password`;
-	private __body = {secret: superSecret};
+	private __getUserURL = `${this.__baseURL}get-user`; // GET
+	private __createUserURL = `${this.__baseURL}create-user`; // POST
+	private __createLibraryURL = `${this.__baseURL}create-library`; // PATCH
+	private __deleteUserURL = `${this.__baseURL}delete-user`; // DELETE
+	private __deleteLibraryURL = `${this.__baseURL}delete-library`; // DELETE
+	private __changePasswordURL = `${this.__baseURL}change-password`; // PATCH
+	private __requiredInEveryRequest = {secret: superSecret};
 
 
 	constructor(private __http: HttpClient) {
@@ -26,47 +24,48 @@ export class RestAPIService {
 
 
 	getUser(email, password): Observable<any> {
-		let parameters = this.__getRequestParameters({email, password});
-		let url = this.__getUserURL + getURLQuery(parameters);
+		let urlQuery = this.__getURLQuery({email, password});
+		let url = this.__getUserURL + urlQuery;
 
 		return this.__http.get(url);
 	}
 
 
 	createUser(email, password): Observable<any> {
-		modifyObject(this.__body, {email, password});
-		return this.__http.post(this.__createUserURL, this.__body);
+		let body = this.__getRequestBody({email, password});
+		return this.__http.post(this.__createUserURL, body);
 	}
 
 
 	createLibrary(
 		email, password, library: { name: string, images: any[] }
 	): Observable<any> {
-		modifyObject(this.__body, {email, password, library});
-		return this.__http.patch(this.__createLibraryURL, this.__body);
+		let body = this.__getRequestBody({email, password, library});
+		return this.__http.patch(this.__createLibraryURL, body);
 	}
 
 
 	deleteUser(email, password): Observable<any> {
-		modifyObject(this.__body, {email, password});
-		return this.__http.delete(url, {params: this.__body});
+		let body = this.__getRequestBody({email, password});
+		return this.__http.delete(this.__deleteUserURL, {params: body});
 	}
 
 
 	deleteLibrary(email, password, libraryName): Observable<any> {
-		return this.__http.delete(url, {params: this.__body});
+		let body = this.__getRequestBody({email, password, libraryName});
+		return this.__http.delete(this.__deleteLibraryURL, {params: body});
 	}
 
 
-	private __getRequestParameters(parametersToAdd): Object {
-		modifyObject(parametersToAdd, this.__body);
-		return parametersToAdd;
+	private __getURLQuery(keyValuePairs): string {
+		modifyObject(keyValuePairs, this.__requiredInEveryRequest);
+		return getURLQuery(keyValuePairs);
 	}
 
 
-	private __set_getQuery(keyValuePairs) {
-		modifyObject(keyValuePairs, {secret: superSecret});
-
+	private __getRequestBody(keyValuePairs): any {
+		modifyObject(keyValuePairs, this.__requiredInEveryRequest);
+		return keyValuePairs;
 	}
 
 
