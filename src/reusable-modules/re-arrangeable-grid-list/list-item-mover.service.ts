@@ -1,6 +1,6 @@
+import { errorIfNotInteger } from 'error-if-not-integer';
 import { Injectable } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
-import { errorIfNotInteger } from 'error-if-not-integer';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 
 

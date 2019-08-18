@@ -12,7 +12,7 @@ export class ReArrangeableGridListComponent {
 	}
 
 
-	@Input() set list(value) {
+	@Input() set list(value) { // Required in order to re-arrange the list.
 		this.__listItemMover.data = value;
 	}
 

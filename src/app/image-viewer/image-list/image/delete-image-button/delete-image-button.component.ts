@@ -15,7 +15,6 @@ export class DeleteImageButtonComponent {
 
 
 	constructor(private __library: LibraryService) {
-
 	}
 
 

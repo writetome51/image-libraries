@@ -10,9 +10,7 @@ import { LibraryService } from '../../services/library.service';
 export class ImageListComponent {
 
 
-	constructor(
-		private __library: LibraryService
-	) {
+	constructor(private __library: LibraryService) {
 	}
 
 
