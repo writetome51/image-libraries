@@ -10,12 +10,13 @@ export class RestAPIService {
 	private __baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
-	private __getUserURL = `${this.__baseURL}get-user`; // GET
-	private __createUserURL = `${this.__baseURL}create-user`; // POST
 	private __createLibraryURL = `${this.__baseURL}create-library`; // PATCH
-	private __deleteUserURL = `${this.__baseURL}delete-user`; // DELETE
-	private __deleteLibraryURL = `${this.__baseURL}delete-library`; // DELETE
+	private __createUserURL = `${this.__baseURL}create-user`; // POST
 	private __changePasswordURL = `${this.__baseURL}change-password`; // PATCH
+	private __deleteLibraryURL = `${this.__baseURL}delete-library`; // DELETE
+	private __deleteUserURL = `${this.__baseURL}delete-user`; // DELETE
+	private __getUserURL = `${this.__baseURL}get-user`; // GET
+
 	private __requiredInEveryRequest = {secret: superSecret};
 
 
@@ -25,23 +26,22 @@ export class RestAPIService {
 
 	getUser(email, password): Observable<any> {
 		let urlQuery = this.__getURLQuery({email, password});
-		let url = this.__getUserURL + urlQuery;
 
-		return this.__http.get(url);
+		return this.__http.get(this.__getUserURL + urlQuery);
 	}
 
 
 	createUser(email, password): Observable<any> {
-		let body = this.__getRequestBody({email, password});
-		return this.__http.post(this.__createUserURL, body);
+		return this.__getRequestResult(this.__http.post, this.__createUserURL, {email, password});
 	}
 
 
 	createLibrary(
 		email, password, library: { name: string, images: any[] }
 	): Observable<any> {
-		let body = this.__getRequestBody({email, password, library});
-		return this.__http.patch(this.__createLibraryURL, body);
+		return this.__getRequestResult(
+			this.__http.patch, this.__createLibraryURL, {email, password, library}
+		);
 	}
 
 
@@ -60,6 +60,12 @@ export class RestAPIService {
 	private __getURLQuery(keyValuePairs): string {
 		modifyObject(keyValuePairs, this.__requiredInEveryRequest);
 		return getURLQuery(keyValuePairs);
+	}
+
+
+	private __getRequestResult(requestFn, url, body): Observable<any> {
+		body = this.__getRequestBody(body);
+		return requestFn(url, body);
 	}
 
 
