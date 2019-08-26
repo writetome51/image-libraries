@@ -3,20 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { superSecret } from '../../../.super-secret';
+import { LibraryImage } from '../../types/library-image';
 
 
 export class RestAPIService {
 
 	private __baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
-
-	private __createUserURL = `${this.__baseURL}create-user`; // POST
-	private __createLibraryURL = `${this.__baseURL}create-library`; // PATCH
-	private __updateLibraryURL = `${this.__baseURL}update-library`; // PATCH
-	private __updatePasswordURL = `${this.__baseURL}update-password`; // PATCH
-	private __deleteLibraryURL = `${this.__baseURL}delete-library`; // DELETE
-	private __deleteUserURL = `${this.__baseURL}delete-user`; // DELETE
-	private __getUserURL = `${this.__baseURL}get-user`; // GET
 
 	private __requiredInEveryRequest = {secret: superSecret};
 
@@ -32,46 +25,67 @@ export class RestAPIService {
 
 
 	deleteUser(params: { email: string, password: string }): Observable<any> {
-		let url = this.__deleteUserURL + this.__getRequiredURLQuery(params);
+		let url = `${this.__baseURL}delete-user` + this.__getRequiredURLQuery(params);
 		return this.__http.delete(url);
 	}
 
 
 	createUser(params: { email: string, password: string }): Observable<any> {
-		let url = this.__createUserURL;
+		let url = `${this.__baseURL}create-user`;
 		return this.__getRequestResult('post', url, params);
 	}
 
 
-	changePassword(
+	updateUser(
+		params: { email: string, password: string, propToUpdate: string, newValue: any }
+	): Observable<any> {
+		let url = `${this.__baseURL}create-user`;
+		return this.__getRequestResult('post', url, params);
+	}
+
+
+	updatePassword(
 		params: { email: string, password: string, newPassword: string }
 	): Observable<any> {
-		let url = this.__updatePasswordURL;
+		let url = `${this.__baseURL}update-password`;
 		return this.__getRequestResult('patch', url, params);
 	}
 
 
-	createLibrary(
+	getLibrary(
 		params: { email: string, password: string, libraryName: string }
 	): Observable<any> {
-		let url = this.__createLibraryURL;
-		return this.__getRequestResult('patch', url, params);
+
+		let urlQuery = this.__getRequiredURLQuery(params);
+		let url = `${this.__baseURL}get-library` + urlQuery;
+		return this.__http.get(url);
 	}
 
 
 	updateLibrary(
 		params: { email: string, password: string, libraryName: string, library: any[] }
 	): Observable<any> {
-		let url = this.__updateLibraryURL;
+		let url = `${this.__baseURL}update-library`;
 		return this.__getRequestResult('patch', url, params);
 	}
 
 
-	deleteLibrary(
-		params: { email: string, password: string, libraryName: string }
+	updateLibraries(
+		params: { email: string, password: string, libraries: any }
 	): Observable<any> {
-		let url = this.__deleteLibraryURL + this.__getRequiredURLQuery(params);
-		return this.__http.delete(url);
+		let url = `${this.__baseURL}update-libraries`;
+		return this.__getRequestResult('patch', url, params);
+	}
+
+
+	updateImage(
+		params: {
+			email: string, password: string,
+			libraryName: string, imageIndex: number, image: LibraryImage
+		}
+	): Observable<any> {
+		let url = `${this.__baseURL}update-image`;
+		return this.__getRequestResult('patch', url, params);
 	}
 
 
@@ -103,7 +117,7 @@ export class RestAPIService {
 
 	private __getURLForGettingUser(params: { email: string, password: string }) {
 		let urlQuery = this.__getRequiredURLQuery(params);
-		return this.__getUserURL + urlQuery;
+		return `${this.__baseURL}get-user` + urlQuery;
 	}
 
 
