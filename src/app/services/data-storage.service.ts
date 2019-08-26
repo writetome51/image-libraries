@@ -15,42 +15,40 @@ export class DataStorageService {
 
 
 	createUser(params: { email: string, password: string }): Observable<any> {
-		let url = this.__restApi.createUserURL;
-		return this.__restApi.getRequestResult('post', url, params);
-	}
-
-
-	changePassword(params: { email: string, password: string, newPassword: string }): Observable<any> {
-		let url = this.__restApi.changePasswordURL;
-		return this.__restApi.getRequestResult('patch', url, params);
+		return this.__restApi.createUser(params);
 	}
 
 
 	deleteUser(params: { email: string, password: string }): Observable<any> {
-		let url = this.__restApi.deleteUserURL;
-		url += this.__restApi.getRequiredURLQuery(params);
-		return this.__restApi.getRequestResult('delete', url);
+		return this.__restApi.deleteUser(params);
 	}
 
 
-	deleteLibrary(params: { email: string, password: string, libraryName: string }): Observable<any> {
-		let url = this.__restApi.deleteLibraryURL;
-		url += this.__restApi.getRequiredURLQuery(params);
-		return this.__restApi.getRequestResult('delete', url);
+	changePassword(
+		params: { email: string, password: string, newPassword: string }
+	): Observable<any> {
+		return this.__restApi.changePassword(params);
 	}
 
 
-	createLibrary(params: { email: string, password: string, libraryName: string }): Observable<any> {
-		let url = this.__restApi.createLibraryURL;
-		return this.__restApi.getRequestResult('patch', url, params);
+	deleteLibrary(
+		params: { email: string, password: string, libraryName: string }
+	): Observable<any> {
+		return this.__restApi.deleteLibrary(params);
+	}
+
+
+	createLibrary(
+		params: { email: string, password: string, libraryName: string }
+	): Observable<any> {
+		return this.__restApi.createLibrary(params);
 	}
 
 
 	updateLibrary(
-		params: { email: string, password: string, libraryName: string, library: object }
+		params: { email: string, password: string, libraryName: string, library: any[] }
 	): Observable<any> {
-		let url = this.__restApi.updateLibraryURL;
-		return this.__restApi.getRequestResult('patch', url, params);
+		return this.__restApi.updateLibrary(params);
 	}
 
 
