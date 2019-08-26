@@ -2,7 +2,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeleteImageButtonComponent }
-	from './image-viewer/image-list/image/delete-image-button/delete-image-button.component';
+	from './image-viewer/image-list/library-image/delete-image-button/delete-image-button.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
@@ -20,7 +20,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 import { ChooseImagesFromDeviceComponent } 
 	from './choose-images-from-device/choose-images-from-device.component';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
-import { ImageComponent } from './image-viewer/image-list/image/image.component';
+import { LibraryImageComponent } from './image-viewer/image-list/library-image/library-image.component';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { ImageComponent } from './image-viewer/image-list/image/image.component'
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		ImageChooserComponent,
-		ImageComponent,
+		LibraryImageComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		ImageViewerComponent,

@@ -15,7 +15,7 @@ export class ImageURLProcessorService {
 
 
 	async process(url) {
-		// Before adding it to image store, check if `url`, when requested, doesn't return 200 ok.
+		// Before adding it to library-image store, check if `url`, when requested, doesn't return 200 ok.
 		let isFound = await this.__resourceFound(url, 'GET');
 		if (isFound) {
 			this.__library.images.push({name: '', src: url, description: ''});
