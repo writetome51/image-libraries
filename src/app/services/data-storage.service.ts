@@ -9,32 +9,48 @@ export class DataStorageService {
 	}
 
 
-	getUser(email, password): Observable<any> {
-		return this.__restApi.getUser(email, password);
+	getUser(params: { email: string, password: string }): Observable<any> {
+		return this.__restApi.getUser(params);
 	}
 
 
-	createUser(email, password): Observable<any> {
+	createUser(params: { email: string, password: string }): Observable<any> {
 		let url = this.__restApi.createUserURL;
-		return this.__restApi.getRequestResult('post', url, {email, password});
+		return this.__restApi.getRequestResult('post', url, params);
 	}
 
 
-	createLibrary(email, password, libraryName): Observable<any> {
-		let url = this.__restApi.createLibraryURL;
-		return this.__restApi.getRequestResult('patch', url, {email, password, libraryName});
+	changePassword(params: { email: string, password: string, newPassword: string }): Observable<any> {
+		let url = this.__restApi.changePasswordURL;
+		return this.__restApi.getRequestResult('patch', url, params);
 	}
 
 
-	deleteUser(email, password): Observable<any> {
+	deleteUser(params: { email: string, password: string }): Observable<any> {
 		let url = this.__restApi.deleteUserURL;
-		return this.__restApi.getRequestResult('delete', url, {email, password});
+		url += this.__restApi.getRequiredURLQuery(params);
+		return this.__restApi.getRequestResult('delete', url);
 	}
 
 
-	deleteLibrary(email, password, libraryName): Observable<any> {
+	deleteLibrary(params: { email: string, password: string, libraryName: string }): Observable<any> {
 		let url = this.__restApi.deleteLibraryURL;
-		return this.__restApi.getRequestResult('delete', url, {email, password, libraryName});
+		url += this.__restApi.getRequiredURLQuery(params);
+		return this.__restApi.getRequestResult('delete', url);
+	}
+
+
+	createLibrary(params: { email: string, password: string, libraryName: string }): Observable<any> {
+		let url = this.__restApi.createLibraryURL;
+		return this.__restApi.getRequestResult('patch', url, params);
+	}
+
+
+	updateLibrary(
+		params: { email: string, password: string, libraryName: string, library: object }
+	): Observable<any> {
+		let url = this.__restApi.updateLibraryURL;
+		return this.__restApi.getRequestResult('patch', url, params);
 	}
 
 
