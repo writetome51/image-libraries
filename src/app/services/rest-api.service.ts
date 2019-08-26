@@ -1,9 +1,9 @@
 import { getURLQuery } from '../../functions/get-url-query';
 import { HttpClient } from '@angular/common/http';
+import { LibraryImage } from '../../types/library-image';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { superSecret } from '../../../.super-secret';
-import { LibraryImage } from '../../types/library-image';
 
 
 export class RestAPIService {
@@ -18,37 +18,15 @@ export class RestAPIService {
 	}
 
 
-	getUser(params: { email: string, password: string }): Observable<any> {
-		let url = this.__getURLForGettingUser(params);
-		return this.__http.get(url);
-	}
-
-
-	deleteUser(params: { email: string, password: string }): Observable<any> {
-		let url = `${this.__baseURL}delete-user` + this.__getRequiredURLQuery(params);
-		return this.__http.delete(url);
-	}
-
-
 	createUser(params: { email: string, password: string }): Observable<any> {
 		let url = `${this.__baseURL}create-user`;
 		return this.__getRequestResult('post', url, params);
 	}
 
 
-	updateUser(
-		params: { email: string, password: string, propToUpdate: string, newValue: any }
-	): Observable<any> {
-		let url = `${this.__baseURL}create-user`;
-		return this.__getRequestResult('post', url, params);
-	}
-
-
-	updatePassword(
-		params: { email: string, password: string, newPassword: string }
-	): Observable<any> {
-		let url = `${this.__baseURL}update-password`;
-		return this.__getRequestResult('patch', url, params);
+	deleteUser(params: { email: string, password: string }): Observable<any> {
+		let url = `${this.__baseURL}delete-user` + this.__getRequiredURLQuery(params);
+		return this.__http.delete(url);
 	}
 
 
@@ -59,6 +37,23 @@ export class RestAPIService {
 		let urlQuery = this.__getRequiredURLQuery(params);
 		let url = `${this.__baseURL}get-library` + urlQuery;
 		return this.__http.get(url);
+	}
+
+
+	getUser(params: { email: string, password: string }): Observable<any> {
+		let url = this.__getURLForGettingUser(params);
+		return this.__http.get(url);
+	}
+
+
+	updateImage(
+		params: {
+			email: string, password: string,
+			libraryName: string, imageIndex: number, image: LibraryImage
+		}
+	): Observable<any> {
+		let url = `${this.__baseURL}update-image`;
+		return this.__getRequestResult('patch', url, params);
 	}
 
 
@@ -78,13 +73,18 @@ export class RestAPIService {
 	}
 
 
-	updateImage(
-		params: {
-			email: string, password: string,
-			libraryName: string, imageIndex: number, image: LibraryImage
-		}
+	updatePassword(
+		params: { email: string, password: string, newPassword: string }
 	): Observable<any> {
-		let url = `${this.__baseURL}update-image`;
+		let url = `${this.__baseURL}update-password`;
+		return this.__getRequestResult('patch', url, params);
+	}
+
+
+	updateUser(
+		params: { email: string, password: string, propToUpdate: string, newValue: any }
+	): Observable<any> {
+		let url = `${this.__baseURL}update-user`;
 		return this.__getRequestResult('patch', url, params);
 	}
 
