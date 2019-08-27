@@ -7,8 +7,7 @@ import { LibraryService } from '../../../services/library.service';
 
 @Component({
 	selector: 'library-image',
-	templateUrl: './library-image.component.html',
-	styleUrls: ['./library-image.component.sass']
+	templateUrl: './library-image.component.html'
 })
 export class LibraryImageComponent {
 

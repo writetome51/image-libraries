@@ -14,7 +14,7 @@ export class ImageChooserComponent {
 	gettingImagesInstructions = `The images can come from your own device or from somewhere 
 	else in the web.`;
 
-	private __imgURL = '';
+
 
 
 	constructor(
@@ -35,14 +35,7 @@ export class ImageChooserComponent {
 	}
 
 
-	set imgURL(value) {
-		this.__imgURL = value.trim();
-	}
 
-
-	get imgURL() {
-		return this.__imgURL.trim();
-	}
 
 
 

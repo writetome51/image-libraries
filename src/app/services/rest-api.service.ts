@@ -4,8 +4,12 @@ import { LibraryImage } from '../../types/library-image';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { superSecret } from '../../../.super-secret';
+import { Injectable } from '@angular/core';
 
 
+@Injectable({
+	providedIn: 'root'
+})
 export class RestAPIService {
 
 	private __baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
@@ -61,14 +65,6 @@ export class RestAPIService {
 		params: { email: string, password: string, libraryName: string, library: any[] }
 	): Observable<any> {
 		let url = `${this.__baseURL}update-library`;
-		return this.__getRequestResult('patch', url, params);
-	}
-
-
-	updateLibraries(
-		params: { email: string, password: string, libraries: any }
-	): Observable<any> {
-		let url = `${this.__baseURL}update-libraries`;
 		return this.__getRequestResult('patch', url, params);
 	}
 

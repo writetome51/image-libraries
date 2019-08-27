@@ -1,8 +1,12 @@
 import { Observable } from 'rxjs';
 import { RestAPIService } from './rest-api.service';
 import { LibraryImage } from '../../types/library-image';
+import { Injectable } from '@angular/core';
 
 
+@Injectable({
+	providedIn: 'root'
+})
 export class DataStorageService {
 
 
@@ -46,13 +50,6 @@ export class DataStorageService {
 		params: { email: string, password: string, libraryName: string, library: any[] }
 	): Observable<any> {
 		return this.__restApi.updateLibrary(params);
-	}
-
-
-	updateLibraries(
-		params: { email: string, password: string, libraries: any }
-	): Observable<any> {
-		return this.__restApi.updateLibraries(params);
 	}
 
 
