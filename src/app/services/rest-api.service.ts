@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LibraryImage } from '../../types/library-image';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
-import { superSecret } from '../../../.super-secret';
+import { sss } from '../../../.super-secret';
 import { Injectable } from '@angular/core';
 
 
@@ -15,7 +15,7 @@ export class RestAPIService {
 	private __baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
-	private __requiredInEveryRequest = {secret: superSecret};
+	private __requiredInEveryRequest = {secret: sss};
 
 
 	constructor(private __http: HttpClient) {
