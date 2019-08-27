@@ -53,17 +53,26 @@ export class DataStorageService {
 	}
 
 
-	updatePassword(
+	async updatePassword(
 		params: { email: string, password: string, newPassword: string }
-	): Observable<any> {
-		return this.__restApi.updatePassword(params);
+	) {
+		let subscription = this.__restApi.updatePassword(params).subscribe((data) => {
+
+			subscription.unsubscribe();
+		});
 	}
 
 
-	updateUser(
+	async updateUser(
 		params: { email: string, password: string, propToUpdate: string, newValue: any }
-	): Observable<any> {
-		return this.__restApi.updateUser(params);
+	) {
+		let subscription = await this.__restApi.updateUser(params).subscribe((data) => {
+			// There are only 2 possible responses: {success:true} or {error:{message:'...'}}
+			if (data.error) {
+				throw new Error(data.error.message);
+			}
+			subscription.unsubscribe();
+		});
 	}
 
 
