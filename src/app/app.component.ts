@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
 	}
 
 
-	ngOnInit(): void {
-		this.subscription = this.__dataStorage.getLibrary(
+	async ngOnInit() {
+		this.subscription = await this.__dataStorage.getLibrary(
 			{email: 'writetome51@gmail.com', password: 'Gayrainbow69!', libraryName: 'randomPics01'}
 		).subscribe((data) => {
 			this.images = JSON.parse(data);

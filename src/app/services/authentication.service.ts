@@ -7,16 +7,13 @@ import { lis } from '../../../.logged-in-secret';
 @Injectable({
 	providedIn: 'root'
 })
-export class ActiveUserService {
-
-	password = '';
-	email = '';
-	data: any; // all user data gotten from this.__dataStorage
-
-	private __localStore = new ObjectInLocalStorage('image-lib-users-zhfqaiok', {});
+export class AuthenticationService {
 
 
-	constructor(private __dataStorage: DataStorageService) {
+	constructor(
+		private __dataStorage: DataStorageService,
+		private __activeUser
+		) {
 	}
 
 
@@ -50,13 +47,6 @@ export class ActiveUserService {
 			if (this.email === data.email) this.data = data;
 			subscription.unsubscribe();
 		});
-	}
-
-
-	private __addEmptyUserto__localStore() {
-		let user = {};
-		user[this.email] = {};
-		this.__localStore.modify(user);
 	}
 
 

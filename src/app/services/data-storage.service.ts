@@ -56,8 +56,11 @@ export class DataStorageService {
 	async updatePassword(
 		params: { email: string, password: string, newPassword: string }
 	) {
-		let subscription = this.__restApi.updatePassword(params).subscribe((data) => {
-
+		let subscription = await this.__restApi.updatePassword(params).subscribe((data) => {
+			// There are only 2 possible responses: {success:true} or {error:{message:'...'}}
+			if (data.error) {
+				throw new Error(data.error.message);
+			}
 			subscription.unsubscribe();
 		});
 	}
