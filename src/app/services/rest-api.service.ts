@@ -77,10 +77,10 @@ export class RestAPIService {
 	}
 
 
-	updateUser(
-		params: { email: string, password: string, propToUpdate: string, newValue: any }
+	updateEmail(
+		params: { email: string, password: string, newEmail: string }
 	): Observable<any> {
-		let url = `${this.__baseURL}update-user`;
+		let url = `${this.__baseURL}update-email`;
 		return this.__getRequestResult('patch', url, params);
 	}
 

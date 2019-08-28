@@ -2,6 +2,8 @@ import { Observable } from 'rxjs';
 import { RestAPIService } from './rest-api.service';
 import { LibraryImage } from '../../types/library-image';
 import { Injectable } from '@angular/core';
+import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
+import { ActiveUserService } from './active-user.service';
 
 
 @Injectable({
@@ -9,25 +11,38 @@ import { Injectable } from '@angular/core';
 })
 export class DataStorageService {
 
+	private __localStore = new ObjectInLocalStorage('image-lib-users-zhfqaiok', {});
 
-	constructor(private __restApi: RestAPIService) {
+
+	constructor(
+		private __restApi: RestAPIService,
+		private __activeUser: ActiveUserService
+	) {
 	}
 
 
-	createUser(params: { email: string, password: string }): Observable<any> {
-		return this.__restApi.createUser(params);
+	createUser(): Observable<any> {
+		return this.__restApi.createUser(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		);
 	}
 
 
-	deleteUser(params: { email: string, password: string }): Observable<any> {
-		return this.__restApi.deleteUser(params);
+	deleteUser(): Observable<any> {
+		return this.__restApi.deleteUser(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		);
 	}
 
 
 	getLibrary(
 		params: { email: string, password: string, libraryName: string }
 	): Observable<any> {
-		return this.__restApi.getLibrary(params);
+		return this.__restApi.getLibrary({
+			email: this.__activeUser.email,
+			password: this.__activeUser.password,
+			libraryName: this.__activeUser.activeLibraryName
+		});
 	}
 
 
@@ -53,29 +68,24 @@ export class DataStorageService {
 	}
 
 
-	async updatePassword(
+	updatePassword(
 		params: { email: string, password: string, newPassword: string }
-	) {
-		let subscription = await this.__restApi.updatePassword(params).subscribe((data) => {
-			// There are only 2 possible responses: {success:true} or {error:{message:'...'}}
-			if (data.error) {
-				throw new Error(data.error.message);
-			}
-			subscription.unsubscribe();
-		});
+	): Observable<any> {
+		return this.__restApi.updatePassword(params);
 	}
 
 
-	async updateUser(
-		params: { email: string, password: string, propToUpdate: string, newValue: any }
-	) {
-		let subscription = await this.__restApi.updateUser(params).subscribe((data) => {
-			// There are only 2 possible responses: {success:true} or {error:{message:'...'}}
-			if (data.error) {
-				throw new Error(data.error.message);
-			}
-			subscription.unsubscribe();
-		});
+	updateEmail(
+		params: { email: string, password: string, newEmail: string }
+	): Observable<any> {
+		return this.__restApi.updateEmail(params);
+	}
+
+
+	private __addEmptyUserto__localStore(email) {
+		let user = {};
+		user[email] = {};
+		this.__localStore.modify(user);
 	}
 
 

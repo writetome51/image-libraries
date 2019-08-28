@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataStorageService } from './data-storage.service';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { lis } from '../../../.logged-in-secret';
+import { ActiveUserService } from './active-user.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class AuthenticationService {
 
 	constructor(
 		private __dataStorage: DataStorageService,
-		private __activeUser
+		private __activeUser: ActiveUserService
 		) {
 	}
 
