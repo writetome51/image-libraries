@@ -53,38 +53,46 @@ export class DataStorageService {
 	updateImage(): Observable<any> {
 		return this.__restApi.updateImage(
 			{
-				email: this.__activeUser.email, password: this.__activeUser.password,
+				email: this.__activeUser.email,
+				password: this.__activeUser.password,
 				libraryName: this.__activeUser.activeLibraryName,
-				imageIndex: this.__activeUser.activeImageIndex, newValue: this.__activeUser.activeImage
+				imageIndex: this.__activeUser.activeImageIndex,
+				newValue: this.__activeUser.activeImage
 			}
 		);
 	}
 
 
-	updateLibrary(
-		params: { email: string, password: string, libraryName: string, newValue: any[] }
-	): Observable<any> {
-		return this.__restApi.updateLibrary(params);
+	updateLibrary(): Observable<any> {
+		return this.__restApi.updateLibrary({
+			email: this.__activeUser.email,
+			password: this.__activeUser.password,
+			libraryName: this.__activeUser.activeLibraryName,
+			newValue: this.__activeUser.activeLibrary
+		});
 	}
 
 
-	updatePassword(
-		params: { email: string, password: string, newPassword: string }
-	): Observable<any> {
-		return this.__restApi.updatePassword(params);
+	updatePassword(): Observable<any> {
+		return this.__restApi.updatePassword(
+			{
+				email: this.__activeUser.email, password: this.__activeUser.password,
+				newPassword: this.__activeUser.newPassword
+			}
+		);
 	}
 
 
-	updateEmail(
-		params: { email: string, password: string, newEmail: string }
-	): Observable<any> {
-		return this.__restApi.updateEmail(params);
+	updateEmail(): Observable<any> {
+		return this.__restApi.updateEmail({
+			email: this.__activeUser.email, password: this.__activeUser.password,
+			newEmail: this.__activeUser.newEmail
+		});
 	}
 
 
 	private __addEmptyUserto__localStore(email) {
-		let user = {};
-		user[email] = {};
+		let user = {email: {}};
 		this.__localStore.modify(user);
 	}
 
