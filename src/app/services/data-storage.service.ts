@@ -1,6 +1,5 @@
 import { Observable } from 'rxjs';
 import { RestAPIService } from './rest-api.service';
-import { LibraryImage } from '../../types/library-image';
 import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { ActiveUserService } from './active-user.service';
@@ -35,9 +34,7 @@ export class DataStorageService {
 	}
 
 
-	getLibrary(
-		params: { email: string, password: string, libraryName: string }
-	): Observable<any> {
+	getLibrary(): Observable<any> {
 		return this.__restApi.getLibrary({
 			email: this.__activeUser.email,
 			password: this.__activeUser.password,
@@ -46,23 +43,26 @@ export class DataStorageService {
 	}
 
 
-	getUser(params: { email: string, password: string }): Observable<any> {
-		return this.__restApi.getUser(params);
+	getUser(): Observable<any> {
+		return this.__restApi.getUser(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		);
 	}
 
 
-	updateImage(
-		params: {
-			email: string, password: string,
-			libraryName: string, imageIndex: number, image: LibraryImage
-		}
-	): Observable<any> {
-		return this.__restApi.updateImage(params);
+	updateImage(): Observable<any> {
+		return this.__restApi.updateImage(
+			{
+				email: this.__activeUser.email, password: this.__activeUser.password,
+				libraryName: this.__activeUser.activeLibraryName,
+				imageIndex: this.__activeUser.activeImageIndex, newValue: this.__activeUser.activeImage
+			}
+		);
 	}
 
 
 	updateLibrary(
-		params: { email: string, password: string, libraryName: string, library: any[] }
+		params: { email: string, password: string, libraryName: string, newValue: any[] }
 	): Observable<any> {
 		return this.__restApi.updateLibrary(params);
 	}
