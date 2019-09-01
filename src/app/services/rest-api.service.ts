@@ -62,9 +62,17 @@ export class RestAPIService {
 
 
 	updateLibrary(
-		params: { email: string, password: string, libraryName: string, library: any[] }
+		params: { email: string, password: string, libraryName: string, newValue: any[] }
 	): Observable<any> {
 		let url = `${this.__baseURL}update-library`;
+		return this.__getRequestResult('patch', url, params);
+	}
+
+
+	updateLibraries(
+		params: { email: string, password: string, newValue: any }
+	): Observable<any> {
+		let url = `${this.__baseURL}update-libraries`;
 		return this.__getRequestResult('patch', url, params);
 	}
 
@@ -82,6 +90,27 @@ export class RestAPIService {
 	): Observable<any> {
 		let url = `${this.__baseURL}update-email`;
 		return this.__getRequestResult('patch', url, params);
+	}
+
+
+	userLogin(
+		params: { email: string, password: string }
+	): Observable<any> {
+		let url = `${this.__baseURL}user-login`;
+		return this.__getRequestResult('patch', url, params);
+	}
+
+
+	userLogout(
+		params: { email: string, password: string }
+	): Observable<any> {
+		let url = `${this.__baseURL}user-logout`;
+		return this.__getPatchRequestResult(url, params);
+	}
+
+
+	private __getPatchRequestResult(url, body): Observable<any> {
+		return this.__getRequestResult('patch', url, body);
 	}
 
 
