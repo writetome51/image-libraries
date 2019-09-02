@@ -7,7 +7,7 @@ import { LibraryService } from './library.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class ImagesProcessorService {
+export class UploadedImagesProcessorService {
 
 
 	constructor(

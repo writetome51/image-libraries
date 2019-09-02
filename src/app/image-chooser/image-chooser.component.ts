@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImagesProcessorService } from '../services/images-processor.service';
+import { UploadedImagesProcessorService } from '../services/uploaded-images-processor.service';
 import { ImageURLProcessorService } from '../services/image-url-processor.service';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryService } from '../services/library.service';
@@ -18,7 +18,7 @@ export class ImageChooserComponent {
 
 
 	constructor(
-		private __imagesProcessor: ImagesProcessorService,
+		private __imagesProcessor: UploadedImagesProcessorService,
 		private __imageURLProcessor: ImageURLProcessorService,
 		private __library: LibraryService
 	) {

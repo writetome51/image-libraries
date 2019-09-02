@@ -1,15 +1,12 @@
 import { getURLQuery } from '../../functions/get-url-query';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { sss } from '../../../.super-secret';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class RestAPIService {
+
+export abstract class RestAPIService {
 
 	protected _baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';

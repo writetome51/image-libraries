@@ -1,38 +1,67 @@
 import { Observable } from 'rxjs';
-import { RestAPIService } from './libraries-rest-api.service';
 import { Injectable } from '@angular/core';
 import { ActiveUserService } from './active-user.service';
+import { UserRestAPIService } from './user-rest-api.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class DataStorageService {
+export class UserStorageService {
 
 
 	constructor(
-		private __restApi: RestAPIService,
+		private __userRestApi: UserRestAPIService,
 		private __activeUser: ActiveUserService
 	) {
 	}
 
 
-	createUser(): Observable<any> {
-		return this.__restApi.createUser(
+	create(): Observable<any> {
+		return this.__userRestApi.create(
 			{email: this.__activeUser.email, password: this.__activeUser.password}
 		);
 	}
 
 
-	deleteUser(): Observable<any> {
-		return this.__restApi.deleteUser(
+	delete(): Observable<any> {
+		return this.__userRestApi.delete(
 			{email: this.__activeUser.email, password: this.__activeUser.password}
 		);
 	}
+
+
+	get(): Observable<any> {
+		return this.__userRestApi.get(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		);
+	}
+
+
+	updatePassword(): Observable<any> {
+		return this.__userRestApi.updatePassword(
+			{
+				email: this.__activeUser.email, password: this.__activeUser.password,
+				newPassword: this.__activeUser.newPassword
+			}
+		);
+	}
+
+
+	updateEmail(): Observable<any> {
+		return this.__userRestApi.updateEmail({
+			email: this.__activeUser.email, password: this.__activeUser.password,
+			newEmail: this.__activeUser.newEmail
+		});
+	}
+
+
+
+
 
 
 	getLibrary(): Observable<any> {
-		return this.__restApi.getLibrary({
+		return this.__userRestApi.getLibrary({
 			email: this.__activeUser.email,
 			password: this.__activeUser.password,
 			libraryName: this.__activeUser.activeLibraryName
@@ -40,15 +69,8 @@ export class DataStorageService {
 	}
 
 
-	getUser(): Observable<any> {
-		return this.__restApi.getUser(
-			{email: this.__activeUser.email, password: this.__activeUser.password}
-		);
-	}
-
-
 	updateImage(): Observable<any> {
-		return this.__restApi.updateImage(
+		return this.__userRestApi.updateImage(
 			{
 				email: this.__activeUser.email,
 				password: this.__activeUser.password,
@@ -61,29 +83,11 @@ export class DataStorageService {
 
 
 	updateLibrary(): Observable<any> {
-		return this.__restApi.updateLibrary({
+		return this.__userRestApi.updateLibrary({
 			email: this.__activeUser.email,
 			password: this.__activeUser.password,
 			libraryName: this.__activeUser.activeLibraryName,
 			newValue: this.__activeUser.activeLibrary
-		});
-	}
-
-
-	updatePassword(): Observable<any> {
-		return this.__restApi.updatePassword(
-			{
-				email: this.__activeUser.email, password: this.__activeUser.password,
-				newPassword: this.__activeUser.newPassword
-			}
-		);
-	}
-
-
-	updateEmail(): Observable<any> {
-		return this.__restApi.updateEmail({
-			email: this.__activeUser.email, password: this.__activeUser.password,
-			newEmail: this.__activeUser.newEmail
 		});
 	}
 

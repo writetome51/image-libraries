@@ -1,5 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { DataStorageService } from './services/data-storage.service';
+import { UserStorageService } from './services/user-storage.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 	subscription;
 
 
-	constructor(private __dataStorage: DataStorageService) {
+	constructor(private __dataStorage: UserStorageService) {
 	}
 
 
