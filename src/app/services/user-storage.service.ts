@@ -56,40 +56,4 @@ export class UserStorageService {
 	}
 
 
-
-
-
-
-	getLibrary(): Observable<any> {
-		return this.__userRestApi.getLibrary({
-			email: this.__activeUser.email,
-			password: this.__activeUser.password,
-			libraryName: this.__activeUser.activeLibraryName
-		});
-	}
-
-
-	updateImage(): Observable<any> {
-		return this.__userRestApi.updateImage(
-			{
-				email: this.__activeUser.email,
-				password: this.__activeUser.password,
-				libraryName: this.__activeUser.activeLibraryName,
-				imageIndex: this.__activeUser.activeImageIndex,
-				newValue: this.__activeUser.activeImage
-			}
-		);
-	}
-
-
-	updateLibrary(): Observable<any> {
-		return this.__userRestApi.updateLibrary({
-			email: this.__activeUser.email,
-			password: this.__activeUser.password,
-			libraryName: this.__activeUser.activeLibraryName,
-			newValue: this.__activeUser.activeLibrary
-		});
-	}
-
-
 }

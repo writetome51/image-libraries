@@ -27,7 +27,7 @@ export class LibrariesRestAPIService extends RestAPIService {
 
 	// Use this to create and delete a library.
 
-	updateLibraries(
+	update(
 		params: { email: string, password: string, newValue: any }
 	): Observable<any> {
 		let url = `${this._baseURL}update-libraries`;
