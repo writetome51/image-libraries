@@ -13,7 +13,7 @@ export class ActiveUserService {
 
 	newPassword = ''; // bound to 'new password' text input
 
-	// user creates this to allow them to reset their password later
+	// users create this to allow them to reset their password later
 	securityQuestion = {question: '', answer: ''};
 
 	// If user doesn't exist yet in db, this is bound to 'email' text input

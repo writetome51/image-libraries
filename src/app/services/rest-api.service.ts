@@ -1,55 +1,65 @@
+import { getURLQuery } from '../../functions/get-url-query';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AppImage } from '../../types/app-image';
+import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
-import { BaseRestAPIService } from './base-rest-api.service';
+import { sss } from '../../../.super-secret';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class RestAPIService extends BaseRestAPIService {
+export class RestAPIService {
+
+	protected _baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
+		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
+
+	protected _requiredInEveryRequest = {secret: sss};
 
 
-	constructor(_http: HttpClient) {
-		super(_http);
+	constructor(protected _http: HttpClient) {
 	}
 
 
-	updateImage(
-		params: {
-			email: string, password: string,
-			libraryName: string, imageIndex: number, newValue: AppImage
+	protected _getPatchRequestResult(url, body): Observable<any> {
+		return this._getRequestResult('patch', url, body);
+	}
+
+
+	protected _getPostRequestResult(url, body): Observable<any> {
+		return this._getRequestResult('post', url, body);
+	}
+
+
+	protected _getRequestResult(requestMethod, url, body): Observable<any> {
+		body = this._getRequiredBody(body);
+
+		requestMethod = requestMethod.toLowerCase();
+
+		if (requestMethod === 'post') {
+			return this._http.post(url, body);
 		}
-	): Observable<any> {
-		let url = `${this._baseURL}update-image`;
-		return this._getPatchRequestResult(url, params);
+		if (requestMethod === 'patch') {
+			return this._http.patch(url, body);
+		}
 	}
 
 
-	getLibrary(
-		params: { email: string, password: string, libraryName: string }
-	): Observable<any> {
+	protected _getRequiredURLQuery(keyValuePairsToAdd): string {
+		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
+		return getURLQuery(keyValuePairsToAdd);
+	}
 
+
+	protected _getRequiredBody(keyValuePairsToAdd): any {
+		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
+		return keyValuePairsToAdd;
+	}
+
+
+	protected _getURLForGettingUser(params: { email: string, password: string }) {
 		let urlQuery = this._getRequiredURLQuery(params);
-		let url = `${this._baseURL}get-library` + urlQuery;
-		return this._http.get(url);
-	}
-
-
-	updateLibrary(
-		params: { email: string, password: string, libraryName: string, newValue: any[] }
-	): Observable<any> {
-		let url = `${this._baseURL}update-library`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	updateLibraries(
-		params: { email: string, password: string, newValue: any }
-	): Observable<any> {
-		let url = `${this._baseURL}update-libraries`;
-		return this._getPatchRequestResult(url, params);
+		return `${this._baseURL}get-user` + urlQuery;
 	}
 
 

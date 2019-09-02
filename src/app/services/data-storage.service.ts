@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { RestAPIService } from './rest-api.service';
+import { RestAPIService } from './libraries-rest-api.service';
 import { Injectable } from '@angular/core';
 import { ActiveUserService } from './active-user.service';
 

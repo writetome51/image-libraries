@@ -1,7 +1,7 @@
 import { ActiveUserService } from './active-user.service';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
-import { RestAPIService } from './rest-api.service';
+import { RestAPIService } from './libraries-rest-api.service';
 
 
 @Injectable({

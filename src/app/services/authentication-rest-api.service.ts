@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseRestAPIService } from './base-rest-api.service';
+import { RestAPIService } from './rest-api.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthenticationRestAPIService extends BaseRestAPIService {
+export class AuthenticationRestAPIService extends RestAPIService {
 
 	constructor(_http: HttpClient) {
 		super(_http);
