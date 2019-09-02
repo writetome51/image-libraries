@@ -1,7 +1,7 @@
 import { ActiveUserService } from './active-user.service';
+import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
-import { RestAPIService } from './libraries-rest-api.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class AuthenticationService {
 
 
 	constructor(
-		private __restApi: RestAPIService,
+		private __authenticationRestApi: AuthenticationRestAPIService,
 		private __activeUser: ActiveUserService,
 		private __localStorage: LocalStorageService
 	) {
@@ -24,12 +24,16 @@ export class AuthenticationService {
 
 
 	async login() {
-		let subscription = this.__restApi.userLogin(
+		let subscription = this.__authenticationRestApi.login(
 			{email: this.__activeUser.email, password: this.__activeUser.password}
 		).subscribe((data) => {
 
-			if (typeof data === 'string') data = JSON.parse(data);
-			if (data.email) this.__localStorage.login();
+			if (typeof data === 'string') {
+				data = JSON.parse(data);
+			}
+			if (data.email) {
+				this.__localStorage.login();
+			}
 			subscription.unsubscribe();
 		});
 
@@ -38,7 +42,9 @@ export class AuthenticationService {
 
 	logout(): void {
 		this.__localStorage.logout();
-
+		this.__authenticationRestApi.logout(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		);
 	}
 
 
