@@ -1,4 +1,8 @@
-<!--    mwlDraggable makes this item draggable.   -->
+<!--------------
+		mwlDraggable makes this item draggable.
+		mwlDroppable allows you to drop a different item onto this item.
+		The (drop) event happens when you drop that different item onto this item.
+--------------->
 <li
 		mwlDraggable (dragStart)="set_isBeingDragged()" (dragEnd)="unset_isBeingDragged()"
 		[class.being-dragged]="isBeingDragged"
@@ -9,9 +13,7 @@
 		[class.item-dragged-onto-from-left]="draggedOntoFromLeft"
 		[class.item-dragged-onto-from-right]="draggedOntoFromRight"
 >
-	<!--  mwlDroppable allows you to drop a different item onto this item.
-	The (drop) event happens when you drop that different item onto this item.
-	  -->
+
 	<div>
 
 		<div class="spacer  left-spacer"></div>

@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs';
 import { RestAPIService } from './rest-api.service';
 import { Injectable } from '@angular/core';
-import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { ActiveUserService } from './active-user.service';
 
 
@@ -9,8 +8,6 @@ import { ActiveUserService } from './active-user.service';
 	providedIn: 'root'
 })
 export class DataStorageService {
-
-	private __localStore = new ObjectInLocalStorage('image-lib-users-zhfqaiok', {});
 
 
 	constructor(
@@ -88,12 +85,6 @@ export class DataStorageService {
 			email: this.__activeUser.email, password: this.__activeUser.password,
 			newEmail: this.__activeUser.newEmail
 		});
-	}
-
-
-	private __addEmptyUserto__localStore(email) {
-		let user = {email: {}};
-		this.__localStore.modify(user);
 	}
 
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LibraryImage } from '../../../../types/library-image';
+import { AppImage } from '../../../../types/app-image';
 import { ImageDisplaySettingsService } from '../../../services/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { LibraryService } from '../../../services/library.service';
@@ -12,7 +12,7 @@ import { LibraryService } from '../../../services/library.service';
 export class LibraryImageComponent {
 
 
-	@Input() image: LibraryImage;
+	@Input() image: AppImage;
 	@Input() index: number;
 	hovered = false;
 

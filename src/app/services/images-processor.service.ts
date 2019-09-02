@@ -25,7 +25,7 @@ export class ImagesProcessorService {
 	}
 
 
-	private __sendTo__library(files: FileList  | File[], dataURLs) {
+	private __sendTo__library(files: FileList | File[], dataURLs) {
 
 		for (let i = 0; i < files.length; ++i) {
 			this.__addImageToLibrary(files[i], dataURLs[i]);

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LibraryImage } from '../../types/library-image';
+import { AppImage } from '../../types/app-image';
 import { Observable } from 'rxjs';
 import { BaseRestAPIService } from './base-rest-api.service';
 
@@ -47,7 +47,7 @@ export class RestAPIService extends BaseRestAPIService {
 	updateImage(
 		params: {
 			email: string, password: string,
-			libraryName: string, imageIndex: number, newValue: LibraryImage
+			libraryName: string, imageIndex: number, newValue: AppImage
 		}
 	): Observable<any> {
 		let url = `${this._baseURL}update-image`;

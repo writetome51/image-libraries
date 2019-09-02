@@ -1,4 +1,4 @@
-import { LibraryImage } from './library-image';
+import { AppImage } from './app-image';
 
 
-export declare type Library = LibraryImage[];
+export declare type Library = AppImage[];

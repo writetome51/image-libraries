@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { DataStorageService } from './data-storage.service';
-import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
-import { lis } from '../../../.logged-in-secret';
 import { ActiveUserService } from './active-user.service';
+import { Injectable } from '@angular/core';
+import { LocalStorageService } from './local-storage.service';
+import { RestAPIService } from './rest-api.service';
 
 
 @Injectable({
@@ -12,42 +11,34 @@ export class AuthenticationService {
 
 
 	constructor(
-		private __dataStorage: DataStorageService,
-		private __activeUser: ActiveUserService
-		) {
+		private __restApi: RestAPIService,
+		private __activeUser: ActiveUserService,
+		private __localStorage: LocalStorageService
+	) {
 	}
 
 
 	get loggedIn(): boolean {
-		return this.data.loggedIn;
+		return this.__localStorage.loggedIn;
 	}
 
 
 	async login() {
-		this.data = undefined;
-		await this.__set_data();
-		if (this.data) this.__addEmptyUserto__localStore();
+		let subscription = this.__restApi.userLogin(
+			{email: this.__activeUser.email, password: this.__activeUser.password}
+		).subscribe((data) => {
+
+			if (typeof data === 'string') data = JSON.parse(data);
+			if (data.email) this.__localStorage.login();
+			subscription.unsubscribe();
+		});
+
 	}
 
 
 	logout(): void {
-		this.__localStore.remove();
-	}
+		this.__localStorage.logout();
 
-
-	private async __set_data() {
-		await this.__dataStorage.updateUser(
-			{email: this.email, password: this.password, propToUpdate:'loggedIn', newValue: true}
-		);
-		let observable = this.__dataStorage.getUser({email: this.email, password: this.password});
-		let subscription = await observable.subscribe((data) => {
-
-			// If either email or password were incorrect, data will have error:
-			if (data.error) throw new Error(data.error.message);
-
-			if (this.email === data.email) this.data = data;
-			subscription.unsubscribe();
-		});
 	}
 
 

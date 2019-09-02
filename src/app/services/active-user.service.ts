@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LibraryImage } from '../../types/library-image';
+import { AppImage } from '../../types/app-image';
 import { Library } from '../../types/library';
 
 
@@ -10,11 +10,12 @@ export class ActiveUserService {
 
 	password = '';
 	newPassword = '';
+	securityQuestion = {question: '', answer: ''};
 	email = '';
 	newEmail = '';
 	activeLibraryName = '';
 	activeLibrary: Library;
 	activeImageIndex: number;
-	activeImage: LibraryImage;
+	activeImage: AppImage;
 
 }
