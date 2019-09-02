@@ -16,15 +16,14 @@ export class RestAPIService extends BaseRestAPIService {
 	}
 
 
-	createUser(params: { email: string, password: string }): Observable<any> {
-		let url = `${this._baseURL}create-user`;
-		return this._getPostRequestResult(url, params);
-	}
-
-
-	deleteUser(params: { email: string, password: string }): Observable<any> {
-		let url = `${this._baseURL}delete-user` + this._getRequiredURLQuery(params);
-		return this._http.delete(url);
+	updateImage(
+		params: {
+			email: string, password: string,
+			libraryName: string, imageIndex: number, newValue: AppImage
+		}
+	): Observable<any> {
+		let url = `${this._baseURL}update-image`;
+		return this._getPatchRequestResult(url, params);
 	}
 
 
@@ -35,23 +34,6 @@ export class RestAPIService extends BaseRestAPIService {
 		let urlQuery = this._getRequiredURLQuery(params);
 		let url = `${this._baseURL}get-library` + urlQuery;
 		return this._http.get(url);
-	}
-
-
-	getUser(params: { email: string, password: string }): Observable<any> {
-		let url = this._getURLForGettingUser(params);
-		return this._http.get(url);
-	}
-
-
-	updateImage(
-		params: {
-			email: string, password: string,
-			libraryName: string, imageIndex: number, newValue: AppImage
-		}
-	): Observable<any> {
-		let url = `${this._baseURL}update-image`;
-		return this._getPatchRequestResult(url, params);
 	}
 
 
@@ -67,38 +49,6 @@ export class RestAPIService extends BaseRestAPIService {
 		params: { email: string, password: string, newValue: any }
 	): Observable<any> {
 		let url = `${this._baseURL}update-libraries`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	updatePassword(
-		params: { email: string, password: string, newPassword: string }
-	): Observable<any> {
-		let url = `${this._baseURL}update-password`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	updateEmail(
-		params: { email: string, password: string, newEmail: string }
-	): Observable<any> {
-		let url = `${this._baseURL}update-email`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	userLogin(
-		params: { email: string, password: string }
-	): Observable<any> {
-		let url = `${this._baseURL}user-login`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	userLogout(
-		params: { email: string, password: string }
-	): Observable<any> {
-		let url = `${this._baseURL}user-logout`;
 		return this._getPatchRequestResult(url, params);
 	}
 
