@@ -15,8 +15,8 @@ export class LibrariesRestAPIService extends RestAPIService {
 	}
 
 
-	getLibrary(
-		params: { email: string, password: string, libraryName: string }
+	createLibrary(
+		params: { email: string, password: string, name: string }
 	): Observable<any> {
 
 		let urlQuery = this._getRequiredURLQuery(params);
@@ -25,12 +25,21 @@ export class LibrariesRestAPIService extends RestAPIService {
 	}
 
 
-	// Use this to create and delete a library.
-
-	update(
-		params: { email: string, password: string, newValue: any }
+	getLibrary(
+		params: { email: string, password: string, name: string }
 	): Observable<any> {
-		let url = `${this._baseURL}update-libraries`;
+
+		let urlQuery = this._getRequiredURLQuery(params);
+		let url = `${this._baseURL}get-library` + urlQuery;
+		return this._http.get(url);
+	}
+
+
+	updateLibrary(
+		// The properties in 'changes' can contain dot-notation.
+		params: { email: string, password: string, name: string, changes: any }
+	): Observable<any> {
+		let url = `${this._baseURL}update-library`;
 		return this._getPatchRequestResult(url, params);
 	}
 
