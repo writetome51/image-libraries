@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { ActiveUserService } from './active-user.service';
+import { CurrentUserService } from './current-user.service';
 import { UserRestAPIService } from './user-rest-api.service';
 
 
@@ -12,7 +12,7 @@ export class UserStorageService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
-		private __activeUser: ActiveUserService
+		private __activeUser: CurrentUserService
 	) {
 	}
 

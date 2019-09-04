@@ -1,4 +1,4 @@
-import { ActiveUserService } from './active-user.service';
+import { CurrentUserService } from './current-user.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
@@ -20,7 +20,7 @@ export class LocalStorageService {
 	private __localUser = new ObjectInLocalStorage();
 
 
-	constructor(private __activeUser: ActiveUserService) {
+	constructor(private __activeUser: CurrentUserService) {
 	}
 
 

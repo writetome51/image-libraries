@@ -1,4 +1,4 @@
-import { ActiveUserService } from './active-user.service';
+import { CurrentUserService } from './current-user.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
@@ -12,7 +12,7 @@ export class AuthenticationService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __activeUser: ActiveUserService,
+		private __activeUser: CurrentUserService,
 		private __localStorage: LocalStorageService
 	) {
 	}
