@@ -2,7 +2,7 @@ import { getURLQuery } from '@writetome51/get-url-query';
 import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
-import { sss } from '../../../.super-secret';
+import { sss } from '../../assets/.sss';
 
 
 

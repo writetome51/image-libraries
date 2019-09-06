@@ -1,7 +1,7 @@
 import { CurrentUserService } from './current-user.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from './local-storage.service';
+import { SessionIDLocalStorageService } from './local-storage.service';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class AuthenticationService {
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
 		private __activeUser: CurrentUserService,
-		private __localStorage: LocalStorageService
+		private __localStorage: SessionIDLocalStorageService
 	) {
 	}
 

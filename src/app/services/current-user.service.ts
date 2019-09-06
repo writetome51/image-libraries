@@ -17,4 +17,14 @@ export class CurrentUserService {
 	email = '';
 	newEmail = ''; // bound to 'new email' text input
 
+	private __sessionID: string;
+
+
+	get sessionID(): string {
+		if (!(this.__sessionID)) {
+			throw new Error('The "sessionID" property is not set');
+		}
+		return this.__sessionID;
+	}
+
 }

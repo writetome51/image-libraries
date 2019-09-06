@@ -33,8 +33,8 @@
     "@writetome51/is-empty-not-empty": "^1.0.0",
     "@writetome51/modify-object": "^1.0.0",
     "@writetome51/not": "^1.0.5",
-    "@writetome51/public-array-container": "^3.0.0",
     "@writetome51/object-in-local-storage": "^0.0.1",
+    "@writetome51/public-array-container": "^3.0.0",
     "angular-draggable-droppable": "^4.3.1",
     "constants": "0.0.2",
     "copy-object": "^1.0.0",
@@ -45,6 +45,7 @@
     "mongodb": "^3.1.0-beta4",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
+    "simple-crypto-js": "^2.2.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
