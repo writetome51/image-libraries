@@ -1,7 +1,7 @@
 import { CurrentUserService } from './current-user.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from './local-storage.service';
+import { SessionIDLocalStorageService } from './session-id-local-storage.service';
 
 
 @Injectable({

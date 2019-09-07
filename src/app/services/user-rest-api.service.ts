@@ -15,19 +15,19 @@ export class UserRestAPIService extends RestAPIService {
 	}
 
 
-	get(params: { email: string, password: string }): Observable<any> {
+	get(params: { sessionID: string }): Observable<any> {
 		let url = this._getURLForGettingUser(params);
 		return this._http.get(url);
 	}
 
 
-	create(params: { email: string, password: string }): Observable<any> {
+	create(params: { email: string, password: string, sessionID: string }): Observable<any> {
 		let url = `${this._baseURL}create-user`;
 		return this._getPostRequestResult(url, params);
 	}
 
 
-	delete(params: { email: string, password: string }): Observable<any> {
+	delete(params: { email: string, password: string, sessionID: string }): Observable<any> {
 		let url = `${this._baseURL}delete-user` + this._getRequiredURLQuery(params);
 		return this._http.delete(url);
 	}

@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { CurrentUserService } from './current-user.service';
 import { UserRestAPIService } from './user-rest-api.service';
+import { SessionIDLocalStorageService } from './session-id-local-storage.service';
 
 
 @Injectable({
@@ -12,37 +13,40 @@ export class UserStorageService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
-		private __activeUser: CurrentUserService
+		private __currentUser: CurrentUserService,
+		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
 	}
 
 
 	create(): Observable<any> {
 		return this.__userRestApi.create(
-			{email: this.__activeUser.email, password: this.__activeUser.password}
+			{email: this.__currentUser.email, password: this.__currentUser.password, sessionID: ''}
 		);
 	}
 
 
 	delete(): Observable<any> {
 		return this.__userRestApi.delete(
-			{email: this.__activeUser.email, password: this.__activeUser.password}
+			{
+				email: this.__currentUser.email,
+				password: this.__currentUser.password,
+				sessionID: this.__sessionIDLocalStorage.get()
+			}
 		);
 	}
 
 
 	get(): Observable<any> {
-		return this.__userRestApi.get(
-			{email: this.__activeUser.email, password: this.__activeUser.password}
-		);
+		return this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()});
 	}
 
 
 	updatePassword(): Observable<any> {
 		return this.__userRestApi.updatePassword(
 			{
-				email: this.__activeUser.email, password: this.__activeUser.password,
-				newPassword: this.__activeUser.newPassword
+				email: this.__currentUser.email, password: this.__currentUser.password,
+				newPassword: this.__currentUser.newPassword
 			}
 		);
 	}
@@ -50,8 +54,8 @@ export class UserStorageService {
 
 	updateEmail(): Observable<any> {
 		return this.__userRestApi.updateEmail({
-			email: this.__activeUser.email, password: this.__activeUser.password,
-			newEmail: this.__activeUser.newEmail
+			email: this.__currentUser.email, password: this.__currentUser.password,
+			newEmail: this.__currentUser.newEmail
 		});
 	}
 
