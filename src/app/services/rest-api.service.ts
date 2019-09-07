@@ -42,7 +42,7 @@ export abstract class RestAPIService {
 	}
 
 
-	protected _getRequiredURLQuery(keyValuePairsToAdd): string {
+	protected _getURLQuery(keyValuePairsToAdd): string {
 		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
 		return getURLQuery(keyValuePairsToAdd);
 	}
@@ -51,12 +51,6 @@ export abstract class RestAPIService {
 	protected _getRequiredBody(keyValuePairsToAdd): any {
 		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
 		return keyValuePairsToAdd;
-	}
-
-
-	protected _getURLForGettingUser(params: { email: string, password: string }) {
-		let urlQuery = this._getRequiredURLQuery(params);
-		return `${this._baseURL}get-user` + urlQuery;
 	}
 
 

@@ -1,4 +1,3 @@
-import { CurrentUserService } from './current-user.service';
 import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { SimpleCrypto } from 'simple-crypto-js';
@@ -20,10 +19,6 @@ export class SessionIDLocalStorageService {
 	private __localCurrentUser = new ObjectInLocalStorage('image-library-current-user', {});
 
 
-	constructor(private __currentUser: CurrentUserService) {
-	}
-
-
 	set(sessionID): void {
 		// sessionID = SimpleCrypto.encrypt(sessionID);
 		this.__localCurrentUser.set({sessionID});
@@ -32,6 +27,11 @@ export class SessionIDLocalStorageService {
 
 	get(): string {
 		return SimpleCrypto.decrypt(this.__localCurrentUser.get()['sessionID']);
+	}
+
+
+	remove(){
+		this.__localCurrentUser.remove();
 	}
 
 

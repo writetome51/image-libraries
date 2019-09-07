@@ -16,20 +16,18 @@ export class LibrariesRestAPIService extends RestAPIService {
 
 
 	createLibrary(
-		params: { email: string, password: string, name: string }
+		params: { sessionID: string, name: string }
 	): Observable<any> {
-
-		let urlQuery = this._getRequiredURLQuery(params);
-		let url = `${this._baseURL}get-library` + urlQuery;
-		return this._http.get(url);
+		let url = `${this._baseURL}create-library`;
+		return this._getPostRequestResult(url, params);
 	}
 
 
 	getLibrary(
-		params: { email: string, password: string, name: string }
+		params: { sessionID: string, name: string }
 	): Observable<any> {
 
-		let urlQuery = this._getRequiredURLQuery(params);
+		let urlQuery = this._getURLQuery(params);
 		let url = `${this._baseURL}get-library` + urlQuery;
 		return this._http.get(url);
 	}
@@ -37,10 +35,16 @@ export class LibrariesRestAPIService extends RestAPIService {
 
 	updateLibrary(
 		// The properties in 'changes' can contain dot-notation.
-		params: { email: string, password: string, name: string, changes: any }
+		params: { sessionID: string, name: string, changes: any }
 	): Observable<any> {
 		let url = `${this._baseURL}update-library`;
 		return this._getPatchRequestResult(url, params);
+	}
+
+
+	deleteLibrary(params: { sessionID: string, name: string }): Observable<any> {
+		let url = `${this._baseURL}delete-library` + this._getURLQuery(params);
+		return this._http.delete(url);
 	}
 
 

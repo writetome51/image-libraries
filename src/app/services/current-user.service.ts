@@ -20,11 +20,4 @@ export class CurrentUserService {
 	private __sessionID: string;
 
 
-	get sessionID(): string {
-		if (!(this.__sessionID)) {
-			throw new Error('The "sessionID" property is not set');
-		}
-		return this.__sessionID;
-	}
-
 }

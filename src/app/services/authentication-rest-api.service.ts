@@ -18,13 +18,12 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		params: { email: string, password: string }
 	): Observable<any> {
 		let url = `${this._baseURL}user-login`;
+		params['sessionID'] = '';
 		return this._getPatchRequestResult(url, params);
 	}
 
 
-	logout(
-		params: { email: string, password: string }
-	): Observable<any> {
+	logout(params: { sessionID: string }): Observable<any> {
 		let url = `${this._baseURL}user-logout`;
 		return this._getPatchRequestResult(url, params);
 	}

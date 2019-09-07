@@ -16,25 +16,26 @@ export class UserRestAPIService extends RestAPIService {
 
 
 	get(params: { sessionID: string }): Observable<any> {
-		let url = this._getURLForGettingUser(params);
+		let url = this.__getURLForGettingUser(params);
 		return this._http.get(url);
 	}
 
 
-	create(params: { email: string, password: string, sessionID: string }): Observable<any> {
+	create(params: { email: string, password: string }): Observable<any> {
+		params['sessionID'] = '';
 		let url = `${this._baseURL}create-user`;
 		return this._getPostRequestResult(url, params);
 	}
 
 
 	delete(params: { email: string, password: string, sessionID: string }): Observable<any> {
-		let url = `${this._baseURL}delete-user` + this._getRequiredURLQuery(params);
+		let url = `${this._baseURL}delete-user` + this._getURLQuery(params);
 		return this._http.delete(url);
 	}
 
 
 	updatePassword(
-		params: { email: string, password: string, newPassword: string }
+		params: { email: string, password: string, newPassword: string, sessionID: string }
 	): Observable<any> {
 		let url = `${this._baseURL}update-password`;
 		return this._getPatchRequestResult(url, params);
@@ -42,10 +43,16 @@ export class UserRestAPIService extends RestAPIService {
 
 
 	updateEmail(
-		params: { email: string, password: string, newEmail: string }
+		params: { email: string, password: string, newEmail: string, sessionID: string }
 	): Observable<any> {
 		let url = `${this._baseURL}update-email`;
 		return this._getPatchRequestResult(url, params);
+	}
+
+
+	private __getURLForGettingUser(params: { sessionID: string }) {
+		let urlQuery = this._getURLQuery(params);
+		return `${this._baseURL}get-user` + urlQuery;
 	}
 
 
