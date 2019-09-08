@@ -10,6 +10,11 @@ import { Injectable } from '@angular/core';
 })
 export class LoginProcessorService {
 
+	// So the session ID is used to find the user document, and if loggedIn = true,
+	// the user document is returned to the user. But if loggedIn = false, or
+	// the most recent login was too many days ago, the user is forced to log in again.
+	// If the sessionID is not found in localStorage, it's assumed the user is logged out.
+
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
