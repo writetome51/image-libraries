@@ -15,15 +15,10 @@ export class AuthenticationResultService {
 
 
 	interpretLogin(result) {
-		if (typeof result === 'string') {
-			result = JSON.parse(result);
-		}
-		if (result.email) {
-			this.__sessionIDLocalStorage.set(result.sessionID);
-		}
-		else {
-			this.__error.message = result['error'].message;
-		}
+		if (typeof result === 'string') result = JSON.parse(result);
+
+		if (result.sessionID) this.__sessionIDLocalStorage.set(result.sessionID);
+		else this.__error.message = result.error.message;
 	}
 
 
