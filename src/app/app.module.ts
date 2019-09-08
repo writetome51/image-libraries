@@ -1,9 +1,9 @@
 import { AppComponent } from './app.component';
-import { AppImageComponent } from './image-viewer/image-list/library-image/app-image.component';
+import { AppImageComponent } from './image-viewer/image-list/app-image/app-image.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeleteImageButtonComponent }
-	from './image-viewer/image-list/library-image/delete-image-button/delete-image-button.component';
+	from './image-viewer/image-list/app-image/delete-image-button/delete-image-button.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';

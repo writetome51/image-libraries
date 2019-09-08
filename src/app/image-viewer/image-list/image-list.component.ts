@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LibraryService } from '../../services/library.service';
+import { AppImage } from '../../../interfaces/app-image';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ImageListComponent {
 	}
 
 
-	get images(): any[] {
+	get images(): AppImage[] {
 		return this.__library.images;
 	}
 

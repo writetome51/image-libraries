@@ -44,6 +44,7 @@ testem.log
 /typings
 
 /src/assets/.sss.ts
+/src/assets/.ecky.ts
 
 # System Files
 .DS_Store

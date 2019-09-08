@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { SimpleCrypto } from 'simple-crypto-js';
+import { ecky } from '../../assets/.ecky';
 
 
 @Injectable({
@@ -17,6 +18,7 @@ export class SessionIDLocalStorageService {
 	// If the sessionID is not found in localStorage, it's assumed the user is logged out.
 
 	private __localCurrentUser = new ObjectInLocalStorage('image-library-current-user', {});
+	private __cryptographer = new SimpleCrypto(ecky);
 
 
 	set(sessionID): void {
@@ -26,13 +28,28 @@ export class SessionIDLocalStorageService {
 
 
 	get(): string {
-		return SimpleCrypto.decrypt(this.__localCurrentUser.get()['sessionID']);
+		// @ts-ignore
+		return this.__cryptographer.decrypt(this.__localCurrentUser.get()['sessionID']);
 	}
 
 
-	remove(){
+	remove() {
 		this.__localCurrentUser.remove();
 	}
+
+
+	/*****************************
+
+	 var SimpleCrypto = require("simple-crypto-js").default;
+
+	 var simpleCrypto = new SimpleCrypto(ecky);
+
+	 var plainText = "Hello World!";
+	 var cipherText = simpleCrypto.encrypt(plainText);
+
+	 var decipherText = simpleCrypto.decrypt(cipherText);
+
+	 ****************************/
 
 
 }
