@@ -20,9 +20,11 @@ export class UserStorageService {
 
 
 	create(): Observable<any> {
-		return this.__userRestApi.create(
-			{email: this.__currentUser.email, password: this.__currentUser.password}
-		);
+		return this.__userRestApi.create({
+			email: this.__currentUser.email,
+			password: this.__currentUser.password,
+			securityQuestion: this.__currentUser.securityQuestion
+		});
 	}
 
 

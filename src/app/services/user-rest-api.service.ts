@@ -21,7 +21,12 @@ export class UserRestAPIService extends RestAPIService {
 	}
 
 
-	create(params: { email: string, password: string }): Observable<any> {
+	create(
+		params: {
+			email: string, password: string,
+			securityQuestion: { question: string, answer: string }
+		}
+	): Observable<any> {
 		params['sessionID'] = '';
 		let url = `${this._baseURL}create-user`;
 		return this._getPostRequestResult(url, params);

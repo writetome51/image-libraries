@@ -17,7 +17,5 @@ export class CurrentUserService {
 	email = '';
 	newEmail = ''; // bound to 'new email' text input
 
-	private __sessionID: string;
-
 
 }
