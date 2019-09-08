@@ -7,7 +7,7 @@ import { RestAPIService } from './rest-api.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class LibrariesRestAPIService extends RestAPIService {
+export class LibraryRestApiService extends RestAPIService {
 
 
 	constructor(_http: HttpClient) {
@@ -15,17 +15,13 @@ export class LibrariesRestAPIService extends RestAPIService {
 	}
 
 
-	createLibrary(
-		params: { sessionID: string, name: string }
-	): Observable<any> {
+	create(params: { sessionID: string, name: string }): Observable<any> {
 		let url = `${this._baseURL}create-library`;
 		return this._getPostRequestResult(url, params);
 	}
 
 
-	getLibrary(
-		params: { sessionID: string, name: string }
-	): Observable<any> {
+	get(params: { sessionID: string, name: string }): Observable<any> {
 
 		let urlQuery = this._getURLQuery(params);
 		let url = `${this._baseURL}get-library` + urlQuery;
@@ -33,7 +29,14 @@ export class LibrariesRestAPIService extends RestAPIService {
 	}
 
 
-	updateLibrary(
+	getLibraries(params: { sessionID: string }): Observable<any> {
+		let urlQuery = this._getURLQuery(params);
+		let url = `${this._baseURL}get-libraries` + urlQuery;
+		return this._http.get(url);
+	}
+
+
+	update(
 		// The properties in 'changes' can contain dot-notation.
 		params: { sessionID: string, name: string, changes: any }
 	): Observable<any> {
@@ -42,7 +45,7 @@ export class LibrariesRestAPIService extends RestAPIService {
 	}
 
 
-	deleteLibrary(params: { sessionID: string, name: string }): Observable<any> {
+	delete(params: { sessionID: string, name: string }): Observable<any> {
 		let url = `${this._baseURL}delete-library` + this._getURLQuery(params);
 		return this._http.delete(url);
 	}

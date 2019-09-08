@@ -1,6 +1,6 @@
 import { CurrentLibraryService } from './current-library.service';
 import { Injectable } from '@angular/core';
-import { LibrariesRestAPIService } from './libraries-rest-api.service';
+import { LibraryRestApiService } from './library-rest-api.service';
 import { Observable } from 'rxjs';
 import { SessionIDLocalStorageService } from './session-id-local-storage.service';
 
@@ -12,7 +12,7 @@ export class LibraryStorageService {
 
 
 	constructor(
-		private __librariesRestApi: LibrariesRestAPIService,
+		private __libraryRestApi: LibraryRestApiService,
 		private __currentLibrary: CurrentLibraryService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
@@ -20,17 +20,25 @@ export class LibraryStorageService {
 
 
 	getLibrary(): Observable<any> {
-		return this.__librariesRestApi.getLibrary({
+		return this.__libraryRestApi.get({
 			sessionID: this.__sessionIDLocalStorage.get(),
 			name: this.__currentLibrary.name
 		});
 	}
 
 
+	getLibraries(): Observable<any> {
+		return this.__libraryRestApi.getLibraries({
+			sessionID: this.__sessionIDLocalStorage.get()
+		});
+	}
+
+
 	updateLibrary(): Observable<any> {
-		return this.__librariesRestApi.updateLibrary({
+		return this.__libraryRestApi.update({
 			sessionID: this.__sessionIDLocalStorage.get(),
 			name: this.__currentLibrary.name,
+
 			// The properties in 'changes' can contain dot-notation
 			changes: {}
 		});

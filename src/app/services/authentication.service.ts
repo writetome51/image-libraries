@@ -16,7 +16,7 @@ export class AuthenticationService {
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
 		private __currentUser: CurrentUserService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		private __sessionIDLocalStorage: SessionIDLocalStorageService,
 	) {
 	}
 
@@ -31,12 +31,7 @@ export class AuthenticationService {
 			{email: this.__currentUser.email, password: this.__currentUser.password}
 		).subscribe((data: DBUser) => {
 
-			if (typeof data === 'string') {
-				data = JSON.parse(data);
-			}
-			if (data.email) {
-				this.__sessionIDLocalStorage.set(data.sessionID);
-			}
+
 			subscription.unsubscribe();
 		});
 
@@ -47,13 +42,7 @@ export class AuthenticationService {
 		let subscription = this.__authenticationRestApi.logout(
 			{sessionID: this.__sessionIDLocalStorage.get()}
 		).subscribe((data) => {
-			if (typeof data === 'string' && JSON.parse(data).success) {
-				this.__sessionIDLocalStorage.remove();
-			}
-			else {
-				if (typeof data === 'string') data = JSON.parse(data);
-				alert(data.error);
-			}
+
 
 			subscription.unsubscribe();
 		});
