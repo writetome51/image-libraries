@@ -1,7 +1,7 @@
+import { CurrentLibraryService } from './current-library.service';
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { LibraryService } from './library.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class UploadedImagesProcessorService {
 
 
 	constructor(
-		private __library: LibraryService
+		private __currentLibrary: CurrentLibraryService
 	) {
 	}
 
@@ -20,23 +20,23 @@ export class UploadedImagesProcessorService {
 
 		if (notEmpty(files)) {
 			let dataURLs = await getDataURLs(files);
-			this.__sendTo__library(files, dataURLs);
+			this.__sendTo__currentLibrary(files, dataURLs);
 		}
 	}
 
 
-	private __sendTo__library(files: FileList | File[], dataURLs) {
+	private __sendTo__currentLibrary(files: FileList | File[], dataURLs) {
 
 		for (let i = 0; i < files.length; ++i) {
-			this.__addImageToLibrary(files[i], dataURLs[i]);
+			this.__addImageTo__currentLibrary(files[i], dataURLs[i]);
 		}
 	}
 
 
-	private __addImageToLibrary(file, dataURL) {
+	private __addImageTo__currentLibrary(file, dataURL) {
 		let image = {name: file.name, src: dataURL, description: ''};
 
-		this.__library.images.push(image);
+		this.__currentLibrary.images.push(image);
 	}
 
 

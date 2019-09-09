@@ -19,7 +19,7 @@ export class SaveChangesComponent {
 
 
 	saveChanges() {
-		this.__librarySaver.save();
+		this.__librarySaver.saveUpdate();
 	}
 
 }

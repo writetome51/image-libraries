@@ -19,7 +19,15 @@ export class LibraryStorageService {
 	}
 
 
-	getLibrary(): Observable<any> {
+	create(libraryName): Observable<any> {
+		return this.__libraryRestApi.create({
+			sessionID: this.__sessionIDLocalStorage.get(),
+			name: libraryName
+		});
+	}
+
+
+	get(): Observable<any> {
 		return this.__libraryRestApi.get({
 			sessionID: this.__sessionIDLocalStorage.get(),
 			name: this.__currentLibrary.name
@@ -34,13 +42,14 @@ export class LibraryStorageService {
 	}
 
 
-	updateLibrary(): Observable<any> {
+	// The properties in 'changes' can contain dot-notation
+
+	update(changes): Observable<any> {
 		return this.__libraryRestApi.update({
 			sessionID: this.__sessionIDLocalStorage.get(),
 			name: this.__currentLibrary.name,
 
-			// The properties in 'changes' can contain dot-notation
-			changes: {}
+			changes
 		});
 	}
 

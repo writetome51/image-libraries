@@ -1,9 +1,9 @@
-// @ts-ignore
-const FileSaver = require('file-saver');
-import { getDateTimeID } from '@writetome51/get-date-time-id';
+import { CurrentLibraryService } from './current-library.service';
+import { ErrorMessageService } from './error-message.service';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { LibraryService } from './library.service';
+import { LibraryStorageService } from './library-storage.service';
 
 
 @Injectable({
@@ -11,24 +11,34 @@ import { LibraryService } from './library.service';
 })
 export class LibrarySaverService {
 
-	private __extension = '.json';
-	private __writeOptions = {type: 'text/plain;charset=utf-8'};
 
-
-	constructor(private __library: LibraryService) {
+	constructor(
+		private __currentLibrary: CurrentLibraryService,
+		private __error: ErrorMessageService,
+		private __libraryStorage: LibraryStorageService
+	) {
 	}
 
 
-	save(): void {
-		if (isEmpty(this.__library.name)) {
-			throw new Error(`The library must be given a name before you save it`);
+	saveNew(): void {
+		this.__currentLibrary.name = this.__currentLibrary.name.trim();
+		if (isEmpty(this.__currentLibrary.name)) {
+			this.__error.message = `The library must be given a name before you save it`;
+			return;
 		}
-		let lib = {name: this.__library.name, images: this.__library.images};
-		let txtToWrite = JSON.stringify(lib);
+		this.__libraryStorage.create(this.__currentLibrary.name);
+	}
 
-		let fileName = (this.__library.name + '-' + getDateTimeID() + this.__extension);
-		let file = new File([txtToWrite], fileName, this.__writeOptions);
-		FileSaver.saveAs(file);
+
+	saveUpdate(): void {
+		if (hasValue(this.__currentLibrary.changes['name'])) {
+			let name = this.__currentLibrary.changes['name'].trim();
+			if (isEmpty(name)) {
+				delete this.__currentLibrary.changes['name'];
+			}
+		}
+		this.__libraryStorage.update(this.__currentLibrary.changes);
+
 	}
 
 
