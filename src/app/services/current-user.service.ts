@@ -9,6 +9,8 @@ export class CurrentUserService {
 	// If user doesn't exist yet in db, this is bound to 'password' text input.
 	password = '';
 
+	passwordAgain = '';
+
 	// For when user wants to change password
 	newPassword = ''; // bound to 'new password' text input
 

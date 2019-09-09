@@ -1,0 +1,9 @@
+<div>
+	<input type="text" [(ngModel)]="currentUser.email" placeholder="Email..."/>
+	<input type="text" [(ngModel)]="currentUser.password" placeholder="Password..."/>
+	<input type="text" [(ngModel)]="currentUser.passwordAgain" placeholder="Password again..."/>
+	<input type="text" [(ngModel)]="currentUser.securityQuestion.question" placeholder="Question..."/>
+	<input type="text" [(ngModel)]="currentUser.securityQuestion.answer" placeholder="Answer..."/>
+
+	<button (click)="create()">Add User</button>
+</div>

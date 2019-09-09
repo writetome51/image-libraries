@@ -1,5 +1,8 @@
 export interface AppUser {
-	email: string;
-	password: string;
-	securityQuestion: { question: string, answer: string };
+	email: string; // unique, indexed.
+	password: string; // hashed
+	securityQuestion: {
+		question: string,
+		answer: string // hashed
+	};
 }

@@ -21,6 +21,7 @@ import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.c
 import { ChooseImagesFromDeviceComponent }
 	from './choose-images-from-device/choose-images-from-device.component';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EnterImageURLComponent } from './enter-image-url/enter-image-url.compon
 		IntroductionComponent,
 		LibraryChooserComponent,
 		PageNotFoundComponent,
-		SaveChangesComponent
+		SaveChangesComponent,
+		CreateUserComponent
 	],
 	imports: [
 		AppRoutingModule,
