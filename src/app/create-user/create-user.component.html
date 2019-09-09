@@ -1,9 +1,41 @@
 <div>
-	<input type="text" [(ngModel)]="currentUser.email" placeholder="Email..."/>
-	<input type="text" [(ngModel)]="currentUser.password" placeholder="Password..."/>
-	<input type="text" [(ngModel)]="currentUser.passwordAgain" placeholder="Password again..."/>
-	<input type="text" [(ngModel)]="currentUser.securityQuestion.question" placeholder="Question..."/>
-	<input type="text" [(ngModel)]="currentUser.securityQuestion.answer" placeholder="Answer..."/>
+	<label>
+		<input type="text" required
+			   [(ngModel)]="currentUser.email" placeholder="Email..." [minLength]="6"
+		/>
+	</label>
 
-	<button (click)="create()">Add User</button>
+	<label>
+		<input type="password" required
+			   [(ngModel)]="currentUser.password" placeholder="Password..." [minLength]="6"
+		/>
+	</label>
+
+	<label>
+		<input type="password" required
+			   [(ngModel)]="currentUser.passwordAgain" placeholder="Password again..." [minLength]="6"
+		/>
+	</label>
+
+	<p>Create a security question to ask yourself if you can't remember your password:</p>
+	<label>
+		<input type="text" required
+			   [(ngModel)]="currentUser.securityQuestion.question" placeholder="Question..."
+			   [minLength]="9"
+		/>
+	</label>
+
+	<label>
+		<input type="password" required
+			   [(ngModel)]="currentUser.securityQuestion.answer" placeholder="Answer..."
+			   [minLength]="3"
+		/>
+	</label>
+
+	<div>
+		<button (click)="create()">Create</button>
+
+		<p [class.invisible]="!(error.message)">{{error.message}}</p>
+	</div>
+
 </div>
