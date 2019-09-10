@@ -33,9 +33,9 @@
 	</label>
 
 	<div>
-		<button (click)="create()">Create</button>
+		<button (click)="newUserSaver.save()">Create User</button>
 
-		<p [class.invisible]="!(error.message)">{{error.message}}</p>
+		<p class="error-message" [class.invisible]="!(error.message)">{{error.message}}</p>
 	</div>
 
 </div>

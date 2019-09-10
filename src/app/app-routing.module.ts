@@ -4,6 +4,7 @@ import { LibraryChooserComponent } from './library-chooser/library-chooser.compo
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
 		path: '',
 		component: IntroductionComponent,
 		pathMatch: 'full'
+	},
+	{
+		path: 'create-user',
+		component: CreateUserComponent
 	},
 	{
 		path: 'choose-images',
