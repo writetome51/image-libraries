@@ -5,14 +5,15 @@
 		<p *ngIf="input.prompt">{{input.prompt}}</p>
 		<label>
 			<input [type]="input.type" required
-				   [(ngModel)]="getProperty(input.userProperty)" placeholder="{{input.placeholder}}..."
-				   [minLength]="input.minLength"
+				   [(ngModel)]="getProperty(input.userProperty)"
+				   placeholder="{{input.placeholder}}..." [minLength]="input.minLength"
 			/>
 		</label>
+
 	</div>
 
 	<div>
-		<button (click)="newUserSaver.save()">Create User</button>
+		<button (click)="create()">Create User</button>
 
 		<p class="error-message" [class.invisible]="!(error.message)">{{error.message}}</p>
 	</div>

@@ -27,16 +27,21 @@ export class CreateUserComponent {
 
 
 	constructor(
-		public currentUser: CurrentUserService,
 		public error: ErrorMessageService,
-		public newUserSaver: NewUserSaverService
+		private __newUserSaver: NewUserSaverService,
+		private __currentUser: CurrentUserService
 	) {
 		this.error.message = '';
 	}
 
 
 	getProperty(property) {
-		return getProperty(property, this.currentUser);
+		return getProperty(property, this.__currentUser);
+	}
+
+
+	create() {
+		this.__newUserSaver.save();
 	}
 
 
