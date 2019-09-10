@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { sss } from '../../assets/.sss';
 
 
-
 export abstract class RestAPIService {
 
 	protected _baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +

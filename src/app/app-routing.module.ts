@@ -1,10 +1,10 @@
+import { CreateUserComponent } from './create-user/create-user.component';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
@@ -34,6 +34,8 @@ const routes: Routes = [
 		path: 'open-library',
 		component: LibraryChooserComponent
 	},
+
+	// This path must come last, meaning if none of the above paths apply, do this.
 	{path: '**', component: PageNotFoundComponent}
 ];
 

@@ -2,8 +2,12 @@ import { AppComponent } from './app.component';
 import { AppImageComponent } from './image-viewer/image-list/app-image/app-image.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { ChooseImagesFromDeviceComponent }
+	from './choose-images-from-device/choose-images-from-device.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { DeleteImageButtonComponent }
 	from './image-viewer/image-list/app-image/delete-image-button/delete-image-button.component';
+import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageChooserComponent } from './image-chooser/image-chooser.component';
@@ -18,10 +22,6 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableGridListModule }
 	from '../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './image-viewer/save-changes/save-changes.component';
-import { ChooseImagesFromDeviceComponent }
-	from './choose-images-from-device/choose-images-from-device.component';
-import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
-import { CreateUserComponent } from './create-user/create-user.component';
 
 
 @NgModule({
@@ -29,6 +29,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 		AppComponent,
 		AppImageComponent,
 		ChooseImagesFromDeviceComponent,
+		CreateUserComponent,
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		ImageChooserComponent,
@@ -38,8 +39,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 		IntroductionComponent,
 		LibraryChooserComponent,
 		PageNotFoundComponent,
-		SaveChangesComponent,
-		CreateUserComponent
+		SaveChangesComponent
 	],
 	imports: [
 		AppRoutingModule,
