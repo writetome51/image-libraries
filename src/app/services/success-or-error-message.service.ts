@@ -11,7 +11,7 @@ export class SuccessOrErrorMessageService {
 
 
 	set success(value) {
-		this.__error = '';
+		this.__error = ''; // If there's success, there can't be an error.
 		this.__success = value;
 	}
 
@@ -22,7 +22,7 @@ export class SuccessOrErrorMessageService {
 
 
 	set error(value) {
-		this.__success = '';
+		this.__success = '';  // If there's an error, there can't be success.
 		this.__error = value;
 	}
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ErrorMessageService } from './error-message.service';
 import { CurrentLibraryService } from './current-library.service';
+import { SuccessOrErrorMessageService } from './success-or-error-message.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class ImageURLProcessorService {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
-		private __error: ErrorMessageService
+		private __successOrErrorMessage: SuccessOrErrorMessageService
 	) {
 	}
 
@@ -22,7 +22,7 @@ export class ImageURLProcessorService {
 			this.__currentLibrary.images.push({name: '', src: url, description: ''});
 		}
 		else {
-			this.__error.message =
+			this.__successOrErrorMessage.error =
 				'The URL you entered is either not connected to a resource, or access is denied.';
 		}
 	}

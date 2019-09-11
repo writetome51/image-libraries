@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ErrorMessageService } from './error-message.service';
 import { SessionIDLocalStorageService } from './session-id-local-storage.service';
+import { SuccessOrErrorMessageService } from './success-or-error-message.service';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { SessionIDLocalStorageService } from './session-id-local-storage.service
 export class AuthenticationResultService {
 
 	constructor(
-		private __error: ErrorMessageService,
+		private __successOrErrorMessage: SuccessOrErrorMessageService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,) {
 	}
 
@@ -18,7 +18,7 @@ export class AuthenticationResultService {
 		if (typeof result === 'string') result = JSON.parse(result);
 
 		if (result.sessionID) this.__sessionIDLocalStorage.set(result.sessionID);
-		else this.__error.message = result.error.message;
+		else this.__successOrErrorMessage.error = result.error.message;
 	}
 
 
@@ -28,7 +28,7 @@ export class AuthenticationResultService {
 		}
 		else {
 			if (typeof result === 'string') result = JSON.parse(result);
-			this.__error.message = result.error.message;
+			this.__successOrErrorMessage.error = result.error.message;
 		}
 	}
 
