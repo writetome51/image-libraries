@@ -1,13 +1,9 @@
 <div class="container-fluid" style="text-align:center;">
 
-	<h1><a href="/" title="home page">{{ title }}</a></h1>
+	<header id="site-header">
+		<h1><a href="/" title="home page">{{ title }}</a></h1>
+	</header>
 
 	<router-outlet></router-outlet>
-
-	<!--    Temporary:     -->
-	<div *ngFor="let img of images">
-		<img [src]="img.src"/>
-	</div>
-
 
 </div>

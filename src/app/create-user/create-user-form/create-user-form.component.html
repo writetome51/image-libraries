@@ -1,0 +1,23 @@
+<div class="form-container">
+	<form>
+
+		<div *ngFor="let input of inputs" class="input-container">
+
+			<p *ngIf="input.prompt">{{input.prompt}}</p>
+
+			<label for="{{input.userProperty}}" hidden>{{input.placeholder}}</label>
+
+			<input [type]="input.type" id="{{input.userProperty}}" required="true"
+				   name="{{input.userProperty}}"
+				   [(ngModel)]="currentUser[input.userProperty]"
+				   placeholder="{{input.placeholder}}..." [minLength]="input.minLength"
+			/>
+
+		</div>
+
+		<div>
+			<button (click)="create()">Create</button>
+		</div>
+
+	</form>
+</div>

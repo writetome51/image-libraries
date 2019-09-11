@@ -5,15 +5,13 @@ import { LibraryService } from '../services/library.service';
 
 
 @Component({
-	selector: 'image-chooser',
-	templateUrl: './image-chooser.component.html'
+	selector: 'add-images',
+	templateUrl: './add-images.component.html'
 })
-export class ImageChooserComponent {
+export class AddImagesComponent {
 
 	gettingImagesInstructions = `The images can come from your own device or from somewhere 
 	else in the web.`;
-
-
 
 
 	constructor(
@@ -31,15 +29,6 @@ export class ImageChooserComponent {
 
 	get libraryName(): string {
 		return this.__library.name.trim();
-	}
-
-
-
-
-
-
-	addImagesToLibrary(images: FileList | File[]) {
-		this.__imagesProcessor.process(images);
 	}
 
 

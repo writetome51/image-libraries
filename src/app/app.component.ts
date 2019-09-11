@@ -1,19 +1,16 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { UserStorageService } from './services/user-storage.service';
+import { Component, HostListener } from '@angular/core';
 
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
 	title = 'Image Library';
-	images: any[];
-	subscription;
 
 
-	constructor(private __dataStorage: UserStorageService) {
+	constructor() {
 	}
 
 
@@ -21,15 +18,6 @@ export class AppComponent implements OnInit {
 	@HostListener('document:keyup', ['$event'])
 	onKeyup(event) {
 		console.log(event);
-	}
-
-
-	async ngOnInit() {
-		this.subscription = this.__dataStorage.getLibrary()
-			.subscribe((data) => {
-				this.images = JSON.parse(data);
-				this.subscription.unsubscribe();
-			});
 	}
 
 

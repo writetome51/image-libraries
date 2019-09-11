@@ -14,8 +14,13 @@ export class SessionIDLocalStorageService {
 	// Since it is unique, and also stored in the database, the app uses this to check if he is
 	// still logged in.
 
-	private __localCurrentUser = new ObjectInLocalStorage('image-library-current-user', {});
+	private __localCurrentUser = new ObjectInLocalStorage();
 	private __cryptographer = new SimpleCrypto(ecky);
+
+
+	constructor(){
+		this.__localCurrentUser.key = 'image-library-current-user';
+	}
 
 
 	set(sessionID): void {

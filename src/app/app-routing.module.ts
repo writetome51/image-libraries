@@ -1,5 +1,5 @@
 import { CreateUserComponent } from './create-user/create-user.component';
-import { ImageChooserComponent } from './image-chooser/image-chooser.component';
+import { AddImagesComponent } from './add-images/add-images.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { NgModule } from '@angular/core';
@@ -27,8 +27,8 @@ const routes: Routes = [
 		component: CreateUserComponent
 	},
 	{
-		path: 'choose-images',
-		component: ImageChooserComponent
+		path: 'add-images',
+		component: AddImagesComponent
 	},
 	{
 		path: 'open-library',

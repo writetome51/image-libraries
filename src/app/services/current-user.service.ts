@@ -24,4 +24,24 @@ export class CurrentUserService {
 	newEmail = ''; // bound to 'new email' text input
 
 
+	set question(value) {
+		this.securityQuestion.question = value;
+	}
+
+
+	get question() {
+		return this.securityQuestion.question;
+	}
+
+
+	set answer(value) {
+		this.securityQuestion.answer = value;
+	}
+
+
+	get answer() {
+		return this.securityQuestion.answer;
+	}
+
+
 }

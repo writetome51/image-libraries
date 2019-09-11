@@ -1,21 +1,12 @@
-<div>
+<main>
 
-	<div *ngFor="let input of inputs">
+	<section>
+		<header><h2>{{heading}}</h2></header>
 
-		<p *ngIf="input.prompt">{{input.prompt}}</p>
-		<label>
-			<input [type]="input.type" required
-				   [(ngModel)]="getProperty(input.userProperty)"
-				   placeholder="{{input.placeholder}}..." [minLength]="input.minLength"
-			/>
-		</label>
+		<create-user-form></create-user-form>
 
-	</div>
+		<error-or-success-message-area></error-or-success-message-area>
 
-	<div>
-		<button (click)="create()">Create User</button>
+	</section>
 
-		<p class="error-message" [class.invisible]="!(error.message)">{{error.message}}</p>
-	</div>
-
-</div>
+</main>

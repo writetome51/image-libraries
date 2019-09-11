@@ -2,10 +2,26 @@ a, a:hover {
 	text-decoration: none;
 }
 
-input{
-	margin:auto;
+
+input {
+	margin: auto;
+	padding: 5px;
+	width: 60%;
+	text-align: center;
 }
+
+
+header {
+	margin-bottom: 30px;
+}
+
 
 .invisible {
 	visibility: hidden;
+}
+
+
+.input-container{
+	margin: 10px;
+	padding: 5px;
 }
