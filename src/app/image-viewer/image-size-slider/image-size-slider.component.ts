@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageDisplaySettingsService } from '../../services/image-display-settings.service';
+import { ImageDisplaySettingsService } from '../../services/image/image-display-settings.service';
 
 
 @Component({

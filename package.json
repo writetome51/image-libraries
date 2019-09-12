@@ -42,7 +42,6 @@
     "error-if-not-integer": "^1.0.0",
     "file-saver": "^2.0.2",
     "get-object-from-json": "^1.0.3",
-    "mongodb": "^3.1.0-beta4",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "simple-crypto-js": "^2.2.0",

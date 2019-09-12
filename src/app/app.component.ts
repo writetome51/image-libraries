@@ -10,10 +10,6 @@ export class AppComponent {
 	title = 'Image Library';
 
 
-	constructor() {
-	}
-
-
 	// Adds keyup listener to document.
 	@HostListener('document:keyup', ['$event'])
 	onKeyup(event) {

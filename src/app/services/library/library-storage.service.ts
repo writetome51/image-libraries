@@ -2,7 +2,7 @@ import { CurrentLibraryService } from './current-library.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { Observable } from 'rxjs';
-import { SessionIDLocalStorageService } from './session-id-local-storage.service';
+import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 
 
 @Injectable({
@@ -48,7 +48,6 @@ export class LibraryStorageService {
 		return this.__libraryRestApi.update({
 			sessionID: this.__sessionIDLocalStorage.get(),
 			name: this.__currentLibrary.name,
-
 			changes
 		});
 	}

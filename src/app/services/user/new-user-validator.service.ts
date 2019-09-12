@@ -1,7 +1,7 @@
+import { CurrentUserService } from './current-user.service';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { CurrentUserService } from './current-user.service';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
 
 
 @Injectable({

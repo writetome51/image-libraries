@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LibraryReaderService } from '../services/library-reader.service';
-import { LibraryService } from '../services/library.service';
+import { LibraryReaderService } from '../services/library/library-reader.service';
+import { LibraryService } from '../services/library/library.service';
 
 
 @Component({

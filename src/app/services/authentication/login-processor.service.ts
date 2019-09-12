@@ -1,7 +1,7 @@
 import { AuthenticationResultService } from './authentication-result.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserService } from './current-user.service';
-import { DBUser } from '../../interfaces/db-user';
+import { CurrentUserService } from '../user/current-user.service';
+import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestAPIService } from './rest-api.service';
+import { RestAPIService } from '../rest-api.service';
 
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CurrentUserService } from '../services/current-user.service';
-import { NewUserSaverService } from '../services/new-user-saver.service';
+import { CurrentUserService } from '../../services/user/current-user.service';
+import { NewUserSaverService } from '../../services/user/new-user-saver.service';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class CreateUserFormComponent {
 
 
 	constructor(
-		public currentUser: CurrentUserService, 
+		public currentUser: CurrentUserService,
 		private __newUserSaver: NewUserSaverService
 	) {
 	}

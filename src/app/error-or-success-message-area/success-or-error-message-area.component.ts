@@ -3,10 +3,10 @@ import { SuccessOrErrorMessageService } from '../services/success-or-error-messa
 
 
 @Component({
-	selector: 'error-or-success-message-area',
-	templateUrl: './error-or-success-message-area.component.html'
+	selector: 'success-or-error-message-area',
+	templateUrl: './success-or-error-message-area.component.html'
 })
-export class ErrorOrSuccessMessageAreaComponent {
+export class SuccessOrErrorMessageAreaComponent {
 
 
 	constructor(public successOrErrorMessage: SuccessOrErrorMessageService) {

@@ -1,4 +1,4 @@
-import { CurrentLibraryService } from './current-library.service';
+import { CurrentLibraryService } from '../library/current-library.service';
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';

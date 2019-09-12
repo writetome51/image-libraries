@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { SimpleCrypto } from 'simple-crypto-js';
 // if above import doesn't work, try:  const SimpleCrypto = require("simple-crypto-js").default;
-import { ecky } from '../../assets/.ecky';
+import { ecky } from '../../../assets/.ecky';
 
 
 @Injectable({
