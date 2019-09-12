@@ -30,7 +30,6 @@
               "src/styles.css"
             ],
             "scripts": [
-
             ],
             "es5BrowserSupport": true
           },
@@ -89,7 +88,6 @@
               "src/styles.css"
             ],
             "scripts": [
-
             ],
             "assets": [
               "src/favicon.ico",

@@ -5,12 +5,15 @@
 
 			<p *ngIf="input.prompt">{{input.prompt}}</p>
 
-			<label for="{{input.userProperty}}" hidden>{{input.placeholder}}</label>
+			<label for="{{input.userProperty}}-input" hidden>{{input.placeholder}}</label>
 
-			<input [type]="input.type" id="{{input.userProperty}}" required="true"
+			<input [type]="input.type"
+				   id="{{input.userProperty}}-input"
 				   name="{{input.userProperty}}"
+				   required
+				   placeholder="{{input.placeholder}}..."
 				   [(ngModel)]="currentUser[input.userProperty]"
-				   placeholder="{{input.placeholder}}..." [minLength]="input.minLength"
+				   [min]="input.minLength"
 			/>
 
 		</div>

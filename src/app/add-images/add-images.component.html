@@ -1,12 +1,23 @@
-<ng-container>
-	<input type="text" [(ngModel)]="libraryName" placeholder="Name library..."/>
-	<p>{{gettingImagesInstructions}}</p>
-</ng-container>
+<section>
 
-<ng-container>
+	<ng-container>
 
-	<choose-images-from-device></choose-images-from-device>
+		<label for="library-name-input" hidden>Library Name</label>
+		<input type="text" id="library-name-input"
+			   name="libraryName" required
+			   placeholder="Name library..."
+			   [(ngModel)]="libraryName"
+		/>
+		<p>{{gettingImagesInstructions}}</p>
 
-	<enter-image-url></enter-image-url>
+	</ng-container>
 
-</ng-container>
+	<ng-container>
+
+		<choose-images-from-device></choose-images-from-device>
+
+		<enter-image-url></enter-image-url>
+
+	</ng-container>
+
+</section>

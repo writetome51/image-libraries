@@ -31,6 +31,7 @@
       }
     ],
     "no-consecutive-blank-lines": false,
+    "indent": true,
     "no-console": [
       true,
       "debug",
