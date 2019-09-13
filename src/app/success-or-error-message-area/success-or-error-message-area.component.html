@@ -1,0 +1,10 @@
+<div [class.invisible]="!(message)">
+
+	<p
+	   [class.error-message]="successOrErrorMessage.error"
+	   [class.success-message]="successOrErrorMessage.success"
+	>
+		{{message}}
+	</p>
+
+</div>
