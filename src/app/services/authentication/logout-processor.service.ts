@@ -12,8 +12,8 @@ export class LogoutProcessorService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __authenticationResult: AuthenticationResultService
+		private __authenticationResult: AuthenticationResultService,
+		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
 	}
 

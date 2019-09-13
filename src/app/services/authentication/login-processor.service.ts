@@ -1,7 +1,6 @@
 import { AuthenticationResultService } from './authentication-result.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { CurrentUserService } from '../user/current-user.service';
-import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 
 
@@ -9,11 +8,6 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class LoginProcessorService {
-
-	// So the session ID is used to find the user document, and if loggedIn = true,
-	// the user document is returned to the user. But if loggedIn = false, or
-	// the most recent login was too many days ago, the user is forced to log in again.
-	// If the sessionID is not found in localStorage, it's assumed the user is logged out.
 
 
 	constructor(
@@ -27,7 +21,7 @@ export class LoginProcessorService {
 	process(): void {
 		let subscription = this.__authenticationRestApi.login(
 			{email: this.__currentUser.email, password: this.__currentUser.password}
-		).subscribe((data: DBUser) => {
+		).subscribe((data) => {
 
 			this.__authenticationResult.interpretLogin(data);
 			subscription.unsubscribe();
