@@ -1,5 +1,5 @@
-import { CreateUserComponent } from './create-user/create-user.component';
 import { AddImagesComponent } from './add-images/add-images.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { NgModule } from '@angular/core';
