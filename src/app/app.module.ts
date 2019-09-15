@@ -25,6 +25,7 @@ import { ReArrangeableGridListModule }
 import { SaveChangesComponent } from './library-viewer/save-changes/save-changes.component';
 import { SuccessOrErrorMessageAreaComponent }
 	from './success-or-error-message-area/success-or-error-message-area.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { SuccessOrErrorMessageAreaComponent }
 		LibraryChooserComponent,
 		PageNotFoundComponent,
 		SaveChangesComponent,
-		SuccessOrErrorMessageAreaComponent
+		SuccessOrErrorMessageAreaComponent,
+		LoginFormComponent
 	],
 	imports: [
 		AppRoutingModule,
