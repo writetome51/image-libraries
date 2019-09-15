@@ -4,7 +4,7 @@
 
 	<login-form></login-form>
 
-	<success-or-error-message-area></success-or-error-message-area>
+	<success-or-error-message *ngIf="successOrErrorMessage.message"></success-or-error-message>
 
 	<p>Don't have an account?
 		<a href="create-user">Create Account</a>

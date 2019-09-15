@@ -3,15 +3,14 @@ import { SuccessOrErrorMessageService } from '../services/success-or-error-messa
 
 
 @Component({
-	selector: 'create-user',
-	templateUrl: './create-user.component.html'
+	selector: 'success-or-error-message',
+	templateUrl: './success-or-error-message.component.html'
 })
-export class CreateUserComponent {
-
-	heading = 'Create Account';
+export class SuccessOrErrorMessageComponent {
 
 
 	constructor(public successOrErrorMessage: SuccessOrErrorMessageService) {
 	}
+
 
 }

@@ -10,6 +10,12 @@ export class SuccessOrErrorMessageService {
 	private __success = ''; // success message
 
 
+	get message(){
+		if (this.success) return this.success;
+		else return this.error;
+	}
+
+
 	set success(value) {
 		this.__error = ''; // If there's success, there can't be an error.
 		this.__success = value;

@@ -1,10 +1,10 @@
-<div [class.invisible]="!(message)">
+<div>
 
 	<p
 	   [class.error-message]="successOrErrorMessage.error"
 	   [class.success-message]="successOrErrorMessage.success"
 	>
-		{{message}}
+		{{successOrErrorMessage.message}}
 	</p>
 
 </div>
