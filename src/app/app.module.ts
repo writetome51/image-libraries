@@ -15,9 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImageListComponent } from './library-viewer/image-list/image-list.component';
 import { ImageSizeSliderComponent }
 	from './library-viewer/image-size-slider/image-size-slider.component';
-import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
+import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
+import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ReArrangeableGridListModule }
@@ -25,7 +26,6 @@ import { ReArrangeableGridListModule }
 import { SaveChangesComponent } from './library-viewer/save-changes/save-changes.component';
 import { SuccessOrErrorMessageAreaComponent }
 	from './success-or-error-message-area/success-or-error-message-area.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -40,13 +40,13 @@ import { LoginFormComponent } from './login-form/login-form.component';
 		EnterImageURLComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
-		LibraryViewerComponent,
 		IntroductionComponent,
+		LibraryViewerComponent,
 		LibraryChooserComponent,
+		LoginFormComponent,
 		PageNotFoundComponent,
 		SaveChangesComponent,
-		SuccessOrErrorMessageAreaComponent,
-		LoginFormComponent
+		SuccessOrErrorMessageAreaComponent
 	],
 	imports: [
 		AppRoutingModule,

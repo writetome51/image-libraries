@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class IntroductionComponent {
 
 
-	introduction = `This application lets you create a library of images.  Inside it you can rename them, 
-	rearrange their order, add descriptions to each, and do searches.`;
+	introduction = `This application lets you create libraries of images.  Inside each library you can 
+	rename images, rearrange their order, add descriptions, tags, and do searches.`;
 
 }
