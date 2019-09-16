@@ -1,8 +1,12 @@
-<div>
-	<p>{{prompt}}</p>
-	<input type="file" (change)="readLibrary($event.target.files[0])"/>
+<section>
 
-	<button *ngIf="libraryLoaded" (click)="reloadLibrary()">Undo Changes</button>
-</div>
+	<div>
+		<p>{{prompt}}</p>
+		<input type="file" (change)="readLibrary($event.target.files[0])"/>
 
-<library-viewer *ngIf="images.length > 0"></library-viewer>
+		<button *ngIf="libraryLoaded" (click)="reloadLibrary()">Undo Changes</button>
+	</div>
+
+	<library-viewer *ngIf="images.length > 0"></library-viewer>
+
+</section>

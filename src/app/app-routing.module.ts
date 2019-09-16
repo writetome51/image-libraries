@@ -1,4 +1,5 @@
 import { AddImagesComponent } from './add-images/add-images.component';
+import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
 	{
 		path: '',
 		component: IntroductionComponent,
-		pathMatch: 'full'
+		pathMatch: 'full',
+		canActivate: [AuthenticationGuard]
 	},
 	{
 		path: 'create-user',
