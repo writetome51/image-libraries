@@ -1,0 +1,13 @@
+<section>
+
+	<ul>
+		<li *ngFor="let library of libraries">
+
+			<a routerLink="/{{library.name}}" routerLinkActive="active">
+				{{library.name}}
+			</a>
+
+		</li>
+	</ul>
+
+</section>

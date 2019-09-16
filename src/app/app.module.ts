@@ -18,6 +18,7 @@ import { ImageSizeSliderComponent }
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
+import { LibrariesComponent } from './libraries/libraries.component';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -43,6 +44,7 @@ import { SuccessOrErrorMessageComponent }
 		IntroductionComponent,
 		LibraryViewerComponent,
 		LibraryChooserComponent,
+		LibrariesComponent,
 		LoginFormComponent,
 		PageNotFoundComponent,
 		SaveChangesComponent,
