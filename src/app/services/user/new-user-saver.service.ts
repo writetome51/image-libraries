@@ -17,13 +17,10 @@ export class NewUserSaverService {
 	}
 
 
-	save(): void {
+	async save() {
 		if (this.__newUserValidator.isValid()) {
-			let subscription = this.__userStorage.create().subscribe((result) => {
-
-				this.__savedNewUserResult.interpret(result);
-				subscription.unsubscribe();
-			});
+			let result = await this.__userStorage.create();
+			this.__savedNewUserResult.interpret(result);
 		}
 	}
 

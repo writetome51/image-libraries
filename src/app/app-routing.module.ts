@@ -2,7 +2,6 @@ import { AddImagesComponent } from './add-images/add-images.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { IntroductionComponent } from './introduction/introduction.component';
-import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -35,11 +34,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'add-images',
-		component: AddImagesComponent
-	},
-	{
-		path: 'open-library',
-		component: LibraryChooserComponent
+		component: AddImagesComponent,
+		canActivate: [AuthenticationGuard]
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.

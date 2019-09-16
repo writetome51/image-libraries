@@ -7,6 +7,9 @@ import { LibraryService } from '../services/library/library.service';
 	selector: 'library-chooser',
 	templateUrl: './library-chooser.component.html'
 })
+
+// This component probably won't be used in the project, but keeping it just in case.
+
 export class LibraryChooserComponent {
 
 
