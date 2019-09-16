@@ -1,33 +1,21 @@
 import { AppLibrary } from '../../interfaces/app-library';
-import { Component, OnInit } from '@angular/core';
-import { LibraryStorageService } from '../services/library/library-storage.service';
+import { Component } from '@angular/core';
+import { UserLibrariesService } from '../services/library/user-libraries.service';
 
 
 @Component({
 	selector: 'libraries',
 	templateUrl: './libraries.component.html'
 })
-export class LibrariesComponent implements OnInit {
+export class LibrariesComponent {
 
 
-	private __libraries: AppLibrary[];
-
-
-	constructor(private __libraryStorage: LibraryStorageService) {
+	constructor(private __userLibraries: UserLibrariesService) {
 	}
 
 
 	get libraries(): AppLibrary[] {
-		return this.__libraries;
-	}
-
-
-	ngOnInit(): void {
-		let subscription = this.__libraryStorage.getLibraries().subscribe((result) => {
-
-
-			subscription.unsubscribe();
-		});
+		return this.__userLibraries.data;
 	}
 
 

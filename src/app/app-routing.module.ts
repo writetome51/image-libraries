@@ -3,6 +3,7 @@ import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
+import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,7 +22,11 @@ const routes: Routes = [
 	{
 		path: '',
 		component: IntroductionComponent,
-		pathMatch: 'full',
+		pathMatch: 'full'
+	},
+	{
+		path: 'libraries',
+		component: LibrariesComponent,
 		canActivate: [AuthenticationGuard]
 	},
 	{
