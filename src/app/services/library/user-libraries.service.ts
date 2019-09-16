@@ -8,15 +8,16 @@ import { LibraryStorageService } from './library-storage.service';
 })
 export class UserLibrariesService extends PublicArrayContainer {
 
+
 	constructor(private __libraryStorage: LibraryStorageService) {
 		super();
 
-		let subscription = this.__libraryStorage.getLibraries().subscribe(
-			(result) => {
-				this.data = result;
-				subscription.unsubscribe();
-			}
-		);
+		this.__set_data();
+	}
+
+
+	private async __set_data() {
+		this.data = await this.__libraryStorage.getLibraries();
 	}
 
 

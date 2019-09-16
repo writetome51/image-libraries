@@ -1,7 +1,6 @@
 import { CurrentLibraryService } from './current-library.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
-import { Observable } from 'rxjs';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 
 
@@ -19,37 +18,66 @@ export class LibraryStorageService {
 	}
 
 
-	create(libraryName): Observable<any> {
-		return this.__libraryRestApi.create({
-			sessionID: this.__sessionIDLocalStorage.get(),
-			name: libraryName
+	async create(libraryName): Promise<any> {
+		return new Promise((returnData) => {
+
+			let subscription = this.__libraryRestApi.create(
+				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
+			).subscribe((result) => {
+
+				returnData(result);
+				subscription.unsubscribe();
+			});
 		});
 	}
 
 
-	get(): Observable<any> {
-		return this.__libraryRestApi.get({
-			sessionID: this.__sessionIDLocalStorage.get(),
-			name: this.__currentLibrary.name
+	async get(): Promise<any> {
+		return new Promise((returnData) => {
+
+			let subscription = this.__libraryRestApi.get(
+				{sessionID: this.__sessionIDLocalStorage.get(), name: this.__currentLibrary.name}
+			).subscribe((result) => {
+
+				returnData(result);
+				subscription.unsubscribe();
+			});
 		});
 	}
 
 
-	getLibraries(): Observable<any> {
-		return this.__libraryRestApi.getLibraries({
-			sessionID: this.__sessionIDLocalStorage.get()
+	async getLibraries(): Promise<any> {
+		return new Promise((returnData) => {
+
+			let subscription = this.__libraryRestApi.getLibraries(
+				{sessionID: this.__sessionIDLocalStorage.get()}
+			).subscribe((result) => {
+
+				returnData(result);
+				subscription.unsubscribe();
+			});
 		});
 	}
 
 
 	// The properties in 'changes' can contain dot-notation
 
-	update(changes): Observable<any> {
-		return this.__libraryRestApi.update({
-			sessionID: this.__sessionIDLocalStorage.get(),
-			name: this.__currentLibrary.name,
-			changes
+	async update(changes): Promise<any> {
+		return new Promise((returnData) => {
+
+			let subscription = this.__libraryRestApi.update({
+				sessionID: this.__sessionIDLocalStorage.get(),
+				name: this.__currentLibrary.name,
+				changes
+
+			}).subscribe((result) => {
+
+				returnData(result);
+				subscription.unsubscribe();
+			});
+
 		});
+
 	}
 
 
