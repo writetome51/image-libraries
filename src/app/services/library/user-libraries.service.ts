@@ -23,10 +23,10 @@ export class UserLibrariesService extends PublicArrayContainer {
 
 	private async __set_data() {
 		let result = await this.__libraryStorage.getLibraries();
-
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		if (result.error) this.__successOrErrorMessage.error = result.error.message;
+
 		else this.data = result;
 	}
 

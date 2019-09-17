@@ -51,24 +51,28 @@ export class UserStorageService extends SubscriptionDataGetterService {
 
 	async updatePassword(): Promise<any> {
 		return await this._getSubscriptionData(
-			this.__userRestApi.updatePassword({
-				email: this.__currentUser.email,
-				password: this.__currentUser.password,
-				newPassword: this.__currentUser.newPassword,
-				sessionID: this.__sessionIDLocalStorage.get()
-			})
+			this.__userRestApi.updatePassword(
+				{
+					email: this.__currentUser.email,
+					password: this.__currentUser.password,
+					newPassword: this.__currentUser.newPassword,
+					sessionID: this.__sessionIDLocalStorage.get()
+				}
+			)
 		);
 	}
 
 
 	async updateEmail(): Promise<any> {
 		return await this._getSubscriptionData(
-			this.__userRestApi.updateEmail({
-				email: this.__currentUser.email,
-				password: this.__currentUser.password,
-				newEmail: this.__currentUser.newEmail,
-				sessionID: this.__sessionIDLocalStorage.get()
-			})
+			this.__userRestApi.updateEmail(
+				{
+					email: this.__currentUser.email,
+					password: this.__currentUser.password,
+					newEmail: this.__currentUser.newEmail,
+					sessionID: this.__sessionIDLocalStorage.get()
+				}
+			)
 		);
 	}
 
