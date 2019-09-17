@@ -24,20 +24,19 @@ export class AuthenticationGuard implements CanActivate {
 
 	canActivate(
 		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
-	): Promise<boolean | UrlTree> {
+	): Promise<boolean> {
 
-		return this.__canActivate();
+		return this.__ifLoggedIn_returnTrue_ifNot_redirectToLoginAndReturnFalse();
 	}
 
 
-	private async __canActivate(){
+	private async __ifLoggedIn_returnTrue_ifNot_redirectToLoginAndReturnFalse(): Promise<boolean> {
 
 		if (!(this.__sessionIDLocalStorage.get())) return this.__redirectToLogin_and_ReturnFalse();
 
 		let result = await this.__userStorage.get();
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 
-		// @ts-ignore
 		if (hasValue(result.sessionID)) return true;
 		else return this.__redirectToLogin_and_ReturnFalse();
 	}
