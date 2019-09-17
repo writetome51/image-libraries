@@ -16,7 +16,6 @@ import { ImageListComponent } from './library-viewer/image-list/image-list.compo
 import { ImageSizeSliderComponent }
 	from './library-viewer/image-size-slider/image-size-slider.component';
 import { IntroductionComponent } from './introduction/introduction.component';
-import { LibraryChooserComponent } from './library-chooser/library-chooser.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
@@ -43,7 +42,6 @@ import { SuccessOrErrorMessageComponent }
 		ImageSizeSliderComponent,
 		IntroductionComponent,
 		LibraryViewerComponent,
-		LibraryChooserComponent,
 		LibrariesComponent,
 		LoginFormComponent,
 		PageNotFoundComponent,
