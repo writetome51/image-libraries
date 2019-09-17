@@ -2,12 +2,13 @@ import { CurrentLibraryService } from './current-library.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
+import { SubscriptionDataGetterService } from '../subscription-data-getter.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LibraryStorageService {
+export class LibraryStorageService extends SubscriptionDataGetterService {
 
 
 	constructor(
@@ -15,69 +16,45 @@ export class LibraryStorageService {
 		private __currentLibrary: CurrentLibraryService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
+		super();
 	}
 
 
 	async create(libraryName): Promise<any> {
-		return new Promise((returnData) => {
-
-			let subscription = this.__libraryRestApi.create(
+		return await this._getSubscriptionData(
+			this.__libraryRestApi.create(
 				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
-			).subscribe((result) => {
-
-				returnData(result);
-				subscription.unsubscribe();
-			});
-		});
+			)
+		);
 	}
 
 
 	async get(): Promise<any> {
-		return new Promise((returnData) => {
-
-			let subscription = this.__libraryRestApi.get(
+		return await this._getSubscriptionData(
+			this.__libraryRestApi.get(
 				{sessionID: this.__sessionIDLocalStorage.get(), name: this.__currentLibrary.name}
-			).subscribe((result) => {
-
-				returnData(result);
-				subscription.unsubscribe();
-			});
-		});
+			)
+		);
 	}
 
 
 	async getLibraries(): Promise<any> {
-		return new Promise((returnData) => {
-
-			let subscription = this.__libraryRestApi.getLibraries(
-				{sessionID: this.__sessionIDLocalStorage.get()}
-			).subscribe((result) => {
-
-				returnData(result);
-				subscription.unsubscribe();
-			});
-		});
+		return await this._getSubscriptionData(
+			this.__libraryRestApi.getLibraries({sessionID: this.__sessionIDLocalStorage.get()})
+		);
 	}
 
 
 	// The properties in 'changes' can contain dot-notation
 
 	async update(changes): Promise<any> {
-		return new Promise((returnData) => {
-
-			let subscription = this.__libraryRestApi.update({
+		return await this._getSubscriptionData(
+			this.__libraryRestApi.update({
 				sessionID: this.__sessionIDLocalStorage.get(),
 				name: this.__currentLibrary.name,
 				changes
-
-			}).subscribe((result) => {
-
-				returnData(result);
-				subscription.unsubscribe();
-			});
-
-		});
-
+			})
+		);
 	}
 
 

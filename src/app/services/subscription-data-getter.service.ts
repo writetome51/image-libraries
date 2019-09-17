@@ -1,6 +1,6 @@
 export abstract class SubscriptionDataGetterService {
 
-	// Use this if you only expect a subscription to `observable` to return data once
+	// Use this only if you expect a subscription to `observable` to return data once
 	// and then close.
 
 	protected async _getSubscriptionData(observable): Promise<any> {
