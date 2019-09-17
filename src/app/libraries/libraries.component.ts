@@ -9,6 +9,8 @@ import { UserLibrariesService } from '../services/library/user-libraries.service
 })
 export class LibrariesComponent {
 
+	heading = 'Libraries';
+
 
 	constructor(private __userLibraries: UserLibrariesService) {
 	}

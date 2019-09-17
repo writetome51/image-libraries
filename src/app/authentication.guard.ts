@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree }
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree }
 	from '@angular/router';
 import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
@@ -16,23 +16,36 @@ export class AuthenticationGuard implements CanActivate {
 
 	constructor(
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __userStorage: UserStorageService
+		private __userStorage: UserStorageService,
+		private __router: Router
 	) {
 	}
 
 
 	canActivate(
-		next: ActivatedRouteSnapshot,
-		state: RouterStateSnapshot
-	): (Observable<boolean | UrlTree>) | (Promise<boolean | UrlTree>) | boolean | UrlTree {
+		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
+	): Promise<boolean | UrlTree> {
 
-		if (!(this.__sessionIDLocalStorage.get())) return false;
+		return this.__canActivate();
+	}
 
-		let result = this.__userStorage.get();
+
+	private async __canActivate(){
+
+		if (!(this.__sessionIDLocalStorage.get())) return this.__redirectToLogin_and_ReturnFalse();
+
+		let result = await this.__userStorage.get();
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		// @ts-ignore
-		return hasValue(result.sessionID);
+		if (hasValue(result.sessionID)) return true;
+		else return this.__redirectToLogin_and_ReturnFalse();
+	}
+
+
+	private __redirectToLogin_and_ReturnFalse() {
+		this.__router.navigate(['']);
+		return false;
 	}
 
 

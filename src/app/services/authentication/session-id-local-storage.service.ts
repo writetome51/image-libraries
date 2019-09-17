@@ -1,3 +1,4 @@
+import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { SimpleCrypto } from 'simple-crypto-js';
@@ -18,7 +19,7 @@ export class SessionIDLocalStorageService {
 	private __cryptographer = new SimpleCrypto(ecky);
 
 
-	constructor(){
+	constructor() {
 		this.__localCurrentUser.key = 'image-library-current-user';
 	}
 
@@ -30,9 +31,12 @@ export class SessionIDLocalStorageService {
 
 
 	get(): string {
-		let encryptedSessionID = this.__localCurrentUser.get()['sessionID'];
-		// @ts-ignore
-		return this.__cryptographer.decrypt(encryptedSessionID);
+		let localCurrentUser = this.__localCurrentUser.get();
+		if (hasValue(localCurrentUser)) {
+			// @ts-ignore
+			return this.__cryptographer.decrypt(localCurrentUser['sessionID']);
+		}
+		else return '';
 	}
 
 
