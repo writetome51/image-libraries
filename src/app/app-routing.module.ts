@@ -11,7 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	/********************
-	 Example route:
+	 Example routes:
 
 	 { path: 'hero/:id',  component: HeroDetailComponent },
 	 {
@@ -28,8 +28,13 @@ const routes: Routes = [
 	{
 		path: 'libraries', // the logged-in homepage
 		component: LibrariesComponent,
+		// 'canActivate' means the guard decides if the component can be activated (instantiated).
 		canActivate: [AuthenticationGuard]
 	},
+
+	// 'libraries' will need a sub-path referring to the library that's opened:
+	//  { path: libraries/:libraryName_or_index, component: LibraryComponent }
+
 	{
 		path: 'create-user', // can only access when logged out
 		component: CreateUserComponent
