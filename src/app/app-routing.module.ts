@@ -1,6 +1,7 @@
 import { AddImagesComponent } from './add-images/add-images.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
@@ -33,7 +34,17 @@ const routes: Routes = [
 	},
 
 	// 'libraries' will need a sub-path referring to the library that's opened:
-	//  { path: libraries/:libraryName_or_index, component: LibraryComponent }
+	//  {
+	//     path: libraries/:libraryName,
+	//     component: LibraryComponent,
+	//     canDeactivate: [CanDeactivateGuard]
+	//  }
+
+	{
+		// path: 'libraries/:libraryName/image/:image_index_in_library',//can only access when logged in
+		component: ImageViewerComponent,
+		canActivate: [AuthenticationGuard]
+	},
 
 	{
 		path: 'create-user', // can only access when logged out
