@@ -11,6 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	/********************
+	 Example route:
+
 	 { path: 'hero/:id',  component: HeroDetailComponent },
 	 {
  		path: 'heroes',
@@ -19,21 +21,21 @@ const routes: Routes = [
 	},
 	 *******************/
 	{
-		path: '',
+		path: '', // the logged-out homepage
 		component: IntroductionComponent,
 		pathMatch: 'full'
 	},
 	{
-		path: 'libraries',
+		path: 'libraries', // the logged-in homepage
 		component: LibrariesComponent,
 		canActivate: [AuthenticationGuard]
 	},
 	{
-		path: 'create-user',
+		path: 'create-user', // can only access when logged out
 		component: CreateUserComponent
 	},
 	{
-		path: 'add-images',
+		path: 'add-images', // can only access when logged in
 		component: AddImagesComponent,
 		canActivate: [AuthenticationGuard]
 	},
