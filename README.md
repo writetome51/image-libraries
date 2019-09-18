@@ -1,6 +1,6 @@
-# ImageLibrary
+# ImageLibraries
 
-A demo app allowing you to add images to a browser-based library and sort through them.  
+A demo app allowing you to add images to a browser-based group of libraries and sort through them.  
 Kind of 
 like iPhoto in a browser.
 

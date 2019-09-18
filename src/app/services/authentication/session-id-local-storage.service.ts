@@ -20,7 +20,7 @@ export class SessionIDLocalStorageService {
 
 
 	constructor() {
-		this.__localCurrentUser.key = 'image-library-current-user';
+		this.__localCurrentUser.key = 'image-libraries-current-user';
 	}
 
 

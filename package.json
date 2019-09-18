@@ -1,6 +1,6 @@
 {
-  "name": "image-library",
-  "description": "A demo app allowing you to add images to a browser-based library and sort through them. Kind of like iPhoto in a browser",
+  "name": "image-libraries",
+  "description": "A demo app allowing you to add images to a browser-based group of libraries and sort through them. Kind of like iPhoto in a browser",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
