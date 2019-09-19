@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-image-viewer',
+  selector: 'image-viewer',
   templateUrl: './image-viewer.component.html'
 })
-export class ImageViewerComponent implements OnInit {
+export class ImageViewerComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

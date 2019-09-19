@@ -1,6 +1,5 @@
 import { AddImagesComponent } from './add-images/add-images.component';
 import { AppComponent } from './app.component';
-import { AppImageComponent } from './library/image-list/app-image/app-image.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ChooseImagesFromDeviceComponent }
@@ -8,13 +7,15 @@ import { ChooseImagesFromDeviceComponent }
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateUserFormComponent } from './create-user/create-user-form/create-user-form.component';
 import { DeleteImageButtonComponent }
-	from './library/image-list/app-image/delete-image-button/delete-image-button.component';
+	from './library/image-list/thumbnail-image/delete-image-button/delete-image-button.component';
 import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
+import { FullSizeImageComponent } from './image-viewer/full-size-image/full-size-image.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageListComponent } from './library/image-list/image-list.component';
 import { ImageSizeSliderComponent }
 	from './library/image-size-slider/image-size-slider.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryComponent } from './library/library.component';
 import { LibrariesComponent } from './libraries/libraries.component';
@@ -26,21 +27,23 @@ import { ReArrangeableGridListModule }
 import { SaveChangesComponent } from './library/save-changes/save-changes.component';
 import { SuccessOrErrorMessageComponent }
 	from './success-or-error-message/success-or-error-message.component';
-import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { ThumbnailImageComponent }
+	from './library/image-list/thumbnail-image/thumbnail-image.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AddImagesComponent,
-		AppImageComponent,
 		ChooseImagesFromDeviceComponent,
 		CreateUserComponent,
 		CreateUserFormComponent,
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
+		FullSizeImageComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
+		ImageViewerComponent,
 		IntroductionComponent,
 		LibraryComponent,
 		LibrariesComponent,
@@ -48,7 +51,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 		PageNotFoundComponent,
 		SaveChangesComponent,
 		SuccessOrErrorMessageComponent,
-		ImageViewerComponent
+		ThumbnailImageComponent
 	],
 	imports: [
 		AppRoutingModule,

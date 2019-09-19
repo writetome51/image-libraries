@@ -6,10 +6,10 @@ import { LibraryService } from '../../../services/library/library.service';
 
 
 @Component({
-	selector: 'app-image',
-	templateUrl: './app-image.component.html'
+	selector: 'thumbnail-image',
+	templateUrl: './thumbnail-image.component.html'
 })
-export class AppImageComponent {
+export class ThumbnailImageComponent {
 
 
 	@Input() image: AppImage;
