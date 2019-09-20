@@ -2,6 +2,7 @@ import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from './session-id-local-storage.service';
 import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -12,7 +13,9 @@ export class AuthenticationResultService {
 
 	constructor(
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,) {
+		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __router: Router
+		) {
 	}
 
 
@@ -29,7 +32,10 @@ export class AuthenticationResultService {
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		// If still successful, 'result' will have 'sessionID', which is saved in browser
-		if (result.sessionID) this.__sessionIDLocalStorage.set(result.sessionID);
+		if (result.sessionID) {
+			this.__sessionIDLocalStorage.set(result.sessionID);
+			this.__router.navigate(['/libraries']);
+		}
 		else this.__successOrErrorMessage.error = result.error.message;
 	}
 

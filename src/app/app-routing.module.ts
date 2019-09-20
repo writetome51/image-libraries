@@ -1,5 +1,4 @@
 import { AddImagesComponent } from './add-images/add-images.component';
-import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
@@ -7,6 +6,9 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
+import { DeauthenticationGuard } from './guards/deauthentication.guard';
 
 
 const routes: Routes = [
@@ -37,18 +39,22 @@ const routes: Routes = [
 	//  {
 	//     path: libraries/:libraryName,
 	//     component: LibraryComponent,
+	//     // 'canDeactivate' means the guard decides if the component can be destroyed.
+	//     // A reason it would decide not to is if the user may have changes he hasn't saved yet.
 	//     canDeactivate: [CanDeactivateGuard]
 	//  }
 
 	{
-		// path: 'libraries/:libraryName/image/:image_index_in_library',//can only access when logged in
+		path: 'libraries/:libraryName/image/:image_index_in_library', // can only access when logged in
 		component: ImageViewerComponent,
-		canActivate: [AuthenticationGuard]
+		canActivate: [AuthenticationGuard],
+		canDeactivate: [CanDeactivateGuard]
 	},
 
 	{
 		path: 'create-user', // can only access when logged out
-		component: CreateUserComponent
+		component: CreateUserComponent,
+		canActivate: [DeauthenticationGuard]
 	},
 	{
 		path: 'add-images', // can only access when logged in

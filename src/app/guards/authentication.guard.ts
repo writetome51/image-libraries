@@ -1,8 +1,8 @@
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree }
 	from '@angular/router';
 import { getObjectFromJSON } from 'get-object-from-json';
-import { Injectable } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SessionIDLocalStorageService } from './services/authentication/session-id-local-storage.service';
 import { UserStorageService } from './services/user/user-storage.service';
