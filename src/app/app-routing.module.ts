@@ -6,6 +6,7 @@ import { DeauthenticatedGuard } from './guards/deauthenticated.guard';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibrariesComponent } from './libraries/libraries.component';
+import { LibraryComponent } from './library/library.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -36,13 +37,13 @@ const routes: Routes = [
 	},
 
 	// 'libraries' will need a sub-path referring to the library that's opened:
-	//  {
-	//     path: libraries/:libraryName,
-	//     component: LibraryComponent,
-	//     // 'canDeactivate' means the guard decides if the component can be destroyed.
-	//     // A reason it would decide not to is if the user may have changes he hasn't saved yet.
-	//     canDeactivate: [CanDeactivateGuard]
-	//  }
+	{
+		path: 'libraries/:libraryName',
+		component: LibraryComponent,
+		// 'canDeactivate' means the guard decides if the component can be destroyed.
+		// A reason it would decide not to is if the user may have changes he hasn't saved yet.
+		canDeactivate: [CanDeactivateGuard]
+	},
 
 	{
 		path: 'libraries/:libraryName/image/:image_index_in_library', // can only access when logged in
