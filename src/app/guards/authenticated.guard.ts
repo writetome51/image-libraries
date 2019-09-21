@@ -1,17 +1,17 @@
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree }
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
 	from '@angular/router';
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { SessionIDLocalStorageService } from './services/authentication/session-id-local-storage.service';
-import { UserStorageService } from './services/user/user-storage.service';
+import { SessionIDLocalStorageService }
+	from '../services/authentication/session-id-local-storage.service';
+import { UserStorageService } from '../services/user/user-storage.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthenticationGuard implements CanActivate {
+export class AuthenticatedGuard implements CanActivate {
 
 
 	constructor(

@@ -1,14 +1,14 @@
 import { AddImagesComponent } from './add-images/add-images.component';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { DeauthenticatedGuard } from './guards/deauthenticated.guard';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthenticationGuard } from './guards/authentication.guard';
-import { CanDeactivateGuard } from './guards/can-deactivate.guard';
-import { DeauthenticationGuard } from './guards/deauthentication.guard';
 
 
 const routes: Routes = [
@@ -32,7 +32,7 @@ const routes: Routes = [
 		path: 'libraries', // the logged-in homepage
 		component: LibrariesComponent,
 		// 'canActivate' means the guard decides if the component can be activated (instantiated).
-		canActivate: [AuthenticationGuard]
+		canActivate: [AuthenticatedGuard]
 	},
 
 	// 'libraries' will need a sub-path referring to the library that's opened:
@@ -47,19 +47,19 @@ const routes: Routes = [
 	{
 		path: 'libraries/:libraryName/image/:image_index_in_library', // can only access when logged in
 		component: ImageViewerComponent,
-		canActivate: [AuthenticationGuard],
+		canActivate: [AuthenticatedGuard],
 		canDeactivate: [CanDeactivateGuard]
 	},
 
 	{
 		path: 'create-user', // can only access when logged out
 		component: CreateUserComponent,
-		canActivate: [DeauthenticationGuard]
+		canActivate: [DeauthenticatedGuard]
 	},
 	{
 		path: 'add-images', // can only access when logged in
 		component: AddImagesComponent,
-		canActivate: [AuthenticationGuard]
+		canActivate: [AuthenticatedGuard]
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.
