@@ -15,7 +15,7 @@ export class AuthenticationResultService {
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
 		private __router: Router
-		) {
+	) {
 	}
 
 
@@ -45,6 +45,7 @@ export class AuthenticationResultService {
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 		if (result.success) {
 			this.__sessionIDLocalStorage.remove();
+			this.__router.navigate(['']);
 		}
 		else this.__successOrErrorMessage.error = result.error.message;
 	}
