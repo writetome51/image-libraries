@@ -3,5 +3,6 @@ export interface AppImage {
 	name?: string;
 	description?: string;
 	tags?: string[];
-	date?: Date
+	date?: Date;
+	location?: string;
 }

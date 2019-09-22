@@ -19,6 +19,11 @@ import { SaveChangesComponent } from './save-changes/save-changes.component';
 import { SuccessOrErrorMessageModule }
 	from '../success-or-error-message/success-or-error-message.module';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
+import { ImageNameComponent } from './image-viewer/image-name/image-name.component';
+import { ImageDescriptionComponent } from './image-viewer/image-description/image-description.component';
+import { ImageTagsComponent } from './image-viewer/image-tags/image-tags.component';
+import { ImageDateComponent } from './image-viewer/image-date/image-date.component';
+import { ImageLocationComponent } from './image-viewer/image-location/image-location.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-
 		ImageSizeSliderComponent,
 		ImageViewerComponent,
 		SaveChangesComponent,
-		ThumbnailImageComponent
+		ThumbnailImageComponent,
+		ImageNameComponent,
+		ImageDescriptionComponent,
+		ImageTagsComponent,
+		ImageDateComponent,
+		ImageLocationComponent
 	],
 	imports: [
 		CommonModule,
