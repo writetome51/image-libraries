@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { DeleteImageButtonComponent }
 	from './image-list/thumbnail-image/delete-image-button/delete-image-button.component';
 import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image-url.component';
+import { FormsModule } from '@angular/forms';
 import { FullSizeImageComponent } from './image-viewer/full-size-image/full-size-image.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageSizeSliderComponent } from './image-size-slider/image-size-slider.component';
@@ -15,8 +16,9 @@ import { NgModule } from '@angular/core';
 import { ReArrangeableGridListModule }
 	from '../../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './save-changes/save-changes.component';
-import { ThumbnailImageComponent }
-	from './image-list/thumbnail-image/thumbnail-image.component';
+import { SuccessOrErrorMessageModule }
+	from '../success-or-error-message/success-or-error-message.module';
+import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
 
 
 @NgModule({
@@ -35,8 +37,10 @@ import { ThumbnailImageComponent }
 	],
 	imports: [
 		CommonModule,
+		FormsModule,
 		LibraryRoutingModule,
-		ReArrangeableGridListModule
+		ReArrangeableGridListModule,
+		SuccessOrErrorMessageModule
 	]
 })
 export class LibraryModule {

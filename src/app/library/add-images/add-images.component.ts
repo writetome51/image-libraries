@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { UploadedImagesProcessorService } from '../services/image/uploaded-images-processor.service';
-import { ImageURLProcessorService } from '../services/image/image-url-processor.service';
-import { LibraryService } from '../services/library/library.service';
+import { UploadedImagesProcessorService } from '../../services/image/uploaded-images-processor.service';
+import { ImageURLProcessorService } from '../../services/image/image-url-processor.service';
+import { LibraryService } from '../../services/library/library.service';
 
 
 @Component({

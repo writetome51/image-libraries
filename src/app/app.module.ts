@@ -11,8 +11,7 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { SuccessOrErrorMessageComponent }
-	from './success-or-error-message/success-or-error-message.component';
+import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
 
 
 @NgModule({
@@ -23,15 +22,15 @@ import { SuccessOrErrorMessageComponent }
 		IntroductionComponent,
 		LibrariesComponent,
 		LoginFormComponent,
-		PageNotFoundComponent,
-		SuccessOrErrorMessageComponent
+		PageNotFoundComponent
 	],
 	imports: [
 		AppRoutingModule,
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
-		LibraryModule
+		LibraryModule,
+		SuccessOrErrorMessageModule
 	],
 	bootstrap: [AppComponent]
 })

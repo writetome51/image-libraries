@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
+import { SuccessOrErrorMessageService } from './success-or-error-message.service';
 
 
 @Component({

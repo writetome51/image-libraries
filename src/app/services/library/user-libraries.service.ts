@@ -2,7 +2,7 @@ import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
-import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
+import { SuccessOrErrorMessageService } from '../../success-or-error-message/success-or-error-message.service';
 
 
 @Injectable({
