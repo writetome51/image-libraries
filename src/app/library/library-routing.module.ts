@@ -21,13 +21,18 @@ const routes: Routes = [
 		path: 'library/:libraryName/add-images', // can only access when logged in
 		component: AddImagesComponent,
 		canActivate: [AuthenticatedGuard]
+	},
+
+	{
+		path: 'library/**',
+		redirectTo: 'libraries'
 	}
 ];
 
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(
+		RouterModule.forChild(
 			routes,
 			//	{enableTracing: true} // <-- debugging purposes only
 		)
