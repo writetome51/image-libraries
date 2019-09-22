@@ -22,7 +22,6 @@ import { SuccessOrErrorMessageComponent }
 @NgModule({
 	declarations: [
 		AppComponent,
-		AddImagesComponent,
 		ChooseImagesFromDeviceComponent,
 		CreateUserComponent,
 		CreateUserFormComponent,
