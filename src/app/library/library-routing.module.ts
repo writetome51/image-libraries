@@ -1,10 +1,10 @@
+import { AuthenticatedGuard } from '../guards/authenticated.guard';
+import { AddImagesComponent } from './add-images/add-images.component';
+import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { LibraryComponent } from './library.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LibraryComponent } from './library.component';
-import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
-import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { AddImagesComponent } from '../add-images/add-images.component';
 
 
 const routes: Routes = [

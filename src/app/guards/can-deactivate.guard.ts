@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../services/library/current-library.service';
 import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
 import { LibraryComponent } from '../library/library.component';
-import { FullSizeImageComponent } from '../image-viewer/full-size-image/full-size-image.component';
+import { FullSizeImageComponent } from '../library/image-viewer/full-size-image/full-size-image.component';
 
 
 @Injectable({

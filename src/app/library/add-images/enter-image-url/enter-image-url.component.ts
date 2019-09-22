@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { ImageURLProcessorService } from '../../services/image/image-url-processor.service';
+import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
 
 
 @Component({
