@@ -6,10 +6,8 @@ import { DeleteImageButtonComponent }
 	from './image-list/thumbnail-image/delete-image-button/delete-image-button.component';
 import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
-import { FullSizeImageComponent } from './image-viewer/full-size-image/full-size-image.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageSizeSliderComponent } from './image-size-slider/image-size-slider.component';
-import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { NgModule } from '@angular/core';
@@ -19,11 +17,7 @@ import { SaveChangesComponent } from './save-changes/save-changes.component';
 import { SuccessOrErrorMessageModule }
 	from '../success-or-error-message/success-or-error-message.module';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
-import { ImageNameComponent } from './image-viewer/image-name/image-name.component';
-import { ImageDescriptionComponent } from './image-viewer/image-description/image-description.component';
-import { ImageTagsComponent } from './image-viewer/image-tags/image-tags.component';
-import { ImageDateComponent } from './image-viewer/image-date/image-date.component';
-import { ImageLocationComponent } from './image-viewer/image-location/image-location.component';
+import { ImageViewerModule } from './image-viewer/image-viewer.module';
 
 
 @NgModule({
@@ -33,21 +27,15 @@ import { ImageLocationComponent } from './image-viewer/image-location/image-loca
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		LibraryComponent,
-		FullSizeImageComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
-		ImageViewerComponent,
 		SaveChangesComponent,
-		ThumbnailImageComponent,
-		ImageNameComponent,
-		ImageDescriptionComponent,
-		ImageTagsComponent,
-		ImageDateComponent,
-		ImageLocationComponent
+		ThumbnailImageComponent
 	],
 	imports: [
 		CommonModule,
 		FormsModule,
+		ImageViewerModule,
 		LibraryRoutingModule,
 		ReArrangeableGridListModule,
 		SuccessOrErrorMessageModule

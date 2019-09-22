@@ -2,9 +2,11 @@ import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../services/library/current-library.service';
-import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
+import { SuccessOrErrorMessageService }
+	from '../success-or-error-message/success-or-error-message.service';
 import { LibraryComponent } from '../library/library.component';
-import { FullSizeImageComponent } from '../library/image-viewer/full-size-image/full-size-image.component';
+import { FullSizeImageComponent }
+	from '../library/image-viewer/full-size-image/full-size-image.component';
 
 
 @Injectable({
@@ -26,14 +28,14 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	canDeactivate(
-		component: LibraryComponent | FullSizeImageComponent, 
+		component: LibraryComponent | FullSizeImageComponent,
 		currentRoute: ActivatedRouteSnapshot,
-		currentState: RouterStateSnapshot, 
+		currentState: RouterStateSnapshot,
 		nextState?: RouterStateSnapshot
 	): boolean {
 
 		if (Object.keys(this.__currentLibrary.changes).length) {
-			this.__successOrErrorMessage.error = 
+			this.__successOrErrorMessage.error =
 				'You have unsaved changes to the library.  Please save or discard them first.';
 			return false;
 		}
