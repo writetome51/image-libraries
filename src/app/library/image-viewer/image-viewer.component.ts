@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
 })
 export class ImageViewerComponent {
 
-  constructor() { }
+	constructor(private __currentLibrary: CurrentLibraryService) { 
+	}
+
+
+	get currentImage(){
+		return this.__currentLibrary.currentImage;
+	}
 
 }

@@ -7,9 +7,20 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+	{
+		path: ':libraryName/add-images',
+		component: AddImagesComponent,
+		canActivate: [AuthenticatedGuard]
+	},
+
+	{	// lazy-loaded module
+		path: ':libraryName/image',
+		loadChildren: () => import('./image-viewer/image-viewer.module')
+			.then(mod => mod.ImageViewerModule)
+	},
 
 	{
-		path: 'library/:libraryName',
+		path: ':libraryName',
 		component: LibraryComponent,
 		canActivate: [AuthenticatedGuard],
 		// 'canDeactivate' means the guard decides if the component can be destroyed.
@@ -18,14 +29,8 @@ const routes: Routes = [
 	},
 
 	{
-		path: 'library/:libraryName/add-images', // can only access when logged in
-		component: AddImagesComponent,
-		canActivate: [AuthenticatedGuard]
-	},
-
-	{
-		path: 'library/**',
-		redirectTo: 'libraries'
+		path: '**',
+		redirectTo: '/libraries'
 	}
 ];
 

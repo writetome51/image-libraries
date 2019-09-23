@@ -25,12 +25,12 @@ import { SuccessOrErrorMessageModule } from './success-or-error-message/success-
 		PageNotFoundComponent
 	],
 	imports: [
-		AppRoutingModule,
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
+		SuccessOrErrorMessageModule,
 		LibraryModule,
-		SuccessOrErrorMessageModule
+		AppRoutingModule
 	],
 	bootstrap: [AppComponent]
 })

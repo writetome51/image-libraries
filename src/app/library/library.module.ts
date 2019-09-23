@@ -36,9 +36,9 @@ import { ImageViewerModule } from './image-viewer/image-viewer.module';
 		CommonModule,
 		FormsModule,
 		ImageViewerModule,
-		LibraryRoutingModule,
 		ReArrangeableGridListModule,
-		SuccessOrErrorMessageModule
+		SuccessOrErrorMessageModule,
+		LibraryRoutingModule
 	]
 })
 export class LibraryModule {

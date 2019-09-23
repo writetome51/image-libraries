@@ -26,14 +26,15 @@ import { RouterModule } from '@angular/router';
 		CommonModule,
 		RouterModule.forChild([
 			{
-				path: 'library/:libraryName/image/:imageIndex', // can only access when logged in
+				path: ':imageIndex', // can only access when logged in
 				component: ImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]
 			},
 			{
-				path: 'library/:libraryName/image',
-				redirectTo: 'library/:libraryName'
+				path: '',
+				pathMatch: 'full',
+				redirectTo: '/library/:libraryName'
 			}
 		])
 	]
