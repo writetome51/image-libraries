@@ -35,10 +35,10 @@ import { ImageViewerModule } from './image-viewer/image-viewer.module';
 	imports: [
 		CommonModule,
 		FormsModule,
-		ImageViewerModule,
 		ReArrangeableGridListModule,
 		SuccessOrErrorMessageModule,
-		LibraryRoutingModule
+		LibraryRoutingModule,
+		ImageViewerModule,
 	]
 })
 export class LibraryModule {
