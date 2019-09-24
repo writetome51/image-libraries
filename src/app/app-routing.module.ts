@@ -28,9 +28,10 @@ const routes: Routes = [
 	},
 
 	{
-		path: '', // the logged-out homepage
+		path: '', // the logged-out homepage, can only access when logged out
 		component: IntroductionComponent,
-		pathMatch: 'full'
+		pathMatch: 'full',
+		canActivate: [DeauthenticatedGuard]
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.
