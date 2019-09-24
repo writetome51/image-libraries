@@ -1,7 +1,5 @@
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { getObjectFromJSON } from 'get-object-from-json';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService }
 	from '../services/authentication/session-id-local-storage.service';
@@ -24,26 +22,17 @@ export class AuthenticatedGuard implements CanActivate {
 
 	canActivate(
 		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
-	): Promise<boolean> {
+	): boolean {
 
-		return this.__ifLoggedIn_returnTrue_ifNot_redirectToLoginAndReturnFalse();
+		return this.__ifSessionIDExists_returnTrue_ifNot_redirectToLoginAndReturnFalse();
 	}
 
 
-	private async __ifLoggedIn_returnTrue_ifNot_redirectToLoginAndReturnFalse(): Promise<boolean> {
+	private __ifSessionIDExists_returnTrue_ifNot_redirectToLoginAndReturnFalse(): boolean {
 
-		if (!(this.__sessionIDLocalStorage.get())) return this.__redirectToLogin_and_ReturnFalse();
+		if (this.__sessionIDLocalStorage.get()) return true;
 
-		let result = await this.__userStorage.get();
-		if (typeof result === 'string') result = getObjectFromJSON(result);
-
-		if (hasValue(result.sessionID)) return true;
-		else return this.__redirectToLogin_and_ReturnFalse();
-	}
-
-
-	private __redirectToLogin_and_ReturnFalse() {
-		this.__router.navigate(['']);
+		this.__router.navigate(['/']);
 		return false;
 	}
 
