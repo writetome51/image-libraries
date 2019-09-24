@@ -29,8 +29,8 @@ import { SuccessOrErrorMessageModule } from './success-or-error-message/success-
 		FormsModule,
 		HttpClientModule,
 		SuccessOrErrorMessageModule,
+		AppRoutingModule,
 		LibraryModule,
-		AppRoutingModule
 	],
 	bootstrap: [AppComponent]
 })
