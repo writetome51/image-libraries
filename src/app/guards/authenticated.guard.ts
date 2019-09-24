@@ -3,7 +3,6 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService }
 	from '../services/authentication/session-id-local-storage.service';
-import { UserStorageService } from '../services/user/user-storage.service';
 
 
 @Injectable({
@@ -14,7 +13,6 @@ export class AuthenticatedGuard implements CanActivate {
 
 	constructor(
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __userStorage: UserStorageService,
 		private __router: Router
 	) {
 	}

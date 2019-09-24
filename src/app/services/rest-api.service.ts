@@ -1,5 +1,5 @@
 import { getURLQuery } from '@writetome51/get-url-query';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { sss } from '../../assets/.sss';
@@ -11,6 +11,11 @@ export abstract class RestAPIService {
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
 	protected _requiredInEveryRequest = {secret: sss};
+	private __httpOptions = {
+		headers: new HttpHeaders({
+			'Content-Type': 'application/json'
+		})
+	};
 
 
 	constructor(protected _http: HttpClient) {
@@ -33,10 +38,10 @@ export abstract class RestAPIService {
 		requestMethod = requestMethod.toLowerCase();
 
 		if (requestMethod === 'post') {
-			return this._http.post(url, body);
+			return this._http.post(url, body, this.__httpOptions);
 		}
 		if (requestMethod === 'patch') {
-			return this._http.patch(url, body);
+			return this._http.patch(url, body, this.__httpOptions);
 		}
 	}
 
