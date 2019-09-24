@@ -1,6 +1,7 @@
 import { AppLibrary } from '../../interfaces/app-library';
 import { Component } from '@angular/core';
 import { UserLibrariesService } from '../services/library/user-libraries.service';
+import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
 
 
 @Component({
@@ -12,7 +13,10 @@ export class LibrariesComponent {
 	heading = 'Libraries';
 
 
-	constructor(private __userLibraries: UserLibrariesService) {
+	constructor(
+		private __userLibraries: UserLibrariesService,
+		public successOrErrorMessage: SuccessOrErrorMessageService
+	) {
 	}
 
 
