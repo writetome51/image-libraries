@@ -29,9 +29,13 @@ const routes: Routes = [
 	},
 
 	{
-		path: '**',
+		path: '',
+		pathMatch: 'full',
 		redirectTo: '/libraries'
-	}
+	},
+
+	// This path must come last, meaning if none of the above paths apply, do this.
+	{path: '**', redirectTo: '/**'}
 ];
 
 
