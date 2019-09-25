@@ -16,7 +16,7 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	// This guard is for keeping a user from navigating away from a route when they have unsaved
-	// changes pending.  They must be asked if they want to save or discard changes first.
+	// changes pending.
 
 
 	constructor(

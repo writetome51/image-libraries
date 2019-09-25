@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DBUser } from '../../../interfaces/db-user';
 
 
 @Injectable({
@@ -22,6 +23,8 @@ export class CurrentUserService {
 
 	// For when user wants to change email
 	newEmail = ''; // bound to 'new email' text input
+
+	dbUser: DBUser; // value retrieved from db
 
 
 	set question(value) {

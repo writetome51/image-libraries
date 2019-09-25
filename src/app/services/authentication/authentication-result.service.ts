@@ -46,7 +46,7 @@ export class AuthenticationResultService {
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 		if (result.success) {
 			this.__sessionIDLocalStorage.remove();
-			this.__router.navigate(['']);
+			this.__router.navigate(['/']);
 		}
 		else this.__successOrErrorMessage.error = result.error.message;
 	}
