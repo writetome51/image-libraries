@@ -7,9 +7,10 @@ import { DBUser } from '../../../interfaces/db-user';
 })
 export class CurrentUserService {
 
-	// If user doesn't exist yet in db, this is bound to 'password' text input.
+	// Bound to 'password' text input.
 	password = '';
 
+	// Bound to 'password again' text input.
 	passwordAgain = '';
 
 	// For when user wants to change password
@@ -18,13 +19,13 @@ export class CurrentUserService {
 	// users create this to allow them to reset their password later
 	securityQuestion = {question: '', answer: ''}; // bound to 'security question' inputs
 
-	// If user doesn't exist yet in db, this is bound to 'email' text input
+	// Bound to 'email' text input
 	email = '';
 
 	// For when user wants to change email
 	newEmail = ''; // bound to 'new email' text input
 
-	dbUser: DBUser; // value retrieved from db
+	dbUser: DBUser; // cached value retrieved from db
 
 
 	set question(value) {
