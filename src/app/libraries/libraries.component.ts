@@ -10,8 +10,6 @@ import { SuccessOrErrorMessageService } from '../success-or-error-message/succes
 })
 export class LibrariesComponent {
 
-	heading = 'Libraries';
-
 
 	constructor(
 		private __userLibraries: UserLibrariesService,

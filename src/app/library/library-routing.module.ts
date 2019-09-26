@@ -24,7 +24,7 @@ const routes: Routes = [
 		component: LibraryComponent,
 		canActivate: [AuthenticatedGuard],
 		// 'canDeactivate' means the guard decides if the component can be destroyed.
-		// A reason it would decide not to is if the user may have changes he hasn't saved yet.
+		// A reason it would decide not to is if the user has changes he hasn't saved yet.
 		canDeactivate: [CanDeactivateGuard]
 	},
 
