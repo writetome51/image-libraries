@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrentLibraryService } from '../services/library/current-library.service';
 
 
 @Component({
@@ -6,4 +7,14 @@ import { Component } from '@angular/core';
 	templateUrl: './library.component.html'
 })
 export class LibraryComponent {
+
+	constructor(private __currentLibrary: CurrentLibraryService) {
+	}
+
+
+	get name() {
+		return this.__currentLibrary.name;
+	}
+
+
 }
