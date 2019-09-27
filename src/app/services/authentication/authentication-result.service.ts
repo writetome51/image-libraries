@@ -1,5 +1,4 @@
 import { DataRequestResultService } from '../data-request-result.service';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../user/user-result-processor.service';
 import { DBUser } from '../../../interfaces/db-user';
@@ -29,7 +28,7 @@ export class AuthenticationResultService {
 
 
 	interpretLogin(result: DBUser): void {
-		this.__ifResultSuccessful_processResult(
+		this.__dataRequestResult.ifResultSuccessful_processResult(
 			result,
 			this.__userResultProcessor.process
 		);
@@ -37,16 +36,10 @@ export class AuthenticationResultService {
 
 
 	interpretLogout(result): void {
-		this.__ifResultSuccessful_processResult(
+		this.__dataRequestResult.ifResultSuccessful_processResult(
 			result,
 			this.__logoutResultProcessor.process
 		);
-	}
-
-
-	private __ifResultSuccessful_processResult(result, process: Function) {
-		result = this.__dataRequestResult.checkForError_returnIfOK(result);
-		if (hasValue(result)) process(result);
 	}
 
 
