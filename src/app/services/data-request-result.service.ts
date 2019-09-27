@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { getObjectFromJSON } from 'get-object-from-json';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { Router } from '@angular/router';
 import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
 
@@ -13,6 +14,12 @@ export class DataRequestResultService {
 		private __router: Router,
 		private __successOrErrorMessage: SuccessOrErrorMessageService
 	) {
+	}
+
+
+	ifResultSuccessful_processResult(result, process: Function) {
+		result = this.checkForError_returnIfOK(result);
+		if (hasValue(result)) process(result);
 	}
 
 
@@ -31,4 +38,6 @@ export class DataRequestResultService {
 
 		else return result;
 	}
+
+
 }

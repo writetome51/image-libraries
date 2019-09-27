@@ -2,7 +2,7 @@ import { DataRequestResultService } from '../data-request-result.service';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../user/user-result-processor.service';
 import { DBUser } from '../../../interfaces/db-user';
-import { LogoutResultProcessorService } from '../user/logout-result-processor.service';
+import { LogoutResultProcessorService } from './logout-result-processor.service';
 
 
 @Injectable({

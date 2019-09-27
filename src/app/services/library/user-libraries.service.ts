@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
-import { SuccessOrErrorMessageService }
-	from '../../success-or-error-message/success-or-error-message.service';
-import { FetchedDataResultService } from '../fetched-data-result.service';
+import { DataRequestResultService } from '../data-request-result.service';
 
 
 @Injectable({
@@ -14,8 +12,7 @@ export class UserLibrariesService extends PublicArrayContainer {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __fetchedDataResult: FetchedDataResultService
+		private __dataRequestResult: DataRequestResultService
 	) {
 		super();
 
@@ -26,7 +23,7 @@ export class UserLibrariesService extends PublicArrayContainer {
 	private async __set_data() {
 		let result = await this.__libraryStorage.getLibraries();
 
-		this.data = this.__fetchedDataResult.checkForError_returnIfOK(result);
+		this.data = this.__dataRequestResult.checkForError_returnIfOK(result);
 	}
 
 

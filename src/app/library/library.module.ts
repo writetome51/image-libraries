@@ -8,6 +8,7 @@ import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image
 import { FormsModule } from '@angular/forms';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageSizeSliderComponent } from './image-size-slider/image-size-slider.component';
+import { ImageViewerModule } from './image-viewer/image-viewer.module';
 import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,6 @@ import { SaveChangesComponent } from './save-changes/save-changes.component';
 import { SuccessOrErrorMessageModule }
 	from '../success-or-error-message/success-or-error-message.module';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
-import { ImageViewerModule } from './image-viewer/image-viewer.module';
 
 
 @NgModule({

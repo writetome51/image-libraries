@@ -1,7 +1,10 @@
-import { getObjectFromJSON } from 'get-object-from-json';
+import { DataRequestResultService } from '../data-request-result.service';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
-import { SuccessOrErrorMessageService } from '../../success-or-error-message/success-or-error-message.service';
+import { SuccessOrErrorMessageService }
+	from '../../success-or-error-message/success-or-error-message.service';
+import { UserResultProcessorService } from './user-result-processor.service';
+import { DBUser } from '../../../interfaces/db-user';
+import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({
@@ -10,22 +13,20 @@ import { SuccessOrErrorMessageService } from '../../success-or-error-message/suc
 export class SavedNewUserResultService {
 
 	constructor(
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
+		private __successOrErrorMessage: SuccessOrErrorMessageService,
+		private __dataRequestResult: DataRequestResultService,
+		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
 
 
-	interpret(result) {
-		if (typeof result === 'string') {
-			result = getObjectFromJSON(result);
-		}
+	interpret(result: DBUser) {
+		result = this.__dataRequestResult.checkForError_returnIfOK(result);
 
-		if (result.sessionID) {
-			this.__sessionIDLocalStorage.set(result.sessionID);
+		if (hasValue(result)) {
+			this.__userResultProcessor.process(result);
 			this.__successOrErrorMessage.success = 'User created!';
 		}
-		else this.__successOrErrorMessage.error = result.error.message;
 	}
 
 
