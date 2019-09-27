@@ -1,9 +1,9 @@
-import { getObjectFromJSON } from 'get-object-from-json';
+import { DataRequestResultService } from '../data-request-result.service';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from './session-id-local-storage.service';
-import { SuccessOrErrorMessageService }
-	from '../../success-or-error-message/success-or-error-message.service';
-import { Router } from '@angular/router';
+import { UserResultProcessorService } from '../user/user-result-processor.service';
+import { DBUser } from '../../../interfaces/db-user';
+import { LogoutResultProcessorService } from '../user/logout-result-processor.service';
 
 
 @Injectable({
@@ -13,9 +13,9 @@ export class AuthenticationResultService {
 
 
 	constructor(
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __router: Router
+		private __logoutResultProcessor: LogoutResultProcessorService,
+		private __dataRequestResult: DataRequestResultService,
+		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
 
@@ -28,27 +28,25 @@ export class AuthenticationResultService {
 	// If the sessionID is deleted from the browser, he is forced to log in again.
 
 
-	interpretLogin(result): void {
-		// If login successful, 'result' will be a JSON string
-		if (typeof result === 'string') result = getObjectFromJSON(result);
-
-		// If still successful, 'result' will have 'sessionID', which is saved in browser
-		if (result.sessionID) {
-			this.__sessionIDLocalStorage.set(result.sessionID);
-			this.__router.navigate(['/libraries']);
-		}
-		else this.__successOrErrorMessage.error = result.error.message;
+	interpretLogin(result: DBUser): void {
+		this.__ifResultSuccessful_processResult(
+			result,
+			this.__userResultProcessor.process
+		);
 	}
 
 
 	interpretLogout(result): void {
-		// If logout successful, 'result' will be a JSON string
-		if (typeof result === 'string') result = getObjectFromJSON(result);
-		if (result.success) {
-			this.__sessionIDLocalStorage.remove();
-			this.__router.navigate(['/']);
-		}
-		else this.__successOrErrorMessage.error = result.error.message;
+		this.__ifResultSuccessful_processResult(
+			result,
+			this.__logoutResultProcessor.process
+		);
+	}
+
+
+	private __ifResultSuccessful_processResult(result, process: Function) {
+		result = this.__dataRequestResult.checkForError_returnIfOK(result);
+		if (hasValue(result)) process(result);
 	}
 
 
