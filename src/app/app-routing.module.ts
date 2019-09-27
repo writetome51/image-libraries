@@ -10,7 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'create-user', // can only access when logged out
+		path: 'create-account', // can only access when logged out
 		component: CreateUserComponent,
 		canActivate: [DeauthenticatedGuard]
 	},
