@@ -7,7 +7,7 @@ import { SuccessOrErrorMessageService } from '../success-or-error-message/succes
 @Injectable({
 	providedIn: 'root'
 })
-export class FetchedDataResultService {
+export class DataRequestResultService {
 
 	constructor(
 		private __router: Router,
