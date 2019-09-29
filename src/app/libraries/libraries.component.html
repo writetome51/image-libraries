@@ -1,5 +1,7 @@
 <section>
 
+	<p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
+
 	<ul>
 		<li *ngFor="let library of libraries">
 

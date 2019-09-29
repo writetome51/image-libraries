@@ -30,7 +30,7 @@ export class AuthenticationResultService {
 	interpretLogin(result: DBUser): void {
 		this.__dataRequestResult.ifResultSuccessful_processResult(
 			result,
-			this.__userResultProcessor.process
+			(result) => this.__userResultProcessor.process(result)
 		);
 	}
 
@@ -38,7 +38,7 @@ export class AuthenticationResultService {
 	interpretLogout(result): void {
 		this.__dataRequestResult.ifResultSuccessful_processResult(
 			result,
-			this.__logoutResultProcessor.process
+			(result) => this.__logoutResultProcessor.process(result)
 		);
 	}
 

@@ -10,6 +10,8 @@ import { SuccessOrErrorMessageService } from '../success-or-error-message/succes
 })
 export class LibrariesComponent {
 
+	noLibrariesMessage = 'You have no libraries right now';
+
 
 	constructor(
 		private __userLibraries: UserLibrariesService,
