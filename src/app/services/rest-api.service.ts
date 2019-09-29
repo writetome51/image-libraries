@@ -1,5 +1,5 @@
 import { getURLQuery } from '@writetome51/get-url-query';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { sss } from '../../assets/.sss';
@@ -11,38 +11,9 @@ export abstract class RestAPIService {
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
 	protected _requiredInEveryRequest = {secret: sss};
-	private __httpOptions = {
-		headers: new HttpHeaders({
-			'Content-Type': 'application/json'
-		})
-	};
 
 
 	constructor(protected _http: HttpClient) {
-	}
-
-
-	protected _getPatchRequestResult(url, body): Observable<any> {
-		return this._getRequestResult('patch', url, body);
-	}
-
-
-	protected _getPostRequestResult(url, body): Observable<any> {
-		return this._getRequestResult('post', url, body);
-	}
-
-
-	protected _getRequestResult(requestMethod, url, body): Observable<any> {
-		body = this._getRequiredBody(body);
-
-		requestMethod = requestMethod.toLowerCase();
-
-		if (requestMethod === 'post') {
-			return this._http.post(url, body, this.__httpOptions);
-		}
-		if (requestMethod === 'patch') {
-			return this._http.patch(url, body, this.__httpOptions);
-		}
 	}
 
 
@@ -55,6 +26,30 @@ export abstract class RestAPIService {
 	protected _getRequiredBody(keyValuePairsToAdd): any {
 		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
 		return keyValuePairsToAdd;
+	}
+
+
+	protected _getPatchRequestResult(url, body): Observable<any> {
+		return this.__getRequestResult('patch', url, body);
+	}
+
+
+	protected _getPostRequestResult(url, body): Observable<any> {
+		return this.__getRequestResult('post', url, body);
+	}
+
+
+	private __getRequestResult(
+		requestMethod: 'post' | 'patch',
+		url,
+		body
+	): Observable<any> {
+
+		body = this._getRequiredBody(body);
+		// @ts-ignore
+		requestMethod = requestMethod.toLowerCase();
+
+		return this._http[requestMethod](url, body);
 	}
 
 
