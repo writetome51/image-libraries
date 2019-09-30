@@ -1,0 +1,78 @@
+<div class="form-container">
+
+	<form>
+
+		<template ref-templateRef></template>
+
+		<div>
+			<button (click)="save()">Save Changes</button>
+		</div>
+
+	</form>
+</div>
+
+
+<ng-template #templateRef>
+
+	<div class="input-container">
+
+		<label for="password-input" hidden>Password</label>
+
+		<input type="password"
+			   id="password-input"
+			   name="password"
+			   required
+			   placeholder="Password..."
+			   [(ngModel)]="currentUser.password"
+		/>
+
+	</div>
+
+	<div class="input-container">
+
+		<label for="new-password-input" hidden>Password</label>
+
+		<input type="password"
+			   id="new-password-input"
+			   name="new-password"
+			   required
+			   placeholder="New Password..."
+			   [(ngModel)]="currentUser.newPassword"
+		/>
+
+	</div>
+
+</ng-template>
+
+
+<ng-template #templateRef>
+
+	<div class="input-container">
+
+		<label for="email-input" hidden>Current Email</label>
+
+		<input type="text"
+			   id="email-input"
+			   name="email"
+			   required
+			   placeholder="Current Email..."
+			   [(ngModel)]="currentUser.email"
+		/>
+
+	</div>
+
+	<div class="input-container">
+
+		<label for="new-email-input" hidden>New Email</label>
+
+		<input type="text"
+			   id="new-email-input"
+			   name="new-email"
+			   required
+			   placeholder="New Email..."
+			   [(ngModel)]="currentUser.newEmail"
+		/>
+
+	</div>
+
+</ng-template>

@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CurrentUserService } from '../services/user/current-user.service';
+
 
 @Component({
-  selector: 'update-user',
-  templateUrl: './update-user.component.html'
+	selector: 'update-user',
+	templateUrl: './update-user.component.html'
 })
-export class UpdateUserComponent implements OnInit {
+export class UpdateUserComponent {
 
-  constructor() { }
+	constructor(public currentUser: CurrentUserService) {
+	}
 
-  ngOnInit() {
-  }
+
+	save() {
+	}
+
 
 }

@@ -1,13 +1,16 @@
 <div class="container-fluid" style="text-align:center;">
 
 	<header id="site-header">
+
 		<h1>
 			<a routerLink="/" routerLinkActive="active" title="home page">{{ title }}</a>
 		</h1>
 
-		<nav>
-			<button *ngIf="sessionIDExists" (click)="logout()">Sign Out</button>
+		<nav *ngIf="sessionIDExists">
+			<button (click)="logout()">Sign Out</button>
+			<a routerLink="update-user" routerLinkActive="active">Update User</a>
 		</nav>
+
 	</header>
 
 	<main>
