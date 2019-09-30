@@ -24,9 +24,8 @@ export class UserLibrariesService extends PublicArrayContainer {
 	private async __set_data() {
 		let result = await this.__libraryStorage.getLibraries();
 		result = this.__dataRequestResult.checkForError_returnIfOK(result);
-		if (hasValue(result)) {
-			this.data = result;
-		}
+
+		if (hasValue(result)) this.data = result;
 	}
 
 
