@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentUserService } from '../services/user/current-user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,11 @@ import { CurrentUserService } from '../services/user/current-user.service';
 })
 export class UpdateUserComponent {
 
-	constructor(public currentUser: CurrentUserService) {
+	changingPassword = true;
+
+
+	constructor(public currentUser: CurrentUserService, public router: ActivatedRoute) {
+		console.log(this.router.snapshot.params);
 	}
 
 

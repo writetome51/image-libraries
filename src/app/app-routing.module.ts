@@ -6,20 +6,19 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
+
+	{	// lazy-loaded module
+		path: 'update-user',
+		loadChildren: () => import('./update-user/update-user.module').then(mod => mod.UpdateUserModule)
+	},
+
 	{
 		path: 'create-account', // can only access when logged out
 		component: CreateUserComponent,
 		canActivate: [DeauthenticatedGuard]
-	},
-
-	{
-		path: 'update-user', // can only access when logged in
-		component: UpdateUserComponent,
-		canActivate: [AuthenticatedGuard]
 	},
 
 	{
@@ -35,7 +34,7 @@ const routes: Routes = [
 	},
 
 	{
-		path: '', // the logged-out homepage, can only access when logged out
+		path: '', // the logged-out homepage
 		component: IntroductionComponent,
 		pathMatch: 'full',
 		canActivate: [DeauthenticatedGuard]

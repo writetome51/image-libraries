@@ -12,7 +12,7 @@ import { LoginFormComponent } from './introduction/login-form/login-form.compone
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateUserModule } from './update-user/update-user.module';
 
 
 @NgModule({
@@ -24,7 +24,6 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 		LibrariesComponent,
 		LoginFormComponent,
 		PageNotFoundComponent,
-		UpdateUserComponent
 	],
 	imports: [
 		BrowserModule,
@@ -33,6 +32,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 		SuccessOrErrorMessageModule,
 		AppRoutingModule,
 		LibraryModule,
+		UpdateUserModule
 	],
 	bootstrap: [AppComponent]
 })
