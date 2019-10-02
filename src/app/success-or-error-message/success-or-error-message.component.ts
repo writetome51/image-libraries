@@ -13,4 +13,9 @@ export class SuccessOrErrorMessageComponent {
 	}
 
 
+	closeMessage() {
+		this.successOrErrorMessage.success = '';
+	}
+
+
 }
