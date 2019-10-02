@@ -33,9 +33,10 @@ export class CreateUserFormComponent {
 	}
 
 
-	create() {
-		this.__newUserSaver.save();
+	async create() {
 		this.__requestSent.waitingForResponse = true;
+		await this.__newUserSaver.save();
+		this.__requestSent.waitingForResponse = false;
 	}
 
 
