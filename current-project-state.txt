@@ -2,3 +2,9 @@ You can successfully create an account. When entering info and clicking
 'create' it immediately logs you in and takes you to /libraries route.
 
 You can successfully log in to an existing account, and log out.
+
+The Authenticated and Deauthenticated guards work.
+
+Routing for child routes of /update-user/  works.
+
+

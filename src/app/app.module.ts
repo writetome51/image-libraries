@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
 import { UpdateUserModule } from './update-user/update-user.module';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UpdateUserModule } from './update-user/update-user.module';
 		LibrariesComponent,
 		LoginFormComponent,
 		PageNotFoundComponent,
+		LoadingSpinnerComponent,
 	],
 	imports: [
 		BrowserModule,

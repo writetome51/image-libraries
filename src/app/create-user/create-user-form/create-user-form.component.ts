@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { NewUserSaverService } from '../../services/user/new-user-saver.service';
+import { RequestSentService } from '../../services/request-sent.service';
 
 
 @Component({
@@ -26,13 +27,15 @@ export class CreateUserFormComponent {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __newUserSaver: NewUserSaverService
+		private __newUserSaver: NewUserSaverService,
+		private __requestSent: RequestSentService
 	) {
 	}
 
 
 	create() {
 		this.__newUserSaver.save();
+		this.__requestSent.waitingForResponse = true;
 	}
 
 

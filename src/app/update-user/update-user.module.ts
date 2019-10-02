@@ -1,11 +1,11 @@
+import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
 import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
-import { RouterModule } from '@angular/router';
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
 
 
 @NgModule({
@@ -38,8 +38,7 @@ import { AuthenticatedGuard } from '../guards/authenticated.guard';
 				]
 			},
 		])
-	],
-	bootstrap: [UpdateUserComponent]
+	]
 })
 export class UpdateUserModule {
 }
