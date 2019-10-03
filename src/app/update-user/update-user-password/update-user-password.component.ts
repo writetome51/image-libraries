@@ -12,6 +12,7 @@ export class UpdateUserPasswordComponent {
 
 
 	constructor(public currentUser: CurrentUserService) {
+		this.currentUser.password = '';
 	}
 
 

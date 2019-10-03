@@ -1,7 +1,6 @@
 <div class="input-container">
 
 	<label for="email-input" hidden>Current Email</label>
-
 	<input type="text"
 		   id="email-input"
 		   name="email"
@@ -15,13 +14,25 @@
 <div class="input-container">
 
 	<label for="new-email-input" hidden>New Email</label>
-
 	<input type="text"
 		   id="new-email-input"
 		   name="new-email"
 		   required
 		   placeholder="New Email..."
 		   [(ngModel)]="currentUser.newEmail"
+	/>
+
+</div>
+
+<div class="input-container">
+
+	<label for="new-email-again-input" hidden>New Email Again</label>
+	<input type="text"
+		   id="new-email-again-input"
+		   name="new-email-again"
+		   required
+		   placeholder="New Email Again..."
+		   [(ngModel)]="newEmailAgain"
 	/>
 
 </div>

@@ -8,7 +8,10 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 })
 export class UpdateUserEmailComponent {
 
+	newEmailAgain = '';
+
 	constructor(public currentUser: CurrentUserService) {
+		this.currentUser.email = '';
 	}
 
 
