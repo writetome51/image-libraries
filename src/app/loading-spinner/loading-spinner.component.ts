@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'loading-spinner',
-	template: `<img [src]="spinner400.src" [width]="spinner400.width" alt="waiting for response"/>`,
+	template: `<img [src]="spinner200.src" [width]="spinner200.width" alt="waiting for response"/>`,
 	styles: ['img{z-index: 1000; position: fixed;}']
 })
 export class LoadingSpinnerComponent {
