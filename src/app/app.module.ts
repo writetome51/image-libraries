@@ -8,12 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibraryModule } from './library/library.module';
 import { LibrariesComponent } from './libraries/libraries.component';
-import { UpdateUserModule } from './update-user/update-user.module';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
+import { UpdateUserModule } from './update-user/update-user.module';
 
 
 @NgModule({
@@ -24,15 +24,15 @@ import { SuccessOrErrorMessageModule } from './success-or-error-message/success-
 		IntroductionComponent,
 		LibrariesComponent,
 		LoginFormComponent,
-		PageNotFoundComponent,
-		LoadingSpinnerComponent,
+		PageNotFoundComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
 		SuccessOrErrorMessageModule,
-		AppRoutingModule,
+		AppRoutingModule, // must be loaded before any other routing module.
+		LoadingSpinnerModule,
 		LibraryModule,
 		UpdateUserModule
 	],

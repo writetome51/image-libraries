@@ -22,6 +22,7 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 				path: '',
 				component: UpdateUserComponent,
 				canActivate: [AuthenticatedGuard],
+				redirectTo: 'email',
 				children: [
 					{
 						path: 'email',

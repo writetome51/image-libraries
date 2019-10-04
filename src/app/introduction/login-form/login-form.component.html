@@ -4,14 +4,13 @@
 		<div class="input-container">
 
 			<label for="email-input" hidden>Email</label>
-
 			<input type="text"
 				   id="email-input"
 				   name="email"
 				   required
 				   placeholder="Email..."
 				   [(ngModel)]="currentUser.email"
-				   [min]="input.minLength"
+				   [minLength]="input.minLength"
 			/>
 
 		</div>
@@ -19,20 +18,19 @@
 		<div class="input-container">
 
 			<label for="password-input" hidden>Password</label>
-
 			<input type="password"
 				   id="password-input"
 				   name="password"
 				   required
 				   placeholder="Password..."
 				   [(ngModel)]="currentUser.password"
-				   [min]="input.minLength"
+				   [minLength]="input.minLength"
 			/>
 
 		</div>
 
 		<div>
-			<button (click)="login()">Login</button>
+			<button (click)="login()">Log In</button>
 		</div>
 
 	</form>
