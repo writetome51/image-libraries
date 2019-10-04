@@ -18,26 +18,30 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 		CommonModule,
 		FormsModule,
 		RouterModule.forChild([
+
+			{	// This makes 'email' the default route when this module loads.
+				path: '',
+				pathMatch: 'full',
+				redirectTo: 'email'
+			},
+
 			{
 				path: '',
 				component: UpdateUserComponent,
 				canActivate: [AuthenticatedGuard],
-				redirectTo: 'email',
 				children: [
 					{
 						path: 'email',
-						component: UpdateUserEmailComponent,
-						// 'canActivate' means the guard decides if the component can be instantiated.
-						canActivate: [AuthenticatedGuard]
+						component: UpdateUserEmailComponent
 					},
 
 					{
 						path: 'password',
-						component: UpdateUserPasswordComponent,
-						canActivate: [AuthenticatedGuard]
+						component: UpdateUserPasswordComponent
 					},
 				]
 			},
+
 		])
 	]
 })
