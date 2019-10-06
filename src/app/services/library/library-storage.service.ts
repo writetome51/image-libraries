@@ -1,4 +1,3 @@
-import { CurrentLibraryService } from './current-library.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
@@ -13,7 +12,6 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
-		private __currentLibrary: CurrentLibraryService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
 		super();
@@ -29,10 +27,10 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 	}
 
 
-	async get(): Promise<any> {
+	async get(libraryName): Promise<any> {
 		return await this._getSubscriptionData(
 			this.__libraryRestApi.get(
-				{sessionID: this.__sessionIDLocalStorage.get(), name: this.__currentLibrary.name}
+				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
 			)
 		);
 	}
@@ -47,11 +45,11 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 
 	// The properties in 'changes' can contain dot-notation
 
-	async update(changes): Promise<any> {
+	async update(libraryName, changes): Promise<any> {
 		return await this._getSubscriptionData(
 			this.__libraryRestApi.update({
 				sessionID: this.__sessionIDLocalStorage.get(),
-				name: this.__currentLibrary.name,
+				name: libraryName,
 				changes
 			})
 		);

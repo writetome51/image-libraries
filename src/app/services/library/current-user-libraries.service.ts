@@ -8,7 +8,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 @Injectable({
 	providedIn: 'root'
 })
-export class UserLibrariesService extends PublicArrayContainer {
+export class CurrentUserLibrariesService extends PublicArrayContainer {
 
 
 	constructor(

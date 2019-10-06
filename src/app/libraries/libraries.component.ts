@@ -1,6 +1,6 @@
 import { AppLibrary } from '../../interfaces/app-library';
 import { Component } from '@angular/core';
-import { UserLibrariesService } from '../services/library/user-libraries.service';
+import { CurrentUserLibrariesService } from '../services/library/current-user-libraries.service';
 import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
 
 
@@ -14,14 +14,14 @@ export class LibrariesComponent {
 
 
 	constructor(
-		private __userLibraries: UserLibrariesService,
+		private __currentUserLibraries: CurrentUserLibrariesService,
 		public successOrErrorMessage: SuccessOrErrorMessageService
 	) {
 	}
 
 
 	get libraries(): AppLibrary[] {
-		return this.__userLibraries.data;
+		return this.__currentUserLibraries.data;
 	}
 
 

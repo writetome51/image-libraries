@@ -38,7 +38,7 @@ export class LibrarySaverService {
 			}
 		}
 		if (Object.keys(this.__currentLibrary.changes).length){ // if changes not empty...
-			this.__libraryStorage.update(this.__currentLibrary.changes);
+			this.__libraryStorage.update(this.__currentLibrary.name, this.__currentLibrary.changes);
 		}
 
 	}
