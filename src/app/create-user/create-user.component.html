@@ -4,7 +4,7 @@
 
 	<create-user-form></create-user-form>
 
-	<loading-spinner *ngIf="requestSent.waitingForResponse"></loading-spinner>
+	<little-loading-spinner *ngIf="requestSent.waitingForResponse"></little-loading-spinner>
 
 	<success-or-error-message *ngIf="successOrErrorMessage.message"></success-or-error-message>
 
