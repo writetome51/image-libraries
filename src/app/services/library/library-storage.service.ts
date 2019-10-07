@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { SubscriptionDataGetterService } from '../subscription-data-getter.service';
+import { HttpRequestResultService } from '../http-request-result.service';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __httpRequestResult: HttpRequestResultService
 	) {
 		super();
 	}
@@ -36,10 +38,11 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 	}
 
 
-	async getLibraries(): Promise<any> {
-		return await this._getSubscriptionData(
+	async getLibraries(): Promise<any | void> {
+		let result = await this._getSubscriptionData(
 			this.__libraryRestApi.getLibraries({sessionID: this.__sessionIDLocalStorage.get()})
 		);
+		return this.__httpRequestResult.checkForError_returnIfOK(result);
 	}
 
 
