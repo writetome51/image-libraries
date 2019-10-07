@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserStorageService } from './user-storage.service';
 import { NewUserValidatorService } from './new-user-validator.service';
-import { SavedNewUserResultService } from './saved-new-user-result.service';
+import { UserCreatorService } from './user-creator.service';
 
 
 @Injectable({
@@ -10,18 +9,14 @@ import { SavedNewUserResultService } from './saved-new-user-result.service';
 export class NewUserSaverService {
 
 	constructor(
-		private __userStorage: UserStorageService,
-		private __newUserValidator: NewUserValidatorService,
-		private __savedNewUserResult: SavedNewUserResultService
+		private __userCreator: UserCreatorService,
+		private __newUserValidator: NewUserValidatorService
 	) {
 	}
 
 
 	async save() {
-		if (this.__newUserValidator.isValid()) {
-			let result = await this.__userStorage.create();
-			this.__savedNewUserResult.interpret(result);
-		}
+		if (this.__newUserValidator.isValid()) await this.__userCreator.create();
 	}
 
 

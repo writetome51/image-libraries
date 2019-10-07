@@ -10,7 +10,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 @Injectable({
 	providedIn: 'root'
 })
-export class SavedNewUserResultService {
+export class SavedNewUserResultInterpreterService {
 
 	constructor(
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
