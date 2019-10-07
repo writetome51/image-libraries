@@ -1,7 +1,7 @@
-import { AuthenticationResultService } from './authentication-result.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { CurrentUserService } from '../user/current-user.service';
 import { Injectable } from '@angular/core';
+import { LoginResultInterpreterService } from './login-result-interpreter.service';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class LoginProcessorService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __authenticationResult: AuthenticationResultService,
+		private __loginResultInterpreter: LoginResultInterpreterService,
 		private __currentUser: CurrentUserService
 	) {
 	}
@@ -23,7 +23,7 @@ export class LoginProcessorService {
 			{email: this.__currentUser.email, password: this.__currentUser.password}
 		).subscribe((data) => {
 
-			this.__authenticationResult.interpretLogin(data);
+			this.__loginResultInterpreter.interpret(data);
 			subscription.unsubscribe();
 		});
 

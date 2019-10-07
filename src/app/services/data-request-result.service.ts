@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Router } from '@angular/router';
-import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
+import { SuccessOrErrorMessageService }
+	from '../success-or-error-message/success-or-error-message.service';
 
 
 @Injectable({

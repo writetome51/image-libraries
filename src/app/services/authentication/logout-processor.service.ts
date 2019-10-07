@@ -1,4 +1,4 @@
-import { AuthenticationResultService } from './authentication-result.service';
+import { LoginResultInterpreterService } from './login-result-interpreter.service';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from './session-id-local-storage.service';
@@ -12,7 +12,7 @@ export class LogoutProcessorService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __authenticationResult: AuthenticationResultService,
+		private __authenticationResult: LoginResultInterpreterService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
 	}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SuccessOrErrorMessageService }
 	from '../success-or-error-message/success-or-error-message.service';
-import { RequestSentService } from '../services/request-sent.service';
+import { DataOperationBegunService } from '../services/data-operation-begun.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class CreateUserComponent {
 
 	constructor(
 		public successOrErrorMessage: SuccessOrErrorMessageService,
-		public requestSent: RequestSentService
+		public requestSent: DataOperationBegunService
 	) {
 	}
 

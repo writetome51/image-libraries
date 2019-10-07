@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-export class RequestSentService {
+export class DataOperationBegunService {
 
-	waitingForResponse = false;
+	waitingForResult = false;
 
 }
