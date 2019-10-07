@@ -1,4 +1,4 @@
-import { DataRequestResultService } from '../data-request-result.service';
+import { HttpRequestResultService } from '../http-request-result.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultProcessorService } from './logout-result-processor.service';
 
@@ -11,13 +11,13 @@ export class LogoutResultInterpreterService {
 
 	constructor(
 		private __logoutResultProcessor: LogoutResultProcessorService,
-		private __dataRequestResult: DataRequestResultService
+		private __httpRequestResult: HttpRequestResultService
 	) {
 	}
 
 
 	interpret(result): void {
-		this.__dataRequestResult.ifResultSuccessful_processResult(
+		this.__httpRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => this.__logoutResultProcessor.process(result)
 		);

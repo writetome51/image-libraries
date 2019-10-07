@@ -1,4 +1,4 @@
-import { DataRequestResultService } from '../data-request-result.service';
+import { HttpRequestResultService } from '../http-request-result.service';
 import { Injectable } from '@angular/core';
 import { SuccessOrErrorMessageService }
 	from '../../success-or-error-message/success-or-error-message.service';
@@ -14,14 +14,14 @@ export class SavedNewUserResultService {
 
 	constructor(
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __dataRequestResult: DataRequestResultService,
+		private __httpRequestResult: HttpRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
 
 
 	interpret(result: DBUser) {
-		result = this.__dataRequestResult.checkForError_returnIfOK(result);
+		result = this.__httpRequestResult.checkForError_returnIfOK(result);
 
 		if (hasValue(result)) {
 			this.__userResultProcessor.process(result);

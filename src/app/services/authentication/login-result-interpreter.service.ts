@@ -1,5 +1,5 @@
 import { DBUser } from '../../../interfaces/db-user';
-import { DataRequestResultService } from '../data-request-result.service';
+import { HttpRequestResultService } from '../http-request-result.service';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../user/user-result-processor.service';
 
@@ -11,7 +11,7 @@ export class LoginResultInterpreterService {
 
 
 	constructor(
-		private __dataRequestResult: DataRequestResultService,
+		private __httpRequestResult: HttpRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
@@ -26,7 +26,7 @@ export class LoginResultInterpreterService {
 
 
 	interpret(result: DBUser): void {
-		this.__dataRequestResult.ifResultSuccessful_processResult(
+		this.__httpRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => this.__userResultProcessor.process(result)
 		);

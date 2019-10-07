@@ -28,15 +28,15 @@ export class CreateUserFormComponent {
 	constructor(
 		public currentUser: CurrentUserService,
 		private __newUserSaver: NewUserSaverService,
-		private __requestSent: DataOperationBegunService
+		private __dataOperationBegun: DataOperationBegunService
 	) {
 	}
 
 
 	async create() {
-		this.__requestSent.waitingForResult = true;
+		this.__dataOperationBegun.waitingForResult = true;
 		await this.__newUserSaver.save();
-		this.__requestSent.waitingForResult = false;
+		this.__dataOperationBegun.waitingForResult = false;
 	}
 
 

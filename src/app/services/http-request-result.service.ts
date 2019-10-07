@@ -9,7 +9,7 @@ import { SuccessOrErrorMessageService }
 @Injectable({
 	providedIn: 'root'
 })
-export class DataRequestResultService {
+export class HttpRequestResultService {
 
 	constructor(
 		private __router: Router,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
 import { LibraryStorageService } from './library-storage.service';
-import { DataRequestResultService } from '../data-request-result.service';
+import { HttpRequestResultService } from '../http-request-result.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 
 
@@ -23,14 +23,14 @@ export class CurrentLibraryService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __dataRequestResult: DataRequestResultService
+		private __httpRequestResult: HttpRequestResultService
 	) {
 	}
 
 
 	async set(libraryName) {
 		let result = await this.__libraryStorage.get(libraryName);
-		result = this.__dataRequestResult.checkForError_returnIfOK(result);
+		result = this.__httpRequestResult.checkForError_returnIfOK(result);
 		if (hasValue(result)) this.data = result;
 	}
 
