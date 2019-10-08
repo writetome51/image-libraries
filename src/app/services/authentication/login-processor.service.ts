@@ -21,9 +21,9 @@ export class LoginProcessorService {
 	process(): void {
 		let subscription = this.__authenticationRestApi.login(
 			{email: this.__currentUser.email, password: this.__currentUser.password}
-		).subscribe((data) => {
+		).subscribe((result) => {
 
-			this.__loginResultInterpreter.interpret(data);
+			this.__loginResultInterpreter.interpret(result);
 			subscription.unsubscribe();
 		});
 

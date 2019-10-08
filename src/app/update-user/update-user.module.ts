@@ -1,5 +1,6 @@
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,8 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 	declarations: [
 		UpdateUserComponent,
 		UpdateUserEmailComponent,
-		UpdateUserPasswordComponent
+		UpdateUserPasswordComponent,
+		DeleteUserComponent
 	],
 	imports: [
 		CommonModule,
@@ -38,6 +40,11 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 					{
 						path: 'password',
 						component: UpdateUserPasswordComponent
+					},
+
+					{
+						path: 'delete-account',
+						component: DeleteUserComponent
 					},
 				]
 			},
