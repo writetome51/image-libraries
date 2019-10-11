@@ -11,7 +11,7 @@ export class DeleteUserComponent {
 	heading = 'Self Destruct?';
 	tonto = {
 		src: '../../../assets/tonto.jpg',
-		width: 435,
+		width: 200,
 		height: 615
 	};
 
