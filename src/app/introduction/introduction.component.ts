@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
+import { DataOperationBegunService } from '../services/data-operation-begun.service';
 
 
 @Component({
@@ -13,7 +14,10 @@ export class IntroductionComponent {
 	rename images, rearrange their order, add descriptions, tags, and do searches.`;
 
 
-	constructor(public successOrErrorMessage: SuccessOrErrorMessageService){
+	constructor(
+		public successOrErrorMessage: SuccessOrErrorMessageService,
+		public dataOperationBegun: DataOperationBegunService
+	) {
 	}
 
 

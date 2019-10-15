@@ -18,7 +18,7 @@ export class LoginProcessorService {
 	}
 
 
-	process(): void {
+	async process() {
 		let subscription = this.__authenticationRestApi.login(
 			{email: this.__currentUser.email, password: this.__currentUser.password}
 		).subscribe((result) => {

@@ -15,7 +15,7 @@ export class CreateUserComponent {
 
 	constructor(
 		public successOrErrorMessage: SuccessOrErrorMessageService,
-		public requestSent: DataOperationBegunService
+		public dataOperationBegun: DataOperationBegunService
 	) {
 	}
 

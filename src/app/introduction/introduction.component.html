@@ -4,6 +4,8 @@
 
 	<login-form></login-form>
 
+	<little-loading-spinner *ngIf="dataOperationBegun.waitingForResult"></little-loading-spinner>
+
 	<success-or-error-message *ngIf="successOrErrorMessage.message"></success-or-error-message>
 
 	<p>Don't have an account?
