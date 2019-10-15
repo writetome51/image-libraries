@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserDeletorService } from '../../services/user/user-deletor.service';
 
 
 @Component({
@@ -16,7 +17,12 @@ export class DeleteUserComponent {
 	};
 
 
-	constructor() {
+	constructor(private __userDeletor: UserDeletorService) {
+	}
+
+
+	async delete() {
+		let result = await this.__userDeletor.delete();
 	}
 
 

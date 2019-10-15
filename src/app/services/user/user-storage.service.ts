@@ -20,17 +20,6 @@ export class UserStorageService extends SubscriptionDataGetterService {
 	}
 
 
-	async delete(): Promise<any> {
-		return await this._getSubscriptionData(
-			this.__userRestApi.delete({
-				email: this.__currentUser.email,
-				password: this.__currentUser.password,
-				sessionID: this.__sessionIDLocalStorage.get()
-			})
-		);
-	}
-
-
 	async get(): Promise<any> {
 		return await this._getSubscriptionData(
 			this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()})
