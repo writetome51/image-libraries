@@ -30,7 +30,7 @@ export class HttpRequestResultService {
 		if (result.error) {
 			if (result.error.message) {
 				this.__router.navigate(['/']); // logged-out home page.
-				this.__successOrErrorMessage.error = 'You\'re not logged in.';
+				this.__successOrErrorMessage.error = result.error.message;
 			}
 			else this.__successOrErrorMessage.error = result.error;
 
