@@ -14,9 +14,9 @@ export class BigLoadingSpinnerComponent {
 
 
 	bigSpinner = {
-		src: '../../assets/loading-spinner-400.gif',
-		width: 407,
-		height: 406,
+		src: '../../assets/loading-spinner-200.gif',
+		width: 204,
+		height: 203,
 	};
 
 

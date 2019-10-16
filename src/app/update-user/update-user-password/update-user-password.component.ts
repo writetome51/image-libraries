@@ -20,4 +20,9 @@ export class UpdateUserPasswordComponent implements OnInit {
 	}
 
 
+	save(){
+
+	}
+
+
 }

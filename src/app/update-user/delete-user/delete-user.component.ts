@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserDeletorService } from '../../services/user/user-deletor.service';
+import { CurrentUserService } from '../../services/user/current-user.service';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { UserDeletorService } from '../../services/user/user-deletor.service';
 	templateUrl: './delete-user.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserComponent {
+export class DeleteUserComponent implements OnInit{
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -17,7 +18,15 @@ export class DeleteUserComponent {
 	};
 
 
-	constructor(private __userDeletor: UserDeletorService) {
+	constructor(
+		public currentUser: CurrentUserService,
+		private __userDeletor: UserDeletorService
+	) {
+	}
+
+
+	ngOnInit(): void {
+		this.currentUser.clearFormProperties();
 	}
 
 

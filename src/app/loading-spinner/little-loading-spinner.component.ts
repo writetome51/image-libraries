@@ -14,9 +14,9 @@ export class LittleLoadingSpinnerComponent {
 
 
 	littleSpinner = {
-		src: '../../assets/loading-spinner-200.gif',
-		width: 204,
-		height: 203,
+		src: '../../assets/loading-spinner-50.gif',
+		width: 51,
+		height: 51,
 	};
 
 

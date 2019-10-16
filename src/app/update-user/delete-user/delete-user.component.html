@@ -2,12 +2,36 @@
 
 <div>
 	<img [src]="tonto.src" [width]="tonto.width" alt="Tonto from The Lone Ranger"/>
-	<p class="warning-text">Tread carefully, kemosabe.</p>
+	<p class="warning-text">Tread carefully, kemosabe. You cannot undo this.</p>
 
-	<p>Are you sure you want to delete this account?
-		<span class="warning-text">You cannot undo this.</span>
-	</p>
+	<p>If you wish to proceed, enter your info and click Delete</p>
 
-	<button (click)="delete()">Yes</button>
+	<div class="input-container">
+
+		<label for="email-input" hidden>Email</label>
+		<input type="text"
+			   id="email-input"
+			   name="email"
+			   required
+			   placeholder="Email..."
+			   [(ngModel)]="currentUser.email"
+		/>
+
+	</div>
+
+	<div class="input-container">
+
+		<label for="password-input" hidden>Password</label>
+		<input type="password"
+			   id="password-input"
+			   name="password"
+			   required
+			   placeholder="Password..."
+			   [(ngModel)]="currentUser.password"
+		/>
+
+	</div>
+
+	<button (click)="delete()">Delete</button>
 	<button>Cancel</button>
 </div>

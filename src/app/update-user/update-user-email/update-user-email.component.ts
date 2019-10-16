@@ -18,4 +18,9 @@ export class UpdateUserEmailComponent implements OnInit {
 	}
 
 
+	save(){
+
+	}
+
+
 }
