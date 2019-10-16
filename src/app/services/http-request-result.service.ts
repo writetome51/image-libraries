@@ -18,7 +18,10 @@ export class HttpRequestResultService {
 	}
 
 
-	ifResultSuccessful_processResult(result, process: Function) {
+	ifResultSuccessful_processResult(
+		result,
+		process: (result) => void
+	): void {
 		result = this.checkForError_returnIfOK(result);
 		if (hasValue(result)) process(result);
 	}
