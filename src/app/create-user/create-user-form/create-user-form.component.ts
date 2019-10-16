@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { NewUserSaverService } from '../../services/user/new-user-saver.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
@@ -8,7 +8,7 @@ import { DataOperationBegunService } from '../../services/data-operation-begun.s
 	selector: 'create-user-form',
 	templateUrl: './create-user-form.component.html'
 })
-export class CreateUserFormComponent {
+export class CreateUserFormComponent implements OnInit {
 
 	inputs = [
 		{type: 'text', userProperty: 'email', placeholder: 'Email', minLength: 6},
@@ -30,6 +30,11 @@ export class CreateUserFormComponent {
 		private __newUserSaver: NewUserSaverService,
 		private __dataOperationBegun: DataOperationBegunService
 	) {
+	}
+
+
+	ngOnInit(): void {
+		this.currentUser.clearFormProperties();
 	}
 
 

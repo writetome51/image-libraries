@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { LoginProcessorService } from '../../services/authentication/login-processor.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
@@ -8,13 +8,18 @@ import { DataOperationBegunService } from '../../services/data-operation-begun.s
 	selector: 'login-form',
 	templateUrl: './login-form.component.html'
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit{
 
 	constructor(
 		public currentUser: CurrentUserService,
 		private __loginProcessor: LoginProcessorService,
 		private __dataOperationBegun: DataOperationBegunService
 	) {
+	}
+
+
+	ngOnInit(): void {
+		this.currentUser.clearFormProperties();
 	}
 
 

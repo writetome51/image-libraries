@@ -48,4 +48,19 @@ export class CurrentUserService {
 	}
 
 
+	clearFormProperties(): void {
+		this.password = '';
+
+		this.passwordAgain = '';
+
+		this.newPassword = '';
+
+		this.securityQuestion = {question: '', answer: ''};
+
+		this.email = '';
+
+		this.newEmail = '';
+	}
+
+
 }

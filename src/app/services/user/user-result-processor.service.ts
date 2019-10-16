@@ -18,7 +18,7 @@ export class UserResultProcessorService {
 	}
 
 
-	process(result: DBUser) {
+	process(result: DBUser): void {
 		if (result.sessionID) {
 			this.__sessionIDLocalStorage.set(result.sessionID);
 			this.__currentUser.dbUser = result;
