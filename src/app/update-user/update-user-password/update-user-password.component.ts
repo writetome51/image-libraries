@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 
 
@@ -6,13 +6,17 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 	selector: 'update-user-password',
 	templateUrl: './update-user-password.component.html'
 })
-export class UpdateUserPasswordComponent {
+export class UpdateUserPasswordComponent implements OnInit {
 
 	newPasswordAgain = '';
 
 
 	constructor(public currentUser: CurrentUserService) {
-		this.currentUser.password = '';
+	}
+
+
+	ngOnInit(): void {
+		this.currentUser.clearFormProperties();
 	}
 
 

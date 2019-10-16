@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 
 
@@ -6,12 +6,15 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 	selector: 'update-user-email',
 	templateUrl: './update-user-email.component.html'
 })
-export class UpdateUserEmailComponent {
+export class UpdateUserEmailComponent implements OnInit {
 
-	newEmailAgain = '';
 
 	constructor(public currentUser: CurrentUserService) {
-		this.currentUser.email = '';
+	}
+
+
+	ngOnInit(): void {
+		this.currentUser.clearFormProperties();
 	}
 
 
