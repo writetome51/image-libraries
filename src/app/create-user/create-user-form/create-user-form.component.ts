@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { NewUserSaverService } from '../../services/user/new-user-saver.service';
+import { NewUserSaverService } from '../../services/user/new-user-saver/new-user-saver.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
 
 

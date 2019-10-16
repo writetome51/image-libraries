@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { LoginProcessorService } from '../../services/authentication/login-processor.service';
+import { LoginProcessorService } from '../../services/authentication/login-processor/login-processor.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
 
 

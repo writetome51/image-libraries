@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
+import { UserStorageService } from '../../services/user/user-storage.service';
 
 
 @Component({
@@ -9,7 +10,10 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 export class UpdateUserEmailComponent implements OnInit {
 
 
-	constructor(public currentUser: CurrentUserService) {
+	constructor(
+		public currentUser: CurrentUserService,
+		private __userStorage: UserStorageService
+	) {
 	}
 
 
@@ -18,8 +22,8 @@ export class UpdateUserEmailComponent implements OnInit {
 	}
 
 
-	save(){
-
+	save() {
+		let result = this.__userStorage.updateEmail();
 	}
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDeletorService } from '../../services/user/user-deletor.service';
 import { CurrentUserService } from '../../services/user/current-user.service';
+import { UserDeletionProcessorService }
+	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 	templateUrl: './delete-user.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserComponent implements OnInit{
+export class DeleteUserComponent implements OnInit {
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -20,7 +21,7 @@ export class DeleteUserComponent implements OnInit{
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __userDeletor: UserDeletorService
+		private __userDeletionProcessor: UserDeletionProcessorService
 	) {
 	}
 
@@ -31,7 +32,7 @@ export class DeleteUserComponent implements OnInit{
 
 
 	async delete() {
-		let result = await this.__userDeletor.delete();
+		this.__userDeletionProcessor.process();
 	}
 
 

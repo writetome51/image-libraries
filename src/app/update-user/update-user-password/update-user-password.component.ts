@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
+import { UserStorageService } from '../../services/user/user-storage.service';
+import { SuccessOrErrorMessageService } from '../../success-or-error-message/success-or-error-message.service';
 
 
 @Component({
@@ -11,7 +13,11 @@ export class UpdateUserPasswordComponent implements OnInit {
 	newPasswordAgain = '';
 
 
-	constructor(public currentUser: CurrentUserService) {
+	constructor(
+		public currentUser: CurrentUserService,
+		private __userStorage: UserStorageService,
+		private __successOrErrorMessage: SuccessOrErrorMessageService
+	) {
 	}
 
 
@@ -20,7 +26,11 @@ export class UpdateUserPasswordComponent implements OnInit {
 	}
 
 
-	save(){
+	save(): void {
+		if (this.currentUser.newPassword === this.newPasswordAgain) {
+			let result = this.__userStorage.updatePassword();
+		}
+		else this.__successOrErrorMessage.error = 'The two password inputs must match.';
 
 	}
 
