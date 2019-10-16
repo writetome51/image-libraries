@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NewUserValidatorService } from './new-user-validator.service';
-import { UserCreatorService } from './user-creator.service';
+import { UserCreatorService } from './user-creator/user-creator.service';
 
 
 @Injectable({

@@ -1,7 +1,7 @@
-import { DBUser } from '../../../interfaces/db-user';
-import { HttpRequestResultService } from '../http-request-result.service';
+import { DBUser } from '../../../../interfaces/db-user';
+import { HttpRequestResultService } from '../../http-request-result.service';
 import { Injectable } from '@angular/core';
-import { UserResultProcessorService } from '../user/user-result-processor.service';
+import { UserResultProcessorService } from '../../user/user-result-processor.service';
 
 
 @Injectable({

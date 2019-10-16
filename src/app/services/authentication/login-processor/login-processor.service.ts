@@ -1,5 +1,5 @@
-import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserService } from '../user/current-user.service';
+import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
+import { CurrentUserService } from '../../user/current-user.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
 

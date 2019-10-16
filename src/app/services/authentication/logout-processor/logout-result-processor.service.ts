@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from './session-id-local-storage.service';
+import { SessionIDLocalStorageService } from '../session-id-local-storage.service';
 import { Router } from '@angular/router';
 
 

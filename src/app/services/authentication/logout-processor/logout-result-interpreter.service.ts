@@ -1,4 +1,4 @@
-import { HttpRequestResultService } from '../http-request-result.service';
+import { HttpRequestResultService } from '../../http-request-result.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultProcessorService } from './logout-result-processor.service';
 

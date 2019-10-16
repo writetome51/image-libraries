@@ -1,7 +1,7 @@
-import { CurrentUserService } from './current-user.service';
+import { CurrentUserService } from '../../current-user.service';
 import { Injectable } from '@angular/core';
-import { SubscriptionDataGetterService } from '../subscription-data-getter.service';
-import { UserRestAPIService } from './user-rest-api.service';
+import { SubscriptionDataGetterService } from '../../../subscription-data-getter.service';
+import { UserRestAPIService } from '../../user-rest-api.service';
 import { SavedNewUserResultInterpreterService } from './saved-new-user-result-interpreter.service';
 
 
