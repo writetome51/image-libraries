@@ -51,7 +51,7 @@ import { SuccessOrErrorMessageModule } from '../success-or-error-message/success
 				]
 			},
 
-		]),
+		])
 	]
 })
 export class UpdateUserModule {

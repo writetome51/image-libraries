@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../library/current-library.service';
-import { SuccessOrErrorMessageService } from '../../success-or-error-message/success-or-error-message.service';
+import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
 
 
 @Injectable({

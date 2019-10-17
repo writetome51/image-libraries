@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
+
+// Intended to be an application-wide alert service.
+
 export class SuccessOrErrorMessageService {
 
 	private __error = ''; // error message

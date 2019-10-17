@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SuccessOrErrorMessageService }
-	from '../success-or-error-message/success-or-error-message.service';
+	from '../services/success-or-error-message.service';
 import { DataOperationBegunService } from '../services/data-operation-begun.service';
 
 

@@ -1,12 +1,11 @@
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../services/library/current-library.service';
-import { SuccessOrErrorMessageService }
-	from '../success-or-error-message/success-or-error-message.service';
-import { LibraryComponent } from '../library/library.component';
 import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
+import { Injectable } from '@angular/core';
+import { LibraryComponent } from '../library/library.component';
+import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
 
 
 @Injectable({
@@ -20,7 +19,6 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	constructor(
-		private __router: Router,
 		private __currentLibrary: CurrentLibraryService,
 		private __successOrErrorMessage: SuccessOrErrorMessageService
 	) {

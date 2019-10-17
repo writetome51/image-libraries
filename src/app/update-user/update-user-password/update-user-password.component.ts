@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserStorageService } from '../../services/user/user-storage.service';
-import { SuccessOrErrorMessageService } from '../../success-or-error-message/success-or-error-message.service';
+import { SuccessOrErrorMessageService } from '../../services/success-or-error-message.service';
 
 
 @Component({

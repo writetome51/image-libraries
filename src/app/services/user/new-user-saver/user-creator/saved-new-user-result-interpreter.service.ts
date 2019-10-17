@@ -2,7 +2,7 @@ import { DBUser } from '../../../../../interfaces/db-user';
 import { HttpRequestResultService } from '../../../http-request-result.service';
 import { Injectable } from '@angular/core';
 import { SuccessOrErrorMessageService }
-	from '../../../../success-or-error-message/success-or-error-message.service';
+	from '../../../success-or-error-message.service';
 import { UserResultProcessorService } from '../../user-result-processor.service';
 
 
