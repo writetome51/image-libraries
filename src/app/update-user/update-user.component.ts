@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SuccessOrErrorMessageService } from '../success-or-error-message/success-or-error-message.service';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class UpdateUserComponent {
 
 
-	save() {
+	constructor(public successOrErrorMessage: SuccessOrErrorMessageService) {
 	}
 
 

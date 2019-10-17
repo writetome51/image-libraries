@@ -31,7 +31,7 @@ export class DeleteUserComponent implements OnInit {
 	}
 
 
-	async delete() {
+	delete(): void {
 		this.__userDeletionProcessor.process();
 	}
 

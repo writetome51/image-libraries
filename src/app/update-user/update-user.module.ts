@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
 import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
+import { SuccessOrErrorMessageModule } from '../success-or-error-message/success-or-error-message.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 	imports: [
 		CommonModule,
 		FormsModule,
+		SuccessOrErrorMessageModule,
 		RouterModule.forChild([
 
 			{	// This makes 'email' the default route when this module loads.
@@ -49,7 +51,7 @@ import { UpdateUserPasswordComponent } from './update-user-password/update-user-
 				]
 			},
 
-		])
+		]),
 	]
 })
 export class UpdateUserModule {
