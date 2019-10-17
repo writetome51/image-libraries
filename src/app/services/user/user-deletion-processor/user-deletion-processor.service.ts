@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DeletedUserResultInterpreterService } from './deleted-user-result-interpreter.service';
 import { UserDeletorService } from './user-deletor.service';
 
 
@@ -9,15 +8,16 @@ import { UserDeletorService } from './user-deletor.service';
 export class UserDeletionProcessorService {
 
 	constructor(
-		private __deletedUserResultInterpreter: DeletedUserResultInterpreterService,
-		private __userDeletor: UserDeletorService
+		private __userDeletor: UserDeletorService,
+		private __userDeletionResultInterpreter
+
 	) {
 	}
 
 
-	process(): void {
-		let result = this.__userDeletor.delete();
-		this.__deletedUserResultInterpreter.interpret(result);
+	async process() {
+		let result = await this.__userDeletor.delete();
+		this.__userDeletionResultInterpreter.interpret(result);
 	}
 
 }
