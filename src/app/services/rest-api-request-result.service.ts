@@ -22,24 +22,36 @@ export class RestAPIRequestResultService {
 		process: (result) => void
 	): void {
 		result = this.checkForError_returnIfOK(result);
-		if (hasValue(result)) process(result);
+		if (hasValue(result)) {
+			process(result);
+		}
 	}
 
 
 	checkForError_returnIfOK(result): void | any {
-		if (typeof result === 'string') result = getObjectFromJSON(result);
+		if (typeof result === 'string') {
+			result = getObjectFromJSON(result);
+		}
 
 		if (result.error) {
 			if (result.error.message) {
-				this.__router.navigate(['/']); // logged-out home page.
+				if (result.error.message.includes(
+					`Duplicate key error: E11000 duplicate key error collection: rest-api.image-library-app-user index: email_1`
+				)) {
+					this.__successOrErrorMessage.error = 'An account with that email already exists.';
+					return;
+				}
+				if (result.error.message.includes('Operation not performed.  No document matched the request criteria'))
+
 				this.__successOrErrorMessage.error = result.error.message;
+			} else {
+				this.__successOrErrorMessage.error = result.error;
 			}
-			else this.__successOrErrorMessage.error = result.error;
 
 			return;
+		} else {
+			return result;
 		}
-
-		else return result;
 	}
 
 
