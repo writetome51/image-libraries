@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { getObjectFromJSON } from 'get-object-from-json';
-import { hasValue } from '@writetome51/has-value-no-value';
-import { Router } from '@angular/router';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { SuccessOrErrorMessageService } from './success-or-error-message.service';
 
 
@@ -10,10 +9,11 @@ import { SuccessOrErrorMessageService } from './success-or-error-message.service
 })
 export class RestAPIRequestResultService {
 
-	constructor(
-		private __router: Router,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
-	) {
+
+	protected _errorHandler: (errorMessage: string) => void;
+
+
+	constructor(protected _successOrErrorMessage: SuccessOrErrorMessageService) {
 	}
 
 
@@ -35,23 +35,16 @@ export class RestAPIRequestResultService {
 
 		if (result.error) {
 			if (result.error.message) {
-				if (result.error.message.includes(
-					`Duplicate key error: E11000 duplicate key error collection: rest-api.image-library-app-user index: email_1`
-				)) {
-					this.__successOrErrorMessage.error = 'An account with that email already exists.';
-					return;
-				}
-				if (result.error.message.includes('Operation not performed.  No document matched the request criteria'))
+				if (noValue(this._errorHandler)) throw new Error('The "_errorHandler" property must' +
+					' be set first');
+				this._errorHandler(result.error.message);
 
-				this.__successOrErrorMessage.error = result.error.message;
 			} else {
-				this.__successOrErrorMessage.error = result.error;
+				this._successOrErrorMessage.error = result.error;
 			}
-
 			return;
-		} else {
-			return result;
 		}
+		else return result;
 	}
 
 
