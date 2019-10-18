@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { SubscriptionDataGetterService } from '../subscription-data-getter.service';
-import { HttpRequestResultService } from '../http-request-result.service';
+import { RestAPIRequestResultService } from '../rest-api-request-result.service';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class LibraryStorageService extends SubscriptionDataGetterService {
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __httpRequestResult: HttpRequestResultService
+		private __httpRequestResult: RestAPIRequestResultService
 	) {
 		super();
 	}

@@ -8,7 +8,7 @@ import { SuccessOrErrorMessageService } from './success-or-error-message.service
 @Injectable({
 	providedIn: 'root'
 })
-export class HttpRequestResultService {
+export class RestAPIRequestResultService {
 
 	constructor(
 		private __router: Router,

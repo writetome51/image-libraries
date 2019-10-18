@@ -1,5 +1,5 @@
 import { DBUser } from '../../../../../interfaces/db-user';
-import { HttpRequestResultService } from '../../../http-request-result.service';
+import { RestAPIRequestResultService } from '../../../rest-api-request-result.service';
 import { Injectable } from '@angular/core';
 import { SuccessOrErrorMessageService }
 	from '../../../success-or-error-message.service';
@@ -13,14 +13,14 @@ export class SavedNewUserResultInterpreterService {
 
 	constructor(
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __httpRequestResult: HttpRequestResultService,
+		private __restApiRequestResult: RestAPIRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
 
 
 	interpret(result: DBUser) {
-		this.__httpRequestResult.ifResultSuccessful_processResult(
+		this.__restApiRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => {
 				this.__userResultProcessor.process(result);
