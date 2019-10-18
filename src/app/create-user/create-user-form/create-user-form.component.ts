@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { NewUserSaverService } from '../../services/user/new-user-saver/new-user-saver.service';
+import { NewUserProcessorService } from '../../services/user/new-user-processor/new-user-processor.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
 
 
@@ -27,7 +27,7 @@ export class CreateUserFormComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __newUserSaver: NewUserSaverService,
+		private __newUserProcessor: NewUserProcessorService,
 		private __dataOperationBegun: DataOperationBegunService
 	) {
 	}
@@ -40,7 +40,7 @@ export class CreateUserFormComponent implements OnInit {
 
 	async create() {
 		this.__dataOperationBegun.waitingForResult = true;
-		await this.__newUserSaver.save();
+		await this.__newUserProcessor.process();
 		this.__dataOperationBegun.waitingForResult = false;
 	}
 

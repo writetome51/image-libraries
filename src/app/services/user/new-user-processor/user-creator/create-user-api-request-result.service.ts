@@ -6,10 +6,10 @@ import { SuccessOrErrorMessageService } from '../../../success-or-error-message.
 @Injectable({
 	providedIn: 'root'
 })
-export class UserRestApiRequestResultService extends RestAPIRequestResultService {
+export class CreateUserApiRequestResultService extends RestAPIRequestResultService {
 
-	constructor(__successOrErrorMessage: SuccessOrErrorMessageService) {
-		super(__successOrErrorMessage);
+	constructor(_successOrErrorMessage: SuccessOrErrorMessageService) {
+		super(_successOrErrorMessage);
 
 		this._errorHandler = (errMessage) => {
 			if (errMessage.includes(
@@ -22,7 +22,6 @@ export class UserRestApiRequestResultService extends RestAPIRequestResultService
 
 
 }
-
 
 /**************************
  // This is error handler for when user is logging in:

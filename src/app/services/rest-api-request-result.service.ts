@@ -1,13 +1,9 @@
-import { Injectable } from '@angular/core';
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { SuccessOrErrorMessageService } from './success-or-error-message.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class RestAPIRequestResultService {
+export abstract class RestAPIRequestResultService {
 
 
 	protected _errorHandler: (errorMessage: string) => void;
@@ -40,6 +36,7 @@ export class RestAPIRequestResultService {
 				this._errorHandler(result.error.message);
 
 			} else {
+				// This is for displaying unexpected errors.
 				this._successOrErrorMessage.error = result.error;
 			}
 			return;
