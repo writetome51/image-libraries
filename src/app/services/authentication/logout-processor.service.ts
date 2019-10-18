@@ -1,8 +1,7 @@
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from './session-id-local-storage.service';
-import { UserLogoutOrDeletionResultInterpreterService }
-	from '../user/user-logout-or-deletion-result-interpreter.service';
+import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
 
 
 @Injectable({
@@ -13,7 +12,7 @@ export class LogoutProcessorService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __userLogoutOrDeletionResultInterpreter: UserLogoutOrDeletionResultInterpreterService,
+		private __logoutResultInterpreter: LogoutResultInterpreterService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
 	}
@@ -24,7 +23,7 @@ export class LogoutProcessorService {
 			{sessionID: this.__sessionIDLocalStorage.get()}
 		).subscribe((result) => {
 
-			this.__userLogoutOrDeletionResultInterpreter.interpret(result);
+			this.__logoutResultInterpreter.interpret(result);
 			subscription.unsubscribe();
 		});
 

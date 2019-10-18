@@ -1,13 +1,13 @@
 import { RestAPIRequestResultService } from '../rest-api-request-result.service';
 import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
-	from './user-logout-or-deletion-result-processor.service';
+	from '../user/user-logout-or-deletion-result-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserLogoutOrDeletionResultInterpreterService {
+export class LogoutResultInterpreterService {
 
 
 	constructor(
