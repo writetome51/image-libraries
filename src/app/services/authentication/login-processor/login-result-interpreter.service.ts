@@ -1,7 +1,7 @@
 import { DBUser } from '../../../../interfaces/db-user';
-import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../../user/user-result-processor.service';
+import { LoginApiRequestResultService } from './login-api-request-result.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class LoginResultInterpreterService {
 
 
 	constructor(
-		private __restApiRequestResult: RestAPIRequestResultService,
+		private __loginApiRequestResult: LoginApiRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
@@ -26,7 +26,7 @@ export class LoginResultInterpreterService {
 
 
 	interpret(result: DBUser): void {
-		this.__restApiRequestResult.ifResultSuccessful_processResult(
+		this.__loginApiRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => this.__userResultProcessor.process(result)
 		);

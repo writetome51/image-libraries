@@ -1,9 +1,14 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { Injectable } from '@angular/core';
 
 
-export abstract class RestAPIRequestResultService {
+
+@Injectable({
+	providedIn: 'root'
+})
+export class RestAPIRequestResultService {
 
 
 	protected _errorHandler: (errorMessage: string) => void;
@@ -31,9 +36,10 @@ export abstract class RestAPIRequestResultService {
 
 		if (result.error) {
 			if (result.error.message) {
-				if (noValue(this._errorHandler)) throw new Error('The "_errorHandler" property must' +
-					' be set first');
-				this._errorHandler(result.error.message);
+				if (noValue(this._errorHandler)) {
+					this._successOrErrorMessage.error = result.error.message;
+				}
+				else this._errorHandler(result.error.message);
 
 			} else {
 				// This is for displaying unexpected errors.

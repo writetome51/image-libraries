@@ -15,6 +15,13 @@ export class UserRestAPIService extends RestAPIService {
 	}
 
 
+	exists(params: { email: string }): Observable<any> {
+		params['sessionID'] = '';
+		let url = `${this._baseURL}user-exists` + this._getURLQuery(params);
+		return this._http.get(url);
+	}
+
+
 	get(params: { sessionID: string }): Observable<any> {
 		let url = this.__getURLForGettingUser(params);
 		return this._http.get(url);

@@ -12,8 +12,8 @@ export class LoginFormComponent implements OnInit{
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __loginProcessor: LoginProcessorService,
-		private __dataOperationBegun: DataOperationBegunService
+		public dataOperationBegun: DataOperationBegunService,
+		private __loginProcessor: LoginProcessorService
 	) {
 	}
 
@@ -24,9 +24,9 @@ export class LoginFormComponent implements OnInit{
 
 
 	async login() {
-		this.__dataOperationBegun.waitingForResult = true;
+		this.dataOperationBegun.waitingForResult = true;
 		await this.__loginProcessor.process();
-		this.__dataOperationBegun.waitingForResult = false;
+		this.dataOperationBegun.waitingForResult = false;
 	}
 
 

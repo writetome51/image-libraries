@@ -22,10 +22,3 @@ export class CreateUserApiRequestResultService extends RestAPIRequestResultServi
 
 
 }
-
-/**************************
- // This is error handler for when user is logging in:
- if (result.error.message.includes('Operation not performed.  No document matched the request criteria')) {
-	this._successOrErrorMessage.error = result.error.message;
- }
- *************************/
