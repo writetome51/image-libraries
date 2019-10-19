@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { LogoutProcessorService } from './services/authentication/logout-processor.service';
+import { LogoutProcessorService } from './services/authentication/logout-processor/logout-processor.service';
 import { SessionIDLocalStorageService } from './services/authentication/session-id-local-storage.service';
 
 

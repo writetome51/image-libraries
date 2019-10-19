@@ -1,7 +1,7 @@
-import { RestAPIRequestResultService } from '../rest-api-request-result.service';
+import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
-	from '../user/user-logout-or-deletion-result-processor.service';
+	from '../../user/user-logout-or-deletion-result-processor.service';
 
 
 @Injectable({

@@ -6,7 +6,8 @@ import { SuccessOrErrorMessageService } from './success-or-error-message.service
 	providedIn: 'root'
 })
 
-// This is for letting the app know when to display the loading spinner.
+// This lets the app know when to display the loading spinner
+// and when to clear SuccessOrErrorMessageService.message.
 
 export class DataOperationBegunService {
 
@@ -23,7 +24,7 @@ export class DataOperationBegunService {
 
 
 	set waitingForResult(value) {
-		// Whenever a new data operation is begun, any message should be removed:
+		// Whenever a new data operation is begun, any message to user should be removed:
 		if (value === true) this.__successOrErrorMessage.success = '';
 
 		this.__waitingForResult = value;
