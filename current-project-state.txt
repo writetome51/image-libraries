@@ -3,6 +3,8 @@ You can successfully create an account. When entering info and clicking
 
 You can successfully log in to an existing account, and log out.
 
+You can successfully delete your account.
+
 The Authenticated and Deauthenticated guards work.
 
 Routing for child routes of /update-user/  works.

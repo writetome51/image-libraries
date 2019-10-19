@@ -1,3 +1,4 @@
+import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
 import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { SuccessOrErrorMessageService } from '../../success-or-error-message.service';
@@ -27,6 +28,7 @@ export class LoginApiRequestResultService extends RestAPIRequestResultService {
 					{email: this.__currentUser.email}
 				).subscribe((result) => {
 
+					result = getObjectFromJSON(result);
 					if (result.success) this._successOrErrorMessage.error = 'Incorrect password';
 					else this._successOrErrorMessage.error = 'User does not exist. Please create an account';
 

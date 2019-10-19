@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserDeletorService } from './user-deletor.service';
+import { UserDeletionResultInterpreterService } from './user-deletion-result-interpreter.service';
 
 
 @Injectable({
@@ -9,8 +10,7 @@ export class UserDeletionProcessorService {
 
 	constructor(
 		private __userDeletor: UserDeletorService,
-		private __userDeletionResultInterpreter
-
+		private __userDeletionResultInterpreter: UserDeletionResultInterpreterService
 	) {
 	}
 
