@@ -5,10 +5,10 @@ import { SuccessOrErrorMessageService } from '../../services/success-or-error-me
 
 
 @Component({
-	selector: 'update-user-password',
-	templateUrl: './update-user-password.component.html'
+	selector: 'edit-user-password',
+	templateUrl: './edit-user-password.component.html'
 })
-export class UpdateUserPasswordComponent implements OnInit {
+export class EditUserPasswordComponent implements OnInit {
 
 	newPasswordAgain = '';
 

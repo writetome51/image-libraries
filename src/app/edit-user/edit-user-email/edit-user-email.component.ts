@@ -4,10 +4,10 @@ import { UserStorageService } from '../../services/user/user-storage.service';
 
 
 @Component({
-	selector: 'update-user-email',
-	templateUrl: './update-user-email.component.html'
+	selector: 'edit-user-email',
+	templateUrl: './edit-user-email.component.html'
 })
-export class UpdateUserEmailComponent implements OnInit {
+export class EditUserEmailComponent implements OnInit {
 
 
 	constructor(

@@ -11,8 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: 'update-user',
-		loadChildren: () => import('./update-user/update-user.module').then(mod => mod.UpdateUserModule)
+		path: 'edit-user',
+		loadChildren: () => import('./edit-user/edit-user.module').then(mod => mod.EditUserModule)
 	},
 
 	{

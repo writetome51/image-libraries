@@ -3,10 +3,10 @@ import { SuccessOrErrorMessageService } from '../services/success-or-error-messa
 
 
 @Component({
-	selector: 'update-user',
-	templateUrl: './update-user.component.html'
+	selector: 'edit-user',
+	templateUrl: './edit-user.component.html'
 })
-export class UpdateUserComponent {
+export class EditUserComponent {
 
 
 	constructor(public successOrErrorMessage: SuccessOrErrorMessageService) {

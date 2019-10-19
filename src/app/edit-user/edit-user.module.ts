@@ -4,17 +4,17 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { UpdateUserComponent } from './update-user.component';
-import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
-import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
+import { EditUserComponent } from './edit-user.component';
+import { EditUserEmailComponent } from './edit-user-email/edit-user-email.component';
+import { EditUserPasswordComponent } from './edit-user-password/edit-user-password.component';
 import { SuccessOrErrorMessageModule } from '../success-or-error-message/success-or-error-message.module';
 
 
 @NgModule({
 	declarations: [
-		UpdateUserComponent,
-		UpdateUserEmailComponent,
-		UpdateUserPasswordComponent,
+		EditUserComponent,
+		EditUserEmailComponent,
+		EditUserPasswordComponent,
 		DeleteUserComponent
 	],
 	imports: [
@@ -31,17 +31,17 @@ import { SuccessOrErrorMessageModule } from '../success-or-error-message/success
 
 			{
 				path: '',
-				component: UpdateUserComponent,
+				component: EditUserComponent,
 				canActivate: [AuthenticatedGuard],
 				children: [
 					{
 						path: 'email',
-						component: UpdateUserEmailComponent
+						component: EditUserEmailComponent
 					},
 
 					{
 						path: 'password',
-						component: UpdateUserPasswordComponent
+						component: EditUserPasswordComponent
 					},
 
 					{
@@ -54,5 +54,5 @@ import { SuccessOrErrorMessageModule } from '../success-or-error-message/success
 		])
 	]
 })
-export class UpdateUserModule {
+export class EditUserModule {
 }

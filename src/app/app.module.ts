@@ -13,7 +13,7 @@ import { LoginFormComponent } from './introduction/login-form/login-form.compone
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
-import { UpdateUserModule } from './update-user/update-user.module';
+import { EditUserModule } from './edit-user/edit-user.module';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { UpdateUserModule } from './update-user/update-user.module';
 		AppRoutingModule, // must be loaded before any other routing module.
 		LoadingSpinnerModule,
 		LibraryModule,
-		UpdateUserModule
+		EditUserModule
 	],
 	bootstrap: [AppComponent]
 })
