@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
-import { PasswordUpdateProcessorService } from '../../services/password-update-processor.service';
+import { PasswordUpdateProcessorService }
+	from '../../services/password-update-processor/password-update-processor.service';
 
 
 @Component({
@@ -9,8 +10,6 @@ import { PasswordUpdateProcessorService } from '../../services/password-update-p
 	templateUrl: './edit-user-password.component.html'
 })
 export class EditUserPasswordComponent implements OnInit {
-
-	newPasswordAgain = '';
 
 
 	constructor(

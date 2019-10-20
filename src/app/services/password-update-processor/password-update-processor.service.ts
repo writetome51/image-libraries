@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UserStorageService } from './user/user-storage.service';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { UserStorageService } from '../user/user-storage.service';
 import { PasswordUpdateValidatorService } from './password-update-validator.service';
+import { PasswordUpdateResultInterpreterService } from './password-update-result-interpreter.service';
 
 
 @Injectable({
@@ -11,8 +11,7 @@ export class PasswordUpdateProcessorService {
 
 	constructor(
 		private __userStorage: UserStorageService,
-		private __updatePasswordResultInterpreter,
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
+		private __passwordUpdateResultInterpreter: PasswordUpdateResultInterpreterService,
 		private __passwordUpdateValidator: PasswordUpdateValidatorService
 	) {
 	}
@@ -21,7 +20,7 @@ export class PasswordUpdateProcessorService {
 	async process() {
 		if (this.__passwordUpdateValidator.isValid()) {
 			let result = await this.__userStorage.updatePassword();
-			this.__updatePasswordResultInterpreter.interpret(result);
+			this.__passwordUpdateResultInterpreter.interpret(result);
 		}
 	}
 
