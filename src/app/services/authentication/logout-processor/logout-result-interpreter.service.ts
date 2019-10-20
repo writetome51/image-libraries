@@ -1,5 +1,5 @@
-import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { Injectable } from '@angular/core';
+import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../../user/user-logout-or-deletion-result-processor.service';
 
@@ -11,7 +11,7 @@ export class LogoutResultInterpreterService {
 
 
 	constructor(
-		private __userLogoutOrDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService,
+		private __logoutResultProcessor: UserLogoutOrDeletionResultProcessorService,
 		private __restApiRequestResult: RestAPIRequestResultService
 	) {
 	}
@@ -20,7 +20,7 @@ export class LogoutResultInterpreterService {
 	interpret(result): void {
 		this.__restApiRequestResult.ifResultSuccessful_processResult(
 			result,
-			(result) => this.__userLogoutOrDeletionResultProcessor.process(result)
+			(result) => this.__logoutResultProcessor.process(result)
 		);
 	}
 

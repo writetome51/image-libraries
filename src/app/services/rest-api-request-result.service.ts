@@ -4,7 +4,6 @@ import { SuccessOrErrorMessageService } from './success-or-error-message.service
 import { Injectable } from '@angular/core';
 
 
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -38,16 +37,18 @@ export class RestAPIRequestResultService {
 			if (result.error.message) {
 				if (noValue(this._errorHandler)) {
 					this._successOrErrorMessage.error = result.error.message;
+				} else {
+					this._errorHandler(result.error.message);
 				}
-				else this._errorHandler(result.error.message);
 
 			} else {
 				// This is for displaying unexpected errors.
 				this._successOrErrorMessage.error = result.error;
 			}
 			return;
+		} else {
+			return result;
 		}
-		else return result;
 	}
 
 

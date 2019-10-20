@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { UserStorageService } from '../../services/user/user-storage.service';
-import { SuccessOrErrorMessageService } from '../../services/success-or-error-message.service';
+import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { PasswordUpdateProcessorService } from '../../services/password-update-processor.service';
 
 
 @Component({
@@ -15,8 +15,8 @@ export class EditUserPasswordComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __userStorage: UserStorageService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
+		private __dataOperationBegun: DataOperationBegunService,
+		private __passwordUpdateProcessor: PasswordUpdateProcessorService
 	) {
 	}
 
@@ -26,12 +26,10 @@ export class EditUserPasswordComponent implements OnInit {
 	}
 
 
-	save(): void {
-		if (this.currentUser.newPassword === this.newPasswordAgain) {
-			let result = this.__userStorage.updatePassword();
-		}
-		else this.__successOrErrorMessage.error = 'The two password inputs must match.';
-
+	async save() {
+		this.__dataOperationBegun.waitingForResult = true;
+		await this.__passwordUpdateProcessor.process();
+		this.__dataOperationBegun.waitingForResult = false;
 	}
 
 
