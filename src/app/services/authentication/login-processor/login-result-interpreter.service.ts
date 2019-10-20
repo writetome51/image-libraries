@@ -1,7 +1,8 @@
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../../user/user-result-processor.service';
-import { LoginApiRequestResultService } from './login-api-request-result.service';
+import { UserDeletionOrLoginApiRequestResultService }
+	from '../../user-deletion-or-login-api-request-result.service';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class LoginResultInterpreterService {
 
 
 	constructor(
-		private __loginApiRequestResult: LoginApiRequestResultService,
+		private __loginApiRequestResult: UserDeletionOrLoginApiRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}

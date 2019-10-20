@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
+import { DataOperationBegunService } from '../../services/data-operation-begun.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class DeleteUserComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __userDeletionProcessor: UserDeletionProcessorService
+		private __userDeletionProcessor: UserDeletionProcessorService,
+		private __dataOperationBegun: DataOperationBegunService
 	) {
 	}
 
@@ -31,8 +33,10 @@ export class DeleteUserComponent implements OnInit {
 	}
 
 
-	delete(): void {
-		this.__userDeletionProcessor.process();
+	async delete() {
+		this.__dataOperationBegun.waitingForResult = true;
+		await this.__userDeletionProcessor.process();
+		this.__dataOperationBegun.waitingForResult = false;
 	}
 
 

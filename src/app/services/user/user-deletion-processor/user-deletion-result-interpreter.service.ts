@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { RestAPIRequestResultService } from '../../rest-api-request-result.service';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user-logout-or-deletion-result-processor.service';
 import { SuccessOrErrorMessageService } from '../../success-or-error-message.service';
+import { UserDeletionOrLoginApiRequestResultService }
+	from '../../user-deletion-or-login-api-request-result.service';
 
 
 @Injectable({
@@ -12,17 +13,17 @@ export class UserDeletionResultInterpreterService {
 
 	constructor(
 		private __successOrErrorMessage: SuccessOrErrorMessageService,
-		private __httpRequestResult: RestAPIRequestResultService,
-		private __userLogoutOrDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService
+		private __userDeletionApiRequestResult: UserDeletionOrLoginApiRequestResultService,
+		private __userDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService
 	) {
 	}
 
 
 	interpret(result) {
-		this.__httpRequestResult.ifResultSuccessful_processResult(
+		this.__userDeletionApiRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => {
-				this.__userLogoutOrDeletionResultProcessor.process(result);
+				this.__userDeletionResultProcessor.process(result);
 				this.__successOrErrorMessage.success = 'Account successfully deleted';
 			}
 		);
