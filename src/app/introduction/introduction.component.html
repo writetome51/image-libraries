@@ -4,6 +4,8 @@
 
 	<login-form></login-form>
 
+	<little-loading-spinner *ngIf="dataOperationBegun.waitingForResult"></little-loading-spinner>
+
 	<app-alert *ngIf="alert.data"></app-alert>
 
 	<p>Don't have an account?

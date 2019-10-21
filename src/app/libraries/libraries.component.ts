@@ -14,8 +14,8 @@ export class LibrariesComponent {
 
 
 	constructor(
-		private __currentUserLibraries: CurrentUserLibrariesService,
-		public alert: AlertService
+		public alert: AlertService,
+		private __currentUserLibraries: CurrentUserLibrariesService
 	) {
 	}
 

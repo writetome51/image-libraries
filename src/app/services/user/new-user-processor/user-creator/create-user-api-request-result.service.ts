@@ -8,8 +8,8 @@ import { AlertService } from '../../../alert.service';
 })
 export class CreateUserApiRequestResultService extends RestAPIRequestResultService {
 
-	constructor(_message: AlertService) {
-		super(_message);
+	constructor(_alert: AlertService) {
+		super(_alert);
 
 		this._errorHandler = (errMessage) => {
 			if (errMessage.includes(
