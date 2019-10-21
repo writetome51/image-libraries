@@ -5,7 +5,7 @@ import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
+import { MessageService } from '../services/message.service';
 
 
 @Injectable({
@@ -20,7 +20,7 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
+		private __successOrErrorMessage: MessageService
 	) {
 	}
 

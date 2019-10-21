@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { CurrentUserService } from '../user/current-user.service';
-import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
+import { MessageService } from '../message.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class PasswordUpdateValidatorService {
 
 	constructor(
 		private __currentUser: CurrentUserService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
+		private __successOrErrorMessage: MessageService
 	) {
 	}
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user-logout-or-deletion-result-processor.service';
-import { SuccessOrErrorMessageService } from '../../success-or-error-message.service';
+import { MessageService } from '../../message.service';
 import { UserDeletionOrLoginApiRequestResultService }
 	from '../../user-deletion-or-login-api-request-result.service';
 
@@ -12,7 +12,7 @@ import { UserDeletionOrLoginApiRequestResultService }
 export class UserDeletionResultInterpreterService {
 
 	constructor(
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
+		private __successOrErrorMessage: MessageService,
 		private __userDeletionApiRequestResult: UserDeletionOrLoginApiRequestResultService,
 		private __userDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService
 	) {

@@ -1,6 +1,6 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { MessageService } from './message.service';
 import { UserRestAPIService } from './user/user-rest-api.service';
 import { CurrentUserService } from './user/current-user.service';
 
@@ -14,7 +14,7 @@ export class ErrorFromWrongPasswordOrNonExistentUserService {
 
 
 	constructor(
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
+		private __successOrErrorMessage: MessageService,
 		private __userRestApi: UserRestAPIService,
 		private __currentUser: CurrentUserService
 	) {

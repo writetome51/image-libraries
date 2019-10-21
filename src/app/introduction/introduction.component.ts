@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
+import { MessageService } from '../services/message.service';
 import { DataOperationBegunService } from '../services/data-operation-begun.service';
 
 
@@ -15,7 +15,7 @@ export class IntroductionComponent {
 
 
 	constructor(
-		public successOrErrorMessage: SuccessOrErrorMessageService,
+		public successOrErrorMessage: MessageService,
 		public dataOperationBegun: DataOperationBegunService
 	) {
 	}

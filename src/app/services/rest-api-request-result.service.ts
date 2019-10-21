@@ -1,6 +1,6 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
 
 
@@ -13,7 +13,7 @@ export class RestAPIRequestResultService {
 	protected _errorHandler: (errorMessage: string) => void;
 
 
-	constructor(protected _successOrErrorMessage: SuccessOrErrorMessageService) {
+	constructor(protected _successOrErrorMessage: MessageService) {
 	}
 
 

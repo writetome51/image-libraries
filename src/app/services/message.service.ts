@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 // Intended to be an application-wide alert service.
 
-export class SuccessOrErrorMessageService {
+export class MessageService {
 
 	private __error = ''; // error message
 	private __success = ''; // success message

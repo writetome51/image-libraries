@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RestAPIRequestResultService } from '../../../rest-api-request-result.service';
-import { SuccessOrErrorMessageService } from '../../../success-or-error-message.service';
+import { MessageService } from '../../../message.service';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import { SuccessOrErrorMessageService } from '../../../success-or-error-message.
 })
 export class CreateUserApiRequestResultService extends RestAPIRequestResultService {
 
-	constructor(_successOrErrorMessage: SuccessOrErrorMessageService) {
+	constructor(_successOrErrorMessage: MessageService) {
 		super(_successOrErrorMessage);
 
 		this._errorHandler = (errMessage) => {

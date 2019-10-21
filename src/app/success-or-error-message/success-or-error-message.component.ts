@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SuccessOrErrorMessageService } from '../services/success-or-error-message.service';
+import { MessageService } from '../services/message.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { SuccessOrErrorMessageService } from '../services/success-or-error-messa
 export class SuccessOrErrorMessageComponent {
 
 
-	constructor(public successOrErrorMessage: SuccessOrErrorMessageService) {
+	constructor(public successOrErrorMessage: MessageService) {
 	}
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../library/current-library.service';
-import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
+import { MessageService } from '../message.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class ImageURLProcessorService {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService
+		private __successOrErrorMessage: MessageService
 	) {
 	}
 

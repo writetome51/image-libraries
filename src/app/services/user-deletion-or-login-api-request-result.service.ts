@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RestAPIRequestResultService } from './rest-api-request-result.service';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { MessageService } from './message.service';
 import { ErrorFromWrongPasswordOrNonExistentUserService }
 	from './error-from-wrong-password-or-non-existent-user.service';
 
@@ -10,7 +10,7 @@ import { ErrorFromWrongPasswordOrNonExistentUserService }
 })
 export class UserDeletionOrLoginApiRequestResultService extends RestAPIRequestResultService {
 	constructor(
-		_successOrErrorMessage: SuccessOrErrorMessageService,
+		_successOrErrorMessage: MessageService,
 		private __errorFromWrongPasswordOrNonExistentUser: ErrorFromWrongPasswordOrNonExistentUserService
 	) {
 		super(_successOrErrorMessage);

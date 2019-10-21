@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SuccessOrErrorMessageService } from './success-or-error-message.service';
+import { MessageService } from './message.service';
 
 
 @Injectable({
@@ -7,14 +7,14 @@ import { SuccessOrErrorMessageService } from './success-or-error-message.service
 })
 
 // This lets the app know when to display the loading spinner
-// and when to clear SuccessOrErrorMessageService.message.
+// and when to clear MessageService.message.
 
 export class DataOperationBegunService {
 
 	private __waitingForResult = false; // if true, you should show loading spinner.
 
 
-	constructor(private __successOrErrorMessage: SuccessOrErrorMessageService) {
+	constructor(private __successOrErrorMessage: MessageService) {
 	}
 
 

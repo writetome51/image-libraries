@@ -3,7 +3,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryStorageService } from './library-storage.service';
-import { SuccessOrErrorMessageService } from '../success-or-error-message.service';
+import { MessageService } from '../message.service';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class LibrarySaverService {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
-		private __successOrErrorMessage: SuccessOrErrorMessageService,
+		private __successOrErrorMessage: MessageService,
 		private __libraryStorage: LibraryStorageService
 	) {
 	}
