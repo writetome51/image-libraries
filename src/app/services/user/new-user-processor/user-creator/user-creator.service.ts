@@ -1,6 +1,6 @@
 import { CurrentUserService } from '../../current-user.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
-import { SubscriptionDataGetterService } from '../../../subscription-data-getter.service';
 import { UserRestAPIService } from '../../user-rest-api.service';
 import { SavedNewUserResultInterpreterService } from './saved-new-user-result-interpreter.service';
 
@@ -8,7 +8,7 @@ import { SavedNewUserResultInterpreterService } from './saved-new-user-result-in
 @Injectable({
 	providedIn: 'root'
 })
-export class UserCreatorService extends SubscriptionDataGetterService {
+export class UserCreatorService {
 
 
 	constructor(
@@ -16,12 +16,11 @@ export class UserCreatorService extends SubscriptionDataGetterService {
 		private __currentUser: CurrentUserService,
 		private __savedNewUserResultInterpreter: SavedNewUserResultInterpreterService
 	) {
-		super();
 	}
 
 
 	async create(): Promise<void> {
-		let result = await this._getSubscriptionData(
+		let result = await getSubscriptionData(
 			this.__userRestApi.create(
 				{
 					email: this.__currentUser.email,

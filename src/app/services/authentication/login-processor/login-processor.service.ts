@@ -1,5 +1,6 @@
 import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
 import { CurrentUserService } from '../../user/current-user.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
 
@@ -19,14 +20,12 @@ export class LoginProcessorService {
 
 
 	async process() {
-		let subscription = this.__authenticationRestApi.login(
-			{email: this.__currentUser.email, password: this.__currentUser.password}
-		).subscribe((result) => {
-
-			this.__loginResultInterpreter.interpret(result);
-			subscription.unsubscribe();
-		});
-
+		let result = await getSubscriptionData(
+			this.__authenticationRestApi.login(
+				{email: this.__currentUser.email, password: this.__currentUser.password}
+			)
+		);
+		this.__loginResultInterpreter.interpret(result);
 	}
 
 

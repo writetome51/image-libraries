@@ -1,14 +1,14 @@
 import { CurrentUserService } from './current-user.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
-import { SubscriptionDataGetterService } from '../subscription-data-getter.service';
 import { UserRestAPIService } from './user-rest-api.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserStorageService extends SubscriptionDataGetterService {
+export class UserStorageService {
 
 
 	constructor(
@@ -16,19 +16,18 @@ export class UserStorageService extends SubscriptionDataGetterService {
 		private __currentUser: CurrentUserService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
-		super();
 	}
 
 
 	async get(): Promise<any> {
-		return await this._getSubscriptionData(
+		return await getSubscriptionData(
 			this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()})
 		);
 	}
 
 
 	async updatePassword(): Promise<any> {
-		return await this._getSubscriptionData(
+		return await getSubscriptionData(
 			this.__userRestApi.updatePassword(
 				{
 					email: this.__currentUser.email,
@@ -42,7 +41,7 @@ export class UserStorageService extends SubscriptionDataGetterService {
 
 
 	async updateEmail(): Promise<any> {
-		return await this._getSubscriptionData(
+		return await getSubscriptionData(
 			this.__userRestApi.updateEmail(
 				{
 					email: this.__currentUser.email,

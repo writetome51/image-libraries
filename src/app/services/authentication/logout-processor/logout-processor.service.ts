@@ -1,4 +1,5 @@
 import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from '../session-id-local-storage.service';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
@@ -18,15 +19,11 @@ export class LogoutProcessorService {
 	}
 
 
-	process(): void {
-		let subscription = this.__authenticationRestApi.logout(
-			{sessionID: this.__sessionIDLocalStorage.get()}
-		).subscribe((result) => {
-
-			this.__logoutResultInterpreter.interpret(result);
-			subscription.unsubscribe();
-		});
-
+	async process() {
+		let result = await getSubscriptionData(
+			this.__authenticationRestApi.logout({sessionID: this.__sessionIDLocalStorage.get()})
+		);
+		this.__logoutResultInterpreter.interpret(result);
 	}
 
 
