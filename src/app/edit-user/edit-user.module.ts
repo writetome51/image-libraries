@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { EditUserComponent } from './edit-user.component';
 import { EditUserEmailComponent } from './edit-user-email/edit-user-email.component';
 import { EditUserPasswordComponent } from './edit-user-password/edit-user-password.component';
-import { SuccessOrErrorMessageModule } from '../success-or-error-message/success-or-error-message.module';
+import { AlertModule } from '../alert/alert.module';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { SuccessOrErrorMessageModule } from '../success-or-error-message/success
 	imports: [
 		CommonModule,
 		FormsModule,
-		SuccessOrErrorMessageModule,
+		AlertModule,
 		RouterModule.forChild([
 
 			{	// This makes 'email' the default route when this module loads.

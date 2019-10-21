@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { AlertModule } from './alert/alert.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CreateUserComponent } from './create-user/create-user.component';
@@ -13,7 +14,6 @@ import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { SuccessOrErrorMessageModule } from './success-or-error-message/success-or-error-message.module';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { SuccessOrErrorMessageModule } from './success-or-error-message/success-
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
-		SuccessOrErrorMessageModule,
+		AlertModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 		LoadingSpinnerModule,
 		LibraryModule,

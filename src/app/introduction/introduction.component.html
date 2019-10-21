@@ -4,7 +4,7 @@
 
 	<login-form></login-form>
 
-	<success-or-error-message *ngIf="successOrErrorMessage.message"></success-or-error-message>
+	<app-alert *ngIf="alert.data"></app-alert>
 
 	<p>Don't have an account?
 		<a routerLink="create-account"  routerLinkActive="active">Create Account</a>

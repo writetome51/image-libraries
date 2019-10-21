@@ -1,6 +1,6 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
-import { MessageService } from './message.service';
+import { AlertService } from './alert.service';
 import { UserRestAPIService } from './user/user-rest-api.service';
 import { CurrentUserService } from './user/current-user.service';
 
@@ -14,7 +14,7 @@ export class ErrorFromWrongPasswordOrNonExistentUserService {
 
 
 	constructor(
-		private __successOrErrorMessage: MessageService,
+		private __alert: AlertService,
 		private __userRestApi: UserRestAPIService,
 		private __currentUser: CurrentUserService
 	) {
@@ -30,9 +30,9 @@ export class ErrorFromWrongPasswordOrNonExistentUserService {
 
 					result = getObjectFromJSON(result);
 					if (result.success) {
-						this.__successOrErrorMessage.error = 'Incorrect password';
+						this.__alert.error = 'Incorrect password';
 					} else {
-						this.__successOrErrorMessage.error = 'User does not exist. Please create an account';
+						this.__alert.error = 'User does not exist. Please create an account';
 					}
 
 					subscription.unsubscribe();

@@ -3,13 +3,18 @@ import { AlertService } from '../services/alert.service';
 
 
 @Component({
-	selector: 'edit-user',
-	templateUrl: './edit-user.component.html'
+	selector: 'app-alert',
+	templateUrl: './alert.component.html'
 })
-export class EditUserComponent {
+export class AlertComponent {
 
 
 	constructor(public alert: AlertService) {
+	}
+
+
+	closeMessage() {
+		this.alert.success = '';
 	}
 
 

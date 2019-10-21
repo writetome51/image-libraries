@@ -1,6 +1,6 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
-import { MessageService } from './message.service';
+import { AlertService } from './alert.service';
 import { Injectable } from '@angular/core';
 
 
@@ -13,7 +13,7 @@ export class RestAPIRequestResultService {
 	protected _errorHandler: (errorMessage: string) => void;
 
 
-	constructor(protected _successOrErrorMessage: MessageService) {
+	constructor(protected _alert: AlertService) {
 	}
 
 
@@ -36,14 +36,14 @@ export class RestAPIRequestResultService {
 		if (result.error) {
 			if (result.error.message) {
 				if (noValue(this._errorHandler)) {
-					this._successOrErrorMessage.error = result.error.message;
+					this._alert.error = result.error.message;
 				} else {
 					this._errorHandler(result.error.message);
 				}
 
 			} else {
 				// This is for displaying unexpected errors.
-				this._successOrErrorMessage.error = result.error;
+				this._alert.error = result.error;
 			}
 			return;
 		} else {

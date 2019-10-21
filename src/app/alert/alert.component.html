@@ -1,10 +1,10 @@
 <div class="alert"
-	 [class.alert-danger]="successOrErrorMessage.error"
-	 [class.alert-success]="successOrErrorMessage.success"
+	 [class.alert-danger]="alert.error"
+	 [class.alert-success]="alert.success"
 	 [class.alert-dismissible]="true"
 >
 	<span class="close" data-dismiss="alert" aria-label="close" (click)="closeMessage()">&times;</span>
 
-	<strong>{{successOrErrorMessage.message}}</strong>
+	<strong>{{alert.data}}</strong>
 
 </div>

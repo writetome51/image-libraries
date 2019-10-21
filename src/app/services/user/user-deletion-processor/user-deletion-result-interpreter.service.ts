@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user-logout-or-deletion-result-processor.service';
-import { MessageService } from '../../message.service';
-import { UserDeletionOrLoginApiRequestResultService }
-	from '../../user-deletion-or-login-api-request-result.service';
+import { AlertService } from '../../alert.service';
+import { ApiRequestRequiringUserCredentialsResultService }
+	from '../../api-request-requiring-user-credentials-result.service';
 
 
 @Injectable({
@@ -12,8 +12,8 @@ import { UserDeletionOrLoginApiRequestResultService }
 export class UserDeletionResultInterpreterService {
 
 	constructor(
-		private __successOrErrorMessage: MessageService,
-		private __userDeletionApiRequestResult: UserDeletionOrLoginApiRequestResultService,
+		private __alert: AlertService,
+		private __userDeletionApiRequestResult: ApiRequestRequiringUserCredentialsResultService,
 		private __userDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService
 	) {
 	}
@@ -24,7 +24,7 @@ export class UserDeletionResultInterpreterService {
 			result,
 			(result) => {
 				this.__userDeletionResultProcessor.process(result);
-				this.__successOrErrorMessage.success = 'Account successfully deleted';
+				this.__alert.success = 'Account successfully deleted';
 			}
 		);
 	}

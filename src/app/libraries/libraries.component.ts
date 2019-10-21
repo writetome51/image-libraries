@@ -1,7 +1,7 @@
 import { AppLibrary } from '../../interfaces/app-library';
 import { Component } from '@angular/core';
 import { CurrentUserLibrariesService } from '../services/library/current-user-libraries.service';
-import { MessageService } from '../services/message.service';
+import { AlertService } from '../services/alert.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class LibrariesComponent {
 
 	constructor(
 		private __currentUserLibraries: CurrentUserLibrariesService,
-		public successOrErrorMessage: MessageService
+		public alert: AlertService
 	) {
 	}
 

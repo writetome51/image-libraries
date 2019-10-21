@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RestAPIRequestResultService } from '../../../rest-api-request-result.service';
-import { MessageService } from '../../../message.service';
+import { AlertService } from '../../../alert.service';
 
 
 @Injectable({
@@ -8,14 +8,14 @@ import { MessageService } from '../../../message.service';
 })
 export class CreateUserApiRequestResultService extends RestAPIRequestResultService {
 
-	constructor(_successOrErrorMessage: MessageService) {
-		super(_successOrErrorMessage);
+	constructor(_message: AlertService) {
+		super(_message);
 
 		this._errorHandler = (errMessage) => {
 			if (errMessage.includes(
 				`Duplicate key error: E11000 duplicate key error collection: rest-api.image-library-app-user index: email_1`
 			)) {
-				this._successOrErrorMessage.error = 'An account with that email already exists.';
+				this._alert.error = 'An account with that email already exists.';
 			}
 		};
 	}

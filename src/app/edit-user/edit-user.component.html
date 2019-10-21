@@ -12,7 +12,7 @@
 			<router-outlet></router-outlet>
 		</form>
 
-		<success-or-error-message *ngIf="successOrErrorMessage.message"></success-or-error-message>
+		<app-alert *ngIf="alert.data"></app-alert>
 	</div>
 
 </section>

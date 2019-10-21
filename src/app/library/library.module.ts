@@ -11,12 +11,11 @@ import { ImageSizeSliderComponent } from './image-size-slider/image-size-slider.
 import { ImageViewerModule } from './image-viewer/image-viewer.module';
 import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
+import { AlertModule } from '../alert/alert.module';
 import { NgModule } from '@angular/core';
 import { ReArrangeableGridListModule }
 	from '../../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './save-changes/save-changes.component';
-import { SuccessOrErrorMessageModule }
-	from '../success-or-error-message/success-or-error-message.module';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
 
 
@@ -36,7 +35,7 @@ import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-
 		CommonModule,
 		FormsModule,
 		ReArrangeableGridListModule,
-		SuccessOrErrorMessageModule,
+		AlertModule,
 		LibraryRoutingModule,
 		ImageViewerModule,
 	]

@@ -5,15 +5,13 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 
-// Intended to be an application-wide alert service.
-
-export class MessageService {
+export class AlertService {
 
 	private __error = ''; // error message
 	private __success = ''; // success message
 
 
-	get message(){
+	get data() {
 		if (this.success) return this.success;
 		else return this.error;
 	}

@@ -1,6 +1,6 @@
 import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { MessageService } from '../../../message.service';
+import { AlertService } from '../../../alert.service';
 import { UserResultProcessorService } from '../../user-result-processor.service';
 import { CreateUserApiRequestResultService } from './create-user-api-request-result.service';
 
@@ -11,7 +11,7 @@ import { CreateUserApiRequestResultService } from './create-user-api-request-res
 export class SavedNewUserResultInterpreterService {
 
 	constructor(
-		private __successOrErrorMessage: MessageService,
+		private __alert: AlertService,
 		private __createUserApiRequestResult: CreateUserApiRequestResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
@@ -23,7 +23,7 @@ export class SavedNewUserResultInterpreterService {
 			result,
 			(result) => {
 				this.__userResultProcessor.process(result);
-				this.__successOrErrorMessage.success = 'User created!';
+				this.__alert.success = 'User created!';
 			}
 		);
 	}
