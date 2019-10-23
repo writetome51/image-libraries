@@ -8,7 +8,7 @@ import { ErrorFromWrongPasswordOrNonExistentUserService }
 @Injectable({
 	providedIn: 'root'
 })
-export class ApiRequestRequiringUserCredentialsResultService extends RestAPIRequestResultService {
+export class ApiRequestRequiringEmailPasswordResultService extends RestAPIRequestResultService {
 	constructor(
 		_alert: AlertService,
 		private __errorFromWrongPasswordOrNonExistentUser: ErrorFromWrongPasswordOrNonExistentUserService

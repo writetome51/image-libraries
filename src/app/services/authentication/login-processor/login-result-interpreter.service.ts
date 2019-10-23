@@ -1,8 +1,8 @@
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../../user/user-result-processor.service';
-import { ApiRequestRequiringUserCredentialsResultService }
-	from '../../api-request-requiring-user-credentials-result.service';
+import { ApiRequestRequiringEmailPasswordResultService }
+	from '../../api-request-requiring-email-password-result.service';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class LoginResultInterpreterService {
 
 
 	constructor(
-		private __loginApiRequestResult: ApiRequestRequiringUserCredentialsResultService,
+		private __loginApiRequestResult: ApiRequestRequiringEmailPasswordResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}

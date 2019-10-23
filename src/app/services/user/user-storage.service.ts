@@ -19,6 +19,13 @@ export class UserStorageService {
 	}
 
 
+	async exists(): Promise<any> {
+		return await getSubscriptionData(
+			this.__userRestApi.exists({email: this.__currentUser.email})
+		);
+	}
+
+
 	async get(): Promise<any> {
 		return await getSubscriptionData(
 			this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()})
