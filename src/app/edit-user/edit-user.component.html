@@ -2,9 +2,9 @@
 
 	<nav>
 		<a routerLink="email" routerLinkActive="active">Email</a>
-		 |
+		|
 		<a routerLink="password" routerLinkActive="active">Password</a>
-		 |
+		|
 		<a routerLink="delete-account" routerLinkActive="active">Delete Account</a>
 	</nav>
 
@@ -13,6 +13,8 @@
 		<form>
 			<router-outlet></router-outlet>
 		</form>
+
+		<little-loading-spinner *ngIf="dataOperationBegun.waitingForResult"></little-loading-spinner>
 
 		<app-alert *ngIf="alert.data"></app-alert>
 	</div>
