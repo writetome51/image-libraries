@@ -31,8 +31,8 @@ export class AppComponent {
 	}
 
 
-	logout() {
-		this.__logoutProcessor.process();
+	async logout() {
+		await this.__logoutProcessor.process();
 	}
 
 
