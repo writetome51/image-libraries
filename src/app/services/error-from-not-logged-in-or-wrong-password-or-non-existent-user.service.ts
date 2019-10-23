@@ -1,4 +1,3 @@
-import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
 import { AlertService } from './alert.service';
 import { UserRestAPIService } from './user/user-rest-api.service';
@@ -26,11 +25,9 @@ export class ErrorFromNotLoggedInOrWrongPasswordOrNonExistentUserService {
 				// We find out below:
 			)) {
 				let result = await this.__userStorage.exists();
-				result = getObjectFromJSON(result);
-
 				if (result.success) { // user exists.
 					result = await this.__userStorage.get();
-					result = getObjectFromJSON(result);
+
 					if (result.error) { // user isn't logged in.
 						this.__alert.error = 'You\'re not logged in. Please log in first.';
 

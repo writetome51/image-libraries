@@ -1,14 +1,14 @@
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { RestAPIRequestResultService } from '../rest-api-request-result.service';
+import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LibraryStorageService {
+export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 
 
 	constructor(
@@ -16,11 +16,12 @@ export class LibraryStorageService {
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
 		private __restApiRequestResult: RestAPIRequestResultService
 	) {
+		super();
 	}
 
 
 	async create(libraryName): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.create(
 				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
 			)
@@ -29,7 +30,7 @@ export class LibraryStorageService {
 
 
 	async get(libraryName): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.get(
 				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
 			)
@@ -38,7 +39,7 @@ export class LibraryStorageService {
 
 
 	async getLibraries(): Promise<any | void> {
-		let result = await getSubscriptionData(
+		let result = await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.getLibraries({sessionID: this.__sessionIDLocalStorage.get()})
 		);
 		return this.__restApiRequestResult.checkForError_returnIfOK(result);
@@ -48,7 +49,7 @@ export class LibraryStorageService {
 	// The properties in 'changes' can contain dot-notation
 
 	async update(libraryName, changes): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.update({
 				sessionID: this.__sessionIDLocalStorage.get(),
 				name: libraryName,

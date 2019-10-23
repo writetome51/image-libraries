@@ -1,14 +1,14 @@
 import { CurrentUserService } from './current-user.service';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { UserRestAPIService } from './user-rest-api.service';
+import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserStorageService {
+export class UserStorageService extends ReturnObjectFromSubscriptionService {
 
 
 	constructor(
@@ -16,25 +16,26 @@ export class UserStorageService {
 		private __currentUser: CurrentUserService,
 		private __sessionIDLocalStorage: SessionIDLocalStorageService
 	) {
+		super();
 	}
 
 
 	async exists(): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.exists({email: this.__currentUser.email})
 		);
 	}
 
 
 	async get(): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()})
 		);
 	}
 
 
 	async updatePassword(): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.updatePassword(
 				{
 					email: this.__currentUser.email,
@@ -48,7 +49,7 @@ export class UserStorageService {
 
 
 	async updateEmail(): Promise<any> {
-		return await getSubscriptionData(
+		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.updateEmail(
 				{
 					email: this.__currentUser.email,

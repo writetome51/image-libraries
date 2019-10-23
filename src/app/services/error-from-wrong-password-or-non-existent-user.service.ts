@@ -1,4 +1,3 @@
-import { getObjectFromJSON } from 'get-object-from-json';
 import { Injectable } from '@angular/core';
 import { AlertService } from './alert.service';
 import { UserStorageService } from './user/user-storage.service';
@@ -23,7 +22,6 @@ export class ErrorFromWrongPasswordOrNonExistentUserService {
 				// We find out below:
 			)) {
 				let result = await this.__userStorage.exists();
-				result = getObjectFromJSON(result);
 
 				if (result.success) this.__alert.error = 'Incorrect password';
 				else this.__alert.error = 'User does not exist. Please create an account';
