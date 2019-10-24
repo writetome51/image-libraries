@@ -1,7 +1,8 @@
+import { AlertService } from '../alert.service';
+import { CurrentUserService } from '../user/current-user.service';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { CurrentUserService } from '../user/current-user.service';
-import { AlertService } from '../alert.service';
+import { UserValidationRulesService } from '../user-validation-rules.service';
 
 
 @Injectable({
@@ -10,21 +11,21 @@ import { AlertService } from '../alert.service';
 export class EmailUpdateValidatorService {
 
 	constructor(
+		private __alert: AlertService,
 		private __currentUser: CurrentUserService,
-		private __alert: AlertService
+		private __userValidationRules: UserValidationRulesService
 	) {
 	}
 
 
 	isValid(): boolean {
-		if (this.__currentUser.password.length < 6) {
-			this.__alert.error = 'The current password must be at least 6 characters.';
+		let min = this.__userValidationRules.emailMinLength;
+
+		if (this.__currentUser.email.length < min) {
+			this.__alert.error = `The current email must be at least ${min} characters.`;
 		}
-		else if (this.__currentUser.newPassword.length < 6) {
-			this.__alert.error = 'The new password must be at least 6 characters.';
-		}
-		else if (this.__currentUser.newPassword !== this.__currentUser.passwordAgain) {
-			this.__alert.error = 'The two new password inputs must match.';
+		else if (this.__currentUser.newEmail.length < min) {
+			this.__alert.error = `The new email must be at least ${min} characters.`;
 		}
 
 		return isEmpty(this.__alert.error);
