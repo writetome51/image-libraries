@@ -28,6 +28,7 @@ export class ListItemMoverService extends PublicArrayContainer {
 
 	moveItemTo(newIndex) {
 		moveByIndex(this.indexBeingMoved, newIndex, this.data);
+		this.__indexBeingMoved = -1;
 	}
 
 

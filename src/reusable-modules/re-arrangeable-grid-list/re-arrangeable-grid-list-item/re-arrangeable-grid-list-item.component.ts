@@ -49,7 +49,6 @@ export class ReArrangeableGridListItemComponent {
 
 	dropDraggedItemHere() {
 		this.__listItemMover.moveItemTo(this.index);
-		this.__listItemMover.indexBeingMoved = -1;
 		this.unset_isBeingDraggedOnto();
 	}
 
