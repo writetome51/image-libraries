@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AlertService } from './alert.service';
-import { UserRestAPIService } from './user/user-rest-api.service';
 import { UserStorageService } from './user/user-storage.service';
 
 
@@ -9,12 +8,11 @@ import { UserStorageService } from './user/user-storage.service';
 })
 export class ErrorFromNotLoggedInOrWrongPasswordOrNonExistentUserService {
 
-	handler: (errorMessage) => Promise<any>;
+	handler: (errorMessage) => Promise<void>;
 
 
 	constructor(
 		private __alert: AlertService,
-		private __userRestApi: UserRestAPIService,
 		private __userStorage: UserStorageService
 	) {
 		this.handler = async (errMessage) => {
@@ -30,15 +28,13 @@ export class ErrorFromNotLoggedInOrWrongPasswordOrNonExistentUserService {
 
 					if (result.error) { // user isn't logged in.
 						this.__alert.error = 'You\'re not logged in. Please log in first.';
-
-					} else { // Else user is found, meaning the operation wasn't performed because
+					}
+					else { // Else user is found, meaning the operation wasn't performed because
 						// the submitted password was wrong.
 						this.__alert.error = 'Incorrect password';
 					}
-				} else {
-					this.__alert.error = 'User does not exist. Please create an account';
 				}
-
+				else this.__alert.error = 'User does not exist. Please create an account';
 			}
 		};
 	}

@@ -40,7 +40,7 @@ export class SessionIDLocalStorageService {
 	}
 
 
-	remove() {
+	remove(): void {
 		this.__localObject.remove();
 	}
 

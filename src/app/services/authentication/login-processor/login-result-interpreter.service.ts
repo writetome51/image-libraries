@@ -1,8 +1,8 @@
+import { ApiRequestRequiringEmailPasswordResultService }
+	from '../../api-request-requiring-email-password-result.service';
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../../user/user-result-processor.service';
-import { ApiRequestRequiringEmailPasswordResultService }
-	from '../../api-request-requiring-email-password-result.service';
 
 
 @Injectable({

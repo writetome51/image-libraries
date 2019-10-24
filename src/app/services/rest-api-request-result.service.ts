@@ -29,26 +29,21 @@ export class RestAPIRequestResultService {
 
 
 	checkForError_returnIfOK(result): void | any {
-		if (typeof result === 'string') {
-			result = getObjectFromJSON(result);
-		}
+		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		if (result.error) {
 			if (result.error.message) {
-				if (noValue(this._errorHandler)) {
-					this._alert.error = result.error.message;
-				} else {
-					this._errorHandler(result.error.message);
-				}
+				if (noValue(this._errorHandler)) this._alert.error = result.error.message;
 
-			} else {
+				else this._errorHandler(result.error.message);
+			}
+			else {
 				// This is for displaying unexpected errors.
 				this._alert.error = result.error;
 			}
 			return;
-		} else {
-			return result;
 		}
+		else return result;
 	}
 
 
