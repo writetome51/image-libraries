@@ -6,6 +6,7 @@
 		   name="email"
 		   required
 		   placeholder="Current Email..."
+		   [minLength]="userValidationRules.emailMinLength"
 		   [(ngModel)]="currentUser.email"
 	/>
 
@@ -19,6 +20,7 @@
 		   name="new-email"
 		   required
 		   placeholder="New Email..."
+		   [minLength]="userValidationRules.emailMinLength"
 		   [(ngModel)]="currentUser.newEmail"
 	/>
 

@@ -14,7 +14,7 @@
 			   name="email"
 			   required
 			   placeholder="Email..."
-			   [minLength]="6"
+			   [minLength]="userValidationRules.emailMinLength"
 			   [(ngModel)]="currentUser.email"
 		/>
 
@@ -28,7 +28,7 @@
 			   name="password"
 			   required
 			   placeholder="Password..."
-			   [minLength]="6"
+			   [minLength]="userValidationRules.passwordMinLength"
 			   [(ngModel)]="currentUser.password"
 		/>
 

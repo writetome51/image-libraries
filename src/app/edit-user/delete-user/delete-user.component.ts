@@ -3,6 +3,7 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { UserValidationRulesService } from '../../services/user-validation-rules.service';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class DeleteUserComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
+		public userValidationRules: UserValidationRulesService,
 		private __userDeletionProcessor: UserDeletionProcessorService,
 		private __dataOperationBegun: DataOperationBegunService
 	) {

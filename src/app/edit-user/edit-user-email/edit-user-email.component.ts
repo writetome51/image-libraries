@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { UserStorageService } from '../../services/user/user-storage.service';
+import { UserValidationRulesService } from '../../services/user-validation-rules.service';
+import { EmailUpdateProcessorService }
+	from '../../services/email-update-processor/email-update-processor.service';
 
 
 @Component({
@@ -12,7 +14,8 @@ export class EditUserEmailComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		private __userStorage: UserStorageService
+		public userValidationRules: UserValidationRulesService,
+		private __emailUpdateProcessor: EmailUpdateProcessorService
 	) {
 	}
 
@@ -22,8 +25,8 @@ export class EditUserEmailComponent implements OnInit {
 	}
 
 
-	save() {
-		let result = this.__userStorage.updateEmail();
+	async save() {
+		await this.__emailUpdateProcessor.process();
 	}
 
 
