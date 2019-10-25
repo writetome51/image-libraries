@@ -1,8 +1,6 @@
-import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from '../session-id-local-storage.service';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
+import { DeAuthenticatorService } from './de-authenticator.service';
 
 
 @Injectable({
@@ -12,17 +10,14 @@ export class LogoutProcessorService {
 
 
 	constructor(
-		private __authenticationRestApi: AuthenticationRestAPIService,
 		private __logoutResultInterpreter: LogoutResultInterpreterService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		private __deAuthenticator: DeAuthenticatorService
 	) {
 	}
 
 
 	async process() {
-		let result = await getSubscriptionData(
-			this.__authenticationRestApi.logout({sessionID: this.__sessionIDLocalStorage.get()})
-		);
+		let result = await this.__deAuthenticator.deAuthenticate();
 		this.__logoutResultInterpreter.interpret(result);
 	}
 
