@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
-import { UserStorageService } from './user/user-storage.service';
+import { AlertService } from '../alert.service';
+import { UserStorageService } from '../user/user-storage.service';
+import { incorrectPassword, userDoesntExist } from '../../../string-constants/end-user-error-messages';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class ErrorNoDocumentMatchWhileAssumedLoggedInService {
+export class ErrorNoRecordMatchWhileAssumedLoggedInService {
 
 	handler: () => Promise<void>;
 
@@ -27,10 +28,10 @@ export class ErrorNoDocumentMatchWhileAssumedLoggedInService {
 					this.__alert.error = 'You\'re not logged in. Please log in first';
 				}
 				else { // Else user is logged in, meaning the submitted password must be wrong.
-					this.__alert.error = 'Incorrect password';
+					this.__alert.error = incorrectPassword;
 				}
 			}
-			else this.__alert.error = 'User does not exist. Please create an account';
+			else this.__alert.error = userDoesntExist;
 		};
 	}
 }

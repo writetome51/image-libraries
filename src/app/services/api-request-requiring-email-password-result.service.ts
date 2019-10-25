@@ -1,7 +1,8 @@
 import { APIRequestResultService } from './api-request-result.service';
 import { AlertService } from './alert.service';
+import { ErrorNoRecordMatchService } from './error/error-no-record-match.service';
 import { Injectable } from '@angular/core';
-import { ErrorNoDocumentMatchService } from './error-no-document-match.service';
+import { invalidSessionID, noDocumentMatchedCriteria } from '../../string-constants/api-error-messages';
 
 
 @Injectable({
@@ -12,18 +13,16 @@ export class ApiRequestRequiringEmailPasswordResultService extends APIRequestRes
 
 	constructor(
 		_alert: AlertService,
-		private __errorNoDocumentMatch: ErrorNoDocumentMatchService
+		private __errorNoRecordMatch: ErrorNoRecordMatchService
 	) {
 		super(_alert);
 	}
 
 
 	protected async _errorHandler(errMessage) {
-		if (
-			errMessage.includes('Operation not performed.  No document matched the request criteria')
-			|| errMessage.includes('Invalid sessionID')
-		) await this.__errorNoDocumentMatch.handler();
-
+		if (errMessage.includes(noDocumentMatchedCriteria) || errMessage.includes(invalidSessionID)) {
+			await this.__errorNoRecordMatch.handler();
+		}
 		else super._errorHandler(errMessage);
 	}
 

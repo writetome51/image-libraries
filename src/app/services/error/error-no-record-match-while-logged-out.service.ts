@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
-import { UserStorageService } from './user/user-storage.service';
+import { AlertService } from '../alert.service';
+import { UserStorageService } from '../user/user-storage.service';
+import { incorrectPassword, userDoesntExist } from '../../../string-constants/end-user-error-messages';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class ErrorNoDocumentMatchWhileLoggedOutService {
+export class ErrorNoRecordMatchWhileLoggedOutService {
 
 	handler: () => Promise<void>;
 
@@ -21,9 +22,9 @@ export class ErrorNoDocumentMatchWhileLoggedOutService {
 			// the user does not exist in db, or the submitted password is wrong.
 
 			if ((await this.__userStorage.exists()).success) {
-				this.__alert.error = 'Incorrect password';
+				this.__alert.error = incorrectPassword;
 			}
-			else this.__alert.error = 'User does not exist. Please create an account';
+			else this.__alert.error = userDoesntExist;
 		};
 	}
 }
