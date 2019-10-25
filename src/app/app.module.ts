@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateUserFormComponent } from './create-user/create-user-form/create-user-form.component';
+import { CreateUserFormInputsComponent }
+	from './create-user/create-user-form/create-user-form-inputs/create-user-form-inputs.component';
 import { EditUserModule } from './edit-user/edit-user.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		AppComponent,
 		CreateUserComponent,
 		CreateUserFormComponent,
+		CreateUserFormInputsComponent,
 		IntroductionComponent,
 		LibrariesComponent,
 		LoginFormComponent,
