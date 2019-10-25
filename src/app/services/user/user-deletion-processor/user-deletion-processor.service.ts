@@ -17,7 +17,7 @@ export class UserDeletionProcessorService {
 
 	async process() {
 		let result = await this.__userDeletor.delete();
-		this.__userDeletionResultInterpreter.interpret(result);
+		await this.__userDeletionResultInterpreter.interpret(result);
 	}
 
 }

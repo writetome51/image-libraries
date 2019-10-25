@@ -3,7 +3,7 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
 import { DataOperationBegunService } from '../../services/data-operation-begun.service';
-import { UserValidationRulesService } from '../../services/user-validation-rules.service';
+import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 
 
 @Component({

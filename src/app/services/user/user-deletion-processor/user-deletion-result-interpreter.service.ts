@@ -19,8 +19,8 @@ export class UserDeletionResultInterpreterService {
 	}
 
 
-	interpret(result) {
-		this.__userDeletionApiRequestResult.ifResultSuccessful_processResult(
+	async interpret(result) {
+		await this.__userDeletionApiRequestResult.ifResultSuccessful_processResult(
 			result,
 			(result) => {
 				this.__userDeletionResultProcessor.process(result);

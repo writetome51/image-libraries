@@ -2,7 +2,7 @@ import { AlertService } from '../alert.service';
 import { CurrentUserService } from '../user/current-user.service';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { UserValidationRulesService } from '../user-validation-rules.service';
+import { UserValidationRulesService } from '../user/user-validation-rules.service';
 
 
 @Injectable({

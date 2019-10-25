@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { RestAPIRequestResultService } from '../../../rest-api-request-result.service';
+import { APIRequestResultService } from '../../../api-request-result.service';
 import { AlertService } from '../../../alert.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CreateUserApiRequestResultService extends RestAPIRequestResultService {
+export class CreateUserApiRequestResultService extends APIRequestResultService {
 
 	constructor(_alert: AlertService) {
 		super(_alert);

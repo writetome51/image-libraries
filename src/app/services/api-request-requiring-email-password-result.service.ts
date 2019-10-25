@@ -1,20 +1,31 @@
-import { Injectable } from '@angular/core';
-import { RestAPIRequestResultService } from './rest-api-request-result.service';
+import { APIRequestResultService } from './api-request-result.service';
 import { AlertService } from './alert.service';
-import { ErrorFromWrongPasswordOrNonExistentUserService }
-	from './error-from-wrong-password-or-non-existent-user.service';
+import { Injectable } from '@angular/core';
+import { ErrorNoDocumentMatchService } from './error-no-document-match.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class ApiRequestRequiringEmailPasswordResultService extends RestAPIRequestResultService {
+export class ApiRequestRequiringEmailPasswordResultService extends APIRequestResultService {
+
+
 	constructor(
 		_alert: AlertService,
-		private __errorFromWrongPasswordOrNonExistentUser: ErrorFromWrongPasswordOrNonExistentUserService
+		private __errorNoDocumentMatch: ErrorNoDocumentMatchService
 	) {
 		super(_alert);
-
-		this._errorHandler = this.__errorFromWrongPasswordOrNonExistentUser.handler;
 	}
+
+
+	protected async _errorHandler(errMessage) {
+		if (
+			errMessage.includes('Operation not performed.  No document matched the request criteria')
+			|| errMessage.includes('Invalid sessionID')
+		) await this.__errorNoDocumentMatch.handler();
+
+		else super._errorHandler(errMessage);
+	}
+
+
 }

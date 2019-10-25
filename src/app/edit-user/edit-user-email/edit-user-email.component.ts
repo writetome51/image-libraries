@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { UserValidationRulesService } from '../../services/user-validation-rules.service';
+import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 import { EmailUpdateProcessorService }
 	from '../../services/email-update-processor/email-update-processor.service';
 

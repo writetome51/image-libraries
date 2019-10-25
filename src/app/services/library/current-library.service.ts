@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
 import { LibraryStorageService } from './library-storage.service';
-import { RestAPIRequestResultService } from '../rest-api-request-result.service';
+import { APIRequestResultService } from '../api-request-result.service';
 
 
 @Injectable({
@@ -22,7 +22,7 @@ export class CurrentLibraryService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __httpRequestResult: RestAPIRequestResultService
+		private __httpRequestResult: APIRequestResultService
 	) {
 	}
 

@@ -14,20 +14,20 @@ export class APIRequestResultService {
 	}
 
 
-	ifResultSuccessful_processResult(
+	async ifResultSuccessful_processResult(
 		result,
 		process: (result) => void
-	): void {
-		result = this.checkForError_returnIfOK(result);
+	): Promise<void> {
+		result = await this.checkForError_returnIfOK(result);
 		if (hasValue(result)) process(result);
 	}
 
 
-	checkForError_returnIfOK(result): void | any {
+	async checkForError_returnIfOK(result): Promise<void | any> {
 		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		if (result.error) {
-			if (result.error.message) this._errorHandler(result.error.message);
+			if (result.error.message) await this._errorHandler(result.error.message);
 			else {
 				// This is for displaying unexpected errors.
 				this._alert.error = result.error;

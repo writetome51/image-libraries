@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
 import { UserStorageService } from './user/user-storage.service';
+import { SessionIDLocalStorageService } from './authentication/session-id-local-storage.service';
+import { ErrorNoDocumentMatchWhileAssumedLoggedInService }
+	from './error-no-document-match-while-assumed-logged-in.service';
+import { ErrorNoDocumentMatchWhileLoggedOutService }
+	from './error-no-document-match-while-logged-out.service';
 
 
 @Injectable({
@@ -12,29 +16,18 @@ export class ErrorNoDocumentMatchService {
 
 
 	constructor(
-		private __alert: AlertService,
-		private __userStorage: UserStorageService
+		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __errorNoDocumentMatchWhileAssumedLoggedIn:
+			ErrorNoDocumentMatchWhileAssumedLoggedInService,
+		private __errorNoDocumentMatchWhileLoggedOut: ErrorNoDocumentMatchWhileLoggedOutService
 	) {
 		this.handler = async () => {
-			// Use this service's handler when an api request gives you this resulting error message:
-			//
-			// 'Operation not performed.  No document matched the request criteria'.
-			//
-			// This means either the user isn't logged in, the user does not exist in db, or the
-			// submitted password is wrong.
-			// We find out below:
-
-			if ((await this.__userStorage.exists()).success) { // user exists in db.
-
-				if ((await this.__userStorage.get()).error) { // user isn't logged in.
-					this.__alert.error = 'You\'re not logged in. Please log in first';
-				}
-				else { // Else user is logged in, meaning no document matched because
-					// the submitted password was wrong.
-					this.__alert.error = 'Incorrect password';
-				}
+			if (this.__sessionIDLocalStorage.get().length) {
+				await this.__errorNoDocumentMatchWhileAssumedLoggedIn.handler();
 			}
-			else this.__alert.error = 'User does not exist. Please create an account';
+			else await this.__errorNoDocumentMatchWhileLoggedOut.handler();
 		};
 	}
+
+
 }
