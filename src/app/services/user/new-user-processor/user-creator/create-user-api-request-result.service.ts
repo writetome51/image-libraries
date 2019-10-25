@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { APIRequestResultService } from '../../../api-request-result.service';
 import { AlertService } from '../../../alert.service';
-import { userAlreadyExists } from '../../../../../string-constants/end-user-error-messages';
+import { userAlreadyExists } from '../../../../../constants/end-user-error-messages';
+import { duplicateKey } from '../../../../../constants/api-error-messages';
 
 
 @Injectable({
@@ -11,14 +12,12 @@ export class CreateUserApiRequestResultService extends APIRequestResultService {
 
 	constructor(_alert: AlertService) {
 		super(_alert);
+	}
 
-		this._errorHandler = (errMessage) => {
-			if (errMessage.includes(
-				`Duplicate key error: E11000 duplicate key error collection: rest-api.image-library-app-user index: email_1`
-			)) {
-				this._alert.error = userAlreadyExists;
-			}
-		};
+
+	protected _errorHandler(errMessage) {
+		if (errMessage.includes(duplicateKey)) this._alert.error = userAlreadyExists;
+		else super._errorHandler(errMessage);
 	}
 
 
