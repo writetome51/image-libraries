@@ -16,15 +16,15 @@ export class ErrorNoRecordMatchService {
 
 	constructor(
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __errorNoDocumentMatchWhileAssumedLoggedIn:
+		private __errorNoRecordMatchWhileAssumedLoggedIn:
 			ErrorNoRecordMatchWhileAssumedLoggedInService,
-		private __errorNoDocumentMatchWhileLoggedOut: ErrorNoRecordMatchWhileLoggedOutService
+		private __errorNoRecordMatchWhileLoggedOut: ErrorNoRecordMatchWhileLoggedOutService
 	) {
 		this.handler = async () => {
 			if (this.__sessionIDLocalStorage.get().length) {
-				await this.__errorNoDocumentMatchWhileAssumedLoggedIn.handler();
+				await this.__errorNoRecordMatchWhileAssumedLoggedIn.handler();
 			}
-			else await this.__errorNoDocumentMatchWhileLoggedOut.handler();
+			else await this.__errorNoRecordMatchWhileLoggedOut.handler();
 		};
 	}
 
