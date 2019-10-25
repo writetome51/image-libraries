@@ -38,4 +38,10 @@ export class AlertService {
 		return this.__error;
 	}
 
+
+	clear() {
+		this.success = '';
+	}
+
+
 }

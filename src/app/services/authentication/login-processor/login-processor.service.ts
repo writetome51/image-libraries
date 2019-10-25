@@ -2,12 +2,13 @@ import { AuthenticatorService } from './authenticator.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
 import { LoginFormValidatorService } from './login-form-validator.service';
+import { Processor } from '../../../../interfaces/processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LoginProcessorService {
+export class LoginProcessorService implements Processor {
 
 
 	constructor(

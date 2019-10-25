@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../library/current-library.service';
 import { AlertService } from '../alert.service';
+import { Processor } from '../../../interfaces/processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class ImageURLProcessorService {
+export class ImageURLProcessorService implements Processor {
 
 
 	constructor(

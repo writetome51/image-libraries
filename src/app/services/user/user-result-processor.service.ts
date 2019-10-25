@@ -3,12 +3,13 @@ import { SessionIDLocalStorageService } from '../authentication/session-id-local
 import { CurrentUserService } from './current-user.service';
 import { Router } from '@angular/router';
 import { DBUser } from '../../../interfaces/db-user';
+import { Processor } from '../../../interfaces/processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserResultProcessorService {
+export class UserResultProcessorService implements Processor {
 
 	constructor(
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../services/alert.service';
 import { DataOperationBegunService } from '../services/data-operation-begun.service';
 
@@ -7,7 +7,7 @@ import { DataOperationBegunService } from '../services/data-operation-begun.serv
 	selector: 'app-introduction',
 	templateUrl: './introduction.component.html'
 })
-export class IntroductionComponent {
+export class IntroductionComponent implements OnInit {
 
 
 	introduction = `This application lets you create libraries of images.  Inside each library you can 
@@ -18,6 +18,11 @@ export class IntroductionComponent {
 		public alert: AlertService,
 		public dataOperationBegun: DataOperationBegunService
 	) {
+	}
+
+
+	ngOnInit(): void {
+		this.alert.clear();
 	}
 
 
