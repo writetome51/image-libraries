@@ -1,9 +1,7 @@
-import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
-import { CurrentUserService } from '../../user/current-user.service';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { AuthenticatorService } from './authenticator.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
-import { LoginValidatorService } from './login-validator.service';
+import { LoginFormValidatorService } from './login-form-validator.service';
 
 
 @Injectable({
@@ -13,21 +11,16 @@ export class LoginProcessorService {
 
 
 	constructor(
-		private __authenticationRestApi: AuthenticationRestAPIService,
+		private __authenticator: AuthenticatorService,
 		private __loginResultInterpreter: LoginResultInterpreterService,
-		private __currentUser: CurrentUserService,
-		private __loginValidator: LoginValidatorService
+		private __loginFormValidator: LoginFormValidatorService
 	) {
 	}
 
 
 	async process() {
-		if (this.__loginValidator.isValid()) {
-			let result = await getSubscriptionData(
-				this.__authenticationRestApi.login(
-					{email: this.__currentUser.email, password: this.__currentUser.password}
-				)
-			);
+		if (this.__loginFormValidator.isValid()) {
+			let result = await this.__authenticator.authenticate();
 			this.__loginResultInterpreter.interpret(result);
 		}
 	}

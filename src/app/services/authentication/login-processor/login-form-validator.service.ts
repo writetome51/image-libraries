@@ -8,7 +8,7 @@ import { UserValidationRulesService } from '../../user/user-validation-rules.ser
 @Injectable({
 	providedIn: 'root'
 })
-export class LoginValidatorService {
+export class LoginFormValidatorService {
 
 
 	constructor(
