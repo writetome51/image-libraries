@@ -7,14 +7,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-export class APIRequestResultService {
+export class DataOperationResultService {
 
 
 	constructor(protected _alert: AlertService) {
 	}
 
 
-	async ifResultSuccessful_processResult(
+	async ifSuccessful_processResult(
 		result,
 		process: (result) => void
 	): Promise<void> {
