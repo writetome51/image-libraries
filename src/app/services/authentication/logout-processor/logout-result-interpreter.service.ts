@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataOperationResultService } from '../../data-operation-result.service';
+import { ResultInterpreter } from '../../../../interfaces/result-interpreter';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../../user/user-logout-or-deletion-result-processor.service';
 
@@ -7,7 +8,7 @@ import { UserLogoutOrDeletionResultProcessorService }
 @Injectable({
 	providedIn: 'root'
 })
-export class LogoutResultInterpreterService {
+export class LogoutResultInterpreterService implements ResultInterpreter {
 
 
 	constructor(

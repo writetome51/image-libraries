@@ -21,7 +21,7 @@ export class EmailUpdateProcessorService implements Processor {
 	async process() {
 		if (this.__emailUpdateValidator.isValid()) {
 			let result = await this.__userStorage.updateEmail();
-			this.__emailUpdateResultInterpreter.interpret(result);
+			await this.__emailUpdateResultInterpreter.interpret(result);
 		}
 	}
 

@@ -1,14 +1,15 @@
+import { AlertService } from '../../../alert.service';
+import { CreateUserResultService } from './create-user-result.service';
 import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { AlertService } from '../../../alert.service';
+import { ResultInterpreter } from '../../../../../interfaces/result-interpreter';
 import { UserResultProcessorService } from '../../user-result-processor.service';
-import { CreateUserResultService } from './create-user-result.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class NewUserResultInterpreterService {
+export class NewUserResultInterpreterService implements ResultInterpreter {
 
 	constructor(
 		private __alert: AlertService,

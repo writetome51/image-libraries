@@ -1,0 +1,13 @@
+The only requests to the api that can be successful when not logged in are:
+
+GET request to 'user-exists'.
+PATCH request to 'user-login'.
+POST request to 'create-user'.
+
+All other requests require being already logged in, with correct sessionID as proof.
+
+When login is successful, the db updates these attributes in the user's document:
+'loggedIn' = true, 'lastLoggedIn' = date/time of the login, and 'sessionID' = new ObjectId
+converted to a string.  When this is finished, the updated document is sent back to us, we
+encrypt its 'sessionID', and save it in the browser.
+If the sessionID is deleted from the browser, they're considered logged out.
