@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { APIRequestResultService } from '../../../api-request-result.service';
+import { DataOperationResultService } from '../../../data-operation-result.service';
 import { AlertService } from '../../../alert.service';
 import { userAlreadyExists } from '../../../../../constants/end-user-error-messages';
 import { duplicateKey } from '../../../../../constants/api-error-messages';
@@ -8,7 +8,7 @@ import { duplicateKey } from '../../../../../constants/api-error-messages';
 @Injectable({
 	providedIn: 'root'
 })
-export class CreateUserApiRequestResultService extends APIRequestResultService {
+export class CreateUserApiRequestResultService extends DataOperationResultService {
 
 	constructor(_alert: AlertService) {
 		super(_alert);

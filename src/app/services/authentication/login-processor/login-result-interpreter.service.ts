@@ -1,5 +1,5 @@
-import { ApiRequestRequiringEmailPasswordResultService }
-	from '../../api-request-requiring-email-password-result.service';
+import { OperationRequiringEmailPasswordResultService }
+	from '../../operation-requiring-email-password-result.service';
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { UserResultProcessorService } from '../../user/user-result-processor.service';
@@ -12,7 +12,7 @@ export class LoginResultInterpreterService {
 
 
 	constructor(
-		private __loginApiRequestResult: ApiRequestRequiringEmailPasswordResultService,
+		private __loginResult: OperationRequiringEmailPasswordResultService,
 		private __userResultProcessor: UserResultProcessorService
 	) {
 	}
@@ -27,7 +27,7 @@ export class LoginResultInterpreterService {
 
 
 	interpret(result: DBUser): void {
-		this.__loginApiRequestResult.ifResultSuccessful_processResult(
+		this.__loginResult.ifSuccessful_processResult(
 			result,
 			(result) => this.__userResultProcessor.process(result)
 		);

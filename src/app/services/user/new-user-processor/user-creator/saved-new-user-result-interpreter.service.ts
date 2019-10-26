@@ -19,7 +19,7 @@ export class SavedNewUserResultInterpreterService {
 
 
 	interpret(result: DBUser) {
-		this.__createUserApiRequestResult.ifResultSuccessful_processResult(
+		this.__createUserApiRequestResult.ifSuccessful_processResult(
 			result,
 			(result) => {
 				this.__userResultProcessor.process(result);

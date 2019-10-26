@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user-logout-or-deletion-result-processor.service';
 import { AlertService } from '../../alert.service';
-import { ApiRequestRequiringEmailPasswordResultService }
-	from '../../api-request-requiring-email-password-result.service';
+import { OperationRequiringEmailPasswordResultService }
+	from '../../operation-requiring-email-password-result.service';
 
 
 @Injectable({
@@ -13,14 +13,14 @@ export class UserDeletionResultInterpreterService {
 
 	constructor(
 		private __alert: AlertService,
-		private __userDeletionApiRequestResult: ApiRequestRequiringEmailPasswordResultService,
+		private __userDeletionApiRequestResult: OperationRequiringEmailPasswordResultService,
 		private __userDeletionResultProcessor: UserLogoutOrDeletionResultProcessorService
 	) {
 	}
 
 
 	async interpret(result) {
-		await this.__userDeletionApiRequestResult.ifResultSuccessful_processResult(
+		await this.__userDeletionApiRequestResult.ifSuccessful_processResult(
 			result,
 			(result) => {
 				this.__userDeletionResultProcessor.process(result);
