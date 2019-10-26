@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { NewUserValidatorService } from './new-user-validator.service';
 import { UserCreatorService } from './user-creator/user-creator.service';
 import { Processor } from '../../../../interfaces/processor';
+import { NewUserResultInterpreterService }
+	from './user-creator/new-user-result-interpreter.service';
 
 
 @Injectable({
@@ -11,13 +13,17 @@ export class NewUserProcessorService implements Processor {
 
 	constructor(
 		private __userCreator: UserCreatorService,
-		private __newUserValidator: NewUserValidatorService
+		private __newUserValidator: NewUserValidatorService,
+		private __newUserResultInterpreter: NewUserResultInterpreterService
 	) {
 	}
 
 
 	async process() {
-		if (this.__newUserValidator.isValid()) await this.__userCreator.create();
+		if (this.__newUserValidator.isValid()) {
+			let result = await this.__userCreator.create();
+			this.__newUserResultInterpreter.interpret(result);
+		}
 	}
 
 

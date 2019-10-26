@@ -8,7 +8,7 @@ import { duplicateKey } from '../../../../../constants/api-error-messages';
 @Injectable({
 	providedIn: 'root'
 })
-export class CreateUserApiRequestResultService extends DataOperationResultService {
+export class CreateUserResultService extends DataOperationResultService {
 
 	constructor(_alert: AlertService) {
 		super(_alert);
