@@ -28,6 +28,7 @@
     "@writetome51/get-data-urls": "^0.0.1",
     "@writetome51/get-date-time-id": "^1.0.0",
     "@writetome51/get-property": "^1.0.4",
+    "@writetome51/get-subscription-data": "^1.0.0",
     "@writetome51/get-url-query": "^0.0.1",
     "@writetome51/has-value-no-value": "^1.0.2",
     "@writetome51/is-empty-not-empty": "^1.0.0",
