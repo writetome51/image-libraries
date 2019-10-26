@@ -3,6 +3,7 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 import { EmailUpdateProcessorService }
 	from '../../services/email-update-processor/email-update-processor.service';
+import { DataOperationBegunService } from '../../services/data-operation-begun.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class EditUserEmailComponent implements OnInit {
 	constructor(
 		public currentUser: CurrentUserService,
 		public userValidationRules: UserValidationRulesService,
-		private __emailUpdateProcessor: EmailUpdateProcessorService
+		private __emailUpdateProcessor: EmailUpdateProcessorService,
+		private __dataOperationBegun: DataOperationBegunService
 	) {
 	}
 
@@ -26,7 +28,9 @@ export class EditUserEmailComponent implements OnInit {
 
 
 	async save() {
+		this.__dataOperationBegun.waitingForResult = true;
 		await this.__emailUpdateProcessor.process();
+		this.__dataOperationBegun.waitingForResult = false;
 	}
 
 

@@ -14,7 +14,7 @@ export class AlertComponent {
 
 
 	closeMessage() {
-		this.alert.success = '';
+		this.alert.clear();
 	}
 
 

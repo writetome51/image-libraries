@@ -14,7 +14,7 @@ import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { NgModule } from '@angular/core';
 import { ReArrangeableGridListModule }
-	from '../../reusable-modules/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
+	from './re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './save-changes/save-changes.component';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
 
