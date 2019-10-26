@@ -20,6 +20,8 @@ export class LoginFormValidatorService {
 
 
 	isValid(): boolean {
+		// alert must be cleared first or this function will never return true:
+		this.__alert.clear();
 		let emailMinLength = this.__userValidationRules.emailMinLength;
 		let pwordMinLength = this.__userValidationRules.passwordMinLength;
 

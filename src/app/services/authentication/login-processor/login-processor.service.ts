@@ -22,7 +22,7 @@ export class LoginProcessorService implements Processor {
 	async process() {
 		if (this.__loginFormValidator.isValid()) {
 			let result = await this.__authenticator.authenticate();
-			this.__loginResultInterpreter.interpret(result);
+			await this.__loginResultInterpreter.interpret(result);
 		}
 	}
 

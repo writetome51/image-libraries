@@ -40,7 +40,7 @@ export class AlertService {
 
 
 	clear() {
-		this.success = '';
+		this.success = ''; // now success and error messages will be empty.
 	}
 
 

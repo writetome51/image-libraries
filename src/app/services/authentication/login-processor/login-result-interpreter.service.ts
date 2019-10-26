@@ -19,8 +19,8 @@ export class LoginResultInterpreterService implements ResultInterpreter {
 	}
 
 
-	interpret(result: DBUser): void {
-		this.__loginResult.ifSuccessful_processResult(
+	async interpret(result: DBUser) {
+		await this.__loginResult.ifSuccessful_processResult(
 			result,
 			(result) => this.__userResultProcessor.process(result)
 		);
