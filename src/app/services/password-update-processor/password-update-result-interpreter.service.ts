@@ -1,5 +1,8 @@
+import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { ResultInterpreter } from '../../../interfaces/result-interpreter';
+import { UserResultProcessorService } from '../user/user-result-processor.service';
+import { OperationRequiringEmailPasswordResultService } from '../operation-requiring-email-password-result.service';
 
 
 @Injectable({
@@ -8,11 +11,19 @@ import { ResultInterpreter } from '../../../interfaces/result-interpreter';
 export class PasswordUpdateResultInterpreterService implements ResultInterpreter {
 
 
-	constructor() {
+	constructor(
+		private __userResultProcessor: UserResultProcessorService,
+		private __passwordUpdateResult: OperationRequiringEmailPasswordResultService
+	) {
 	}
 
 
-	interpret(result) {
+	async interpret(result: DBUser) {
+		await this.__passwordUpdateResult.ifSuccessful_processResult(
+			result,
+			(result) => this.__userResultProcessor.process(result)
+		);
+
 	}
 
 

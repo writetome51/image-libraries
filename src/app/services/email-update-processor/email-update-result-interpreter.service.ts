@@ -21,9 +21,7 @@ export class EmailUpdateResultInterpreterService implements ResultInterpreter {
 	async interpret(result: DBUser) {
 		await this.__emailUpdateResult.ifSuccessful_processResult(
 			result,
-			(result) => {
-				this.__userResultProcessor.process(result);
-			}
+			(result) => this.__userResultProcessor.process(result)
 		);
 	}
 

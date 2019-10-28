@@ -20,13 +20,17 @@ export class PasswordUpdateValidatorService extends FormValidatorService {
 
 
 	protected _uniqueCode(): void {
-		let min = this.__userValidationRules.passwordMinLength;
-
-		if (this.__currentUser.password.length < min) {
-			this._alert.error = `The current password must be at least ${min} characters.`;
+		let emailMin = this.__userValidationRules.emailMinLength;
+		let pwordMin = this.__userValidationRules.passwordMinLength;
+		
+		if (this.__currentUser.email.length < emailMin) {
+			this._alert.error = `The email must be at least ${emailMin} characters.`;
 		}
-		else if (this.__currentUser.newPassword.length < min) {
-			this._alert.error = `The new password must be at least ${min} characters.`;
+		else if (this.__currentUser.password.length < pwordMin) {
+			this._alert.error = `The current password must be at least ${pwordMin} characters.`;
+		}
+		else if (this.__currentUser.newPassword.length < pwordMin) {
+			this._alert.error = `The new password must be at least ${pwordMin} characters.`;
 		}
 		else if (this.__currentUser.newPassword !== this.__currentUser.passwordAgain) {
 			this._alert.error = 'The two new password inputs must match.';
