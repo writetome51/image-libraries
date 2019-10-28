@@ -30,7 +30,7 @@ export class DataOperationResultService {
 			if (result.error.message) await this._errorHandler(result.error.message);
 			else {
 				// This is for displaying unexpected errors.
-				this._alert.error = result.error;
+				this._alert.error = result.error.toString();
 			}
 			return;
 		}
