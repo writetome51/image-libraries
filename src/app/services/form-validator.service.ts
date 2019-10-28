@@ -2,7 +2,7 @@ import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { AlertService } from './alert.service';
 
 
-export abstract class ValidatorService {
+export abstract class FormValidatorService {
 
 
 	constructor(

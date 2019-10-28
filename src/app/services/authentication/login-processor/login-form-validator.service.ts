@@ -2,13 +2,13 @@ import { CurrentUserService } from '../../user/current-user.service';
 import { Injectable } from '@angular/core';
 import { AlertService } from '../../alert.service';
 import { UserValidationRulesService } from '../../user/user-validation-rules.service';
-import { ValidatorService } from '../../validator.service';
+import { FormValidatorService } from '../../form-validator.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LoginFormValidatorService extends ValidatorService {
+export class LoginFormValidatorService extends FormValidatorService {
 
 
 	constructor(
