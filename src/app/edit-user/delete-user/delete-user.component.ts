@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
-import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 
 
@@ -25,7 +25,7 @@ export class DeleteUserComponent implements OnInit {
 		public currentUser: CurrentUserService,
 		public userValidationRules: UserValidationRulesService,
 		private __userDeletionProcessor: UserDeletionProcessorService,
-		private __dataOperationBegun: DataOperationBegunService
+		private __dataOperationBegun: DataOperationStatusService
 	) {
 	}
 

@@ -26,10 +26,10 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	canDeactivate(
-		component: LibraryComponent | FullSizeImageComponent,
-		currentRoute: ActivatedRouteSnapshot,
-		currentState: RouterStateSnapshot,
-		nextState?: RouterStateSnapshot
+	//	component: LibraryComponent | FullSizeImageComponent,
+	//	currentRoute: ActivatedRouteSnapshot,
+	//	currentState: RouterStateSnapshot,
+	//	nextState?: RouterStateSnapshot
 	): boolean {
 
 		if (Object.keys(this.__currentLibrary.changes).length) {

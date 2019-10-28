@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewUserProcessorService }
 	from '../../services/user/new-user-processor/new-user-processor.service';
-import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { DataOperationStatusService } from '../../services/data-operation-status.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class CreateUserFormComponent {
 
 	constructor(
 		private __newUserProcessor: NewUserProcessorService,
-		private __dataOperationBegun: DataOperationBegunService
+		private __dataOperationBegun: DataOperationStatusService
 	) {
 	}
 

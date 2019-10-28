@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../services/alert.service';
-import { DataOperationBegunService } from '../services/data-operation-begun.service';
+import { DataOperationStatusService } from '../services/data-operation-status.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class CreateUserComponent implements OnInit {
 
 	constructor(
 		public alert: AlertService,
-		public dataOperationBegun: DataOperationBegunService
+		public dataOperationBegun: DataOperationStatusService
 	) {
 	}
 

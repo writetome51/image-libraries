@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../services/user/current-user.service';
-import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { LoginProcessorService }
 	from '../../services/authentication/login-processor/login-processor.service';
 
@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		public dataOperationBegun: DataOperationBegunService,
+		public dataOperationBegun: DataOperationStatusService,
 		private __loginProcessor: LoginProcessorService
 	) {
 	}

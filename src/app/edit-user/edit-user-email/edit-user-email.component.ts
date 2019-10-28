@@ -3,7 +3,7 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 import { EmailUpdateProcessorService }
 	from '../../services/email-update-processor/email-update-processor.service';
-import { DataOperationBegunService } from '../../services/data-operation-begun.service';
+import { DataOperationStatusService } from '../../services/data-operation-status.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class EditUserEmailComponent implements OnInit {
 		public currentUser: CurrentUserService,
 		public userValidationRules: UserValidationRulesService,
 		private __emailUpdateProcessor: EmailUpdateProcessorService,
-		private __dataOperationBegun: DataOperationBegunService
+		private __dataOperationBegun: DataOperationStatusService
 	) {
 	}
 

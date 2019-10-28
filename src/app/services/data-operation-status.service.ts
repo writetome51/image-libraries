@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 
 // This lets the app know when to display the loading spinner
 
-export class DataOperationBegunService {
+export class DataOperationStatusService {
 
-	waitingForResult = false; // if true, you should show loading spinner.
+	waitingForResult = false; // if true, show loading spinner.
 
 }
