@@ -4,9 +4,8 @@ import { AlertService } from './alert.service';
 export abstract class InputValidatorService {
 
 
+	errorMessage = '';
 	protected _ifTrue_isNotValid: () => boolean;
-	protected _inputLabel: string; // examples: 'password', 'email', 'new email'
-	protected _requirement: string; // example: 'at least ${num} characters'
 
 
 	constructor(
@@ -17,7 +16,7 @@ export abstract class InputValidatorService {
 
 	validate(): void {
 		if (this._ifTrue_isNotValid()) {
-			this.__alert.error = `The ${this._inputLabel} must be ${this._requirement}`;
+			this.__alert.error = this.errorMessage;
 		}
 	}
 

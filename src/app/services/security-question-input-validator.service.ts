@@ -8,7 +8,7 @@ import { InputValidatorService } from './input-validator.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class PasswordInputValidatorService extends InputValidatorService {
+export class SecurityQuestionInputValidatorService extends InputValidatorService {
 
 
 	constructor(
@@ -18,10 +18,10 @@ export class PasswordInputValidatorService extends InputValidatorService {
 	) {
 		super(__alert);
 
-		let min = this._userValidationRules.passwordMinLength;
+		let min = this._userValidationRules.questionMinLength;
 
-		this.errorMessage = `The password must have at least ${min} characters`;
-		this._ifTrue_isNotValid = () => (this.__currentUser.password.length < min);
+		this.errorMessage = `The security question must be at least ${min} characters.`;
+		this._ifTrue_isNotValid = () => (this.__currentUser.securityQuestion.question.length < min);
 	}
 
 

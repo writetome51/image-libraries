@@ -17,8 +17,8 @@ export class EmailInputValidatorService extends InputValidatorService {
 	) {
 		super(__alert);
 
-		this._inputLabel = 'email';
-		this._requirement = `at least ${this._userValidationRules.emailMinLength} characters`;
+		this.inputLabel = 'email';
+		this.errorMessage = `at least ${this._userValidationRules.emailMinLength} characters`;
 		this._ifTrue_isNotValid = () => (
 			this.__currentUser.email.length < this._userValidationRules.emailMinLength
 		);

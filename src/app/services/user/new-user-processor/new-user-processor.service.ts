@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NewUserValidatorService } from './new-user-validator.service';
+import { NewUserFormValidatorService } from './new-user-form-validator.service';
 import { UserCreatorService } from './user-creator/user-creator.service';
 import { Processor } from '../../../../interfaces/processor';
 import { NewUserResultInterpreterService }
@@ -13,7 +13,7 @@ export class NewUserProcessorService implements Processor {
 
 	constructor(
 		private __userCreator: UserCreatorService,
-		private __newUserValidator: NewUserValidatorService,
+		private __newUserValidator: NewUserFormValidatorService,
 		private __newUserResultInterpreter: NewUserResultInterpreterService
 	) {
 	}
