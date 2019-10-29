@@ -18,6 +18,8 @@ import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { ValidatingInputComponent } from './validating-input/validating-input.component';
+import { ValidatingFormComponent } from './validating-form/validating-form.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		LoginFormComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
-		ChangePasswordComponent
+		ChangePasswordComponent,
+		ValidatingInputComponent,
+		ValidatingFormComponent
 	],
 	imports: [
 		BrowserModule,
