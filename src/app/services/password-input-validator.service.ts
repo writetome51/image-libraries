@@ -12,11 +12,11 @@ export class PasswordInputValidatorService extends InputValidatorService {
 
 
 	constructor(
-		_userValidationRules: UserValidationRulesService,
 		__alert: AlertService,
+		protected _userValidationRules: UserValidationRulesService,
 		private __currentUser: CurrentUserService
 	) {
-		super(_userValidationRules, __alert);
+		super(__alert);
 
 		this._inputLabel = 'password';
 		this._requirement = `at least ${this._userValidationRules.passwordMinLength} characters`;

@@ -1,5 +1,4 @@
 import { AlertService } from './alert.service';
-import { UserValidationRulesService } from './user/user-validation-rules.service';
 
 
 export abstract class InputValidatorService {
@@ -11,7 +10,6 @@ export abstract class InputValidatorService {
 
 
 	constructor(
-		protected _userValidationRules: UserValidationRulesService,
 		private __alert: AlertService
 	) {
 	}
