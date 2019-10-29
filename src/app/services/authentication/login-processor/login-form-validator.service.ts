@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AlertService } from '../../alert.service';
 import { FormValidatorService } from '../../form-validator.service';
-import { EmailInputValidatorService } from './email-input-validator.service';
-import { PasswordInputValidatorService } from '../../password-input-validator.service';
+import { EmailInputValidatorService } from '../../input-validator/email-input-validator.service';
+import { PasswordInputValidatorService } from '../../input-validator/password-input-validator.service';
 
 
 @Injectable({
@@ -12,9 +12,9 @@ export class LoginFormValidatorService extends FormValidatorService {
 
 
 	constructor(
-		_alert: AlertService,
 		emailInputValidator: EmailInputValidatorService,
-		passwordInputValidator: PasswordInputValidatorService
+		passwordInputValidator: PasswordInputValidatorService,
+		_alert: AlertService
 	) {
 		super(_alert);
 

@@ -1,6 +1,6 @@
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { AlertService } from './alert.service';
-import { InputValidatorService } from './input-validator.service';
+import { InputValidatorService } from './input-validator/input-validator.service';
 
 
 export abstract class FormValidatorService {
@@ -9,9 +9,7 @@ export abstract class FormValidatorService {
 	protected _inputValidators: InputValidatorService[];
 
 
-	constructor(
-		protected _alert: AlertService
-	) {
+	constructor(protected _alert: AlertService) {
 	}
 
 

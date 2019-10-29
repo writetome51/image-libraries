@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
 import { LibraryStorageService } from './library-storage.service';
-import { DataOperationResultService } from '../data-operation-result.service';
+import { DataOperationResultService } from '../data-operation-result/data-operation-result.service';
 
 
 @Injectable({

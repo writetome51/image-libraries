@@ -26,6 +26,21 @@
 
 </div>
 
+
+<div class="input-container">
+
+	<label for="password-input" hidden>Current Password</label>
+	<input type="password"
+		   id="password-input"
+		   name="password"
+		   required
+		   placeholder="Password..."
+		   [minLength]="userValidationRules.passwordMinLength"
+		   [(ngModel)]="currentUser.password"
+	/>
+
+</div>
+
 <div>
 	<button (click)="save()">Save Changes</button>
 </div>

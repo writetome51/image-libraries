@@ -2,7 +2,7 @@ import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { ResultInterpreter } from '../../../interfaces/result-interpreter';
 import { UserResultProcessorService } from '../user/user-result-processor.service';
-import { OperationRequiringEmailPasswordResultService } from '../operation-requiring-email-password-result.service';
+import { OperationRequiringEmailPasswordResultService } from '../data-operation-result/operation-requiring-email-password-result.service';
 
 
 @Injectable({

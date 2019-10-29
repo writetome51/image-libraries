@@ -1,4 +1,4 @@
-import { AlertService } from './alert.service';
+import { AlertService } from '../alert.service';
 
 
 export abstract class InputValidatorService {

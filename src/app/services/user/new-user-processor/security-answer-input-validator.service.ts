@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
-import { UserValidationRulesService } from './user/user-validation-rules.service';
-import { CurrentUserService } from './user/current-user.service';
-import { InputValidatorService } from './input-validator.service';
+import { AlertService } from '../../alert.service';
+import { UserValidationRulesService } from '../user-validation-rules.service';
+import { CurrentUserService } from '../current-user.service';
+import { InputValidatorService } from '../../input-validator/input-validator.service';
 
 
 @Injectable({

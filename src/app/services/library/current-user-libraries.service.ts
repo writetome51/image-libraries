@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { DataOperationResultService } from '../data-operation-result.service';
+import { DataOperationResultService } from '../data-operation-result/data-operation-result.service';
 
 
 @Injectable({

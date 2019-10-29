@@ -1,4 +1,4 @@
-import { AlertService } from './alert.service';
+import { AlertService } from '../alert.service';
 import { getObjectFromJSON } from 'get-object-from-json';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';

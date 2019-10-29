@@ -1,7 +1,7 @@
 import { AlertService } from '../../alert.service';
 import { Injectable } from '@angular/core';
 import { OperationRequiringEmailPasswordResultService }
-	from '../../operation-requiring-email-password-result.service';
+	from '../../data-operation-result/operation-requiring-email-password-result.service';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user-logout-or-deletion-result-processor.service';
 import { ResultInterpreter } from '../../../../interfaces/result-interpreter';

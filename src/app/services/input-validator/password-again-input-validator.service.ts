@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
-import { CurrentUserService } from './user/current-user.service';
+import { AlertService } from '../alert.service';
+import { CurrentUserService } from '../user/current-user.service';
 import { InputValidatorService } from './input-validator.service';
 
 

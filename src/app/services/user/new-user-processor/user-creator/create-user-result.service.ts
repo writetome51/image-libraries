@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataOperationResultService } from '../../../data-operation-result.service';
+import { DataOperationResultService } from '../../../data-operation-result/data-operation-result.service';
 import { AlertService } from '../../../alert.service';
 import { userAlreadyExists } from '../../../../../constants/end-user-error-messages';
 import { duplicateKey } from '../../../../../constants/api-error-messages';
