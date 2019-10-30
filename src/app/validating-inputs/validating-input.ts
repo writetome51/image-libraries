@@ -4,7 +4,7 @@ export interface ValidatingInput {
 
 	id: string; // becomes value of <input> id
 
-	isValid: boolean; // probably needs to be a function returning boolean
+	isValid: () => boolean; // To be called during an input event, like 'onblur'
 
 	errorMessage: string; // message to show if input is invalid
 
