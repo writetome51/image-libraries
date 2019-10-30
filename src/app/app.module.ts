@@ -18,8 +18,7 @@ import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ValidatingInputComponent } from './validating-input/validating-input.component';
-import { ValidatingFormComponent } from './validating-form/validating-form.component';
+import { ValidatingFormModule } from './validating-form/validating-form.module';
 
 
 @NgModule({
@@ -33,9 +32,7 @@ import { ValidatingFormComponent } from './validating-form/validating-form.compo
 		LoginFormComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
-		ChangePasswordComponent,
-		ValidatingInputComponent,
-		ValidatingFormComponent
+		ChangePasswordComponent
 	],
 	imports: [
 		BrowserModule,
@@ -45,7 +42,8 @@ import { ValidatingFormComponent } from './validating-form/validating-form.compo
 		AppRoutingModule, // must be loaded before any other routing module.
 		LoadingSpinnerModule,
 		LibraryModule,
-		EditUserModule
+		EditUserModule,
+		ValidatingFormModule
 	],
 	bootstrap: [AppComponent]
 })
