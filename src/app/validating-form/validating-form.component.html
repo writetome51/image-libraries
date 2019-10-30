@@ -2,7 +2,7 @@
 
 	<form>
 
-		<validating-inputs></validating-inputs>
+		<validating-inputs [inputs]="inputs"></validating-inputs>
 
 		<div *ngIf="buttonLabel" class="input-container">
 			<button (click)="buttonHandler()">{{buttonLabel}}</button>

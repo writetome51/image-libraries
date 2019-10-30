@@ -7,11 +7,11 @@ import { ValidatingInput } from '../../interfaces/validating-input';
 	selector: 'validating-form',
 	templateUrl: './validating-form.component.html'
 })
-export class ValidatingFormComponent {
+export abstract class ValidatingFormComponent {
 
 
 	@Input() inputs: ValidatingInput[];
-	buttonLabel = '';
+	buttonLabel = ''; // Leave it empty if you don't want a button.
 
 
 	constructor() {

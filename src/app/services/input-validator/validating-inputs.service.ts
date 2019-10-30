@@ -1,18 +1,11 @@
-import { Component, Input } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { ValidatingInput } from '../../../interfaces/validating-input';
 
 
-@Component({
-	selector: 'validating-inputs',
-	template: `
-		<validating-input *ngFor="let input of inputs" [input]="input"></validating-input>
-	`
-})
-export class ValidatingInputsComponent {
+export abstract class ValidatingInputsService {
 
 
-	@Input() inputs: ValidatingInput[];
+	inputs: ValidatingInput[];
 
 
 	constructor() {
