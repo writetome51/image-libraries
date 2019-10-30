@@ -1,32 +1,28 @@
-import { Component, Input } from '@angular/core';
-import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { Component, Input, OnInit } from '@angular/core';
+import { not } from '@writetome51/not';
 import { ValidatingInput } from '../../../interfaces/validating-input';
 
 
 @Component({
 	selector: 'validating-inputs',
-	template: `
-		<validating-input *ngFor="let input of inputs" [input]="input"></validating-input>
-	`
+	templateUrl: './validating-inputs.component.html'
 })
-export class ValidatingInputsComponent {
+export class ValidatingInputsComponent implements OnInit {
 
 
 	@Input() inputs: ValidatingInput[];
 
 
-	constructor() {
+	ngOnInit(): void {
+		this.inputs.forEach((input) => input.error = '');
 	}
 
 
-	areValid(): boolean {
-		// alert must be cleared first or this function will never return true:
-		// this._alert.clear();
-
-		for (let i = 0; i < this.inputs.length; ++i) {
-			if (notEmpty(this.inputs[i].error)) return false;
+	validate(index): void {
+		if (not(this.inputs[index].isValid)) {
+			this.inputs[index].error = this.inputs[index].errorMessage;
 		}
-		return true;
+		else this.inputs[index].error = '';
 	}
 
 

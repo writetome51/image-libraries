@@ -1,10 +1,12 @@
-<div class="input-container" [class.red-border]="input.error">
-
+<div *ngFor="let input of inputs;  let i = index;"
+	 class="input-container"
+	 [class.red-border]="input.error"
+>
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 
 	<label for="{{input.id}}" hidden>{{input.placeholder}}</label>
 
-	<input [type]="input.type" (blur)="validate()"
+	<input [type]="input.type" (blur)="validate(i)"
 		   id="{{input.id}}"
 		   [name]="input.id"
 		   [required]="input.required"
