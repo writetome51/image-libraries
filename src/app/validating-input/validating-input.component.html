@@ -1,4 +1,4 @@
-<div class="input-container" [class.red-border]="error">
+<div class="input-container" [class.red-border]="input.error">
 
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 
@@ -13,6 +13,6 @@
 		   [(ngModel)]="input.propertyToBind"
 	/>
 
-	<div *ngIf="error">{{error}}</div>
+	<div *ngIf="input.error">{{input.error}}</div>
 
 </div>

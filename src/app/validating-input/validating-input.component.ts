@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ValidatingInput } from '../../interfaces/validating-input';
 import { not } from '@writetome51/not';
 
@@ -7,20 +7,24 @@ import { not } from '@writetome51/not';
 	selector: 'validating-input',
 	templateUrl: './validating-input.component.html'
 })
-export class ValidatingInputComponent {
+export class ValidatingInputComponent implements OnInit {
 
 
 	@Input() input: ValidatingInput;
-	error: string;
 
 
 	constructor() {
 	}
 
 
+	ngOnInit(): void {
+		this.input.error = '';
+	}
+
+
 	validate(): void {
 		if (not(this.input.isValid)) {
-			this.error = this.input.errorMessage;
+			this.input.error = this.input.errorMessage;
 		}
 	}
 
