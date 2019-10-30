@@ -1,3 +1,13 @@
-<form>
-	<validating-input *ngFor="let input of inputs" [input]="input"></validating-input>
-</form>
+<div class="form-container">
+
+	<form>
+
+		<validating-inputs></validating-inputs>
+
+		<div *ngIf="buttonLabel" class="input-container">
+			<button (click)="buttonHandler()">{{buttonLabel}}</button>
+		</div>
+
+	</form>
+
+</div>

@@ -1,24 +1,23 @@
 import { Component, Input } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { ValidatingInput } from '../../interfaces/validating-input';
+import { ValidatingInput } from '../../../interfaces/validating-input';
 
 
 @Component({
-	selector: 'validating-form',
-	templateUrl: './validating-form.component.html'
+	selector: 'validating-inputs',
+	templateUrl: './validating-inputs.component.html'
 })
-export class ValidatingFormComponent {
+export class ValidatingInputsComponent {
 
 
 	@Input() inputs: ValidatingInput[];
-	buttonLabel = '';
 
 
 	constructor() {
 	}
 
 
-	isValid(): boolean {
+	areValid(): boolean {
 		// alert must be cleared first or this function will never return true:
 		// this._alert.clear();
 
@@ -26,10 +25,6 @@ export class ValidatingFormComponent {
 			if (notEmpty(this.inputs[i].error)) return false;
 		}
 		return true;
-	}
-
-
-	buttonHandler() {
 	}
 
 
