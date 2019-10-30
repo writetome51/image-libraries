@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { not } from '@writetome51/not';
-import { ValidatingInput } from '../../../interfaces/validating-input';
+import { ValidatingInput } from './validating-input';
 
 
 @Component({
