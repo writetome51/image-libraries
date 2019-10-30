@@ -9,11 +9,6 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 	data: ValidatingInput[];
 
 
-	constructor() {
-		super();
-	}
-
-
 	// To be called during a form event, most likely 'onsubmit'
 
 	areValid(): boolean {

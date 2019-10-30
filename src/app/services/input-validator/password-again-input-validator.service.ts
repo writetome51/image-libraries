@@ -19,13 +19,16 @@ export class PasswordAgainInputValidatorService extends InputValidatorService {
 	) {
 		super(__alert);
 
-		this.errorMessage = 'The two password inputs must match';
 
 		this._ifTrue_isNotValid = () => {
 			if (this.updatingPassword) {
+				this.errorMessage = 'The two new password inputs must match';
 				return (this.__currentUser.newPassword !== this.__currentUser.passwordAgain);
 			}
-			else return (this.__currentUser.password !== this.__currentUser.passwordAgain);
+			else {
+				this.errorMessage = 'The two password inputs must match';
+				return (this.__currentUser.password !== this.__currentUser.passwordAgain);
+			}
 		};
 	}
 

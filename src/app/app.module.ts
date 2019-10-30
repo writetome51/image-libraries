@@ -18,7 +18,7 @@ import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ValidatingFormModule } from './validating-form/validating-form.module';
+import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { ValidatingFormModule } from './validating-form/validating-form.module';
 		LoadingSpinnerModule,
 		LibraryModule,
 		EditUserModule,
-		ValidatingFormModule
+		ValidatingInputsModule
 	],
 	bootstrap: [AppComponent]
 })
