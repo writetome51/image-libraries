@@ -1,0 +1,18 @@
+<div class="input-container" [class.red-border]="error">
+
+	<p *ngIf="input.prompt">{{input.prompt}}</p>
+
+	<label for="{{input.id}}" hidden>{{input.placeholder}}</label>
+
+	<input [type]="input.type" (blur)="validate()"
+		   id="{{input.id}}"
+		   [name]="input.id"
+		   [required]="input.required"
+		   [placeholder]="input.placeholder"
+		   [minLength]="input.minLength"
+		   [(ngModel)]="input.propertyToBind"
+	/>
+
+	<div *ngIf="error">{{error}}</div>
+
+</div>

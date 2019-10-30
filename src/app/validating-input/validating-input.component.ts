@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { AlertService } from '../services/alert.service';
+import { Component, Input } from '@angular/core';
+import { ValidatingInput } from '../../interfaces/validating-input';
+import { not } from '@writetome51/not';
 
 
 @Component({
@@ -9,17 +10,17 @@ import { AlertService } from '../services/alert.service';
 export class ValidatingInputComponent {
 
 
-	errorMessage = '';
-	protected _ifTrue_isNotValid: () => boolean;
+	@Input() input: ValidatingInput;
+	error: string;
 
 
-	constructor(private __alert: AlertService) {
+	constructor() {
 	}
 
 
 	validate(): void {
-		if (this._ifTrue_isNotValid()) {
-			this.__alert.error = this.errorMessage;
+		if (not(this.input.isValid)) {
+			this.error = this.input.errorMessage;
 		}
 	}
 
