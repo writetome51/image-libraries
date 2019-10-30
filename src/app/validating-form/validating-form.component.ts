@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
 import { AlertService } from '../services/alert.service';
-import { not } from '@writetome51/not';
-import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { Component, Input } from '@angular/core';
 import { InputValidatorService } from '../services/input-validator/input-validator.service';
+import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { ValidatingInput } from '../../interfaces/validating-input';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { InputValidatorService } from '../services/input-validator/input-validat
 })
 export class ValidatingFormComponent {
 
-	@Input() inputs;
+	@Input() inputs: ValidatingInput[];
 	protected _inputValidators: InputValidatorService[];
 
 
@@ -24,7 +24,7 @@ export class ValidatingFormComponent {
 		this._alert.clear();
 
 		for (let i = 0; i < this.inputs.length; ++i) {
-			this.inputs[i].validate();
+			this._alert.error = this.inputs[i].error;
 			if (notEmpty(this._alert.error)) return false;
 		}
 		return true;
