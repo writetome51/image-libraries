@@ -10,7 +10,7 @@ export interface ValidatingInput {
 
 	error: string; // Empty string.  If input is invalid, this is assigned the errorMessage
 
-	objectToBind: any; // bind to objectToBind[propertyToBind] using [(ngModel)]
+	objectToBind: any; // <input> binds to objectToBind[propertyToBind] using [(ngModel)]
 
 	propertyToBind: string; // property in objectToBind
 
