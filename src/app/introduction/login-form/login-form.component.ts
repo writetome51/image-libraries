@@ -4,14 +4,14 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 import { LoginFormInputsService } from '../../services/login-form-inputs.service';
 import { LoginProcessorService }
 	from '../../services/authentication/login-processor/login-processor.service';
-import { ValidatingInput } from '../../validating-inputs/validating-input';
+import { ValidatingInputsFormComponent } from '../../validating-inputs/validating-inputs-form.component';
 
 
 @Component({
 	selector: 'login-form',
 	templateUrl: './login-form.component.html'
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent extends ValidatingInputsFormComponent implements OnInit {
 
 
 	constructor(
@@ -20,11 +20,7 @@ export class LoginFormComponent implements OnInit {
 		public dataOperationBegun: DataOperationStatusService,
 		private __loginProcessor: LoginProcessorService
 	) {
-	}
-
-
-	get inputs(): ValidatingInput[] {
-		return this.loginFormInputs.data;
+		super(loginFormInputs);
 	}
 
 
