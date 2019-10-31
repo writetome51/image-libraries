@@ -14,6 +14,8 @@ export interface ValidatingInput {
 
 	propertyToBind: string; // property in objectToBind
 
+	hideLabel: boolean; // if true, the inputs <label> is hidden
+
 	required: boolean;
 
 	minLength?: number; // minimum num characters for text or password inputs
