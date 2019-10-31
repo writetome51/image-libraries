@@ -19,7 +19,8 @@ export class PasswordInputService extends ValidatingInputService {
 		this.data = {
 			type: 'password',
 			id: 'password-input',
-			propertyToBind: this.__currentUser.password,
+			objectToBind: this.__currentUser,
+			propertyToBind: 'password',
 			placeholder: 'Password',
 			required: true,
 			isValid: () => this.__currentUser.password.length >= this.__rules.passwordMinLength,

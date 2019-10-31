@@ -12,7 +12,7 @@
 		   [required]="input.required"
 		   [placeholder]="input.placeholder"
 		   [minLength]="input.minLength"
-		   [(ngModel)]="input.propertyToBind"
+		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
 	/>
 
 	<div *ngIf="input.error">{{input.error}}</div>

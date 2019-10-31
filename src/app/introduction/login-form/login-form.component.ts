@@ -15,12 +15,12 @@ export class LoginFormComponent extends ValidatingInputsFormComponent implements
 
 
 	constructor(
-		public loginFormInputs: LoginFormInputsService,
+		__loginFormInputs: LoginFormInputsService,
 		public currentUser: CurrentUserService,
-		public dataOperationBegun: DataOperationStatusService,
+		private __dataOperationBegun: DataOperationStatusService,
 		private __loginProcessor: LoginProcessorService
 	) {
-		super(loginFormInputs);
+		super(__loginFormInputs);
 	}
 
 
@@ -30,9 +30,9 @@ export class LoginFormComponent extends ValidatingInputsFormComponent implements
 
 
 	async login() {
-		this.dataOperationBegun.waitingForResult = true;
+		this.__dataOperationBegun.waitingForResult = true;
 		await this.__loginProcessor.process();
-		this.dataOperationBegun.waitingForResult = false;
+		this.__dataOperationBegun.waitingForResult = false;
 	}
 
 

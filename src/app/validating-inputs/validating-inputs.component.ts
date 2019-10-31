@@ -19,7 +19,7 @@ export class ValidatingInputsComponent implements OnInit {
 
 
 	validate(index): void {
-		if (not(this.inputs[index].isValid)) {
+		if (not(this.inputs[index].isValid())) {
 			this.inputs[index].error = this.inputs[index].errorMessage;
 		}
 		else this.inputs[index].error = '';

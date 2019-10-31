@@ -19,7 +19,8 @@ export class EmailInputService extends ValidatingInputService {
 		this.data = {
 			type: 'text',
 			id: 'email-input',
-			propertyToBind: this.__currentUser.email,
+			objectToBind: this.__currentUser,
+			propertyToBind: 'email',
 			placeholder: 'Email',
 			required: true,
 			isValid: () => this.__currentUser.email.length >= this.__rules.emailMinLength,
