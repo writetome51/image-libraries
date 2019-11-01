@@ -12,11 +12,12 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { LibraryModule } from './library/library.module';
 import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { LoginFormComponent } from './introduction/login-form/login-form.component';
-import { LoginFormInputsComponent } from './introduction/login-form/login-form-inputs.component';
 import { NewUserModule } from './new-user/new-user.module';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { EmailPasswordFormInputsModule }
+	from './email-password-form-inputs/email-password-form-inputs.module';
 
 
 @NgModule({
@@ -25,7 +26,6 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		IntroductionComponent,
 		LibrariesComponent,
 		LoginFormComponent,
-		LoginFormInputsComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
 		ChangePasswordComponent
@@ -37,6 +37,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		AlertModule,
 		LoadingSpinnerModule,
 		ValidatingInputsModule,
+		EmailPasswordFormInputsModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 		LibraryModule,
 		NewUserModule,

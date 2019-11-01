@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { EditUserComponent } from './edit-user.component';
 import { EditUserEmailComponent } from './edit-user-email/edit-user-email.component';
 import { EditUserPasswordComponent } from './edit-user-password/edit-user-password.component';
+import { EmailPasswordFormInputsModule }
+	from '../email-password-form-inputs/email-password-form-inputs.module';
 import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
-import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
 
 
 @NgModule({
@@ -18,8 +19,7 @@ import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-fo
 		EditUserComponent,
 		EditUserEmailComponent,
 		EditUserPasswordComponent,
-		DeleteUserFormComponent,
-		DeleteUserFormInputsComponent
+		DeleteUserFormComponent
 	],
 	imports: [
 		CommonModule,
@@ -27,6 +27,7 @@ import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-fo
 		AlertModule,
 		LoadingSpinnerModule,
 		ValidatingInputsModule,
+		EmailPasswordFormInputsModule,
 		RouterModule.forChild([
 
 			{	// This makes 'email' the default route when this module loads.

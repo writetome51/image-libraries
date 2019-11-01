@@ -16,7 +16,7 @@ export class IntroductionComponent implements OnInit {
 
 	constructor(
 		public alert: AlertService,
-		public dataOperationBegun: DataOperationStatusService
+		public dataOperationStatus: DataOperationStatusService
 	) {
 	}
 
