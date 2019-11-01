@@ -14,10 +14,10 @@ export class NewUserFormInputsComponent extends ValidatingFormInputsComponent im
 
 
 	constructor(
-		__createUserFormInputs: NewUserFormInputsService,
+		__newUserFormInputs: NewUserFormInputsService,
 		private __currentUser: CurrentUserService,
 	) {
-		super(__createUserFormInputs);
+		super(__newUserFormInputs);
 	}
 
 

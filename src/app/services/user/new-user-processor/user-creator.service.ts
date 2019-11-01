@@ -1,7 +1,7 @@
-import { CurrentUserService } from '../../current-user.service';
+import { CurrentUserService } from '../current-user.service';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
-import { UserRestAPIService } from '../../user-rest-api.service';
+import { UserRestAPIService } from '../user-rest-api.service';
 
 
 @Injectable({

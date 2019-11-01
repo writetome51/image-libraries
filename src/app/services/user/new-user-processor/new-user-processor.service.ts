@@ -1,9 +1,9 @@
+import { NewUserFormInputsService } from '../../new-user-form-inputs.service';
 import { Injectable } from '@angular/core';
-import { NewUserFormValidatorService } from './new-user-form-validator.service';
-import { UserCreatorService } from './user-creator/user-creator.service';
-import { Processor } from '../../../../interfaces/processor';
 import { NewUserResultInterpreterService }
-	from './user-creator/new-user-result-interpreter.service';
+	from './new-user-result-interpreter.service';
+import { Processor } from '../../../../interfaces/processor';
+import { UserCreatorService } from './user-creator.service';
 
 
 @Injectable({
@@ -13,14 +13,14 @@ export class NewUserProcessorService implements Processor {
 
 	constructor(
 		private __userCreator: UserCreatorService,
-		private __newUserFormValidator: NewUserFormValidatorService,
+		private __newUserFormInputs: NewUserFormInputsService,
 		private __newUserResultInterpreter: NewUserResultInterpreterService
 	) {
 	}
 
 
 	async process() {
-		if (this.__newUserFormValidator.isValid()) {
+		if (this.__newUserFormInputs.areValid()) {
 			let result = await this.__userCreator.create();
 			this.__newUserResultInterpreter.interpret(result);
 		}

@@ -1,5 +1,4 @@
 import { AuthenticatedGuard } from './guards/authenticated.guard';
-import { CreateUserComponent } from './create-user/create-user.component';
 import { DeauthenticatedGuard } from './guards/deauthenticated.guard';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibrariesComponent } from './libraries/libraries.component';
@@ -15,10 +14,9 @@ const routes: Routes = [
 		loadChildren: () => import('./edit-user/edit-user.module').then(mod => mod.EditUserModule)
 	},
 
-	{
+	{	// lazy-loaded module
 		path: 'create-account', // can only access when logged out
-		component: CreateUserComponent,
-		canActivate: [DeauthenticatedGuard]
+		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
 
 	{

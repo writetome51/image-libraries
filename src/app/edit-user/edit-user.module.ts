@@ -1,14 +1,14 @@
+import { AlertModule } from '../alert/alert.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { EditUserComponent } from './edit-user.component';
 import { EditUserEmailComponent } from './edit-user-email/edit-user-email.component';
 import { EditUserPasswordComponent } from './edit-user-password/edit-user-password.component';
-import { AlertModule } from '../alert/alert.module';
 import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
