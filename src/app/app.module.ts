@@ -6,7 +6,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateUserFormComponent } from './create-user/create-user-form/create-user-form.component';
 import { CreateUserFormInputsComponent }
-	from './create-user/create-user-form/create-user-form-inputs/create-user-form-inputs.component';
+	from './create-user/create-user-form/create-user-form-inputs.component';
 import { EditUserModule } from './edit-user/edit-user.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +19,7 @@ import { LoginFormComponent } from './introduction/login-form/login-form.compone
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { LoginFormInputsComponent } from './introduction/login-form/login-form-inputs.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoginFormComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
-		ChangePasswordComponent
+		ChangePasswordComponent,
+		LoginFormInputsComponent
 	],
 	imports: [
 		BrowserModule,
