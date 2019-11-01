@@ -3,7 +3,7 @@ import { AlertService } from '../../alert.service';
 import { FormValidatorService } from '../../form-validator.service';
 import { EmailInputValidatorService } from '../../input-validator/email-input-validator.service';
 import { PasswordInputValidatorService } from '../../input-validator/password-input-validator.service';
-import { PasswordAgainInputValidatorService } from '../../input-validator/password-again-input-validator.service';
+import { PasswordAgainInputService } from '../../password-again-input.service';
 import { SecurityQuestionInputValidatorService } from './security-question-input-validator.service';
 import { SecurityAnswerInputValidatorService } from './security-answer-input-validator.service';
 
@@ -18,7 +18,7 @@ export class NewUserFormValidatorService extends FormValidatorService {
 		_alert: AlertService,
 		emailInputValidator: EmailInputValidatorService,
 		passwordInputValidator: PasswordInputValidatorService,
-		passwordAgainInputValidator: PasswordAgainInputValidatorService,
+		passwordAgainInputValidator: PasswordAgainInputService,
 		questionInputValidator: SecurityQuestionInputValidatorService,
 		answerInputValidator: SecurityAnswerInputValidatorService
 	) {

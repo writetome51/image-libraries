@@ -4,7 +4,7 @@ import { FormValidatorService } from '../form-validator.service';
 import { EmailInputValidatorService }
 	from '../input-validator/email-input-validator.service';
 import { PasswordInputValidatorService } from '../input-validator/password-input-validator.service';
-import { PasswordAgainInputValidatorService } from '../input-validator/password-again-input-validator.service';
+import { PasswordAgainInputService } from '../password-again-input.service';
 import { NewPasswordInputValidatorService } from './new-password-input-validator.service';
 
 
@@ -19,7 +19,7 @@ export class PasswordUpdateFormValidatorService extends FormValidatorService {
 		emailInputValidator: EmailInputValidatorService,
 		passwordInputValidator: PasswordInputValidatorService,
 		newPasswordInputValidator: NewPasswordInputValidatorService,
-		passwordAgainInputValidator: PasswordAgainInputValidatorService
+		passwordAgainInputValidator: PasswordAgainInputService
 	) {
 		super(_alert);
 

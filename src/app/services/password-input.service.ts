@@ -22,6 +22,7 @@ export class PasswordInputService extends ValidatingInputService {
 			objectToBind: this.__currentUser,
 			propertyToBind: 'password',
 			placeholder: 'Password',
+			hideLabel: true,
 			required: true,
 			isValid: () => this.__currentUser.password.length >= this.__rules.passwordMinLength,
 			errorMessage:

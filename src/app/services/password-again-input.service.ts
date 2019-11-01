@@ -1,7 +1,6 @@
-import { AlertService } from '../alert.service';
 import { Injectable } from '@angular/core';
-import { CurrentUserService } from '../user/current-user.service';
-import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
+import { CurrentUserService } from './user/current-user.service';
+import { ValidatingInputService } from '../validating-inputs/validating-input.service';
 
 
 @Injectable({
@@ -19,10 +18,7 @@ export class PasswordAgainInputService extends ValidatingInputService {
 	}
 
 
-	constructor(
-		__alert: AlertService,
-		private __currentUser: CurrentUserService
-	) {
+	constructor(private __currentUser: CurrentUserService) {
 		super();
 
 		this.data = {

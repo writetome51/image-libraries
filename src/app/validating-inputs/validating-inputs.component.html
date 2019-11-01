@@ -4,7 +4,7 @@
 >
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 
-	<label for="{{input.id}}" hidden>{{input.placeholder}}</label>
+	<label for="{{input.id}}" [hidden]="input.hideLabel">{{input.placeholder}}</label>
 
 	<input [type]="input.type" (blur)="validate(i)"
 		   id="{{input.id}}"
