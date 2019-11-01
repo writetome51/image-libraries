@@ -3,15 +3,14 @@ import { CurrentUserService } from '../../services/user/current-user.service';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
-import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 
 
 @Component({
-	selector: 'delete-user',
-	templateUrl: './delete-user.component.html',
+	selector: 'delete-user-form',
+	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserComponent implements OnInit {
+export class DeleteUserFormComponent implements OnInit {
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -23,9 +22,8 @@ export class DeleteUserComponent implements OnInit {
 
 	constructor(
 		public currentUser: CurrentUserService,
-		public userValidationRules: UserValidationRulesService,
 		private __userDeletionProcessor: UserDeletionProcessorService,
-		private __dataOperationBegun: DataOperationStatusService
+		private __dataOperationStatus: DataOperationStatusService
 	) {
 	}
 
@@ -36,9 +34,9 @@ export class DeleteUserComponent implements OnInit {
 
 
 	async delete() {
-		this.__dataOperationBegun.waitingForResult = true;
+		this.__dataOperationStatus.waitingForResult = true;
 		await this.__userDeletionProcessor.process();
-		this.__dataOperationBegun.waitingForResult = false;
+		this.__dataOperationStatus.waitingForResult = false;
 	}
 
 

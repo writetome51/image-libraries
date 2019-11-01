@@ -13,6 +13,9 @@ import { UserValidationRulesService } from '../../services/user/user-validation-
 export class EditUserPasswordComponent implements OnInit {
 
 
+	heading = 'Edit Password';
+
+
 	constructor(
 		public currentUser: CurrentUserService,
 		public userValidationRules: UserValidationRulesService,

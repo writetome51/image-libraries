@@ -13,6 +13,9 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 export class EditUserEmailComponent implements OnInit {
 
 
+	heading = 'Edit Email';
+
+
 	constructor(
 		public currentUser: CurrentUserService,
 		public userValidationRules: UserValidationRulesService,

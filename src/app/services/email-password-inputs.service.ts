@@ -8,7 +8,7 @@ import { AlertService } from './alert.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class LoginFormInputsService extends AppValidatingInputsService {
+export class EmailPasswordInputsService extends AppValidatingInputsService {
 
 
 	constructor(
