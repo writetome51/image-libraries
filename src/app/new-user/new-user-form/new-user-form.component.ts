@@ -5,23 +5,23 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 
 
 @Component({
-	selector: 'create-user-form',
-	templateUrl: './create-user-form.component.html'
+	selector: 'new-user-form',
+	templateUrl: './new-user-form.component.html'
 })
-export class CreateUserFormComponent {
+export class NewUserFormComponent {
 
 
 	constructor(
 		private __newUserProcessor: NewUserProcessorService,
-		private __dataOperationBegun: DataOperationStatusService
+		private __dataOperationStatus: DataOperationStatusService
 	) {
 	}
 
 
 	async create() {
-		this.__dataOperationBegun.waitingForResult = true;
+		this.__dataOperationStatus.waitingForResult = true;
 		await this.__newUserProcessor.process();
-		this.__dataOperationBegun.waitingForResult = false;
+		this.__dataOperationStatus.waitingForResult = false;
 	}
 
 
