@@ -7,16 +7,19 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 
 
 	data: ValidatingInput[];
+	error = '';
 
 
 	// To be called during a form event, most likely 'onsubmit'
 
 	areValid(): boolean {
-		// alert must be cleared first or this function will never return true:
-		// this._alert.clear();
+		this.error = '';
 
 		for (let i = 0; i < this.data.length; ++i) {
-			if (notEmpty(this.data[i].error)) return false;
+			if (notEmpty(this.data[i].error)) {
+				this.error = this.data[i].error;
+				return false;
+			}
 		}
 		return true;
 	}
