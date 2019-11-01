@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AlertService } from '../alert.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { incorrectPassword, notLoggedIn, userDoesntExist }
-	from '../../../constants/end-user-error-messages';
+	from '../../../constants/form-submission-errors';
 
 
 @Injectable({
