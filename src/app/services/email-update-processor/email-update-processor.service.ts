@@ -13,9 +13,9 @@ export class EmailUpdateProcessorService extends DataOperationProcessorService {
 	constructor(
 		private __userStorage: UserStorageService,
 		private __emailUpdateResultInterpreter: EmailUpdateResultInterpreterService,
-		private __emailUpdateFormValidator: ValidatingInputsService
+		private __emailUpdateFormInputs: ValidatingInputsService
 	) {
-		super(__emailUpdateFormValidator, __emailUpdateResultInterpreter);
+		super(__emailUpdateFormInputs, __emailUpdateResultInterpreter);
 
 		this._getResult = async () => await this.__userStorage.updateEmail();
 	}
