@@ -1,30 +1,20 @@
 import { Injectable } from '@angular/core';
-import { DBUser } from '../../../interfaces/db-user';
 import { UserResultProcessorService } from '../user/user-result-processor.service';
 import { OperationRequiringEmailPasswordResultService }
 	from '../data-operation-result/operation-requiring-email-password-result.service';
-import { ResultInterpreter } from '../../../interfaces/result-interpreter';
+import { ResultInterpreterService } from '../result-interpreter.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UpdateEmailResultInterpreterService implements ResultInterpreter {
-
+export class UpdateEmailResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
-		private __userResultProcessor: UserResultProcessorService,
-		private __emailUpdateResult: OperationRequiringEmailPasswordResultService
+		private __emailUpdateResult: OperationRequiringEmailPasswordResultService,
+		private __userResultProcessor: UserResultProcessorService
 	) {
+		super(__emailUpdateResult, __userResultProcessor);
 	}
-
-
-	async interpret(result: DBUser) {
-		await this.__emailUpdateResult.ifSuccessful_processResult(
-			result,
-			(result) => this.__userResultProcessor.process(result)
-		);
-	}
-
 
 }

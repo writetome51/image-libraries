@@ -2,29 +2,23 @@ import { NewUserFormInputsService } from '../../validating-inputs/new-user-form-
 import { Injectable } from '@angular/core';
 import { NewUserResultInterpreterService }
 	from './new-user-result-interpreter.service';
-import { Processor } from '../../../../interfaces/processor';
 import { UserCreatorService } from './user-creator.service';
+import { DataOperationProcessorService } from '../../data-operation-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class NewUserProcessorService implements Processor {
+export class NewUserProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		private __userCreator: UserCreatorService,
-		private __newUserFormInputs: NewUserFormInputsService,
-		private __newUserResultInterpreter: NewUserResultInterpreterService
+		__newUserFormInputs: NewUserFormInputsService,
+		__newUserResultInterpreter: NewUserResultInterpreterService,
+		private __userCreator: UserCreatorService
 	) {
+		super(__newUserFormInputs, __newUserResultInterpreter);
+
+		this._getResult = async () => await this.__userCreator.create();
 	}
-
-
-	async process() {
-		if (this.__newUserFormInputs.areValid()) {
-			let result = await this.__userCreator.create();
-			this.__newUserResultInterpreter.interpret(result);
-		}
-	}
-
 
 }

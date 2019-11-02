@@ -2,32 +2,26 @@ import { AlertService } from '../../alert.service';
 import { NewUserResultService } from './new-user-result.service';
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { ResultInterpreter } from '../../../../interfaces/result-interpreter';
 import { UserResultProcessorService } from '../user-result-processor.service';
+import { ResultInterpreterService } from '../../result-interpreter.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class NewUserResultInterpreterService implements ResultInterpreter {
+export class NewUserResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
+		__newUserResult: NewUserResultService,
+		__userResultProcessor: UserResultProcessorService,
 		private __alert: AlertService,
-		private __newUserResult: NewUserResultService,
-		private __userResultProcessor: UserResultProcessorService
 	) {
+		super(__newUserResult, __userResultProcessor);
+
+		this._process = (result: DBUser) => {
+			super._process(result);
+			this.__alert.success = 'User created!';
+		}
 	}
-
-
-	interpret(result: DBUser) {
-		this.__newUserResult.ifSuccessful_processResult(
-			result,
-			(result) => {
-				this.__userResultProcessor.process(result);
-				this.__alert.success = 'User created!';
-			}
-		);
-	}
-
 
 }
