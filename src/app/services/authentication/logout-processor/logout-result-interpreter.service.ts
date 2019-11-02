@@ -18,8 +18,8 @@ export class LogoutResultInterpreterService implements ResultInterpreter {
 	}
 
 
-	interpret(result): void {
-		this.__restApiRequestResult.ifSuccessful_processResult(
+	async interpret(result) {
+		await this.__restApiRequestResult.ifSuccessful_processResult(
 			result,
 			(result) => this.__logoutResultProcessor.process(result)
 		);

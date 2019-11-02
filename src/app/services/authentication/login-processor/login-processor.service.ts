@@ -11,9 +11,9 @@ import { LoginResultInterpreterService } from './login-result-interpreter.servic
 export class LoginProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		private __authenticator: AuthenticatorService,
 		__emailPasswordInputs: EmailPasswordInputsService,
-		__loginResultInterpreter: LoginResultInterpreterService
+		__loginResultInterpreter: LoginResultInterpreterService,
+		private __authenticator: AuthenticatorService
 	) {
 		super(__emailPasswordInputs, __loginResultInterpreter);
 
