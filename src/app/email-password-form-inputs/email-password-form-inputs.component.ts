@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmailPasswordInputsService } from '../services/email-password-inputs.service';
+import { EmailPasswordInputsService } from '../services/validating-inputs/email-password-inputs.service';
 import { ValidatingFormInputsComponent }
 	from '../validating-inputs/validating-form-inputs.component';
 

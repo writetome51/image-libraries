@@ -1,3 +1,3 @@
 export interface Processor {
-	process: () => void;
+	process: (...args) => void;
 }

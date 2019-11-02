@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
 import { DataOperationProcessorService } from '../data-operation-processor.service';
-import { UpdateEmailFormInputsService } from '../update-email-form-inputs.service';
+import { UpdateEmailFormInputsService } from '../validating-inputs/update-email-form-inputs.service';
 
 
 @Injectable({

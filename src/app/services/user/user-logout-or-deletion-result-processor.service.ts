@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Processor } from '../../../interfaces/processor';
 import { Router } from '@angular/router';
 import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
+import { ResultProcessor } from '../../../interfaces/result-processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserLogoutOrDeletionResultProcessorService implements Processor {
+export class UserLogoutOrDeletionResultProcessorService implements ResultProcessor {
 
 	constructor(
 		private __sessionIDLocalStorage: SessionIDLocalStorageService,

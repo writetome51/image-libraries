@@ -1,4 +1,4 @@
-import { NewUserFormInputsService } from '../../new-user-form-inputs.service';
+import { NewUserFormInputsService } from '../../validating-inputs/new-user-form-inputs.service';
 import { Injectable } from '@angular/core';
 import { NewUserResultInterpreterService }
 	from './new-user-result-interpreter.service';

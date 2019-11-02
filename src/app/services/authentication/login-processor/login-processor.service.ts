@@ -1,6 +1,6 @@
 import { AuthenticatorService } from './authenticator.service';
 import { DataOperationProcessorService } from '../../data-operation-processor.service';
-import { EmailPasswordInputsService } from '../../email-password-inputs.service';
+import { EmailPasswordInputsService } from '../../validating-inputs/email-password-inputs.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
 

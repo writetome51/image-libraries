@@ -1,5 +1,5 @@
-import { AlertService } from './alert.service';
-import { ValidatingInputsService } from '../validating-inputs/validating-inputs.service';
+import { AlertService } from '../alert.service';
+import { ValidatingInputsService } from '../../validating-inputs/validating-inputs.service';
 
 
 export abstract class AppValidatingInputsService extends ValidatingInputsService {
