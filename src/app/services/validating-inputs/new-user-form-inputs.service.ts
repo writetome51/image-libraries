@@ -15,22 +15,22 @@ export class NewUserFormInputsService extends AppValidatingInputsService {
 
 
 	constructor(
+		__alert: AlertService,
 		emailInput: EmailInputService,
 		passwordInput: PasswordInputService,
 		passwordAgainInput: PasswordAgainInputService,
 		questionInput: SecurityQuestionInputService,
-		answerInput: SecurityAnswerInputService,
-		__alert: AlertService
+		answerInput: SecurityAnswerInputService
 	) {
-		super(__alert);
+		super(
+			__alert,
+			emailInput,
+			passwordInput,
+			passwordAgainInput,
+			questionInput,
+			answerInput,
+		);
 
-		this.data = [
-			emailInput.data,
-			passwordInput.data,
-			passwordAgainInput.data,
-			questionInput.data,
-			answerInput.data
-		];
 	}
 
 

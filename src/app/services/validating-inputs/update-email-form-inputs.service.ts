@@ -11,21 +11,18 @@ import { NewEmailInputService } from '../validating-input/new-email-input.servic
 })
 export class UpdateEmailFormInputsService extends AppValidatingInputsService {
 
-
 	constructor(
+		__alert: AlertService,
 		currentEmailInput: CurrentEmailInputService,
 		newEmailInput: NewEmailInputService,
-		passwordInput: PasswordInputService,
-		__alert: AlertService
+		passwordInput: PasswordInputService
 	) {
-		super(__alert);
-
-		this.data = [
-			currentEmailInput.data,
-			newEmailInput.data,
-			passwordInput.data
-		];
+		super(
+			__alert,
+			currentEmailInput,
+			newEmailInput,
+			passwordInput
+		);
 	}
-
 
 }

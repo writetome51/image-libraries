@@ -14,20 +14,19 @@ export class UpdatePasswordFormInputsService extends AppValidatingInputsService 
 
 
 	constructor(
+		__alert: AlertService,
 		emailInput: EmailInputService,
 		currentPasswordInput: CurrentPasswordInputService,
 		newPasswordInput: NewPasswordInputService,
-		passwordAgainInput: PasswordAgainInputService,
-		__alert: AlertService
+		passwordAgainInput: PasswordAgainInputService
 	) {
-		super(__alert);
-
-		this.data = [
-			emailInput.data,
-			currentPasswordInput.data,
-			newPasswordInput.data,
-			passwordAgainInput.data
-		];
+		super(
+			__alert,
+			emailInput,
+			currentPasswordInput,
+			newPasswordInput,
+			passwordAgainInput
+		);
 	}
 
 

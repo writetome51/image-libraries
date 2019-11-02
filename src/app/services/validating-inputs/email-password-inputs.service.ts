@@ -10,16 +10,12 @@ import { AlertService } from '../alert.service';
 })
 export class EmailPasswordInputsService extends AppValidatingInputsService {
 
-
 	constructor(
+		__alert: AlertService,
 		emailInput: EmailInputService,
-		passwordInput: PasswordInputService,
-		__alert: AlertService
+		passwordInput: PasswordInputService
 	) {
-		super(__alert);
-
-		this.data = [emailInput.data, passwordInput.data];
+		super(__alert, emailInput, passwordInput);
 	}
-
 
 }
