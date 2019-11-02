@@ -11,11 +11,11 @@ import { DataOperationProcessorService } from '../data-operation-processor.servi
 export class UpdatePasswordProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		__passwordUpdateFormInputs: ValidatingInputsService,
-		__passwordUpdateResultInterpreter: UpdatePasswordResultInterpreterService,
+		__updatePasswordFormInputs: ValidatingInputsService,
+		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService,
 		private __userStorage: UserStorageService,
 	) {
-		super(__passwordUpdateFormInputs, __passwordUpdateResultInterpreter);
+		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);
 
 		this._getResult = async () => await this.__userStorage.updatePassword();
 	}

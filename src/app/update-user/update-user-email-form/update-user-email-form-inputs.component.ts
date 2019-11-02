@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CurrentUserService } from '../../services/user/current-user.service';
 import { ValidatingFormInputsComponent } from '../../validating-inputs/validating-form-inputs.component';
 import { UpdateEmailFormInputsService } from '../../services/update-email-form-inputs.service';
 
@@ -12,13 +11,8 @@ import { UpdateEmailFormInputsService } from '../../services/update-email-form-i
 })
 export class UpdateUserEmailFormInputsComponent extends ValidatingFormInputsComponent {
 
-
-	constructor(
-		__updateEmailFormInputs: UpdateEmailFormInputsService,
-		private __currentUser: CurrentUserService,
-	) {
+	constructor(__updateEmailFormInputs: UpdateEmailFormInputsService) {
 		super(__updateEmailFormInputs);
 	}
-
 
 }
