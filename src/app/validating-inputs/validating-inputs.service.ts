@@ -11,6 +11,8 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 	error = '';
 
 
+	// `inputs` must be in order you want them to appear in the form
+
 	constructor(inputs: ValidatingInputService[]) {
 		super();
 
@@ -18,7 +20,7 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 	}
 
 
-	// To be called during a form event, most likely 'onsubmit'
+	// To be called just before submitting data to server
 
 	areValid(): boolean {
 		this.error = '';
