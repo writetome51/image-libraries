@@ -12,8 +12,10 @@ import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
 	from './update-user-email-form/update-user-email-form-inputs.component';
 import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
-import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
+import { UpdateUserPasswordFormComponent } from './update-user-password-form/update-user-password-form.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
+import { UpdateUserPasswordFormInputsComponent }
+	from './update-user-password-form/update-user-password-form-inputs.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		UpdateUserComponent,
 		UpdateUserEmailFormComponent,
 		UpdateUserEmailFormInputsComponent,
-		UpdateUserPasswordComponent,
+		UpdateUserPasswordFormComponent,
+		UpdateUserPasswordFormInputsComponent,
 		DeleteUserFormComponent
 	],
 	imports: [
@@ -51,7 +54,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 
 					{
 						path: 'password',
-						component: UpdateUserPasswordComponent
+						component: UpdateUserPasswordFormComponent
 					},
 
 					{

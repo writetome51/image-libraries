@@ -1,24 +1,20 @@
 import { Component } from '@angular/core';
-import { CurrentUserService } from '../../services/user/current-user.service';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { UpdatePasswordProcessorService }
 	from '../../services/update-password-processor/update-password-processor.service';
-import { UserValidationRulesService } from '../../services/user/user-validation-rules.service';
 
 
 @Component({
-	selector: 'update-user-password',
-	templateUrl: './update-user-password.component.html'
+	selector: 'update-user-password-form',
+	templateUrl: './update-user-password-form.component.html'
 })
-export class UpdateUserPasswordComponent {
+export class UpdateUserPasswordFormComponent {
 
 
 	heading = 'Update Password';
 
 
 	constructor(
-		public currentUser: CurrentUserService,
-		public userValidationRules: UserValidationRulesService,
 		private __dataOperationBegun: DataOperationStatusService,
 		private __passwordUpdateProcessor: UpdatePasswordProcessorService
 	) {
