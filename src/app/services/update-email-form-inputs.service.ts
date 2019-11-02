@@ -9,7 +9,7 @@ import { NewEmailInputService } from './validating-input/new-email-input.service
 @Injectable({
 	providedIn: 'root'
 })
-export class EmailUpdateFormInputsService extends AppValidatingInputsService {
+export class UpdateEmailFormInputsService extends AppValidatingInputsService {
 
 
 	constructor(

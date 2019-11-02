@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CurrentUserService } from '../../services/user/current-user.service';
+import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
 	from '../../services/user/user-deletion-processor/user-deletion-processor.service';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
@@ -10,7 +9,7 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent implements OnInit {
+export class DeleteUserFormComponent {
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -21,15 +20,9 @@ export class DeleteUserFormComponent implements OnInit {
 
 
 	constructor(
-		public currentUser: CurrentUserService,
 		private __userDeletionProcessor: UserDeletionProcessorService,
 		private __dataOperationStatus: DataOperationStatusService
 	) {
-	}
-
-
-	ngOnInit(): void {
-		this.currentUser.clearFormProperties();
 	}
 
 

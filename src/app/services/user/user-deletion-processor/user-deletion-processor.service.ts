@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { UserDeletorService } from './user-deletor.service';
 import { UserDeletionResultInterpreterService } from './user-deletion-result-interpreter.service';
-import { Processor } from '../../../../interfaces/processor';
+import { DataOperationProcessorService } from '../../data-operation-processor.service';
+import { EmailPasswordInputsService } from '../../email-password-inputs.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserDeletionProcessorService implements Processor {
+export class UserDeletionProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		private __userDeletor: UserDeletorService,
-		private __userDeletionResultInterpreter: UserDeletionResultInterpreterService
+		__emailPasswordInputs: EmailPasswordInputsService,
+		__userDeletionResultInterpreter: UserDeletionResultInterpreterService,
+		private __userDeletor: UserDeletorService
 	) {
-	}
+		super(__emailPasswordInputs, __userDeletionResultInterpreter);
 
-
-	async process() {
-		let result = await this.__userDeletor.delete();
-		await this.__userDeletionResultInterpreter.interpret(result);
+		this._getResult = async () => await this.__userDeletor.delete();
 	}
 
 }

@@ -8,18 +8,18 @@ import { OperationRequiringEmailPasswordResultService } from '../data-operation-
 @Injectable({
 	providedIn: 'root'
 })
-export class PasswordUpdateResultInterpreterService implements ResultInterpreter {
+export class UpdatePasswordResultInterpreterService implements ResultInterpreter {
 
 
 	constructor(
 		private __userResultProcessor: UserResultProcessorService,
-		private __passwordUpdateResult: OperationRequiringEmailPasswordResultService
+		private __updatePasswordResult: OperationRequiringEmailPasswordResultService
 	) {
 	}
 
 
 	async interpret(result: DBUser) {
-		await this.__passwordUpdateResult.ifSuccessful_processResult(
+		await this.__updatePasswordResult.ifSuccessful_processResult(
 			result,
 			(result) => this.__userResultProcessor.process(result)
 		);

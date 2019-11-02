@@ -9,7 +9,7 @@ import { ResultInterpreter } from '../../../interfaces/result-interpreter';
 @Injectable({
 	providedIn: 'root'
 })
-export class EmailUpdateResultInterpreterService implements ResultInterpreter {
+export class UpdateEmailResultInterpreterService implements ResultInterpreter {
 
 
 	constructor(

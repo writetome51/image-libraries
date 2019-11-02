@@ -2,23 +2,26 @@ import { AlertModule } from '../alert/alert.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
-import { FormsModule } from '@angular/forms';
-import { EditUserComponent } from './edit-user.component';
-import { EditUserEmailComponent } from './edit-user-email/edit-user-email.component';
-import { EditUserPasswordComponent } from './edit-user-password/edit-user-password.component';
 import { EmailPasswordFormInputsModule }
 	from '../email-password-form-inputs/email-password-form-inputs.module';
+import { FormsModule } from '@angular/forms';
 import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UpdateUserComponent } from './update-user.component';
+import { UpdateUserEmailFormInputsComponent }
+	from './update-user-email-form/update-user-email-form-inputs.component';
+import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
+import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 
 
 @NgModule({
 	declarations: [
-		EditUserComponent,
-		EditUserEmailComponent,
-		EditUserPasswordComponent,
+		UpdateUserComponent,
+		UpdateUserEmailFormComponent,
+		UpdateUserEmailFormInputsComponent,
+		UpdateUserPasswordComponent,
 		DeleteUserFormComponent
 	],
 	imports: [
@@ -38,17 +41,17 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 
 			{
 				path: '',
-				component: EditUserComponent,
+				component: UpdateUserComponent,
 				canActivate: [AuthenticatedGuard],
 				children: [
 					{
 						path: 'email',
-						component: EditUserEmailComponent
+						component: UpdateUserEmailFormComponent
 					},
 
 					{
 						path: 'password',
-						component: EditUserPasswordComponent
+						component: UpdateUserPasswordComponent
 					},
 
 					{
@@ -61,5 +64,5 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		])
 	]
 })
-export class EditUserModule {
+export class UpdateUserModule {
 }

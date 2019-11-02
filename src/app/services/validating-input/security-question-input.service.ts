@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ValidatingInputService } from '../validating-inputs/validating-input.service';
-import { CurrentUserService } from './user/current-user.service';
-import { UserValidationRulesService } from './user/user-validation-rules.service';
+import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
+import { CurrentUserService } from '../user/current-user.service';
+import { UserValidationRulesService } from '../user/user-validation-rules.service';
 
 
 @Injectable({

@@ -1,12 +1,8 @@
-import { Injectable } from '@angular/core';
 import { Processor } from '../../interfaces/processor';
 import { ValidatingInputsService } from '../validating-inputs/validating-inputs.service';
 import { ResultInterpreter } from '../../interfaces/result-interpreter';
 
 
-@Injectable({
-	providedIn: 'root'
-})
 export abstract class DataOperationProcessorService implements Processor {
 
 	constructor(
