@@ -10,8 +10,8 @@ import { ResultInterpreter } from '../../interfaces/result-interpreter';
 export abstract class DataOperationProcessorService implements Processor {
 
 	constructor(
-		private __resultInterpreter: ResultInterpreter,
-		private __validatingInputs: ValidatingInputsService
+		private __validatingInputs: ValidatingInputsService,
+		private __resultInterpreter: ResultInterpreter
 	) {
 	}
 

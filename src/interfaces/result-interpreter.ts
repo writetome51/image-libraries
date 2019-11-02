@@ -1,3 +1,3 @@
 export interface ResultInterpreter {
-	interpret: (...args) => void;
+	interpret: (result) => void;
 }

@@ -1,30 +1,23 @@
 import { AuthenticatorService } from './authenticator.service';
+import { DataOperationProcessorService } from '../../data-operation-processor.service';
+import { EmailPasswordInputsService } from '../../email-password-inputs.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './login-result-interpreter.service';
-import { LoginFormValidatorService } from './login-form-validator.service';
-import { Processor } from '../../../../interfaces/processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LoginProcessorService implements Processor {
-
+export class LoginProcessorService extends DataOperationProcessorService {
 
 	constructor(
 		private __authenticator: AuthenticatorService,
-		private __loginResultInterpreter: LoginResultInterpreterService,
-		private __loginFormValidator: LoginFormValidatorService
+		__emailPasswordInputs: EmailPasswordInputsService,
+		__loginResultInterpreter: LoginResultInterpreterService
 	) {
+		super(__emailPasswordInputs, __loginResultInterpreter);
+
+		this._getResult = async () => await this.__authenticator.authenticate();
 	}
-
-
-	async process() {
-		if (this.__loginFormValidator.isValid()) {
-			let result = await this.__authenticator.authenticate();
-			await this.__loginResultInterpreter.interpret(result);
-		}
-	}
-
 
 }

@@ -1,29 +1,23 @@
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
-import { EmailUpdateFormValidatorService } from './email-update-form-validator.service';
 import { EmailUpdateResultInterpreterService } from './email-update-result-interpreter.service';
-import { Processor } from '../../../interfaces/processor';
+import { DataOperationProcessorService } from '../data-operation-processor.service';
+import { ValidatingInputsService } from '../../validating-inputs/validating-inputs.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class EmailUpdateProcessorService implements Processor {
+export class EmailUpdateProcessorService extends DataOperationProcessorService {
 
 	constructor(
 		private __userStorage: UserStorageService,
 		private __emailUpdateResultInterpreter: EmailUpdateResultInterpreterService,
-		private __emailUpdateFormValidator: EmailUpdateFormValidatorService
+		private __emailUpdateFormValidator: ValidatingInputsService
 	) {
+		super(__emailUpdateFormValidator, __emailUpdateResultInterpreter);
+
+		this._getResult = async () => await this.__userStorage.updateEmail();
 	}
-
-
-	async process() {
-		if (this.__emailUpdateFormValidator.isValid()) {
-			let result = await this.__userStorage.updateEmail();
-			await this.__emailUpdateResultInterpreter.interpret(result);
-		}
-	}
-
 
 }
