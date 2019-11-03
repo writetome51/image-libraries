@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertService } from '../services/alert.service';
 import { DataOperationStatusService } from '../services/data-operation-status.service';
+import { ClearFormAndAlertOnInitComponent }
+	from '../clear-on-init/clear-form-and-alert-on-init.component';
+import { CurrentUserService } from '../services/user/current-user.service';
 
 
 @Component({
 	selector: 'app-introduction',
 	templateUrl: './introduction.component.html'
 })
-export class IntroductionComponent implements OnInit {
+export class IntroductionComponent extends ClearFormAndAlertOnInitComponent {
 
 
 	introduction = `This application lets you create libraries of images.  Inside each library you can 
@@ -15,14 +18,11 @@ export class IntroductionComponent implements OnInit {
 
 
 	constructor(
+		public dataOperationStatus: DataOperationStatusService,
 		public alert: AlertService,
-		public dataOperationStatus: DataOperationStatusService
+		__currentUser: CurrentUserService
 	) {
-	}
-
-
-	ngOnInit(): void {
-		this.alert.clear();
+		super(alert, __currentUser);
 	}
 
 
