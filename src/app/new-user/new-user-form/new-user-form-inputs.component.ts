@@ -6,9 +6,7 @@ import { NewUserFormInputsService } from '../../services/validating-inputs/new-u
 
 @Component({
 	selector: 'new-user-form-inputs',
-	template: `
-		<validating-inputs [inputs]="inputs"></validating-inputs>
-	`
+	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
 export class NewUserFormInputsComponent extends ValidatingFormInputsComponent implements OnInit {
 

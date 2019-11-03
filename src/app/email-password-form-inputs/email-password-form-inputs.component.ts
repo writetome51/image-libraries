@@ -6,9 +6,7 @@ import { ValidatingFormInputsComponent }
 
 @Component({
 	selector: 'email-password-form-inputs',
-	template: `
-		<validating-inputs [inputs]="inputs"></validating-inputs>
-	`
+	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
 export class EmailPasswordFormInputsComponent extends ValidatingFormInputsComponent {
 
