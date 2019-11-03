@@ -15,19 +15,16 @@ export class SecurityQuestionInputService extends ValidatingInputService {
 	) {
 		super();
 
-		this.data = {
-			type: 'text',
-			id: 'security-question-input',
-			objectToBind: this.__currentUser,
-			propertyToBind: 'question',
-			placeholder: 'Question',
-			hideLabel: true,
-			required: true,
-			isValid: () => this.__currentUser.question.length >= this.__rules.questionMinLength,
-			errorMessage:
-				`The security question must be at least ${this.__rules.questionMinLength} characters`,
-			error: '',
-			prompt: 'Create a security question to ask yourself if you can\'t remember your password:'
-		};
+		this.data.type = 'text';
+		this.data.id = 'security-question-input';
+		this.data.objectToBind = this.__currentUser;
+		this.data.propertyToBind = 'question';
+		this.data.placeholder = 'Question';
+		this.data.isValid = () => this.__currentUser.question.length >= this.__rules.questionMinLength;
+		this.data.errorMessage =
+			`The security question must be at least ${this.__rules.questionMinLength} characters`;
+		this.data.prompt =
+			'Create a security question to ask yourself if you can\'t remember your password:';
 	}
+
 }

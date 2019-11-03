@@ -15,18 +15,14 @@ export class SecurityAnswerInputService extends ValidatingInputService {
 	) {
 		super();
 
-		this.data = {
-			type: 'password',
-			id: 'security-answer-input',
-			objectToBind: this.__currentUser,
-			propertyToBind: 'answer',
-			placeholder: 'Answer',
-			hideLabel: true,
-			required: true,
-			isValid: () => this.__currentUser.answer.length >= this.__rules.answerMinLength,
-			errorMessage:
-				`The security answer must be at least ${this.__rules.answerMinLength} characters`,
-			error: ''
-		};
+		this.data.type = 'password';
+		this.data.id = 'security-answer-input';
+		this.data.objectToBind = this.__currentUser;
+		this.data.propertyToBind = 'answer';
+		this.data.placeholder = 'Answer';
+		this.data.isValid = () => this.__currentUser.answer.length >= this.__rules.answerMinLength;
+		this.data.errorMessage =
+			`The security answer must be at least ${this.__rules.answerMinLength} characters`;
 	}
+
 }

@@ -16,19 +16,15 @@ export class EmailInputService extends ValidatingInputService {
 	) {
 		super();
 
-		this.data = {
-			type: 'text',
-			id: 'email-input',
-			objectToBind: this.__currentUser,
-			propertyToBind: 'email',
-			placeholder: 'Email',
-			hideLabel: true,
-			required: true,
-			isValid: () => this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.emailMinLength,
-			errorMessage:
-				`The email must be at least ${this.__rules.emailMinLength} characters`,
-			error: ''
-		};
+		this.data.type = 'text';
+		this.data.id = 'email-input';
+		this.data.objectToBind = this.__currentUser;
+		this.data.propertyToBind = 'email';
+		this.data.placeholder = 'Email';
+		this.data.isValid = () => (
+			this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.emailMinLength
+		);
+		this.data.errorMessage = `The email must be at least ${this.__rules.emailMinLength} characters`;
 	}
 
 
