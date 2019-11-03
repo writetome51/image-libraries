@@ -7,6 +7,9 @@ import { ValidatingInput } from './validating-input';
 	selector: 'validating-inputs',
 	templateUrl: './validating-inputs.component.html'
 })
+
+// To be used in combination with ValidatingFormInputsComponent
+
 export class ValidatingInputsComponent implements OnInit {
 
 

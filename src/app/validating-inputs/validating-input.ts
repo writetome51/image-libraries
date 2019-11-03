@@ -1,3 +1,5 @@
+// Represents a <form> input that validates itself.
+
 export interface ValidatingInput {
 
 	type: string; // 'text', 'password', etc.  Any <input> type
