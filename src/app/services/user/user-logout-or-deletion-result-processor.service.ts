@@ -16,10 +16,10 @@ export class UserLogoutOrDeletionResultProcessorService implements ResultProcess
 	}
 
 
-	process(result) {
+	async process(result) {
 		if (result.success) {
 			this.__sessionIDLocalStorage.remove();
-			this.__router.navigate(['/']); // logged-out homepage.
+			await this.__router.navigate(['/']); // logged-out homepage.
 		}
 	}
 

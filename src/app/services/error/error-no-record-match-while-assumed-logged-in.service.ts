@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AlertService } from '../alert.service';
 import { UserStorageService } from '../user/user-storage.service';
-import { incorrectPassword, notLoggedIn, userDoesntExist }
-	from '../../../constants/form-submission-errors';
+import { incorrectPassword, userDoesntExist } from '../../../constants/form-submission-errors';
+import { ErrorNotLoggedInService } from './error-not-logged-in.service';
 
 
 @Injectable({
@@ -10,12 +10,14 @@ import { incorrectPassword, notLoggedIn, userDoesntExist }
 })
 export class ErrorNoRecordMatchWhileAssumedLoggedInService {
 
+
 	handler: () => Promise<void>;
 
 
 	constructor(
 		private __alert: AlertService,
-		private __userStorage: UserStorageService
+		private __userStorage: UserStorageService,
+		private __errorNotLoggedIn: ErrorNotLoggedInService
 	) {
 		this.handler = async () => {
 
@@ -26,7 +28,7 @@ export class ErrorNoRecordMatchWhileAssumedLoggedInService {
 			if ((await this.__userStorage.exists()).success) { // user exists in db.
 
 				if ((await this.__userStorage.get()).error) { // user isn't logged in.
-					this.__alert.error = notLoggedIn;
+					await this.__errorNotLoggedIn.handler();
 				}
 				else { // Else user is logged in, meaning the submitted password must be wrong.
 					this.__alert.error = incorrectPassword;
@@ -35,4 +37,6 @@ export class ErrorNoRecordMatchWhileAssumedLoggedInService {
 			else this.__alert.error = userDoesntExist;
 		};
 	}
+
+
 }

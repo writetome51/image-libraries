@@ -15,7 +15,7 @@ export abstract class ResultInterpreterService implements ResultInterpreter {
 	async interpret(result): Promise<void> {
 		await this.__dataOperationResult.ifSuccessful_processResult(
 			result,
-			this._process
+			(result) => this._process(result)
 		);
 	}
 

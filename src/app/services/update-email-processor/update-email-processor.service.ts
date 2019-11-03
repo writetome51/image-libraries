@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
-import { DataOperationProcessorService } from '../data-operation-processor.service';
+import { FormDataProcessorService } from '../form-data-processor.service';
 import { UpdateEmailFormInputsService } from '../validating-inputs/update-email-form-inputs.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UpdateEmailProcessorService extends DataOperationProcessorService {
+export class UpdateEmailProcessorService extends FormDataProcessorService {
 
 	constructor(
 		__updateEmailFormInputs: UpdateEmailFormInputsService,

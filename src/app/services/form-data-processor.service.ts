@@ -3,7 +3,7 @@ import { ValidatingInputsService } from '../validating-inputs/validating-inputs.
 import { ResultInterpreter } from '../../interfaces/result-interpreter';
 
 
-export abstract class DataOperationProcessorService implements Processor {
+export abstract class FormDataProcessorService implements Processor {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService,
