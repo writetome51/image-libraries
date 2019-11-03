@@ -15,17 +15,19 @@ import { LoginFormComponent } from './introduction/login-form/login-form.compone
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { InnerAppContainerComponent } from './inner-app-container/inner-app-container.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		InnerAppContainerComponent,
 		IntroductionComponent,
 		LibrariesComponent,
 		LoginFormComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
-		ChangePasswordComponent
+		ChangePasswordComponent,
 	],
 	imports: [
 		BrowserModule,

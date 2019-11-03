@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { AlertService } from '../services/alert.service';
 import { DataOperationStatusService } from '../services/data-operation-status.service';
-import { ClearFormAndAlertOnInitComponent }
-	from '../clear-on-init/clear-form-and-alert-on-init.component';
-import { CurrentUserService } from '../services/user/current-user.service';
 
 
 @Component({
 	selector: 'app-introduction',
 	templateUrl: './introduction.component.html'
 })
-export class IntroductionComponent extends ClearFormAndAlertOnInitComponent {
+export class IntroductionComponent {
 
 
 	introduction = `This application lets you create libraries of images.  Inside each library you can 
@@ -19,10 +16,8 @@ export class IntroductionComponent extends ClearFormAndAlertOnInitComponent {
 
 	constructor(
 		public dataOperationStatus: DataOperationStatusService,
-		public alert: AlertService,
-		__currentUser: CurrentUserService
+		public alert: AlertService
 	) {
-		super(alert, __currentUser);
 	}
 
 

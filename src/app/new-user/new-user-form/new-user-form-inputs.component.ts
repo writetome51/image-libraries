@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CurrentUserService } from '../../services/user/current-user.service';
+import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '../../validating-inputs/validating-form-inputs.component';
 import { NewUserFormInputsService } from '../../services/validating-inputs/new-user-form-inputs.service';
 
@@ -8,20 +7,10 @@ import { NewUserFormInputsService } from '../../services/validating-inputs/new-u
 	selector: 'new-user-form-inputs',
 	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
-export class NewUserFormInputsComponent extends ValidatingFormInputsComponent implements OnInit {
+export class NewUserFormInputsComponent extends ValidatingFormInputsComponent {
 
-
-	constructor(
-		__newUserFormInputs: NewUserFormInputsService,
-		private __currentUser: CurrentUserService,
-	) {
+	constructor(__newUserFormInputs: NewUserFormInputsService) {
 		super(__newUserFormInputs);
 	}
-
-
-	ngOnInit(): void {
-		this.__currentUser.clearFormProperties();
-	}
-
 
 }

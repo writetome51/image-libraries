@@ -1,15 +1,14 @@
 import { Component, HostListener } from '@angular/core';
-import { LogoutProcessorService } from './services/authentication/logout-processor/logout-processor.service';
-import { SessionIDLocalStorageService } from './services/authentication/session-id-local-storage.service';
+import { AlertService } from './services/alert.service';
+import { CurrentUserService } from './services/user/current-user.service';
+import { ClearAlertAndFormOnInitComponent } from './clear-alert-and-form-on-init.component';
 
 
 @Component({
 	selector: 'app-root',
-	templateUrl: './app.component.html'
+	template: `<inner-app-container></inner-app-container>`
 })
-export class AppComponent {
-
-	title = 'Image Libraries';
+export class AppComponent extends ClearAlertAndFormOnInitComponent {
 
 
 	// Adds keyup listener to document.
@@ -19,21 +18,11 @@ export class AppComponent {
 	}
 
 
-	get sessionIDExists() {
-		return (this.__sessionIDLocalStorage.get().length > 0);
-	}
-
-
 	constructor(
-		private __logoutProcessor: LogoutProcessorService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		__alert: AlertService,
+		__currentUser: CurrentUserService
 	) {
+		super(__alert, __currentUser);
 	}
-
-
-	async logout() {
-		await this.__logoutProcessor.process();
-	}
-
 
 }
