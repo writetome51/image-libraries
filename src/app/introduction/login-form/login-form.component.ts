@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { LoginProcessorService }
-	from '../../services/authentication/login-processor/login-processor.service';
+	from '../../services/data-operation-processor/login-processor.service';
 
 
 @Component({

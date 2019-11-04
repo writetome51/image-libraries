@@ -1,5 +1,5 @@
-import { Processor } from '../../interfaces/processor';
-import { ResultInterpreter } from '../../interfaces/result-interpreter';
+import { Processor } from '../../../interfaces/processor';
+import { ResultInterpreter } from '../../../interfaces/result-interpreter';
 
 
 export abstract class DataOperationProcessorService implements Processor {

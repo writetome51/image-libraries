@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { UserStorageService } from './user/user-storage.service';
+import { UserStorageService } from '../user/user-storage.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
-import { UpdateEmailFormInputsService } from './validating-inputs/update-email-form-inputs.service';
+import { UpdateEmailFormInputsService } from '../validating-inputs/update-email-form-inputs.service';
 import { UpdateEmailOrPasswordResultInterpreterService }
-	from './update-email-or-password-result-interpreter.service';
+	from '../update-email-or-password-result-interpreter.service';
 
 
 @Injectable({

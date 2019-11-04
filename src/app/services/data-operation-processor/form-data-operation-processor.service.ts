@@ -1,5 +1,5 @@
-import { ValidatingInputsService } from '../validating-inputs/validating-inputs.service';
-import { ResultInterpreter } from '../../interfaces/result-interpreter';
+import { ValidatingInputsService } from '../../validating-inputs/validating-inputs.service';
+import { ResultInterpreter } from '../../../interfaces/result-interpreter';
 import { DataOperationProcessorService } from './data-operation-processor.service';
 
 

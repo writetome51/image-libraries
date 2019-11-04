@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService }
-	from '../../services/update-email-processor.service';
+	from '../../services/data-operation-processor/update-email-processor.service';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
 
 

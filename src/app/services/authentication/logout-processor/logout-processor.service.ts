@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
 import { DeAuthenticatorService } from './de-authenticator.service';
-import { DataOperationProcessorService } from '../../data-operation-processor.service';
+import { DataOperationProcessorService } from '../../data-operation-processor/data-operation-processor.service';
 
 
 @Injectable({
