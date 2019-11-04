@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
 import { DeAuthenticatorService } from './de-authenticator.service';
-import { Processor } from '../../../../interfaces/processor';
+import { DataOperationProcessorService } from '../../data-operation-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class LogoutProcessorService implements Processor {
-
+export class LogoutProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		private __logoutResultInterpreter: LogoutResultInterpreterService,
+		__logoutResultInterpreter: LogoutResultInterpreterService,
 		private __deAuthenticator: DeAuthenticatorService
 	) {
+		super(__logoutResultInterpreter);
+
+		this._getResult = async () => await this.__deAuthenticator.deAuthenticate();
 	}
-
-
-	async process() {
-		let result = await this.__deAuthenticator.deAuthenticate();
-		await this.__logoutResultInterpreter.interpret(result);
-	}
-
 
 }

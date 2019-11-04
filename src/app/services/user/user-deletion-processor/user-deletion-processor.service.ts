@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { UserDeletorService } from './user-deletor.service';
 import { UserDeletionResultInterpreterService } from './user-deletion-result-interpreter.service';
-import { FormDataProcessorService } from '../../form-data-processor.service';
+import { FormDataOperationProcessorService } from '../../form-data-operation-processor.service';
 import { EmailPasswordInputsService } from '../../validating-inputs/email-password-inputs.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserDeletionProcessorService extends FormDataProcessorService {
+export class UserDeletionProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
 		__emailPasswordInputs: EmailPasswordInputsService,

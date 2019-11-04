@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { UpdatePasswordResultInterpreterService } from './update-password-result-interpreter.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { ValidatingInputsService } from '../../validating-inputs/validating-inputs.service';
-import { FormDataProcessorService } from '../form-data-processor.service';
+import { FormDataOperationProcessorService } from '../form-data-operation-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UpdatePasswordProcessorService extends FormDataProcessorService {
+export class UpdatePasswordProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
 		__updatePasswordFormInputs: ValidatingInputsService,

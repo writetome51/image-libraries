@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { NewUserResultInterpreterService }
 	from './new-user-result-interpreter.service';
 import { UserCreatorService } from './user-creator.service';
-import { FormDataProcessorService } from '../../form-data-processor.service';
+import { FormDataOperationProcessorService } from '../../form-data-operation-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class NewUserProcessorService extends FormDataProcessorService {
+export class NewUserProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
 		__newUserFormInputs: NewUserFormInputsService,
