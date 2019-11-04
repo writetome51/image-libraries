@@ -16,8 +16,11 @@ export class UpdateEmailProcessorService extends FormDataOperationProcessorServi
 		private __userStorage: UserStorageService,
 	) {
 		super(__updateEmailFormInputs, __updateEmailResultInterpreter);
+	}
 
-		this._getResult = async () => await this.__userStorage.updateEmail();
+
+	protected async _getResult(): Promise<any> {
+		return await this.__userStorage.updateEmail();
 	}
 
 }

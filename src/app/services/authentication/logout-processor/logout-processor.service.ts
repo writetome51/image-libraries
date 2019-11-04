@@ -14,8 +14,11 @@ export class LogoutProcessorService extends DataOperationProcessorService {
 		private __deAuthenticator: DeAuthenticatorService
 	) {
 		super(__logoutResultInterpreter);
+	}
 
-		this._getResult = async () => await this.__deAuthenticator.deAuthenticate();
+
+	protected async _getResult(): Promise<any> {
+		return await this.__deAuthenticator.deAuthenticate();
 	}
 
 }
