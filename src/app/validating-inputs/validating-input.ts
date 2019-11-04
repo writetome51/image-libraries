@@ -12,15 +12,13 @@ export interface ValidatingInput {
 
 	error: string; // Empty string.  If input is invalid, this is assigned the errorMessage
 
-	objectToBind: any; // <input> binds to objectToBind[propertyToBind] using [(ngModel)]
+	objectToBind: any; // <input> intended to bind with objectToBind[propertyToBind]
 
 	propertyToBind: string; // property in objectToBind
 
 	hideLabel: boolean; // if true, the inputs <label> is hidden
 
 	required: boolean;
-
-	minLength?: number; // minimum num characters for text or password inputs
 
 	placeholder?: string; // only used on text or password inputs
 
