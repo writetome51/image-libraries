@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { UserStorageService } from '../user/user-storage.service';
-import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
-import { FormDataOperationProcessorService } from '../form-data-operation-processor.service';
-import { UpdateEmailFormInputsService } from '../validating-inputs/update-email-form-inputs.service';
+import { UserStorageService } from './user/user-storage.service';
+import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
+import { UpdateEmailFormInputsService } from './validating-inputs/update-email-form-inputs.service';
+import { UpdateEmailOrPasswordResultInterpreterService }
+	from './update-email-or-password-result-interpreter.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class UpdateEmailProcessorService extends FormDataOperationProcessorServi
 
 	constructor(
 		__updateEmailFormInputs: UpdateEmailFormInputsService,
-		__updateEmailResultInterpreter: UpdateEmailResultInterpreterService,
+		__updateEmailResultInterpreter: UpdateEmailOrPasswordResultInterpreterService,
 		private __userStorage: UserStorageService,
 	) {
 		super(__updateEmailFormInputs, __updateEmailResultInterpreter);
