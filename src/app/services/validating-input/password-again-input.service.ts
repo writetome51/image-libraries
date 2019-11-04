@@ -33,23 +33,18 @@ export class PasswordAgainInputService extends ValidatingInputService {
 	constructor(private __currentUser: CurrentUserService) {
 		super();
 
-		this.data = {
-			type: 'password',
-			id: this.id,
-			objectToBind: this.__currentUser,
-			propertyToBind: 'passwordAgain',
-			placeholder: this.placeholder,
-			hideLabel: true,
-			required: true,
-			isValid: () => {
-				if (this.updatingPassword) {
-					return (this.__currentUser.newPassword === this.__currentUser.passwordAgain);
-				}
-				else return (this.__currentUser.password === this.__currentUser.passwordAgain);
-			},
-			errorMessage: this.errorMessage,
-			error: ''
+		this.data.type = 'password';
+		this.data.id = this.id;
+		this.data.objectToBind = this.__currentUser;
+		this.data.propertyToBind = 'passwordAgain';
+		this.data.placeholder = this.placeholder;
+		this.data.isValid = () => {
+			if (this.updatingPassword) {
+				return (this.__currentUser.newPassword === this.__currentUser.passwordAgain);
+			}
+			else return (this.__currentUser.password === this.__currentUser.passwordAgain);
 		};
+		this.data.errorMessage = this.errorMessage;
 	}
 
 

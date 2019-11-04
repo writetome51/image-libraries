@@ -9,7 +9,6 @@ import { EmailInputService } from './email-input.service';
 })
 export class CurrentEmailInputService extends EmailInputService {
 
-
 	constructor(
 		__currentUser: CurrentUserService,
 		__rules: UserValidationRulesService
@@ -20,6 +19,5 @@ export class CurrentEmailInputService extends EmailInputService {
 		this.data.placeholder = 'Current Email';
 		this.data.errorMessage = 'The current ' + this.data.errorMessage.slice(4);
 	}
-
 
 }
