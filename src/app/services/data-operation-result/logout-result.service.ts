@@ -1,8 +1,8 @@
-import { AlertService } from '../../alert.service';
-import { DataOperationResultService } from '../../data-operation-result/data-operation-result.service';
+import { AlertService } from '../alert.service';
+import { DataOperationResultService } from './data-operation-result.service';
 import { Injectable } from '@angular/core';
-import { noDocumentMatchedCriteria, notLoggedIn } from '../../../../constants/api-errors';
-import { ErrorNotLoggedInService } from '../../error/error-not-logged-in.service';
+import { noDocumentMatchedCriteria, notLoggedIn } from '../../../constants/api-errors';
+import { ErrorNotLoggedInService } from '../error/error-not-logged-in.service';
 
 
 @Injectable({

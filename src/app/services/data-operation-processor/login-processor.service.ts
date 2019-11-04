@@ -1,8 +1,8 @@
-import { AuthenticatorService } from '../authentication/login-processor/authenticator.service';
+import { AuthenticatorService } from '../authentication/authenticator.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 import { EmailPasswordInputsService } from '../validating-inputs/email-password-inputs.service';
 import { Injectable } from '@angular/core';
-import { LoginResultInterpreterService } from '../authentication/login-processor/login-result-interpreter.service';
+import { LoginResultInterpreterService } from '../result-interpreter/login-result-interpreter.service';
 
 
 @Injectable({

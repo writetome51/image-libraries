@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UserResultProcessorService } from './user/user-result-processor.service';
+import { UserResultProcessorService } from '../user/user-result-processor.service';
 import { OperationRequiringEmailPasswordResultService }
-	from './data-operation-result/operation-requiring-email-password-result.service';
+	from '../data-operation-result/operation-requiring-email-password-result.service';
 import { ResultInterpreterService } from './result-interpreter.service';
 
 

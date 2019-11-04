@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService }
-	from '../services/authentication/logout-processor/logout-processor.service';
+	from '../services/data-operation-processor/logout-processor.service';
 import { LocalSessionIDService }
 	from '../services/authentication/local-session-id.service';
 

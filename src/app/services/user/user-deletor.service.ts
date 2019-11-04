@@ -1,8 +1,8 @@
-import { CurrentUserService } from '../current-user.service';
+import { CurrentUserService } from './current-user.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../../authentication/local-session-id.service';
-import { UserRestAPIService } from '../user-rest-api.service';
-import { ReturnObjectFromSubscriptionService } from '../../return-object-from-subscription.service';
+import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { UserRestAPIService } from './user-rest-api.service';
+import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
 
 
 @Injectable({

@@ -1,8 +1,8 @@
 import { NewUserFormInputsService } from '../validating-inputs/new-user-form-inputs.service';
 import { Injectable } from '@angular/core';
 import { NewUserResultInterpreterService }
-	from '../user/new-user-processor/new-user-result-interpreter.service';
-import { UserCreatorService } from '../user/new-user-processor/user-creator.service';
+	from '../result-interpreter/new-user-result-interpreter.service';
+import { UserCreatorService } from '../user/user-creator.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 
 

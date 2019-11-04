@@ -1,6 +1,6 @@
-import { ResultInterpreter } from '../../interfaces/result-interpreter';
-import { ResultProcessor } from '../../interfaces/result-processor';
-import { DataOperationResultService } from './data-operation-result/data-operation-result.service';
+import { ResultInterpreter } from '../../../interfaces/result-interpreter';
+import { ResultProcessor } from '../../../interfaces/result-processor';
+import { DataOperationResultService } from '../data-operation-result/data-operation-result.service';
 
 
 export abstract class ResultInterpreterService implements ResultInterpreter {

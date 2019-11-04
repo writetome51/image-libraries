@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UserDeletorService } from '../user/user-deletion-processor/user-deletor.service';
-import { UserDeletionResultInterpreterService } from '../user/user-deletion-processor/user-deletion-result-interpreter.service';
+import { UserDeletorService } from '../user/user-deletor.service';
+import { UserDeletionResultInterpreterService }
+	from '../result-interpreter/user-deletion-result-interpreter.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 import { EmailPasswordInputsService } from '../validating-inputs/email-password-inputs.service';
 
@@ -16,8 +17,11 @@ export class UserDeletionProcessorService extends FormDataOperationProcessorServ
 		private __userDeletor: UserDeletorService
 	) {
 		super(__emailPasswordInputs, __userDeletionResultInterpreter);
+	}
 
-		this._getResult = async () => await this.__userDeletor.delete();
+
+	protected async _getResult(): Promise<any> {
+		return await this.__userDeletor.delete();
 	}
 
 }

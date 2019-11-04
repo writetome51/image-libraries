@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
-	from '../../user/user-logout-or-deletion-result-processor.service';
-import { ResultInterpreterService } from '../../result-interpreter.service';
-import { LogoutResultService } from './logout-result.service';
+	from '../user/user-logout-or-deletion-result-processor.service';
+import { ResultInterpreterService } from './result-interpreter.service';
+import { LogoutResultService } from '../data-operation-result/logout-result.service';
 
 
 @Injectable({

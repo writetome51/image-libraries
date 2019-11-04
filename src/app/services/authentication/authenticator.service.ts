@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AuthenticationRestAPIService } from '../authentication-rest-api.service';
-import { CurrentUserService } from '../../user/current-user.service';
-import { ReturnObjectFromSubscriptionService } from '../../return-object-from-subscription.service';
+import { AuthenticationRestAPIService } from './authentication-rest-api.service';
+import { CurrentUserService } from '../user/current-user.service';
+import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
 
 
 @Injectable({

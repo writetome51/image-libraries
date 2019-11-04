@@ -1,10 +1,10 @@
-import { AlertService } from '../../alert.service';
+import { AlertService } from '../alert.service';
 import { Injectable } from '@angular/core';
 import { OperationRequiringEmailPasswordResultService }
-	from '../../data-operation-result/operation-requiring-email-password-result.service';
+	from '../data-operation-result/operation-requiring-email-password-result.service';
 import { UserLogoutOrDeletionResultProcessorService }
-	from '../user-logout-or-deletion-result-processor.service';
-import { ResultInterpreterService } from '../../result-interpreter.service';
+	from '../user/user-logout-or-deletion-result-processor.service';
+import { ResultInterpreterService } from './result-interpreter.service';
 
 
 @Injectable({
