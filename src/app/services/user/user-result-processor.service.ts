@@ -3,7 +3,7 @@ import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ResultProcessor } from '../../../interfaces/result-processor';
-import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
+import { LocalSessionIDService } from '../authentication/local-session-id.service';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ import { SessionIDLocalStorageService } from '../authentication/session-id-local
 export class UserResultProcessorService implements ResultProcessor {
 
 	constructor(
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __sessionIDLocalStorage: LocalSessionIDService,
 		private __currentUser: CurrentUserService,
 		private __router: Router
 	) {

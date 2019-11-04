@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService }
 	from '../services/authentication/logout-processor/logout-processor.service';
-import { SessionIDLocalStorageService }
-	from '../services/authentication/session-id-local-storage.service';
+import { LocalSessionIDService }
+	from '../services/authentication/local-session-id.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class InnerAppContainerComponent {
 
 	constructor(
 		private __logoutProcessor: LogoutProcessorService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		private __sessionIDLocalStorage: LocalSessionIDService
 	) {
 	}
 

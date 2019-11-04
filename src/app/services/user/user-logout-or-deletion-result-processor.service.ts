@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { ResultProcessor } from '../../../interfaces/result-processor';
+import { RemoveSessionIDAndRedirectHomeService } from '../remove-session-id-and-redirect-home.service';
 
 
 @Injectable({
@@ -10,16 +9,14 @@ import { ResultProcessor } from '../../../interfaces/result-processor';
 export class UserLogoutOrDeletionResultProcessorService implements ResultProcessor {
 
 	constructor(
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
-		private __router: Router
+		private __remove_sessionID_and_redirectHome: RemoveSessionIDAndRedirectHomeService
 	) {
 	}
 
 
 	async process(result) {
 		if (result.success) {
-			this.__sessionIDLocalStorage.remove();
-			await this.__router.navigate(['/']); // logged-out homepage.
+			await this.__remove_sessionID_and_redirectHome.go();
 		}
 	}
 

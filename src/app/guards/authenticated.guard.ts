@@ -1,8 +1,8 @@
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
 	from '@angular/router';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService }
-	from '../services/authentication/session-id-local-storage.service';
+import { LocalSessionIDService }
+	from '../services/authentication/local-session-id.service';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class AuthenticatedGuard implements CanActivate {
 
 
 	constructor(
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __sessionIDLocalStorage: LocalSessionIDService,
 		private __router: Router
 	) {
 	}

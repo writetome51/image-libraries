@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
-import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
+import { LocalSessionIDService } from '../authentication/local-session-id.service';
 import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
 
 
@@ -12,7 +12,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService
+		private __sessionIDLocalStorage: LocalSessionIDService
 	) {
 		super();
 	}

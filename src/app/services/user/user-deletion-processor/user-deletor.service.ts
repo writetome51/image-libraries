@@ -1,6 +1,6 @@
 import { CurrentUserService } from '../current-user.service';
 import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from '../../authentication/session-id-local-storage.service';
+import { LocalSessionIDService } from '../../authentication/local-session-id.service';
 import { UserRestAPIService } from '../user-rest-api.service';
 import { ReturnObjectFromSubscriptionService } from '../../return-object-from-subscription.service';
 
@@ -13,7 +13,7 @@ export class UserDeletorService extends ReturnObjectFromSubscriptionService {
 	constructor(
 		private __currentUser: CurrentUserService,
 		private __userRestApi: UserRestAPIService,
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __sessionIDLocalStorage: LocalSessionIDService,
 	) {
 		super();
 	}

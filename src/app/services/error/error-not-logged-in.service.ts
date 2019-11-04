@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { SessionIDLocalStorageService } from '../authentication/session-id-local-storage.service';
 import { AlertService } from '../alert.service';
+import { Injectable } from '@angular/core';
 import { notLoggedIn } from '../../../constants/form-submission-errors';
-import { Router } from '@angular/router';
+import { RemoveSessionIDAndRedirectHomeService } from '../remove-session-id-and-redirect-home.service';
+import { LocalSessionIDService } from '../authentication/local-session-id.service';
 
 
 @Injectable({
@@ -15,17 +15,16 @@ export class ErrorNotLoggedInService {
 
 
 	constructor(
-		private __sessionIDLocalStorage: SessionIDLocalStorageService,
+		private __sessionIDLocalStorage: LocalSessionIDService,
 		private __alert: AlertService,
-		private __router: Router
+		private __remove_sessionID_and_redirectHome: RemoveSessionIDAndRedirectHomeService
 	) {
 		this.handler = async () => {
 			// Use this handler when we've received an api error saying we're not
 			// logged in, but the browser is still storing the sessionID.
 
 			if (this.__sessionIDLocalStorage.get()) {
-				this.__sessionIDLocalStorage.remove();
-				await this.__router.navigate(['/']); // logged-out homepage.
+				await this.__remove_sessionID_and_redirectHome.go();
 				this.__alert.error = notLoggedIn;
 			}
 		};

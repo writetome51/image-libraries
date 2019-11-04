@@ -24,7 +24,6 @@ export class DataOperationResultService {
 
 
 	async checkForError_returnIfOK(result): Promise<void | any> {
-		if (typeof result === 'string') result = getObjectFromJSON(result);
 
 		if (result.error) {
 			if (result.error.message) await this._errorHandler(result.error.message);

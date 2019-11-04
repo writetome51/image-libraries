@@ -9,10 +9,10 @@ import { SimpleCrypto } from 'simple-crypto-js';
 @Injectable({
 	providedIn: 'root'
 })
-export class SessionIDLocalStorageService {
+export class LocalSessionIDService {
 
-	// The only data kept in local storage will be the user's encrypted session ID.
-	// Since it is unique, and also stored in the database, the app uses this to check if he is
+	// The user's encrypted session ID is kept in browser's local storage.
+	// Since the ID is unique, and also stored in the database, the app uses this to check if he is
 	// still logged in.
 
 	private __localObject = new ObjectInLocalStorage();
