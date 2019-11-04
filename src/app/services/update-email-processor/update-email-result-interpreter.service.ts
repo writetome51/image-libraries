@@ -11,10 +11,10 @@ import { ResultInterpreterService } from '../result-interpreter.service';
 export class UpdateEmailResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
-		private __emailUpdateResult: OperationRequiringEmailPasswordResultService,
-		private __userResultProcessor: UserResultProcessorService
+		__updateEmailResult: OperationRequiringEmailPasswordResultService,
+		__userResultProcessor: UserResultProcessorService
 	) {
-		super(__emailUpdateResult, __userResultProcessor);
+		super(__updateEmailResult, __userResultProcessor);
 	}
 
 }

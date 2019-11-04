@@ -16,14 +16,14 @@ export class UpdateUserPasswordFormComponent {
 
 	constructor(
 		private __dataOperationBegun: DataOperationStatusService,
-		private __passwordUpdateProcessor: UpdatePasswordProcessorService
+		private __updatePasswordProcessor: UpdatePasswordProcessorService
 	) {
 	}
 
 
 	async save() {
 		this.__dataOperationBegun.waitingForResult = true;
-		await this.__passwordUpdateProcessor.process();
+		await this.__updatePasswordProcessor.process();
 		this.__dataOperationBegun.waitingForResult = false;
 	}
 

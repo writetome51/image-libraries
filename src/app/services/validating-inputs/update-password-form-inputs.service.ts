@@ -20,6 +20,8 @@ export class UpdatePasswordFormInputsService extends AppValidatingInputsService 
 		newPasswordInput: NewPasswordInputService,
 		passwordAgainInput: PasswordAgainInputService
 	) {
+		passwordAgainInput.updatingPassword = true;
+
 		super(
 			__alert,
 			emailInput,
