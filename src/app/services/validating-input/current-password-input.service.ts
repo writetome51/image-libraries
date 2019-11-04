@@ -9,7 +9,6 @@ import { PasswordInputService } from './password-input.service';
 })
 export class CurrentPasswordInputService extends PasswordInputService {
 
-
 	constructor(
 		__currentUser: CurrentUserService,
 		__rules: UserValidationRulesService
@@ -20,6 +19,5 @@ export class CurrentPasswordInputService extends PasswordInputService {
 		this.data.placeholder = 'Current Password';
 		this.data.errorMessage = 'The current ' + this.data.errorMessage.slice(4);
 	}
-
 
 }

@@ -16,21 +16,16 @@ export class PasswordInputService extends ValidatingInputService {
 	) {
 		super();
 
-		this.data = {
-			type: 'password',
-			id: 'password-input',
-			objectToBind: this.__currentUser,
-			propertyToBind: 'password',
-			placeholder: 'Password',
-			hideLabel: true,
-			required: true,
-			isValid: () => (
-				this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.passwordMinLength
-			),
-			errorMessage:
-				`The password must be at least ${this.__rules.passwordMinLength} characters`,
-			error: '',
-		};
+		this.data.type = 'password';
+		this.data.id = 'password-input';
+		this.data.objectToBind = this.__currentUser;
+		this.data.propertyToBind = 'password';
+		this.data.placeholder = 'Password';
+		this.data.isValid = () => (
+			this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.passwordMinLength
+		);
+		this.data.errorMessage =
+			`The password must be at least ${this.__rules.passwordMinLength} characters`;
 	}
 
 

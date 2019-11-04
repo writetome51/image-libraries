@@ -12,13 +12,16 @@ import { FormDataOperationProcessorService } from '../../form-data-operation-pro
 export class NewUserProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
+		private __userCreator: UserCreatorService,
 		__newUserFormInputs: NewUserFormInputsService,
-		__newUserResultInterpreter: NewUserResultInterpreterService,
-		private __userCreator: UserCreatorService
+		__newUserResultInterpreter: NewUserResultInterpreterService
 	) {
 		super(__newUserFormInputs, __newUserResultInterpreter);
+	}
 
-		this._getResult = async () => await this.__userCreator.create();
+
+	protected async _getResult(): Promise<any> {
+		return await this.__userCreator.create();
 	}
 
 }

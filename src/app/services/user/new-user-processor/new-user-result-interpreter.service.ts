@@ -12,9 +12,9 @@ import { ResultInterpreterService } from '../../result-interpreter.service';
 export class NewUserResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
+		private __alert: AlertService,
 		__newUserResult: NewUserResultService,
 		__userResultProcessor: UserResultProcessorService,
-		private __alert: AlertService,
 	) {
 		super(__newUserResult, __userResultProcessor);
 

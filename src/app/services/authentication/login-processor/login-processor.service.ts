@@ -11,13 +11,16 @@ import { LoginResultInterpreterService } from './login-result-interpreter.servic
 export class LoginProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
+		private __authenticator: AuthenticatorService,
 		__emailPasswordInputs: EmailPasswordInputsService,
-		__loginResultInterpreter: LoginResultInterpreterService,
-		private __authenticator: AuthenticatorService
+		__loginResultInterpreter: LoginResultInterpreterService
 	) {
 		super(__emailPasswordInputs, __loginResultInterpreter);
+	}
 
-		this._getResult = async () => await this.__authenticator.authenticate();
+
+	protected async _getResult(): Promise<any> {
+		return await this.__authenticator.authenticate();
 	}
 
 }

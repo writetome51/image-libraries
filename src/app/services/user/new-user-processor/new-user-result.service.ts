@@ -20,5 +20,4 @@ export class NewUserResultService extends DataOperationResultService {
 		else super._errorHandler(errMessage);
 	}
 
-
 }
