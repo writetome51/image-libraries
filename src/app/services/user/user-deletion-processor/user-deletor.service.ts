@@ -13,7 +13,7 @@ export class UserDeletorService extends ReturnObjectFromSubscriptionService {
 	constructor(
 		private __currentUser: CurrentUserService,
 		private __userRestApi: UserRestAPIService,
-		private __sessionIDLocalStorage: LocalSessionIDService,
+		private __localSessionID: LocalSessionIDService,
 	) {
 		super();
 	}
@@ -24,7 +24,7 @@ export class UserDeletorService extends ReturnObjectFromSubscriptionService {
 			this.__userRestApi.delete({
 				email: this.__currentUser.email,
 				password: this.__currentUser.password,
-				sessionID: this.__sessionIDLocalStorage.get()
+				sessionID: this.__localSessionID.get()
 			})
 		);
 	}

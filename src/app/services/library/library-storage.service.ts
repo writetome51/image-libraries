@@ -12,7 +12,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
-		private __sessionIDLocalStorage: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService
 	) {
 		super();
 	}
@@ -21,7 +21,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 	async create(libraryName): Promise<any> {
 		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.create(
-				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
+				{sessionID: this.__localSessionID.get(), name: libraryName}
 			)
 		);
 	}
@@ -30,7 +30,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 	async get(libraryName): Promise<any> {
 		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.get(
-				{sessionID: this.__sessionIDLocalStorage.get(), name: libraryName}
+				{sessionID: this.__localSessionID.get(), name: libraryName}
 			)
 		);
 	}
@@ -38,7 +38,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 
 	async getLibraries(): Promise<any | void> {
 		return await this._getObjectFromSubscriptionTo(
-			this.__libraryRestApi.getLibraries({sessionID: this.__sessionIDLocalStorage.get()})
+			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
 	}
 
@@ -48,7 +48,7 @@ export class LibraryStorageService extends ReturnObjectFromSubscriptionService {
 	async update(libraryName, changes): Promise<any> {
 		return await this._getObjectFromSubscriptionTo(
 			this.__libraryRestApi.update({
-				sessionID: this.__sessionIDLocalStorage.get(),
+				sessionID: this.__localSessionID.get(),
 				name: libraryName,
 				changes
 			})

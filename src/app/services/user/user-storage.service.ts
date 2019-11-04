@@ -14,7 +14,7 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 	constructor(
 		private __userRestApi: UserRestAPIService,
 		private __currentUser: CurrentUserService,
-		private __sessionIDLocalStorage: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService
 	) {
 		super();
 	}
@@ -29,7 +29,7 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 
 	async get(): Promise<any> {
 		return await this._getObjectFromSubscriptionTo(
-			this.__userRestApi.get({sessionID: this.__sessionIDLocalStorage.get()})
+			this.__userRestApi.get({sessionID: this.__localSessionID.get()})
 		);
 	}
 
@@ -41,7 +41,7 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 					email: this.__currentUser.email,
 					password: this.__currentUser.password,
 					newPassword: this.__currentUser.newPassword,
-					sessionID: this.__sessionIDLocalStorage.get()
+					sessionID: this.__localSessionID.get()
 				}
 			)
 		);
@@ -55,7 +55,7 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 					email: this.__currentUser.email,
 					password: this.__currentUser.password,
 					newEmail: this.__currentUser.newEmail,
-					sessionID: this.__sessionIDLocalStorage.get()
+					sessionID: this.__localSessionID.get()
 				}
 			)
 		);

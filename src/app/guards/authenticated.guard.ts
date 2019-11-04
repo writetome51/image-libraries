@@ -12,7 +12,7 @@ export class AuthenticatedGuard implements CanActivate {
 
 
 	constructor(
-		private __sessionIDLocalStorage: LocalSessionIDService,
+		private __localSessionID: LocalSessionIDService,
 		private __router: Router
 	) {
 	}
@@ -28,7 +28,7 @@ export class AuthenticatedGuard implements CanActivate {
 
 	private __ifSessionIDExists_returnTrue_ifNot_redirectToLoginAndReturnFalse(): boolean {
 
-		if (this.__sessionIDLocalStorage.get()) return true;
+		if (this.__localSessionID.get()) return true;
 
 		this.__router.navigate(['/']);
 		return false;

@@ -7,17 +7,17 @@ import { SingleActionService } from '../../interfaces/single-action-service';
 @Injectable({
 	providedIn: 'root'
 })
-export class RemoveSessionIDAndRedirectHomeService implements SingleActionService {
+export class RemoveLocalSessionIDAndRedirectHomeService implements SingleActionService {
 
 	constructor(
-		private __sessionIDLocalStorage: LocalSessionIDService,
+		private __localSessionID: LocalSessionIDService,
 		private __router: Router
 	) {
 	}
 
 
 	async go() {
-		this.__sessionIDLocalStorage.remove();
+		this.__localSessionID.remove();
 		await this.__router.navigate(['/']); // logged-out homepage.
 	}
 

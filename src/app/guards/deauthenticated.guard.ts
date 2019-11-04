@@ -11,7 +11,7 @@ export class DeauthenticatedGuard implements CanActivate {
 
 
 	constructor(
-		private __sessionIDLocalStorage: LocalSessionIDService,
+		private __localSessionID: LocalSessionIDService,
 		private __router: Router
 	) {
 	}
@@ -20,7 +20,7 @@ export class DeauthenticatedGuard implements CanActivate {
 	// Returns true if logged out.
 
 	canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-		if (this.__sessionIDLocalStorage.get()) {
+		if (this.__localSessionID.get()) {
 			this.__router.navigate(['/libraries']); // Goes to logged-in homepage.
 			return false;
 		}

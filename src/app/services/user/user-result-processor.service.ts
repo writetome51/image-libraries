@@ -12,7 +12,7 @@ import { LocalSessionIDService } from '../authentication/local-session-id.servic
 export class UserResultProcessorService implements ResultProcessor {
 
 	constructor(
-		private __sessionIDLocalStorage: LocalSessionIDService,
+		private __localSessionID: LocalSessionIDService,
 		private __currentUser: CurrentUserService,
 		private __router: Router
 	) {
@@ -21,7 +21,7 @@ export class UserResultProcessorService implements ResultProcessor {
 
 	process(result: DBUser): void {
 		if (result.sessionID) {
-			this.__sessionIDLocalStorage.set(result.sessionID);
+			this.__localSessionID.set(result.sessionID);
 			this.__currentUser.dbUser = result;
 			// This may need to be moved to different class:
 			this.__router.navigate(['/libraries']);

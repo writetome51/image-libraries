@@ -17,13 +17,13 @@ export class InnerAppContainerComponent {
 
 	constructor(
 		private __logoutProcessor: LogoutProcessorService,
-		private __sessionIDLocalStorage: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService
 	) {
 	}
 
 
 	get sessionIDExists() {
-		return (this.__sessionIDLocalStorage.get().length > 0);
+		return (this.__localSessionID.get().length > 0);
 	}
 
 

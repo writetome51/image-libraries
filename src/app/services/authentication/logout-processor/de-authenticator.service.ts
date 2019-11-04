@@ -11,7 +11,7 @@ export class DeAuthenticatorService extends ReturnObjectFromSubscriptionService 
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
-		private __sessionIDLocalStorage: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService
 	) {
 		super();
 	}
@@ -19,7 +19,7 @@ export class DeAuthenticatorService extends ReturnObjectFromSubscriptionService 
 
 	async deAuthenticate() {
 		return await this._getObjectFromSubscriptionTo(
-			this.__authenticationRestApi.logout({sessionID: this.__sessionIDLocalStorage.get()})
+			this.__authenticationRestApi.logout({sessionID: this.__localSessionID.get()})
 		);
 	}
 }
