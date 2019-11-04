@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { DataOperationResultService } from '../data-operation-result/data-operation-result.service';
+import { DataOperationResultCheckService } from '../data-operation-result-check/data-operation-result-check.service';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class CurrentUserLibrariesService extends PublicArrayContainer {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __dataOperationResult: DataOperationResultService
+		private __dataOperationResult: DataOperationResultCheckService
 	) {
 		super();
 		this.__set_data();

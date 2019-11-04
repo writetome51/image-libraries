@@ -1,5 +1,5 @@
 import { AlertService } from '../alert.service';
-import { NewUserResultService } from '../data-operation-result/new-user-result.service';
+import { NewUserResultCheckService } from '../data-operation-result-check/new-user-result-check.service';
 import { Injectable } from '@angular/core';
 import { ResultInterpreterService } from './result-interpreter.service';
 import { NewUserResultProcessorService } from '../user/new-user-result-processor.service';
@@ -12,10 +12,10 @@ export class NewUserResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
 		private __alert: AlertService,
-		__newUserResult: NewUserResultService,
+		__newUserResultCheck: NewUserResultCheckService,
 		__newUserResultProcessor: NewUserResultProcessorService,
 	) {
-		super(__newUserResult, __newUserResultProcessor);
+		super(__newUserResultCheck, __newUserResultProcessor);
 	}
 
 }

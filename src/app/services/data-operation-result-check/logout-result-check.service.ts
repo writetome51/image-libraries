@@ -1,5 +1,5 @@
 import { AlertService } from '../alert.service';
-import { DataOperationResultService } from './data-operation-result.service';
+import { DataOperationResultCheckService } from './data-operation-result-check.service';
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn } from '../../../constants/api-errors';
 import { ErrorNotLoggedInService } from '../error/error-not-logged-in.service';
@@ -8,7 +8,7 @@ import { ErrorNotLoggedInService } from '../error/error-not-logged-in.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class LogoutResultService extends DataOperationResultService {
+export class LogoutResultCheckService extends DataOperationResultCheckService {
 
 
 	constructor(

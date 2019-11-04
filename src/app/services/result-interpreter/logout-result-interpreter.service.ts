@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserLogoutOrDeletionResultProcessorService }
 	from '../user/user-logout-or-deletion-result-processor.service';
 import { ResultInterpreterService } from './result-interpreter.service';
-import { LogoutResultService } from '../data-operation-result/logout-result.service';
+import { LogoutResultCheckService } from '../data-operation-result-check/logout-result-check.service';
 
 
 @Injectable({
@@ -11,10 +11,10 @@ import { LogoutResultService } from '../data-operation-result/logout-result.serv
 export class LogoutResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
-		__logoutResult: LogoutResultService,
+		__logoutResultCheck: LogoutResultCheckService,
 		__logoutResultProcessor: UserLogoutOrDeletionResultProcessorService
 	) {
-		super(__logoutResult, __logoutResultProcessor);
+		super(__logoutResultCheck, __logoutResultProcessor);
 	}
 
 }
