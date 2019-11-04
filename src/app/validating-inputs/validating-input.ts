@@ -1,4 +1,5 @@
 // Represents a <form> input that validates itself.
+// Framework independent.
 
 export interface ValidatingInput {
 
@@ -20,7 +21,7 @@ export interface ValidatingInput {
 
 	required: boolean;
 
-	placeholder?: string; // only used on text or password inputs
+	placeholder: string; // is also used as label
 
 	prompt?: string; // line of text explaining input or asking user to fill it in
 

@@ -3,6 +3,7 @@ import { ValidatingInput } from './validating-input';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { ValidatingInputService } from './validating-input.service';
 
+// Framework independent
 
 export abstract class ValidatingInputsService extends PublicArrayContainer {
 

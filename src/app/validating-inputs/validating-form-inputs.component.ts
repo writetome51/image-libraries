@@ -4,7 +4,7 @@ import { ValidatingInputsService } from './validating-inputs.service';
 
 /***********
 To be used in combination with ValidatingInputsComponent.
-Create a subclass and attach the @Component decorator to it,
+To use, create a subclass and attach the @Component decorator to it,
  just like this:
 
  @Component({
