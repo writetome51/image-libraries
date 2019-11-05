@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CurrentUserService } from '../user/current-user.service';
 import { UserValidationRulesService } from '../user/user-validation-rules.service';
+import { CurrentUserDataInputService } from './current-user-data-input.service';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { UserValidationRulesService } from '../user/user-validation-rules.servic
 export class SecurityQuestionInputService extends CurrentUserDataInputService {
 
 	constructor(
-		private __currentUser: CurrentUserService,
+		__currentUser: CurrentUserService,
 		private __rules: UserValidationRulesService
 	) {
 		super(__currentUser);
@@ -18,7 +19,9 @@ export class SecurityQuestionInputService extends CurrentUserDataInputService {
 		this.data.id = 'security-question-input';
 		this.data.propertyToBind = 'question';
 		this.data.placeholder = 'Question';
-		this.data.isValid = () => this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.questionMinLength;
+		this.data.isValid = () => (
+			this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.questionMinLength
+		);
 		this.data.errorMessage =
 			`The security question must be at least ${this.__rules.questionMinLength} characters`;
 		this.data.prompt =
