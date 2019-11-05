@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { CurrentUserService } from '../user/current-user.service';
+import { CurrentUserDataInputService } from './current-user-data-input.service';
 import { UserValidationRulesService } from '../user/user-validation-rules.service';
-import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class EmailInputService extends ValidatingInputService {
+export class EmailInputService extends CurrentUserDataInputService {
 
 
 	constructor(
-		private __currentUser: CurrentUserService,
+		__currentUser: CurrentUserService,
 		private __rules: UserValidationRulesService
 	) {
-		super();
+		super(__currentUser);
 
 		this.data.type = 'text';
 		this.data.id = 'email-input';
-		this.data.objectToBind = this.__currentUser;
 		this.data.propertyToBind = 'email';
 		this.data.placeholder = 'Email';
 		this.data.isValid = () => (

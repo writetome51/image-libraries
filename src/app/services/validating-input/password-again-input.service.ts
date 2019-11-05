@@ -7,17 +7,16 @@ import { ComparisonValidatingInput } from '../../validating-inputs/comparison-va
 @Injectable({
 	providedIn: 'root'
 })
-export class PasswordAgainInputService extends ValidatingInputService {
+export class PasswordAgainInputService extends CurrentUserDataInputService {
 
 	data: ComparisonValidatingInput;
 
 
-	constructor(private __currentUser: CurrentUserService) {
-		super();
+	constructor(__currentUser: CurrentUserService) {
+		super(__currentUser);
 
 		this.data.type = 'password';
 		this.data.id = 'password-again-input';
-		this.data.objectToBind = this.__currentUser;
 		this.data.propertyToBind = 'passwordAgain';
 		this.data.placeholder = 'Password Again';
 		this.data.objectToCompare = this.__currentUser;

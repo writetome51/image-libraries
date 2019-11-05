@@ -7,20 +7,21 @@ import { UserValidationRulesService } from '../user/user-validation-rules.servic
 @Injectable({
 	providedIn: 'root'
 })
-export class SecurityAnswerInputService extends ValidatingInputService {
+export class SecurityAnswerInputService extends CurrentUserDataInputService {
 
 	constructor(
-		private __currentUser: CurrentUserService,
+		__currentUser: CurrentUserService,
 		private __rules: UserValidationRulesService
 	) {
-		super();
+		super(__currentUser);
 
 		this.data.type = 'password';
 		this.data.id = 'security-answer-input';
-		this.data.objectToBind = this.__currentUser;
 		this.data.propertyToBind = 'answer';
 		this.data.placeholder = 'Answer';
-		this.data.isValid = () => this.__currentUser.answer.length >= this.__rules.answerMinLength;
+		this.data.isValid = () => (
+			this.data.objectToBind[this.data.propertyToBind].length >= this.__rules.answerMinLength
+		);
 		this.data.errorMessage =
 			`The security answer must be at least ${this.__rules.answerMinLength} characters`;
 	}
