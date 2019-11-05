@@ -4,7 +4,7 @@ import { AlertService } from '../alert.service';
 import { EmailInputService } from '../validating-input/email-input.service';
 import { CurrentPasswordInputService } from '../validating-input/current-password-input.service';
 import { NewPasswordInputService } from '../validating-input/new-password-input.service';
-import { PasswordAgainInputService } from '../validating-input/password-again-input.service';
+import { NewPasswordAgainInputService } from '../validating-input/new-password-again-input.service';
 
 
 @Injectable({
@@ -18,16 +18,14 @@ export class UpdatePasswordFormInputsService extends AppValidatingInputsService 
 		emailInput: EmailInputService,
 		currentPasswordInput: CurrentPasswordInputService,
 		newPasswordInput: NewPasswordInputService,
-		passwordAgainInput: PasswordAgainInputService
+		newPasswordAgainInput: NewPasswordAgainInputService
 	) {
-		passwordAgainInput.updatingPassword = true;
-
 		super(
 			__alert,
 			emailInput,
 			currentPasswordInput,
 			newPasswordInput,
-			passwordAgainInput
+			newPasswordAgainInput
 		);
 	}
 

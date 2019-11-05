@@ -8,7 +8,7 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
-import { DeauthenticatedGuard } from '../guards/deauthenticated.guard';
+import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { DeauthenticatedGuard } from '../guards/deauthenticated.guard';
 				path: '',
 				pathMatch: 'full',
 				component: NewUserComponent,
-				canActivate: [DeauthenticatedGuard]
+				canActivate: [DeAuthenticatedGuard]
 			},
 
 			{path: '**', redirectTo: ''}

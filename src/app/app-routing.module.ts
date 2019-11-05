@@ -1,5 +1,5 @@
 import { AuthenticatedGuard } from './guards/authenticated.guard';
-import { DeauthenticatedGuard } from './guards/deauthenticated.guard';
+import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
@@ -35,7 +35,7 @@ const routes: Routes = [
 		path: '', // the logged-out homepage
 		component: IntroductionComponent,
 		pathMatch: 'full',
-		canActivate: [DeauthenticatedGuard]
+		canActivate: [DeAuthenticatedGuard]
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.

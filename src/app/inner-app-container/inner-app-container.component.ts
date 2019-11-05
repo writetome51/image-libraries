@@ -3,6 +3,7 @@ import { LogoutProcessorService }
 	from '../services/data-operation-processor/logout-processor.service';
 import { LocalSessionIDService }
 	from '../services/authentication/local-session-id.service';
+import { DataOperationStatusService } from '../services/data-operation-status.service';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class InnerAppContainerComponent {
 
 	constructor(
 		private __logoutProcessor: LogoutProcessorService,
-		private __localSessionID: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService,
+		private __dataOperationStatus: DataOperationStatusService
 	) {
 	}
 
@@ -28,7 +30,9 @@ export class InnerAppContainerComponent {
 
 
 	async logout() {
+		this.__dataOperationStatus.waitingForResult = true;
 		await this.__logoutProcessor.process();
+		this.__dataOperationStatus.waitingForResult = false;
 	}
 
 

@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { LocalSessionIDService }
-	from '../services/authentication/local-session-id.service';
+import { LocalSessionIDService } from '../services/authentication/local-session-id.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class DeauthenticatedGuard implements CanActivate {
+export class DeAuthenticatedGuard implements CanActivate {
 
 
 	constructor(
