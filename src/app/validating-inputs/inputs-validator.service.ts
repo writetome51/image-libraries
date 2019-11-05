@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ValidatingInputsService } from './validating-inputs.service';
 import { ValidatingInput } from './validating-input';
 import { not } from '@writetome51/not';
 
@@ -9,16 +8,11 @@ import { not } from '@writetome51/not';
 })
 export class InputsValidatorService {
 
-	__inputs: ValidatingInput[];
+	inputs: ValidatingInput[];
 	private __index: number; // index in this.data
 
 	private get __input() {
-		return this.__inputs[this.__index];
-	}
-
-
-	constructor(private __validatingInputs: ValidatingInputsService) {
-		this.__inputs = this.__validatingInputs.data;
+		return this.inputs[this.__index];
 	}
 
 
@@ -30,4 +24,6 @@ export class InputsValidatorService {
 		}
 		else this.__input.error = '';
 	}
+
+
 }

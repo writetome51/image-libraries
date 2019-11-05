@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { not } from '@writetome51/not';
 import { ValidatingInput } from './validating-input';
+import { InputsValidatorService } from './inputs-validator.service';
 
 
 @Component({
@@ -12,20 +12,31 @@ import { ValidatingInput } from './validating-input';
 
 export class ValidatingInputsComponent implements OnInit {
 
+	private __inputs;
 
-	@Input() inputs: ValidatingInput[];
+
+	@Input() set inputs(value: ValidatingInput[]) {
+		this.__inputsValidator.inputs = value;
+		this.__inputs = value;
+	}
+
+
+	get inputs() {
+		return this.__inputs;
+	}
+
+
+	constructor(private __inputsValidator: InputsValidatorService) {
+	}
 
 
 	ngOnInit(): void {
-		this.inputs.forEach((input) => input.error = '');
+		this.__inputs.forEach((input) => input.error = '');
 	}
 
 
 	validate(index): void {
-		if (not(this.inputs[index].isValid())) {
-			this.inputs[index].error = this.inputs[index].errorMessage;
-		}
-		else this.inputs[index].error = '';
+		this.__inputsValidator.validate(index);
 	}
 
 
