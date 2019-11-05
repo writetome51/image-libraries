@@ -12,18 +12,8 @@ import { InputsValidatorService } from './inputs-validator.service';
 
 export class ValidatingInputsComponent implements OnInit {
 
-	private __inputs;
 
-
-	@Input() set inputs(value: ValidatingInput[]) {
-		this.__inputsValidator.inputs = value;
-		this.__inputs = value;
-	}
-
-
-	get inputs() {
-		return this.__inputs;
-	}
+	@Input() inputs: ValidatingInput[];
 
 
 	constructor(private __inputsValidator: InputsValidatorService) {
@@ -31,7 +21,7 @@ export class ValidatingInputsComponent implements OnInit {
 
 
 	ngOnInit(): void {
-		this.__inputs.forEach((input) => input.error = '');
+		this.inputs.forEach((input) => input.error = '');
 	}
 
 
