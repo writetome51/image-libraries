@@ -1,6 +1,6 @@
 <div *ngFor="let input of inputs;  let i = index;"
 	 class="input-container"
-	 [class.red-border]="input.error"
+	 [class.input-with-error]="input.error"
 >
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 

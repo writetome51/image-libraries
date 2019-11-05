@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { LocalSessionIDService }
 	from '../services/authentication/local-session-id.service';
 
@@ -19,12 +19,12 @@ export class DeauthenticatedGuard implements CanActivate {
 
 	// Returns true if logged out.
 
-	canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+	canActivate(): boolean {
 		if (this.__localSessionID.get()) {
 			this.__router.navigate(['/libraries']); // Goes to logged-in homepage.
 			return false;
 		}
-		return true;
+		else return true;
 	}
 
 }

@@ -6,7 +6,7 @@ import { RemoveLocalSessionIDAndRedirectHomeService } from '../remove-local-sess
 @Injectable({
 	providedIn: 'root'
 })
-export class UserLogoutOrDeletionResultProcessorService implements ResultProcessor {
+export class UserLogoutResultProcessorService implements ResultProcessor {
 
 	constructor(
 		private __remove_localSessionID_and_redirectHome: RemoveLocalSessionIDAndRedirectHomeService
@@ -19,6 +19,5 @@ export class UserLogoutOrDeletionResultProcessorService implements ResultProcess
 			await this.__remove_localSessionID_and_redirectHome.go();
 		}
 	}
-
 
 }

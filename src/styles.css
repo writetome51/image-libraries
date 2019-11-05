@@ -28,6 +28,7 @@ header {
 }
 
 
-.red-border {
+.input-with-error {
 	border: 1px solid red;
+	border-radius: 5px;
 }

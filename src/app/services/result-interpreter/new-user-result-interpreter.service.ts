@@ -11,7 +11,6 @@ import { NewUserResultProcessorService } from '../user/new-user-result-processor
 export class NewUserResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
-		private __alert: AlertService,
 		__newUserResultCheck: NewUserResultCheckService,
 		__newUserResultProcessor: NewUserResultProcessorService,
 	) {

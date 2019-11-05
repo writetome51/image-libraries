@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from './authentication/local-session-id.service';
 import { Router } from '@angular/router';
-import { SingleActionService } from '../../interfaces/single-action-service';
+import { IDoThis } from '../../interfaces/i-do-this';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class RemoveLocalSessionIDAndRedirectHomeService implements SingleActionService {
+export class RemoveLocalSessionIDAndRedirectHomeService implements IDoThis {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
