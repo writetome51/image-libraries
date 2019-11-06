@@ -1,23 +1,15 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserService } from '../user/current-user.service';
-import { UserValidationRulesService } from '../user/user-validation-rules.service';
+import { CurrentInputService } from './current-input.service';
 import { PasswordInputService } from './password-input.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CurrentPasswordInputService extends PasswordInputService {
+export class CurrentPasswordInputService extends CurrentInputService {
 
-	constructor(
-		__currentUser: CurrentUserService,
-		__rules: UserValidationRulesService
-	) {
-		super(__currentUser, __rules);
-
-		this.data.id = 'current-password-input';
-		this.data.placeholder = 'Current Password';
-		this.data.errorMessage = 'The current ' + this.data.errorMessage.slice(4);
+	constructor(__passwordInput: PasswordInputService) {
+		super(__passwordInput);
 	}
 
 }
