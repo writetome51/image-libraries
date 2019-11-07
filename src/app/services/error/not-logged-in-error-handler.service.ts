@@ -4,15 +4,15 @@ import { notLoggedIn } from '../../../constants/form-submission-errors';
 import { RemoveLocalSessionIDAndRedirectHomeService }
 	from '../remove-local-session-id-and-redirect-home.service';
 import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { ErrorHandler } from '../../../interfaces/error-handler';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class ErrorNotLoggedInService {
+export class NotLoggedInErrorHandlerService implements ErrorHandler {
 
-
-	handler: () => Promise<void>;
+	handle: () => Promise<void>;
 
 
 	constructor(
@@ -20,7 +20,7 @@ export class ErrorNotLoggedInService {
 		private __alert: AlertService,
 		private __remove_localSessionID_and_redirectHome: RemoveLocalSessionIDAndRedirectHomeService
 	) {
-		this.handler = async () => {
+		this.handle = async () => {
 			// Use this handler when we've received an api error saying we're not
 			// logged in, but the browser is still storing the sessionID.
 
@@ -30,6 +30,5 @@ export class ErrorNotLoggedInService {
 			}
 		};
 	}
-
 
 }
