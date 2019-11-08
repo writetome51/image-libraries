@@ -16,6 +16,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
 import { NewEmailInputService } from './services/validating-input/new-email-input.service';
+import { LogoutButtonComponent } from './inner-app-container/logout-button.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NewEmailInputService } from './services/validating-input/new-email-inpu
 		LoginFormComponent,
 		PageNotFoundComponent,
 		ForgotPasswordComponent,
+		LogoutButtonComponent,
 	],
 	providers: [NewEmailInputService],
 	imports: [

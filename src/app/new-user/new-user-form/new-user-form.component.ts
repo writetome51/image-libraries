@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewUserProcessorService }
 	from '../../services/data-operation-processor/new-user-processor.service';
-import { DataOperationStatusService } from '../../services/data-operation-status.service';
+import { PerformAppDataOperationService } from '../../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -10,19 +10,15 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 })
 export class NewUserFormComponent {
 
-
 	constructor(
 		private __newUserProcessor: NewUserProcessorService,
-		private __dataOperationStatus: DataOperationStatusService
+		private __performAppDataOperation: PerformAppDataOperationService
 	) {
 	}
 
 
 	async create() {
-		this.__dataOperationStatus.waitingForResult = true;
-		await this.__newUserProcessor.process();
-		this.__dataOperationStatus.waitingForResult = false;
+		await this.__performAppDataOperation.go(this.__newUserProcessor);
 	}
-
 
 }

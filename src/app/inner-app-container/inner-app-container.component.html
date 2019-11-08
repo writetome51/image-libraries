@@ -7,7 +7,7 @@
 		</h1>
 
 		<nav *ngIf="sessionIDExists">
-			<button (click)="logout()">Sign Out</button>
+			<logout-button></logout-button>
 			|
 			<a routerLink="update-account" routerLinkActive="active">Update Account</a>
 		</nav>
@@ -17,7 +17,5 @@
 	<main>
 		<router-outlet></router-outlet>
 	</main>
-
-	<little-loading-spinner *ngIf="__dataOperationStatus.waitingForResult"></little-loading-spinner>
 
 </div>
