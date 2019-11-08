@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { LoginProcessorService }
 	from '../../services/data-operation-processor/login-processor.service';
+import { PerformAppDataOperationService } from '../../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -10,19 +10,15 @@ import { LoginProcessorService }
 })
 export class LoginFormComponent {
 
-
 	constructor(
-		private __dataOperationStatus: DataOperationStatusService,
-		private __loginProcessor: LoginProcessorService
+		private __loginProcessor: LoginProcessorService,
+		private __performAppDataOperation: PerformAppDataOperationService
 	) {
 	}
 
 
 	async login() {
-		this.__dataOperationStatus.waitingForResult = true;
-		await this.__loginProcessor.process();
-		this.__dataOperationStatus.waitingForResult = false;
+		await this.__performAppDataOperation.go(this.__loginProcessor);
 	}
-
 
 }

@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
 	from '../../services/data-operation-processor/user-deletion-processor.service';
 import { DataOperationStatusService } from '../../services/data-operation-status.service';
+import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
+import { AlertService } from '../../services/alert.service';
+import { CurrentUserService } from '../../services/user/current-user.service';
+import { PerformAppDataOperationService } from '../../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -9,7 +13,7 @@ import { DataOperationStatusService } from '../../services/data-operation-status
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent {
+export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -21,16 +25,16 @@ export class DeleteUserFormComponent {
 
 	constructor(
 		private __userDeletionProcessor: UserDeletionProcessorService,
-		private __dataOperationStatus: DataOperationStatusService
+		private __performAppDataOperation: PerformAppDataOperationService,
+		__alert: AlertService,
+		__currentUser: CurrentUserService
 	) {
+		super(__alert, __currentUser);
 	}
 
 
 	async delete() {
-		this.__dataOperationStatus.waitingForResult = true;
-		await this.__userDeletionProcessor.process();
-		this.__dataOperationStatus.waitingForResult = false;
+		await this.__performAppDataOperation.go(this.__userDeletionProcessor);
 	}
-
 
 }

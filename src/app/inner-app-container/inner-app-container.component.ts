@@ -3,7 +3,7 @@ import { LogoutProcessorService }
 	from '../services/data-operation-processor/logout-processor.service';
 import { LocalSessionIDService }
 	from '../services/authentication/local-session-id.service';
-import { DataOperationStatusService } from '../services/data-operation-status.service';
+import { PerformAppDataOperationService } from '../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -12,14 +12,13 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 })
 export class InnerAppContainerComponent {
 
-
 	title = 'Image Libraries';
 
 
 	constructor(
 		private __logoutProcessor: LogoutProcessorService,
+		private __performAppDataOperation: PerformAppDataOperationService,
 		private __localSessionID: LocalSessionIDService,
-		private __dataOperationStatus: DataOperationStatusService
 	) {
 	}
 
@@ -30,10 +29,7 @@ export class InnerAppContainerComponent {
 
 
 	async logout() {
-		this.__dataOperationStatus.waitingForResult = true;
-		await this.__logoutProcessor.process();
-		this.__dataOperationStatus.waitingForResult = false;
+		await this.__performAppDataOperation.go(this.__logoutProcessor);
 	}
-
 
 }
