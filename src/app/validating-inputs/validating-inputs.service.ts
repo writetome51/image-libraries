@@ -15,15 +15,13 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 
 
 	constructor(
-		// `inputs` must be in order you want them to appear in the form
+		// `inputs` must be in the order you want them to appear in the form
 
-		inputs: ValidatingInputService[],
-		private __inputsValidator: InputsValidatorService
+		inputs: ValidatingInputService[]
 	) {
 		super();
 
 		this.data = inputs.map((input) => input.data);
-		this.__inputsValidator.inputs = this.data;
 	}
 
 
@@ -33,7 +31,7 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 		this.error = '';
 
 		for (let i = 0; i < this.data.length; ++i) {
-			this.__inputsValidator.validate(i);
+			InputsValidatorService.validate(this.data[i]);
 
 			if (notEmpty(this.data[i].error)) {
 				this.error = this.data[i].error;

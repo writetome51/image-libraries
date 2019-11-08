@@ -12,12 +12,7 @@ import { InputsValidatorService } from './inputs-validator.service';
 
 export class ValidatingInputsComponent implements OnInit {
 
-
 	@Input() inputs: ValidatingInput[];
-
-
-	constructor(private __inputsValidator: InputsValidatorService) {
-	}
 
 
 	ngOnInit(): void {
@@ -26,8 +21,7 @@ export class ValidatingInputsComponent implements OnInit {
 
 
 	validate(index): void {
-		this.__inputsValidator.validate(index);
+		InputsValidatorService.validate(this.inputs[index]);
 	}
-
 
 }

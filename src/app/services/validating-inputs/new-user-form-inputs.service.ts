@@ -17,7 +17,6 @@ export class NewUserFormInputsService extends AppValidatingInputsService {
 
 	constructor(
 		__alert: AlertService,
-		__inputsValidator: InputsValidatorService,
 		emailInput: EmailInputService,
 		passwordInput: PasswordInputService,
 		passwordAgainInput: PasswordAgainInputService,
@@ -26,7 +25,6 @@ export class NewUserFormInputsService extends AppValidatingInputsService {
 	) {
 		super(
 			__alert,
-			__inputsValidator,
 			emailInput,
 			passwordInput,
 			passwordAgainInput,

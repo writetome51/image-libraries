@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { AlertService } from '../services/alert.service';
 import { DataOperationStatusService } from '../services/data-operation-status.service';
+import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-init.component';
+import { CurrentUserService } from '../services/user/current-user.service';
 
 
 @Component({
 	selector: 'app-introduction',
 	templateUrl: './introduction.component.html'
 })
-export class IntroductionComponent {
+export class IntroductionComponent extends ClearAlertAndFormOnInitComponent {
 
 
 	introduction = `This application lets you create libraries of images.  Inside each library you can 
@@ -16,8 +18,10 @@ export class IntroductionComponent {
 
 	constructor(
 		public dataOperationStatus: DataOperationStatusService,
-		public alert: AlertService
+		public alert: AlertService,
+		__currentUser: CurrentUserService
 	) {
+		super(alert, __currentUser);
 	}
 
 
