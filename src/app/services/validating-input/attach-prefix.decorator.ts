@@ -1,5 +1,5 @@
-import { getClassModificationDecorator } from './get-class-modification-decorator';
-import { ValidatingInputService } from './validating-inputs/validating-input.service';
+import { getClassModificationDecorator } from '../../get-class-modification-decorator';
+import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 
 
 /*****************

@@ -1,4 +1,4 @@
-import { ValidatingInputService } from './validating-inputs/validating-input.service';
+import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 
 
 export function attachPrefix(
