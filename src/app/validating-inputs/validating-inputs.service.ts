@@ -1,8 +1,8 @@
-import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { ValidatingInput } from './validating-input';
-import { PublicArrayContainer } from '@writetome51/public-array-container';
-import { ValidatingInputService } from './validating-input.service';
 import { InputsValidatorService } from './inputs-validator.service';
+import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { PublicArrayContainer } from '@writetome51/public-array-container';
+import { ValidatingInput } from './validating-input';
+import { ValidatingInputService } from './validating-input.service';
 
 
 // Framework independent
