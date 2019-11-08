@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
+import { EmailInputService } from './email-input.service';
 import { CurrentUserService } from '../user/current-user.service';
 import { UserValidationRulesService } from '../user/user-validation-rules.service';
-import { EmailInputService } from './email-input.service';
-import { attach_prefix } from '../../attach-prefix.decorator';
+import { attachNewPrefix } from '../../attach-prefix.decorator';
 
-@Injectable({
-	providedIn: 'root'
-})
-@attach_prefix('new')
+
+@Injectable({providedIn: 'root'})
+
 export class NewEmailInputService extends EmailInputService {
+
+	constructor(
+		__currentUser: CurrentUserService,
+		__rules: UserValidationRulesService
+	) {
+		super(__currentUser, __rules);
+		attachNewPrefix(this);
+	}
+
 }

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { PasswordInputService } from '../validating-input/password-input.service';
 import { AppValidatingInputsService } from './app-validating-inputs.service';
 import { AlertService } from '../alert.service';
-import { CurrentEmailInputService } from '../validating-input/current-email-input.service';
-import { NewEmailInputService } from '../validating-input/new-email-input.service';
 import { InputsValidatorService } from '../../validating-inputs/inputs-validator.service';
+import { NewEmailInputService } from '../validating-input/new-email-input.service';
+import { CurrentEmailInputService } from '../validating-input/current-email-input.service';
 
 
 @Injectable({

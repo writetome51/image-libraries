@@ -23,7 +23,11 @@ export function getClassModificationDecorator(
 			// a utility function to generate instances of a class
 			function construct(constructor, args) {
 				const c: any = function() {
-					return constructor.apply(this, args);
+				//	return constructor.apply(this, args);
+					// try this instead:
+					console.log(constructor);
+					console.log(args);
+					return new constructor(...args);
 				};
 				c.prototype = constructor.prototype;
 				return new c();

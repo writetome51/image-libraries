@@ -4,9 +4,8 @@ import { UserValidationRulesService } from '../user/user-validation-rules.servic
 import { CurrentUserDataInputService } from './current-user-data-input.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class PasswordInputService extends CurrentUserDataInputService {
 
 
