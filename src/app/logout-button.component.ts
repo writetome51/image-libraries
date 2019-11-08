@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LogoutProcessorService } from '../services/data-operation-processor/logout-processor.service';
-import { PerformAppDataOperationService } from '../services/perform-app-data-operation.service';
+import { LogoutProcessorService } from './services/data-operation-processor/logout-processor.service';
+import { PerformAppDataOperationService } from './services/perform-app-data-operation.service';
 
 
 @Component({
