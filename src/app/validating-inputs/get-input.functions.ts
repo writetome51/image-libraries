@@ -1,4 +1,4 @@
-import { ValidatingInput } from '../../validating-inputs/validating-input';
+import { ValidatingInput } from './validating-input';
 import { modifyObject } from '@writetome51/modify-object';
 
 

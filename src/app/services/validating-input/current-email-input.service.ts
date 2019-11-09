@@ -8,9 +8,7 @@ import { attachCurrentPrefix } from './attach-prefix.functions';
 
 export class CurrentEmailInputService extends EmailInputService {
 
-	constructor(
-		__currentUser: CurrentUserService
-	) {
+	constructor(__currentUser: CurrentUserService) {
 		super(__currentUser);
 		attachCurrentPrefix(this);
 	}

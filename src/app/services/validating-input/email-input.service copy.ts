@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ValidatingInput } from '../../validating-inputs/validating-input';
-import { getDefaultTextInput } from './get-input.functions';
+import { getDefaultTextInput } from '../../validating-inputs/get-input.functions';
 import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class EmailInputServiceCopy implements ValidatingInputService {
 
 	data: ValidatingInput;

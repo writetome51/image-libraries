@@ -1,5 +1,5 @@
 import { CurrentUserService } from '../user/current-user.service';
-import { getDefaultInput } from './get-input.functions';
+import { getDefaultInput } from '../../validating-inputs/get-input.functions';
 import { ValidatingInput } from '../../validating-inputs/validating-input';
 import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 
