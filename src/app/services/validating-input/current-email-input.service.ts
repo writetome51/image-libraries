@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EmailInputService } from './email-input.service';
 import { CurrentUserService } from '../user/current-user.service';
-import { UserValidationRulesService } from '../user/user-validation-rules.service';
 import { attachCurrentPrefix } from './attach-prefix.functions';
 
 
@@ -10,10 +9,9 @@ import { attachCurrentPrefix } from './attach-prefix.functions';
 export class CurrentEmailInputService extends EmailInputService {
 
 	constructor(
-		__currentUser: CurrentUserService,
-		__rules: UserValidationRulesService
+		__currentUser: CurrentUserService
 	) {
-		super(__currentUser, __rules);
+		super(__currentUser);
 		attachCurrentPrefix(this);
 	}
 
