@@ -1,4 +1,3 @@
-import { AlertService } from '../alert.service';
 import { NewUserResultCheckService } from '../data-operation-result-check/new-user-result-check.service';
 import { Injectable } from '@angular/core';
 import { ResultInterpreterService } from './result-interpreter.service';

@@ -3,7 +3,8 @@ import { UpdateEmailOrPasswordResultInterpreterService }
 	from '../result-interpreter/update-email-or-password-result-interpreter.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
-import { UpdatePasswordFormInputsService } from '../validating-inputs/update-password-form-inputs.service';
+import { UpdatePasswordFormInputsService }
+	from '../validating-inputs/update-password-form-inputs.service';
 
 
 @Injectable({

@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
 import { DataOperationStatusService } from './data-operation-status.service';
+import { DataOperationProcessorService }
+	from './data-operation-processor/data-operation-processor.service';
 import { IDoThis } from '../../interfaces/i-do-this';
-import { DataOperationProcessorService } from './data-operation-processor/data-operation-processor.service';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
-import { RemoveLocalSessionIDAndRedirectHomeService } from '../remove-local-session-id-and-redirect-home.service';
+import { RemoveLocalSessionIDAndRedirectHomeService }
+	from '../remove-local-session-id-and-redirect-home.service';
 
 
 @Injectable({

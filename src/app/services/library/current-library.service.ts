@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
 import { LibraryStorageService } from './library-storage.service';
-import { DataOperationResultCheckService } from '../data-operation-result-check/data-operation-result-check.service';
+import { DataOperationResultCheckService }
+	from '../data-operation-result-check/data-operation-result-check.service';
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class CurrentLibraryService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __httpRequestResult: DataOperationResultCheckService
+		private __dataOperationResultCheck: DataOperationResultCheckService
 	) {
 	}
 
@@ -30,7 +31,7 @@ export class CurrentLibraryService {
 	async set(libraryName) {
 		let result = await this.__libraryStorage.get(libraryName);
 
-		this.__httpRequestResult.ifSuccessful_processResult(
+		await this.__dataOperationResultCheck.ifSuccessful_processResult(
 			result,
 			(result) => this.data = result
 		);

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ValidatingInput } from '../../validating-inputs/validating-input';
 import { getDefaultTextInput } from './get-input.functions';
 import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
-import { UserValidationRulesService } from '../user/user-validation-rules.service';
+import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
 
 
 @Injectable({
@@ -20,9 +20,9 @@ export class EmailInputServiceCopy implements ValidatingInputService {
 		this.data.propertyToBind = 'email';
 		this.data.placeholder = 'Email';
 		this.data.isValid = () => (
-			this.data.objectToBind[this.data.propertyToBind].length >= UserValidationRulesService.emailMinLength
+			this.data.objectToBind[this.data.propertyToBind].length >= rules.emailMinLength
 		);
-		this.data.errorMessage = `The email must be at least ${UserValidationRulesService.emailMinLength} characters`;
+		this.data.errorMessage = `The email must be at least ${rules.emailMinLength} characters`;
 	}
 
 }

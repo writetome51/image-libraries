@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
 	from '../../services/data-operation-processor/user-deletion-processor.service';
-import { DataOperationStatusService } from '../../services/data-operation-status.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
 import { AlertService } from '../../services/alert.service';
 import { CurrentUserService } from '../../services/user/current-user.service';

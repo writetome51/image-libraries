@@ -12,7 +12,8 @@ import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
 	from './update-user-email-form/update-user-email-form-inputs.component';
 import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
-import { UpdateUserPasswordFormComponent } from './update-user-password-form/update-user-password-form.component';
+import { UpdateUserPasswordFormComponent }
+	from './update-user-password-form/update-user-password-form.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
