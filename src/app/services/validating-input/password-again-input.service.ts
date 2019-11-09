@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CurrentUserService } from '../user/current-user.service';
-import { ComparisonValidatingInput } from '../../validating-inputs/comparison-validating-input';
+import { MatchingValidatingInput } from '../../validating-inputs/matching-validating-input';
 import { CurrentUserDataInputService } from './current-user-data-input.service';
 
 
@@ -9,7 +9,7 @@ import { CurrentUserDataInputService } from './current-user-data-input.service';
 })
 export class PasswordAgainInputService extends CurrentUserDataInputService {
 
-	data: ComparisonValidatingInput;
+	data: MatchingValidatingInput;
 
 
 	constructor(__currentUser: CurrentUserService) {
@@ -19,10 +19,10 @@ export class PasswordAgainInputService extends CurrentUserDataInputService {
 		this.data.id = 'password-again-input';
 		this.data.propertyToBind = 'passwordAgain';
 		this.data.placeholder = 'Password Again';
-		this.data.objectToCompare = __currentUser;
-		this.data.propertyToCompare = 'password';
+		this.data.objectToMatch = __currentUser;
+		this.data.propertyToMatch = 'password';
 		this.data.isValid = () => (
-			this.data.objectToCompare[this.data.propertyToCompare] ===
+			this.data.objectToMatch[this.data.propertyToMatch] ===
 			this.data.objectToBind[this.data.propertyToBind]
 		);
 		this.data.errorMessage = 'The two password inputs must match';

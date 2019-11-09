@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CurrentUserService } from '../user/current-user.service';
 import { UserValidationRulesService } from '../user/user-validation-rules.service';
 import { PasswordInputService } from './password-input.service';
-import { attachCurrentPrefix } from './attach-prefix.function';
+import { attachCurrentPrefix } from './attach-prefix.functions';
 
 
 @Injectable({providedIn: 'root'})

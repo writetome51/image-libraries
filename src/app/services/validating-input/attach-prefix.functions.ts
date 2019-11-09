@@ -12,18 +12,18 @@ export function attachPrefix(
 
 	if (attachToPropertyToBind) obj.data.propertyToBind = prefix + obj.data.placeholder;
 
-	let capitalizedStr = prefix[0].toUpperCase() + prefix.slice(1);
-	obj.data.placeholder = capitalizedStr + ' ' + obj.data.placeholder;
+	let capitalizedPrefix = prefix[0].toUpperCase() + prefix.slice(1);
+	obj.data.placeholder = capitalizedPrefix + ' ' + obj.data.placeholder;
 
 	obj.data.errorMessage = 'The ' + prefix + ' ' + obj.data.errorMessage.slice(4);
 }
 
 
-export function attachCurrentPrefix(obj) {
+export function attachCurrentPrefix(obj: ValidatingInputService) {
 	attachPrefix(obj, 'current');
 }
 
 
-export function attachNewPrefix(obj) {
+export function attachNewPrefix(obj: ValidatingInputService) {
 	attachPrefix(obj, 'new', true);
 }
