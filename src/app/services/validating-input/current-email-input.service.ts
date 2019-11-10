@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from './email-input.service';
-import { CurrentUserService } from '../user/current-user.service';
 import { attachCurrentPrefix } from './attach-prefix.functions';
+import { EmailInputService } from './email-input.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class CurrentEmailInputService extends EmailInputService {
 
-	constructor(__currentUser: CurrentUserService) {
-		super(__currentUser);
+	constructor() {
+		super();
 		attachCurrentPrefix(this);
 	}
 

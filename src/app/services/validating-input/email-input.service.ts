@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserService } from '../user/current-user.service';
-import { CurrentUserDataInputService } from './current-user-data-input.service';
+import { getDefaultTextInput } from '../../validating-inputs/get-input.functions';
+import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class EmailInputService extends CurrentUserDataInputService {
+@Injectable({providedIn: 'root'})
 
+export class EmailInputService extends ValidatingInputService {
 
-	constructor(__currentUser: CurrentUserService) {
-		super(__currentUser);
+	constructor() {
+		super();
 
-		this.data.type = 'text';
+		this.data = getDefaultTextInput();
 		this.data.id = 'email-input';
 		this.data.propertyToBind = 'email';
 		this.data.placeholder = 'Email';
@@ -22,6 +20,5 @@ export class EmailInputService extends CurrentUserDataInputService {
 		);
 		this.data.errorMessage = `The email must be at least ${rules.emailMinLength} characters`;
 	}
-
 
 }

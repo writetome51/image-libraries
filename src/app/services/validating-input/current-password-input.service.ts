@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserService } from '../user/current-user.service';
-import { PasswordInputService } from './password-input.service';
 import { attachCurrentPrefix } from './attach-prefix.functions';
+import { PasswordInputService } from './password-input.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class CurrentPasswordInputService extends PasswordInputService {
 
-	constructor(__currentUser: CurrentUserService) {
-		super(__currentUser);
+	constructor() {
+		super();
 		attachCurrentPrefix(this);
 	}
 
