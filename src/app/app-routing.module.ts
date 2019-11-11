@@ -1,6 +1,6 @@
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
-import { IntroductionComponent } from './introduction/introduction.component';
+import { LoginComponent } from './login/login.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -33,7 +33,7 @@ const routes: Routes = [
 
 	{
 		path: '', // the logged-out homepage
-		component: IntroductionComponent,
+		component: LoginComponent,
 		pathMatch: 'full',
 		canActivate: [DeAuthenticatedGuard]
 	},

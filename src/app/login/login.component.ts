@@ -6,14 +6,16 @@ import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-ini
 
 
 @Component({
-	selector: 'app-introduction',
-	templateUrl: './introduction.component.html'
+	selector: 'app-login',
+	templateUrl: './login.component.html'
 })
-export class IntroductionComponent extends ClearAlertAndFormOnInitComponent {
+export class LoginComponent extends ClearAlertAndFormOnInitComponent {
 
 	introduction = `This application lets you create libraries of images.  Inside each library you can 
 	rename images, rearrange their order, add descriptions, tags, and do searches.`;
+
 	alert = alert;
+
 	dataOperationStatus = dataOperationStatus;
 
 }
