@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { MatchingValidatingInput } from '../../validating-inputs/matching-validating-input';
-import { PasswordInputService } from './password-input.service';
+import { ValidatingPasswordInputService }
+	from '../../validating-inputs/validating-password-input.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class PasswordAgainInputService extends PasswordInputService {
+export class PasswordAgainInputService extends ValidatingPasswordInputService {
 
 	data: MatchingValidatingInput;
 

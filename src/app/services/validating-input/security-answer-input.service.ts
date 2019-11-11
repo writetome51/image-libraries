@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
-import { PasswordInputService } from './password-input.service';
+import { ValidatingPasswordInputService }
+	from '../../validating-inputs/validating-password-input.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class SecurityAnswerInputService extends PasswordInputService {
+export class SecurityAnswerInputService extends ValidatingPasswordInputService {
 
 	constructor() {
 		super();

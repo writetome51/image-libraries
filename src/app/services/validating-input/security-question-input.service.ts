@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
-import { getDefaultTextInput } from '../../validating-inputs/get-input.functions';
-import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
+import { ValidatingTextInputService } from '../../validating-inputs/validating-text-input.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class SecurityQuestionInputService extends ValidatingInputService {
+export class SecurityQuestionInputService extends ValidatingTextInputService {
 
 	constructor() {
 		super();
 
-		this.data = getDefaultTextInput();
 		this.data.id = 'security-question-input';
 		this.data.propertyToBind = 'question';
 		this.data.placeholder = 'Question';
