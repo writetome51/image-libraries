@@ -1,4 +1,4 @@
-import { DataOperationStatusService } from './data-operation-status.service';
+import { DataOperationStatusService as dataOperationStatus} from './data-operation-status.service';
 import { DataOperationProcessorService }
 	from './data-operation-processor/data-operation-processor.service';
 import { IDoThis } from '../../interfaces/i-do-this';
@@ -10,14 +10,12 @@ import { Injectable } from '@angular/core';
 })
 export class PerformAppDataOperationService implements IDoThis {
 
-	constructor(private __dataOperationStatus: DataOperationStatusService) {
-	}
-
 
 	async go(processor: DataOperationProcessorService) {
-		this.__dataOperationStatus.waitingForResult = true;
+		dataOperationStatus.waitingForResult = true;
 		await processor.process();
-		this.__dataOperationStatus.waitingForResult = false;
+		dataOperationStatus.waitingForResult = false;
 	}
+
 
 }

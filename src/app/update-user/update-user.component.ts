@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertService as alert } from '../services/alert.service';
-import { DataOperationStatusService } from '../services/data-operation-status.service';
+import { DataOperationStatusService as dataOperationStatus }
+	from '../services/data-operation-status.service';
 
 
 @Component({
@@ -10,8 +11,6 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 export class UpdateUserComponent {
 
 	alert = alert;
-
-	constructor(public dataOperationStatus: DataOperationStatusService) {
-	}
+	dataOperationStatus = dataOperationStatus;
 
 }
