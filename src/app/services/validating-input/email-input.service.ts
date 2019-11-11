@@ -13,10 +13,15 @@ export class EmailInputService extends ValidatingTextInputService {
 		this.data.id = 'email-input';
 		this.data.propertyToBind = 'email';
 		this.data.placeholder = 'Email';
-		this.data.isValid = () => (
-			this.data.objectToBind[this.data.propertyToBind].length >= rules.emailMinLength
-		);
-		this.data.errorMessage = `The email must be at least ${rules.emailMinLength} characters`;
+		// @ts-ignore
+		this.data.isValid = [
+			() => (this.data.objectToBind[this.data.propertyToBind].length >= rules.emailMinLength),
+			() => (!(this.data.objectToBind[this.data.propertyToBind].includes(' ')))
+		];
+		this.data.errorMessage = [
+			`The email must be at least ${rules.emailMinLength} characters`,
+			`The email must not include spaces`
+		];
 	}
 
 }

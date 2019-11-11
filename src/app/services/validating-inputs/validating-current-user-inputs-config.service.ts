@@ -1,5 +1,5 @@
 import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
-import { CurrentUserService } from '../user/current-user.service';
+import { CurrentUserService as currentUser} from '../user/current-user.service';
 
 
 export abstract class ValidatingCurrentUserInputsConfigService {
@@ -7,10 +7,7 @@ export abstract class ValidatingCurrentUserInputsConfigService {
 	data: ValidatingInputService[];
 
 
-	constructor(
-		currentUser: CurrentUserService,
-		...inputs: ValidatingInputService[]
-	) {
+	constructor(...inputs: ValidatingInputService[]) {
 		inputs.forEach((input: ValidatingInputService) => input.data.objectToBind = currentUser);
 
 		this.data = inputs;

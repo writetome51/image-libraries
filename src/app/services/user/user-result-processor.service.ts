@@ -1,4 +1,4 @@
-import { CurrentUserService } from './current-user.service';
+import { CurrentUserService as currentUser} from './current-user.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
@@ -10,17 +10,14 @@ import { LocalSessionIDService } from '../authentication/local-session-id.servic
 })
 export class UserResultProcessorService implements ResultProcessor {
 
-	constructor(
-		private __localSessionID: LocalSessionIDService,
-		private __currentUser: CurrentUserService
-	) {
+	constructor(private __localSessionID: LocalSessionIDService) {
 	}
 
 
 	process(result: DBUser): void {
 		if (result.sessionID) {
 			this.__localSessionID.set(result.sessionID);
-			this.__currentUser.dbUser = result;
+			currentUser.dbUser = result;
 		}
 	}
 

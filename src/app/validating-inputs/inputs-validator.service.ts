@@ -5,28 +5,45 @@ import { isArray, notArray } from '@writetome51/is-array-not-array';
 
 export class InputsValidatorService {
 
+
 	static validate(input: ValidatingInput): void {
 
-		if (isArray(input.isValid)) {
-			// @ts-ignore
-			for (let i = 0; i < input.isValid.length; ++i) {
-				if (not(input.isValid[i]())) {
+		if (isArray(input.isValid)) handleArray(input.isValid);
+		else handleFunction(input.isValid);
 
+
+		function handleArray(isValidFunctions) {
+			// @ts-ignore
+			for (let i = 0; i < isValidFunctions.length; ++i) {
+				let isValid = isValidFunctions[i];
+
+				if (not(isValid())) {
 					if (notArray(input.errorMessage)) throw new Error(
 						`The 'isValid' property is an array, which means the 'errorMessage' property 
 						must also be an array`);
-					else input.error = input.errorMessage[i];
+					else {
+						input.error = input.errorMessage[i];
+						return;
+					}
 				}
+				else input.error = ''; // no error.
 			}
 		}
-		else if (typeof input.isValid !== 'function'){
-			throw new Error(`The 'isValid' property must be either a function or an array of functions`);
+
+
+		function handleFunction(isValid) {
+			if (typeof isValid !== 'function') {
+				throw new Error(
+					`The 'isValid' property must be either a function or an array of functions`);
+			}
+			else if (not(isValid())) {
+				// @ts-ignore
+				input.error = input.errorMessage;
+			}
+			else input.error = ''; // no error.
 		}
-		else if (not(input.isValid())) {
-			// @ts-ignore
-			input.error = input.errorMessage;
-		}
-		else input.error = '';
+
 	}
+
 
 }

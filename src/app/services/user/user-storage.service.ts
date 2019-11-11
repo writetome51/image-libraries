@@ -1,4 +1,4 @@
-import { CurrentUserService } from './current-user.service';
+import { CurrentUserService as currentUser } from './current-user.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../authentication/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
@@ -13,7 +13,6 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
-		private __currentUser: CurrentUserService,
 		private __localSessionID: LocalSessionIDService
 	) {
 		super();
@@ -22,7 +21,7 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 
 	async exists(): Promise<any> {
 		return await this._getObjectFromSubscriptionTo(
-			this.__userRestApi.exists({email: this.__currentUser.email})
+			this.__userRestApi.exists({email: currentUser.email})
 		);
 	}
 
@@ -38,9 +37,9 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.updatePassword(
 				{
-					email: this.__currentUser.email,
-					password: this.__currentUser.password,
-					newPassword: this.__currentUser.newPassword,
+					email: currentUser.email,
+					password: currentUser.password,
+					newPassword: currentUser.newPassword,
 					sessionID: this.__localSessionID.get()
 				}
 			)
@@ -52,9 +51,9 @@ export class UserStorageService extends ReturnObjectFromSubscriptionService {
 		return await this._getObjectFromSubscriptionTo(
 			this.__userRestApi.updateEmail(
 				{
-					email: this.__currentUser.email,
-					password: this.__currentUser.password,
-					newEmail: this.__currentUser.newEmail,
+					email: currentUser.email,
+					password: currentUser.password,
+					newEmail: currentUser.newEmail,
 					sessionID: this.__localSessionID.get()
 				}
 			)
