@@ -1,46 +1,39 @@
-import { Injectable } from '@angular/core';
-
-
-@Injectable({
-	providedIn: 'root'
-})
 export class AlertService {
 
-	private __error = ''; // error message
-	private __success = ''; // success message
+	private static __error = ''; // error message
+	private static __success = ''; // success message
 
 
-	get data() {
+	static get data() {
 		if (this.success) return this.success;
 		else return this.error;
 	}
 
 
-	set success(value) {
+	static set success(value) {
 		this.__error = ''; // If there's success, there can't be an error.
 		this.__success = value;
 	}
 
 
-	get success() {
+	static get success() {
 		return this.__success;
 	}
 
 
-	set error(value) {
+	static set error(value) {
 		this.__success = '';  // If there's an error, there can't be success.
 		this.__error = value;
 	}
 
 
-	get error() {
+	static get error() {
 		return this.__error;
 	}
 
 
-	clear() {
+	static clear() {
 		this.success = ''; // now success and error messages will be empty.
 	}
-
 
 }
