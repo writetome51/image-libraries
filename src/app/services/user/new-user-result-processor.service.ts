@@ -1,7 +1,7 @@
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LoginResultProcessorService } from './login-result-processor.service';
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 import { ResultProcessor } from '../../../interfaces/result-processor';
 
 
@@ -10,16 +10,13 @@ import { ResultProcessor } from '../../../interfaces/result-processor';
 })
 export class NewUserResultProcessorService implements ResultProcessor {
 
-	constructor(
-		private __loginResultProcessor: LoginResultProcessorService,
-		private __alert: AlertService
-	) {
+	constructor(private __loginResultProcessor: LoginResultProcessorService) {
 	}
 
 
 	process(result: DBUser): void {
 		this.__loginResultProcessor.process(result);
-		if (result.sessionID) this.__alert.success = 'User created!';
+		if (result.sessionID) alert.success = 'User created!';
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertService } from '../services/alert.service';
+import { AlertService as alert } from '../services/alert.service';
 import { DataOperationStatusService } from '../services/data-operation-status.service';
 import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-init.component';
 import { CurrentUserService } from '../services/user/current-user.service';
@@ -11,16 +11,15 @@ import { CurrentUserService } from '../services/user/current-user.service';
 })
 export class NewUserComponent extends ClearAlertAndFormOnInitComponent {
 
-
+	alert = alert;
 	heading = 'Create Account';
 
 
 	constructor(
-		public alert: AlertService,
 		public dataOperationStatus: DataOperationStatusService,
 		__currentUser: CurrentUserService
 	) {
-		super(alert, __currentUser);
+		super(__currentUser);
 	}
 
 

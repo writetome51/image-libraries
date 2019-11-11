@@ -1,4 +1,3 @@
-import { AlertService } from '../alert.service';
 import { DataOperationResultCheckService } from './data-operation-result-check.service';
 import { Injectable } from '@angular/core';
 import { invalidSessionID, noDocumentMatchedCriteria } from '../../../constants/api-errors';
@@ -11,11 +10,8 @@ import { NoRecordMatchErrorHandlerService } from '../error/no-record-match-error
 export class OperationRequiringEmailPasswordResultCheckService extends DataOperationResultCheckService {
 
 
-	constructor(
-		_alert: AlertService,
-		private __noRecordMatchErrorHandler: NoRecordMatchErrorHandlerService
-	) {
-		super(_alert);
+	constructor(private __noRecordMatchErrorHandler: NoRecordMatchErrorHandlerService) {
+		super();
 	}
 
 

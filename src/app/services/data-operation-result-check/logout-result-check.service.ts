@@ -1,4 +1,3 @@
-import { AlertService } from '../alert.service';
 import { DataOperationResultCheckService } from './data-operation-result-check.service';
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn } from '../../../constants/api-errors';
@@ -10,12 +9,10 @@ import { NotLoggedInErrorHandlerService } from '../error/not-logged-in-error-han
 })
 export class LogoutResultCheckService extends DataOperationResultCheckService {
 
-
 	constructor(
-		_alert: AlertService,
 		private __notLoggedInErrorHandler: NotLoggedInErrorHandlerService
 	) {
-		super(_alert);
+		super();
 	}
 
 
@@ -25,6 +22,5 @@ export class LogoutResultCheckService extends DataOperationResultCheckService {
 		}
 		else super._errorHandler(errMessage);
 	}
-
 
 }

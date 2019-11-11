@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertService } from '../services/alert.service';
+import { AlertService as alert } from '../services/alert.service';
 
 
 @Component({
@@ -8,14 +8,11 @@ import { AlertService } from '../services/alert.service';
 })
 export class AlertComponent {
 
-
-	constructor(public alert: AlertService) {
-	}
+	alert = alert;
 
 
 	closeMessage() {
-		this.alert.clear();
+		alert.clear();
 	}
-
 
 }

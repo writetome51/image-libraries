@@ -5,7 +5,7 @@ import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { AlertService } from '../services/alert.service';
+import { AlertService as alert} from '../services/alert.service';
 
 
 @Injectable({
@@ -19,8 +19,7 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	constructor(
-		private __currentLibrary: CurrentLibraryService,
-		private __alert: AlertService
+		private __currentLibrary: CurrentLibraryService
 	) {
 	}
 
@@ -33,7 +32,7 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 	): boolean {
 
 		if (Object.keys(this.__currentLibrary.changes).length) {
-			this.__alert.error =
+			alert.error =
 				'You have unsaved changes to the library.  Please save or discard them first.';
 			return false;
 		}

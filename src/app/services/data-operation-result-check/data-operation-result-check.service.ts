@@ -1,4 +1,4 @@
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 
@@ -7,10 +7,6 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class DataOperationResultCheckService {
-
-
-	constructor(protected _alert: AlertService) {
-	}
 
 
 	async ifSuccessful_processResult(
@@ -28,7 +24,7 @@ export class DataOperationResultCheckService {
 			if (result.error.message) await this._errorHandler(result.error.message);
 			else {
 				// This is for displaying unexpected errors.
-				this._alert.error = result.error.toString();
+				alert.error = result.error.toString();
 			}
 			return;
 		}
@@ -39,7 +35,7 @@ export class DataOperationResultCheckService {
 	// Bland, default error handler.  Intended to be extended by subclasses.
 
 	protected _errorHandler(errMessage) {
-		this._alert.error = errMessage;
+		alert.error = errMessage;
 	}
 
 

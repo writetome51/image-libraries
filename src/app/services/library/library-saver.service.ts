@@ -3,7 +3,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryStorageService } from './library-storage.service';
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 
 
 @Injectable({
@@ -14,7 +14,6 @@ export class LibrarySaverService {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
-		private __alert: AlertService,
 		private __libraryStorage: LibraryStorageService
 	) {
 	}
@@ -23,7 +22,7 @@ export class LibrarySaverService {
 	saveNew(): void {
 		this.__currentLibrary.name = this.__currentLibrary.name.trim();
 		if (isEmpty(this.__currentLibrary.name)) {
-			this.__alert.error = `The library must be given a name before you save it`;
+			alert.error = `The library must be given a name before you save it`;
 			return;
 		}
 		this.__libraryStorage.create(this.__currentLibrary.name);

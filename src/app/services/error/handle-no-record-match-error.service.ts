@@ -1,5 +1,5 @@
 import { incorrectPassword, userDoesntExist } from '../../../constants/form-submission-errors';
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
 import { IDoThis } from '../../../interfaces/i-do-this';
@@ -12,7 +12,6 @@ import { Injectable } from '@angular/core';
 export class HandleNoRecordMatchErrorService implements IDoThis {
 
 	constructor(
-		private __alert: AlertService,
 		private __userStorage: UserStorageService,
 		private __notLoggedInErrorHandler: NotLoggedInErrorHandlerService
 	) {
@@ -29,10 +28,10 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 				await this.__notLoggedInErrorHandler.handle();
 			}
 			else { // Else whether or not user is logged in, the submitted password must be wrong.
-				this.__alert.error = incorrectPassword;
+				alert.error = incorrectPassword;
 			}
 		}
-		else this.__alert.error = userDoesntExist;
+		else alert.error = userDoesntExist;
 	}
 
 }

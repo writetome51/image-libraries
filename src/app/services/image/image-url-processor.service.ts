@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService } from '../library/current-library.service';
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 import { Processor } from '../../../interfaces/processor';
 
 
@@ -10,10 +10,7 @@ import { Processor } from '../../../interfaces/processor';
 export class ImageURLProcessorService implements Processor {
 
 
-	constructor(
-		private __currentLibrary: CurrentLibraryService,
-		private __alert: AlertService
-	) {
+	constructor(private __currentLibrary: CurrentLibraryService) {
 	}
 
 
@@ -23,7 +20,7 @@ export class ImageURLProcessorService implements Processor {
 			this.__currentLibrary.images.push({name: '', src: url, description: ''});
 		}
 		else {
-			this.__alert.error =
+			alert.error =
 				'The URL you entered is either not connected to a resource, or access is denied.';
 		}
 	}

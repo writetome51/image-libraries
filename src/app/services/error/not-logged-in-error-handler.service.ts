@@ -1,4 +1,4 @@
-import { AlertService } from '../alert.service';
+import { AlertService as alert } from '../alert.service';
 import { Injectable } from '@angular/core';
 import { notLoggedIn } from '../../../constants/form-submission-errors';
 import { RemoveLocalSessionIDAndRedirectHomeService }
@@ -17,7 +17,6 @@ export class NotLoggedInErrorHandlerService implements ErrorHandler {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
-		private __alert: AlertService,
 		private __remove_localSessionID_and_redirectHome: RemoveLocalSessionIDAndRedirectHomeService
 	) {
 		this.handle = async () => {
@@ -26,7 +25,7 @@ export class NotLoggedInErrorHandlerService implements ErrorHandler {
 
 			if (this.__localSessionID.get()) {
 				await this.__remove_localSessionID_and_redirectHome.go();
-				this.__alert.error = notLoggedIn;
+				alert.error = notLoggedIn;
 			}
 		};
 	}
