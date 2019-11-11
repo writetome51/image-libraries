@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CurrentUserService } from '../../services/user/current-user.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
 
 
@@ -8,9 +7,4 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 	template: `<update-user-email-form></update-user-email-form>`
 })
 export class UpdateUserEmailComponent extends ClearAlertAndFormOnInitComponent {
-
-	constructor(__currentUser: CurrentUserService) {
-		super(__currentUser);
-	}
-
 }

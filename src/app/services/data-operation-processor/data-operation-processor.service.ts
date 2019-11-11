@@ -1,9 +1,8 @@
-import { Processor } from '../../../interfaces/processor';
 import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
+import { DataOperationProcessor } from '../../../interfaces/data-operation-processor';
 
 
-export abstract class DataOperationProcessorService implements Processor {
-
+export abstract class DataOperationProcessorService implements DataOperationProcessor {
 
 	constructor(private __resultInterpreter: ResultInterpreterService) {
 	}
@@ -16,6 +15,5 @@ export abstract class DataOperationProcessorService implements Processor {
 
 
 	protected abstract _getResult(): any | Promise<any>;
-
 
 }
