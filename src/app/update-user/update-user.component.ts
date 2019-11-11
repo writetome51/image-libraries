@@ -11,7 +11,7 @@ export class UpdateUserComponent {
 
 	constructor(
 		public alert: AlertService,
-		public dataOperationBegun: DataOperationStatusService
+		public dataOperationStatus: DataOperationStatusService
 	) {
 	}
 

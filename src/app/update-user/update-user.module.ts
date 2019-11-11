@@ -1,7 +1,7 @@
 import { AlertModule } from '../alert/alert.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
+import { DeleteUserFormComponent } from './delete-user/delete-user-form/delete-user-form.component';
 import { EmailPasswordFormInputsModule }
 	from '../email-password-form-inputs/email-password-form-inputs.module';
 import { FormsModule } from '@angular/forms';
@@ -10,13 +10,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
-	from './update-user-email-form/update-user-email-form-inputs.component';
-import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
+	from './update-user-email/update-user-email-form/update-user-email-form-inputs.component';
+import { UpdateUserEmailFormComponent }
+	from './update-user-email/update-user-email-form/update-user-email-form.component';
 import { UpdateUserPasswordFormComponent }
-	from './update-user-password-form/update-user-password-form.component';
+	from './update-user-password/update-user-password-form/update-user-password-form.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { UpdateUserPasswordFormInputsComponent }
-	from './update-user-password-form/update-user-password-form-inputs.component';
+	from './update-user-password/update-user-password-form/update-user-password-form-inputs.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
+import { UpdateUserPasswordComponent } from './update-user-password/update-user-password.component';
 
 
 @NgModule({
@@ -26,7 +30,10 @@ import { UpdateUserPasswordFormInputsComponent }
 		UpdateUserEmailFormInputsComponent,
 		UpdateUserPasswordFormComponent,
 		UpdateUserPasswordFormInputsComponent,
-		DeleteUserFormComponent
+		DeleteUserFormComponent,
+		DeleteUserComponent,
+		UpdateUserEmailComponent,
+		UpdateUserPasswordComponent
 	],
 	imports: [
 		CommonModule,
@@ -50,17 +57,17 @@ import { UpdateUserPasswordFormInputsComponent }
 				children: [
 					{
 						path: 'email',
-						component: UpdateUserEmailFormComponent
+						component: UpdateUserEmailComponent
 					},
 
 					{
 						path: 'password',
-						component: UpdateUserPasswordFormComponent
+						component: UpdateUserPasswordComponent
 					},
 
 					{
 						path: 'delete-account',
-						component: DeleteUserFormComponent
+						component: DeleteUserComponent
 					},
 				]
 			},

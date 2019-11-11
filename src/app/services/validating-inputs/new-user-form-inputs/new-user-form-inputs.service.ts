@@ -12,8 +12,7 @@ export class NewUserFormInputsService extends AppValidatingInputsService {
 		__alert: AlertService,
 		inputsConfig: NewUserFormInputsConfigService
 	) {
-		super(__alert, ...inputsConfig.data
-		);
+		super(__alert, ...inputsConfig.data);
 	}
 
 }

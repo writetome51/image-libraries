@@ -26,6 +26,8 @@ export class UpdatePasswordFormInputsConfigService extends ValidatingCurrentUser
 			newPasswordInput,
 			newPasswordAgainInput
 		);
+
+		newPasswordAgainInput.data.objectToMatch = currentUser;
 	}
 
 }

@@ -29,6 +29,8 @@ export class NewUserFormInputsConfigService extends ValidatingCurrentUserInputsC
 			questionInput,
 			answerInput
 		);
+
+		passwordAgainInput.data.objectToMatch = currentUser;
 	}
 
 }
