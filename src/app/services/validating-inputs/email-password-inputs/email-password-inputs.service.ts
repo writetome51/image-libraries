@@ -12,9 +12,7 @@ export class EmailPasswordInputsService extends AppValidatingInputsService {
 		__alert: AlertService,
 		inputsConfig: EmailPasswordInputsConfigService
 	) {
-		super(
-			__alert,
-			...inputsConfig.data
+		super(__alert, ...inputsConfig.data
 		);
 	}
 

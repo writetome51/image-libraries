@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AppValidatingInputsService } from './app-validating-inputs.service';
-import { AlertService } from '../alert.service';
+import { AppValidatingInputsService } from '../app-validating-inputs.service';
+import { AlertService } from '../../alert.service';
 import { UpdatePasswordFormInputsConfigService } from './update-password-form-inputs-config.service';
 
 
@@ -13,10 +13,7 @@ export class UpdatePasswordFormInputsService extends AppValidatingInputsService 
 		__alert: AlertService,
 		inputsConfig: UpdatePasswordFormInputsConfigService
 	) {
-		super(
-			__alert,
-			...inputsConfig.data
-		);
+		super(__alert, ...inputsConfig.data);
 	}
 
 }

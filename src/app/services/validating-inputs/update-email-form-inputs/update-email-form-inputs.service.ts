@@ -12,10 +12,7 @@ export class UpdateEmailFormInputsService extends AppValidatingInputsService {
 		__alert: AlertService,
 		inputsConfig: UpdateEmailFormInputsConfigService
 	) {
-		super(
-			__alert,
-			...inputsConfig.data
-		);
+		super(__alert, ...inputsConfig.data);
 	}
 
 }

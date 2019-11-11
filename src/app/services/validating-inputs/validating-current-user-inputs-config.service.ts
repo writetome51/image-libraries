@@ -2,7 +2,7 @@ import { ValidatingInputService } from '../../validating-inputs/validating-input
 import { CurrentUserService } from '../user/current-user.service';
 
 
-export abstract class AppValidatingInputsConfigService {
+export abstract class ValidatingCurrentUserInputsConfigService {
 
 	data: ValidatingInputService[];
 
@@ -15,4 +15,5 @@ export abstract class AppValidatingInputsConfigService {
 
 		this.data = inputs;
 	}
+
 }
