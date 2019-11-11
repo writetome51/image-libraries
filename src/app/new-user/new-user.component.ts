@@ -12,8 +12,8 @@ import { CurrentUserService } from '../services/user/current-user.service';
 })
 export class NewUserComponent extends ClearAlertAndFormOnInitComponent {
 
-	alert = alert;
 	heading = 'Create Account';
+	alert = alert;
 	dataOperationStatus = dataOperationStatus;
 
 

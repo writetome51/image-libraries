@@ -6,9 +6,7 @@ import { UpdateEmailFormInputsService }
 
 @Component({
 	selector: 'update-user-email-form-inputs',
-	template: `
-		<validating-inputs [inputs]="inputs"></validating-inputs>
-	`
+	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
 export class UpdateUserEmailFormInputsComponent extends ValidatingFormInputsComponent {
 

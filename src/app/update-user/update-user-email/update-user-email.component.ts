@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlertService as alert } from '../../services/alert.service';
 import { CurrentUserService } from '../../services/user/current-user.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
 
