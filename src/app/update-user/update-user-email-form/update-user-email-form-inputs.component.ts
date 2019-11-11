@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '../../validating-inputs/validating-form-inputs.component';
 import { UpdateEmailFormInputsService }
-	from '../../services/validating-inputs/update-email-form-inputs.service';
+	from '../../services/validating-inputs/update-email-form-inputs/update-email-form-inputs.service';
 
 
 @Component({
