@@ -1,11 +1,29 @@
 import { ValidatingInput } from './validating-input';
 import { not } from '@writetome51/not';
+import { isArray, notArray } from '@writetome51/is-array-not-array';
 
 
 export class InputsValidatorService {
 
 	static validate(input: ValidatingInput): void {
-		if (not(input.isValid())) {
+
+		if (isArray(input.isValid)) {
+			// @ts-ignore
+			for (let i = 0; i < input.isValid.length; ++i) {
+				if (not(input.isValid[i]())) {
+
+					if (notArray(input.errorMessage)) throw new Error(
+						`The 'isValid' property is an array, which means the 'errorMessage' property 
+						must also be an array`);
+					else input.error = input.errorMessage[i];
+				}
+			}
+		}
+		else if (typeof input.isValid !== 'function'){
+			throw new Error(`The 'isValid' property must be either a function or an array of functions`);
+		}
+		else if (not(input.isValid())) {
+			// @ts-ignore
 			input.error = input.errorMessage;
 		}
 		else input.error = '';

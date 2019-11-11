@@ -7,15 +7,21 @@ export interface ValidatingInput {
 
 	id: string; // becomes value of <input> id
 
-	isValid: () => boolean; // To be called during an input event, like 'onblur'
+	isValid: () => boolean | (() => boolean)[];
+		// To be called during an input event, like 'onblur'.
+		// Can be function or array of functions.
+		// If array of functions, this.errorMessage must be array of error messages,
+		// each one corresponding with function of same index.
+		// I.E., if this.isValid[i]() returns false, then this.errorMessage[i] must
+		// be the message assigned to this.error.
 
-	errorMessage: string; // message to show if input is invalid
+	errorMessage: string | string[]; // message to show if input is invalid
 
-	error: string; // Empty string.  If input is invalid, this is assigned the errorMessage
+	error: string; // Empty string.  If input is invalid, this is assigned this.errorMessage
 
-	objectToBind: any; // <input> intended to bind with objectToBind[propertyToBind]
+	objectToBind: any; // <input> intended to bind with this.objectToBind[this.propertyToBind]
 
-	propertyToBind: string; // property in objectToBind
+	propertyToBind: string; // property in this.objectToBind
 
 	hideLabel: boolean; // if true, the inputs <label> is hidden
 
