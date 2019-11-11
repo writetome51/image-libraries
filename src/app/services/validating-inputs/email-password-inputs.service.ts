@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from '../validating-input/email-input.service';
-import { PasswordInputService } from '../validating-input/password-input.service';
 import { AppValidatingInputsService } from './app-validating-inputs.service';
 import { AlertService } from '../alert.service';
+import { EmailPasswordInputsConfigService } from './email-password-inputs-config.service';
 
 
 @Injectable({
@@ -12,13 +11,11 @@ export class EmailPasswordInputsService extends AppValidatingInputsService {
 
 	constructor(
 		__alert: AlertService,
-		emailInput: EmailInputService,
-		passwordInput: PasswordInputService
+		inputsConfig: EmailPasswordInputsConfigService
 	) {
 		super(
 			__alert,
-			emailInput,
-			passwordInput
+			...inputsConfig.data
 		);
 	}
 
