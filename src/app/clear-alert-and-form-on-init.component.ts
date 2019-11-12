@@ -1,5 +1,5 @@
 import { AlertService as alert } from './services/alert.service';
-import { ClearFormDataService as clearFormData } from './services/user/clear-form-data.service';
+import { ClearFormDataService as clearFormData } from './services/clear-form-data.service';
 import { OnInit } from '@angular/core';
 
 

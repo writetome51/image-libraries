@@ -1,4 +1,4 @@
-import { CurrentUserService as currentUser } from './current-user.service';
+import { CurrentUserService as currentUser } from './user/current-user.service';
 
 
 export class ClearFormDataService {

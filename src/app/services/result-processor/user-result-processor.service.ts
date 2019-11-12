@@ -1,4 +1,4 @@
-import { CurrentUserService as currentUser} from './current-user.service';
+import { CurrentUserService as currentUser} from '../user/current-user.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
