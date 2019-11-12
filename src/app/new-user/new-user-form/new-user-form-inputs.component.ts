@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '../../validating-inputs/validating-form-inputs.component';
-import { NewUserFormInputsService } from '../../services/validating-inputs/new-user-form-inputs/new-user-form-inputs.service';
+import { NewUserFormInputsService }
+	from '../../services/validating-inputs/new-user-form-inputs/new-user-form-inputs.service';
 
 
 @Component({

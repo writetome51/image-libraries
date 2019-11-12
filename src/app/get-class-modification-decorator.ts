@@ -10,6 +10,7 @@ export function getClassModificationDecorator(
 			const f: any = function(...args) {
 				let instance = construct(original, args);
 				modifyInstance(instance, decoratorArgs);
+				return instance;
 			};
 
 			// copy prototype so `instanceof` operator still works
@@ -22,9 +23,7 @@ export function getClassModificationDecorator(
 			// a utility function to generate instances of a class
 			function construct(constructor, args) {
 				const c: any = function() {
-				//	return constructor.apply(this, args);
-					// try this instead:
-					return new constructor(...args);
+					return constructor.apply(this, args);
 				};
 				c.prototype = constructor.prototype;
 				return new c();

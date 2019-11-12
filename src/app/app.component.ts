@@ -1,5 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/authentication/local-session-id.service';
+import { EmailInputWithNewPrefixService } from './services/email-input-with-new-prefix.service';
+import { ValidatingInputService } from './validating-inputs/validating-input.service';
+import { ValidatingTextInputService } from './validating-inputs/validating-text-input.service';
 
 
 @Component({
@@ -14,7 +17,7 @@ export class AppComponent {
 	// Adds keyup listener to document.
 	@HostListener('document:keyup', ['$event'])
 	onKeyup(event) {
-		console.log(event);
+	//	console.log(event);
 	}
 
 
@@ -25,7 +28,12 @@ export class AppComponent {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
+		//temp:
+		private __test: EmailInputWithNewPrefixService
 	) {
+		//temp:
+		this.__test.log();
+		console.log(this.__test instanceof ValidatingTextInputService)
 	}
 
 }
