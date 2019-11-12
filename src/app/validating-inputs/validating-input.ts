@@ -8,12 +8,11 @@ export interface ValidatingInput {
 	id: string; // becomes value of <input> id
 
 	isValid: () => boolean | (() => boolean)[];
-		// To be called during an input event, like 'onblur'.
-		// Can be function or array of functions.
-		// If array of functions, this.errorMessage must be array of error messages,
-		// each one corresponding with function of same index.
-		// I.E., if this.isValid[i]() returns false, then this.errorMessage[i] will
-		// be the message assigned to this.error.
+		// Called during input event 'onblur'.
+		// Can be function or array of functions.  If array of functions:
+		//   - this.errorMessage must be array of error messages, each one belonging with
+		//     function of same index.
+		//   - The functions are called in the order they're listed.
 
 	errorMessage: string | string[]; // message to show if input is invalid
 
@@ -23,12 +22,12 @@ export interface ValidatingInput {
 
 	propertyToBind: string; // property in this.objectToBind
 
-	hideLabel: boolean; // if true, the inputs <label> is hidden
+	hideLabel: boolean; // whether or not to make <label> hidden
 
 	required: boolean;
 
 	placeholder: string; // is also used as label
 
-	prompt?: string; // line of text explaining input or asking user to fill it in
+	prompt?: string; // text explaining input or asking user to fill it in
 
 }
