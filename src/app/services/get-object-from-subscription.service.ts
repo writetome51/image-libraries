@@ -3,10 +3,9 @@ import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Subscribable } from 'rxjs';
 
 
-export abstract class ReturnObjectFromSubscriptionService {
+export class GetObjectFromSubscriptionService {
 
-
-	protected async _getObjectFromSubscriptionTo(
+	static async go(
 		subscribable: Subscribable<any>
 	): Promise<any> {
 		let result = await getSubscriptionData(subscribable);
@@ -14,12 +13,11 @@ export abstract class ReturnObjectFromSubscriptionService {
 	}
 
 
-	private __getAsObject(result) {
+	private static __getAsObject(result) {
 		if (typeof result === 'string') {
 			result = getObjectFromJSON(result);
 		}
 		return result;
 	}
-
 
 }

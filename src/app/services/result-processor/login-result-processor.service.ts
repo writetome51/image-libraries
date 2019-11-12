@@ -17,10 +17,10 @@ export class LoginResultProcessorService implements ResultProcessor {
 	}
 
 
-	process(result: DBUser): void {
+	async process(result: DBUser) {
 		this.__userResultProcessor.process(result);
 		if (result.sessionID) {
-			this.__router.navigate(['/libraries']); // logged-in home page.
+			await this.__router.navigate(['/libraries']); // logged-in home page.
 		}
 	}
 

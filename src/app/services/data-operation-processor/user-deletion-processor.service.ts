@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserDeletorService } from '../user/user-deletor.service';
+import { UserDeleterService } from '../user/user-deleter.service';
 import { UserDeletionResultInterpreterService }
 	from '../result-interpreter/user-deletion-result-interpreter.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
@@ -13,7 +13,7 @@ import { EmailPasswordInputsService }
 export class UserDeletionProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
-		private __userDeletor: UserDeletorService,
+		private __userDeletor: UserDeleterService,
 		__emailPasswordInputs: EmailPasswordInputsService,
 		__userDeletionResultInterpreter: UserDeletionResultInterpreterService
 	) {

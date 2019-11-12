@@ -1,22 +1,22 @@
 import { CurrentUserService as currentUser } from './current-user.service';
 import { Injectable } from '@angular/core';
 import { UserRestAPIService } from './user-rest-api.service';
-import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription }
+	from '../get-object-from-subscription.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserCreatorService extends ReturnObjectFromSubscriptionService {
+export class UserCreatorService {
 
 
 	constructor(private __userRestApi: UserRestAPIService) {
-		super();
 	}
 
 
 	async create(): Promise<any> {
-		return await this._getObjectFromSubscriptionTo(
+		return await getObjectFromSubscription.go(
 			this.__userRestApi.create(
 				{
 					email: currentUser.email,

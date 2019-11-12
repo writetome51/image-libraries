@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { CurrentUserService as currentUser} from '../user/current-user.service';
-import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription}
+	from '../get-object-from-subscription.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthenticatorService extends ReturnObjectFromSubscriptionService {
+export class AuthenticatorService {
 
 	constructor(private __authenticationRestApi: AuthenticationRestAPIService) {
-		super();
 	}
 
 
 	async authenticate() {
-		return await this._getObjectFromSubscriptionTo(
+		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.login(
 				{email: currentUser.email, password: currentUser.password}
 			)

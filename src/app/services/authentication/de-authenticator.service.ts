@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { LocalSessionIDService } from './local-session-id.service';
-import { ReturnObjectFromSubscriptionService } from '../return-object-from-subscription.service';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription}
+	from '../get-object-from-subscription.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class DeAuthenticatorService extends ReturnObjectFromSubscriptionService {
+export class DeAuthenticatorService {
 
 	constructor(
 		private __authenticationRestApi: AuthenticationRestAPIService,
 		private __localSessionID: LocalSessionIDService
 	) {
-		super();
 	}
 
 
 	async deAuthenticate() {
-		return await this._getObjectFromSubscriptionTo(
+		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.logout({sessionID: this.__localSessionID.get()})
 		);
 	}
