@@ -1,10 +1,6 @@
-import { Injectable } from '@angular/core';
 import { DBUser } from '../../../interfaces/db-user';
 
 
-@Injectable({
-	providedIn: 'root'
-})
 export class CurrentUserService {
 
 	// Bound to 'password' text input.

@@ -1,10 +1,6 @@
-import { Injectable } from '@angular/core';
 import { CurrentUserService as currentUser } from './current-user.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
 export class ClearFormDataService {
 
 	static go(): void {

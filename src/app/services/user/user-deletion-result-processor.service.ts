@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
-import { UserLogoutResultProcessorService }
-	from './user-logout-result-processor.service';
+import { UserLogoutResultProcessorService } from './user-logout-result-processor.service';
 import { AlertService as alert } from '../alert.service';
 
 
@@ -10,7 +9,9 @@ import { AlertService as alert } from '../alert.service';
 })
 export class UserDeletionResultProcessorService implements ResultProcessor {
 
-	constructor(private __userLogoutResultProcessor: UserLogoutResultProcessorService) {
+	constructor(
+		private __userLogoutResultProcessor: UserLogoutResultProcessorService
+	) {
 	}
 
 
