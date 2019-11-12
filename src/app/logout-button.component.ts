@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './services/data-operation-processor/logout-processor.service';
-import { PerformAppDataOperationService } from './services/perform-app-data-operation.service';
+import { PerformAppDataOperationService as performAppDataOperation }
+	from './services/perform-app-data-operation.service';
 
 
 @Component({
@@ -9,15 +10,12 @@ import { PerformAppDataOperationService } from './services/perform-app-data-oper
 })
 export class LogoutButtonComponent {
 
-	constructor(
-		private __logoutProcessor: LogoutProcessorService,
-		private __performAppDataOperation: PerformAppDataOperationService,
-	) {
+	constructor(private __logoutProcessor: LogoutProcessorService) {
 	}
 
 
 	async logout() {
-		await this.__performAppDataOperation.go(this.__logoutProcessor);
+		await performAppDataOperation.go(this.__logoutProcessor);
 	}
 
 }

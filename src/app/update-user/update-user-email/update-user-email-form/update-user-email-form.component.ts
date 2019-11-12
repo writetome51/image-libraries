@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService }
 	from '../../../services/data-operation-processor/update-email-processor.service';
-import { PerformAppDataOperationService } from '../../../services/perform-app-data-operation.service';
+import { PerformAppDataOperationService as performAppDataOperation }
+	from '../../../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -13,15 +14,12 @@ export class UpdateUserEmailFormComponent {
 	heading = 'Update Email';
 
 
-	constructor(
-		private __emailUpdateProcessor: UpdateEmailProcessorService,
-		private __performAppDataOperation: PerformAppDataOperationService
-	) {
+	constructor(private __emailUpdateProcessor: UpdateEmailProcessorService) {
 	}
 
 
 	async save() {
-		await this.__performAppDataOperation.go(this.__emailUpdateProcessor);
+		await performAppDataOperation.go(this.__emailUpdateProcessor);
 	}
 
 }

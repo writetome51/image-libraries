@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
 	from '../../../services/data-operation-processor/user-deletion-processor.service';
-import { PerformAppDataOperationService } from '../../../services/perform-app-data-operation.service';
+import { PerformAppDataOperationService as performAppDataOperation }
+	from '../../../services/perform-app-data-operation.service';
 
 
 @Component({
@@ -19,15 +20,12 @@ export class DeleteUserFormComponent {
 	};
 
 
-	constructor(
-		private __userDeletionProcessor: UserDeletionProcessorService,
-		private __performAppDataOperation: PerformAppDataOperationService
-	) {
+	constructor(private __userDeletionProcessor: UserDeletionProcessorService) {
 	}
 
 
 	async delete() {
-		await this.__performAppDataOperation.go(this.__userDeletionProcessor);
+		await performAppDataOperation.go(this.__userDeletionProcessor);
 	}
 
 }

@@ -4,9 +4,8 @@ import { DeAuthenticatorService } from '../authentication/de-authenticator.servi
 import { DataOperationProcessorService } from './data-operation-processor.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class LogoutProcessorService extends DataOperationProcessorService {
 
 	constructor(

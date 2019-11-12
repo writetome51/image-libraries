@@ -13,9 +13,9 @@ import { UpdatePasswordFormInputsService }
 export class UpdatePasswordProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
-		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
-		__updatePasswordResultInterpreter: UpdateEmailOrPasswordResultInterpreterService,
 		private __userStorage: UserStorageService,
+		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
+		__updatePasswordResultInterpreter: UpdateEmailOrPasswordResultInterpreterService
 	) {
 		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);
 	}
