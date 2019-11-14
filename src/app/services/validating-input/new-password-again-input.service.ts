@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { PasswordAgainInputService } from './password-again-input.service';
-import { attach_prefix_ValidatingInputService } from './attach-prefix.decorator';
+import { attach_prefix_ValidatingInputService } from './attach-prefix-validating-input-service.decorator';
 
 
-@attach_prefix_ValidatingInputService('new')
+@attach_prefix_ValidatingInputService({prefix: 'new', propertyToBind: 'passwordAgain'})
 
 export class __NewPasswordAgainInputService extends PasswordAgainInputService {
 }
@@ -16,9 +16,6 @@ export class NewPasswordAgainInputService extends __NewPasswordAgainInputService
 	constructor() {
 		super();
 
-		// This is needed because @attach_prefix_ValidatingInputService prepends
-		// 'new' to 'data.propertyToBind':
-		this.data.propertyToBind = 'passwordAgain';
 		this.data.propertyToMatch = 'newPassword';
 		this.data.errorMessage = 'The two new password inputs must match';
 	}
