@@ -4,7 +4,7 @@ import { attach_prefix_ValidatingInputService } from './attach-prefix-validating
 
 
 @Injectable({providedIn: 'root'})
-@attach_prefix_ValidatingInputService({prefix: 'current', propertyToBind: 'email'})
+@attach_prefix_ValidatingInputService({prefix: 'current'})
 
 export class CurrentEmailInputService extends EmailInputService {
 }

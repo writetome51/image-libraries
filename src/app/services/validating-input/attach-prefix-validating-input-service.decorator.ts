@@ -12,7 +12,7 @@ export class TheClass {...}
  *****************/
 
 export const attach_prefix_ValidatingInputService: (
-	params: { prefix: string, propertyToBind: string }
+	params: { prefix: string, propertyToBind?: string }
 ) => Function = getClassModificationDecorator(
 
 	(instance: ValidatingInputService, decoratorArgs: [any]) => {
@@ -20,7 +20,7 @@ export const attach_prefix_ValidatingInputService: (
 		let {prefix, propertyToBind} = decoratorArgs[0];
 
 		instance.data.id = prefix + '-' + instance.data.id;
-		instance.data.propertyToBind = propertyToBind;
+		if (propertyToBind && propertyToBind.length) instance.data.propertyToBind = propertyToBind;
 
 		let capitalizedStr = prefix[0].toUpperCase() + prefix.slice(1);
 		instance.data.placeholder = capitalizedStr + ' ' + instance.data.placeholder;

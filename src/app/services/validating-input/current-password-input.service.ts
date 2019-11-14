@@ -4,7 +4,7 @@ import { attach_prefix_ValidatingInputService } from './attach-prefix-validating
 
 
 @Injectable({providedIn: 'root'})
-@attach_prefix_ValidatingInputService({prefix: 'current', propertyToBind: 'password'})
+@attach_prefix_ValidatingInputService({prefix: 'current'})
 
 export class CurrentPasswordInputService extends PasswordInputService {
 }

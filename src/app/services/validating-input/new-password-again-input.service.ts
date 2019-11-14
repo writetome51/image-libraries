@@ -3,7 +3,7 @@ import { PasswordAgainInputService } from './password-again-input.service';
 import { attach_prefix_ValidatingInputService } from './attach-prefix-validating-input-service.decorator';
 
 
-@attach_prefix_ValidatingInputService({prefix: 'new', propertyToBind: 'passwordAgain'})
+@attach_prefix_ValidatingInputService({prefix: 'new'})
 
 export class __NewPasswordAgainInputService extends PasswordAgainInputService {
 }
