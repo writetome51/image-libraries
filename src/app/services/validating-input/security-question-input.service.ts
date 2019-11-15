@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
 import { ValidatingTextInputService } from '../../validating-inputs/validating-text-input.service';
-import { Bind_ValidatingInputService_to_CurrentUserService }
-	from './bind-validating-input-service-to-current-user-service.decorator';
 
 
 @Injectable({providedIn: 'root'})
-@Bind_ValidatingInputService_to_CurrentUserService()
 
 export class SecurityQuestionInputService extends ValidatingTextInputService {
 
