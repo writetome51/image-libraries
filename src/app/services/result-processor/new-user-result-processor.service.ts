@@ -5,17 +5,16 @@ import { AlertService as alert } from '../alert.service';
 import { ResultProcessor } from '../../../interfaces/result-processor';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class NewUserResultProcessorService implements ResultProcessor {
 
 	constructor(private __loginResultProcessor: LoginResultProcessorService) {
 	}
 
 
-	process(result: DBUser): void {
-		this.__loginResultProcessor.process(result);
+	async process(result: DBUser) {
+		await this.__loginResultProcessor.process(result);
 		if (result.sessionID) alert.success = 'User created!';
 	}
 

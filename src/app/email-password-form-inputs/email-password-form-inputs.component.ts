@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EmailPasswordInputsService }
-	from '../services/validating-inputs/email-password-inputs/email-password-inputs.service';
+	from '../services/validating-inputs/email-password-inputs.service';
 import { ValidatingFormInputsComponent }
 	from '../validating-inputs/validating-form-inputs.component';
 

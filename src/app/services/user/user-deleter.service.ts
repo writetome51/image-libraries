@@ -6,9 +6,8 @@ import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class UserDeleterService {
 
 	constructor(

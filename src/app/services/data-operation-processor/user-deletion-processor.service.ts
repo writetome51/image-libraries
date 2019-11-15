@@ -4,7 +4,7 @@ import { UserDeletionResultInterpreterService }
 	from '../result-interpreter/user-deletion-result-interpreter.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 import { EmailPasswordInputsService }
-	from '../validating-inputs/email-password-inputs/email-password-inputs.service';
+	from '../validating-inputs/email-password-inputs.service';
 
 
 @Injectable({

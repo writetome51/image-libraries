@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { MatchingValidatingInput } from '../../validating-inputs/matching-validating-input';
 import { ValidatingPasswordInputService }
 	from '../../validating-inputs/validating-password-input.service';
+import { Bind_ValidatingInputService_to_CurrentUserService }
+	from './bind-validating-input-service-to-current-user-service.decorator';
 
 
 @Injectable({providedIn: 'root'})
+@Bind_ValidatingInputService_to_CurrentUserService()
 
 export class PasswordAgainInputService extends ValidatingPasswordInputService {
 

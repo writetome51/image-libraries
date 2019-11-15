@@ -4,7 +4,7 @@ import { UpdateEmailOrPasswordResultInterpreterService }
 import { UserStorageService } from '../user/user-storage.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 import { UpdatePasswordFormInputsService }
-	from '../validating-inputs/update-password-form-inputs/update-password-form-inputs.service';
+	from '../validating-inputs/update-password-form-inputs.service';
 
 
 @Injectable({

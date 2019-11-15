@@ -1,7 +1,7 @@
 import { CurrentUserService as currentUser } from './user/current-user.service';
 
 
-export class ClearFormDataService {
+export class ClearFormDataService { // implements IDoThis
 
 	static go(): void {
 

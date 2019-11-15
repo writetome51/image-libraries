@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { EmailInputService } from './email-input.service';
-import { attach_prefix_ValidatingInputService } from './attach-prefix-validating-input-service.decorator';
+import { PrefixLabel_ValidatingInputService }
+	from './prefix-label-validating-input-service.decorator';
 
 
+// is @Injectable necessary, since it was added to parent class?
 @Injectable({providedIn: 'root'})
-@attach_prefix_ValidatingInputService({prefix: 'current'})
+@PrefixLabel_ValidatingInputService({prefix: 'current'})
 
 export class CurrentEmailInputService extends EmailInputService {
 }

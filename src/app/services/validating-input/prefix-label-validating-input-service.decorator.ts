@@ -7,11 +7,11 @@ import { getClassModificationDecorator } from '@writetome51/get-class-modificati
 Decorator for some ValidatingInputService subclasses.
  Usage:
 
-@attach_prefix_ValidatingInputService('string')
+@PrefixLabel_ValidatingInputService({ prefix: string, propertyToBind?: string })
 export class TheClass {...}
  *****************/
 
-export const attach_prefix_ValidatingInputService: (
+export const PrefixLabel_ValidatingInputService: (
 	params: { prefix: string, propertyToBind?: string }
 ) => Function = getClassModificationDecorator(
 
