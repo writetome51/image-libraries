@@ -5,7 +5,6 @@ import { PasswordInputService } from '../validating-input/password-input.service
 import { PasswordAgainInputService } from '../validating-input/password-again-input.service';
 import { SecurityQuestionInputService } from '../validating-input/security-question-input.service';
 import { SecurityAnswerInputService } from '../validating-input/security-answer-input.service';
-import { CurrentUserService as currentUser } from '../user/current-user.service';
 
 
 @Injectable({providedIn: 'root'})
