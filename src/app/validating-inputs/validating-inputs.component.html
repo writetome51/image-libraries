@@ -5,19 +5,24 @@
 >
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 
-	<label for="{{input.id}}" [hidden]="input.hideLabel">{{input.placeholder}}</label>
+	<label for="{{input.id}}" [hidden]="input.hideLabel">{{input.label}}</label>
 
-	<input [type]="input.type" (blur)="validate(i)"
+	<input [type]="input.type"
+		   (blur)="validate(i)"
+
 		   id="{{input.id}}"
+
 		   [class.input-with-error]="input.error.length"
 		   [name]="input.id"
 		   [required]="input.required"
-		   [placeholder]="input.placeholder"
+
+		   [placeholder]="input.hidePlaceholder ? '' : input.label"
 		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
-		   [max]="input.max"
-		   [min]="input.min"
+
+		   [maxLength]="input.maxLength" [minLength]="input.minLength"
+		   [max]="input.max" [min]="input.min"
 	/>
 
-	<p *ngIf="input.error.length"><strong>{{input.error}}</strong></p>
+	<p *ngIf="input.error.length">{{input.error}}</p>
 
 </div>

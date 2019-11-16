@@ -13,7 +13,7 @@ export class SecurityAnswerInputService extends ValidatingPasswordInputService {
 
 		this.data.id = 'security-answer-input';
 		this.data.propertyToBind = 'answer';
-		this.data.placeholder = 'Answer';
+		this.data.label = 'Answer';
 		this.data.isValid = () => (
 			this.data.objectToBind[this.data.propertyToBind].length >= rules.answerMinLength
 		);

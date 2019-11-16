@@ -23,7 +23,7 @@ export const PrefixLabel_ValidatingInputService: (
 		if (propertyToBind && propertyToBind.length) instance.data.propertyToBind = propertyToBind;
 
 		let capitalizedStr = prefix[0].toUpperCase() + prefix.slice(1);
-		instance.data.placeholder = capitalizedStr + ' ' + instance.data.placeholder;
+		instance.data.label = capitalizedStr + ' ' + instance.data.label;
 
 		if (isArray(instance.data.errorMessage)) {
 			// @ts-ignore

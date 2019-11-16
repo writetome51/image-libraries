@@ -7,7 +7,9 @@ export interface ValidatingInput {
 		// Can be 'text', 'password', 'number', etc.  Any <input> type is allowed, but so far this is
 		// only intended for 'text', 'password', or 'number'.
 
-	id: string; // becomes value of <input> id
+	id: string;
+		// assigned to <input> id. Same value is used for 'name' attribute.  It's also
+		// the same value given to the input's associated <label> 'for' attribute.
 
 	isValid: (() => boolean) | (() => boolean)[];
 		// Called during input event 'onblur'.
@@ -25,11 +27,13 @@ export interface ValidatingInput {
 
 	propertyToBind: string; // property in this.objectToBind
 
-	hideLabel: boolean; // makes <label> hidden
-
 	required: boolean;
 
-	placeholder: string; // is also used as label
+	label: string; // same value is used for 'placeholder' attribute
+
+	hideLabel: boolean; // Adds 'hidden' attribute to input's associated <label>
+
+	hidePlaceholder: boolean;
 
 	prompt?: string; // text explaining input or asking user to fill it in
 
@@ -44,7 +48,11 @@ export interface ValidatingInput {
 
 	propertyToMatch?: string; // property in this.objectToMatch
 
-	max?: number; // if this.type is 'number'
+	max?: number; // max value allowed if this.type is 'number'
 
-	min?: number; // if this.type is 'number'
+	min?: number; // min value allowed if this.type is 'number'
+
+	maxLength?: number; // if this.type is 'text' or 'password'
+
+	minLength?: number; // if this.type is 'text' or 'password'
 }

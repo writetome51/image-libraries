@@ -12,7 +12,7 @@ export class EmailInputService extends ValidatingTextInputService {
 
 		this.data.id = 'email-input';
 		this.data.propertyToBind = 'email';
-		this.data.placeholder = 'Email';
+		this.data.label = 'Email';
 
 		this.data.isValid = [
 			() => (this.data.objectToBind[this.data.propertyToBind].length >= rules.emailMinLength),

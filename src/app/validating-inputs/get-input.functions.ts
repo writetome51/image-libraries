@@ -9,17 +9,18 @@ export function getDefaultInput(): ValidatingInput {
 	return {
 		type: undefined,
 		id: undefined,
-		objectToBind: undefined,
-		propertyToBind: undefined,
-		placeholder: undefined,
+		label: undefined,
+		showPlaceholder: true,
 		hideLabel: true,
 		required: true,
+		objectToBind: undefined,
+		propertyToBind: undefined,
+		objectToMatch: undefined,
+		propertyToMatch: undefined,
 		isValid: undefined,
 		errorMessage: undefined,
 		error: '',
 		prompt: undefined,
-		objectToMatch: undefined,
-		propertyToMatch: undefined
 	};
 }
 

@@ -12,7 +12,7 @@ export class SecurityQuestionInputService extends ValidatingTextInputService {
 
 		this.data.id = 'security-question-input';
 		this.data.propertyToBind = 'question';
-		this.data.placeholder = 'Question';
+		this.data.label = 'Question';
 		this.data.isValid = () => (
 			this.data.objectToBind[this.data.propertyToBind].length >= rules.questionMinLength
 		);
