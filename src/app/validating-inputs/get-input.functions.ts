@@ -2,6 +2,9 @@ import { ValidatingInput } from './validating-input';
 import { modifyObject } from '@writetome51/modify-object';
 
 
+// framework independent
+
+
 export function getDefaultInput(): ValidatingInput {
 	return {
 		type: undefined,
@@ -14,7 +17,9 @@ export function getDefaultInput(): ValidatingInput {
 		isValid: undefined,
 		errorMessage: undefined,
 		error: '',
-		prompt: undefined
+		prompt: undefined,
+		objectToMatch: undefined,
+		propertyToMatch: undefined
 	};
 }
 

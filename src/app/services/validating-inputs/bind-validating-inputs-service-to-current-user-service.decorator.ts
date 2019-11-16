@@ -5,7 +5,7 @@ import { ValidatingInput } from '../../validating-inputs/validating-input';
 
 
 /*****************
-Decorator for some ValidatingInputService subclasses.
+Decorator for some ValidatingInputsService subclasses.
  Usage:
 
 @Bind_ValidatingInputsService_to_CurrentUserService()
@@ -19,7 +19,6 @@ export const Bind_ValidatingInputsService_to_CurrentUserService = getClassModifi
 			let input: ValidatingInput = inputs.data[i];
 
 			input.objectToBind = currentUser;
-			// @ts-ignore
 			if (input.propertyToMatch) input.objectToMatch = currentUser;
 		}
 	}

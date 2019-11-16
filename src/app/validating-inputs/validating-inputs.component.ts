@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ValidatingInput } from './validating-input';
-import { InputsValidatorService } from './inputs-validator.service';
+import { InputValidatorService } from './input-validator.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class ValidatingInputsComponent implements OnInit {
 
 
 	validate(index): void {
-		InputsValidatorService.validate(this.inputs[index]);
+		InputValidatorService.validate(this.inputs[index]);
 	}
 
 }

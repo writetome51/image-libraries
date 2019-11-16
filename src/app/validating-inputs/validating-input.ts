@@ -30,4 +30,14 @@ export interface ValidatingInput {
 
 	prompt?: string; // text explaining input or asking user to fill it in
 
+	objectToMatch?: any;
+	// this.objectToMatch[this.propertyToMatch] is intended to be checked in this.isValid if
+	// its value matches the value of this.objectToBind[this.propertyToBind].
+	// Example: if one <input> is for 'password' and another <input> is for 'confirm password',
+	// you need to make sure they match.  The ValidatingInput representing 'confirm password'
+	// would need its objectToMatch[propertyToMatch] to be bound to the object[property]
+	// storing 'password'.
+
+	propertyToMatch?: string; // property in objectToMatch
+
 }

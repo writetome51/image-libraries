@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MatchingValidatingInput } from '../../validating-inputs/matching-validating-input';
 import { ValidatingPasswordInputService }
 	from '../../validating-inputs/validating-password-input.service';
 
@@ -7,9 +6,6 @@ import { ValidatingPasswordInputService }
 @Injectable({providedIn: 'root'})
 
 export class PasswordAgainInputService extends ValidatingPasswordInputService {
-
-	data: MatchingValidatingInput;
-
 
 	constructor() {
 		super();

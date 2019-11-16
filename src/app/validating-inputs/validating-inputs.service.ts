@@ -1,4 +1,4 @@
-import { InputsValidatorService } from './inputs-validator.service';
+import { InputValidatorService } from './input-validator.service';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { ValidatingInput } from './validating-input';
@@ -31,7 +31,7 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 		this.error = '';
 
 		for (let i = 0; i < this.data.length; ++i) {
-			InputsValidatorService.validate(this.data[i]);
+			InputValidatorService.validate(this.data[i]);
 
 			if (notEmpty(this.data[i].error)) {
 				this.error = this.data[i].error;
