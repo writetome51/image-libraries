@@ -3,7 +3,7 @@ import { DataOperationProcessorService }
 	from './data-operation-processor/data-operation-processor.service';
 
 
-export class PerformAppDataOperationService {
+export class PerformAppDataOperationService { // implements IDoThis
 
 	static async go(processor: DataOperationProcessorService) {
 		dataOperationStatus.waitingForResult = true;

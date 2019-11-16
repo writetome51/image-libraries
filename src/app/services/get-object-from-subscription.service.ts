@@ -3,7 +3,7 @@ import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Subscribable } from 'rxjs';
 
 
-export class GetObjectFromSubscriptionService {
+export class GetObjectFromSubscriptionService { // implements IDoThis
 
 	static async go(
 		subscribable: Subscribable<any>
