@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
-	from '../../../services/data-operation-processor/user-deletion-processor.service';
+	from '../../services/data-operation-processor/user-deletion-processor.service';
 import { PerformAppDataOperationService as performAppDataOperation }
-	from '../../../services/perform-app-data-operation.service';
+	from '../../services/perform-app-data-operation.service';
+import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { PerformAppDataOperationService as performAppDataOperation }
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent {
+export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
 
 	heading = 'Self Destruct?';
 	tonto = {
@@ -21,6 +22,7 @@ export class DeleteUserFormComponent {
 
 
 	constructor(private __userDeletionProcessor: UserDeletionProcessorService) {
+		super();
 	}
 
 
