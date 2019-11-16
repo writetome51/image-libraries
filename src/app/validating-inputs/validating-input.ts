@@ -3,7 +3,9 @@
 
 export interface ValidatingInput {
 
-	type: string; // 'text', 'password', etc.  Any <input> type
+	type: string;
+		// Can be 'text', 'password', 'number', etc.  Any <input> type is allowed, but so far this is
+		// only intended for 'text', 'password', or 'number'.
 
 	id: string; // becomes value of <input> id
 
@@ -18,11 +20,12 @@ export interface ValidatingInput {
 
 	error: string; // Empty string.  If input is invalid, this is assigned this.errorMessage
 
-	objectToBind: any; // <input> intended to bind with this.objectToBind[this.propertyToBind]
+	objectToBind: any;
+		// this.objectToBind[this.propertyToBind] is the variable storing the value of this input.
 
 	propertyToBind: string; // property in this.objectToBind
 
-	hideLabel: boolean; // whether or not to make <label> hidden
+	hideLabel: boolean; // makes <label> hidden
 
 	required: boolean;
 
@@ -31,13 +34,17 @@ export interface ValidatingInput {
 	prompt?: string; // text explaining input or asking user to fill it in
 
 	objectToMatch?: any;
-	// this.objectToMatch[this.propertyToMatch] is intended to be checked in this.isValid if
-	// its value matches the value of this.objectToBind[this.propertyToBind].
-	// Example: if one <input> is for 'password' and another <input> is for 'confirm password',
-	// you need to make sure they match.  The ValidatingInput representing 'confirm password'
-	// would need its objectToMatch[propertyToMatch] to be bound to the object[property]
-	// storing 'password'.
+		// this.objectToMatch[this.propertyToMatch] is the variable storing the value of another
+		// input -- an input whose value is supposed to match with this one.
+		// Example: if one <input> is for 'password' and another <input> is for 'confirm-password',
+		// you need to make sure they match.  The ValidatingInput representing 'confirm-password'
+		// would need its objectToMatch[propertyToMatch] to be the object[property] storing the
+		// value of 'password'.  this.objectToMatch[this.propertyToMatch] can then be checked in
+		// this.isValid if it matches this.objectToBind[this.propertyToBind].
 
-	propertyToMatch?: string; // property in objectToMatch
+	propertyToMatch?: string; // property in this.objectToMatch
 
+	max?: number; // if this.type is 'number'
+
+	min?: number; // if this.type is 'number'
 }

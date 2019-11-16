@@ -14,10 +14,10 @@
 		   [required]="input.required"
 		   [placeholder]="input.placeholder"
 		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
+		   [max]="input.max"
+		   [min]="input.min"
 	/>
 
-	<p [style.visibility]="input.error.length ? 'visible' : 'hidden'">
-		<strong>{{input.error}}</strong>
-	</p>
+	<p *ngIf="input.error.length"><strong>{{input.error}}</strong></p>
 
 </div>
