@@ -9,7 +9,7 @@ export interface ValidatingInput {
 
 	id: string; // becomes value of <input> id
 
-	isValid: () => boolean | (() => boolean)[];
+	isValid: (() => boolean) | (() => boolean)[];
 		// Called during input event 'onblur'.
 		// Can be function or array of functions.  If array of functions:
 		//   - this.errorMessage must be array of error messages, each one belonging with
