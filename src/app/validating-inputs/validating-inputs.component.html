@@ -1,6 +1,7 @@
 <div *ngFor="let input of inputs;  let i = index;"
 	 class="input-container"
-	 [class.input-with-error]="input.error"
+	 [class.input-with-error]="input.error.length"
+	 [class.required]="input.required"
 >
 	<p *ngIf="input.prompt">{{input.prompt}}</p>
 
@@ -8,12 +9,15 @@
 
 	<input [type]="input.type" (blur)="validate(i)"
 		   id="{{input.id}}"
+		   [class.input-with-error]="input.error.length"
 		   [name]="input.id"
 		   [required]="input.required"
 		   [placeholder]="input.placeholder"
 		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
 	/>
 
-	<div *ngIf="input.error"><strong>{{input.error}}</strong></div>
+	<p [style.visibility]="input.error.length ? 'visible' : 'hidden'">
+		<strong>{{input.error}}</strong>
+	</p>
 
 </div>

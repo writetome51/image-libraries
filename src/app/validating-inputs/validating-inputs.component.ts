@@ -8,7 +8,7 @@ import { InputValidatorService } from './input-validator.service';
 	templateUrl: './validating-inputs.component.html'
 })
 
-// To be used in combination with ValidatingFormInputsComponent
+// To be used with ValidatingFormInputsComponent
 
 export class ValidatingInputsComponent implements OnInit {
 

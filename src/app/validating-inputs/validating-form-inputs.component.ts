@@ -3,15 +3,18 @@ import { ValidatingInputsService } from './validating-inputs.service';
 
 
 /***********
-To be used in combination with ValidatingInputsComponent.
-To use, create a subclass and attach the @Component decorator to it,
- just like this:
+To be used with ValidatingInputsComponent.
+To use, create a subclass and attach @Component to it, like so:
 
  @Component({
-	selector: 'selector-of-subclass',
+	selector: 'example-form-inputs',
+
+	// write this exactly as-is:
 	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
+export class ExampleFormInputsComponent extends ValidatingFormInputsComponent {...}
  **********/
+
 export abstract class ValidatingFormInputsComponent {
 
 
