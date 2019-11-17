@@ -5,6 +5,28 @@ import { modifyObject } from '@writetome51/modify-object';
 // framework independent
 
 
+export function getDefaultTextInput(): ValidatingInput {
+	return getDefaultTypeInput('text');
+}
+
+
+export function getDefaultPasswordInput(): ValidatingInput {
+	return getDefaultTypeInput('password');
+}
+
+
+export function getDefaultNumberInput(): ValidatingInput {
+	return getDefaultTypeInput('number');
+}
+
+
+export function getDefaultTypeInput(type: string): ValidatingInput {
+	let input = getDefaultInput();
+	modifyObject(input, {type});
+	return input;
+}
+
+
 export function getDefaultInput(): ValidatingInput {
 	return {
 		type: undefined,
@@ -26,21 +48,4 @@ export function getDefaultInput(): ValidatingInput {
 		max: undefined,
 		min: undefined
 	};
-}
-
-
-export function getDefaultTextInput(): ValidatingInput {
-	return getDefaultTypeInput('text');
-}
-
-
-export function getDefaultPasswordInput(): ValidatingInput {
-	return getDefaultTypeInput('password');
-}
-
-
-export function getDefaultTypeInput(type: string): ValidatingInput {
-	let input = getDefaultInput();
-	modifyObject(input, {type});
-	return input;
 }
