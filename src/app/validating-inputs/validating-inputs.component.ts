@@ -16,7 +16,7 @@ export class ValidatingInputsComponent implements OnInit {
 
 
 	ngOnInit(): void {
-		this.inputs.forEach((input) => input.error = '');
+		this.inputs.forEach((input) => input.__error = '');
 	}
 
 

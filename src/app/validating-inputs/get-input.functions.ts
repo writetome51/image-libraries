@@ -10,7 +10,7 @@ export function getDefaultInput(): ValidatingInput {
 		type: undefined,
 		id: undefined,
 		label: undefined,
-		showPlaceholder: true,
+		hidePlaceholder: false,
 		hideLabel: true,
 		required: true,
 		objectToBind: undefined,
@@ -19,8 +19,12 @@ export function getDefaultInput(): ValidatingInput {
 		propertyToMatch: undefined,
 		isValid: undefined,
 		errorMessage: undefined,
-		error: '',
+		__error: '',
 		prompt: undefined,
+		maxLength: undefined,
+		minLength: undefined,
+		max: undefined,
+		min: undefined
 	};
 }
 

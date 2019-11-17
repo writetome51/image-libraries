@@ -8,19 +8,21 @@ export interface ValidatingInput {
 		// only intended for 'text', 'password', or 'number'.
 
 	id: string;
-		// assigned to <input> id. Same value is used for 'name' attribute.  It's also
-		// the same value given to the input's associated <label> 'for' attribute.
+		// assigned to <input> id. Same value is used for 'name' attribute and the input's associated
+		// <label> 'for' attribute.
 
 	isValid: (() => boolean) | (() => boolean)[];
-		// Called during input event 'onblur'.
+		// Called on input event 'blur'.
 		// Can be function or array of functions.  If array of functions:
 		//   - this.errorMessage must be array of error messages, each one belonging with
 		//     function of same index.
-		//   - The functions are called in the order they're listed.
+		//   - The functions are called in the order they're listed.  If one returns false,
+		// 	   the following functions are not executed.
 
 	errorMessage: string | string[]; // message to show if input is invalid
 
-	error: string; // Empty string.  If input is invalid, this is assigned this.errorMessage
+	__error: string;
+		// Private.  Empty string.  If input is invalid, this is assigned this.errorMessage
 
 	objectToBind: any;
 		// this.objectToBind[this.propertyToBind] is the variable storing the value of this input.

@@ -23,11 +23,11 @@ export class InputValidatorService {
 						`The 'isValid' property is an array, which means the 'errorMessage' property 
 						must also be an array`);
 					else {
-						input.error = input.errorMessage[i];
+						input.__error = input.errorMessage[i];
 						return;
 					}
 				}
-				else input.error = ''; // no error.
+				else input.__error = ''; // no error.
 			}
 		}
 
@@ -39,9 +39,9 @@ export class InputValidatorService {
 			}
 			else if (not(isValid())) {
 				// @ts-ignore
-				input.error = input.errorMessage;
+				input.__error = input.errorMessage;
 			}
-			else input.error = ''; // no error.
+			else input.__error = ''; // no error.
 		}
 
 	}

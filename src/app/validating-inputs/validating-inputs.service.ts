@@ -33,8 +33,8 @@ export abstract class ValidatingInputsService extends PublicArrayContainer {
 		for (let i = 0; i < this.data.length; ++i) {
 			InputValidatorService.validate(this.data[i]);
 
-			if (notEmpty(this.data[i].error)) {
-				this.error = this.data[i].error;
+			if (notEmpty(this.data[i].__error)) {
+				this.error = this.data[i].__error;
 				return false;
 			}
 		}
