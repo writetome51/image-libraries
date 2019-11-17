@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ValidatingInput } from './validating-input';
-import { InputValidatorService } from './input-validator.service';
+import { ValidatingInput } from './framework-independent/validating-input';
+import { InputValidatorService } from './framework-independent/input-validator.service';
 
 
 @Component({

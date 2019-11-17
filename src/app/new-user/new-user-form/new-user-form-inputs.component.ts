@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ValidatingFormInputsComponent } from '../../validating-inputs/validating-form-inputs.component';
+import { ValidatingFormInputsComponent } from '../../validating-inputs/framework-independent/validating-form-inputs.component';
 import { NewUserFormInputsService }
 	from '../../services/validating-inputs/new-user-form-inputs.service';
 

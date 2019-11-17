@@ -1,4 +1,4 @@
-import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
+import { ValidatingInputService } from '../../validating-inputs/framework-independent/validating-input.service';
 import { isArray } from '@writetome51/is-array-not-array';
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
 

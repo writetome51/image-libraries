@@ -1,6 +1,6 @@
 import { AlertService as alert } from '../alert.service';
-import { ValidatingInputsService } from '../../validating-inputs/validating-inputs.service';
-import { ValidatingInputService } from '../../validating-inputs/validating-input.service';
+import { ValidatingInputsService } from '../../validating-inputs/framework-independent/validating-inputs.service';
+import { ValidatingInputService } from '../../validating-inputs/framework-independent/validating-input.service';
 import { Bind_ValidatingInputsService_to_CurrentUserService }
 	from './bind-validating-inputs-service-to-current-user-service.decorator';
 

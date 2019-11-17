@@ -3,7 +3,7 @@ import { ValidatingInputsService } from './validating-inputs.service';
 
 
 /***********
-To be used with ValidatingInputsComponent.
+In Angular, intended to be used with ValidatingInputsComponent:
 To use, create a subclass and attach @Component to it, like so:
 
  @Component({

@@ -1,7 +1,7 @@
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
 import { CurrentUserService as currentUser } from '../user/current-user.service';
 import { AppValidatingInputsService } from './app-validating-inputs.service';
-import { ValidatingInput } from '../../validating-inputs/validating-input';
+import { ValidatingInput } from '../../validating-inputs/framework-independent/validating-input';
 
 
 /*****************

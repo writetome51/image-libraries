@@ -6,7 +6,7 @@ import { PerformAppDataOperationService as performAppDataOperation }
 
 @Component({
 	selector: 'logout-button',
-	template: `<button (click)="logout()">Sign Out</button>`
+	template: `<button type="button" (click)="logout()">Sign Out</button>`
 })
 export class LogoutButtonComponent {
 
