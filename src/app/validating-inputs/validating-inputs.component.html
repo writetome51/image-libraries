@@ -22,8 +22,10 @@
 		   [placeholder]="input.hidePlaceholder ? '' : input.label"
 		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
 
-		   [maxLength]="input.maxLength" [minLength]="input.minLength"
-		   [max]="input.max" [min]="input.min"
+		   [maxLength]="input.maxLength ? input.maxLength : 200"
+		   [minLength]="input.minLength ? input.minLength : 0"
+		   [max]="input.max"
+		   [min]="input.min"
 	/>
 
 	<p *ngIf="input.__error.length" class="validating-input-error">{{input.__error}}</p>
