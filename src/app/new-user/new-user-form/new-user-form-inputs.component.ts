@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ValidatingFormInputsComponent } from '../../validating-inputs/framework-independent/validating-form-inputs.component';
 import { NewUserFormInputsService }
 	from '../../services/validating-inputs/new-user-form-inputs.service';
+import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
 @Component({

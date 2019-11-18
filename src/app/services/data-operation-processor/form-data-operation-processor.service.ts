@@ -1,6 +1,6 @@
-import { ValidatingInputsService } from '../../validating-inputs/framework-independent/validating-inputs.service';
 import { DataOperationProcessorService } from './data-operation-processor.service';
 import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
+import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 
 export abstract class FormDataOperationProcessorService extends DataOperationProcessorService {
