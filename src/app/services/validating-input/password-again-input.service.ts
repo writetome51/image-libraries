@@ -12,7 +12,6 @@ export class PasswordAgainInputService extends ValidatingPasswordInputService {
 		this.data.id = 'password-again-input';
 		this.data.propertyToBind = 'passwordAgain';
 		this.data.propertyToMatch = 'password';
-		this.data.objectToMatch = undefined;
 		this.data.label = 'Password Again';
 
 		this.data.isValid = () => (
