@@ -7,7 +7,8 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 	template: `<validating-input *ngFor="let input of inputs" [input]="input"></validating-input>`
 })
 
-// To be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
+// Can be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
+// Also, create equivalent UI component of this for ReactJS.
 
 export class ValidatingInputsComponent {
 

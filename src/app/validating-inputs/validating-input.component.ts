@@ -8,6 +8,7 @@ import { InputValidatorService, ValidatingInput } from '@writetome51/validating-
 })
 
 // Can be used with ValidatingFormInputComponent from '@writetome51/validating-inputs'
+// Also, create equivalent UI component of this for ReactJS.
 
 export class ValidatingInputComponent implements OnInit {
 
