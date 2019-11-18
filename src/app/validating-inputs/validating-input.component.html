@@ -1,4 +1,4 @@
-<div *ngFor="let input of inputs;  let i = index;"
+<div
 	 class="validating-input-container"
 	 [class.validating-input-with-error]="input.__error.length"
 	 [class.required]="input.required"
@@ -10,7 +10,7 @@
 	</label>
 
 	<input [type]="input.type"
-		   (blur)="validate(i)"
+		   (blur)="validate()"
 
 		   id="{{input.id}}"
 		   class="validating-input"

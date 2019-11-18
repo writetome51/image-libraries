@@ -1,26 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { InputValidatorService, ValidatingInput } from '@writetome51/validating-inputs';
+import { Component, Input } from '@angular/core';
+import { ValidatingInput } from '@writetome51/validating-inputs';
 
 
 @Component({
 	selector: 'validating-inputs',
-	templateUrl: './validating-inputs.component.html'
+	template: `<validating-input *ngFor="let input of inputs" [input]="input"></validating-input>`
 })
 
 // To be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
 
-export class ValidatingInputsComponent implements OnInit {
+export class ValidatingInputsComponent {
 
 	@Input() inputs: ValidatingInput[];
-
-
-	ngOnInit(): void {
-		this.inputs.forEach((input) => input.__error = '');
-	}
-
-
-	validate(index): void {
-		InputValidatorService.validate(this.inputs[index]);
-	}
 
 }
