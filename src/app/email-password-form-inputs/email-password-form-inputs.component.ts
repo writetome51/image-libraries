@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { EmailPasswordInputsService }
 	from '../services/validating-inputs/email-password-inputs.service';
-import { ValidatingFormInputsComponent }
-	from '../validating-inputs/framework-independent/validating-form-inputs.component';
+import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 // Use in any form that only requires inputs 'email' and 'password'.
 

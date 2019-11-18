@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ValidatingPasswordInputService }
-	from '../../validating-inputs/framework-independent/validating-password-input.service';
+import { ValidatingPasswordInputService } from '@writetome51/validating-inputs';
 
 
 @Injectable({providedIn: 'root'})

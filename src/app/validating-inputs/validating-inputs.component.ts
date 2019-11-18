@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ValidatingInput } from './framework-independent/validating-input';
-import { InputValidatorService } from './framework-independent/input-validator.service';
+import { InputValidatorService, ValidatingInput } from '@writetome51/validating-inputs';
 
 
 @Component({
@@ -8,7 +7,7 @@ import { InputValidatorService } from './framework-independent/input-validator.s
 	templateUrl: './validating-inputs.component.html'
 })
 
-// To be used with ValidatingFormInputsComponent
+// To be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
 
 export class ValidatingInputsComponent implements OnInit {
 

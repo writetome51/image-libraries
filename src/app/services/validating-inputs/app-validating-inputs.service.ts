@@ -1,8 +1,7 @@
 import { AlertService as alert } from '../alert.service';
-import { ValidatingInputsService } from '../../validating-inputs/framework-independent/validating-inputs.service';
-import { ValidatingInputService } from '../../validating-inputs/framework-independent/validating-input.service';
 import { Bind_ValidatingInputsService_to_CurrentUserService }
 	from './bind-validating-inputs-service-to-current-user-service.decorator';
+import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 
 
 @Bind_ValidatingInputsService_to_CurrentUserService()
