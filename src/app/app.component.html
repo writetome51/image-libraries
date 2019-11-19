@@ -18,7 +18,7 @@
 		<router-outlet></router-outlet>
 	</main>
 
-	<little-loading-spinner *ngIf="dataOperationStatus.waitingForResult"></little-loading-spinner>
+	<app-loading-spinner *ngIf="dataOperationStatus.waitingForResult"></app-loading-spinner>
 
 	<app-alert *ngIf="alert.data"></app-alert>
 

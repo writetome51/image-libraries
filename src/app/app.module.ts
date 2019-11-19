@@ -1,4 +1,4 @@
-import { AlertModule } from './alert/alert.module';
+import { AlertComponent } from './alert/alert.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,9 +7,9 @@ import { EmailPasswordFormInputsModule }
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
 import { LibrariesComponent } from './libraries/libraries.component';
-import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
+import { LoadingSpinnerComponent } from './loading-spinner.component';
+import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
@@ -20,19 +20,19 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 @NgModule({
 	declarations: [
 		AppComponent,
-		LoginComponent,
-		LibrariesComponent,
-		LoginFormComponent,
-		PageNotFoundComponent,
+		AlertComponent,
 		ForgotPasswordComponent,
+		LibrariesComponent,
+		LoadingSpinnerComponent,
+		LoginComponent,
+		LoginFormComponent,
 		LogoutButtonComponent,
+		PageNotFoundComponent,
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
-		AlertModule,
-		LoadingSpinnerModule,
 		ValidatingInputsModule,
 		EmailPasswordFormInputsModule,
 		AppRoutingModule, // must be loaded before any other routing module.

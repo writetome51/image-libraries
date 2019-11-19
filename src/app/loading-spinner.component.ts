@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-	selector: 'little-loading-spinner',
+	selector: 'app-loading-spinner',
 	template: `
 		<div>
 			<img [src]="littleSpinner.src" [width]="littleSpinner.width" alt="Waiting for response"/>
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 	`,
 	styles: [`div { position: relative; }`]
 })
-export class LittleLoadingSpinnerComponent {
+export class LoadingSpinnerComponent {
 
 
 	littleSpinner = {
