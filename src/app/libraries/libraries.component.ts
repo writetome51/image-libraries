@@ -1,7 +1,6 @@
 import { AppLibrary } from '../../interfaces/app-library';
 import { Component } from '@angular/core';
 import { CurrentUserLibrariesService } from '../services/library/current-user-libraries.service';
-import { AlertService as alert } from '../services/alert.service';
 import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-init.component';
 
 
@@ -11,7 +10,7 @@ import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-ini
 })
 export class LibrariesComponent extends ClearAlertAndFormOnInitComponent {
 
-	alert = alert;
+
 	noLibrariesMessage = 'You have no libraries right now';
 
 

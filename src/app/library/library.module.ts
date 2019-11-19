@@ -1,5 +1,4 @@
 import { AddImagesComponent } from './add-images/add-images.component';
-import { AlertModule } from '../alert/alert.module';
 import { ChooseImagesFromDeviceComponent }
 	from './add-images/choose-images-from-device/choose-images-from-device.component';
 import { CommonModule } from '@angular/common';
@@ -35,7 +34,6 @@ import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-
 		CommonModule,
 		FormsModule,
 		ReArrangeableGridListModule,
-		AlertModule,
 		LibraryRoutingModule,
 		ImageViewerModule,
 	]

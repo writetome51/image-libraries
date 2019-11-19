@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertService as alert } from '../services/alert.service';
-import { DataOperationStatusService as dataOperationStatus }
-	from '../services/data-operation-status.service';
 import { ClearAlertAndFormOnInitComponent } from '../clear-alert-and-form-on-init.component';
 
 
@@ -15,7 +13,5 @@ export class LoginComponent extends ClearAlertAndFormOnInitComponent {
 	rename images, rearrange their order, add descriptions, tags, and do searches.`;
 
 	alert = alert;
-
-	dataOperationStatus = dataOperationStatus;
 
 }

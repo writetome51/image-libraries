@@ -1,10 +1,8 @@
-import { AlertModule } from '../alert/alert.module';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { EmailPasswordFormInputsModule }
 	from '../email-password-form-inputs/email-password-form-inputs.module';
 import { FormsModule } from '@angular/forms';
-import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 import { NgModule } from '@angular/core';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
@@ -31,8 +29,6 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 	imports: [
 		CommonModule,
 		FormsModule,
-		AlertModule,
-		LoadingSpinnerModule,
 		ValidatingInputsModule,
 		EmailPasswordFormInputsModule,
 		UpdateUserRoutingModule

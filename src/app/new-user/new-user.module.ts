@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AlertModule } from '../alert/alert.module';
-import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 import { NewUserComponent } from './new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs.component';
@@ -20,8 +18,6 @@ import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
 	imports: [
 		CommonModule,
 		FormsModule,
-		AlertModule,
-		LoadingSpinnerModule,
 		ValidatingInputsModule,
 		RouterModule.forChild([
 			{
