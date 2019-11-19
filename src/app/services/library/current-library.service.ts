@@ -5,14 +5,13 @@ import { DataOperationResultCheckService }
 	from '../data-operation-result-check/data-operation-result-check.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 // Represents library currently being viewed
+
 export class CurrentLibraryService {
 
 
-	isNew: boolean; // true if library's never been saved.
 	name = '';
 	images: AppImage[] = [];
 	currentImage: AppImage; // image currently being viewed

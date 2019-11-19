@@ -18,15 +18,6 @@ export class LibraryStorageService {
 	}
 
 
-	async create(libraryName): Promise<any> {
-		return await getObjectFromSubscription.go(
-			this.__libraryRestApi.create(
-				{sessionID: this.__localSessionID.get(), name: libraryName}
-			)
-		);
-	}
-
-
 	async get(libraryName): Promise<any> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.get(
