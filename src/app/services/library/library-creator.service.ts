@@ -22,7 +22,10 @@ export class LibraryCreatorService {
 	async create(): Promise<any> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.create(
-				{sessionID: this.__localSessionID.get(), name: this.__currentLibrary.name}
+				{
+					sessionID: this.__localSessionID.get(),
+					name: this.__currentLibrary.name
+				}
 			)
 		);
 	}

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AppValidatingInputsService } from './app-validating-inputs.service';
 import { EmailInputService } from '../validating-input/email-input.service';
 import { PasswordInputService } from '../validating-input/password-input.service';
+import { CurrentUserInputsService } from './current-user-inputs.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class EmailPasswordInputsService extends AppValidatingInputsService {
+export class EmailPasswordInputsService extends CurrentUserInputsService {
 
 	constructor(
 		emailInput: EmailInputService,
