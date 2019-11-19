@@ -1,7 +1,11 @@
-<div><p>{{heading}}</p></div>
+<ng-template #update_user_form>
 
-<update-user-email-form-inputs></update-user-email-form-inputs>
+	<div><p>{{heading}}</p></div>
 
-<div>
-	<button type="button" (click)="save()">Save Changes</button>
-</div>
+	<update-user-email-form-inputs></update-user-email-form-inputs>
+
+	<div>
+		<button type="submit" (click)="save()">Save Changes</button>
+	</div>
+
+</ng-template>

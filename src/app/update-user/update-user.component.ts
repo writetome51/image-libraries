@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AlertService as alert } from '../services/alert.service';
 import { DataOperationStatusService as dataOperationStatus }
 	from '../services/data-operation-status.service';
@@ -9,6 +9,8 @@ import { DataOperationStatusService as dataOperationStatus }
 	templateUrl: './update-user.component.html'
 })
 export class UpdateUserComponent {
+
+	@ViewChild('update_user_form') updateUserForm;
 
 	alert = alert;
 	dataOperationStatus = dataOperationStatus;
