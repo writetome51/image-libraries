@@ -13,7 +13,7 @@ export class LibraryComponent {
 
 
 	get name() {
-		return this.__currentLibrary.name;
+		return this.__currentLibrary.libName;
 	}
 
 

@@ -23,14 +23,14 @@ export class LibrarySaverService {
 
 
 	saveUpdate(): void {
-		if (hasValue(this.__currentLibrary.changes['name'])) {
-			let name = this.__currentLibrary.changes['name'].trim();
+		if (hasValue(this.__currentLibrary.changes['libName'])) {
+			let name = this.__currentLibrary.changes['libName'].trim();
 			if (isEmpty(name)) {
-				delete this.__currentLibrary.changes['name'];
+				delete this.__currentLibrary.changes['libName'];
 			}
 		}
 		if (Object.keys(this.__currentLibrary.changes).length){ // if changes not empty...
-			this.__libraryStorage.update(this.__currentLibrary.name, this.__currentLibrary.changes);
+			this.__libraryStorage.update(this.__currentLibrary.libName, this.__currentLibrary.changes);
 		}
 
 	}

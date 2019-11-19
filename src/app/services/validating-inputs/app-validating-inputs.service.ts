@@ -1,13 +1,8 @@
 import { AlertService as alert } from '../alert.service';
-import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
+import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 
-export class AppValidatingInputsService extends ValidatingInputsService {
-
-	constructor(...inputs: ValidatingInputService[]) {
-		super(inputs);
-	}
-
+export abstract class AppValidatingInputsService extends ValidatingInputsService {
 
 	areValid(): boolean {
 		if (super.areValid()) return true;

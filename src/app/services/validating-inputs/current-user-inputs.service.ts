@@ -1,15 +1,10 @@
-import { Bind_ValidatingInputsService_to_CurrentUserService }
+import { Bind_ValidatingInputsService_to_Object }
 	from './bind-validating-inputs-service-to-current-user-service.decorator';
-import { ValidatingInputService } from '@writetome51/validating-inputs';
 import { AppValidatingInputsService } from './app-validating-inputs.service';
+import { CurrentUserService } from '../user/current-user.service';
 
 
-@Bind_ValidatingInputsService_to_CurrentUserService()
+@Bind_ValidatingInputsService_to_Object(CurrentUserService)
 
 export abstract class CurrentUserInputsService extends AppValidatingInputsService {
-
-	constructor(...inputs: ValidatingInputService[]) {
-		super(...inputs);
-	}
-
 }

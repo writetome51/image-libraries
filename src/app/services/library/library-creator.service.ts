@@ -24,7 +24,7 @@ export class LibraryCreatorService {
 			this.__libraryRestApi.create(
 				{
 					sessionID: this.__localSessionID.get(),
-					name: this.__currentLibrary.name
+					name: this.__currentLibrary.libName
 				}
 			)
 		);
