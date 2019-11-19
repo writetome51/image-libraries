@@ -12,9 +12,6 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class UpdateUserEmailFormComponent extends ClearAlertAndFormOnInitComponent {
 
-	heading = 'Update Email';
-
-
 	constructor(private __emailUpdateProcessor: UpdateEmailProcessorService) {
 		super();
 	}

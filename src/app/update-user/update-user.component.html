@@ -1,16 +1,24 @@
 <section>
 
+	<div><header><h2>{{heading}}</h2></header></div>
+
 	<nav>
-		<a routerLink="email" routerLinkActive="active">Email</a>
+		<a routerLink="email" routerLinkActive="active">
+			Email
+		</a>
 		|
-		<a routerLink="password" routerLinkActive="active">Password</a>
+		<a routerLink="password" routerLinkActive="active">
+			Password
+		</a>
 		|
-		<a routerLink="delete-account" routerLinkActive="active">Delete Account</a>
+		<a routerLink="delete-account" routerLinkActive="active">
+			Delete Account
+		</a>
 	</nav>
 
-	<h3>{{updateUserForm.heading}}</h3>
-
 	<div class="form-container">
+
+		<div><header><h3>{{formHeading}}</h3></header></div>
 
 		<form>
 			<router-outlet></router-outlet>

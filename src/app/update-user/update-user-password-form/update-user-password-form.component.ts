@@ -12,9 +12,6 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class UpdateUserPasswordFormComponent extends ClearAlertAndFormOnInitComponent {
 
-	heading = 'Update Password';
-
-
 	constructor(private __updatePasswordProcessor: UpdatePasswordProcessorService) {
 		super();
 	}

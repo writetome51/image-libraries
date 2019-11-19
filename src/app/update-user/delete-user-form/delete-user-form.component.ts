@@ -13,7 +13,6 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
 
-	heading = 'Self Destruct?';
 	tonto = {
 		src: '../../../assets/tonto.jpg',
 		width: 200,

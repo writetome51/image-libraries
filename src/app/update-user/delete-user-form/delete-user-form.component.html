@@ -1,16 +1,11 @@
-<ng-template #update_user_form>
+<div>
+	<img [src]="tonto.src" [width]="tonto.width" alt="Tonto from The Lone Ranger"/>
+	<p class="warning-text">Tread carefully, Kemosabe. You cannot undo this.</p>
+	<p>If you wish to proceed, enter your info and click Delete</p>
+</div>
 
-	<div>
-		<p>{{heading}}</p>
-		<img [src]="tonto.src" [width]="tonto.width" alt="Tonto from The Lone Ranger"/>
-		<p class="warning-text">Tread carefully, Kemosabe. You cannot undo this.</p>
-		<p>If you wish to proceed, enter your info and click Delete</p>
-	</div>
+<email-password-form-inputs></email-password-form-inputs>
 
-	<email-password-form-inputs></email-password-form-inputs>
-
-	<div>
-		<button type="submit" (click)="delete()">Delete</button>
-	</div>
-
-</ng-template>
+<div>
+	<button type="submit" (click)="delete()">Delete</button>
+</div>

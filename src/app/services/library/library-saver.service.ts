@@ -19,14 +19,7 @@ export class LibrarySaverService {
 	}
 
 
-	saveNew(): void {
-		this.__currentLibrary.name = this.__currentLibrary.name.trim();
-		if (isEmpty(this.__currentLibrary.name)) {
-			alert.error = `The library must be given a name before you save it`;
-			return;
-		}
-		this.__libraryStorage.create(this.__currentLibrary.name);
-	}
+
 
 
 	saveUpdate(): void {
