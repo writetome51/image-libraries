@@ -4,7 +4,7 @@ import { notLoggedIn } from '../../string-constants/form-submission-errors';
 import { RemoveLocalSessionIDAndRedirectHomeService }
 	from '../remove-local-session-id-and-redirect-home.service';
 import { LocalSessionIDService } from '../authentication/local-session-id.service';
-import { ErrorHandler } from '../../interfaces/error-handler';
+import { ErrorHandler } from '../../../interfaces/error-handler';
 
 
 @Injectable({

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { AppImage } from '../../../../interfaces/app-image';
 import { ImageDisplaySettingsService } from '../../../services/image/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { LibraryService } from '../../../services/library/library.service';

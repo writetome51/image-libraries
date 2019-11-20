@@ -1,4 +1,4 @@
-import { DBUser } from '../../interfaces/db-user';
+import { DBUser } from '../../../interfaces/db-user';
 
 
 export class CurrentUserService {

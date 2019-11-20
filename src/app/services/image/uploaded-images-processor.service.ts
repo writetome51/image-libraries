@@ -2,7 +2,7 @@ import { CurrentLibraryService as currentLibrary } from '../library/current-libr
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { Processor } from '../../interfaces/processor';
+import { Processor } from '../../../interfaces/processor';
 
 
 @Injectable({

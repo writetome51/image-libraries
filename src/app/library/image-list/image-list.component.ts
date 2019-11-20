@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LibraryService } from '../../services/library/library.service';
-import { AppImage } from '../../interfaces/app-image';
+import { AppImage } from '../../../interfaces/app-image';
 
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { AppImage } from '../../../../interfaces/app-image';
 
 
 @Component({

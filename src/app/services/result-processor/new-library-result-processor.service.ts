@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AlertService as alert } from '../alert.service';
-import { ResultProcessor } from '../../interfaces/result-processor';
-import { DBLibrary } from '../../interfaces/db-library';
+import { ResultProcessor } from '../../../interfaces/result-processor';
+import { DBLibrary } from '../../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})

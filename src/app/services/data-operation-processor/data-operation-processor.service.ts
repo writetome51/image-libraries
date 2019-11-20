@@ -1,5 +1,5 @@
 import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
-import { DataOperationProcessor } from '../../interfaces/data-operation-processor';
+import { DataOperationProcessor } from '../../../interfaces/data-operation-processor';
 
 
 export abstract class DataOperationProcessorService implements DataOperationProcessor {
