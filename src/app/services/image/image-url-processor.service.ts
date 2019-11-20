@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CurrentLibraryService } from '../library/current-library.service';
+import { CurrentLibraryService as currentLibrary } from '../library/current-library.service';
 import { AlertService as alert } from '../alert.service';
 import { Processor } from '../../../interfaces/processor';
 
@@ -10,14 +10,10 @@ import { Processor } from '../../../interfaces/processor';
 export class ImageURLProcessorService implements Processor {
 
 
-	constructor(private __currentLibrary: CurrentLibraryService) {
-	}
-
-
 	async process(url) {
 		let isFound = await this.__resourceFound(url);
 		if (isFound) {
-			this.__currentLibrary.images.push({name: '', src: url, description: ''});
+			currentLibrary.images.push({name: '', src: url, description: ''});
 		}
 		else {
 			alert.error =

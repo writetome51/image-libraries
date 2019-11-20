@@ -1,4 +1,4 @@
-import { CurrentLibraryService } from '../library/current-library.service';
+import { CurrentLibraryService as currentLibrary } from '../library/current-library.service';
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
@@ -9,12 +9,6 @@ import { Processor } from '../../../interfaces/processor';
 	providedIn: 'root'
 })
 export class UploadedImagesProcessorService implements Processor {
-
-
-	constructor(
-		private __currentLibrary: CurrentLibraryService
-	) {
-	}
 
 
 	async process(files: FileList | File[]) {
@@ -37,7 +31,7 @@ export class UploadedImagesProcessorService implements Processor {
 	private __addImageTo__currentLibrary(file, dataURL) {
 		let image = {name: file.name, src: dataURL, description: ''};
 
-		this.__currentLibrary.images.push(image);
+		currentLibrary.images.push(image);
 	}
 
 

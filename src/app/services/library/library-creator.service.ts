@@ -3,7 +3,7 @@ import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../authentication/local-session-id.service';
-import { CurrentLibraryService } from './current-library.service';
+import { CurrentLibraryService as currentLibrary } from './current-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,8 +13,7 @@ export class LibraryCreatorService {
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
-		private __localSessionID: LocalSessionIDService,
-		private __currentLibrary: CurrentLibraryService
+		private __localSessionID: LocalSessionIDService
 	) {
 	}
 
@@ -24,7 +23,7 @@ export class LibraryCreatorService {
 			this.__libraryRestApi.create(
 				{
 					sessionID: this.__localSessionID.get(),
-					name: this.__currentLibrary.libName
+					name: currentLibrary.libName
 				}
 			)
 		);

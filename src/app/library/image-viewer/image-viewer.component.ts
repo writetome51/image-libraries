@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CurrentLibraryService } from '../../services/library/current-library.service';
+import { CurrentLibraryService as currentLibrary} from '../../services/library/current-library.service';
 
 @Component({
   selector: 'image-viewer',
@@ -7,12 +7,9 @@ import { CurrentLibraryService } from '../../services/library/current-library.se
 })
 export class ImageViewerComponent {
 
-	constructor(private __currentLibrary: CurrentLibraryService) {
-	}
-
 
 	get currentImage(){
-		return this.__currentLibrary.currentImage;
+		return currentLibrary.currentImage;
 	}
 
 }

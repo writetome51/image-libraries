@@ -1,6 +1,6 @@
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { CurrentLibraryService } from '../services/library/current-library.service';
+import { CurrentLibraryService as currentLibrary } from '../services/library/current-library.service';
 import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
@@ -19,7 +19,6 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 
 
 	constructor(
-		private __currentLibrary: CurrentLibraryService
 	) {
 	}
 
@@ -31,7 +30,7 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 	//	nextState?: RouterStateSnapshot
 	): boolean {
 
-		if (Object.keys(this.__currentLibrary.changes).length) {
+		if (Object.keys(currentLibrary.changes).length) {
 			alert.error =
 				'You have unsaved changes to the library.  Please save or discard them first.';
 			return false;
