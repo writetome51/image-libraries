@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { AppImage } from '../../interfaces/app-image';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,8 +1,8 @@
-import { incorrectPassword, userDoesntExist } from '../../../constants/form-submission-errors';
+import { incorrectPassword, userDoesntExist } from '../../string-constants/form-submission-errors';
 import { AlertService as alert } from '../alert.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
-import { IDoThis } from '../../../interfaces/i-do-this';
+import { IDoThis } from '../../interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 
 

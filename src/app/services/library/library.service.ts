@@ -1,6 +1,6 @@
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { AppImage } from '../../interfaces/app-image';
 
 
 @Injectable({

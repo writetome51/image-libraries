@@ -12,6 +12,10 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class UpdateUserPasswordFormComponent extends ClearAlertAndFormOnInitComponent {
 
+	static readonly path = 'password';
+	static readonly heading = 'Update Password';
+
+
 	constructor(private __updatePasswordProcessor: UpdatePasswordProcessorService) {
 		super();
 	}

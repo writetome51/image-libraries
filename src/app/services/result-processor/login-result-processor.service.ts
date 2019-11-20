@@ -1,8 +1,8 @@
-import { DBUser } from '../../../interfaces/db-user';
+import { DBUser } from '../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserResultProcessorService } from './user-result-processor.service';
-import { ResultProcessor } from '../../../interfaces/result-processor';
+import { ResultProcessor } from '../../interfaces/result-processor';
 
 
 @Injectable({

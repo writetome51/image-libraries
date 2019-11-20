@@ -13,6 +13,9 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
 
+	static readonly path = 'delete-account';
+	static readonly heading = 'Self Destruct?';
+
 	tonto = {
 		src: '../../../assets/tonto.jpg',
 		width: 200,

@@ -23,17 +23,17 @@ const routes: Routes = [
 		canActivate: [AuthenticatedGuard],
 		children: [
 			{
-				path: 'email',
+				path: UpdateUserEmailFormComponent.path,
 				component: UpdateUserEmailFormComponent
 			},
 
 			{
-				path: 'password',
+				path: UpdateUserPasswordFormComponent.path,
 				component: UpdateUserPasswordFormComponent
 			},
 
 			{
-				path: 'delete-account',
+				path: DeleteUserFormComponent.path,
 				component: DeleteUserFormComponent
 			},
 		]

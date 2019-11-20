@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService as currentLibrary } from '../library/current-library.service';
 import { AlertService as alert } from '../alert.service';
-import { Processor } from '../../../interfaces/processor';
+import { Processor } from '../../interfaces/processor';
 
 
 @Injectable({

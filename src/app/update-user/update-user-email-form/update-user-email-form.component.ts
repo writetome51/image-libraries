@@ -12,6 +12,10 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 })
 export class UpdateUserEmailFormComponent extends ClearAlertAndFormOnInitComponent {
 
+	static readonly path = 'email';
+	static readonly heading = 'Update Email';
+
+
 	constructor(private __emailUpdateProcessor: UpdateEmailProcessorService) {
 		super();
 	}

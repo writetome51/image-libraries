@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
+import { UpdateUserPasswordFormComponent }
+	from './update-user-password-form/update-user-password-form.component';
+import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 
 
 @Component({
@@ -10,12 +14,23 @@ export class UpdateUserComponent {
 
 	heading = 'Update Account';
 
+	private __nestedComponents = [
+		UpdateUserEmailFormComponent,
+		UpdateUserPasswordFormComponent,
+		DeleteUserFormComponent
+	];
+
 
 	get formHeading() {
-		let r = this.__router.routerState.snapshot.url;
-		if (r.includes('email')) return 'Update Email';
-		if (r.includes('password')) return 'Update Password';
-		if (r.includes('delete')) return 'Self Destruct?';
+		let url = this.__router.routerState.snapshot.url;
+
+		for (let i = 0; i < this.__nestedComponents.length; ++i) {
+			let nestedComponent = this.__nestedComponents[i];
+
+			if (url.endsWith(`/${nestedComponent.path}`)) {
+				return nestedComponent.heading;
+			}
+		}
 	}
 
 
