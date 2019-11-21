@@ -1,8 +1,8 @@
-import { CurrentUserService as currentUser} from '../user/current-user.service';
+import { CurrentUserService as currentUser } from '../user/current-user.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { ResultProcessor } from '../../../interfaces/result-processor';
 import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { ResultProcessor } from '../../../interfaces/result-processor';
 
 
 @Injectable({
@@ -20,6 +20,5 @@ export class UserResultProcessorService implements ResultProcessor {
 			currentUser.dbUser = result;
 		}
 	}
-
 
 }

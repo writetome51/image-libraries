@@ -17,7 +17,7 @@ export class UpdateUserComponent {
 		let choices = Object.keys(choicesMap);
 
 		for (let i = 0; i < choices.length; ++i) {
-			let map: { path: string, component: Function, heading: string } = choicesMap[choices[i]];
+			let map: { path: string, heading: string } = choicesMap[choices[i]];
 
 			if (url.endsWith(`/${map.path}`)) {
 				return map.heading;
