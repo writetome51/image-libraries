@@ -1,12 +1,10 @@
-import { AlertService as alert } from './services/alert.service';
 import { ClearFormDataService as clearFormData } from './services/clear-form-data.service';
 import { OnInit } from '@angular/core';
 
 
-export abstract class ClearAlertAndFormOnInitComponent implements OnInit {
+export abstract class ClearFormOnInitComponent implements OnInit {
 
 	ngOnInit() {
-		alert.clear();
 		clearFormData.go();
 	}
 

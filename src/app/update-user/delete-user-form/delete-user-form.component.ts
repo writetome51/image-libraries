@@ -3,7 +3,7 @@ import { UserDeletionProcessorService }
 	from '../../services/data-operation-processor/user-deletion-processor.service';
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
-import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
+import { ClearFormOnInitComponent } from '../../clear-form-on-init.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
+export class DeleteUserFormComponent extends ClearFormOnInitComponent {
 
 
 	tonto = {

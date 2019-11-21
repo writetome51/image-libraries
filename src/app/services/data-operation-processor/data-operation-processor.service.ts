@@ -10,7 +10,7 @@ export abstract class DataOperationProcessorService implements DataOperationProc
 
 
 	async process() {
-		alert.clear();
+		alert.clear(); // Removes any pre-existing alerts.
 		let result = await this._getResult();
 		await this.__resultInterpreter.interpret(result);
 	}
