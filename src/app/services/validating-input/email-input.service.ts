@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserValidationRulesService as rules } from '../user/user-validation-rules.service';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
+import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
@@ -16,7 +17,7 @@ export class EmailInputService extends ValidatingTextInputService {
 
 		this.data.isValid = [
 			() => (this.data.objectToBind[this.data.propertyToBind].length >= rules.emailMinLength),
-			() => (!(this.data.objectToBind[this.data.propertyToBind].includes(' ')))
+			() => (not(this.data.objectToBind[this.data.propertyToBind].includes(' ')))
 		];
 		this.data.errorMessage = [
 			`The email must be at least ${rules.emailMinLength} characters`,

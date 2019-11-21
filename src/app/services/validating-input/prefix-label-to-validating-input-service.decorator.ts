@@ -7,20 +7,28 @@ import { ValidatingInputService } from '@writetome51/validating-inputs';
 Decorator for some ValidatingInputService subclasses.
  Usage:
 
-@PrefixLabel_ValidatingInputService({ prefix: string, propertyToBind?: string })
+@PrefixLabel_to_ValidatingInputService({ prefix: string, prefix_propertyToBind?: boolean })
 export class TheClass {...}
  *****************/
 
-export const PrefixLabel_ValidatingInputService: (
-	params: { prefix: string, propertyToBind?: string }
+export const PrefixLabel_to_ValidatingInputService: (
+	params: { prefix: string, prefix_propertyToBind?: boolean }
 ) => Function = getClassModificationDecorator(
 
 	(instance: ValidatingInputService, decoratorArgs: [any]) => {
 
-		let {prefix, propertyToBind} = decoratorArgs[0];
+		let {prefix, prefix_propertyToBind} = decoratorArgs[0];
 
 		instance.data.id = prefix + '-' + instance.data.id;
-		if (propertyToBind && propertyToBind.length) instance.data.propertyToBind = propertyToBind;
+
+		if (prefix_propertyToBind) {
+			if (instance.data.propertyToBind) {
+				instance.data.propertyToBind =
+					prefix + instance.data.propertyToBind[0].toUpperCase() +
+					instance.data.propertyToBind.slice(1);
+			}
+			else instance.data.propertyToBind = prefix;
+		}
 
 		let capitalizedStr = prefix[0].toUpperCase() + prefix.slice(1);
 		instance.data.label = capitalizedStr + ' ' + instance.data.label;
