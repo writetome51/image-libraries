@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UpdateUserEmailFormComponent } from './update-user-email-form/update-user-email-form.component';
-import { UpdateUserPasswordFormComponent }
-	from './update-user-password-form/update-user-password-form.component';
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
+import { componentPathMaps } from './component-path-maps';
+import { ComponentPathMap } from './component-path-map.type';
 
 
 @Component({
@@ -14,21 +12,16 @@ export class UpdateUserComponent {
 
 	heading = 'Update Account';
 
-	private __nestedComponents = [
-		UpdateUserEmailFormComponent,
-		UpdateUserPasswordFormComponent,
-		DeleteUserFormComponent
-	];
-
 
 	get formHeading() {
 		let url = this.__router.routerState.snapshot.url;
+		let mapKeys = Object.keys(componentPathMaps);
 
-		for (let i = 0; i < this.__nestedComponents.length; ++i) {
-			let nestedComponent = this.__nestedComponents[i];
+		for (let i = 0; i < mapKeys.length; ++i) {
+			let map: ComponentPathMap = componentPathMaps[mapKeys[i]];
 
-			if (url.endsWith(`/${nestedComponent.path}`)) {
-				return nestedComponent.heading;
+			if (url.endsWith(`/${map.path}`)) {
+				return map.component['heading']; // 'heading' must be static
 			}
 		}
 	}

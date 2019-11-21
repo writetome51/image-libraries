@@ -4,6 +4,7 @@ import { UserDeletionProcessorService }
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
+import { UpdateUserSubComponent } from '../update-user-sub.component';
 
 
 @Component({
@@ -11,9 +12,9 @@ import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
+export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent
+	implements UpdateUserSubComponent {
 
-	static readonly path = 'delete-account';
 	static readonly heading = 'Self Destruct?';
 
 	tonto = {

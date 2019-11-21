@@ -4,15 +4,16 @@ import { UpdatePasswordProcessorService }
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
+import { UpdateUserSubComponent } from '../update-user-sub.component';
 
 
 @Component({
 	selector: 'update-user-password-form',
 	templateUrl: './update-user-password-form.component.html'
 })
-export class UpdateUserPasswordFormComponent extends ClearAlertAndFormOnInitComponent {
+export class UpdateUserPasswordFormComponent extends ClearAlertAndFormOnInitComponent
+	implements UpdateUserSubComponent {
 
-	static readonly path = 'password';
 	static readonly heading = 'Update Password';
 
 

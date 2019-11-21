@@ -18,7 +18,7 @@ export class UserDeletionResultProcessorService implements ResultProcessor {
 	async process(result) {
 		await this.__userLogoutResultProcessor.process(result);
 		if (result.success) {
-			alert.success = 'Account successfully deleted';
+			alert.success = 'Account deleted';
 		}
 	}
 

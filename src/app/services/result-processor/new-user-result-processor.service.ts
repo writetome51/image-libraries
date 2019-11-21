@@ -15,7 +15,7 @@ export class NewUserResultProcessorService implements ResultProcessor {
 
 	async process(result: DBUser) {
 		await this.__loginResultProcessor.process(result);
-		if (result.sessionID) alert.success = 'User created!';
+		if (result.sessionID) alert.success = 'User created';
 	}
 
 }

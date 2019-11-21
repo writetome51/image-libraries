@@ -10,7 +10,7 @@ export class NewLibraryResultProcessorService implements ResultProcessor {
 
 
 	process(result: DBLibrary) {
-		if (result._user_id && result.name) alert.success = 'Library created!';
+		if (result._user_id && result.name) alert.success = 'Library created';
 	}
 
 }

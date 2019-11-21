@@ -2,11 +2,7 @@ import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UpdateUserComponent } from './update-user.component';
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
-import { UpdateUserEmailFormComponent }
-	from './update-user-email-form/update-user-email-form.component';
-import { UpdateUserPasswordFormComponent }
-	from './update-user-password-form/update-user-password-form.component';
+import { componentPathMaps } from './component-path-maps';
 
 
 const routes: Routes = [
@@ -23,18 +19,21 @@ const routes: Routes = [
 		canActivate: [AuthenticatedGuard],
 		children: [
 			{
-				path: UpdateUserEmailFormComponent.path,
-				component: UpdateUserEmailFormComponent
+				path: componentPathMaps.email.path,
+				// @ts-ignore
+				component: componentPathMaps.email.component
 			},
 
 			{
-				path: UpdateUserPasswordFormComponent.path,
-				component: UpdateUserPasswordFormComponent
+				path: componentPathMaps.password.path,
+				// @ts-ignore
+				component: componentPathMaps.password.component
 			},
 
 			{
-				path: DeleteUserFormComponent.path,
-				component: DeleteUserFormComponent
+				path: componentPathMaps.delete.path,
+				// @ts-ignore
+				component: componentPathMaps.delete.component
 			},
 		]
 	},
