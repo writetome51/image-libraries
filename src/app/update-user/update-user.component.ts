@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { componentPathMaps } from './component-path-maps';
-import { ComponentPathMap } from './component-path-map.type';
+import { UpdateUserChoicesMapService as choicesMap } from './update-user-choices-map.service';
 
 
 @Component({
@@ -15,13 +14,13 @@ export class UpdateUserComponent {
 
 	get formHeading() {
 		let url = this.__router.routerState.snapshot.url;
-		let mapKeys = Object.keys(componentPathMaps);
 
-		for (let i = 0; i < mapKeys.length; ++i) {
-			let map: ComponentPathMap = componentPathMaps[mapKeys[i]];
+		for (let i = 0; i < choicesMap.choices.length; ++i) {
+			let choice = choicesMap.choices[i];
+			let map: { path: string, component: Function, heading: string } = choicesMap[choice];
 
 			if (url.endsWith(`/${map.path}`)) {
-				return map.component['heading']; // 'heading' must be static
+				return map.heading;
 			}
 		}
 	}

@@ -4,7 +4,6 @@ import { UserDeletionProcessorService }
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
 import { ClearAlertAndFormOnInitComponent } from '../../clear-alert-and-form-on-init.component';
-import { UpdateUserSubComponent } from '../update-user-sub.component';
 
 
 @Component({
@@ -12,10 +11,8 @@ import { UpdateUserSubComponent } from '../update-user-sub.component';
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent
-	implements UpdateUserSubComponent {
+export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent {
 
-	static readonly heading = 'Self Destruct?';
 
 	tonto = {
 		src: '../../../assets/tonto.jpg',
@@ -32,5 +29,6 @@ export class DeleteUserFormComponent extends ClearAlertAndFormOnInitComponent
 	async delete() {
 		await performAppDataOperation.go(this.__userDeletionProcessor);
 	}
+
 
 }
