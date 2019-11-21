@@ -1,5 +1,5 @@
 import { Bind_ValidatingInputsService_to_Object }
-	from './bind-validating-inputs-service-to-current-user-service.decorator';
+	from './bind-validating-inputs-service-to-object.decorator';
 import { AppValidatingInputsService } from './app-validating-inputs.service';
 import { CurrentUserService } from '../user/current-user.service';
 
