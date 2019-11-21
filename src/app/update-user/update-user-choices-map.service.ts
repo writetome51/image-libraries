@@ -4,24 +4,22 @@ import { UpdateUserPasswordFormComponent }
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 
 
-export class UpdateUserChoicesMapService {
+export const UpdateUserChoicesMapService = {
 
-	static readonly choices = ['email','password','delete'];
-
-	static readonly email = {
+	email: {
 		path: 'email',
 		component: UpdateUserEmailFormComponent,
 		heading: 'Update Email'
-	};
-	static readonly password = {
+	},
+	password: {
 		path: 'password',
 		component: UpdateUserPasswordFormComponent,
 		heading: 'Update Password'
-	};
-	static readonly delete = {
+	},
+	delete: {
 		path: 'delete-account',
 		component: DeleteUserFormComponent,
 		heading: 'Self Destruct?'
-	};
+	}
 
-}
+};

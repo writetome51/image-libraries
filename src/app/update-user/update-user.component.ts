@@ -14,10 +14,10 @@ export class UpdateUserComponent {
 
 	get formHeading() {
 		let url = this.__router.routerState.snapshot.url;
+		let choices = Object.keys(choicesMap);
 
-		for (let i = 0; i < choicesMap.choices.length; ++i) {
-			let choice = choicesMap.choices[i];
-			let map: { path: string, component: Function, heading: string } = choicesMap[choice];
+		for (let i = 0; i < choices.length; ++i) {
+			let map: { path: string, component: Function, heading: string } = choicesMap[choices[i]];
 
 			if (url.endsWith(`/${map.path}`)) {
 				return map.heading;
