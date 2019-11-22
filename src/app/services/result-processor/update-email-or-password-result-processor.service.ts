@@ -1,27 +1,26 @@
 import { DBUser } from '../../../interfaces/db-user';
-import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
 import { UserResultProcessorService } from './user-result-processor.service';
 import { AlertService as alert } from '../alert.service';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UpdatePasswordResultProcessorService implements ResultProcessor {
+export class UpdateEmailOrPasswordResultProcessorService implements ResultProcessor {
 
-	constructor(
-		private __userResultProcessor: UserResultProcessorService,
-		private __router: Router
-	) {
+	resultMessage: string;
+
+
+	constructor(private __userResultProcessor: UserResultProcessorService) {
 	}
 
 
 	async process(result: DBUser) {
 		this.__userResultProcessor.process(result);
-
-		if (result.sessionID) alert.success = 'Password changed.';
+		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
+		if (result.sessionID) alert.success = this.resultMessage;
 	}
 
 }

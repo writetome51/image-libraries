@@ -6,7 +6,7 @@ import { SetMessageFor_UpdateEmailOrPasswordResultProcessor }
 
 
 @Injectable({providedIn: 'root'})
-@SetMessageFor_UpdateEmailOrPasswordResultProcessor('Password updated.')
+@SetMessageFor_UpdateEmailOrPasswordResultProcessor('Email updated.')
 
-export class UpdatePasswordResultInterpreterService extends UpdateEmailOrPasswordResultInterpreterService {
+export class UpdateEmailResultInterpreterService extends UpdateEmailOrPasswordResultInterpreterService {
 }
