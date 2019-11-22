@@ -3,7 +3,8 @@ import { UserDeletionProcessorService }
 	from '../../services/data-operation-processor/user-deletion-processor.service';
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
-import { ClearFormOnInitComponent } from '../../clear-form-on-init.component';
+import { ClearFormOnInitAndAlertOnDestroyComponent }
+	from '../../clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ClearFormOnInitComponent } from '../../clear-form-on-init.component';
 	templateUrl: './delete-user-form.component.html',
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
-export class DeleteUserFormComponent extends ClearFormOnInitComponent {
+export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
 
 	tonto = {
