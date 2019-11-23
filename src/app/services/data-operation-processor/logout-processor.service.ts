@@ -9,8 +9,8 @@ import { DataOperationProcessorService } from './data-operation-processor.servic
 export class LogoutProcessorService extends DataOperationProcessorService {
 
 	constructor(
-		__logoutResultInterpreter: LogoutResultInterpreterService,
-		private __deAuthenticator: DeAuthenticatorService
+		private __deAuthenticator: DeAuthenticatorService,
+		__logoutResultInterpreter: LogoutResultInterpreterService
 	) {
 		super(__logoutResultInterpreter);
 	}

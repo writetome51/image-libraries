@@ -1,9 +1,8 @@
-import { Component, HostListener } from '@angular/core';
-import { LocalSessionIDService } from './services/authentication/local-session-id.service';
 import { AlertService as alert } from './services/alert.service';
-import { DataOperationStatusService as dataOperationStatus}
+import { Component, HostListener } from '@angular/core';
+import { DataOperationStatusService as dataOperationStatus }
 	from './services/data-operation-status.service';
-
+import { LocalSessionIDService } from './services/authentication/local-session-id.service';
 
 
 @Component({

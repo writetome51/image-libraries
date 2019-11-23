@@ -1,7 +1,7 @@
 // This lets the app know when to display the loading spinner
 
-export class DataOperationStatusService {
+export const DataOperationStatusService = {
 
-	static waitingForResult = false; // if true, show loading spinner.
+	waitingForResult: false // if true, show loading spinner.
 
-}
+};

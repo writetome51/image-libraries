@@ -1,5 +1,5 @@
 import { AlertComponent } from './alert/alert.component';
-import { AppComponent } from './app.component';
+import { AppComponent} from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { EmailPasswordFormInputsModule }
@@ -37,6 +37,9 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		EmailPasswordFormInputsModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 	],
+	//temp:
+	providers: [],
+
 	bootstrap: [AppComponent]
 })
 export class AppModule {

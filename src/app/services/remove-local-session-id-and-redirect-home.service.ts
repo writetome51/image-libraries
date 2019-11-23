@@ -4,9 +4,8 @@ import { Router } from '@angular/router';
 import { IDoThis } from '../../interfaces/i-do-this';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class RemoveLocalSessionIDAndRedirectHomeService implements IDoThis {
 
 	constructor(
