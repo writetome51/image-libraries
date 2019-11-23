@@ -3,21 +3,22 @@ import { UserStorageService } from '../user/user-storage.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
-import { UpdatePasswordResultInterpreterService }
-	from '../result-interpreter/update-password-result-interpreter.service';
+import { UpdateEmailOrPasswordResultInterpreterService }
+	from '../result-interpreter/update-email-or-password-result-interpreter.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class UpdatePasswordProcessorService extends FormDataOperationProcessorService {
 
 	constructor(
 		private __userStorage: UserStorageService,
 		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
-		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
+		__updateEmailOrPasswordResultInterpreter: UpdateEmailOrPasswordResultInterpreterService
 	) {
-		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);
+		super(__updatePasswordFormInputs, __updateEmailOrPasswordResultInterpreter);
+
+		__updateEmailOrPasswordResultInterpreter.messageFor_resultProcessor = 'Password updated.';
 	}
 
 

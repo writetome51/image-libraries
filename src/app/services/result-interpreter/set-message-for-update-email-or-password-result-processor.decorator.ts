@@ -14,7 +14,7 @@ export class TheClass {...}
 export const SetMessageFor_UpdateEmailOrPasswordResultProcessor: (message: string) => Function =
 	getClassModificationDecorator(
 		(instance: UpdateEmailOrPasswordResultInterpreterService, decoratorArgs: [string]) => {
-			instance.messageFor_resultProcessor = decoratorArgs[0];
+			console.log(instance);
+			//	instance.__updateEmailOrPasswordResultProcessor.resultMessage = decoratorArgs[0];
 		}
-	)
-;
+	);

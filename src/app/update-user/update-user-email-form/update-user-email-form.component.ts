@@ -13,13 +13,13 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 })
 export class UpdateUserEmailFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
-	constructor(private __emailUpdateProcessor: UpdateEmailProcessorService) {
+	constructor(private __updateEmailProcessor: UpdateEmailProcessorService) {
 		super();
 	}
 
 
 	async save() {
-		await performAppDataOperation.go(this.__emailUpdateProcessor);
+		await performAppDataOperation.go(this.__updateEmailProcessor);
 	}
 
 }

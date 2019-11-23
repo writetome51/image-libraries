@@ -5,9 +5,8 @@ import { AlertService as alert } from '../alert.service';
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class UpdateEmailOrPasswordResultProcessorService implements ResultProcessor {
 
 	resultMessage: string;
