@@ -16,11 +16,11 @@ export class UpdateEmailOrPasswordResultInterpreterService extends ResultInterpr
 
 
 	constructor(
-		__opRequiringEmailPasswordResultCheckService: OperationRequiringEmailPasswordResultCheckService,
+		__opRequiringEmailPasswordResultCheck: OperationRequiringEmailPasswordResultCheckService,
 		private __updateEmailOrPasswordResultProcessor: UpdateEmailOrPasswordResultProcessorService
 	) {
 		super(
-			__opRequiringEmailPasswordResultCheckService,
+			__opRequiringEmailPasswordResultCheck,
 			__updateEmailOrPasswordResultProcessor
 		);
 	}
