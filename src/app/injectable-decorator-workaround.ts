@@ -3,15 +3,27 @@ import { LocalSessionIDService } from './services/authentication/local-session-i
 import { Injectable } from '@angular/core';
 
 
-// Easy fix for the decorators not combining well with @Injectable:
-//
-// Decorate the class you've made with your own custom decorator.
-// Then in the same file, underneath that class, create a subclass.
-// Decorate the subclass with @Injectable().  Unnecessary to redeclare
-// the constructor in the subclass.
-// This code is an example:
+/**************************************
+ Problem:  class decorators created using getClassModificationDecorator() work
+ fine when combined with @Injectable(), like so...
 
-@Modify({name: 'Biff'})
+ @Injectable()
+ @Decorator_created_using_getClassModificationDecorator()
+ export ExampleClass {}
+
+ ...unless the class being decorated requires dependency
+ injection in its constructor. Angular's injector won't work.
+ There's an easy solution:
+
+ Decorate the class you've made with your own custom decorator. Begin
+ this class' name with two underscores to indicate it's private.
+ Then underneath that class create a subclass.  Give it the same name without the beginning
+ underscores, indicating it's the public version of the parent class.  Decorate the subclass with
+ @Injectable().  It's unnecessary to declare the constructor in the subclass.
+ *************************************/
+// Example:
+
+@Modify({name: 'Biff'}) // custom decorator
 export class __TheClass {
 
 	constructor(public local: LocalSessionIDService) {
@@ -19,7 +31,7 @@ export class __TheClass {
 
 
 	squeal() {
-		this.local.set('jdkla;jka;jkdls;fjdksa;eieie');
+		this.local.set('aaaaaaahHHHH!!!!');
 		console.log(this.local.get());
 	}
 
@@ -28,3 +40,5 @@ export class __TheClass {
 @Injectable({providedIn: 'root'})
 export class TheClass extends __TheClass {
 }
+
+// TheClass is now injectable.
