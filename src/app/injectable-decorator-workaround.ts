@@ -17,9 +17,11 @@ import { Injectable } from '@angular/core';
 
  Decorate the class you've made with your own custom decorator. Begin
  this class' name with two underscores to indicate it's private.
- Then underneath that class create a subclass.  Give it the same name without the beginning
- underscores, indicating it's the public version of the parent class.  Decorate the subclass with
- @Injectable().  It's unnecessary to declare the constructor in the subclass.
+ Then underneath that class create a subclass.  Give it the same name without
+ the beginning underscores, indicating it's the public version of the parent
+ class.  Decorate the subclass with @Injectable().  (It's unnecessary to
+ declare the constructor in the subclass.) The subclass is now injectable
+ and will receive dependencies in its constructor.
  *************************************/
 // Example:
 
