@@ -17,7 +17,6 @@ export class UpdatePasswordProcessorService extends FormDataOperationProcessorSe
 		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
 	) {
 		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);
-		console.log(__updatePasswordResultInterpreter);
 	}
 
 
