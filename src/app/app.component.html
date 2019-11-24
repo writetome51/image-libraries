@@ -9,7 +9,15 @@
 		<nav *ngIf="sessionIDExists">
 			<logout-button></logout-button>
 			|
-			<a routerLink="update-account" routerLinkActive="active">Update Account</a>
+			<a *ngIf="!(updateUserIsActive)"
+			   [routerLink]="moduleRoute.UpdateUserModule"
+			   routerLinkActive="active"
+			>
+				Update Account
+			</a>
+			<span *ngIf="updateUserIsActive">
+				Update Account
+			</span>
 		</nav>
 
 	</header>

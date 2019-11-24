@@ -3,6 +3,8 @@ import { Component, HostListener } from '@angular/core';
 import { DataOperationStatusService as dataOperationStatus }
 	from './services/data-operation-status.service';
 import { LocalSessionIDService } from './services/authentication/local-session-id.service';
+import { Router } from '@angular/router';
+import { AppModuleRouteService as moduleRoute} from './app-module-route.service';
 
 
 @Component({
@@ -14,6 +16,7 @@ export class AppComponent {
 	title = 'Image Libraries';
 	alert = alert;
 	dataOperationStatus = dataOperationStatus;
+	moduleRoute = moduleRoute;
 
 
 	// Adds keyup listener to document.
@@ -28,7 +31,16 @@ export class AppComponent {
 	}
 
 
-	constructor(private __localSessionID: LocalSessionIDService) {
+	get updateUserIsActive(): boolean {
+		let url = this.__router.routerState.snapshot.url;
+		return url.includes(`/${moduleRoute.UpdateUserModule}`);
+	}
+
+
+	constructor(
+		private __localSessionID: LocalSessionIDService,
+		private __router: Router
+	) {
 	}
 
 }

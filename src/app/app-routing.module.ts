@@ -5,29 +5,30 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AppModuleRouteService as moduleRoute } from './app-module-route.service';
 
 
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: 'update-account',
+		path: moduleRoute.UpdateUserModule,
 		loadChildren: () => import('./update-user/update-user.module').then(mod => mod.UpdateUserModule)
 	},
 
 	{	// lazy-loaded module
-		path: 'create-account', // can only access when logged out
+		path: moduleRoute.NewUserModule, // can only access when logged out
 		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
 
 	{
-		path: 'libraries', // the logged-in homepage
+		path: moduleRoute.LibrariesComponent, // the logged-in homepage
 		component: LibrariesComponent,
 		// 'canActivate' means the guard decides if the component can be instantiated.
 		canActivate: [AuthenticatedGuard]
 	},
 
 	{	// lazy-loaded module
-		path: 'library',
+		path: moduleRoute.LibraryModule,
 		loadChildren: () => import('./library/library.module').then(mod => mod.LibraryModule)
 	},
 
