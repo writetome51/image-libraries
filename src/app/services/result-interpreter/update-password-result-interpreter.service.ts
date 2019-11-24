@@ -1,10 +1,10 @@
-import { Set_messageForResultProcessor } from './set-message-for-result-processor.decorator';
+import { SetResultMessage } from '../result-processor/set-result-message.decorator';
 import { UpdateEmailOrPasswordResultInterpreterService }
 	from './update-email-or-password-result-interpreter.service';
 import { Injectable } from '@angular/core';
 
 
-@Set_messageForResultProcessor('Password updated.')
+@SetResultMessage('Password updated.')
 export class __UpdatePasswordResultInterpreterService extends UpdateEmailOrPasswordResultInterpreterService {
 }
 

@@ -10,11 +10,6 @@ import { Injectable } from '@angular/core';
 
 export class UpdateEmailOrPasswordResultInterpreterService extends ResultInterpreterService {
 
-	set messageForResultProcessor(value) {
-		this.__updateEmailOrPasswordResultProcessor.resultMessage = value;
-	}
-
-
 	constructor(
 		__opRequiringEmailPasswordResultCheck: OperationRequiringEmailPasswordResultCheckService,
 		private __updateEmailOrPasswordResultProcessor: UpdateEmailOrPasswordResultProcessorService
