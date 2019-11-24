@@ -18,7 +18,7 @@ export class UpdatePasswordProcessorService extends FormDataOperationProcessorSe
 	) {
 		super(__updatePasswordFormInputs, __updateEmailOrPasswordResultInterpreter);
 
-		__updateEmailOrPasswordResultInterpreter.messageFor_resultProcessor = 'Password updated.';
+		__updateEmailOrPasswordResultInterpreter.messageForResultProcessor = 'Password updated.';
 	}
 
 

@@ -18,7 +18,7 @@ export class UpdateEmailProcessorService extends FormDataOperationProcessorServi
 	) {
 		super(__updateEmailFormInputs, __updateEmailOrPasswordResultInterpreter);
 
-		__updateEmailOrPasswordResultInterpreter.messageFor_resultProcessor = 'Email updated.';
+		__updateEmailOrPasswordResultInterpreter.messageForResultProcessor = 'Email updated.';
 	}
 
 

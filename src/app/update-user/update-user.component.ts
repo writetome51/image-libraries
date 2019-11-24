@@ -10,14 +10,15 @@ import { UpdateUserChoicesMapService as choicesMap } from './update-user-choices
 export class UpdateUserComponent {
 
 	heading = 'Update Account';
+	choicesMap = choicesMap;
+	choices = Object.keys(choicesMap);
 
 
 	get formHeading() {
 		let url = this.__router.routerState.snapshot.url;
-		let choices = Object.keys(choicesMap);
 
-		for (let i = 0; i < choices.length; ++i) {
-			let map: { path: string, heading: string } = choicesMap[choices[i]];
+		for (let i = 0; i < this.choices.length; ++i) {
+			let map: { path: string, heading: string } = choicesMap[this.choices[i]];
 
 			if (url.endsWith(`/${map.path}`)) {
 				return map.heading;
