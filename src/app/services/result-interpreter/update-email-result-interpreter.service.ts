@@ -1,14 +1,23 @@
-import { SetResultMessage } from '../result-processor/set-result-message.decorator';
-import { UpdateEmailOrPasswordResultInterpreterService }
-	from './update-email-or-password-result-interpreter.service';
 import { Injectable } from '@angular/core';
-
-
-@SetResultMessage('Email updated.')
-export class __UpdateEmailResultInterpreterService extends UpdateEmailOrPasswordResultInterpreterService {
-}
+import { ResultInterpreterService } from './result-interpreter.service';
+import { OperationRequiringEmailPasswordResultCheckService }
+	from '../data-operation-result-check/operation-requiring-email-password-result-check.service';
+import { UpdateEmailResultProcessorService }
+	from '../result-processor/update-email-result-processor.service';
 
 
 @Injectable({providedIn: 'root'})
-export class UpdateEmailResultInterpreterService extends __UpdateEmailResultInterpreterService {
+
+export class UpdateEmailResultInterpreterService extends ResultInterpreterService {
+
+	constructor(
+		__opRequiringEmailPasswordResultCheck: OperationRequiringEmailPasswordResultCheckService,
+		__updateEmailResultProcessor: UpdateEmailResultProcessorService
+	) {
+		super(
+			__opRequiringEmailPasswordResultCheck,
+			__updateEmailResultProcessor
+		);
+	}
+
 }
