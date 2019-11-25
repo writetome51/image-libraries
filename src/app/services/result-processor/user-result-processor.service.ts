@@ -1,7 +1,7 @@
 import { CurrentUserService as currentUser } from '../user/current-user.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { ResultProcessor } from '../../../interfaces/result-processor';
 
 

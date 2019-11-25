@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { LocalSessionIDService } from './local-session-id.service';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 

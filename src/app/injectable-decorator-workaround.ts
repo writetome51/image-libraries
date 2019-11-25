@@ -4,7 +4,7 @@
 
  @Injectable()
  @Decorator_created_using_getClassModificationDecorator()
- export ExampleClass {}
+ export class ExampleClass {}
 
  ...unless the class being decorated requires dependency injection in its
  constructor. Angular's injector won't work.

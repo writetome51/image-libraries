@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
 import { LibraryRestApiService } from './library-rest-api.service';
-import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { CurrentLibraryService as currentLibrary } from './current-library.service';
 
 

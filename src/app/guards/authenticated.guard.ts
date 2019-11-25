@@ -2,7 +2,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
 	from '@angular/router';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService }
-	from '../services/authentication/local-session-id.service';
+	from '../services/local-data/local-session-id.service';
 
 
 @Injectable({

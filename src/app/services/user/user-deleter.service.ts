@@ -1,6 +1,6 @@
 import { CurrentUserService as currentUser } from './current-user.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';

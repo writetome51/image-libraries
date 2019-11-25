@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { LocalSessionIDService } from '../services/authentication/local-session-id.service';
+import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
 
 
 @Injectable({

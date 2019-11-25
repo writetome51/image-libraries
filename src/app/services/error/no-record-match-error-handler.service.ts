@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../authentication/local-session-id.service';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { HandleNoRecordMatchErrorService } from './handle-no-record-match-error.service';
 import { ErrorHandler } from '../../../interfaces/error-handler';
 
