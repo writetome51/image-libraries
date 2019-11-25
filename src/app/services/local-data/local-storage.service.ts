@@ -16,8 +16,14 @@ import { SimpleCrypto } from 'simple-crypto-js';
 
 export class LocalStorageService {
 
-	private __localObject = new ObjectInLocalStorage('image-libraries-current-user', {});
+	private __localObject = new ObjectInLocalStorage('image-libraries-current-user');
 	private __cryptographer = new SimpleCrypto(ecky);
+
+
+	constructor(){
+		// Sets an initial value only if it doesn't already exist.
+		if (!(this.__localObject.get())) this.__localObject.set({});
+	}
 
 
 	set(keyValuePair: Object): void {

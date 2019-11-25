@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ResultProcessor } from '../../../interfaces/result-processor';
-import { RemoveLocalSessionIDAndRedirectHomeService }
-	from '../remove-local-session-id-and-redirect-home.service';
+import { RemoveLocalDataAndRedirectHomeService }
+	from '../remove-local-data-and-redirect-home.service';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { RemoveLocalSessionIDAndRedirectHomeService }
 export class UserLogoutResultProcessorService implements ResultProcessor {
 
 	constructor(
-		private __remove_localSessionID_and_redirectHome: RemoveLocalSessionIDAndRedirectHomeService
+		private __remove_localSessionID_and_redirectHome: RemoveLocalDataAndRedirectHomeService
 	) {
 	}
 
