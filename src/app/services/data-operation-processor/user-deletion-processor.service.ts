@@ -3,8 +3,8 @@ import { UserDeleterService } from '../user/user-deleter.service';
 import { UserDeletionResultInterpreterService }
 	from '../result-interpreter/user-deletion-result-interpreter.service';
 import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
-import { EmailPasswordInputsService }
-	from '../validating-inputs/email-password-inputs.service';
+import { LoginEmailPasswordInputsService }
+	from '../validating-inputs/login-email-password-inputs.service';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class UserDeletionProcessorService extends FormDataOperationProcessorServ
 
 	constructor(
 		private __userDeletor: UserDeleterService,
-		__emailPasswordInputs: EmailPasswordInputsService,
+		__emailPasswordInputs: LoginEmailPasswordInputsService,
 		__userDeletionResultInterpreter: UserDeletionResultInterpreterService
 	) {
 		super(__emailPasswordInputs, __userDeletionResultInterpreter);

@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
-import { EmailPasswordFormInputsModule }
-	from '../email-password-form-inputs/email-password-form-inputs.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { UpdateUserComponent } from './update-user.component';
@@ -15,6 +13,8 @@ import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
+import { DeleteUserFormInputsComponent }
+	from './delete-user-form/delete-user-form-inputs.component';
 
 
 @NgModule({
@@ -24,13 +24,13 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		UpdateUserEmailFormInputsComponent,
 		UpdateUserPasswordFormComponent,
 		UpdateUserPasswordFormInputsComponent,
-		DeleteUserFormComponent
+		DeleteUserFormComponent,
+		DeleteUserFormInputsComponent
 	],
 	imports: [
 		CommonModule,
 		FormsModule,
 		ValidatingInputsModule,
-		EmailPasswordFormInputsModule,
 		UpdateUserRoutingModule
 	]
 })

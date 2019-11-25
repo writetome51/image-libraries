@@ -2,8 +2,8 @@ import { AlertComponent } from './alert/alert.component';
 import { AppComponent} from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { EmailPasswordFormInputsModule }
-	from './email-password-form-inputs/email-password-form-inputs.module';
+import { LoginFormInputsComponent }
+	from './login/login-form/login-form-inputs.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +26,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoadingSpinnerComponent,
 		LoginComponent,
 		LoginFormComponent,
+		LoginFormInputsComponent,
 		LogoutButtonComponent,
 		PageNotFoundComponent,
 	],
@@ -34,12 +35,8 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		FormsModule,
 		HttpClientModule,
 		ValidatingInputsModule,
-		EmailPasswordFormInputsModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 	],
-	//temp:
-	providers: [],
-
 	bootstrap: [AppComponent]
 })
 export class AppModule {
