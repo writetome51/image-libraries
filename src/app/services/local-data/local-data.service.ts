@@ -1,9 +1,7 @@
 import { LocalStorageService } from './local-storage.service';
-import { Injectable } from '@angular/core';
 
-@Injectable({providedIn: 'root'})
 
-export class LocalDataService {
+export abstract class LocalDataService {
 
 	protected _key: string;
 
