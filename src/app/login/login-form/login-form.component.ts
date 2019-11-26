@@ -3,6 +3,7 @@ import { LoginProcessorService }
 	from '../../services/data-operation-processor/login-processor.service';
 import { PerformAppDataOperationService as performAppDataOperation }
 	from '../../services/perform-app-data-operation.service';
+import { AppModuleRouteService as moduleRoute } from '../../app-module-route.service';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { PerformAppDataOperationService as performAppDataOperation }
 	templateUrl: './login-form.component.html'
 })
 export class LoginFormComponent {
+
+	moduleRoute = moduleRoute;
+
 
 	constructor(private __loginProcessor: LoginProcessorService) {
 	}
