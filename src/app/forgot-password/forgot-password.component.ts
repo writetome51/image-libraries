@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
 	selector: 'forgot-password',
 	templateUrl: './forgot-password.component.html'
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ForgotPasswordComponent {
+
+	heading = 'Forgot Password?';
+
 
 	constructor() {
 	}
 
-
-	ngOnInit() {
-	}
 
 }

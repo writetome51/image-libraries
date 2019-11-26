@@ -15,6 +15,10 @@ import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { ForgotPasswordFormComponent }
+	from './forgot-password/forgot-password-form/forgot-password-form.component';
+import { ForgotPasswordFormInputsComponent }
+	from './forgot-password/forgot-password-form/forgot-password-form-inputs.component';
 
 
 @NgModule({
@@ -22,6 +26,8 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		AppComponent,
 		AlertComponent,
 		ForgotPasswordComponent,
+		ForgotPasswordFormComponent,
+		ForgotPasswordFormInputsComponent,
 		LibrariesComponent,
 		LoadingSpinnerComponent,
 		LoginComponent,
