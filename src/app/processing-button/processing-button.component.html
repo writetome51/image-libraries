@@ -1,0 +1,9 @@
+<div class="input-container">
+
+	<button *ngIf="!(dataOperationStatus.waitingForResult)" [type]="type" (click)="clickHandler()">
+		{{buttonLabel}}
+	</button>
+
+	<app-loading-spinner *ngIf="dataOperationStatus.waitingForResult"></app-loading-spinner>
+
+</div>

@@ -10,6 +10,10 @@ import { Component } from '@angular/core';
 	`,
 	styles: [`div { position: relative; }`]
 })
+
+// Instead of showing loading spinner below button after clicking,
+// have button (once clicked) disappear and be replaced by spinner.
+
 export class LoadingSpinnerComponent {
 
 

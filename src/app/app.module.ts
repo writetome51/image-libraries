@@ -18,6 +18,7 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { ProcessingButtonComponent } from './processing-button/processing-button.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
 
 
@@ -35,6 +36,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoginFormInputsComponent,
 		LogoutButtonComponent,
 		PageNotFoundComponent,
+		ProcessingButtonComponent,
 	],
 	imports: [
 		BrowserModule,
