@@ -1,10 +1,14 @@
 import { AlertComponent } from './alert/alert.component';
-import { AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginFormInputsComponent }
 	from './login/login-form/login-form-inputs.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { GetSecurityQuestionComponent } from './get-security-question/get-security-question.component';
+import { GetSecurityQuestionFormComponent }
+	from './get-security-question/get-security-question-form/get-security-question-form.component';
+import { GetSecurityQuestionFormInputsComponent }
+	from './get-security-question/get-security-question-form/get-security-question-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LibrariesComponent } from './libraries/libraries.component';
@@ -15,19 +19,15 @@ import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
-import { ForgotPasswordFormComponent }
-	from './forgot-password/forgot-password-form/forgot-password-form.component';
-import { ForgotPasswordFormInputsComponent }
-	from './forgot-password/forgot-password-form/forgot-password-form-inputs.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AlertComponent,
-		ForgotPasswordComponent,
-		ForgotPasswordFormComponent,
-		ForgotPasswordFormInputsComponent,
+		GetSecurityQuestionComponent,
+		GetSecurityQuestionFormComponent,
+		GetSecurityQuestionFormInputsComponent,
 		LibrariesComponent,
 		LoadingSpinnerComponent,
 		LoginComponent,

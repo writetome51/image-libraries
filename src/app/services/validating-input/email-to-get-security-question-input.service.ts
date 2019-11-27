@@ -8,7 +8,6 @@ export class EmailToGetSecurityQuestionInputService extends EmailInputService {
 
 	constructor() {
 		super();
-
 		this.data.prompt = `Enter your email to receive your security question:`;
 	}
 

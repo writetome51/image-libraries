@@ -1,12 +1,12 @@
+import { AppModuleRouteService as moduleRoute } from './app-module-route.service';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
+import { GetSecurityQuestionComponent } from './get-security-question/get-security-question.component';
 import { LoginComponent } from './login/login.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AppModuleRouteService as moduleRoute } from './app-module-route.service';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
@@ -34,8 +34,8 @@ const routes: Routes = [
 	},
 
 	{
-		path: moduleRoute.ForgotPasswordComponent,
-		component: ForgotPasswordComponent,
+		path: moduleRoute.GetSecurityQuestionComponent,
+		component: GetSecurityQuestionComponent,
 		canActivate: [DeAuthenticatedGuard]
 	},
 

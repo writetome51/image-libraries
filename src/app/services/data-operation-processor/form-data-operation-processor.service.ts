@@ -13,6 +13,8 @@ export abstract class FormDataOperationProcessorService extends DataOperationPro
 	}
 
 
+	// The process is only begun if the inputs are valid.
+
 	async process() {
 		if (this.__validatingInputs.areValid()) {
 			await super.process();

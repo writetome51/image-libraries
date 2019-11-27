@@ -6,7 +6,7 @@ import { EmailToGetSecurityQuestionInputService }
 
 @Injectable({providedIn: 'root'})
 
-export class ForgotPasswordInputsService extends CurrentUserInputsService {
+export class GetSecurityQuestionInputsService extends CurrentUserInputsService {
 
 	constructor(emailInput: EmailToGetSecurityQuestionInputService) {
 		super(emailInput);
