@@ -12,13 +12,12 @@ import { GetSecurityQuestionFormInputsComponent }
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LibrariesComponent } from './libraries/libraries.component';
-import { LoadingSpinnerComponent } from './loading-spinner.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ProcessingButtonComponent } from './processing-button/processing-button.component';
+import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
 
 
@@ -30,19 +29,18 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		GetSecurityQuestionFormComponent,
 		GetSecurityQuestionFormInputsComponent,
 		LibrariesComponent,
-		LoadingSpinnerComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
 		LogoutButtonComponent,
 		PageNotFoundComponent,
-		ProcessingButtonComponent,
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
 		ValidatingInputsModule,
+		ProcessingButtonModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 	],
 	bootstrap: [AppComponent]
