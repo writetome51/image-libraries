@@ -8,9 +8,9 @@
 			Forgot Password?
 		</a>
 
-		<div class="input-container">
-			<button type="submit" (click)="login()">Log In</button>
-		</div>
+		<app-processing-button [type]="'submit'" [clickHandler]="[this, login]">
+			Log In
+		</app-processing-button>
 
 	</form>
 

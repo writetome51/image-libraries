@@ -1,7 +1,11 @@
+<!--
+The button, when clicked, is replaced by a loading spinner.
+-->
+
 <div class="input-container">
 
-	<button *ngIf="!(dataOperationStatus.waitingForResult)" [type]="type" (click)="clickHandler()">
-		{{buttonLabel}}
+	<button *ngIf="!(dataOperationStatus.waitingForResult)" [type]="type" (click)="runClickHandler()">
+		<ng-content></ng-content>
 	</button>
 
 	<app-loading-spinner *ngIf="dataOperationStatus.waitingForResult"></app-loading-spinner>

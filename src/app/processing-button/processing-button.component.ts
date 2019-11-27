@@ -4,18 +4,23 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 
 @Component({
 	selector: 'app-processing-button',
-	templateUrl: './processing-button.component.html',
-	styleUrls: ['./processing-button.component.sass']
+	templateUrl: './processing-button.component.html'
 })
 export class ProcessingButtonComponent {
 
-	@Input() buttonLabel: string;
+	@Input() buttonLabel = 'Button';
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
-	@Input() type: 'button' | 'submit';
+	@Input() type: 'button' | 'submit' = 'button';
 
-	@Input() clickHandler: () => void;
+	@Input() clickHandler: [object, () => void]; // object is caller, functon is method of object.
 
 	dataOperationStatus = DataOperationStatusService;
+
+
+	runClickHandler() {
+		let [obj, method] = this.clickHandler;
+		method.apply(obj);
+	}
 
 }

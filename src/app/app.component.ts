@@ -1,7 +1,5 @@
 import { AlertService as alert } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
-import { DataOperationStatusService as dataOperationStatus }
-	from './services/data-operation-status.service';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { Router } from '@angular/router';
 import { AppModuleRouteService as moduleRoute} from './app-module-route.service';
@@ -15,7 +13,6 @@ export class AppComponent {
 
 	title = 'Image Libraries';
 	alert = alert;
-	dataOperationStatus = dataOperationStatus;
 	moduleRoute = moduleRoute;
 
 
