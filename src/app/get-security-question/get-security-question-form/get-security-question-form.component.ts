@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { PerformAppDataOperationService as performAppDataOperation }
-	from '../../services/perform-app-data-operation.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../../services/perform-data-operation.service';
+import { GetSecurityQuestionProcessorService }
+	from '../../services/data-operation-processor/get-security-question-processor.service';
 
 
 @Component({
@@ -9,14 +11,12 @@ import { PerformAppDataOperationService as performAppDataOperation }
 })
 export class GetSecurityQuestionFormComponent {
 
-
-	constructor() {
+	constructor(private __getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
 	}
 
 
 	async getQuestion() {
-		await performAppDataOperation.go();
+		await performDataOperation.go(this.__getSecurityQuestionProcessor);
 	}
-
 
 }

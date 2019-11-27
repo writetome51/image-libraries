@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { UpdatePasswordProcessorService }
 	from '../../services/data-operation-processor/update-password-processor.service';
-import { PerformAppDataOperationService as performAppDataOperation }
-	from '../../services/perform-app-data-operation.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../../services/perform-data-operation.service';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '../../clear-form-on-init-and-alert-on-destroy.component';
 
@@ -19,7 +19,7 @@ export class UpdateUserPasswordFormComponent extends ClearFormOnInitAndAlertOnDe
 
 
 	async save() {
-		await performAppDataOperation.go(this.__updatePasswordProcessor);
+		await performDataOperation.go(this.__updatePasswordProcessor);
 	}
 
 }

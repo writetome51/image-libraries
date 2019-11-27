@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NewUserProcessorService }
 	from '../../services/data-operation-processor/new-user-processor.service';
-import { PerformAppDataOperationService as performAppDataOperation }
-	from '../../services/perform-app-data-operation.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../../services/perform-data-operation.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class NewUserFormComponent {
 
 
 	async create() {
-		await performAppDataOperation.go(this.__newUserProcessor);
+		await performDataOperation.go(this.__newUserProcessor);
 	}
 
 }

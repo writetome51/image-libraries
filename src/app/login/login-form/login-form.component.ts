@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginProcessorService }
 	from '../../services/data-operation-processor/login-processor.service';
-import { PerformAppDataOperationService as performAppDataOperation }
-	from '../../services/perform-app-data-operation.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../../services/perform-data-operation.service';
 import { AppModuleRouteService as moduleRoute } from '../../app-module-route.service';
 
 
@@ -20,7 +20,7 @@ export class LoginFormComponent {
 
 
 	async login() {
-		await performAppDataOperation.go(this.__loginProcessor);
+		await performDataOperation.go(this.__loginProcessor);
 	}
 
 }
