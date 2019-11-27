@@ -28,6 +28,13 @@ export class UserRestAPIService extends RestAPIService {
 	}
 
 
+	getSecurityQuestion(params: { email: string }): Observable<any> {
+		params['sessionID'] = '';
+		let url = `${this._baseURL}get-security-question` + this._getURLQuery(params);
+		return this._http.get(url);
+	}
+
+
 	create(
 		params: {
 			email: string, password: string,

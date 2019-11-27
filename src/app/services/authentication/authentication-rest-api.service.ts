@@ -16,8 +16,15 @@ export class AuthenticationRestAPIService extends RestAPIService {
 
 	login(params: { email: string, password: string }): Observable<any> {
 		let url = `${this._baseURL}user-login`;
-		params['sessionID'] = '';
-		return this._getPatchRequestResult(url, params);
+		return this.__getPatchRequestResult_currentlyLoggedOut(url, params);
+	}
+
+
+	securityQuestionLogin(
+		params: { email: string, securityQuestion: { question: string, answer: string } }
+	): Observable<any> {
+		let url = `${this._baseURL}security-question-login`;
+		return this.__getPatchRequestResult_currentlyLoggedOut(url, params);
 	}
 
 
@@ -26,5 +33,10 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		return this._getPatchRequestResult(url, params);
 	}
 
+
+	private __getPatchRequestResult_currentlyLoggedOut(url, params): Observable<any> {
+		params['sessionID'] = ''; // because currently logged out.
+		return this._getPatchRequestResult(url, params);
+	}
 
 }
