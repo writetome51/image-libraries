@@ -34,6 +34,13 @@ export class AuthenticationRestAPIService extends RestAPIService {
 	}
 
 
+	getSecurityQuestion(params: { email: string }): Observable<any> {
+		params['sessionID'] = '';
+		let url = `${this._baseURL}get-security-question` + this._getURLQuery(params);
+		return this._http.get(url);
+	}
+
+
 	private __getPatchRequestResult_currentlyLoggedOut(url, params): Observable<any> {
 		params['sessionID'] = ''; // because currently logged out.
 		return this._getPatchRequestResult(url, params);

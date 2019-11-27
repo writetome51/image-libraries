@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { PerformAppDataOperationService as performAppDataOperation }
+	from '../../services/perform-app-data-operation.service';
+import { LoginBySecurityQuestionProcessorService }
+	from '../../services/data-operation-processor/login-by-security-question-processor.service';
 
 
 @Component({
@@ -7,11 +11,13 @@ import { Component } from '@angular/core';
 })
 export class ForgotPasswordFormComponent {
 
-	constructor() {
+
+	constructor(private __loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
 	}
 
 
-	getQuestion() {
+	async getQuestion() {
+		await performAppDataOperation.go(this.__loginBySecurityQuestionProcessor);
 	}
 
 

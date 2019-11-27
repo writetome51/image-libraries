@@ -30,4 +30,11 @@ export class AuthenticatorService {
 		);
 	}
 
+
+	async getSecurityQuestion() {
+		return await getObjectFromSubscription.go(
+			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
+		);
+	}
+
 }
