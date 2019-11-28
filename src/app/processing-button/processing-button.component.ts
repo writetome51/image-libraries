@@ -3,24 +3,23 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 
 
 @Component({
-	selector: 'app-processing-button',
+	selector: 'processing-button',
 	templateUrl: './processing-button.component.html'
 })
 export class ProcessingButtonComponent {
 
-	@Input() buttonLabel = 'Button';
-
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
 	@Input() type: 'button' | 'submit' = 'button';
 
-	@Input() clickHandler: [object, () => void]; // object is caller, functon is method of object.
+	@Input() context: object; // required.  Instance of component this component is used in.
+
+	@Input() clickHandler: () => void; // required.  Method belonging to this.context.
 
 	dataOperationStatus = DataOperationStatusService;
 
 
-	runClickHandler() {
-		let [obj, method] = this.clickHandler;
-		method.apply(obj);
+	run_clickHandler(): void {
+		this.clickHandler.apply(this.context);
 	}
 
 }

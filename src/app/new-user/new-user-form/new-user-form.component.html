@@ -4,9 +4,9 @@
 
 		<new-user-form-inputs></new-user-form-inputs>
 
-		<app-processing-button [type]="'submit'" [clickHandler]="[this, create]">
+		<processing-button [type]="'submit'" [context]="this" [clickHandler]="create">
 			Create
-		</app-processing-button>
+		</processing-button>
 
 	</form>
 

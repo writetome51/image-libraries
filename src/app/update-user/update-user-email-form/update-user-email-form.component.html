@@ -1,5 +1,5 @@
 <update-user-email-form-inputs></update-user-email-form-inputs>
 
-<div>
-	<button type="submit" (click)="save()">Save Changes</button>
-</div>
+<processing-button [type]="'submit'" [context]="this" [clickHandler]="save">
+	Save Changes
+</processing-button>

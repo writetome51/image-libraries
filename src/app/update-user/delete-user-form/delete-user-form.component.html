@@ -6,6 +6,6 @@
 
 <login-form-inputs></login-form-inputs>
 
-<div>
-	<button type="submit" (click)="delete()">Delete</button>
-</div>
+<processing-button [type]="'submit'" [context]="this" [clickHandler]="delete">
+	Delete
+</processing-button>

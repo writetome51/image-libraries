@@ -4,7 +4,9 @@ The button, when clicked, is replaced by a loading spinner.
 
 <div class="input-container">
 
-	<button *ngIf="!(dataOperationStatus.waitingForResult)" [type]="type" (click)="runClickHandler()">
+	<button *ngIf="!(dataOperationStatus.waitingForResult)"
+			[type]="type" (click)="run_clickHandler()"
+	>
 		<ng-content></ng-content>
 	</button>
 

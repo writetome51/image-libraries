@@ -15,6 +15,7 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { DeleteUserFormInputsComponent }
 	from './delete-user-form/delete-user-form-inputs.component';
+import { ProcessingButtonModule } from '../processing-button/processing-button.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DeleteUserFormInputsComponent }
 		CommonModule,
 		FormsModule,
 		ValidatingInputsModule,
+		ProcessingButtonModule,
 		UpdateUserRoutingModule
 	]
 })
