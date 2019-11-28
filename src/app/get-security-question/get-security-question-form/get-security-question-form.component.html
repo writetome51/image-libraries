@@ -4,9 +4,9 @@
 
 		<get-security-question-form-inputs></get-security-question-form-inputs>
 
-		<div>
-			<button type="submit" (click)="getQuestion()">Get Security Question</button>
-		</div>
+		<app-processing-button [type]="'submit'" [clickHandler]="[this, getQuestion]">
+			Get Security Question
+		</app-processing-button>
 
 	</form>
 

@@ -4,9 +4,9 @@
 
 		<new-user-form-inputs></new-user-form-inputs>
 
-		<div>
-			<button type="submit" (click)="create()">Create</button>
-		</div>
+		<app-processing-button [type]="'submit'" [clickHandler]="[this, create]">
+			Create
+		</app-processing-button>
 
 	</form>
 

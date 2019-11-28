@@ -7,6 +7,7 @@ import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
 import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
+import { ProcessingButtonModule } from '../processing-button/processing-button.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
 		CommonModule,
 		FormsModule,
 		ValidatingInputsModule,
+		ProcessingButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',
