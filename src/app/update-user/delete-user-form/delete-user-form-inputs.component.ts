@@ -5,7 +5,7 @@ import { DeleteUserEmailPasswordInputsService }
 
 
 @Component({
-	selector: 'login-form-inputs',
+	selector: 'delete-user-form-inputs',
 	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
 })
 export class DeleteUserFormInputsComponent extends ValidatingFormInputsComponent {

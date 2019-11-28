@@ -4,6 +4,7 @@ import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
+import { LocalEmailService } from '../local-data/local-email.service';
 
 
 @Injectable({
@@ -14,7 +15,8 @@ export class UserStorageService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
-		private __localSessionID: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService,
+		private __localEmail: LocalEmailService
 	) {
 	}
 
@@ -37,7 +39,7 @@ export class UserStorageService {
 		return await getObjectFromSubscription.go(
 			this.__userRestApi.updatePassword(
 				{
-					email: currentUser.email,
+					email: this.__localEmail.get(),
 					password: currentUser.password,
 					newPassword: currentUser.newPassword,
 					sessionID: this.__localSessionID.get()

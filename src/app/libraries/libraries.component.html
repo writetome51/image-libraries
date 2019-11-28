@@ -1,15 +1,11 @@
-<section>
+<p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
 
-	<p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
+<ul>
+	<li *ngFor="let library of libraries">
 
-	<ul>
-		<li *ngFor="let library of libraries">
+		<a routerLink="library/{{library.name}}" routerLinkActive="active">
+			{{library.name}}
+		</a>
 
-			<a routerLink="library/{{library.name}}" routerLinkActive="active">
-				{{library.name}}
-			</a>
-
-		</li>
-	</ul>
-
-</section>
+	</li>
+</ul>

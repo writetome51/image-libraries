@@ -1,30 +1,24 @@
-<section>
+<header><h2>{{heading}}</h2></header>
+
+<nav>
+	<div *ngFor="let choice of choices; let i = index" class="nav-link-container">
+
+		<a [routerLink]="choicesMap[choice]['path']" routerLinkActive="active">
+			{{ choicesMap[choice]['linkText'] }}
+		</a>
+		<span *ngIf="i < (choices.length - 1)"> | </span>
+
+	</div>
+</nav>
+
+<div class="form-container">
 
 	<div>
-		<header><h2>{{heading}}</h2></header>
+		<header><h3>{{formHeading}}</h3></header>
 	</div>
 
-	<nav>
-		<div *ngFor="let choice of choices; let i = index" class="nav-link-container">
+	<form>
+		<router-outlet></router-outlet>
+	</form>
 
-			<a [routerLink]="choicesMap[choice]['path']" routerLinkActive="active">
-				{{ choicesMap[choice]['linkText'] }}
-			</a>
-			<span *ngIf="i < (choices.length - 1)"> | </span>
-
-		</div>
-	</nav>
-
-	<div class="form-container">
-
-		<div>
-			<header><h3>{{formHeading}}</h3></header>
-		</div>
-
-		<form>
-			<router-outlet></router-outlet>
-		</form>
-
-	</div>
-
-</section>
+</div>

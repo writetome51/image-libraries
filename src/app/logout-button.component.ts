@@ -6,7 +6,11 @@ import { PerformDataOperationService as performDataOperation }
 
 @Component({
 	selector: 'logout-button',
-	template: `<button type="button" (click)="logout()">Sign Out</button>`
+	template: `
+		<processing-button [context]="this" [clickHandler]="logout">
+			Sign Out
+		</processing-button>
+	`
 })
 export class LogoutButtonComponent {
 
