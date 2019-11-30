@@ -15,11 +15,15 @@ export class ProcessingButtonComponent {
 
 	@Input() clickHandler: () => void; // required.  Method belonging to this.context.
 
+	clicked = false;
+
 	dataOperationStatus = DataOperationStatusService;
 
 
-	run_clickHandler(): void {
-		this.clickHandler.apply(this.context);
+	async run_clickHandler() {
+		this.clicked = true;
+		await this.clickHandler.apply(this.context);
+		this.clicked = false;
 	}
 
 }
