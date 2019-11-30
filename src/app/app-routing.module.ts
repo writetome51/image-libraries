@@ -1,14 +1,11 @@
 import { AppModuleRouteService as moduleRoute } from './app-module-route.service';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
-import { GetSecurityQuestionComponent } from './get-security-question/get-security-question.component';
 import { LoginComponent } from './login/login.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AnswerSecurityQuestionComponent }
-	from './answer-security-question/answer-security-question.component';
 
 
 const routes: Routes = [
@@ -35,16 +32,10 @@ const routes: Routes = [
 		loadChildren: () => import('./library/library.module').then(mod => mod.LibraryModule)
 	},
 
-	{
-		path: moduleRoute.GetSecurityQuestionComponent,
-		component: GetSecurityQuestionComponent,
-		canActivate: [DeAuthenticatedGuard]
-	},
-
-	{
-		path: moduleRoute.AnswerSecurityQuestionComponent,
-		component: AnswerSecurityQuestionComponent,
-		canActivate: [DeAuthenticatedGuard]
+	{	// lazy-loaded module
+		path: moduleRoute.SecurityQuestionModule,
+		loadChildren: () => import('./security-question/security-question.module')
+			.then(mod => mod.SecurityQuestionModule)
 	},
 
 	{

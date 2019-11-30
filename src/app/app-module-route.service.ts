@@ -9,6 +9,6 @@ export const AppModuleRouteService = {
 	LibrariesComponent: 'libraries',
 	LibraryModule: 'library',
 	GetSecurityQuestionComponent: 'forgot-password',
-	AnswerSecurityQuestionComponent: 'answer-security-question'
-
+	AnswerSecurityQuestionComponent: 'answer-security-question',
+	SecurityQuestionModule: 'security-question'
 };
