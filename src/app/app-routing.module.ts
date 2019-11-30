@@ -7,6 +7,8 @@ import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AnswerSecurityQuestionComponent }
+	from './answer-security-question/answer-security-question.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,12 @@ const routes: Routes = [
 	{
 		path: moduleRoute.GetSecurityQuestionComponent,
 		component: GetSecurityQuestionComponent,
+		canActivate: [DeAuthenticatedGuard]
+	},
+
+	{
+		path: moduleRoute.AnswerSecurityQuestionComponent,
+		component: AnswerSecurityQuestionComponent,
 		canActivate: [DeAuthenticatedGuard]
 	},
 

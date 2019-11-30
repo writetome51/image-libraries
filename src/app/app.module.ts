@@ -1,4 +1,6 @@
 import { AlertComponent } from './alert/alert.component';
+import { AnswerSecurityQuestionComponent }
+	from './answer-security-question/answer-security-question.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +27,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 	declarations: [
 		AppComponent,
 		AlertComponent,
+		AnswerSecurityQuestionComponent,
 		GetSecurityQuestionComponent,
 		GetSecurityQuestionFormComponent,
 		GetSecurityQuestionFormInputsComponent,
