@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { PerformDataOperationService as performDataOperation }
-	from '../../../services/perform-data-operation.service';
+	from '../../services/perform-data-operation.service';
 import { GetSecurityQuestionProcessorService }
-	from '../../../services/data-operation-processor/get-security-question-processor.service';
+	from '../../services/data-operation-processor/get-security-question-processor.service';
 
 
 @Component({
