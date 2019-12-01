@@ -1,4 +1,4 @@
-export const userDoesntExist = 'No account with that email exists';
+export const accountDoesntExist = 'No account with that email exists';
 export const userAlreadyExists = 'An account with that email already exists.';
 export const libraryAlreadyExists = 'A library with that name already exists.';
 export const incorrectPassword = 'Incorrect password';

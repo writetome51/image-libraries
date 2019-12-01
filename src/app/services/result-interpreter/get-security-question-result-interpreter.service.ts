@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { OperationRequiringEmailPasswordResultCheckService }
-	from '../data-operation-result-check/operation-requiring-email-password-result-check.service';
 import { ResultInterpreterService } from './result-interpreter.service';
-import { LoginResultProcessorService } from '../result-processor/login-result-processor.service';
+import { GetSecurityQuestionResultCheckService }
+	from '../data-operation-result-check/get-security-question-result-check.service';
+import { GetSecurityQuestionResultProcessorService }
+	from '../result-processor/get-security-question-result-processor.service';
 
 
 @Injectable({
@@ -11,10 +12,13 @@ import { LoginResultProcessorService } from '../result-processor/login-result-pr
 export class GetSecurityQuestionResultInterpreterService extends ResultInterpreterService {
 
 	constructor(
-		__loginResultCheck: OperationRequiringEmailPasswordResultCheckService,
-		__loginResultProcessor: LoginResultProcessorService
+		__getSecurityQuestionResultCheck: GetSecurityQuestionResultCheckService,
+		__getSecurityQuestionResultProcessor: GetSecurityQuestionResultProcessorService
 	) {
-		super(__loginResultCheck, __loginResultProcessor);
+		super(
+			__getSecurityQuestionResultCheck,
+			__getSecurityQuestionResultProcessor
+		);
 	}
 
 }

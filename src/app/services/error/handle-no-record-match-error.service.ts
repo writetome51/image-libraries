@@ -1,4 +1,4 @@
-import { incorrectPassword, userDoesntExist } from '../../string-constants/form-submission-errors';
+import { incorrectPassword, accountDoesntExist } from '../../string-constants/form-submission-errors';
 import { AlertService as alert } from '../alert.service';
 import { UserStorageService } from '../user/user-storage.service';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
@@ -31,7 +31,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 				alert.error = incorrectPassword;
 			}
 		}
-		else alert.error = userDoesntExist;
+		else alert.error = accountDoesntExist;
 	}
 
 }
