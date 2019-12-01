@@ -1,13 +1,5 @@
-<div class="form-container">
+<answer-security-question-form-inputs></answer-security-question-form-inputs>
 
-	<form>
-
-		<answer-security-question-form-inputs></answer-security-question-form-inputs>
-
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="submitAnswer">
-			Get Security Question
-		</processing-button>
-
-	</form>
-
-</div>
+<processing-button [type]="'submit'" [context]="this" [clickHandler]="submitAnswer">
+	Answer Security Question
+</processing-button>
