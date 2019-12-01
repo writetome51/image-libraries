@@ -8,7 +8,6 @@ export const AppModuleRouteService = {
 	NewUserModule: 'create-account',
 	LibrariesComponent: 'libraries',
 	LibraryModule: 'library',
-	GetSecurityQuestionComponent: 'forgot-password',
-	AnswerSecurityQuestionComponent: 'answer-security-question',
 	SecurityQuestionModule: 'security-question'
+
 };
