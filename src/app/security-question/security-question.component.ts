@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { haveReceivedQuestion } from './have-received-question.service';
 import { CurrentUserService as currentUser} from '../services/user/current-user.service';
+import { QuestionStatusService as questionStatus } from './question-status.service';
 
 
 @Component({
@@ -10,11 +10,15 @@ import { CurrentUserService as currentUser} from '../services/user/current-user.
 export class SecurityQuestionComponent implements OnInit {
 
 	heading = 'Security Question';
-	haveReceivedQuestion = haveReceivedQuestion;
 
 
 	get question(){
 		return currentUser.question;
+	}
+
+
+	get haveReceivedQuestion(){
+		return questionStatus.received;
 	}
 
 

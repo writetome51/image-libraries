@@ -3,6 +3,8 @@ import { PerformDataOperationService as performDataOperation }
 	from '../../services/perform-data-operation.service';
 import { GetSecurityQuestionProcessorService }
 	from '../../services/data-operation-processor/get-security-question-processor.service';
+import { QuestionStatusService as questionStatus } from '../question-status.service';
+
 
 
 @Component({
@@ -17,6 +19,7 @@ export class GetSecurityQuestionFormComponent {
 
 	async getQuestion() {
 		await performDataOperation.go(this.__getSecurityQuestionProcessor);
+		questionStatus.received = true;
 	}
 
 }
