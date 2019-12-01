@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { PerformDataOperationService as performDataOperation }
+	from '../../services/perform-data-operation.service';
+import { LoginBySecurityQuestionProcessorService }
+	from '../../services/data-operation-processor/login-by-security-question-processor.service';
 
 
 @Component({
@@ -8,11 +12,12 @@ import { Component } from '@angular/core';
 })
 export class AnswerSecurityQuestionFormComponent {
 
-	constructor() {
+	constructor(private __loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
 	}
 
 
-	submitAnswer() {
+	async submitAnswer() {
+		await performDataOperation.go(this.__loginBySecurityQuestionProcessor);
 	}
 
 }
