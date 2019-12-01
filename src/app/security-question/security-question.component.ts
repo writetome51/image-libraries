@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { gettingQuestion } from './getting-question.service';
+import { haveReceivedQuestion } from './have-received-question.service';
+import { CurrentUserService as currentUser} from '../services/user/current-user.service';
 
 
 @Component({
@@ -9,10 +10,11 @@ import { gettingQuestion } from './getting-question.service';
 export class SecurityQuestionComponent implements OnInit {
 
 	heading = 'Security Question';
-	gettingQuestion = gettingQuestion;
+	haveReceivedQuestion = haveReceivedQuestion;
 
 
-	constructor() {
+	get question(){
+		return currentUser.question;
 	}
 
 
