@@ -1,0 +1,1 @@
+export let gettingQuestion = true;

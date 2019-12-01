@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { gettingQuestion } from './getting-question.service';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SecurityQuestionComponent implements OnInit {
 
 	heading = 'Security Question';
-	gettingQuestion = true;
+	gettingQuestion = gettingQuestion;
 
 
 	constructor() {
