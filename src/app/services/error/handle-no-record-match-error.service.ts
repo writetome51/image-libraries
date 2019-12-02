@@ -24,7 +24,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 		if ((await this.__userStorage.exists()).success) { // user exists in db.
 
 			if (assumeLoggedIn && (await this.__userStorage.get()).error) {
-				// user isn't logged in.
+				// user isn't logged in. If user was logged in, __userStorage.get() would not return error.
 				await this.__notLoggedInErrorHandler.handle();
 			}
 			else { // Else whether or not user is logged in, the submitted password must be wrong.
