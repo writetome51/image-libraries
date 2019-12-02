@@ -13,7 +13,7 @@ export class LocalSessionIDService extends LocalDataService {
 	}
 
 
-	get() {
+	get(): string {
 		try {
 			return super.get();
 		}
