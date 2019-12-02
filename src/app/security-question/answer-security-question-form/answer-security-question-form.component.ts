@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { PerformDataOperationService as performDataOperation }
-	from '../../services/perform-data-operation.service';
+import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
 import { LoginBySecurityQuestionProcessorService }
 	from '../../services/data-operation-processor/login-by-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
@@ -10,16 +9,15 @@ import { QuestionStatusService as questionStatus } from '../question-status.serv
 	selector: 'answer-security-question-form',
 	templateUrl: './answer-security-question-form.component.html'
 })
-export class AnswerSecurityQuestionFormComponent {
+export class AnswerSecurityQuestionFormComponent extends DataOperationProcessorComponent {
 
-	constructor(
-		private __loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService
-	) {
+	constructor(__loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
+		super(__loginBySecurityQuestionProcessor);
 	}
 
 
-	async submitAnswer() {
-		await performDataOperation.go(this.__loginBySecurityQuestionProcessor);
+	async process() {
+		await super.process();
 		questionStatus.received = false;
 	}
 

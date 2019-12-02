@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
-import { PerformDataOperationService as performDataOperation }
-	from '../../services/perform-data-operation.service';
+import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
 import { GetSecurityQuestionProcessorService }
 	from '../../services/data-operation-processor/get-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
-
 
 
 @Component({
 	selector: 'get-security-question-form',
 	templateUrl: './get-security-question-form.component.html'
 })
-export class GetSecurityQuestionFormComponent {
+export class GetSecurityQuestionFormComponent extends DataOperationProcessorComponent {
 
-	constructor(private __getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
+	constructor(__getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
+		super(__getSecurityQuestionProcessor);
 	}
 
 
-	async getQuestion() {
-		await performDataOperation.go(this.__getSecurityQuestionProcessor);
+	async process() {
+		await super.process();
 		questionStatus.received = true;
 	}
 

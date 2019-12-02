@@ -1,24 +1,17 @@
 import { Component } from '@angular/core';
 import { NewUserProcessorService }
 	from '../../services/data-operation-processor/new-user-processor.service';
-import { PerformDataOperationService as performDataOperation }
-	from '../../services/perform-data-operation.service';
+import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
 
 
 @Component({
 	selector: 'new-user-form',
 	templateUrl: './new-user-form.component.html'
 })
-export class NewUserFormComponent {
+export class NewUserFormComponent extends DataOperationProcessorComponent {
 
-	constructor(
-		private __newUserProcessor: NewUserProcessorService
-	) {
-	}
-
-
-	async create() {
-		await performDataOperation.go(this.__newUserProcessor);
+	constructor(__newUserProcessor: NewUserProcessorService) {
+		super(__newUserProcessor);
 	}
 
 }
