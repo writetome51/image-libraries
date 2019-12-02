@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CreateUserButtonComponent } from './new-user-form/create-user-button.component';
 import { FormsModule } from '@angular/forms';
 import { NewUserComponent } from './new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
@@ -12,6 +13,7 @@ import { ProcessingButtonModule } from '../processing-button/processing-button.m
 
 @NgModule({
 	declarations: [
+		CreateUserButtonComponent,
 		NewUserComponent,
 		NewUserFormComponent,
 		NewUserFormInputsComponent,

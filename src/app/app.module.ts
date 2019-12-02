@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { LoginButtonComponent } from './login/login-form/login-button.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
+		LoginButtonComponent,
 		LogoutButtonComponent,
 		PageNotFoundComponent,
 	],
