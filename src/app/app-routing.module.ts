@@ -21,7 +21,7 @@ const routes: Routes = [
 	},
 
 	{
-		path: moduleRoute.LibrariesComponent, // the logged-in homepage
+		path: moduleRoute.LibrariesComponent,
 		component: LibrariesComponent,
 		// 'canActivate' means the guard decides if the component can be instantiated.
 		canActivate: [AuthenticatedGuard]

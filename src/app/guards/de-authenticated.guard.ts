@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
+import { AppModuleRouteService as moduleRoute } from '../app-module-route.service';
 
 
 @Injectable({
@@ -20,7 +21,7 @@ export class DeAuthenticatedGuard implements CanActivate {
 
 	canActivate(): boolean {
 		if (this.__localSessionID.get()) {
-			this.__router.navigate(['/libraries']); // Goes to logged-in homepage.
+			this.__router.navigate([`/${moduleRoute.LibrariesComponent}`]); // logged-in homepage.
 			return false;
 		}
 		else return true;

@@ -1,9 +1,9 @@
+import { AlertService as alert } from '../alert.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserResultProcessorService } from './user-result-processor.service';
 import { ResultProcessor } from '../../../interfaces/result-processor';
-import { AlertService as alert } from '../alert.service';
+import { RedirectToLoggedInHomeService } from '../redirect-to-logged-in-home.service';
+import { UserResultProcessorService } from './user-result-processor.service';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class LoginResultProcessorService implements ResultProcessor {
 
 	constructor(
 		private __userResultProcessor: UserResultProcessorService,
-		private __router: Router
+		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}
 
@@ -22,7 +22,7 @@ export class LoginResultProcessorService implements ResultProcessor {
 		if (result.sessionID) {
 			this.__userResultProcessor.process(result);
 
-			await this.__router.navigate(['/libraries']); // logged-in home page.
+			await this.__redirectToLoggedInHome.go();
 		}
 		else alert.error = 'An unexpected error occurred.';
 	}

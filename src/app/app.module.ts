@@ -2,10 +2,10 @@ import { AlertComponent } from './alert/alert.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { LoginFormInputsComponent }
-	from './login/login-form/login-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginFormInputsComponent }
+	from './login/login-form/login-form-inputs.component';
 import { LibrariesComponent } from './libraries/libraries.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
