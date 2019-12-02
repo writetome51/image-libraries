@@ -5,7 +5,10 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 
 @Component({
 	selector: 'new-user',
-	templateUrl: './new-user.component.html'
+	template: `
+		<header><h2>{{heading}}</h2></header>
+		<new-user-form></new-user-form>
+	`
 })
 export class NewUserComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
