@@ -1,0 +1,15 @@
+Conventions:
+If a class method is referred to here by writing ClassName.method(), this is not implying
+that the method is static. This convention refers to any method belonging to that class.
+
+AlertService is app-wide alert message service.  AlertService is assigned a message by other services.
+AlertService only contains the alert message text.  AlertComponent displays it to user.  The
+AlertComponent is only used by AppComponent.
+
+Any data processing that requires sending/receiving data over http is handled by
+DataOperationProcessorService.  DataOperationProcessorService.process() calls
+DataOperationProcessorService._getResult(), and passes the result to
+ResultInterpreterService.interpret(result).  This checks if the result contains an error message, and
+if so, the appropriate error handler is called.  If no error, the result is passed to
+ResultProcessorService.process(result).
+
