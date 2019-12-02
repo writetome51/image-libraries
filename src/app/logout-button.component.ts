@@ -1,25 +1,20 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './services/data-operation-processor/logout-processor.service';
-import { PerformDataOperationService as performDataOperation }
-	from './services/perform-data-operation.service';
+import { DataOperationProcessorComponent } from './data-operation-processor.component';
 
 
 @Component({
 	selector: 'logout-button',
 	template: `
-		<processing-button [context]="this" [clickHandler]="logout">
+		<processing-button [context]="this" [clickHandler]="process">
 			Sign Out
 		</processing-button>
 	`
 })
-export class LogoutButtonComponent {
+export class LogoutButtonComponent extends DataOperationProcessorComponent {
 
-	constructor(private __logoutProcessor: LogoutProcessorService) {
-	}
-
-
-	async logout() {
-		await performDataOperation.go(this.__logoutProcessor);
+	constructor(__logoutProcessor: LogoutProcessorService) {
+		super(__logoutProcessor);
 	}
 
 }

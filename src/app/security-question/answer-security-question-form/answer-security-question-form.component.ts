@@ -12,7 +12,9 @@ import { QuestionStatusService as questionStatus } from '../question-status.serv
 })
 export class AnswerSecurityQuestionFormComponent {
 
-	constructor(private __loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
+	constructor(
+		private __loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService
+	) {
 	}
 
 
