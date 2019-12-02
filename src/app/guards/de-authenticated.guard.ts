@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
-import { AppModuleRouteService as moduleRoute } from '../app-module-route.service';
+import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class DeAuthenticatedGuard implements CanActivate {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
-		private __router: Router
+		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}
 
@@ -21,7 +21,7 @@ export class DeAuthenticatedGuard implements CanActivate {
 
 	canActivate(): boolean {
 		if (this.__localSessionID.get()) {
-			this.__router.navigate([`/${moduleRoute.LibrariesComponent}`]); // logged-in homepage.
+			this.__redirectToLoggedInHome.go();
 			return false;
 		}
 		else return true;
