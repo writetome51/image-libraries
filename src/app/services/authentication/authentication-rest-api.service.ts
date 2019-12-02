@@ -4,9 +4,8 @@ import { Observable } from 'rxjs';
 import { RestAPIService } from '../rest-api.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class AuthenticationRestAPIService extends RestAPIService {
 
 	constructor(_http: HttpClient) {
