@@ -10,7 +10,7 @@ export class LibraryNameInputService extends ValidatingTextInputService {
 		super();
 
 		this.data.id = 'library-name-input';
-		this.data.propertyToBind = 'name';
+		this.data.propertyToBind = 'libName';
 		this.data.label = 'Library Name';
 
 		this.data.isValid = () => (this.data.objectToBind[this.data.propertyToBind].length !== 0);
