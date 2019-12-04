@@ -1,17 +1,11 @@
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
-import { AppValidatingInputsService } from './app-validating-inputs.service';
+import { AppValidatingInputsService } from '../app-validating-inputs.service';
 import { ValidatingInput } from '@writetome51/validating-inputs';
 
-
-/*****************
-Decorator for some ValidatingInputsService subclasses.
- Usage:
-
-@Bind_ValidatingInputsService_to_Object(obj)
-export class TheClass {...}
- *****************/
-
-export const Bind_ValidatingInputsService_to_Object: (obj) => Function = getClassModificationDecorator(
+//  This module is in separate file in order to avoid angular compile error:
+//  'Function calls are not supported in decorators but (functionName) was called in...'
+// @ts-ignore
+export const __classModDecorator = getClassModificationDecorator(
 	(inputs: AppValidatingInputsService, decoratorArgs: [any]) => {
 
 		let obj = decoratorArgs[0];

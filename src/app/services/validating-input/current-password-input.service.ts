@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PasswordInputService } from './password-input.service';
-import { PrefixLabel_to_ValidatingInputService } from './prefix-label-to-validating-input-service.decorator';
+import { PrefixLabel_to_ValidatingInputService }
+	from './prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 
 
 @Injectable({providedIn: 'root'})

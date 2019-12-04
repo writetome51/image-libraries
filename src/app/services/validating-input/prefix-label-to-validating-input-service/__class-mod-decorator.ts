@@ -3,17 +3,10 @@ import { getClassModificationDecorator } from '@writetome51/get-class-modificati
 import { ValidatingInputService } from '@writetome51/validating-inputs';
 
 
-/*****************
-Decorator for some ValidatingInputService subclasses.
- Usage:
-
-@PrefixLabel_to_ValidatingInputService({ prefix: string, prefix_propertyToBind?: boolean })
-export class TheClass {...}
- *****************/
-
-export const PrefixLabel_to_ValidatingInputService: (
-	params: { prefix: string, prefix_propertyToBind?: boolean }
-) => Function = getClassModificationDecorator(
+//  This module is in separate file in order to avoid angular compile error:
+//  'Function calls are not supported in decorators but (functionName) was called in...'
+// @ts-ignore
+export const __classModDecorator = getClassModificationDecorator(
 
 	(instance: ValidatingInputService, decoratorArgs: [any]) => {
 

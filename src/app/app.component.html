@@ -8,8 +8,8 @@
 
 		<nav *ngIf="sessionIDExists">
 			<logout-button></logout-button>
-			|
-			<a [class.invisible]="updateUserIsActive"
+
+			<a *ngIf="!(updateUserIsActive)"
 			   [routerLink]="moduleRoute.UpdateUserModule"
 			   [routerLinkActive]="'active'"
 			>
