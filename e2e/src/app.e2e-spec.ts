@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to app-image-viewer!');
+    expect(page.getTitleText()).toEqual('move-image-libraries-here app is running!');
   });
 
   afterEach(async () => {

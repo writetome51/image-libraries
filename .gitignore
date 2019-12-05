@@ -9,12 +9,10 @@
 
 # dependencies
 /node_modules
-/src/bootstrap_3_4_0.min.js
-
 
 # profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
@@ -43,11 +41,9 @@ yarn-error.log
 testem.log
 /typings
 
-
 # System Files
 .DS_Store
 Thumbs.db
-
 
 /src/assets/.sss.ts
 /src/assets/.ecky.ts

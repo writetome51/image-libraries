@@ -1,13 +1,12 @@
 # ImageLibraries
 
 A demo app allowing you to add images to a browser-based group of libraries and sort through them.  
-Kind of 
-like iPhoto in a browser.
+Kind of like iPhoto in a browser.
 
 
 # Angular app info
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Development server
 
