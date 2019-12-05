@@ -7,7 +7,10 @@ import { sss } from '../../assets/.sss';
 
 export abstract class RestAPIService {
 
-	protected _baseURL = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
+	private __corsProxy = 'https://cors-anywhere.herokuapp.com/';
+
+	protected _baseURL = this.__corsProxy +
+		'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
 	protected _requiredInEveryRequest = {secret: sss};
