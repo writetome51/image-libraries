@@ -17,7 +17,7 @@
     "@writetome51/array-insert-at": "^2.0.3",
     "@writetome51/array-move-by-index": "^1.0.2",
     "@writetome51/array-remove-by-index": "^1.0.2",
-    "@writetome51/get-class-modification-decorator": "^0.0.2",
+    "@writetome51/get-class-modification-decorator": "^0.0.3",
     "@writetome51/get-data-urls": "^0.0.1",
     "@writetome51/get-date-time-id": "^1.0.0",
     "@writetome51/get-property": "^1.0.4",
