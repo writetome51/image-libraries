@@ -1,4 +1,4 @@
-import { __classModDecorator } from './__class-mod-decorator';
+import { __classModDecorator_BindObject } from './__class-mod-decorator';
 
 
 
@@ -11,4 +11,5 @@ export class TheClass {...}
  *****************/
 
 // @ts-ignore
-export const Bind_ValidatingInputsService_to_Object: (obj) => Function = __classModDecorator;
+export const Bind_ValidatingInputsService_to_Object: (obj) => Function =
+	__classModDecorator_BindObject;

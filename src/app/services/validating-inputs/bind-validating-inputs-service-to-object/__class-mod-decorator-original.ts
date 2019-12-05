@@ -1,10 +1,14 @@
+/***************************
+// Entire file commented out because it's already transpiled in '__class-mod-decorator.js'.
+
+
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
 import { AppValidatingInputsService } from '../app-validating-inputs.service';
 import { ValidatingInput } from '@writetome51/validating-inputs';
 
 //  This module is in separate file in order to avoid angular compile error:
 //  'Function calls are not supported in decorators but (functionName) was called in...'
-// @ts-ignore
+
 export const __classModDecorator = getClassModificationDecorator(
 	(inputs: AppValidatingInputsService, decoratorArgs: [any]) => {
 
@@ -18,3 +22,6 @@ export const __classModDecorator = getClassModificationDecorator(
 		}
 	}
 );
+
+
+*******************************/

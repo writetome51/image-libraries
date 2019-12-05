@@ -1,3 +1,7 @@
+/***********************************
+
+// Entire file commented out because it's already transpiled in '__class-mod-decorator.js'.
+
 import { isArray } from '@writetome51/is-array-not-array';
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
 import { ValidatingInputService } from '@writetome51/validating-inputs';
@@ -5,7 +9,7 @@ import { ValidatingInputService } from '@writetome51/validating-inputs';
 
 //  This module is in separate file in order to avoid angular compile error:
 //  'Function calls are not supported in decorators but (functionName) was called in...'
-// @ts-ignore
+
 export const __classModDecorator = getClassModificationDecorator(
 
 	(instance: ValidatingInputService, decoratorArgs: [any]) => {
@@ -37,3 +41,6 @@ export const __classModDecorator = getClassModificationDecorator(
 		else instance.data.errorMessage = `The ${prefix} ${instance.data.errorMessage.slice(4)}`;
 	}
 );
+
+
+*****************************/
