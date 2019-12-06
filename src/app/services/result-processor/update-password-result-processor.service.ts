@@ -5,7 +5,8 @@ import { SetResultMessage } from './set-result-message/set-result-message.decora
 
 
 @SetResultMessage('Password updated')
-export class __UpdatePasswordResultProcessorService extends UpdateEmailOrPasswordResultProcessorService {
+export class __UpdatePasswordResultProcessorService
+	extends UpdateEmailOrPasswordResultProcessorService {
 }
 
 @Injectable({providedIn: 'root'})

@@ -1,6 +1,7 @@
 /***********************************
 
-// Entire file commented out because it's already transpiled in '__class-mod-decorator.js'.
+// Entire file commented out because it's already transpiled in
+// '__prefix-label-to-validating-input-service.decorator.js'.
 
 import { isArray } from '@writetome51/is-array-not-array';
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
@@ -10,7 +11,7 @@ import { ValidatingInputService } from '@writetome51/validating-inputs';
 //  This module is in separate file in order to avoid angular compile error:
 //  'Function calls are not supported in decorators but (functionName) was called in...'
 
-export const __classModDecorator = getClassModificationDecorator(
+export const __PrefixLabel_to_ValidatingInputServiceDecorator = getClassModificationDecorator(
 
 	(instance: ValidatingInputService, decoratorArgs: [any]) => {
 

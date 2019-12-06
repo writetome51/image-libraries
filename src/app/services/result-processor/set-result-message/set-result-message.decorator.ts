@@ -1,4 +1,4 @@
-import { __classModDecorator } from './__class-mod-decorator';
+import { __SetResultMessageDecorator } from './__set-result-message.decorator';
 
 
-export const SetResultMessage: (message: string) => Function = __classModDecorator;
+export const SetResultMessage: (message: string) => Function = __SetResultMessageDecorator;

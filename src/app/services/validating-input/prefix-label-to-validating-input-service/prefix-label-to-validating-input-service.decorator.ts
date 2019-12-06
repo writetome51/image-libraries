@@ -1,4 +1,5 @@
-import { __classModDecorator } from './__class-mod-decorator';
+import { __PrefixLabel_to_ValidatingInputServiceDecorator }
+	from './__prefix-label-to-validating-input-service.decorator';
 
 
 /*****************
@@ -11,4 +12,4 @@ export class TheClass {...}
 // @ts-ignore
 export const PrefixLabel_to_ValidatingInputService: (
 	params: { prefix: string, prefix_propertyToBind?: boolean }
-) => Function = __classModDecorator;
+) => Function = __PrefixLabel_to_ValidatingInputServiceDecorator;
