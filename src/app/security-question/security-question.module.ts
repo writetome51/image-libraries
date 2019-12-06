@@ -13,6 +13,10 @@ import { ProcessingButtonModule } from '../processing-button/processing-button.m
 import { SecurityQuestionComponent } from './security-question.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
+import { SubmitAnswerButtonComponent }
+	from './answer-security-question-form/submit-answer-button.component';
+import { GetQuestionButtonComponent }
+	from './get-security-question-form/get-question-button.component';
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { RouterModule } from '@angular/router';
 		AnswerSecurityQuestionFormInputsComponent,
 		GetSecurityQuestionFormComponent,
 		GetSecurityQuestionFormInputsComponent,
+		GetQuestionButtonComponent,
 		SecurityQuestionComponent,
+		SubmitAnswerButtonComponent
 	],
 	imports: [
 		CommonModule,

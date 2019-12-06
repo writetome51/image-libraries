@@ -1,24 +1,14 @@
 import { Component } from '@angular/core';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
-import { LoginBySecurityQuestionProcessorService }
-	from '../../services/data-operation-processor/login-by-security-question-processor.service';
-import { QuestionStatusService as questionStatus } from '../question-status.service';
+import { ClearFormOnInitAndAlertOnDestroyComponent }
+	from '../../clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({
 	selector: 'answer-security-question-form',
-	templateUrl: './answer-security-question-form.component.html'
+	template: `
+		<answer-security-question-form-inputs></answer-security-question-form-inputs>
+		<submit-answer-button></submit-answer-button>
+	`
 })
-export class AnswerSecurityQuestionFormComponent extends DataOperationProcessorComponent {
-
-	constructor(__loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
-		super(__loginBySecurityQuestionProcessor);
-	}
-
-
-	async process() {
-		await super.process();
-		questionStatus.received = false;
-	}
-
+export class AnswerSecurityQuestionFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 }

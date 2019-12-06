@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
 
 export class LoadingSpinnerComponent {
 
+	// d = environment
 
 	littleSpinner = {
 		src: '../../assets/loading-spinner-50.gif',

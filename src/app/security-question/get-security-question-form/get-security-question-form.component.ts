@@ -1,24 +1,14 @@
 import { Component } from '@angular/core';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
-import { GetSecurityQuestionProcessorService }
-	from '../../services/data-operation-processor/get-security-question-processor.service';
-import { QuestionStatusService as questionStatus } from '../question-status.service';
+import { ClearFormOnInitAndAlertOnDestroyComponent }
+	from '../../clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({
 	selector: 'get-security-question-form',
-	templateUrl: './get-security-question-form.component.html'
+	template: `
+		<get-security-question-form-inputs></get-security-question-form-inputs>
+		<get-question-button></get-question-button>
+	`
 })
-export class GetSecurityQuestionFormComponent extends DataOperationProcessorComponent {
-
-	constructor(__getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
-		super(__getSecurityQuestionProcessor);
-	}
-
-
-	async process() {
-		await super.process();
-		questionStatus.received = true;
-	}
-
+export class GetSecurityQuestionFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 }
