@@ -7,6 +7,7 @@ AlertService is app-wide alert message service.  AlertService is assigned a mess
 services.  AlertService only contains the alert message text.  AlertComponent displays it to user.
 The AlertComponent is only used by AppComponent.
 
+
 In the code, 'data operation processing' refers to any asynchronous processing of data that returns
 a result.  All processing of this kind is handled by subclasses of DataOperationProcessorService.
 DataOperationProcessorService.process() calls DataOperationProcessorService._getResult(), and passes
@@ -17,11 +18,13 @@ passed to ResultProcessorService.process(result).
 Any component that initiates data operation processing is a subclass of
 DataOperationProcessorComponent.  These components usually represent buttons in the UI.
 
+
 Any form <input> that self-validates during the 'blur' event is an instance of
 ValidatingInputComponent.  ValidatingInputComponent depends on the interface ValidatingInput defined
 in npm package '@writetome51/validating-inputs'.  ValidatingInput only represents an input of type
 'text', 'password', or 'number'.
 
-Any custom decorators in the project that are created by calling getClassModificationDecorator()
-have been pre-transpiled into javascript files.  This is done to avoid an Angular build error
-which says 'Function calls are not supported in decorators...'.
+
+Any custom typescript decorators in the project that are created by calling
+getClassModificationDecorator() have been pre-transpiled into javascript files.  This is done to
+avoid an Angular build error which says 'Function calls are not supported in decorators...'.

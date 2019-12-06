@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '../../clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({
@@ -10,5 +8,5 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 		<get-question-button></get-question-button>
 	`
 })
-export class GetSecurityQuestionFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
+export class GetSecurityQuestionFormComponent {
 }
