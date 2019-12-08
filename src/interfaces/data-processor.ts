@@ -1,6 +1,6 @@
 import { Processor } from './processor';
 
 
-export interface DataOperationProcessor extends Processor {
+export interface DataProcessor extends Processor {
 	process: () => void;
 }

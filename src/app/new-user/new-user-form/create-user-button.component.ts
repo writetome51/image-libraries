@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewUserProcessorService }
 	from '../../services/data-operation-processor/new-user-processor.service';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
+import { DataProcessorComponent } from '../../data-processor.component';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { DataOperationProcessorComponent } from '../../data-operation-processor.
 		</processing-button>
 	`
 })
-export class CreateUserButtonComponent extends DataOperationProcessorComponent {
+export class CreateUserButtonComponent extends DataProcessorComponent {
 
 	constructor(__newUserProcessor: NewUserProcessorService) {
 		super(__newUserProcessor);

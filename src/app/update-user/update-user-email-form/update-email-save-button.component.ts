@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService }
 	from '../../services/data-operation-processor/update-email-processor.service';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
+import { DataProcessorComponent } from '../../data-processor.component';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { DataOperationProcessorComponent } from '../../data-operation-processor.
 		</processing-button>
 	`
 })
-export class UpdateEmailSaveButtonComponent extends DataOperationProcessorComponent {
+export class UpdateEmailSaveButtonComponent extends DataProcessorComponent {
 
 	constructor(__updateEmailProcessor: UpdateEmailProcessorService) {
 		super(__updateEmailProcessor);

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
+import { DataProcessorComponent } from '../../data-processor.component';
 import { GetSecurityQuestionProcessorService }
 	from '../../services/data-operation-processor/get-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
@@ -13,7 +13,7 @@ import { QuestionStatusService as questionStatus } from '../question-status.serv
 		</processing-button>
 	`
 })
-export class GetQuestionButtonComponent extends DataOperationProcessorComponent {
+export class GetQuestionButtonComponent extends DataProcessorComponent {
 
 	constructor(__getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
 		super(__getSecurityQuestionProcessor);

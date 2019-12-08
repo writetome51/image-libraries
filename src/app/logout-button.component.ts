@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './services/data-operation-processor/logout-processor.service';
-import { DataOperationProcessorComponent } from './data-operation-processor.component';
+import { DataProcessorComponent } from './data-processor.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { DataOperationProcessorComponent } from './data-operation-processor.comp
 		</processing-button>
 	`
 })
-export class LogoutButtonComponent extends DataOperationProcessorComponent {
+export class LogoutButtonComponent extends DataProcessorComponent {
 
 	constructor(__logoutProcessor: LogoutProcessorService) {
 		super(__logoutProcessor);

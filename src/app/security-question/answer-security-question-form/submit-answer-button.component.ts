@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataOperationProcessorComponent } from '../../data-operation-processor.component';
+import { DataProcessorComponent } from '../../data-processor.component';
 import { LoginBySecurityQuestionProcessorService }
 	from '../../services/data-operation-processor/login-by-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
@@ -13,7 +13,7 @@ import { QuestionStatusService as questionStatus } from '../question-status.serv
 		</processing-button>
 	`
 })
-export class SubmitAnswerButtonComponent extends DataOperationProcessorComponent {
+export class SubmitAnswerButtonComponent extends DataProcessorComponent {
 
 	constructor(__loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
 		super(__loginBySecurityQuestionProcessor);
