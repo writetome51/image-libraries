@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from './local-data/local-session-id.service';
 import { Router } from '@angular/router';
-import { IDoThis } from '../../interfaces/i-do-this';
+import { IDoThis } from '../interfaces/i-do-this';
 import { LocalEmailService } from './local-data/local-email.service';
 
 

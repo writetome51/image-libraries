@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-export class DataOperationResultCheckService {
+export class DataProcessResultCheckService {
 
 
 	async ifSuccessful_processResult(

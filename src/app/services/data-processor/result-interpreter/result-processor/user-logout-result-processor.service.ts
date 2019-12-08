@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ResultProcessor } from '../../../../../interfaces/result-processor';
+import { ResultProcessor } from '../../../../interfaces/result-processor';
 import { RemoveLocalDataAndRedirectHomeService }
 	from '../../../remove-local-data-and-redirect-home.service';
 

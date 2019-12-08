@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserLogoutResultProcessorService }
 	from './result-processor/user-logout-result-processor.service';
 import { ResultInterpreterService } from './result-interpreter.service';
-import { LogoutResultCheckService } from './data-operation-result-check/logout-result-check.service';
+import { LogoutResultCheckService } from './data-process-result-check/logout-result-check.service';
 
 
 @Injectable({

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ResultProcessor } from '../../../../../interfaces/result-processor';
+import { ResultProcessor } from '../../../../interfaces/result-processor';
 import { CurrentUserService as currentUser} from '../../../user/current-user.service';
 
 
