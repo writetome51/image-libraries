@@ -1,13 +1,3 @@
-Conventions:
-If a class method is referred to here by writing ClassName.method(), this is not implying
-that the method is static. This convention refers to any method belonging to that class.
-
-
-AlertService is app-wide alert message service.  AlertService is assigned a message by other
-services.  AlertService only contains the alert message text.  AlertComponent displays it to user.
-The AlertComponent is only used by AppComponent.
-
-
 In the code, 'data processing' refers to any asynchronous processing of data that returns
 a result.  All processing of this kind is handled by subclasses of DataProcessorService.
 DataProcessorService.process() calls DataProcessorService._getResult(), and passes
@@ -25,6 +15,6 @@ in npm package '@writetome51/validating-inputs'.  ValidatingInput only represent
 'text', 'password', or 'number'.
 
 
-Any custom typescript decorators in the project that are created by calling
-getClassModificationDecorator() have been pre-transpiled into javascript files.  This is done to
-avoid an Angular build error which says 'Function calls are not supported in decorators...'.
+Any custom typescript decorators created by calling getClassModificationDecorator() have been
+pre-transpiled into javascript files.  This is done to avoid an Angular build error which says
+'Function calls are not supported in decorators...'.

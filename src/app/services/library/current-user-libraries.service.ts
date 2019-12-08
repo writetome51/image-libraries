@@ -23,7 +23,7 @@ export class CurrentUserLibrariesService extends PublicArrayContainer {
 
 	private async __set_data() {
 		let result = await this.__libraryStorage.getLibraries();
-		result = await this.__dataOperationResultCheck.checkForError_returnIfOK(result);
+		result = await this.__dataOperationResultCheck.returnIfNoError(result);
 		if (hasValue(result)) this.data = result;
 	}
 
