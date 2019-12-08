@@ -1,11 +1,10 @@
 import { DataOperationStatusService as dataOperationStatus } from './data-operation-status.service';
-import { DataOperationProcessorService }
-	from './data-operation-processor/data-operation-processor.service';
+import { DataProcessorService } from './data-processor/data-processor.service';
 
 
 export class PerformDataOperationService { // implements IDoThis
 
-	static async go(processor: DataOperationProcessorService) {
+	static async go(processor: DataProcessorService) {
 		dataOperationStatus.waitingForResult = true;
 		await processor.process();
 		dataOperationStatus.waitingForResult = false;

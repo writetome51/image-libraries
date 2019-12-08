@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { LogoutResultInterpreterService } from '../result-interpreter/logout-result-interpreter.service';
+import { LogoutResultInterpreterService }
+	from '../result-interpreter/logout-result-interpreter.service';
 import { DeAuthenticatorService } from '../authentication/de-authenticator.service';
-import { DataOperationProcessorService } from './data-operation-processor.service';
+import { DataProcessorService } from './data-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LogoutProcessorService extends DataOperationProcessorService {
+export class LogoutProcessorService extends DataProcessorService {
 
 	constructor(
 		private __deAuthenticator: DeAuthenticatorService,

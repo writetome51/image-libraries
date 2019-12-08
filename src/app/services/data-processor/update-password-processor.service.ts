@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
-import { FormDataOperationProcessorService } from './form-data-operation-processor.service';
+import { FormDataProcessorService } from './form-data-processor.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
@@ -9,7 +9,7 @@ import { UpdatePasswordResultInterpreterService }
 
 @Injectable({providedIn: 'root'})
 
-export class UpdatePasswordProcessorService extends FormDataOperationProcessorService {
+export class UpdatePasswordProcessorService extends FormDataProcessorService {
 
 	constructor(
 		private __userStorage: UserStorageService,

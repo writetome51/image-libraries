@@ -1,9 +1,9 @@
-import { DataOperationProcessorService } from './data-operation-processor.service';
+import { DataProcessorService } from './data-processor.service';
 import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
 import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 
-export abstract class FormDataOperationProcessorService extends DataOperationProcessorService {
+export abstract class FormDataProcessorService extends DataProcessorService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService,

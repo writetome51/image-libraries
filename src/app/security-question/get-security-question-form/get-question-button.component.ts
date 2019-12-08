@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataProcessorComponent } from '../../data-processor.component';
 import { GetSecurityQuestionProcessorService }
-	from '../../services/data-operation-processor/get-security-question-processor.service';
+	from '../../services/data-processor/get-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
 
 
