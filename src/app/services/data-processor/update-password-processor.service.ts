@@ -1,6 +1,6 @@
+import { FormDataProcessorService } from './form-data-processor.service';
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
-import { FormDataProcessorService } from './form-data-processor.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }

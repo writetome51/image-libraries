@@ -1,8 +1,8 @@
+import { DeAuthenticatorService } from '../authentication/de-authenticator.service';
+import { DataProcessorService } from './data-processor.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService }
 	from './result-interpreter/logout-result-interpreter.service';
-import { DeAuthenticatorService } from '../authentication/de-authenticator.service';
-import { DataProcessorService } from './data-processor.service';
 
 
 @Injectable({providedIn: 'root'})

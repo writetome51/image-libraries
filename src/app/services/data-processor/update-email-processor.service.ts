@@ -1,6 +1,6 @@
+import { FormDataProcessorService } from './form-data-processor.service';
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
-import { FormDataProcessorService } from './form-data-processor.service';
 import { UpdateEmailFormInputsService }
 	from '../validating-inputs/update-email-form-inputs.service';
 import { UpdateEmailResultInterpreterService }

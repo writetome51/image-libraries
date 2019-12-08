@@ -1,9 +1,9 @@
 import { AuthenticatorService } from '../authentication/authenticator.service';
+import { AnswerSecurityQuestionInputsService }
+	from '../validating-inputs/answer-security-question-inputs.service';
 import { FormDataProcessorService } from './form-data-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } from './result-interpreter/login-result-interpreter.service';
-import { AnswerSecurityQuestionInputsService }
-	from '../validating-inputs/answer-security-question-inputs.service';
 
 
 @Injectable({providedIn: 'root'})
