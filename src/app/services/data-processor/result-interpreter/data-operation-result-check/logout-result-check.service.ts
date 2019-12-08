@@ -1,7 +1,7 @@
 import { DataOperationResultCheckService } from './data-operation-result-check.service';
 import { Injectable } from '@angular/core';
-import { noDocumentMatchedCriteria, notLoggedIn } from '../../string-constants/api-errors';
-import { NotLoggedInErrorHandlerService } from '../error/not-logged-in-error-handler.service';
+import { noDocumentMatchedCriteria, notLoggedIn } from '../../../../string-constants/api-errors';
+import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-handler.service';
 
 
 @Injectable({

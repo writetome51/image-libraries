@@ -1,8 +1,9 @@
-import { AlertService as alert } from '../alert.service';
+import { AlertService as alert } from '../../../../alert.service';
 import { Injectable } from '@angular/core';
-import { notLoggedIn } from '../../string-constants/form-submission-errors';
-import { RemoveLocalDataAndRedirectHomeService } from '../remove-local-data-and-redirect-home.service';
-import { LocalSessionIDService } from '../local-data/local-session-id.service';
+import { notLoggedIn } from '../../../../../string-constants/form-submission-errors';
+import { RemoveLocalDataAndRedirectHomeService }
+	from '../../../../remove-local-data-and-redirect-home.service';
+import { LocalSessionIDService } from '../../../../local-data/local-session-id.service';
 import { ErrorHandlerService } from './error-handler.service';
 
 

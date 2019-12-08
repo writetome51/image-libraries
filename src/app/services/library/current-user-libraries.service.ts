@@ -3,7 +3,7 @@ import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { DataOperationResultCheckService }
-	from '../data-operation-result-check/data-operation-result-check.service';
+	from '../data-processor/result-interpreter/data-operation-result-check/data-operation-result-check.service';
 
 
 @Injectable({

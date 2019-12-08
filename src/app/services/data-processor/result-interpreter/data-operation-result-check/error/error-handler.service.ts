@@ -1,4 +1,4 @@
-import { ErrorHandler } from '../../../interfaces/error-handler';
+import { ErrorHandler } from '../../../../../../interfaces/error-handler';
 
 
 export abstract class ErrorHandlerService implements ErrorHandler {

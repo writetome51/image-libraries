@@ -1,8 +1,8 @@
-import { DBUser } from '../../../interfaces/db-user';
+import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LoginResultProcessorService } from './login-result-processor.service';
-import { AlertService as alert } from '../alert.service';
-import { ResultProcessor } from '../../../interfaces/result-processor';
+import { AlertService as alert } from '../../../alert.service';
+import { ResultProcessor } from '../../../../../interfaces/result-processor';
 
 
 @Injectable({providedIn: 'root'})

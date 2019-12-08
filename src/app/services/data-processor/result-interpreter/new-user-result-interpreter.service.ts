@@ -1,7 +1,7 @@
-import { NewUserResultCheckService } from '../data-operation-result-check/new-user-result-check.service';
+import { NewUserResultCheckService } from './data-operation-result-check/new-user-result-check.service';
 import { Injectable } from '@angular/core';
 import { ResultInterpreterService } from './result-interpreter.service';
-import { NewUserResultProcessorService } from '../result-processor/new-user-result-processor.service';
+import { NewUserResultProcessorService } from './result-processor/new-user-result-processor.service';
 
 
 @Injectable({

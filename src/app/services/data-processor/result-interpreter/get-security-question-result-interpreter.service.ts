@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ResultInterpreterService } from './result-interpreter.service';
 import { GetSecurityQuestionResultCheckService }
-	from '../data-operation-result-check/get-security-question-result-check.service';
+	from './data-operation-result-check/get-security-question-result-check.service';
 import { GetSecurityQuestionResultProcessorService }
-	from '../result-processor/get-security-question-result-processor.service';
+	from './result-processor/get-security-question-result-processor.service';
 
 
 @Injectable({

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ResultInterpreterService } from './result-interpreter.service';
 import { NewLibraryResultCheckService }
-	from '../data-operation-result-check/new-library-result-check.service';
+	from './data-operation-result-check/new-library-result-check.service';
 import { NewLibraryResultProcessorService }
-	from '../result-processor/new-library-result-processor.service';
+	from './result-processor/new-library-result-processor.service';
 
 
 @Injectable({

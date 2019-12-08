@@ -4,7 +4,7 @@ import { FormDataProcessorService } from './form-data-processor.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
-	from '../result-interpreter/update-password-result-interpreter.service';
+	from './result-interpreter/update-password-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

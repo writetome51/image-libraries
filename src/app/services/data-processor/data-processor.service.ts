@@ -1,4 +1,4 @@
-import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
+import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
 import { DataProcessor } from '../../../interfaces/data-processor';
 
 

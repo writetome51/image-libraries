@@ -1,8 +1,8 @@
-import { AlertService as alert } from '../alert.service';
-import { DBUser } from '../../../interfaces/db-user';
+import { AlertService as alert } from '../../../alert.service';
+import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { ResultProcessor } from '../../../interfaces/result-processor';
-import { RedirectToLoggedInHomeService } from '../redirect-to-logged-in-home.service';
+import { ResultProcessor } from '../../../../../interfaces/result-processor';
+import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';
 import { UserResultProcessorService } from './user-result-processor.service';
 
 

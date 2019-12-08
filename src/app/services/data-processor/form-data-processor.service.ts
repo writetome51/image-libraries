@@ -1,5 +1,5 @@
 import { DataProcessorService } from './data-processor.service';
-import { ResultInterpreterService } from '../result-interpreter/result-interpreter.service';
+import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
 import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 

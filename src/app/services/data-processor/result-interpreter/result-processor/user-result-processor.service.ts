@@ -1,9 +1,9 @@
-import { DBUser } from '../../../interfaces/db-user';
+import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../local-data/local-session-id.service';
-import { ResultProcessor } from '../../../interfaces/result-processor';
-import { AlertService as alert } from '../alert.service';
-import { LocalEmailService } from '../local-data/local-email.service';
+import { LocalSessionIDService } from '../../../local-data/local-session-id.service';
+import { ResultProcessor } from '../../../../../interfaces/result-processor';
+import { AlertService as alert } from '../../../alert.service';
+import { LocalEmailService } from '../../../local-data/local-email.service';
 
 
 @Injectable({
