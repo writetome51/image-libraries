@@ -1,11 +1,7 @@
 <p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
 
-<ul>
-	<li *ngFor="let library of libraries">
+<div class="input-container">
+	<button>Create New Library</button>
+</div>
 
-		<a routerLink="library/{{library.name}}" routerLinkActive="active">
-			{{library.name}}
-		</a>
-
-	</li>
-</ul>
+<libraries-list></libraries-list>

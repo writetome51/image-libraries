@@ -6,11 +6,9 @@ import { DataProcessResultCheckService }
 	from '../data-processor/result-interpreter/data-process-result-check/data-process-result-check.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class CurrentUserLibrariesService extends PublicArrayContainer {
+@Injectable({providedIn: 'root'})
 
+export class CurrentUserLibrariesService extends PublicArrayContainer {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
@@ -26,6 +24,5 @@ export class CurrentUserLibrariesService extends PublicArrayContainer {
 		result = await this.__dataOperationResultCheck.returnIfNoError(result);
 		if (hasValue(result)) this.data = result;
 	}
-
 
 }

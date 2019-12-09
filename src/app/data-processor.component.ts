@@ -1,7 +1,6 @@
 import { PerformDataOperationService as performDataOperation }
 	from './services/perform-data-operation.service';
-import { DataProcessorService }
-	from './services/data-processor/data-processor.service';
+import { DataProcessorService } from './services/data-processor/data-processor.service';
 import { DataProcessor } from './interfaces/data-processor';
 
 

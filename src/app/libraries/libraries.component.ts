@@ -13,12 +13,12 @@ export class LibrariesComponent {
 	noLibrariesMessage = 'You have no libraries right now';
 
 
-	constructor(private __currentUserLibraries: CurrentUserLibrariesService) {
+	get libraries(): AppLibrary[] {
+		return this.__currentUserLibraries.data;
 	}
 
 
-	get libraries(): AppLibrary[] {
-		return this.__currentUserLibraries.data;
+	constructor(private __currentUserLibraries: CurrentUserLibrariesService) {
 	}
 
 

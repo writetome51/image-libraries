@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LibrariesComponent } from './libraries/libraries.component';
+import { LibrariesListComponent } from './libraries/libraries-list/libraries-list.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormInputsComponent } from './login/login-form/login-form-inputs.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
@@ -21,6 +22,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		AppComponent,
 		AlertComponent,
 		LibrariesComponent,
+		LibrariesListComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
