@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
-import { NewLibraryInputsService } from '../services/validating-inputs/new-library-inputs.service';
+import { NewLibraryInputsService } from '../../services/validating-inputs/new-library-inputs.service';
 
 
 @Component({

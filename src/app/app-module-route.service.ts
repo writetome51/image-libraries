@@ -6,7 +6,7 @@ export const AppModuleRouteService = {
 
 	UpdateUserModule: 'update-account',
 	NewUserModule: 'create-account',
-	LibrariesComponent: 'libraries',
+	LibrariesModule: 'libraries',
 	LibraryModule: 'library',
 	SecurityQuestionModule: 'security-question'
 

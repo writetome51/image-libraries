@@ -4,8 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LibrariesComponent } from './libraries/libraries.component';
-import { LibrariesListComponent } from './libraries/libraries-list/libraries-list.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormInputsComponent } from './login/login-form/login-form-inputs.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
@@ -15,25 +13,17 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
-import { CreateLibraryButtonComponent } from './libraries/create-library-button.component';
-import { NewLibraryFormInputsComponent } from './libraries/new-library-form-inputs.component';
-import { NewLibraryFormComponent } from './libraries/new-library-form.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AlertComponent,
-		CreateLibraryButtonComponent,
-		LibrariesComponent,
-		LibrariesListComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
 		LoginButtonComponent,
 		LogoutButtonComponent,
-		NewLibraryFormComponent,
-		NewLibraryFormInputsComponent,
 		PageNotFoundComponent,
 	],
 	imports: [

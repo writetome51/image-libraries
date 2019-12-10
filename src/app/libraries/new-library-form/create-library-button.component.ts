@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { DataProcessorComponent } from '../data-processor.component';
-import { NewLibraryProcessorService } from '../services/data-processor/new-library-processor.service';
+import { DataProcessorComponent } from '../../data-processor.component';
+import { NewLibraryProcessorService }
+	from '../../services/data-processor/new-library-processor.service';
 
 
 @Component({

@@ -2,7 +2,6 @@ import { AppModuleRouteService as moduleRoute } from './app-module-route.service
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
 import { LoginComponent } from './login/login.component';
-import { LibrariesComponent } from './libraries/libraries.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,8 +20,8 @@ const routes: Routes = [
 	},
 
 	{
-		path: moduleRoute.LibrariesComponent,
-		component: LibrariesComponent,
+		path: moduleRoute.LibrariesModule,
+		loadChildren: () => import('./libraries/libraries.module').then(mod => mod.LibrariesModule),
 		// 'canActivate' means the guard decides if the component can be instantiated.
 		canActivate: [AuthenticatedGuard]
 	},
