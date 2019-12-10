@@ -15,12 +15,16 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { CreateLibraryButtonComponent } from './libraries/create-library-button.component';
+import { NewLibraryFormInputsComponent } from './libraries/new-library-form-inputs.component';
+import { NewLibraryFormComponent } from './libraries/new-library-form.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AlertComponent,
+		CreateLibraryButtonComponent,
 		LibrariesComponent,
 		LibrariesListComponent,
 		LoginComponent,
@@ -28,6 +32,8 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoginFormInputsComponent,
 		LoginButtonComponent,
 		LogoutButtonComponent,
+		NewLibraryFormComponent,
+		NewLibraryFormInputsComponent,
 		PageNotFoundComponent,
 	],
 	imports: [

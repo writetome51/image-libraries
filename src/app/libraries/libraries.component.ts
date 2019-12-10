@@ -11,6 +11,7 @@ export class LibrariesComponent {
 
 
 	noLibrariesMessage = 'You have no libraries right now';
+	creatingNewLibrary = false;
 
 
 	get libraries(): AppLibrary[] {

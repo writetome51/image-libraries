@@ -1,9 +1,11 @@
-<ul>
-	<li *ngFor="let library of libraries">
+<div>
+	<ul>
+		<li *ngFor="let library of libraries">
 
-		<a routerLink="library/{{library.name}}" routerLinkActive="active">
-			{{library.name}}
-		</a>
+			<a routerLink="library/{{library.name}}" routerLinkActive="active">
+				{{library.name}}
+			</a>
 
-	</li>
-</ul>
+		</li>
+	</ul>
+</div>

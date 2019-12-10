@@ -1,7 +1,17 @@
-<p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
-
 <div class="input-container">
 	<button>Create New Library</button>
 </div>
+
+<div *ngIf="creatingNewLibrary" class="form-container">
+
+	<form>
+
+
+	</form>
+
+</div>
+
+
+<p *ngIf="libraries.length === 0">{{noLibrariesMessage}}</p>
 
 <libraries-list></libraries-list>
