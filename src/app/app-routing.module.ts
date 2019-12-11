@@ -19,11 +19,9 @@ const routes: Routes = [
 		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
 
-	{
+	{	// lazy-loaded module
 		path: moduleRoute.LibrariesModule,
-		loadChildren: () => import('./libraries/libraries.module').then(mod => mod.LibrariesModule),
-		// 'canActivate' means the guard decides if the component can be instantiated.
-		canActivate: [AuthenticatedGuard]
+		loadChildren: () => import('./libraries/libraries.module').then(mod => mod.LibrariesModule)
 	},
 
 	{	// lazy-loaded module

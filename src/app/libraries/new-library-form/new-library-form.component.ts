@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'new-library-form',
-	templateUrl: `
+	template: `
 		<div class="form-container">
 			<form>
 				<new-library-form-inputs></new-library-form-inputs>

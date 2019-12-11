@@ -1,3 +1,4 @@
+import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,16 @@ import { RouterModule } from '@angular/router';
 		FormsModule,
 		ValidatingInputsModule,
 		ProcessingButtonModule,
-		RouterModule
+		RouterModule.forChild([
+			{
+				path: '',
+				pathMatch: 'full',
+				component: LibrariesComponent,
+				canActivate: [AuthenticatedGuard]
+			},
+
+			{path: '**', redirectTo: ''}
+		])
 	]
 })
 export class LibrariesModule {

@@ -1,5 +1,5 @@
 <div class="input-container">
-	<button>Create New Library</button>
+	<button (click)="creatingNewLibrary = true">Create New Library</button>
 </div>
 
 <new-library-form *ngIf="creatingNewLibrary"></new-library-form>

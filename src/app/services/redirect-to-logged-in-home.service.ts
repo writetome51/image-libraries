@@ -13,7 +13,7 @@ export class RedirectToLoggedInHomeService implements IDoThis {
 
 
 	async go() {
-		await this.__router.navigate([`/${moduleRoute.LibrariesComponent}`]); // logged-in homepage.
+		await this.__router.navigate([`/${moduleRoute.LibrariesModule}`]); // logged-in homepage.
 	}
 
 }
