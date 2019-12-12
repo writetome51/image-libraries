@@ -1,5 +1,5 @@
+import { AppLibrary } from '../../interfaces/app-library';
 import { Injectable } from '@angular/core';
-import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { LibraryStorageService } from './library-storage.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { DataProcessResultCheckService } // tslint:disable-next-line:max-line-length
@@ -8,13 +8,15 @@ import { DataProcessResultCheckService } // tslint:disable-next-line:max-line-le
 
 @Injectable({providedIn: 'root'})
 
-export class CurrentUserLibrariesService extends PublicArrayContainer {
+export class CurrentUserLibrariesService {
+
+	data: AppLibrary[];
+
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
 		private __dataProcessResultCheck: DataProcessResultCheckService
 	) {
-		super();
 		this.__set_data();
 	}
 
