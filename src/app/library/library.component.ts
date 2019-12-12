@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CurrentLibraryService as currentLibrary } from '../services/library/current-library.service';
+import { Router } from '@angular/router';
+import { getTail } from '@writetome51/array-get-head-tail';
 
 
 @Component({
@@ -10,7 +11,12 @@ export class LibraryComponent {
 
 
 	get name() {
-		return currentLibrary.libName;
+		let url = this.__router.routerState.snapshot.url;
+		return getTail(1, url.split('/'));
+	}
+
+
+	constructor(private __router: Router) {
 	}
 
 
