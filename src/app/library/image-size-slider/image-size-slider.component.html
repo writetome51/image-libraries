@@ -1,6 +1,8 @@
-<div id="image-size-control">
+<div id="input-container">
 	<!--  size slider    -->
-	Change size: <input type="range" min="0" max="400" [(ngModel)]="imageWidth">
+	<label for="image-size-control" hidden>Image Size Control</label>
+	Change size:
+	<input type="range" id="image-size-control" min="0" max="400" [(ngModel)]="imageWidth">
 	<!-- / size slider   -->
 
 	Current image width: {{imageWidth}}px
