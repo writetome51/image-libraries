@@ -11,8 +11,7 @@ export class ImageURLProcessorService implements Processor {
 
 
 	async process(url) {
-		let isFound = await this.__resourceFound(url);
-		if (isFound) {
+		if (await this.__resourceFound(url)) {
 			currentLibrary.images.push({name: '', src: url, description: ''});
 		}
 		else {
