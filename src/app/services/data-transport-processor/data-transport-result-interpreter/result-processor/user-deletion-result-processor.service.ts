@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { ResultProcessor } from '../../../../interfaces/result-processor';
 import { UserLogoutResultProcessorService } from './user-logout-result-processor.service';
 import { AlertService as alert } from '../../../alert.service';
+import { DirectProcessor } from '../../../../interfaces/direct-processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserDeletionResultProcessorService implements ResultProcessor {
+export class UserDeletionResultProcessorService implements DirectProcessor {
 
 	constructor(
 		private __userLogoutResultProcessor: UserLogoutResultProcessorService

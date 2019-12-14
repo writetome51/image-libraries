@@ -1,13 +1,13 @@
 import { DBUser } from '../../../../interfaces/db-user';
-import { ResultProcessor } from '../../../../interfaces/result-processor';
 import { UserResultProcessorService } from './user-result-processor.service';
 import { AlertService as alert } from '../../../alert.service';
 import { Injectable } from '@angular/core';
+import { DirectProcessor } from '../../../../interfaces/direct-processor';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UpdateEmailOrPasswordResultProcessorService implements ResultProcessor {
+export class UpdateEmailOrPasswordResultProcessorService implements DirectProcessor {
 
 	resultMessage: string;
 

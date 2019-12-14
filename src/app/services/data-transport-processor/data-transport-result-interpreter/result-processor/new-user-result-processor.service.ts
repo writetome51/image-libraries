@@ -2,12 +2,12 @@ import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LoginResultProcessorService } from './login-result-processor.service';
 import { AlertService as alert } from '../../../alert.service';
-import { ResultProcessor } from '../../../../interfaces/result-processor';
+import { DirectProcessor } from '../../../../interfaces/direct-processor';
 
 
 @Injectable({providedIn: 'root'})
 
-export class NewUserResultProcessorService implements ResultProcessor {
+export class NewUserResultProcessorService implements DirectProcessor {
 
 	constructor(private __loginResultProcessor: LoginResultProcessorService) {
 	}

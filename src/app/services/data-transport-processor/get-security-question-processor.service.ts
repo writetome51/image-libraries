@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { GetSecurityQuestionInputsService }
 	from '../validating-inputs/get-security-question-inputs.service';
 import { GetSecurityQuestionResultInterpreterService }
-	from './result-interpreter/get-security-question-result-interpreter.service';
+	from './data-transport-result-interpreter/get-security-question-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

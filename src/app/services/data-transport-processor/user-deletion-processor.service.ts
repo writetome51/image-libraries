@@ -4,7 +4,7 @@ import { LoginEmailPasswordInputsService }
 	from '../validating-inputs/login-email-password-inputs.service';
 import { UserDeleterService } from '../user/user-deleter.service';
 import { UserDeletionResultInterpreterService }
-	from './result-interpreter/user-deletion-result-interpreter.service';
+	from './data-transport-result-interpreter/user-deletion-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -4,7 +4,7 @@ import { UserStorageService } from '../user/user-storage.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
-	from './result-interpreter/update-password-result-interpreter.service';
+	from './data-transport-result-interpreter/update-password-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,7 +1,7 @@
 import { DeAuthenticatorService } from '../authentication/de-authenticator.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService }
-	from './result-interpreter/logout-result-interpreter.service';
+	from './data-transport-result-interpreter/logout-result-interpreter.service';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 
 

@@ -1,15 +1,15 @@
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../local-data/local-session-id.service';
-import { ResultProcessor } from '../../../../interfaces/result-processor';
 import { AlertService as alert } from '../../../alert.service';
 import { LocalEmailService } from '../../../local-data/local-email.service';
+import { DirectProcessor } from '../../../../interfaces/direct-processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserResultProcessorService implements ResultProcessor {
+export class UserResultProcessorService implements DirectProcessor {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,

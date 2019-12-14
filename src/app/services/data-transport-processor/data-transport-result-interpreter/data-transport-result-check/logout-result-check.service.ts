@@ -1,4 +1,4 @@
-import { DataProcessResultCheckService } from './data-process-result-check.service';
+import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn } from '../../../../string-constants/api-errors';
 import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-handler.service';
@@ -7,11 +7,9 @@ import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-hand
 @Injectable({
 	providedIn: 'root'
 })
-export class LogoutResultCheckService extends DataProcessResultCheckService {
+export class LogoutResultCheckService extends DataTransportResultCheckService {
 
-	constructor(
-		private __notLoggedInErrorHandler: NotLoggedInErrorHandlerService
-	) {
+	constructor(private __notLoggedInErrorHandler: NotLoggedInErrorHandlerService) {
 		super();
 	}
 

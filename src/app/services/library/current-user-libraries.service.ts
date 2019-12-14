@@ -2,8 +2,8 @@ import { AppLibrary } from '../../interfaces/app-library';
 import { Injectable } from '@angular/core';
 import { LibraryStorageService } from './library-storage.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { DataProcessResultCheckService } // tslint:disable-next-line:max-line-length
-	from '../data-transport-processor/result-interpreter/data-process-result-check/data-process-result-check.service';
+import { DataTransportResultCheckService } // tslint:disable-next-line:max-line-length
+	from '../data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -15,7 +15,7 @@ export class CurrentUserLibrariesService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __dataProcessResultCheck: DataProcessResultCheckService
+		private __dataProcessResultCheck: DataTransportResultCheckService
 	) {
 		this.__set_data();
 	}

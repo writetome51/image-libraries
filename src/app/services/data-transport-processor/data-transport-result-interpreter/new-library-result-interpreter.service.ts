@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ResultInterpreterService } from './result-interpreter.service';
+import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { NewLibraryResultCheckService }
-	from './data-process-result-check/new-library-result-check.service';
+	from './data-transport-result-check/new-library-result-check.service';
 import { NewLibraryResultProcessorService }
 	from './result-processor/new-library-result-processor.service';
 
@@ -9,7 +9,7 @@ import { NewLibraryResultProcessorService }
 @Injectable({
 	providedIn: 'root'
 })
-export class NewLibraryResultInterpreterService extends ResultInterpreterService {
+export class NewLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
 		__newLibraryResultCheck: NewLibraryResultCheckService,

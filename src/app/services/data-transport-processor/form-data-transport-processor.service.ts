@@ -1,4 +1,5 @@
-import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
+import { DataTransportResultInterpreterService }
+	from './data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { ValidatingInputsService } from '@writetome51/validating-inputs';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 
@@ -7,7 +8,7 @@ export abstract class FormDataTransportProcessorService extends DataTransportPro
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService,
-		__resultInterpreter: ResultInterpreterService
+		__resultInterpreter: DataTransportResultInterpreterService
 	) {
 		super(__resultInterpreter);
 	}

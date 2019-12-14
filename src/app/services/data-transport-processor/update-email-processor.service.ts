@@ -4,7 +4,7 @@ import { UserStorageService } from '../user/user-storage.service';
 import { UpdateEmailFormInputsService }
 	from '../validating-inputs/update-email-form-inputs.service';
 import { UpdateEmailResultInterpreterService }
-	from './result-interpreter/update-email-result-interpreter.service';
+	from './data-transport-result-interpreter/update-email-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

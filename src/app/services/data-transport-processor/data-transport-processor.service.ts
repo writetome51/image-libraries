@@ -1,10 +1,11 @@
-import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
+import { DataTransportResultInterpreterService }
+	from './data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 
 
 export abstract class DataTransportProcessorService implements IndirectProcessor {
 
-	constructor(private __resultInterpreter: ResultInterpreterService) {
+	constructor(private __resultInterpreter: DataTransportResultInterpreterService) {
 	}
 
 
