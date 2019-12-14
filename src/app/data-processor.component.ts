@@ -1,10 +1,10 @@
 import { PerformDataOperationService as performDataOperation }
 	from './services/perform-data-operation.service';
 import { DataProcessorService } from './services/data-processor/data-processor.service';
-import { DataProcessor } from './interfaces/data-processor';
+import { IndirectProcessor } from './interfaces/indirect-processor';
 
 
-export abstract class DataProcessorComponent implements DataProcessor {
+export abstract class DataProcessorComponent implements IndirectProcessor {
 
 	constructor(private __dataProcessor: DataProcessorService) {
 	}

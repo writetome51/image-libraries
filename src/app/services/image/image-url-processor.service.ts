@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { CurrentLibraryService as currentLibrary } from '../library/current-library.service';
 import { AlertService as alert } from '../alert.service';
 import { EnteredImageURLService as enteredImageURL } from '../entered-image-url.service';
-import { Processor } from '../../interfaces/processor';
+import { DirectProcessor } from '../../interfaces/direct-processor';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ImageURLProcessorService implements Processor {
+export class ImageURLProcessorService implements DirectProcessor {
 
 
 	async process(): Promise<void> {

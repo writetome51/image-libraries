@@ -1,7 +1,7 @@
-import {Processor } from '../../interfaces/processor';
+import {DirectProcessor } from '../../interfaces/direct-processor';
 
 
-export abstract class DataProcessorService implements Processor {
+export abstract class DataProcessorService implements DirectProcessor {
 
 	abstract process(): void;
 

@@ -2,13 +2,13 @@ import { CurrentLibraryService as currentLibrary } from '../library/current-libr
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { Processor } from '../../interfaces/processor';
+import { DirectProcessor } from '../../interfaces/direct-processor';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UploadedImagesProcessorService implements Processor {
+export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	async process(files: FileList | File[]) {

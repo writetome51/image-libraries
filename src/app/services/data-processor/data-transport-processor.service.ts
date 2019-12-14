@@ -1,8 +1,8 @@
 import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
-import { Processor } from '../../interfaces/processor';
+import { DirectProcessor } from '../../interfaces/direct-processor';
 
 
-export abstract class DataTransportProcessorService implements Processor {
+export abstract class DataTransportProcessorService implements DirectProcessor {
 
 	constructor(private __resultInterpreter: ResultInterpreterService) {
 	}
