@@ -16,11 +16,14 @@ import { ReArrangeableGridListModule }
 	from './re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesComponent } from './save-changes/save-changes.component';
 import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-image.component';
+import { AddImageUrlButtonComponent } from './add-images/enter-image-url/add-image-url-button.component';
+import { ProcessingButtonModule } from '../processing-button/processing-button.module';
 
 
 @NgModule({
 	declarations: [
 		AddImagesComponent,
+		AddImageUrlButtonComponent,
 		ChooseImagesFromDeviceComponent,
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
@@ -33,6 +36,7 @@ import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-
 	imports: [
 		CommonModule,
 		FormsModule,
+		ProcessingButtonModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
 		ImageViewerModule,

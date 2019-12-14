@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
-import { AlertService as alert } from '../../../services/alert.service';
 
 
 @Component({
@@ -24,16 +22,6 @@ export class EnterImageURLComponent {
 
 	get imgURL() {
 		return this.__imgURL;
-	}
-
-
-	async addURLToLibrary() {
-		if (isEmpty(this.imgURL)) {
-			alert.error = 'Please enter a URL first.';
-			return;
-		}
-		await this.__imageURLProcessor.process(this.imgURL);
-		this.__imgURL = '';
 	}
 
 
