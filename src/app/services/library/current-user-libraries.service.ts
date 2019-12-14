@@ -10,21 +10,32 @@ import { DataTransportResultCheckService } // tslint:disable-next-line:max-line-
 
 export class CurrentUserLibrariesService {
 
-	data: AppLibrary[];
+
+	private __data: AppLibrary[];
+
+
+	get data() {
+		return this.__data;
+	}
 
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
 		private __dataProcessResultCheck: DataTransportResultCheckService
 	) {
-		this.__set_data();
 	}
 
 
-	private async __set_data() {
+	async set_data() {
 		let result = await this.__libraryStorage.getLibraries();
 		result = await this.__dataProcessResultCheck.returnIfNoError(result);
-		if (hasValue(result)) this.data = result;
+		if (hasValue(result)) this.__data = result;
 	}
+
+
+	unset_data() {
+		this.__data = undefined;
+	}
+
 
 }

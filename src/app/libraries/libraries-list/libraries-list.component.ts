@@ -9,6 +9,7 @@ import { AppLibrary } from '../../interfaces/app-library';
 })
 export class LibrariesListComponent {
 
+
 	get libraries(): AppLibrary[] {
 		return this.__currentUserLibraries.data;
 	}
@@ -16,5 +17,6 @@ export class LibrariesListComponent {
 
 	constructor(private __currentUserLibraries: CurrentUserLibrariesService) {
 	}
+
 
 }

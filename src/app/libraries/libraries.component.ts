@@ -1,17 +1,28 @@
 import { AppLibrary } from '../interfaces/app-library';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CurrentUserLibrariesService } from '../services/library/current-user-libraries.service';
+import { CreatingNewLibraryService as creatingNewLibrary }
+	from '../services/creating-new-library.service';
 
 
 @Component({
 	selector: 'libraries',
 	templateUrl: './libraries.component.html'
 })
-export class LibrariesComponent implements OnInit {
+export class LibrariesComponent implements OnInit, OnDestroy {
 
 
 	noLibrariesMessage = 'You have no libraries right now';
-	creatingNewLibrary = false;
+
+
+	get creatingNewLibrary() {
+		return creatingNewLibrary.status;
+	}
+
+
+	set creatingNewLibrary(value) {
+		creatingNewLibrary.status = value;
+	}
 
 
 	get libraries(): AppLibrary[] {
@@ -23,8 +34,14 @@ export class LibrariesComponent implements OnInit {
 	}
 
 
-	ngOnInit(): void {
-		this.creatingNewLibrary = false;
+	async ngOnInit() {
+		creatingNewLibrary.status = false;
+		await this.__currentUserLibraries.set_data();
+	}
+
+
+	ngOnDestroy() {
+		this.__currentUserLibraries.unset_data();
 	}
 
 

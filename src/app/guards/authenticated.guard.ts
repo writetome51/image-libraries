@@ -1,13 +1,10 @@
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot }
-	from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '../services/local-data/local-session-id.service';
+import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class AuthenticatedGuard implements CanActivate {
 
 
