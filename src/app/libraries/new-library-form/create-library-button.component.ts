@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataProcessorComponent } from '../../data-processor.component';
-import { NewLibraryProcessorService }
-	from '../../services/data-transport-processor/new-library-processor.service';
+import { CreateLibraryProcessorService }
+	from '../../services/data-transport-processor/create-library-processor.service';
 
 
 @Component({
@@ -14,8 +14,8 @@ import { NewLibraryProcessorService }
 })
 export class CreateLibraryButtonComponent extends DataProcessorComponent {
 
-	constructor(__newLibraryProcessor: NewLibraryProcessorService) {
-		super(__newLibraryProcessor);
+	constructor(__createLibraryProcessor: CreateLibraryProcessorService) {
+		super(__createLibraryProcessor);
 	}
 
 }

@@ -8,7 +8,7 @@ import { NewLibraryResultInterpreterService }
 
 @Injectable({providedIn: 'root'})
 
-export class NewLibraryProcessorService extends FormDataTransportProcessorService {
+export class CreateLibraryProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __libraryCreator: LibraryCreatorService,
