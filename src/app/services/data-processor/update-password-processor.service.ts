@@ -1,4 +1,4 @@
-import { FormDataProcessorService } from './form-data-processor.service';
+import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UserStorageService } from '../user/user-storage.service';
 import { UpdatePasswordFormInputsService }
@@ -9,7 +9,7 @@ import { UpdatePasswordResultInterpreterService }
 
 @Injectable({providedIn: 'root'})
 
-export class UpdatePasswordProcessorService extends FormDataProcessorService {
+export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __userStorage: UserStorageService,

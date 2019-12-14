@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { CurrentLibraryService as currentLibrary } from '../library/current-library.service';
 import { AlertService as alert } from '../alert.service';
+import { EnteredImageURLService as enteredImageURL } from '../entered-image-url.service';
 import { Processor } from '../../interfaces/processor';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class ImageURLProcessorService implements Processor {
 
 
-	async process(url) {
-		if (await this.__resourceFound(url)) {
-			currentLibrary.images.push({name: '', src: url, description: ''});
+	async process(): Promise<void> {
+		if (await this.__resourceFound(enteredImageURL.data)) {
+			currentLibrary.images.push({name: '', src: enteredImageURL.data, description: ''});
 		}
 		else {
 			alert.error =

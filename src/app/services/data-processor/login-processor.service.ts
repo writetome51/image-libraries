@@ -1,5 +1,5 @@
 import { AuthenticatorService } from '../authentication/authenticator.service';
-import { FormDataProcessorService } from './form-data-processor.service';
+import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginEmailPasswordInputsService }
 	from '../validating-inputs/login-email-password-inputs.service';
@@ -8,7 +8,7 @@ import { LoginResultInterpreterService } from './result-interpreter/login-result
 
 @Injectable({providedIn: 'root'})
 
-export class LoginProcessorService extends FormDataProcessorService {
+export class LoginProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __authenticator: AuthenticatorService,

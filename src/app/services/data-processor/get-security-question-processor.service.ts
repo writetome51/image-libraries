@@ -1,5 +1,5 @@
 import { AuthenticatorService } from '../authentication/authenticator.service';
-import { FormDataProcessorService } from './form-data-processor.service';
+import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { GetSecurityQuestionInputsService }
 	from '../validating-inputs/get-security-question-inputs.service';
@@ -9,7 +9,7 @@ import { GetSecurityQuestionResultInterpreterService }
 
 @Injectable({providedIn: 'root'})
 
-export class GetSecurityQuestionProcessorService extends FormDataProcessorService {
+export class GetSecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __authenticator: AuthenticatorService,

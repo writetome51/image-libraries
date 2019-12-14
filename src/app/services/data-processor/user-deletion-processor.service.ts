@@ -1,4 +1,4 @@
-import { FormDataProcessorService } from './form-data-processor.service';
+import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginEmailPasswordInputsService }
 	from '../validating-inputs/login-email-password-inputs.service';
@@ -9,7 +9,7 @@ import { UserDeletionResultInterpreterService }
 
 @Injectable({providedIn: 'root'})
 
-export class UserDeletionProcessorService extends FormDataProcessorService {
+export class UserDeletionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __userDeletor: UserDeleterService,

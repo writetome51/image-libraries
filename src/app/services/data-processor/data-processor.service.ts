@@ -1,19 +1,8 @@
-import { DataProcessor } from '../../interfaces/data-processor';
-import { ResultInterpreterService } from './result-interpreter/result-interpreter.service';
+import {Processor } from '../../interfaces/processor';
 
 
-export abstract class DataProcessorService implements DataProcessor {
+export abstract class DataProcessorService implements Processor {
 
-	constructor(private __resultInterpreter: ResultInterpreterService) {
-	}
-
-
-	async process() {
-		let result = await this._getResult();
-		await this.__resultInterpreter.interpret(result);
-	}
-
-
-	protected abstract _getResult(): any | Promise<any>;
+	abstract process(): void;
 
 }
