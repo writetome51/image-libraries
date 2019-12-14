@@ -8,7 +8,7 @@ import { UserCreatorService } from '../user/user-creator.service';
 
 @Injectable({providedIn: 'root'})
 
-export class NewUserProcessorService extends FormDataTransportProcessorService {
+export class CreateUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		private __userCreator: UserCreatorService,

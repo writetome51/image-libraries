@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NewUserProcessorService }
-	from '../../services/data-transport-processor/new-user-processor.service';
+import { CreateUserProcessorService }
+	from '../../services/data-transport-processor/create-user-processor.service';
 import { DataProcessorComponent } from '../../data-processor.component';
 
 
@@ -14,8 +14,8 @@ import { DataProcessorComponent } from '../../data-processor.component';
 })
 export class CreateUserButtonComponent extends DataProcessorComponent {
 
-	constructor(__newUserProcessor: NewUserProcessorService) {
-		super(__newUserProcessor);
+	constructor(__createUserProcessor: CreateUserProcessorService) {
+		super(__createUserProcessor);
 	}
 
 }
