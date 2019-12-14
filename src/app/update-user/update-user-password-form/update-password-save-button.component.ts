@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UpdatePasswordProcessorService }
-	from '../../services/data-processor/update-password-processor.service';
+	from '../../services/data-transport-processor/update-password-processor.service';
 import { DataProcessorComponent } from '../../data-processor.component';
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserDeletionProcessorService }
-	from '../../services/data-processor/user-deletion-processor.service';
+	from '../../services/data-transport-processor/user-deletion-processor.service';
 import { DataProcessorComponent } from '../../data-processor.component';
 
 

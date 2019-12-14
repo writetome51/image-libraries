@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataProcessorComponent } from '../../data-processor.component';
 import { LoginBySecurityQuestionProcessorService }
-	from '../../services/data-processor/login-by-security-question-processor.service';
+	from '../../services/data-transport-processor/login-by-security-question-processor.service';
 import { QuestionStatusService as questionStatus } from '../question-status.service';
 
 
