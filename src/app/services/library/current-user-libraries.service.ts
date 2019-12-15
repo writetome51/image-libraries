@@ -21,14 +21,14 @@ export class CurrentUserLibrariesService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __dataProcessResultCheck: DataTransportResultCheckService
+		private __dataTransportResultCheck: DataTransportResultCheckService
 	) {
 	}
 
 
 	async set_data() {
 		let result = await this.__libraryStorage.getLibraries();
-		result = await this.__dataProcessResultCheck.returnIfNoError(result);
+		result = await this.__dataTransportResultCheck.returnIfNoError(result);
 		if (hasValue(result)) this.__data = result;
 	}
 

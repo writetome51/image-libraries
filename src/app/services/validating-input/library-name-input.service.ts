@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 
 
@@ -13,8 +14,14 @@ export class LibraryNameInputService extends ValidatingTextInputService {
 		this.data.propertyToBind = 'libName';
 		this.data.label = 'Library Name';
 
-		this.data.isValid = () => (this.data.objectToBind[this.data.propertyToBind].length !== 0);
-		this.data.errorMessage = `The library name cannot be empty`;
+		this.data.isValid = [
+			() => (this.data.objectToBind[this.data.propertyToBind].length !== 0),
+			() => (not(this.data.objectToBind[this.data.propertyToBind].includes(' ')))
+		];
+		this.data.errorMessage = [
+			`The library name cannot be empty`,
+			`The library name cannot include spaces`
+		];
 	}
 
 }

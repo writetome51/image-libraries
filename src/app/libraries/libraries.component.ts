@@ -1,15 +1,16 @@
 import { AppLibrary } from '../interfaces/app-library';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CurrentUserLibrariesService } from '../services/library/current-user-libraries.service';
 import { CreatingNewLibraryService as creatingNewLibrary }
 	from '../services/creating-new-library.service';
+import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Component({
 	selector: 'libraries',
 	templateUrl: './libraries.component.html'
 })
-export class LibrariesComponent implements OnInit, OnDestroy {
+export class LibrariesComponent {
 
 
 	noLibrariesMessage = 'You have no libraries right now';
@@ -25,23 +26,20 @@ export class LibrariesComponent implements OnInit, OnDestroy {
 	}
 
 
+	get buttonText() {
+		return (this.creatingNewLibrary ? 'Cancel' : 'Create New Library');
+	}
+
+
 	get libraries(): AppLibrary[] {
 		return this.__currentUserLibraries.data;
 	}
 
 
 	constructor(private __currentUserLibraries: CurrentUserLibrariesService) {
-	}
-
-
-	async ngOnInit() {
-		creatingNewLibrary.status = false;
-		await this.__currentUserLibraries.set_data();
-	}
-
-
-	ngOnDestroy() {
-		this.__currentUserLibraries.unset_data();
+		if (noValue(this.__currentUserLibraries.data)) {
+			this.__currentUserLibraries.set_data();
+		}
 	}
 
 
