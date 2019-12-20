@@ -1,5 +1,4 @@
 import { AppModuleRouteService as moduleRoute } from './app-module-route.service';
-import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
