@@ -6,9 +6,9 @@
 
 	<form>
 
-		<answer-security-question-form *ngIf="haveReceivedQuestion"></answer-security-question-form>
-
 		<get-security-question-form *ngIf="!(haveReceivedQuestion)"></get-security-question-form>
+
+		<answer-security-question-form *ngIf="haveReceivedQuestion"></answer-security-question-form>
 
 	</form>
 

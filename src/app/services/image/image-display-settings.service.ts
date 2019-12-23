@@ -1,11 +1,5 @@
-import { Injectable } from '@angular/core';
+export const ImageDisplaySettingsService = {
 
+	width: 150
 
-@Injectable({
-	providedIn: 'root'
-})
-export class ImageDisplaySettingsService {
-
-	width = 150;
-
-}
+};
