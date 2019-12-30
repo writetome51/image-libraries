@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
-import { ImageDisplaySettingsService } from '../../../services/image/image-display-settings.service';
+import { ImageDisplaySettingsService as imageDisplaySettings }
+	from '../../../services/image/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { LibraryService } from '../../../services/library/library.service';
 
@@ -17,15 +18,12 @@ export class ThumbnailImageComponent {
 	hovered = false;
 
 
-	constructor(
-		private __imageDisplaySettings: ImageDisplaySettingsService,
-		private __library: LibraryService
-	) {
+	constructor(private __library: LibraryService) {
 	}
 
 
 	get imageWidth(): number {
-		return this.__imageDisplaySettings.width;
+		return imageDisplaySettings.width;
 	}
 
 

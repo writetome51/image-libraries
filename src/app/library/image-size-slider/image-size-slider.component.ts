@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageDisplaySettingsService } from '../../services/image/image-display-settings.service';
+import { ImageDisplaySettingsService as imageDisplaySettings}
+	from '../../services/image/image-display-settings.service';
 
 
 @Component({
@@ -9,17 +10,13 @@ import { ImageDisplaySettingsService } from '../../services/image/image-display-
 export class ImageSizeSliderComponent {
 
 
-	constructor(private __imageSettings: ImageDisplaySettingsService) {
-	}
-
-
 	set imageWidth(value){
-		this.__imageSettings.width = value;
+		imageDisplaySettings.width = value;
 	}
 
 
 	get imageWidth(){
-		return this.__imageSettings.width;
+		return imageDisplaySettings.width;
 	}
 
 
