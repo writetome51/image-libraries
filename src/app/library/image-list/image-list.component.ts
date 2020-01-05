@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LibraryService } from '../../services/library/library.service';
 import { AppImage } from '../../interfaces/app-image';
+import { CurrentLibraryService } from '../../services/library/current-library.service';
 
 
 @Component({
@@ -10,14 +10,12 @@ import { AppImage } from '../../interfaces/app-image';
 })
 export class ImageListComponent {
 
-
-	constructor(private __library: LibraryService) {
-	}
-
-
 	get images(): AppImage[] {
-		return this.__library.images;
+		return this.__currentLibrary.data.images;
 	}
 
+
+	constructor(private __currentLibrary: CurrentLibraryService) {
+	}
 
 }

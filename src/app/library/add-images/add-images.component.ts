@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UploadedImagesProcessorService } from '../../services/image/uploaded-images-processor.service';
 import { ImageURLProcessorService } from '../../services/image/image-url-processor.service';
-import { LibraryService } from '../../services/library/library.service';
 
 
 @Component({
@@ -10,14 +9,13 @@ import { LibraryService } from '../../services/library/library.service';
 })
 export class AddImagesComponent {
 
-	gettingImagesInstructions = `The images can come from your own device or from somewhere 
+	gettingImagesInstructions = `The images can come from your own device or from somewhere
 	else in the web.`;
 
 
 	constructor(
 		private __imagesProcessor: UploadedImagesProcessorService,
-		private __imageURLProcessor: ImageURLProcessorService,
-		private __library: LibraryService
+		private __imageURLProcessor: ImageURLProcessorService
 	) {
 	}
 

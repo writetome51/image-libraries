@@ -20,7 +20,7 @@ export class NewLibraryResultProcessorService implements DirectProcessor {
 		creatingNewLibrary.status = false;
 
 		await this.__currentUserLibraries.set_data();
-		currentLibrary.libName = '';
+		currentLibrary.name = '';
 	}
 
 }

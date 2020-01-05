@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { getTail } from '@writetome51/array-get-head-tail';
+import { CurrentLibraryService } from '../services/library/current-library.service';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class LibraryComponent {
 	}
 
 
-	constructor(private __router: Router) {
+	constructor(
+		private __router: Router,
+		private __currentLibrary: CurrentLibraryService
+	) {
 	}
 
 

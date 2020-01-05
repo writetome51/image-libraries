@@ -1,8 +1,7 @@
 <div>
+
 	<p>Choose images from your own device:</p>
 
-	<!--  Should [(ngModel)] be used to bind a property with this input's value?     -->
-	<!--  I want to try that, but don't know if result value will be same type as
-	$event.target.files  --->
 	<input type="file" multiple (change)="addToLibrary($event.target.files)"/>
+
 </div>
