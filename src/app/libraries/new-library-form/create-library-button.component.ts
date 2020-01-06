@@ -8,7 +8,7 @@ import { CreateLibraryProcessorService }
 	selector: 'create-library-button',
 	template: `
 		<processing-button [type]="'submit'" [context]="this" [clickHandler]="process">
-			Create Library
+			Create
 		</processing-button>
 	`
 })

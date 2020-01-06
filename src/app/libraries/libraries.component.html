@@ -1,6 +1,4 @@
-<div class="input-container">
-	<button (click)="creatingNewLibrary = !(creatingNewLibrary)">{{buttonText}}</button>
-</div>
+<new-library-button></new-library-button>
 
 <new-library-form *ngIf="creatingNewLibrary"></new-library-form>
 

@@ -20,9 +20,4 @@ export class LibrariesComponent {
 	}
 
 
-	get buttonText() {
-		return (this.creatingNewLibrary ? 'Cancel' : 'Create New Library');
-	}
-
-
 }
