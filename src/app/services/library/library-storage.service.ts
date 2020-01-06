@@ -1,3 +1,4 @@
+import { DBLibrary } from '../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
@@ -18,7 +19,7 @@ export class LibraryStorageService {
 	}
 
 
-	async get(): Promise<any> {
+	async get(): Promise<DBLibrary> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.get(
 				{sessionID: this.__localSessionID.get(), name: libraryName.data}
@@ -27,7 +28,7 @@ export class LibraryStorageService {
 	}
 
 
-	async getLibraries(): Promise<any | void> {
+	async getLibraries(): Promise<DBLibrary[]> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
