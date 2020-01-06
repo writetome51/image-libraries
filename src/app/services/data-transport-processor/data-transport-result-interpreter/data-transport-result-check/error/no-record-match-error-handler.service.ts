@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../../local-data/local-session-id.service';
 import { HandleNoRecordMatchErrorService } from './handle-no-record-match-error.service';
-import { ErrorHandler } from '../../../../../interfaces/error-handler';
+import { Handler } from '../../../../../interfaces/handler';
 
 
 @Injectable({providedIn: 'root'})
 
-export class NoRecordMatchErrorHandlerService implements ErrorHandler {
+export class NoRecordMatchErrorHandlerService implements Handler {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,

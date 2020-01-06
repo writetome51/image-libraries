@@ -1,6 +1,6 @@
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { CurrentLibraryService as currentLibrary } from '../services/library/current-library.service';
+import { LoadedLibraryService as currentLibrary } from '../services/library/loaded-library.service';
 import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';

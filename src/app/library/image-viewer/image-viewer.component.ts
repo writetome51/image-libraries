@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CurrentLibraryService as currentLibrary }
-	from '../../services/library/current-library.service';
+import { LoadedLibraryService as currentLibrary }
+	from '../../services/library/loaded-library.service';
 
 
 @Component({

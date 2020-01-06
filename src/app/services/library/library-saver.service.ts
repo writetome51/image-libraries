@@ -1,4 +1,4 @@
-import { CurrentLibraryService as currentLibrary } from './current-library.service';
+import { LoadedLibraryService } from './loaded-library.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
@@ -12,21 +12,22 @@ export class LibrarySaverService {
 
 
 	constructor(
-		private __libraryStorage: LibraryStorageService
+		private __libraryStorage: LibraryStorageService,
+		private __loadedLibrary: LoadedLibraryService
 	) {
 	}
 
 
-	saveUpdate(): void {
+	save(): void {
 
-		if (hasValue(currentLibrary.changes['libName'])) {
-			let name = currentLibrary.changes['libName'].trim();
+		if (hasValue(this.__loadedLibrary.data.changes['name'])) {
+			let name = this.__loadedLibrary.data.changes['name'].trim();
 			if (isEmpty(name)) {
-				delete currentLibrary.changes['libName'];
+				delete this.__loadedLibrary.data.changes['name'];
 			}
 		}
-		if (Object.keys(currentLibrary.changes).length) { // if changes not empty...
-			this.__libraryStorage.update(currentLibrary.name, currentLibrary.changes);
+		if (Object.keys(this.__loadedLibrary.data.changes).length) { // if changes not empty...
+			this.__libraryStorage.update(this.__loadedLibrary.data.changes);
 		}
 
 	}

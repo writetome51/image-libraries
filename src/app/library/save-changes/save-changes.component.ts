@@ -8,7 +8,7 @@ import { LibrarySaverService } from '../../services/library/library-saver.servic
 })
 export class SaveChangesComponent {
 
-	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device 
+	fileSavingInfo = `The library is saved to a file you download.  When you save changes, your device
 	downloads a new version.`;
 
 
@@ -19,7 +19,7 @@ export class SaveChangesComponent {
 
 
 	saveChanges() {
-		this.__librarySaver.saveUpdate();
+		this.__librarySaver.save();
 	}
 
 }

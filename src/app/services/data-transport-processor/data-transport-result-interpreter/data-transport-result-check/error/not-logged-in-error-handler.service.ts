@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { notLoggedIn } from '../../../../../string-constants/form-submission-errors';
 import { RemoveCachedDataService }
 	from '../../../../remove-cached-data.service';
-import { ErrorHandler } from '../../../../../interfaces/error-handler';
+import { Handler } from '../../../../../interfaces/handler';
 import { Router } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 // Use this handler when we've received an api error saying we're not
 // logged in, but the browser is still storing session info.
 
-export class NotLoggedInErrorHandlerService implements ErrorHandler {
+export class NotLoggedInErrorHandlerService implements Handler {
 
 
 	constructor(
