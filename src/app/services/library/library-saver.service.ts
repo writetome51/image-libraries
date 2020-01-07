@@ -5,9 +5,8 @@ import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryStorageService } from './library-storage.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class LibrarySaverService {
 
 

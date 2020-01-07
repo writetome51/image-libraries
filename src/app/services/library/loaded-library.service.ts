@@ -27,8 +27,15 @@ export class LoadedLibraryService {
 	}
 
 
-	unset_data() {
+	unset_data(): void {
 		this.__data = undefined;
+	}
+
+
+	// propertyToChange can have dot-notation.
+
+	setChange(propertyToChange, newValue): void {
+		this.data.changes[propertyToChange] = newValue;
 	}
 
 }

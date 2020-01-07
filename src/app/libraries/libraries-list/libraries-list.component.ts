@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentUserLibrariesService } from '../../services/library/current-user-libraries.service';
-import { AppLibrary } from '../../interfaces/app-library';
+import { DBLibrary } from '../../interfaces/db-library';
 import { noValue } from '@writetome51/has-value-no-value';
 
 
@@ -13,7 +13,7 @@ export class LibrariesListComponent {
 	noLibrariesMessage = 'You have no libraries right now';
 
 
-	get libraries(): AppLibrary[] {
+	get libraries(): DBLibrary[] {
 		return this.__currentUserLibraries.data;
 	}
 

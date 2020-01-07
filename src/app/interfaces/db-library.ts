@@ -1,9 +1,12 @@
-import { AppLibrary } from './app-library';
+import { AppImage } from './app-image';
 
 
 // Represents a document in a MongoDB 'libraries' collection.
 
-export interface DBLibrary extends AppLibrary {
+export interface DBLibrary {
+	name: string;
+	images: AppImage[]; // 'tags' property of each image is indexed.
+
 	_id: string; // unique, never changes.  Primary key, indexed.
 
 	_user_id: string;	// unique, never changes.  Foreign key, relating to DBUser._id.
