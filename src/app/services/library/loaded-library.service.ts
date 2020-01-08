@@ -5,32 +5,31 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LoadedLibrary } from '../../interfaces/loaded-library';
 import { modifyObject } from '@writetome51/modify-object';
-import { SettableDataContainer } from '../../interfaces/settable-data-container';
+import { SettableDataContainerService } from '../settable-data-container.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LoadedLibraryService implements SettableDataContainer {
-
-	private __data;
+export class LoadedLibraryService extends SettableDataContainerService {
 
 
 	get data(): LoadedLibrary {
-		return this.__data;
+		return this._data;
 	}
 
 
 	get images(): AppImage[] {
-		return this.__data.images;
+		return this._data.images;
 	}
 
 
 	get hasChanges(): boolean {
-		return (Object.keys(this.__data.changes).length > 0);
+		return (Object.keys(this._data.changes).length > 0);
 	}
 
 
 	constructor(private __getRequestedLibrary: GetRequestedLibraryService) {
+		super();
 	}
 
 
@@ -46,27 +45,22 @@ export class LoadedLibraryService implements SettableDataContainer {
 				changes: {}
 			});
 
-			this.__data = library;
+			this._data = library;
 		}
-	}
-
-
-	unset_data(): void {
-		this.__data = undefined;
 	}
 
 
 	// propertyToChange can have dot-notation.
 
 	setChange(propertyToChange, newValue): void {
-		this.__data.changes[propertyToChange] = newValue;
+		this._data.changes[propertyToChange] = newValue;
 	}
 
 
 	// propertyToUnset can have dot-notation.
 
 	unsetChange(propertyToUnset): void {
-		delete this.__data.changes[propertyToUnset];
+		delete this._data.changes[propertyToUnset];
 	}
 
 }
