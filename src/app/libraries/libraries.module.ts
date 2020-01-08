@@ -10,6 +10,7 @@ import { NewLibraryFormInputsComponent } from './new-library-form/new-library-fo
 import { ProcessingButtonModule } from '../processing-button/processing-button.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
+import { NewLibraryButtonComponent } from './new-library-button.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
 		LibrariesListComponent,
 		NewLibraryFormComponent,
 		NewLibraryFormInputsComponent,
+		NewLibraryButtonComponent
 	],
 	imports: [
 		CommonModule,

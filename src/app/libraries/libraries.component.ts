@@ -15,9 +15,4 @@ export class LibrariesComponent {
 	}
 
 
-	set creatingNewLibrary(value) {
-		creatingNewLibrary.status = value;
-	}
-
-
 }

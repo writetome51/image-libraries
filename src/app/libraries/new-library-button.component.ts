@@ -14,6 +14,16 @@ import { CreatingNewLibraryService as creatingNewLibrary }
 export class NewLibraryButtonComponent {
 
 
+	get creatingNewLibrary(): boolean {
+		return creatingNewLibrary.status;
+	}
+
+
+	set creatingNewLibrary(value){
+		creatingNewLibrary.status = value;
+	}
+
+
 	get buttonText() {
 		return (this.creatingNewLibrary ? 'Cancel' : 'New Library');
 	}
