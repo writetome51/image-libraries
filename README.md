@@ -3,6 +3,14 @@
 A demo app allowing you to add images to a browser-based group of libraries and sort through them.  
 Kind of like iPhoto in a browser.
 
+## Technologies Used
+
+Languages: &nbsp;&nbsp; TypeScript, JavaScript, HTML, CSS  
+Frameworks:  &nbsp;&nbsp; Angular 8.x, Bootstrap  
+Databases: &nbsp;&nbsp;  MongoDB  
+Cloud Services: &nbsp;&nbsp;  MongoDB Stitch
+
+
 
 # Angular app info
 
