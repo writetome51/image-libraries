@@ -4,7 +4,7 @@ import { IDoThis } from '../../interfaces/i-do-this';
 import { LibraryStorageService } from './library-storage.service';
 import { DataTransportResultCheckService }   // tslint:disable-next-line:max-line-length
 	from '../data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
-import { LoadedLibrary } from '../../interfaces/loaded-library';
+import { DBLibrary } from '../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,18 +18,11 @@ export class GetRequestedLibraryService implements IDoThis {
 	}
 
 
-	async go(): Promise<LoadedLibrary | void> {
+	async go(): Promise<DBLibrary | void> {
 		let result = await this.__libraryStorage.get();
 		result = await this.__dataTransportResultCheck.returnIfNoError(result);
-		if (hasValue(result)) {
 
-			result['currentImage'] = undefined; // image currently being viewed
-			result['currentImageIndex'] = -1;
-			result['changes'] = {};
-
-			// @ts-ignore
-			return result;
-		}
+		if (hasValue(result)) return result;
 	}
 
 }

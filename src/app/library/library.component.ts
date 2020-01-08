@@ -18,7 +18,7 @@ export class LibraryComponent {
 
 
 	get changesExist(): boolean {
-		return (Object.keys(this.__loadedLibrary.data.changes).length > 0);
+		return this.__loadedLibrary.hasChanges;
 	}
 
 
