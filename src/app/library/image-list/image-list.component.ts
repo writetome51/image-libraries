@@ -11,11 +11,11 @@ import { LoadedLibraryService } from '../../services/library/loaded-library.serv
 export class ImageListComponent {
 
 	get images(): AppImage[] {
-		return this.__currentLibrary.data.images;
+		return this.__loadedLibrary.images;
 	}
 
 
-	constructor(private __currentLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: LoadedLibraryService) {
 	}
 
 }

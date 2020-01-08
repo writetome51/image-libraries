@@ -28,7 +28,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	private __sendTo__loadedLibrary(files: FileList | File[], dataURLs) {
-		this.__changes = getCopy(this.__loadedLibrary.data.images);
+		this.__changes = getCopy(this.__loadedLibrary.images);
 
 		for (let i = 0; i < files.length; ++i) {
 			this.__addImageTo__changes(files[i], dataURLs[i]);

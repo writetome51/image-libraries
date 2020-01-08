@@ -17,9 +17,14 @@ export class LibraryComponent {
 	}
 
 
+	get changesExist(): boolean {
+		return (Object.keys(this.__loadedLibrary.data.changes).length > 0);
+	}
+
+
 	constructor(
 		private __router: Router,
-		private __currentLibrary: LoadedLibraryService
+		private __loadedLibrary: LoadedLibraryService
 	) {
 	}
 
