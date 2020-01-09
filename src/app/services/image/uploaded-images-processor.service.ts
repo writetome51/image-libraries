@@ -18,16 +18,16 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 	}
 
 
-	async process(files: FileList | File[]) {
+	async process(files: FileList | File[]): Promise<void> {
 
 		if (notEmpty(files)) {
 			let dataURLs = await getDataURLs(files);
-			this.__sendTo__loadedLibrary(files, dataURLs);
+			this.__addToChanges(files, dataURLs);
 		}
 	}
 
 
-	private __sendTo__loadedLibrary(files: FileList | File[], dataURLs) {
+	private __addToChanges(files: FileList | File[], dataURLs) {
 		this.__changes = getCopy(this.__loadedLibrary.images);
 
 		for (let i = 0; i < files.length; ++i) {

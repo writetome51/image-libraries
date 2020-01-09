@@ -13,11 +13,6 @@ import { AlertService as alert } from '../services/alert.service';
 })
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
-
-	// This guard is for keeping a user from navigating away from a route when they have unsaved
-	// changes pending.
-
-
 	constructor(private __loadedLibrary: LoadedLibraryService) {
 	}
 
@@ -30,7 +25,8 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 	): boolean {
 
 		if (this.__loadedLibrary.hasChanges) {
-			alert.error = 'You have unsaved changes to the library.  Please save or discard them first.';
+			alert.error =
+				'You have unsaved changes to the library.  Please save or discard them first.';
 			return false;
 		}
 		else return true;

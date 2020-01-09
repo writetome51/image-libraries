@@ -18,7 +18,7 @@ export class ThumbnailImageComponent {
 	hovered = false;
 
 
-	constructor(private __library: LoadedLibraryService) {
+	constructor(private __loadedLibrary: LoadedLibraryService) {
 	}
 
 
@@ -28,7 +28,7 @@ export class ThumbnailImageComponent {
 
 
 	deleteImage() {
-		removeByIndex(this.index, this.__library.images);
+		removeByIndex(this.index, this.__loadedLibrary.images);
 	}
 
 

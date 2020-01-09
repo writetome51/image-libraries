@@ -15,8 +15,8 @@ export class ChooseImagesFromDeviceComponent {
 	}
 
 
-	addToLibrary(images: FileList | File[]) {
-		this.__uploadedImagesProcessor.process(images);
+	async addToLibrary(images: FileList | File[]): Promise<void> {
+		await this.__uploadedImagesProcessor.process(images);
 	}
 
 

@@ -25,7 +25,7 @@ export class LibrarySaverService {
 				delete this.__loadedLibrary.data.changes['name'];
 			}
 		}
-		if (Object.keys(this.__loadedLibrary.data.changes).length) { // if changes not empty...
+		if (this.__loadedLibrary.hasChanges) {
 			this.__libraryStorage.update(this.__loadedLibrary.data.changes);
 		}
 

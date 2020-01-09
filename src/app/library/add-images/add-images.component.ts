@@ -20,14 +20,4 @@ export class AddImagesComponent {
 	}
 
 
-	set libraryName(value) {
-		this.__library.name = value.trim();
-	}
-
-
-	get libraryName(): string {
-		return this.__library.name.trim();
-	}
-
-
 }
