@@ -1,0 +1,11 @@
+<div>
+
+	<a [routerLink]="'add-images'">Add Images</a>
+
+	<save-changes *ngIf="changesExist"></save-changes>
+
+	<image-size-slider></image-size-slider>
+
+	<image-list></image-list>
+
+</div>

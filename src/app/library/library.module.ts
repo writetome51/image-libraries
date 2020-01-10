@@ -19,6 +19,7 @@ import { ThumbnailImageComponent } from './image-list/thumbnail-image/thumbnail-
 import { AddImageUrlButtonComponent }
 	from './add-images/enter-image-url/add-image-url-button.component';
 import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProcessingButtonModule } from '../processing-button/processing-button.m
 		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		LibraryComponent,
+		LibraryViewerComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		SaveChangesComponent,

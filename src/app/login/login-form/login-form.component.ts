@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppModuleRouteService as moduleRoute } from '../../app-module-route.service';
+import { AppModuleRouteService } from '../../app-module-route.service';
 
 
 @Component({
@@ -8,6 +8,6 @@ import { AppModuleRouteService as moduleRoute } from '../../app-module-route.ser
 })
 export class LoginFormComponent {
 
-	moduleRoute = moduleRoute;
+	moduleRoute = AppModuleRouteService;
 
 }

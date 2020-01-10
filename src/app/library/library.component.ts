@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { getTail } from '@writetome51/array-get-head-tail';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { LoadedLibraryService } from '../services/library/loaded-library.service';
 import { LibraryNameService as libraryName } from '../services/library/library-name.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,16 +14,12 @@ export class LibraryComponent {
 
 
 	get name() {
-		let url = this.__router.routerState.snapshot.url;
-		let tailItems: string[] = getTail(1, url.split('/'));
-		libraryName.data = tailItems[0];
-
 		return libraryName.data;
 	}
 
 
-	get changesExist(): boolean {
-		return this.__loadedLibrary.hasChanges;
+	get libraryLoaded() {
+		return hasValue(this.__loadedLibrary.data);
 	}
 
 
@@ -30,6 +27,17 @@ export class LibraryComponent {
 		private __router: Router,
 		private __loadedLibrary: LoadedLibraryService
 	) {
+		let url = this.__router.routerState.snapshot.url;
+		let [lastItem] = getTail(1, url.split('/'));
+
+		libraryName.data = lastItem;
+
+		if (noValue(this.__loadedLibrary.data) ||
+			(libraryName.data !== this.__loadedLibrary.data.name)) {
+
+			this.__loadedLibrary.set_data();
+			console.log('loaded!');
+		}
 	}
 
 

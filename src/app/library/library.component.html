@@ -1,13 +1,5 @@
 <header><h2>{{name}}</h2></header>
 
-<a [routerLink]="'add-images'">Add Images</a>
+<p *ngIf="!(libraryLoaded)">Fetching Library...</p>
 
-<div>
-
-	<image-size-slider></image-size-slider>
-
-	<image-list></image-list>
-
-	<save-changes *ngIf="changesExist"></save-changes>
-
-</div>
+<library-viewer *ngIf="libraryLoaded"></library-viewer>

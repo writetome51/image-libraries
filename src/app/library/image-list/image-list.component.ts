@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AppImage } from '../../interfaces/app-image';
 import { LoadedLibraryService } from '../../services/library/loaded-library.service';
-import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Component({
@@ -17,9 +16,6 @@ export class ImageListComponent {
 
 
 	constructor(private __loadedLibrary: LoadedLibraryService) {
-		if (noValue(this.__loadedLibrary.data)) {
-			this.__loadedLibrary.set_data();
-		}
 	}
 
 }
