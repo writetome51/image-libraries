@@ -1,5 +1,5 @@
-import { AppModuleRouteService as moduleRoute} from './app-module-route.service';
-import { AlertService as alert } from './services/alert.service';
+import { AppModuleRouteService } from './app-module-route.service';
+import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { Router } from '@angular/router';
@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
 	title = 'Image Libraries';
-	alert = alert;
-	moduleRoute = moduleRoute;
+	alert = AlertService;
+	moduleRoute = AppModuleRouteService;
 
 
 	// Adds keyup listener to document.
@@ -30,7 +30,7 @@ export class AppComponent {
 
 	get updateUserIsActive(): boolean {
 		let url = this.__router.routerState.snapshot.url;
-		return url.includes(`/${moduleRoute.UpdateUserModule}`);
+		return url.includes(`/${this.moduleRoute.UpdateUserModule}`);
 	}
 
 

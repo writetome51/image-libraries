@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UpdateUserChoicesMapService as choicesMap } from './update-user-choices-map.service';
+import { UpdateUserChoicesMapService } from './update-user-choices-map.service';
 
 
 @Component({
@@ -10,15 +10,15 @@ import { UpdateUserChoicesMapService as choicesMap } from './update-user-choices
 export class UpdateUserComponent {
 
 	heading = 'Update Account';
-	choicesMap = choicesMap;
-	choices = Object.keys(choicesMap);
+	choicesMap = UpdateUserChoicesMapService;
+	choices = Object.keys(this.choicesMap);
 
 
 	get formHeading() {
 		let url = this.__router.routerState.snapshot.url;
 
 		for (let i = 0; i < this.choices.length; ++i) {
-			let map: { path: string, heading: string } = choicesMap[this.choices[i]];
+			let map: { path: string, heading: string } = this.choicesMap[this.choices[i]];
 
 			if (url.endsWith(`/${map.path}`)) {
 				return map.heading;

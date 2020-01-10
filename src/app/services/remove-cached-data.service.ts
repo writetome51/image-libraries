@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '../interfaces/i-do-this';
-import { CurrentUserLibrariesService } from './library/current-user-libraries.service';
 import { LocalStorageService } from './local-data/local-storage.service';
-import { LoadedLibraryService } from './library/loaded-library.service';
+import { RuntimeStateDataService } from './runtime-state-data.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,16 +9,14 @@ import { LoadedLibraryService } from './library/loaded-library.service';
 export class RemoveCachedDataService implements IDoThis {
 
 	constructor(
-		private __currentUserLibraries: CurrentUserLibrariesService,
-		private __loadedLibrary: LoadedLibraryService,
+		private __runtimeStateData: RuntimeStateDataService,
 		private __localStorage: LocalStorageService
 	) {
 	}
 
 
-	async go() {
-		this.__currentUserLibraries.unset_data();
-		this.__loadedLibrary.unset_data();
+	go() {
+		this.__runtimeStateData.unset();
 		this.__localStorage.removeAll();
 	}
 
