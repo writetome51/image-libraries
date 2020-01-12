@@ -3,6 +3,7 @@ import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { Router } from '@angular/router';
+import { CurrentRouteService } from './services/current-route.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class AppComponent {
 	// Adds keyup listener to document.
 	@HostListener('document:keyup', ['$event'])
 	onKeyup(event) {
-		//	console.log(event);
+		// logging event to console to see its contents:
+		// console.log(event);
 	}
 
 
@@ -29,14 +31,13 @@ export class AppComponent {
 
 
 	get updateUserIsActive(): boolean {
-		let url = this.__router.routerState.snapshot.url;
-		return url.includes(`/${this.moduleRoute.UpdateUserModule}`);
+		return this.__currentRoute.isActive(this.moduleRoute.UpdateUserModule);
 	}
 
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
-		private __router: Router
+		private __currentRoute: CurrentRouteService
 	) {
 	}
 
