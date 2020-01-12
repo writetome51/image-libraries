@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CurrentUserLibrariesService } from './library/current-user-libraries.service';
-import { LoadedLibraryService } from './library/loaded-library.service';
+import { CurrentLibraryService } from './library/current-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -9,7 +9,7 @@ export class RuntimeStateDataService {
 
 	constructor(
 		private __currentUserLibraries: CurrentUserLibrariesService,
-		private __loadedLibrary: LoadedLibraryService,
+		private __loadedLibrary: CurrentLibraryService,
 	) {
 	}
 

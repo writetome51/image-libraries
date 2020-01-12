@@ -5,6 +5,7 @@ import { LibraryComponent } from './library.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LibraryModuleRouteService as moduleRoute } from './library-module-route.service';
+import { LibraryExistsGuard } from '../guards/library-exists.guard';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
 	{
 		path: moduleRoute.LibraryComponent,
 		component: LibraryComponent,
-		canActivate: [AuthenticatedGuard],
+		canActivate: [AuthenticatedGuard, LibraryExistsGuard],
 		// 'canDeactivate' means the guard decides if the component can be destroyed.
 		// A reason it would decide not to is if the user has changes he hasn't saved yet.
 		canDeactivate: [CanDeactivateGuard]

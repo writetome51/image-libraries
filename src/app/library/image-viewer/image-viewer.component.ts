@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadedLibraryService } from '../../services/library/loaded-library.service';
+import { CurrentLibraryService } from '../../services/library/current-library.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ImageViewerComponent {
 	}
 
 
-	constructor(private __loadedLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: CurrentLibraryService) {
 	}
 
 }

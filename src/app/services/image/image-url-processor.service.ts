@@ -2,7 +2,7 @@ import { AlertService as alert } from '../alert.service';
 import { EnteredImageURLService as enteredImageURL } from '../entered-image-url.service';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
-import { LoadedLibraryService } from '../library/loaded-library.service';
+import { CurrentLibraryService } from '../library/current-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,7 +10,7 @@ import { LoadedLibraryService } from '../library/loaded-library.service';
 export class ImageURLProcessorService implements IndirectProcessor {
 
 
-	constructor(private __loadedLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: CurrentLibraryService) {
 	}
 
 

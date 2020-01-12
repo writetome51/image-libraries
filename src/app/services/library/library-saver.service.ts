@@ -1,4 +1,4 @@
-import { LoadedLibraryService } from './loaded-library.service';
+import { CurrentLibraryService } from './current-library.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
@@ -12,7 +12,7 @@ export class LibrarySaverService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __loadedLibrary: LoadedLibraryService
+		private __loadedLibrary: CurrentLibraryService
 	) {
 	}
 

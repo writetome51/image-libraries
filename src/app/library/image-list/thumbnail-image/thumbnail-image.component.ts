@@ -3,7 +3,7 @@ import { AppImage } from '../../../interfaces/app-image';
 import { ImageDisplaySettingsService as imageDisplaySettings }
 	from '../../../services/image/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { LoadedLibraryService } from '../../../services/library/loaded-library.service';
+import { CurrentLibraryService } from '../../../services/library/current-library.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class ThumbnailImageComponent {
 	hovered = false;
 
 
-	constructor(private __loadedLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: CurrentLibraryService) {
 	}
 
 

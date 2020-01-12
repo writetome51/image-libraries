@@ -6,12 +6,11 @@ import { Injectable } from '@angular/core';
 import { LoadedLibrary } from '../../interfaces/loaded-library';
 import { modifyObject } from '@writetome51/modify-object';
 import { SettableDataContainerService } from '../settable-data-container.service';
-import { LibraryNameService } from './library-name.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LoadedLibraryService extends SettableDataContainerService {
+export class CurrentLibraryService extends SettableDataContainerService {
 
 
 	get data(): LoadedLibrary {
@@ -38,10 +37,6 @@ export class LoadedLibraryService extends SettableDataContainerService {
 
 		let library: DBLibrary | void = await this.__getRequestedLibrary.go();
 
-		//temp:
-		console.log(LibraryNameService.data);
-		console.log(library);
-
 		if (hasValue(library)) {
 
 			modifyObject(library, {
@@ -52,6 +47,7 @@ export class LoadedLibraryService extends SettableDataContainerService {
 
 			this._data = library;
 		}
+		else this.unset_data();
 	}
 
 

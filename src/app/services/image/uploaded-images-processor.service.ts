@@ -1,4 +1,4 @@
-import { LoadedLibraryService } from '../library/loaded-library.service';
+import { CurrentLibraryService } from '../library/current-library.service';
 import { getDataURLs } from '@writetome51/get-data-urls';
 import { Injectable } from '@angular/core';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
@@ -14,7 +14,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 	private __changes: AppImage[];
 
 
-	constructor(private __loadedLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: CurrentLibraryService) {
 	}
 
 

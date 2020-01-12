@@ -19,7 +19,7 @@ export class LibraryStorageService {
 	}
 
 
-	async get(): Promise<DBLibrary> {
+	async get(): Promise<DBLibrary | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.get(
 				{sessionID: this.__localSessionID.get(), name: libraryName.data}
@@ -28,7 +28,7 @@ export class LibraryStorageService {
 	}
 
 
-	async getLibraries(): Promise<DBLibrary[]> {
+	async getLibraries(): Promise<DBLibrary[] | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
@@ -37,7 +37,7 @@ export class LibraryStorageService {
 
 	// The properties in 'changes' can contain dot-notation
 
-	async update(changes): Promise<any> {
+	async update(changes): Promise<DBLibrary | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.update({
 				sessionID: this.__localSessionID.get(),

@@ -1,11 +1,12 @@
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { LoadedLibraryService } from '../services/library/loaded-library.service';
+import { CurrentLibraryService } from '../services/library/current-library.service';
 import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
 import { AlertService as alert } from '../services/alert.service';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ import { AlertService as alert } from '../services/alert.service';
 })
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
-	constructor(private __loadedLibrary: LoadedLibraryService) {
+	constructor(private __loadedLibrary: CurrentLibraryService) {
 	}
 
 
@@ -24,12 +25,15 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 		//	nextState?: RouterStateSnapshot
 	): boolean {
 
-		if (this.__loadedLibrary.hasChanges) {
-			alert.error =
-				'You have unsaved changes to the library.  Please save or discard them first.';
-			return false;
+		if (hasValue(this.__loadedLibrary.data)) {
+			if (this.__loadedLibrary.hasChanges) {
+				alert.error =
+					'You have unsaved changes to the library.  Please save or discard them first.';
+				return false;
+			}
 		}
-		else return true;
+
+		return true;
 	}
 
 }
