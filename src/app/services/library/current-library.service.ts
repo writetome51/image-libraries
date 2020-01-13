@@ -23,6 +23,11 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
+	get changes(){
+		return this._data.changes;
+	}
+
+
 	get hasChanges(): boolean {
 		return (Object.keys(this._data.changes).length > 0);
 	}

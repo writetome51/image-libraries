@@ -15,7 +15,7 @@ export class ChooseImagesFromDeviceComponent {
 	}
 
 
-	async addToLibrary(images: FileList | File[]): Promise<void> {
+	async addToChanges(images: FileList | File[]): Promise<void> {
 		await this.__uploadedImagesProcessor.process(images);
 	}
 
