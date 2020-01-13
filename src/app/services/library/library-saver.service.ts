@@ -12,21 +12,21 @@ export class LibrarySaverService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		private __loadedLibrary: CurrentLibraryService
+		private __currentLibrary: CurrentLibraryService
 	) {
 	}
 
 
 	save(): void {
 
-		if (hasValue(this.__loadedLibrary.data.changes['name'])) {
-			let name = this.__loadedLibrary.data.changes['name'].trim();
+		if (hasValue(this.__currentLibrary.data.changes['name'])) {
+			let name = this.__currentLibrary.data.changes['name'].trim();
 			if (isEmpty(name)) {
-				delete this.__loadedLibrary.data.changes['name'];
+				delete this.__currentLibrary.data.changes['name'];
 			}
 		}
-		if (this.__loadedLibrary.hasChanges) {
-			this.__libraryStorage.update(this.__loadedLibrary.data.changes);
+		if (this.__currentLibrary.hasChanges) {
+			this.__libraryStorage.update(this.__currentLibrary.data.changes);
 		}
 
 	}

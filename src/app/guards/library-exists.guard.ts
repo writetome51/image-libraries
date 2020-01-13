@@ -1,17 +1,14 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { CurrentLibraryService } from '../services/library/current-library.service';
 import { hasValue } from '@writetome51/has-value-no-value';
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CurrentLibraryService } from '../services/library/current-library.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class LibraryExistsGuard implements CanActivate {
 
-	constructor(
-		private __router: Router,
-		private __currentLibrary: CurrentLibraryService
-	) {
+	constructor(private __currentLibrary: CurrentLibraryService) {
 	}
 
 

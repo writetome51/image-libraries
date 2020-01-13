@@ -1,21 +1,16 @@
+import { DBLibrary } from '../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '../../interfaces/i-do-this';
-import { LibraryStorageService } from './library-storage.service';
-import { DBLibrary } from '../../interfaces/db-library';
-import { not } from '@writetome51/not';
-import { DataTransportResultCheckService }  // tslint:disable-next-line:max-line-length
-	from '../data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { LibraryNameService } from './library-name.service';
+import { LibraryStorageService } from './library-storage.service';
+import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
 
 export class GetRequestedLibraryService implements IDoThis {
 
-	constructor(
-		private __libraryStorage: LibraryStorageService,
-		private __dataTransportResultCheck: DataTransportResultCheckService
-	) {
+	constructor(private __libraryStorage: LibraryStorageService) {
 	}
 
 
