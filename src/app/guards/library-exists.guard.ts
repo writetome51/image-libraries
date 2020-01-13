@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { LibraryNameService as libraryName } from '../services/library/library-name.service';
 import { CurrentLibraryService } from '../services/library/current-library.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 
@@ -19,11 +18,9 @@ export class LibraryExistsGuard implements CanActivate {
 	async canActivate(
 		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
 	): Promise<boolean> {
-		let lastItemInRoute = next.url.toString();
-		console.log(lastItemInRoute);
-		libraryName.data = lastItemInRoute;
+		let libraryName = next.url.toString();
 
-		await this.__currentLibrary.set_data();
+		await this.__currentLibrary.set_data(libraryName);
 
 		// Will only return true if requested library exists in db:
 		return hasValue(this.__currentLibrary.data);

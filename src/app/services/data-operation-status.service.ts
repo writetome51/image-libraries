@@ -2,6 +2,6 @@
 
 export const DataOperationStatusService = {
 
-	waitingForResult: false // if true, show loading spinner.
+	waitingForResult: false
 
 };

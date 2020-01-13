@@ -23,7 +23,7 @@ export abstract class LocalDataService {
 
 
 	remove(): void {
-		this.__localStorage.removeKey(this._key);
+		this.__localStorage.unsetKey(this._key);
 	}
 
 }

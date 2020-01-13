@@ -9,14 +9,14 @@ export class RuntimeStateDataService {
 
 	constructor(
 		private __currentUserLibraries: CurrentUserLibrariesService,
-		private __loadedLibrary: CurrentLibraryService,
+		private __currentLibrary: CurrentLibraryService,
 	) {
 	}
 
 
 	unset(): void {
 		this.__currentUserLibraries.unset_data();
-		this.__loadedLibrary.unset_data();
+		this.__currentLibrary.unset_data();
 	}
 
 }

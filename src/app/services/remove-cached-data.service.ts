@@ -17,7 +17,7 @@ export class RemoveCachedDataService implements IDoThis {
 
 	go() {
 		this.__runtimeStateData.unset();
-		this.__localStorage.removeAll();
+		this.__localStorage.unsetAll();
 	}
 
 }

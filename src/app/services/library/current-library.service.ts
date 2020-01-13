@@ -33,9 +33,9 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
-	async set_data(): Promise<void> {
+	async set_data(libraryName): Promise<void> {
 
-		let library: DBLibrary | void = await this.__getRequestedLibrary.go();
+		let library: DBLibrary | void = await this.__getRequestedLibrary.go(libraryName);
 
 		if (hasValue(library)) {
 
@@ -47,7 +47,7 @@ export class CurrentLibraryService extends SettableDataContainerService {
 
 			this._data = library;
 		}
-		else this.unset_data();
+		else this.unset_data(); // because library wasn't found.
 	}
 
 

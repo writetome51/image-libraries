@@ -1,4 +1,4 @@
-import { hasValue } from '@writetome51/has-value-no-value';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { ObjectInLocalStorage } from '@writetome51/object-in-local-storage';
 import { ecky } from '../../../assets/.ecky';
@@ -10,7 +10,7 @@ import { SimpleCrypto } from 'simple-crypto-js';
 
 // Stores all localStorage data in one object.
 // Each piece of data must have its own key.
-// All data is stored encrypted.
+// All data is stored encrypted.  When retrieved it's automatically decrypted.
 
 export class LocalStorageService {
 
@@ -18,9 +18,8 @@ export class LocalStorageService {
 	private __cryptographer = new SimpleCrypto(ecky);
 
 
-	constructor(){
-		// Sets an initial value only if it doesn't already exist.
-		if (!(this.__localObject.get())) this.__localObject.set({});
+	constructor() {
+		if (noValue(this.__localObject.get())) this.__localObject.set({});
 	}
 
 
@@ -40,14 +39,14 @@ export class LocalStorageService {
 	}
 
 
-	removeKey(key: string): void {
+	unsetKey(key: string): void {
 		let localObject = this.__localObject.get();
 		delete localObject[key];
 		this.__localObject.set(localObject);
 	}
 
 
-	removeAll(): void {
+	unsetAll(): void {
 		this.__localObject.remove();
 		this.__localObject.set({});
 	}
