@@ -2,7 +2,6 @@ import { AppModuleRouteService } from './app-module-route.service';
 import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
-import { Router } from '@angular/router';
 import { CurrentRouteService } from './services/current-route.service';
 
 
