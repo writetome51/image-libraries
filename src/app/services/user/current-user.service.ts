@@ -44,4 +44,19 @@ export class CurrentUserService {
 	}
 
 
+	static unset() {
+		this.password = '';
+
+		this.passwordAgain = '';
+
+		this.newPassword = '';
+
+		this.securityQuestion = {question: '', answer: ''};
+
+		this.email = '';
+
+		this.newEmail = '';
+	}
+
+
 }

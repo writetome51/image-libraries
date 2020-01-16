@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { LibraryStorageService } from './library-storage.service';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { DataTransportResultCheckService } // tslint:disable-next-line:max-line-length
 	from '../data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { DBLibrary } from '../../interfaces/db-library';
+import { hasValue } from '@writetome51/has-value-no-value';
+import { Injectable } from '@angular/core';
+import { LibraryStorageService } from './library-storage.service';
 import { SettableDataContainerService } from '../settable-data-container.service';
 
 
