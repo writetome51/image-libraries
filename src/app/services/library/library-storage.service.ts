@@ -4,7 +4,6 @@ import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
-import { LibraryNameService as libraryName } from './library-name.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,10 +18,10 @@ export class LibraryStorageService {
 	}
 
 
-	async get(): Promise<DBLibrary | { error: object }> {
+	async get(libraryName: string): Promise<DBLibrary | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.get(
-				{sessionID: this.__localSessionID.get(), name: libraryName.data}
+				{sessionID: this.__localSessionID.get(), name: libraryName}
 			)
 		);
 	}
@@ -35,14 +34,18 @@ export class LibraryStorageService {
 	}
 
 
-	// The properties in 'changes' can contain dot-notation
+	async update(
+		// The properties in 'changes' can contain dot-notation
+		currentLibrary: { name: string, changes: object }
+	): Promise<DBLibrary | { error: object }> {
 
-	async update(changes): Promise<DBLibrary | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.update({
+
 				sessionID: this.__localSessionID.get(),
-				name: libraryName.data,
-				changes
+				name: currentLibrary.name,
+				changes: currentLibrary.changes
+
 			})
 		);
 	}

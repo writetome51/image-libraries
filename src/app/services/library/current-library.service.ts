@@ -18,6 +18,11 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
+	get name():string{
+		return this._data.name;
+	}
+
+
 	get images(): AppImage[] {
 		return this._data.images;
 	}

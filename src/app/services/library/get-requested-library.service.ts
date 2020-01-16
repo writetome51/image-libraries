@@ -1,9 +1,9 @@
 import { DBLibrary } from '../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '../../interfaces/i-do-this';
-import { LibraryNameService } from './library-name.service';
 import { LibraryStorageService } from './library-storage.service';
 import { not } from '@writetome51/not';
+import { RequestedLibraryService as requestedLibrary } from './requested-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -15,9 +15,9 @@ export class GetRequestedLibraryService implements IDoThis {
 
 
 	async go(libraryName): Promise<DBLibrary | void> {
-		LibraryNameService.data = libraryName;
+		requestedLibrary.name = libraryName;
 
-		let result: any = await this.__libraryStorage.get();
+		let result: any = await this.__libraryStorage.get(requestedLibrary.name);
 		if (not(result.error)) return result;
 	}
 

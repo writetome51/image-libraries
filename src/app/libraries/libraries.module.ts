@@ -7,10 +7,10 @@ import { LibrariesListComponent } from './libraries-list/libraries-list.componen
 import { NgModule } from '@angular/core';
 import { NewLibraryFormComponent } from './new-library-form/new-library-form.component';
 import { NewLibraryFormInputsComponent } from './new-library-form/new-library-form-inputs.component';
-import { ProcessingButtonModule } from '../processing-button/processing-button.module';
-import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
-import { RouterModule } from '@angular/router';
 import { NewLibraryButtonComponent } from './new-library-button.component';
+import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { RouterModule } from '@angular/router';
+import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 
 
 @NgModule({

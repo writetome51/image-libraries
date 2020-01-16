@@ -4,7 +4,7 @@ import { DBLibrary } from '../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { CurrentUserLibrariesService } from '../../../library/current-user-libraries.service';
 import { CreatingNewLibraryService as creatingNewLibrary } from '../../../creating-new-library.service';
-import { LibraryNameService as libraryName } from '../../../library/library-name.service';
+import { RequestedLibraryService as libraryName } from '../../../library/requested-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,7 +20,7 @@ export class NewLibraryResultProcessorService implements DirectProcessor {
 		creatingNewLibrary.status = false;
 
 		await this.__currentUserLibraries.set_data();
-		libraryName.data = '';
+		libraryName.name = '';
 	}
 
 }

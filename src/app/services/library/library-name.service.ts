@@ -1,5 +1,0 @@
-export const LibraryNameService = {
-
-	data: ''
-
-};

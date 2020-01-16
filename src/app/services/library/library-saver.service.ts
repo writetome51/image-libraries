@@ -27,7 +27,7 @@ export class LibrarySaverService {
 				delete this.__currentLibrary.changes['name'];
 			}
 		}
-		await this.__libraryStorage.update(this.__currentLibrary.changes);
+		await this.__libraryStorage.update(this.__currentLibrary);
 	}
 
 
