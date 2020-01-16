@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentLibraryService } from '../../services/library/current-library.service';
+import { LibraryModuleRouteService } from '../library-module-route.service';
 
 
 @Component({
@@ -7,6 +8,8 @@ import { CurrentLibraryService } from '../../services/library/current-library.se
 	templateUrl: './library-viewer.component.html'
 })
 export class LibraryViewerComponent {
+
+	moduleRoute = LibraryModuleRouteService;
 
 
 	get changesExist(): boolean {

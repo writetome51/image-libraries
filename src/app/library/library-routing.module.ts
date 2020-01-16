@@ -10,13 +10,13 @@ import { LibraryExistsGuard } from '../guards/library-exists.guard';
 
 const routes: Routes = [
 	{
-		path: moduleRoute.AddImagesComponent,
+		path: `${moduleRoute.LibraryComponent}/${moduleRoute.AddImagesComponent}`,
 		component: AddImagesComponent,
 		canActivate: [AuthenticatedGuard]
 	},
 
 	{	// lazy-loaded module
-		path: moduleRoute.ImageViewerModule,
+		path: `${moduleRoute.LibraryComponent}/${moduleRoute.ImageViewerModule}`,
 		loadChildren: () => import('./image-viewer/image-viewer.module')
 			.then(mod => mod.ImageViewerModule)
 	},
