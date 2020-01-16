@@ -1,5 +1,5 @@
 export const NewLibraryService = {
 
-	name: ''
+	name: '' // bound to 'library name' text input
 
 };

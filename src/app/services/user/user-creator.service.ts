@@ -17,13 +17,11 @@ export class UserCreatorService {
 
 	async create(): Promise<any> {
 		return await getObjectFromSubscription.go(
-			this.__userRestApi.create(
-				{
-					email: currentUser.email,
-					password: currentUser.password,
-					securityQuestion: currentUser.securityQuestion
-				}
-			)
+			this.__userRestApi.create({
+				email: currentUser.email,
+				password: currentUser.password,
+				securityQuestion: currentUser.securityQuestion
+			})
 		);
 	}
 

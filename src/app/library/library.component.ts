@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { CurrentLibraryService } from '../services/library/current-library.service';
-import { RequestedLibraryService as libraryName } from '../services/library/requested-library.service';
+import { RequestedLibraryService as requestedLibrary }
+	from '../services/library/requested-library.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LibraryComponent {
 
 
 	get name() {
-		return libraryName.name;
+		return requestedLibrary.name;
 	}
 
 
