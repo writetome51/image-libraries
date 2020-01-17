@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ClearFormDataService as clearFormData } from '../../services/clear-form-data.service';
 
 
 @Component({
@@ -12,5 +13,9 @@ import { Component } from '@angular/core';
 		</div>
 	`
 })
-export class NewLibraryFormComponent {
+export class NewLibraryFormComponent implements OnInit {
+
+	ngOnInit(): void {
+		clearFormData.go();
+	}
 }

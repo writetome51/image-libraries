@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { NewLibraryService } from '../library/new-library.service';
 import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
-import { RequestedLibraryService } from '../library/requested-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,8 +12,8 @@ export class LibraryNameInputService extends ValidatingTextInputService {
 		super();
 
 		this.data.id = 'library-name-input';
-		this.data.propertyToBind = 'data';
-		this.data.objectToBind = RequestedLibraryService;
+		this.data.propertyToBind = 'name';
+		this.data.objectToBind = NewLibraryService;
 		this.data.label = 'Library Name';
 
 		this.data.isValid = [

@@ -2,13 +2,19 @@
 The button, when clicked, is replaced by a loading spinner.
 -->
 
-<div class="input-container">
+<div class="input-container processing-button-container">
 
-	<button *ngIf="!(clicked)" [type]="type" (click)="run_clickHandler()">
-		<ng-content></ng-content>
-	</button>
+	<div>
 
-	<app-loading-spinner *ngIf="clicked && dataOperationStatus.waitingForResult">
-	</app-loading-spinner>
+		<button [type]="type" (click)="run_clickHandler()">
+
+			<ng-content *ngIf="!(clicked)"></ng-content>
+
+			<app-loading-spinner *ngIf="clicked && dataOperationStatus.waitingForResult">
+			</app-loading-spinner>
+
+		</button>
+
+	</div>
 
 </div>

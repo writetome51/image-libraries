@@ -4,6 +4,11 @@ a, a:hover {
 }
 
 
+button {
+	height: 100%;
+}
+
+
 input {
 	margin: auto;
 	padding: 5px;
@@ -24,6 +29,11 @@ li {
 
 header {
 	margin-bottom: 30px;
+}
+
+
+nav {
+	padding: 5px 0;
 }
 
 
@@ -52,4 +62,35 @@ nav div {
 
 .nav-link-container {
 	display: inline;
+	margin: auto;
+	padding: 0 3px;
+}
+
+
+div.processing-button-container {
+	width: 101px;
+	height: 35px;
+	margin: auto;
+}
+
+
+.processing-button-container div {
+	margin: auto;
+}
+
+
+.processing-button-container button {
+	width: 101px;
+	height: 35px;
+}
+
+
+div.loading-spinner-container {
+	padding: 0;
+	position: relative;
+}
+
+
+button div {
+	margin: 0;
 }
