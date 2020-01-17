@@ -34,12 +34,12 @@ header {
 
 nav {
 	padding: 5px 0;
-	width:auto;
+	width: auto;
 }
 
 
 nav div {
-	display: inline;
+	display: inline-flex;
 }
 
 
@@ -61,49 +61,13 @@ nav div {
 }
 
 
-
 .input-container.nav-link-container {
 	display: inline;
 	margin: auto;
 	padding: 0 3px;
-	width: 101px;
-	height: 35px;
+	width: 100px;
 }
 
-
-div.processing-button-container {
-	width: 101px;
-	height: 35px;
+.centered-nav-block-container {
 	margin: auto;
-}
-
-
-.processing-button-container div {
-	margin: auto;
-}
-
-
-.processing-button-container button {
-	width: 101px;
-	height: 35px;
-}
-
-
-div.loading-spinner-container {
-	padding: 0 2px;
-	position: relative;
-}
-
-
-button div {
-	margin: 0;
-}
-
-
-.centered-nav-block-container{
-	margin:auto;
-}
-
-.centered-nav-block-container div{
-	margin:0 4px;
 }

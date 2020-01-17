@@ -4,7 +4,8 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 
 @Component({
 	selector: 'processing-button',
-	templateUrl: './processing-button.component.html'
+	templateUrl: './processing-button.component.html',
+	styleUrls: ['./processing-button-component.css']
 })
 export class ProcessingButtonComponent {
 
