@@ -5,14 +5,14 @@ import { DataOperationStatusService } from '../services/data-operation-status.se
 @Component({
 	selector: 'processing-button',
 	templateUrl: './processing-button.component.html',
-	styleUrls: ['./processing-button-component.css']
+	styleUrls: ['./processing-button.component.css']
 })
 export class ProcessingButtonComponent {
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
 	@Input() type: 'button' | 'submit' = 'button';
 
-	@Input() context: object; // required.  Instance of component this component is used in.
+	@Input() context: object; // required.  Instance of the component this component is used in.
 
 	@Input() clickHandler: () => void; // required.  Method belonging to this.context.
 

@@ -4,7 +4,8 @@ import { InputValidatorService, ValidatingInput } from '@writetome51/validating-
 
 @Component({
 	selector: 'validating-input',
-	templateUrl: './validating-input.component.html'
+	templateUrl: './validating-input.component.html',
+	styleUrls: ['./validating-input.component.css']
 })
 
 // Can be used with ValidatingFormInputComponent from '@writetome51/validating-inputs'
