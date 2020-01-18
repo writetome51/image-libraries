@@ -1,22 +1,16 @@
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { AddImagesComponent } from './add-images/add-images.component';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { LibraryModuleRouteService as moduleRoute } from './library-module-route.service';
 import { LibraryExistsGuard } from '../guards/library-exists.guard';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-	{
-		path: `${moduleRoute.LibraryComponent}/${moduleRoute.AddImagesComponent}`,
-		component: AddImagesComponent,
-		canActivate: [AuthenticatedGuard]
-	},
 
 	{	// lazy-loaded module
-		path: `${moduleRoute.LibraryComponent}/${moduleRoute.ImageViewerModule}`,
+		path: moduleRoute.ImageViewerModule,
 		loadChildren: () => import('./image-viewer/image-viewer.module')
 			.then(mod => mod.ImageViewerModule)
 	},

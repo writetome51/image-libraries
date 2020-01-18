@@ -5,8 +5,7 @@
 
 export const LibraryModuleRouteService = {
 
-	AddImagesComponent: 'add-images',
-	ImageViewerModule: 'image',
+	ImageViewerModule: `${this.LibraryComponent}/image`,
 	LibraryComponent: ':libraryName'
 
 };

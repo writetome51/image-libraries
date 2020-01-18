@@ -1,6 +1,8 @@
 <div>
 
-	<a [routerLink]="moduleRoute.AddImagesComponent">Add Images</a>
+	<button (click)="addingImages = true">Add Images</button>
+
+	<add-images *ngIf="addingImages"></add-images>
 
 	<save-changes *ngIf="changesExist"></save-changes>
 

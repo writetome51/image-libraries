@@ -18,7 +18,7 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
-	get name():string{
+	get name(): string {
 		return this._data.name;
 	}
 
@@ -28,7 +28,7 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
-	get changes(){
+	get changes() {
 		return this._data.changes;
 	}
 

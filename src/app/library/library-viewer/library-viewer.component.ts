@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CurrentLibraryService } from '../../services/library/current-library.service';
-import { LibraryModuleRouteService } from '../library-module-route.service';
 
 
 @Component({
@@ -9,15 +8,15 @@ import { LibraryModuleRouteService } from '../library-module-route.service';
 })
 export class LibraryViewerComponent {
 
-	moduleRoute = LibraryModuleRouteService;
+	addingImages = false;
 
 
 	get changesExist(): boolean {
-		return this.__loadedLibrary.hasChanges;
+		return this.__currentLibrary.hasChanges;
 	}
 
 
-	constructor(private __loadedLibrary: CurrentLibraryService) {
+	constructor(private __currentLibrary: CurrentLibraryService) {
 	}
 
 
