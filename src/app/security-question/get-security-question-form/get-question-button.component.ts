@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { DataProcessorComponent } from '../../data-processor.component';
 import { GetSecurityQuestionProcessorService }
 	from '../../services/data-transport-processor/get-security-question-processor.service';
-import { QuestionStatusService as questionStatus } from '../question-status.service';
 
 
 @Component({
@@ -17,12 +16,6 @@ export class GetQuestionButtonComponent extends DataProcessorComponent {
 
 	constructor(__getSecurityQuestionProcessor: GetSecurityQuestionProcessorService) {
 		super(__getSecurityQuestionProcessor);
-	}
-
-
-	async process() {
-		await super.process();
-		questionStatus.received = true;
 	}
 
 }

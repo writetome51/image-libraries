@@ -4,7 +4,7 @@ The button, when clicked, is replaced by a loading spinner.
 
 <div class="processing-button-container">
 
-	<button [type]="type" (click)="run_clickHandler()">
+	<button [type]="type" (click)="run_clickHandler($event)">
 
 		<ng-content *ngIf="!(clicked)"></ng-content>
 

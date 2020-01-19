@@ -21,10 +21,13 @@ export class ProcessingButtonComponent {
 	dataOperationStatus = DataOperationStatusService;
 
 
-	async run_clickHandler() {
+	async run_clickHandler(event) {
+		event.preventDefault();
+
 		this.clicked = true;
 		await this.clickHandler.apply(this.context);
 		this.clicked = false;
 	}
+
 
 }

@@ -31,8 +31,8 @@ import { GetQuestionButtonComponent }
 	],
 	imports: [
 		CommonModule,
-		ProcessingButtonModule,
 		ValidatingInputsModule,
+		ProcessingButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',
