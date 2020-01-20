@@ -5,6 +5,8 @@ import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { GetRequestedLibraryService } from '../services/library/get-requested-library.service';
 import { DBLibrary } from '../interfaces/db-library';
+import { LibraryVerificationStatusService as libVerificationStatus }
+	from '../services/library-verification-status.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -38,11 +40,14 @@ export class LibraryExistsGuard implements CanActivate {
 			noValue(this.__currentLibrary.data)
 			|| requestedLibrary !== this.__currentLibrary.name
 		) {
+			libVerificationStatus.waitingForResult = true;
 			let library: DBLibrary | void = await this.__getRequestedLibrary.go(requestedLibrary);
 
 			// @ts-ignore
 			if (hasValue(library)) this.__currentLibrary.set_data(library);
 			else this.__currentLibrary.unset_data(); // because library wasn't found.
+
+			libVerificationStatus.waitingForResult = false;
 		}
 	}
 

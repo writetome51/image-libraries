@@ -1,4 +1,5 @@
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
+import { AuthenticatedGuard } from '../guards/authenticated.guard'
+import { BigLoadingSpinnerComponent } from './big-loading-spinner/big-loading-spinner.component';
 import { CommonModule } from '@angular/common';
 import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 
 @NgModule({
 	declarations: [
+		BigLoadingSpinnerComponent,
 		CreateLibraryButtonComponent,
 		LibrariesComponent,
 		LibrariesListComponent,

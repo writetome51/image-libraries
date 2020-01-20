@@ -11,6 +11,11 @@ export class LibraryViewerComponent {
 	addingImages = false;
 
 
+	get hasImages(): boolean {
+		return (this.__currentLibrary.images.length > 0);
+	}
+
+
 	get changesExist(): boolean {
 		return this.__currentLibrary.hasChanges;
 	}

@@ -1,5 +1,11 @@
-<new-library-button></new-library-button>
+<div *ngIf="!(verifyingLibrary)">
 
-<new-library-form *ngIf="creatingNewLibrary"></new-library-form>
+	<new-library-button></new-library-button>
 
-<libraries-list></libraries-list>
+	<new-library-form *ngIf="creatingNewLibrary"></new-library-form>
+
+	<libraries-list></libraries-list>
+
+</div>
+
+<big-loading-spinner *ngIf="verifyingLibrary"></big-loading-spinner>

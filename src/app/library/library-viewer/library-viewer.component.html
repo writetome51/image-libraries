@@ -6,8 +6,9 @@
 
 	<save-changes-button *ngIf="changesExist"></save-changes-button>
 
-	<image-size-slider></image-size-slider>
-
-	<image-list></image-list>
+	<div *ngIf="hasImages">
+		<image-size-slider></image-size-slider>
+		<image-list></image-list>
+	</div>
 
 </div>

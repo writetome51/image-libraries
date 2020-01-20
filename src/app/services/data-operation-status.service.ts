@@ -1,4 +1,4 @@
-// This lets the app know when to display the loading spinner
+// This lets the app know when to display the tiny loading spinner
 
 export const DataOperationStatusService = {
 

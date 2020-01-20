@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CreatingNewLibraryService as creatingNewLibrary }
 	from '../services/creating-new-library.service';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
+import { LibraryVerificationStatusService } from '../services/library-verification-status.service';
 
 
 @Component({
@@ -11,8 +12,13 @@ import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.componen
 export class LibrariesComponent extends ClearAlertOnDestroyComponent {
 
 
-	get creatingNewLibrary() {
+	get creatingNewLibrary(): boolean {
 		return creatingNewLibrary.status;
+	}
+
+
+	get verifyingLibrary(): boolean {
+		return LibraryVerificationStatusService.waitingForResult;
 	}
 
 
