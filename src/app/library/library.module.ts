@@ -6,10 +6,12 @@ import { ChooseImagesFromDeviceComponent }
 import { CommonModule } from '@angular/common';
 import { DeleteImageButtonComponent }
 	from './library-viewer/image-list/thumbnail-image/delete-image-button/delete-image-button.component';
-import { EnterImageURLComponent } from './library-viewer/add-images/enter-image-url/enter-image-url.component';
+import { EnterImageURLComponent }
+	from './library-viewer/add-images/enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
 import { ImageListComponent } from './library-viewer/image-list/image-list.component';
-import { ImageSizeSliderComponent } from './library-viewer/image-size-slider/image-size-slider.component';
+import { ImageSizeSliderComponent }
+	from './library-viewer/image-size-slider/image-size-slider.component';
 import { ImageViewerModule } from './image-viewer/image-viewer.module';
 import { LibraryComponent } from './library.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
@@ -19,7 +21,8 @@ import { ProcessingButtonModule } from '../processing-button/processing-button.m
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
-import { ThumbnailImageComponent } from './library-viewer/image-list/thumbnail-image/thumbnail-image.component';
+import { ThumbnailImageComponent }
+	from './library-viewer/image-list/thumbnail-image/thumbnail-image.component';
 
 
 @NgModule({

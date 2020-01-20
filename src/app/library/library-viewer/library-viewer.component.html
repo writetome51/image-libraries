@@ -1,6 +1,6 @@
 <div>
 
-	<button (click)="addingImages = true">Add Images</button>
+	<button (click)="addingImages = !(addingImages)">{{addImagesButtonText}}</button>
 
 	<add-images *ngIf="addingImages"></add-images>
 

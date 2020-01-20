@@ -9,6 +9,7 @@ import { CurrentLibraryService } from '../../services/library/current-library.se
 export class LibraryViewerComponent {
 
 	addingImages = false;
+	addImagesButtonText = (this.addingImages ? 'Cancel' : 'New Library');
 
 
 	get changesExist(): boolean {
