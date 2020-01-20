@@ -1,7 +1,5 @@
 import { AppImage } from '../../interfaces/app-image';
 import { DBLibrary } from '../../interfaces/db-library';
-import { GetRequestedLibraryService } from './get-requested-library.service';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LoadedLibrary } from '../../interfaces/loaded-library';
 import { modifyObject } from '@writetome51/modify-object';
@@ -35,11 +33,6 @@ export class CurrentLibraryService extends SettableDataContainerService {
 
 	get hasChanges(): boolean {
 		return (Object.keys(this._data.changes).length > 0);
-	}
-
-
-	constructor(private __getRequestedLibrary: GetRequestedLibraryService) {
-		super();
 	}
 
 
