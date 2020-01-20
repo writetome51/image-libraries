@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CurrentUserService as currentUser } from '../../../user/current-user.service';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { QuestionStatusService as questionStatus }
-	from '../../../../security-question/question-status.service';
+	from '../../../question-status.service';
 
 
 @Injectable({providedIn: 'root'})

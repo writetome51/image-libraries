@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentUserService as currentUser } from '../services/user/current-user.service';
-import { QuestionStatusService as questionStatus } from './question-status.service';
+import { QuestionStatusService as questionStatus } from '../services/question-status.service';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '../clear-form-on-init-and-alert-on-destroy.component';
 

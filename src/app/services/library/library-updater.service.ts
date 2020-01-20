@@ -8,7 +8,7 @@ import { not } from '@writetome51/not';
 
 @Injectable({providedIn: 'root'})
 
-export class LibrarySaverService {
+export class LibraryUpdaterService {
 
 
 	constructor(
@@ -18,7 +18,7 @@ export class LibrarySaverService {
 	}
 
 
-	async save(): Promise<void> {
+	async update(): Promise<void> {
 		if (not(this.__currentLibrary.hasChanges)) return;
 
 		if (hasValue(this.__currentLibrary.changes['name'])) {

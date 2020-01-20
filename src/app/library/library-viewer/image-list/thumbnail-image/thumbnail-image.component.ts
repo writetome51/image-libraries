@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { AppImage } from '../../../../interfaces/app-image';
 import { ImageDisplaySettingsService as imageDisplaySettings }
-	from '../../../services/image/image-display-settings.service';
+	from '../../../../services/image/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { CurrentLibraryService } from '../../../services/library/current-library.service';
+import { CurrentLibraryService } from '../../../../services/library/current-library.service';
 
 
 @Component({
