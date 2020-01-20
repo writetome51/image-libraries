@@ -43,21 +43,14 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
-	async set_data(libraryName): Promise<void> {
+	set_data(newValue: DBLibrary): void {
+		modifyObject(newValue, {
+			currentImage: undefined, // image currently being viewed
+			currentImageIndex: -1,
+			changes: {}
+		});
 
-		let library: DBLibrary | void = await this.__getRequestedLibrary.go(libraryName);
-
-		if (hasValue(library)) {
-
-			modifyObject(library, {
-				currentImage: undefined, // image currently being viewed
-				currentImageIndex: -1,
-				changes: {}
-			});
-
-			this._data = library;
-		}
-		else this.unset_data(); // because library wasn't found.
+		this._data = newValue;
 	}
 
 

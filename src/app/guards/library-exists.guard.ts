@@ -3,6 +3,8 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, Router } from
 import { CurrentLibraryService } from '../services/library/current-library.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
+import { GetRequestedLibraryService } from '../services/library/get-requested-library.service';
+import { DBLibrary } from '../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,6 +13,7 @@ export class LibraryExistsGuard implements CanActivate {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,
+		private __getRequestedLibrary: GetRequestedLibraryService,
 		private __router: Router
 	) {
 	}
@@ -23,7 +26,7 @@ export class LibraryExistsGuard implements CanActivate {
 
 		await this.__assignTo__currentLibrary(requestedLibrary);
 
-		// Will only return true if requestedLibrary was found:
+		// Only return true if requestedLibrary was found:
 		if (hasValue(this.__currentLibrary.data)) return true;
 
 		else return this.__redirectToLibrariesAndReturnFalse();
@@ -35,7 +38,11 @@ export class LibraryExistsGuard implements CanActivate {
 			noValue(this.__currentLibrary.data)
 			|| requestedLibrary !== this.__currentLibrary.name
 		) {
-			await this.__currentLibrary.set_data(requestedLibrary);
+			let library: DBLibrary | void = await this.__getRequestedLibrary.go(requestedLibrary);
+
+			// @ts-ignore
+			if (hasValue(library)) this.__currentLibrary.set_data(library);
+			else this.__currentLibrary.unset_data(); // because library wasn't found.
 		}
 	}
 
