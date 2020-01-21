@@ -10,11 +10,8 @@
 			<div class="centered-nav-block-container">
 				<logout-button></logout-button>
 
-				<div class="input-container nav-link-container">
-					<a *ngIf="!(updateUserIsActive)"
-					   [routerLink]="moduleRoute.UpdateUserModule"
-					   [routerLinkActive]="'active'"
-					>
+				<div *ngIf="!(updateUserIsActive)" class="input-container nav-link-container">
+					<a [routerLink]="moduleRoute.UpdateUserModule" [routerLinkActive]="'active'">
 						Update Account
 					</a>
 				</div>

@@ -11,7 +11,7 @@ import { LibraryVerificationStatusService as libVerificationStatus }
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryExistsGuard implements CanActivate {
+export class LibraryVerificationGuard implements CanActivate {
 
 	constructor(
 		private __currentLibrary: CurrentLibraryService,

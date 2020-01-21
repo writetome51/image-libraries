@@ -11,7 +11,7 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
 	tonto = {
-		src: '../../../assets/tonto.jpg',
+		src: '../../../assets/tonto.png',
 		width: 200,
 		height: 615
 	};
