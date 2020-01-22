@@ -10,10 +10,11 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 })
 export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
-	tonto = {
-		src: '../../../assets/tonto.png',
-		width: 200,
-		height: 615
+	gif = {
+		src: '../../../assets/head-exploding.gif',
+		width: 124,
+		height: 82,
+		alt:'Head exploding'
 	};
 
 }

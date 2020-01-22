@@ -9,7 +9,7 @@ import { UpdateUserChoicesMapService } from './update-user-choices-map.service';
 })
 export class UpdateUserComponent {
 
-	heading = 'Update Account';
+	heading = 'Update';
 	choicesMap = UpdateUserChoicesMapService;
 	choices = Object.keys(this.choicesMap);
 

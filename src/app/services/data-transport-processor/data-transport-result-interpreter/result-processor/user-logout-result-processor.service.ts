@@ -17,7 +17,7 @@ export class UserLogoutResultProcessorService implements DirectProcessor {
 
 	async process(result) {
 		if (result.success) {
-			await this.__removeCachedData.go();
+			this.__removeCachedData.go();
 			await this.__router.navigate(['/']); // logged-out homepage.
 		}
 	}

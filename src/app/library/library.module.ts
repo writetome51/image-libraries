@@ -23,6 +23,7 @@ import { ReArrangeableGridListModule }
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
 import { ThumbnailImageComponent }
 	from './library-viewer/image-list/thumbnail-image/thumbnail-image.component';
+import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ThumbnailImageComponent }
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		SaveChangesButtonComponent,
-		ThumbnailImageComponent
+		ThumbnailImageComponent,
+		UndoChangesButtonComponent
 	],
 	imports: [
 		CommonModule,

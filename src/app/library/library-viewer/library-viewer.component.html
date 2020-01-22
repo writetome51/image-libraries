@@ -4,7 +4,11 @@
 
 	<add-images *ngIf="addingImages"></add-images>
 
-	<save-changes-button *ngIf="changesExist"></save-changes-button>
+	<ng-container *ngIf="changesExist">
+		<save-changes-button></save-changes-button>
+		<undo-changes-button></undo-changes-button>
+	</ng-container>
+
 
 	<div *ngIf="hasImages">
 		<image-size-slider></image-size-slider>
