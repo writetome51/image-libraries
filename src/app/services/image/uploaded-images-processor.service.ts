@@ -21,33 +21,39 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 	async process(files: FileList | File[]): Promise<void> {
 
-		if (notEmpty(files)) {
-			let dataURLs = await getDataURLs(files);
-			this.__addToChanges(files, dataURLs);
-		}
-	}
-
-
-	private __addToChanges(files: FileList | File[], dataURLs) {
 		if (noValue(this.__changes)) this.__changes = getCopy(this.__currentLibrary.images);
 
 		for (let i = 0; i < files.length; ++i) {
-			this.__addImageTo__changes(files[i], dataURLs[i]);
+			let url = await this.__getDataURL(files[i]);
+
+			let image: AppImage = {
+				name: files[i].name,
+				src: url,
+				description: '',
+				tags: [],
+				date: new Date(),
+				location: ''
+			};
+			this.__changes.push(image);
 		}
+
 		this.__currentLibrary.setChange('images', this.__changes);
 	}
 
 
-	private __addImageTo__changes(file, dataURL) {
-		let image: AppImage = {
-			name: file.name,
-			src: dataURL,
-			description: '',
-			tags: [],
-			date: new Date(),
-			location: ''
-		};
-		this.__changes.push(image);
+	private async __getDataURL(file: File): Promise<string> {
+
+		return new Promise((returnData) => {
+
+			const reader = new FileReader();
+
+			reader.onload = () => {
+				// @ts-ignore
+				returnData(reader.result);
+			};
+
+			reader.readAsDataURL(file);
+		});
 	}
 
 

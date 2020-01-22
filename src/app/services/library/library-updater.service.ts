@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryStorageService } from './library-storage.service';
 import { not } from '@writetome51/not';
+import { DBLibrary } from '../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +19,7 @@ export class LibraryUpdaterService {
 	}
 
 
-	async update(): Promise<void> {
+	async update(): Promise<DBLibrary | { error: object }> {
 		if (not(this.__currentLibrary.hasChanges)) return;
 
 		if (hasValue(this.__currentLibrary.changes['name'])) {
@@ -27,7 +28,7 @@ export class LibraryUpdaterService {
 				delete this.__currentLibrary.changes['name'];
 			}
 		}
-		await this.__libraryStorage.update(this.__currentLibrary);
+		return await this.__libraryStorage.update(this.__currentLibrary);
 	}
 
 

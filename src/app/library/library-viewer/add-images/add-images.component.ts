@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { UploadedImagesProcessorService }
-	from '../../../services/image/uploaded-images-processor.service';
-import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
 
 
 @Component({
@@ -14,13 +11,5 @@ export class AddImagesComponent {
 	else in the web.`;
 
 	sizeLimitWarning = 'Each library is limited to 16 MB.';
-
-
-	constructor(
-		private __imagesProcessor: UploadedImagesProcessorService,
-		private __imageURLProcessor: ImageURLProcessorService
-	) {
-	}
-
 
 }
