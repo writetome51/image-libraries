@@ -20,6 +20,8 @@ export class UserResultProcessorService implements DirectProcessor {
 
 	process(result: DBUser): void {
 		if (result.sessionID) {
+			delete result._id; // for security
+
 			this.__localSessionID.set(result.sessionID);
 			this.__localEmail.set(result.email);
 		}

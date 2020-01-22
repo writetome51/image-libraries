@@ -16,6 +16,10 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 	async process(result: DBLibrary) {
 
 		if (result._user_id && result.name) {
+			// for security:
+			delete result._id;
+			delete result._user_id;
+
 			this.__currentLibrary.set_data(result);
 			alert.success = 'Library updated';
 		}

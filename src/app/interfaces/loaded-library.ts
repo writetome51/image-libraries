@@ -8,6 +8,4 @@ export interface LoadedLibrary extends DBLibrary {
 
 	currentImageIndex: number;
 
-	changes: object; // any changes not yet saved
-
 }

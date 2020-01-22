@@ -6,8 +6,8 @@
 	<ul *ngIf="libraries && libraries.length > 0">
 		<li *ngFor="let library of libraries">
 
-			<a routerLink="/library/{{library.name}}" routerLinkActive="active">
-				{{library.name}}
+			<a routerLink="/library/{{library}}" routerLinkActive="active">
+				{{library}}
 			</a>
 
 		</li>
