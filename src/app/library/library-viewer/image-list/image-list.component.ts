@@ -11,7 +11,10 @@ import { CurrentLibraryService } from '../../../services/library/current-library
 export class ImageListComponent {
 
 	get images(): AppImage[] {
-		return this.__loadedLibrary.images;
+		if (this.__loadedLibrary.hasChanges && this.__loadedLibrary.changes.images){
+			return this.__loadedLibrary.changes.images;
+		}
+		else return this.__loadedLibrary.images;
 	}
 
 

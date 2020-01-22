@@ -26,38 +26,15 @@ export class CurrentLibraryService extends SettableDataContainerService {
 	}
 
 
-	get changes() {
-		return this._data.changes;
-	}
-
-
-	get hasChanges(): boolean {
-		return (Object.keys(this._data.changes).length > 0);
-	}
-
-
 	set_data(newValue: DBLibrary): void {
 		modifyObject(newValue, {
 			currentImage: undefined, // image currently being viewed
-			currentImageIndex: -1,
-			changes: {}
+			currentImageIndex: -1
 		});
 
 		this._data = newValue;
 	}
 
 
-	// propertyToChange can have dot-notation.
-
-	setChange(propertyToChange, newValue): void {
-		this._data.changes[propertyToChange] = newValue;
-	}
-
-
-	// propertyToUnset can have dot-notation.
-
-	unsetChange(propertyToUnset): void {
-		delete this._data.changes[propertyToUnset];
-	}
 
 }

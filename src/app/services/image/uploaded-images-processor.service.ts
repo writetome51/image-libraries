@@ -24,11 +24,10 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 		else this.__changes = getCopy(this.__currentLibrary.images);
 
 		for (let i = 0; i < files.length; ++i) {
-			let url = await getDataURL(files[i]);
 
 			let image: AppImage = {
 				name: files[i].name,
-				src: url,
+				src:  await getDataURL(files[i]),
 				description: '',
 				tags: [],
 				date: new Date(files[i].lastModified),
