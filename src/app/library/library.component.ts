@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { CurrentLibraryService } from '../services/library/current-library.service';
+import { CurrentLibraryService as library } from '../services/library/current-library.service';
 import { RequestedLibraryService as requestedLibrary }
 	from '../services/library/requested-library.service';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
@@ -19,12 +19,7 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent {
 
 
 	get libraryLoaded() {
-		return hasValue(this.__currentLibrary.data);
-	}
-
-
-	constructor(private __currentLibrary: CurrentLibraryService) {
-		super();
+		return hasValue(library.data);
 	}
 
 

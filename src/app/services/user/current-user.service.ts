@@ -1,6 +1,3 @@
-import { DBUser } from '../../interfaces/db-user';
-
-
 export class CurrentUserService {
 
 	// Bound to 'password' text input.
@@ -21,8 +18,6 @@ export class CurrentUserService {
 	// For when user wants to change email
 	static newEmail = ''; // bound to 'new email' text input
 
-	static dbUser: DBUser; // cached value retrieved from db
-
 
 	static set question(value) {
 		this.securityQuestion.question = value;
@@ -41,21 +36,6 @@ export class CurrentUserService {
 
 	static get answer() {
 		return this.securityQuestion.answer;
-	}
-
-
-	static unset() {
-		this.password = '';
-
-		this.passwordAgain = '';
-
-		this.newPassword = '';
-
-		this.securityQuestion = {question: '', answer: ''};
-
-		this.email = '';
-
-		this.newEmail = '';
 	}
 
 

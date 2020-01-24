@@ -5,8 +5,10 @@ import { CurrentLibraryService } from './current-library.service';
 @Injectable({providedIn: 'root'})
 
 export class LibraryChangesService {
+	
+	// Stores all changes.  Properties should be assigned as strings so they can include dot-notation.
 
-	private __data = {}; // stores all changes.
+	private __data = {};
 
 
 	get data() {
@@ -42,7 +44,7 @@ export class LibraryChangesService {
 	}
 
 
-	unsetChanges() {
+	unsetChanges(): void {
 		this.__data = {};
 	}
 

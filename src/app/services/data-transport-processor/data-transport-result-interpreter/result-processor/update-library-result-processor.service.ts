@@ -2,16 +2,13 @@ import { AlertService as alert } from '../../../alert.service';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
-import { CurrentLibraryService } from '../../../library/current-library.service';
+import { CurrentLibrarySetterService as librarySetter}
+	from '../../../library/current-library-setter.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class UpdateLibraryResultProcessorService implements DirectProcessor {
-
-	constructor(private __currentLibrary: CurrentLibraryService) {
-	}
-
 
 	async process(result: DBLibrary) {
 
@@ -20,7 +17,7 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 			delete result._id;
 			delete result._user_id;
 
-			this.__currentLibrary.set_data(result);
+			librarySetter.set(result);
 			alert.success = 'Library updated';
 		}
 	}

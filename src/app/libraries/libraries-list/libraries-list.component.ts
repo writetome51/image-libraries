@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { CurrentUserLibrariesService } from '../../services/library/current-user-libraries.service';
+import { CurrentUserLibrariesService as libraries }
+	from '../../services/library/current-user-libraries.service';
 import { noValue } from '@writetome51/has-value-no-value';
+import { GetLibrariesProcessorService }
+	from '../../services/data-transport-processor/get-libraries-processor.service';
 
 
 @Component({
@@ -13,14 +16,12 @@ export class LibrariesListComponent {
 
 
 	get libraries(): string[] {
-		return this.__currentUserLibraries.data;
+		return libraries.data;
 	}
 
 
-	constructor(private __currentUserLibraries: CurrentUserLibrariesService) {
-		if (noValue(this.__currentUserLibraries.data)) {
-			this.__currentUserLibraries.set_data();
-		}
+	constructor(private __getLibrariesProcessor:GetLibrariesProcessorService) {
+		if (noValue(libraries.data)) this.__getLibrariesProcessor.process();
 	}
 
 }
