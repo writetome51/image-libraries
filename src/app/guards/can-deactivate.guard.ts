@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
 import { AlertService as alert } from '../services/alert.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
+import { LibraryChangesService } from '../services/library/library-changes.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ import { hasValue, noValue } from '@writetome51/has-value-no-value';
 })
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
-	constructor(private __loadedLibrary: CurrentLibraryService) {
+	constructor(private __libraryChanges: LibraryChangesService) {
 	}
 
 
@@ -25,14 +26,11 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 		//	nextState?: RouterStateSnapshot
 	): boolean {
 
-		if (hasValue(this.__loadedLibrary.data)) {
-			if (this.__loadedLibrary.hasChanges) {
-				alert.error =
-					'You have unsaved changes to the library.  Please save or discard them first.';
-				return false;
-			}
+		if (this.__libraryChanges.exist) {
+			alert.error =
+				'You have unsaved changes to the library.  Please save or discard them first.';
+			return false;
 		}
-
 		return true;
 	}
 

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { CurrentLibraryService } from './current-library.service';
+import { CurrentLibraryService as library } from './current-library.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class LibraryChangesService {
-	
-	// Stores all changes.  Properties should be assigned as strings so they can include dot-notation.
+
+	// Stores all changes.  Properties should be assigned as strings so they can include
+	// dot-notation.
 
 	private __data = {};
 
@@ -22,11 +23,7 @@ export class LibraryChangesService {
 
 
 	get libraryName(): string {
-		return this.__currentLibrary.name;
-	}
-
-
-	constructor(private __currentLibrary: CurrentLibraryService) {
+		return library.data.name;
 	}
 
 
