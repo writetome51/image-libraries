@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CreatingNewLibraryService as creatingNewLibrary }
-	from '../services/creating-new-library.service';
+import { CreatingNewLibraryData as creatingNewLibrary }
+	from '../data/creating-new-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
-import { LibraryVerificationStatusService as libVerificationStatus }
-	from '../services/library-verification-status.service';
+import { LibraryVerificationStatusData as libVerificationStatus }
+	from '../data/library-verification-status.data';
 
 
 @Component({

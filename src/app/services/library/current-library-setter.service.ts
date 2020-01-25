@@ -1,5 +1,5 @@
 import { DBLibrary } from '../../interfaces/db-library';
-import { CurrentLibraryService as library } from './current-library.service';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { LoadedLibrary } from '../../interfaces/loaded-library';
 
 

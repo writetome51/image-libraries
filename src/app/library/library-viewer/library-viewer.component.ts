@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CurrentLibraryService as library } from '../../services/library/current-library.service';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { LibraryChangesService as libraryChanges }
 	from '../../services/library/library-changes.service';
 

@@ -1,5 +1,5 @@
 import { OnDestroy } from '@angular/core';
-import { AlertService as alert } from './services/alert.service';
+import { AlertData as alert } from './data/alert.data';
 
 
 export abstract class ClearAlertOnDestroyComponent implements OnDestroy {

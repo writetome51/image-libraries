@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 import { not } from '@writetome51/not';
-import { EnteredImageURLService } from '../entered-image-url.service';
+import { EnteredImageURLData } from '../../data/entered-image-url.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,7 @@ export class ImageUrlInputService extends ValidatingTextInputService {
 		super();
 
 		this.data.id = 'image-url-input';
-		this.data.objectToBind = EnteredImageURLService;
+		this.data.objectToBind = EnteredImageURLData;
 		this.data.propertyToBind = 'data';
 		this.data.label = 'Image URL';
 

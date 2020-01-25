@@ -1,4 +1,4 @@
-import { CurrentUserLibrariesService as libraries } from './library/current-user-libraries.service';
+import { CurrentUserLibrariesData as libraries } from '../data/current-user-libraries.data';
 import { CurrentLibrarySetterService as librarySetter } from './library/current-library-setter.service';
 
 

@@ -3,7 +3,7 @@ import { AppImage } from '../../../../interfaces/app-image';
 import { ImageDisplaySettingsService as imageDisplaySettings }
 	from '../../../../services/image/image-display-settings.service';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { CurrentLibraryService as library } from '../../../../services/library/current-library.service';
+import { CurrentLibraryData as library } from '../../../../data/current-library.data';
 
 
 @Component({

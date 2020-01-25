@@ -1,4 +1,4 @@
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../data/alert.data';
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';

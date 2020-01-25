@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CurrentUserLibrariesService as libraries }
-	from '../../services/library/current-user-libraries.service';
+import { CurrentUserLibrariesData as libraries }
+	from '../../data/current-user-libraries.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibrariesProcessorService }
 	from '../../services/data-transport-processor/get-libraries-processor.service';

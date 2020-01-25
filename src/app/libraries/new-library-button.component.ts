@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CreatingNewLibraryService as creatingNewLibrary }
-	from '../services/creating-new-library.service';
+import { CreatingNewLibraryData as creatingNewLibrary }
+	from '../data/creating-new-library.data';
 
 
 @Component({

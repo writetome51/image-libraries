@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserService as currentUser } from '../../../user/current-user.service';
+import { CurrentUserData as currentUser } from '../../../../data/current-user.data';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
-import { QuestionStatusService as questionStatus }
-	from '../../../question-status.service';
+import { SecurityQuestionStatusData as questionStatus }
+	from '../../../../data/security-question-status.data';
 
 
 @Injectable({providedIn: 'root'})

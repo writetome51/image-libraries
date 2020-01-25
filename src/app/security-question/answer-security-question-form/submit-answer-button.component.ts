@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataProcessorComponent } from '../../data-processor.component';
 import { LoginBySecurityQuestionProcessorService }
 	from '../../services/data-transport-processor/login-by-security-question-processor.service';
-import { QuestionStatusService as questionStatus } from '../../services/question-status.service';
+import { SecurityQuestionStatusData as questionStatus } from '../../data/security-question-status.data';
 
 
 @Component({

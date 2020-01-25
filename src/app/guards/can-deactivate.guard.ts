@@ -1,11 +1,11 @@
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
 	from '@angular/router';
-import { CurrentLibraryService } from '../services/library/current-library.service';
+import { CurrentLibraryData } from '../data/current-library.data';
 import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { AlertService as alert } from '../services/alert.service';
+import { AlertData as alert } from '../data/alert.data';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { LibraryChangesService as libraryChanges } from '../services/library/library-changes.service';
 

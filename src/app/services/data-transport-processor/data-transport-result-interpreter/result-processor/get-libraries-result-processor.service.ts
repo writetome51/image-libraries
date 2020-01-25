@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../interfaces/db-library';
-import { CurrentUserLibrariesService as libraries }
-	from '../../../library/current-user-libraries.service';
+import { CurrentUserLibrariesData as libraries }
+	from '../../../../data/current-user-libraries.data';
 
 
 @Injectable({providedIn: 'root'})

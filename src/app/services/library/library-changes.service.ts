@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CurrentLibraryService as library } from './current-library.service';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,8 +12,10 @@ export class LibraryChangesService {
 	private static __data = {};
 
 
-	static get data() {
-		return this.__data;
+	// property can have dot-notation.
+
+	static getChange(property) {
+		return this.__data[property];
 	}
 
 

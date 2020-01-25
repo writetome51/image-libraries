@@ -1,5 +1,5 @@
-import { CurrentUserService as currentUser } from './user/current-user.service';
-import { NewLibraryService as newLibrary } from './library/new-library.service';
+import { CurrentUserData as currentUser } from '../data/current-user.data';
+import { NewLibraryData as newLibrary } from '../data/new-library.data';
 
 
 export class ClearFormDataService { // implements IDoThis

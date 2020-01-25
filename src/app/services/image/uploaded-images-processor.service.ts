@@ -1,5 +1,5 @@
 import { AppImage } from '../../interfaces/app-image';
-import { CurrentLibraryService as library } from '../library/current-library.service';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { DirectProcessor } from '../../interfaces/direct-processor';
 import { getCopy } from '@writetome51/array-get-copy';
 import { getDataURL } from '@writetome51/get-data-url';

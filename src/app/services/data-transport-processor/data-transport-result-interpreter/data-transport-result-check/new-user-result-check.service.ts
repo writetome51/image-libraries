@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../data/alert.data';
 import { userAlreadyExists } from '../../../../string-constants/form-submission-errors';
 import { duplicateUser } from '../../../../string-constants/api-errors';
 

@@ -1,4 +1,4 @@
-export class CurrentUserService {
+export class CurrentUserData {
 
 	// Bound to 'password' text input.
 	static password = '';

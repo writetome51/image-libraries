@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { CurrentLibraryService as library } from '../services/library/current-library.service';
-import { RequestedLibraryService as requestedLibrary }
-	from '../services/library/requested-library.service';
+import { CurrentLibraryData as library } from '../data/current-library.data';
+import { RequestedLibraryData as requestedLibrary }
+	from '../data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 
 

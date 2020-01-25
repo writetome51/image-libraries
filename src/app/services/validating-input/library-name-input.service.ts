@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NewLibraryService } from '../library/new-library.service';
+import { NewLibraryData } from '../../data/new-library.data';
 import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 
@@ -13,7 +13,7 @@ export class LibraryNameInputService extends ValidatingTextInputService {
 
 		this.data.id = 'library-name-input';
 		this.data.propertyToBind = 'name';
-		this.data.objectToBind = NewLibraryService;
+		this.data.objectToBind = NewLibraryData;
 		this.data.label = 'Library Name';
 
 		this.data.isValid = [

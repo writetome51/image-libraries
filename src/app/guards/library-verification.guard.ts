@@ -1,15 +1,15 @@
 import { AppModuleRouteService } from '../app-module-route.service';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
-import { CurrentLibraryService as library } from '../services/library/current-library.service';
+import { CurrentLibraryData as library } from '../data/current-library.data';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { DBLibrary } from '../interfaces/db-library';
-import { LibraryVerificationStatusService as libVerificationStatus }
-	from '../services/library-verification-status.service';
+import { LibraryVerificationStatusData as libVerificationStatus }
+	from '../data/library-verification-status.data';
 import { CurrentLibrarySetterService as librarySetter }
 	from '../services/library/current-library-setter.service';
-import { RequestedLibraryService as requestedLibrary }
-	from '../services/library/requested-library.service';
+import { RequestedLibraryData as requestedLibrary }
+	from '../data/requested-library.data';
 import { LibraryStorageService } from '../services/library/library-storage.service';
 import { not } from '@writetome51/not';
 

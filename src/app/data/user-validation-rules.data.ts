@@ -1,4 +1,4 @@
-export class UserValidationRulesService {
+export class UserValidationRulesData {
 
 	static readonly passwordMinLength = 6;
 

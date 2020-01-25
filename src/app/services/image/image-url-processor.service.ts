@@ -1,5 +1,5 @@
-import { AlertService as alert } from '../alert.service';
-import { EnteredImageURLService as enteredImageURL } from '../entered-image-url.service';
+import { AlertData as alert } from '../../data/alert.data';
+import { EnteredImageURLData as enteredImageURL } from '../../data/entered-image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '../library/library-changes.service';
