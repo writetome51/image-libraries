@@ -9,39 +9,39 @@ export class LibraryChangesService {
 	// Stores all changes.  Properties should be assigned as strings so they can include
 	// dot-notation.
 
-	private __data = {};
+	private static __data = {};
 
 
-	get data() {
+	static get data() {
 		return this.__data;
 	}
 
 
-	get exist(): boolean {
+	static get exist(): boolean {
 		return (Object.keys(this.__data).length > 0);
 	}
 
 
-	get libraryName(): string {
+	static get libraryName(): string {
 		return library.data.name;
 	}
 
 
 	// propertyToChange can have dot-notation.
 
-	setChange(propertyToChange, newValue): void {
+	static setChange(propertyToChange, newValue): void {
 		this.__data[propertyToChange] = newValue;
 	}
 
 
 	// propertyToUnset can have dot-notation.
 
-	unsetChange(propertyToUnset): void {
+	static unsetChange(propertyToUnset): void {
 		delete this.__data[propertyToUnset];
 	}
 
 
-	unsetChanges(): void {
+	static unsetChanges(): void {
 		this.__data = {};
 	}
 

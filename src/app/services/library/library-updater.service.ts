@@ -4,7 +4,7 @@ import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryStorageService } from './library-storage.service';
 import { not } from '@writetome51/not';
 import { DBLibrary } from '../../interfaces/db-library';
-import { LibraryChangesService } from './library-changes.service';
+import { LibraryChangesService as libraryChanges } from './library-changes.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,23 +12,20 @@ import { LibraryChangesService } from './library-changes.service';
 export class LibraryUpdaterService {
 
 
-	constructor(
-		private __libraryStorage: LibraryStorageService,
-		private __libraryChanges: LibraryChangesService,
-	) {
+	constructor(private __libraryStorage: LibraryStorageService) {
 	}
 
 
 	async update(): Promise<DBLibrary | { error: object }> {
-		if (not(this.__libraryChanges.exist)) return;
+		if (not(libraryChanges.exist)) return;
 
-		if (hasValue(this.__libraryChanges.data['name'])) {
-			let name = this.__libraryChanges.data['name'].trim();
+		if (hasValue(libraryChanges.data['name'])) {
+			let name = libraryChanges.data['name'].trim();
 			if (isEmpty(name)) {
-				delete this.__libraryChanges.data['name'];
+				delete libraryChanges.data['name'];
 			}
 		}
-		return await this.__libraryStorage.update(this.__libraryChanges);
+		return await this.__libraryStorage.update(libraryChanges);
 	}
 
 

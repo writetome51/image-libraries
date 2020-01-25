@@ -2,7 +2,7 @@ import { AlertService as alert } from '../alert.service';
 import { EnteredImageURLService as enteredImageURL } from '../entered-image-url.service';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
-import { CurrentLibraryService } from '../library/current-library.service';
+import { LibraryChangesService } from '../library/library-changes.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,13 +10,9 @@ import { CurrentLibraryService } from '../library/current-library.service';
 export class ImageURLProcessorService implements IndirectProcessor {
 
 
-	constructor(private __loadedLibrary: CurrentLibraryService) {
-	}
-
-
 	async process(): Promise<void> {
 		if (await this.__resourceFound(enteredImageURL.data)) {
-			this.__loadedLibrary.images.push(
+			LibraryChangesService.data['images'].push(
 				{name: '', src: enteredImageURL.data, description: ''}
 			);
 		}

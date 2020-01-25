@@ -1,16 +1,17 @@
 import { AppModuleRouteService } from '../app-module-route.service';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, Router } from '@angular/router';
-import { CurrentLibraryService as library} from '../services/library/current-library.service';
+import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { CurrentLibraryService as library } from '../services/library/current-library.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { GetRequestedLibraryService } from '../services/library/get-requested-library.service';
 import { DBLibrary } from '../interfaces/db-library';
 import { LibraryVerificationStatusService as libVerificationStatus }
 	from '../services/library-verification-status.service';
-import { CurrentLibrarySetterService as librarySetter}
+import { CurrentLibrarySetterService as librarySetter }
 	from '../services/library/current-library-setter.service';
-import { RequestedLibraryService as requestedLibrary}
+import { RequestedLibraryService as requestedLibrary }
 	from '../services/library/requested-library.service';
+import { LibraryStorageService } from '../services/library/library-storage.service';
+import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,35 +19,34 @@ import { RequestedLibraryService as requestedLibrary}
 export class LibraryVerificationGuard implements CanActivate {
 
 	constructor(
-		private __getRequestedLibrary: GetRequestedLibraryService,
+		private __libraryStorage: LibraryStorageService,
 		private __router: Router
 	) {
 	}
 
 
-	async canActivate(
-		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
-	): Promise<boolean> {
+	async canActivate(next: ActivatedRouteSnapshot): Promise<boolean> {
 		requestedLibrary.name = next.url.toString();
 
-		await this.__loadRequestedLibrary(requestedLibrary.name);
+		await this.__loadRequestedLibrary_ifItExists(requestedLibrary.name);
 
-		// Only return true if requestedLibrary was found:
+		// Only return true if requested library was found:
 		if (hasValue(library.data)) return true;
-
 		else return this.__redirectToLibrariesAndReturnFalse();
 	}
 
 
-	private async __loadRequestedLibrary(libraryName) {
-		if (noValue(library.data) || libraryName !== library.data.name) {
+	private async __loadRequestedLibrary_ifItExists(requestedLibraryName): Promise<void> {
+		if (noValue(library.data) || requestedLibraryName !== library.data.name) {
 
 			libVerificationStatus.waitingForResult = true;
-			let result: DBLibrary | void = await this.__getRequestedLibrary.go(libraryName);
+
+			let result: DBLibrary | { error: object } =
+				await this.__libraryStorage.get(requestedLibraryName);
 
 			// @ts-ignore
-			if (hasValue(result)) librarySetter.set(result);
-			else library.data = undefined; // because library wasn't found.
+			if (not(result.error)) librarySetter.set(result);
+			else librarySetter.unset(); // because library wasn't found.
 
 			libVerificationStatus.waitingForResult = false;
 		}

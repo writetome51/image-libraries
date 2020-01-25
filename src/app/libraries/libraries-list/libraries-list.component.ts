@@ -20,7 +20,7 @@ export class LibrariesListComponent {
 	}
 
 
-	constructor(private __getLibrariesProcessor:GetLibrariesProcessorService) {
+	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
 		if (noValue(libraries.data)) this.__getLibrariesProcessor.process();
 	}
 
