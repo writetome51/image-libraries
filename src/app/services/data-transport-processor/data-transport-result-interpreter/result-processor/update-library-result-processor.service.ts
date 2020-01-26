@@ -4,6 +4,7 @@ import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { CurrentLibrarySetterService as librarySetter}
 	from '../../../library/current-library-setter.service';
+import { LibraryChangesService } from '../../../library/library-changes.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,6 +19,7 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 			delete result._user_id;
 
 			librarySetter.set(result);
+			LibraryChangesService.unsetChanges();
 			alert.success = 'Library updated';
 		}
 	}

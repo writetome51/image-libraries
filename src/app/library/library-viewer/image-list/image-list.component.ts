@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
-import { LibraryChangesService as libraryChanges }
-	from '../../../services/library/library-changes.service';
-import { CurrentLibraryData as library } from '../../../data/current-library.data';
+import { ImagesToDisplayService as imagesToDisplay }
+	from '../../../services/image/images-to-display.service';
 
 
 @Component({
@@ -13,10 +12,7 @@ import { CurrentLibraryData as library } from '../../../data/current-library.dat
 export class ImageListComponent {
 
 	get images(): AppImage[] {
-		if (libraryChanges.exist && libraryChanges.data['images']) {
-			return libraryChanges.data['images'];
-		}
-		else return library.data.images;
+		return imagesToDisplay.data;
 	}
 
 }

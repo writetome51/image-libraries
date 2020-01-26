@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { LibraryChangesService as libraryChanges }
 	from '../../services/library/library-changes.service';
+import { ImagesToDisplayService } from '../../services/image/images-to-display.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class LibraryViewerComponent {
 
 
 	get hasImages(): boolean {
-		return (library.data.images.length > 0);
+		return ImagesToDisplayService.exist;
 	}
 
 

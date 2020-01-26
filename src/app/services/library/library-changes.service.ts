@@ -12,13 +12,6 @@ export class LibraryChangesService {
 	private static __data = {};
 
 
-	// property can have dot-notation.
-
-	static getChange(property) {
-		return this.__data[property];
-	}
-
-
 	static get exist(): boolean {
 		return (Object.keys(this.__data).length > 0);
 	}
@@ -26,6 +19,18 @@ export class LibraryChangesService {
 
 	static get libraryName(): string {
 		return library.data.name;
+	}
+
+
+	// property can have dot-notation.
+
+	static getChange(property) {
+		return this.__data[property];
+	}
+
+
+	static getAll(): object {
+		return this.__data;
 	}
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageDisplaySettingsService as imageDisplaySettings}
-	from '../../../services/image/image-display-settings.service';
+import { ImageDisplaySettingsData as imageDisplaySettings}
+	from '../../../data/image-display-settings.data';
 
 
 @Component({

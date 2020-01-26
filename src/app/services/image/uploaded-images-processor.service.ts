@@ -15,10 +15,14 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	async process(files: FileList | File[]): Promise<void> {
-		if (libraryChanges.exist && libraryChanges.data['images']) {
-			this.__changes = getCopy(libraryChanges.data['images']);
+		if (libraryChanges.exist && libraryChanges.getChange('images')) {
+			this.__changes = getCopy(libraryChanges.getChange('images'));
 		}
 		else this.__changes = getCopy(library.data.images);
+
+		//temp:
+		console.log(this.__changes);
+
 
 		for (let i = 0; i < files.length; ++i) {
 
@@ -34,6 +38,10 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 		}
 
 		libraryChanges.setChange('images', this.__changes);
+
+		//temp:
+		console.log(libraryChanges.getChange('images'));
+
 		this.__changes = undefined;
 	}
 

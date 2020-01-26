@@ -35,18 +35,17 @@ export class LibraryStorageService {
 
 
 	async update(
-		params: {
-			libraryName: string,
-			// The properties in 'data' can contain dot-notation
-			data: object
-		}
+		libraryName: string,
+
+		// The properties in 'changes' can contain dot-notation
+		changes: object
 	): Promise<DBLibrary | { error: object }> {
 
 		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.update({
 				sessionID: this.__localSessionID.get(),
-				name: params.libraryName,
-				changes: params.data
+				name: libraryName,
+				changes
 			})
 		);
 	}
