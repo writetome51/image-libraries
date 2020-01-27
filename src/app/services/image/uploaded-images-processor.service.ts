@@ -11,18 +11,14 @@ import { LibraryChangesService as libraryChanges } from '../library/library-chan
 
 export class UploadedImagesProcessorService implements DirectProcessor {
 
-	private __changes: AppImage[];
-
 
 	async process(files: FileList | File[]): Promise<void> {
+		let changes = [];
+
 		if (libraryChanges.exist && libraryChanges.getChange('images')) {
-			this.__changes = getCopy(libraryChanges.getChange('images'));
+			changes = getCopy(libraryChanges.getChange('images'));
 		}
-		else this.__changes = getCopy(library.data.images);
-
-		//temp:
-		console.log(this.__changes);
-
+		else changes = getCopy(library.data.images);
 
 		for (let i = 0; i < files.length; ++i) {
 
@@ -34,15 +30,10 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 				date: new Date(files[i].lastModified),
 				location: ''
 			};
-			this.__changes.push(image);
+			changes.push(image);
 		}
 
-		libraryChanges.setChange('images', this.__changes);
-
-		//temp:
-		console.log(libraryChanges.getChange('images'));
-
-		this.__changes = undefined;
+		libraryChanges.setChange('images', changes);
 	}
 
 

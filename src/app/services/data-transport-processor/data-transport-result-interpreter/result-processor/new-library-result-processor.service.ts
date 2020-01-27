@@ -1,4 +1,4 @@
-import { AlertData as alert } from '../../../../data/alert.data';
+import { AlertService as alert } from '../../../alert.service';
 import { CreatingNewLibraryData as creatingNewLibrary }
 	from '../../../../data/creating-new-library.data';
 import { DBLibrary } from '../../../../interfaces/db-library';

@@ -1,5 +1,5 @@
 import { AppModuleRouteService } from './app-module-route.service';
-import { AlertData } from './data/alert.data';
+import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { CurrentRouteService } from './services/current-route.service';
@@ -12,7 +12,7 @@ import { CurrentRouteService } from './services/current-route.service';
 export class AppComponent {
 
 	title = 'Image Libraries';
-	alert = AlertData;
+	alert = AlertService;
 	moduleRoute = AppModuleRouteService;
 
 

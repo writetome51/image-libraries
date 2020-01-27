@@ -1,4 +1,4 @@
-export class AlertData {
+export class AlertService {
 
 	private static __error = ''; // error message
 	private static __success = ''; // success message

@@ -1,6 +1,6 @@
 import { incorrectPassword, accountDoesntExist }
 	from '../../../../../string-constants/form-submission-errors';
-import { AlertData as alert } from '../../../../../data/alert.data';
+import { AlertService as alert } from '../../../../alert.service';
 import { UserStorageService } from '../../../../user/user-storage.service';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
 import { IDoThis } from '../../../../../interfaces/i-do-this';

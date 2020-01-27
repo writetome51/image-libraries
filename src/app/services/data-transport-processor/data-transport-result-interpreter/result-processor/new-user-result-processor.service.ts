@@ -1,7 +1,7 @@
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LoginResultProcessorService } from './login-result-processor.service';
-import { AlertData as alert } from '../../../../data/alert.data';
+import { AlertService as alert } from '../../../alert.service';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 
 

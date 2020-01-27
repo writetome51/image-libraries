@@ -5,7 +5,7 @@ import { FullSizeImageComponent }
 	from '../library/image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { AlertData as alert } from '../data/alert.data';
+import { AlertService as alert } from '../services/alert.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { LibraryChangesService as libraryChanges } from '../services/library/library-changes.service';
 

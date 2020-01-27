@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertData } from '../data/alert.data';
+import { AlertService } from '../services/alert.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { AlertData } from '../data/alert.data';
 })
 export class AlertComponent {
 
-	alert = AlertData;
+	alert = AlertService;
 
 
 	closeMessage() {

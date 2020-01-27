@@ -1,4 +1,4 @@
-import { AlertData as alert } from '../../data/alert.data';
+import { AlertService as alert } from '../alert.service';
 import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 

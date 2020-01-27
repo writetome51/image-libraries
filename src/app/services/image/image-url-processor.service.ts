@@ -1,4 +1,4 @@
-import { AlertData as alert } from '../../data/alert.data';
+import { AlertService as alert } from '../alert.service';
 import { EnteredImageURLData as enteredImageURL } from '../../data/entered-image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
