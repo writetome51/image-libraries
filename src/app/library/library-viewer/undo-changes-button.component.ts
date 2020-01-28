@@ -10,7 +10,7 @@ import { LibraryChangesService as libraryChanges }
 export class UndoChangesButtonComponent {
 
 	undoChanges() {
-		libraryChanges.unsetChanges();
+		libraryChanges.unsetAll();
 	}
 
 }

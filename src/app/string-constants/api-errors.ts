@@ -8,3 +8,4 @@ export const duplicateUser = 'Duplicate key error: E11000 duplicate key error co
 export const duplicateLibrary = 'Duplicate key error: E11000 duplicate key error collection:';
 export const libraryNotFound = 'No such library found';
 export const userDoesntExist = 'User does not exist';
+export const sizeRequirement = 'Size must be between 0 and 16793600(16MB)';

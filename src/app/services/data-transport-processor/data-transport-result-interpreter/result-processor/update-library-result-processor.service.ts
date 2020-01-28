@@ -19,7 +19,7 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 			delete result._user_id;
 
 			librarySetter.set(result);
-			LibraryChangesService.unsetChanges();
+			LibraryChangesService.unsetAll();
 			alert.success = 'Library updated';
 		}
 	}

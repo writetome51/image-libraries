@@ -19,10 +19,10 @@ export class LibraryUpdaterService {
 	async update(): Promise<DBLibrary | { error: object }> {
 		if (not(libraryChanges.exist)) return;
 
-		if (hasValue(libraryChanges.getChange('name'))) {
-			let name = libraryChanges.getChange('name').trim();
+		if (hasValue(libraryChanges.get('name'))) {
+			let name = libraryChanges.get('name').trim();
 			if (isEmpty(name)) {
-				libraryChanges.unsetChange('name');
+				libraryChanges.unset('name');
 			}
 		}
 		return await this.__libraryStorage.update(

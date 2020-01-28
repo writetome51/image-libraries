@@ -1,10 +1,12 @@
 import { AppImage } from '../../interfaces/app-image';
 import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { DirectProcessor } from '../../interfaces/direct-processor';
-import { getCopy } from '@writetome51/array-get-copy';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { getDataURL } from '@writetome51/get-data-url';
+import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService as libraryChanges } from '../library/library-changes.service';
+import { getMax } from '@writetome51/get-max-min';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,27 +15,35 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	async process(files: FileList | File[]): Promise<void> {
-		let changes = [];
+		let n = -1;
 
-		if (libraryChanges.exist && libraryChanges.getChange('images')) {
-			changes = getCopy(libraryChanges.getChange('images'));
+		if (libraryChanges.exist && libraryChanges.has('images')) {
+			console.log('changes exist');
+			let keys = Object.keys(libraryChanges.get('images'));
+			n = getMax(keys);
 		}
-		else changes = getCopy(library.data.images);
+		else if (notEmpty(library.data.images)) n = library.data.images.length - 1;
+
 
 		for (let i = 0; i < files.length; ++i) {
+			++n;
+			console.log(n);  // may log 'undefined' - why??
+
+			let url = await getDataURL(files[i]);
 
 			let image: AppImage = {
 				name: files[i].name,
-				src:  await getDataURL(files[i]),
+				src: url,
 				description: '',
 				tags: [],
 				date: new Date(files[i].lastModified),
 				location: ''
 			};
-			changes.push(image);
+
+			libraryChanges.set(`images.${n}`, image);
+
 		}
 
-		libraryChanges.setChange('images', changes);
 	}
 
 
