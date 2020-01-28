@@ -4,8 +4,10 @@
 
 	<!--  Setting draggable to false on the img prevents a ghost-image from being
 	dragged.   -->
-	<img draggable="false" [src]="image.src" alt="{{image.description}}" [width]="imageWidth"
-		 [title]="image.name"
-	/>
+	<a [routerLink]="imageRoute">
+		<img draggable="false" [src]="image.src" alt="{{image.description}}" [width]="imageWidth"
+			 [title]="image.name"
+		/>
+	</a>
 
 </div>
