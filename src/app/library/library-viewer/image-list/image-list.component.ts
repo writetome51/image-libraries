@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
 import { ImagesToDisplayService as imagesToDisplay }
 	from '../../../services/image/images-to-display.service';
@@ -9,10 +9,15 @@ import { ImagesToDisplayService as imagesToDisplay }
 	templateUrl: './image-list.component.html',
 	styleUrls: ['./image-list.component.css']
 })
-export class ImageListComponent {
+export class ImageListComponent implements OnDestroy {
 
 	get images(): AppImage[] {
 		return imagesToDisplay.data;
+	}
+
+
+	ngOnDestroy(): void {
+		imagesToDisplay.subscription.unsubscribe();
 	}
 
 }

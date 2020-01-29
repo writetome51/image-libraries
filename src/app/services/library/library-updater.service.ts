@@ -1,5 +1,4 @@
 import { DBLibrary } from '../../interfaces/db-library';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryChangesService as libraryChanges } from './library-changes.service';
@@ -19,8 +18,8 @@ export class LibraryUpdaterService {
 	async update(): Promise<DBLibrary | { error: object }> {
 		if (not(libraryChanges.exist)) return;
 
-		if (hasValue(libraryChanges.get('name'))) {
-			let name = libraryChanges.get('name').trim();
+		if (libraryChanges.has('name')) {
+			let name = libraryChanges.getExact('name').trim();
 			if (isEmpty(name)) {
 				libraryChanges.unset('name');
 			}
