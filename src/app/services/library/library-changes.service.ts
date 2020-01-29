@@ -3,6 +3,7 @@ import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { AppImage } from '../../interfaces/app-image';
 import { removeHead } from '@writetome51/array-remove-head-tail';
 import { isInteger } from '@writetome51/is-integer-is-float';
+import { getMax } from '@writetome51/get-max-min';
 
 
 @Injectable({providedIn: 'root'})
@@ -51,14 +52,26 @@ export class LibraryChangesService {
 	}
 
 
-	static getImages(): AppImage[] {
-		let images = [];
+	static getNewImages(): AppImage[] {
+		let newImages = [];
 		let images_changes = this.getInside('images');
 		let keys = Object.keys(images_changes);
 		for (let i = 0; i < keys.length; ++i) {
-			if (isInteger(Number(keys[i]))) images.push(images_changes[keys[i]]);
+			// if current key is integer, its value is an AppImage
+			if (isInteger(Number(keys[i]))) newImages.push(images_changes[keys[i]]);
 		}
-		return images;
+		return newImages;
+	}
+
+
+	static getHighestImageIndex(): number {
+		let keys = Object.keys(this.getInside('images'));
+		let numberKeys = [];
+		for (let i = 0; i < keys.length; ++i) {
+			let key = keys[i].split('.')[0];
+			if (isInteger(Number(key))) numberKeys.push(key);
+		}
+		return getMax(numberKeys);
 	}
 
 

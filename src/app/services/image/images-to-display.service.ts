@@ -16,11 +16,11 @@ export class ImagesToDisplayService {
 
 
 	static get data(): AppImage[] {
-		if (libraryChanges.exist && libraryChanges.has('images')) {
-			let changes: any[] = libraryChanges.getImages();
-			return getMergedArrays([library.data.images, changes]);
+		if (libraryChanges.has('images')) {
+			let newImages = libraryChanges.getNewImages();
+			return getMergedArrays([library.data.images, newImages]);
 		}
-		else if (hasValue(library.data)) return library.data.images;
+		else if (hasValue(library.data.images)) return library.data.images;
 		else return [];
 	}
 
