@@ -2,9 +2,7 @@ import { Component, Input } from '@angular/core';
 import { AppImage } from '../../../../interfaces/app-image';
 import { ImageDisplaySettingsData as imageDisplaySettings }
 	from '../../../../data/image-display-settings.data';
-import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { LibraryModuleRouteService } from '../../../library-module-route.service';
-import { ImagesToDisplayService } from '../../../../services/image/images-to-display.service';
+import { ListItemRemoverService } from '../../../../services/list-item-remover.service';
 
 
 @Component({
@@ -17,7 +15,6 @@ export class ThumbnailImageComponent {
 	@Input() image: AppImage;
 	@Input() index: number;
 	hovered = false;
-	moduleRoute = LibraryModuleRouteService;
 
 
 	get imageWidth(): number {
@@ -30,12 +27,12 @@ export class ThumbnailImageComponent {
 	}
 
 
-	constructor(private __imagesToDisplay: ImagesToDisplayService) {
+	constructor(private __listItemRemover: ListItemRemoverService) {
 	}
 
 
 	deleteImage() {
-		removeByIndex(this.index, this.__imagesToDisplay.data);
+		this.__listItemRemover.remove(this.index);
 	}
 
 

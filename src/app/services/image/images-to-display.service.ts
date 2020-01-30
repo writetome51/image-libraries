@@ -1,8 +1,8 @@
-import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { AppImage } from '../../interfaces/app-image';
-import { hasValue, noValue } from '@writetome51/has-value-no-value';
-import { Injectable } from '@angular/core';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { getCopy } from '@writetome51/array-get-copy';
+import { Injectable } from '@angular/core';
+import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})

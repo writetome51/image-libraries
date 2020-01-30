@@ -1,46 +1,68 @@
 import { AppImage } from '../../interfaces/app-image';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { DirectProcessor } from '../../interfaces/direct-processor';
 import { getDataURL } from '@writetome51/get-data-url';
-import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { getMax } from '@writetome51/get-max-min';
 import { Injectable } from '@angular/core';
+import { ImagesToDisplayService } from './images-to-display.service';
 import { LibraryChangesService } from '../library/library-changes.service';
+import { Subject, Subscribable } from 'rxjs';
+import { ItemBeingRemoved } from '../../interfaces/item-being-removed';
+import { HasSubscribable } from '../../interfaces/has-subscribable';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UploadedImagesProcessorService implements DirectProcessor {
+export class UploadedImagesProcessorService implements DirectProcessor, HasSubscribable {
+
+	private __subject = new Subject();
 
 
-	constructor(private __libraryChanges: LibraryChangesService) {
+	get subscribable(): Subscribable<{ _id: number, index: number }> {
+		return this.__subject;
+	}
+
+
+	constructor(
+		private __libraryChanges: LibraryChangesService,
+		private __imagesToDisplay: ImagesToDisplayService
+	) {
 	}
 
 
 	async process(files: FileList | File[]): Promise<void> {
-		let n = -1;
-
-		if (this.__libraryChanges.has('images')) {
-			n = this.__libraryChanges.getHighestImageIndex();
-		}
-		else if (notEmpty(library.data.images)) n = (library.data.images.length - 1);
-
+		let _id = -1;
+		if (this.__imagesToDisplay.exist) _id = this.__getHighestID(this.__imagesToDisplay);
 
 		for (let i = 0; i < files.length; ++i) {
-			++n;
+			++_id;
+			await this.__addTo__imagesToDisplay(files[i], _id);
 
-			let image: AppImage = {
-				name: files[i].name,
-				src: await getDataURL(files[i]),
-				description: '',
-				tags: [],
-				date: new Date(files[i].lastModified),
-				location: ''
-			};
-
-			this.__libraryChanges.set(`images.${n}`, image);
-
+			this.__subject.next({
+				_id,
+				index: this.__imagesToDisplay.data.length - 1
+			});
 		}
+	}
 
+
+	private __getHighestID(imagesToDisplay): number {
+		let ids = imagesToDisplay.data.map((image: AppImage) => image._id);
+		return getMax(ids);
+	}
+
+
+	private async __addTo__imagesToDisplay(file, _id) {
+		let image: AppImage = {
+			_id, // must never change, must be unique in its library.
+			name: file.name,
+			src: await getDataURL(file),
+			description: '',
+			tags: [],
+			date: new Date(file.lastModified),
+			location: ''
+		};
+
+		this.__imagesToDisplay.data.push(image);
 	}
 
 
