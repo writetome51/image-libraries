@@ -23,8 +23,6 @@ export class ImagesToDisplayService {
 
 
 	static get subscription() {
-		const arraySource = from(this.__data);
-		this.__subscription  = arraySource.subscribe(val => console.log('made a change'));
 		return this.__subscription;
 	}
 

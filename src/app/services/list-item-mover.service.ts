@@ -1,15 +1,12 @@
-import { Subject, Subscribable } from 'rxjs';
 import { errorIfNotInteger } from 'error-if-not-integer';
 import { Injectable } from '@angular/core';
+import { ItemBeingMoved } from '../interfaces/item-being-moved';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
-import { ItemBeingMoved } from './item-being-moved';
+import { Subject, Subscribable } from 'rxjs';
 
 
-@Injectable()
-
-// This will have to create an Observable (use BehaviorSubject)
-// that will call .next() every time it moves a list item.
+@Injectable({providedIn: 'root'})
 
 export class ListItemMoverService extends PublicArrayContainer {
 
@@ -33,7 +30,7 @@ export class ListItemMoverService extends PublicArrayContainer {
 	}
 
 
-	get indexBeingMoved() {
+	get indexBeingMoved(): number {
 		return this.__indexBeingMoved;
 	}
 

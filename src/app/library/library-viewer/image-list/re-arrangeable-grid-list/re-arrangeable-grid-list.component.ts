@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ListItemMoverService } from './list-item-mover.service';
+import { ListItemMoverService } from '../../../../services/list-item-mover.service';
 
 
 @Component({
@@ -12,8 +12,8 @@ export class ReArrangeableGridListComponent {
 	}
 
 
-	@Input() 
-	set list(value: any[]) {  // Required in order to re-arrange the list.
+	@Input()
+	set data(value: any[]) {  // Required in order to re-arrange the list.
 		this.__listItemMover.data = value;
 	}
 
