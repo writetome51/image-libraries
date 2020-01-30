@@ -32,7 +32,7 @@ export class ImagesToDisplayService {
 	// set this.__data and return it:
 
 	static get data(): AppImage[] {
-		if (!(this.__observable)) this.__observable = Observable.create();
+	//	if (!(this.__observable)) this.__observable = Observable.create();
 		if (libraryChanges.has('images')) {
 			let newImages = libraryChanges.getNewImages();
 			this.__data = getMergedArrays([library.data.images, newImages]);
