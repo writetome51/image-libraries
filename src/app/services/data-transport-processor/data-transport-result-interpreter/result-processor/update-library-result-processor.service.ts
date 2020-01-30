@@ -11,6 +11,9 @@ import { LibraryChangesService } from '../../../library/library-changes.service'
 
 export class UpdateLibraryResultProcessorService implements DirectProcessor {
 
+	constructor(private __libraryChanges: LibraryChangesService) {
+	}
+
 	async process(result: DBLibrary) {
 
 		if (result._user_id && result.name) {
@@ -19,7 +22,7 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 			delete result._user_id;
 
 			librarySetter.set(result);
-			LibraryChangesService.unsetAll();
+			this.__libraryChanges.unsetAll();
 			alert.success = 'Library updated';
 		}
 	}

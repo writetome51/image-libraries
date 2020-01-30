@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { AppImage } from '../../interfaces/app-image';
-import { removeHead } from '@writetome51/array-remove-head-tail';
-import { isInteger } from '@writetome51/is-integer-is-float';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { getMax } from '@writetome51/get-max-min';
+import { hasValue } from '@writetome51/has-value-no-value';
+import { Injectable } from '@angular/core';
+import { isInteger } from '@writetome51/is-integer-is-float';
+import { ListItemMoverService } from '../list-item-mover.service';
+import { ItemBeingMoved } from '../../interfaces/item-being-moved';
+import { removeHead } from '@writetome51/array-remove-head-tail';
+import { Unsubscribable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,22 +17,37 @@ export class LibraryChangesService {
 	// Stores all changes.  Properties should be assigned as strings so they can include
 	// dot-notation.
 
-	private static __data = {};
+	subscriptions: Unsubscribable[] = [];
+	private __data = {};
 
 
-	static get exist(): boolean {
+	get exist(): boolean {
 		return (Object.keys(this.__data).length > 0);
 	}
 
 
-	static get libraryName(): string {
+	get libraryName(): string {
 		return library.data.name;
+	}
+
+
+	constructor(
+		private __listItemMover: ListItemMoverService
+	) {
+		let subscriptionA = this.__listItemMover.subscribable.subscribe(
+			(imageBeingMoved: ItemBeingMoved) => {
+				console.log(imageBeingMoved);
+				if (hasValue(this.getExact('images'))) this.set('images', this.__listItemMover.data);
+				else this.set('images', library.data.images);
+			}
+		);
+		this.subscriptions.push(subscriptionA);
 	}
 
 
 	// property can have dot-notation.
 
-	static getInside(property): object {
+	getInside(property): object {
 		let changesWithin_property = {};
 		let keys = Object.keys(this.__data);
 		for (let i = 0; i < keys.length; ++i) {
@@ -43,7 +62,7 @@ export class LibraryChangesService {
 	}
 
 
-	static getExact(property) {
+	getExact(property) {
 		let keys = Object.keys(this.__data);
 
 		for (let i = 0; i < keys.length; ++i) {
@@ -52,7 +71,7 @@ export class LibraryChangesService {
 	}
 
 
-	static getNewImages(): AppImage[] {
+	getNewImages(): AppImage[] {
 		let newImages = [];
 		let images_changes = this.getInside('images');
 		let keys = Object.keys(images_changes);
@@ -64,7 +83,7 @@ export class LibraryChangesService {
 	}
 
 
-	static getHighestImageIndex(): number {
+	getHighestImageIndex(): number {
 		let keys = Object.keys(this.getInside('images'));
 		let numberKeys = [];
 		for (let i = 0; i < keys.length; ++i) {
@@ -75,14 +94,14 @@ export class LibraryChangesService {
 	}
 
 
-	static getAll(): object {
+	getAll(): object {
 		return this.__data;
 	}
 
 
 	// property can have dot-notation.
 
-	static has(property): boolean {
+	has(property): boolean {
 		let keys = Object.keys(this.__data);
 		for (let i = 0; i < keys.length; ++i) {
 			if (keys[i].startsWith(property + '.') || keys[i] === property) return true;
@@ -93,19 +112,19 @@ export class LibraryChangesService {
 
 	// propertyToChange can have dot-notation.
 
-	static set(propertyToChange, newValue): void {
+	set(propertyToChange, newValue): void {
 		this.__data[propertyToChange] = newValue;
 	}
 
 
 	// propertyToUnset can have dot-notation.
 
-	static unset(propertyToUnset): void {
+	unset(propertyToUnset): void {
 		delete this.__data[propertyToUnset];
 	}
 
 
-	static unsetAll(): void {
+	unsetAll(): void {
 		this.__data = {};
 	}
 

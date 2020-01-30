@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryChangesService as libraryChanges }
-	from '../../services/library/library-changes.service';
+import { LibraryChangesService}	from '../../services/library/library-changes.service';
 
 
 @Component({
@@ -9,8 +8,11 @@ import { LibraryChangesService as libraryChanges }
 })
 export class UndoChangesButtonComponent {
 
+	constructor(private __libraryChanges: LibraryChangesService) {
+	}
+
 	undoChanges() {
-		libraryChanges.unsetAll();
+		this.__libraryChanges.unsetAll();
 	}
 
 }

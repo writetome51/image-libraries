@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AppImage } from '../../../interfaces/app-image';
-import { ImagesToDisplayService as imagesToDisplay }
-	from '../../../services/image/images-to-display.service';
+import { ImagesToDisplayService } from '../../../services/image/images-to-display.service';
 
 
 @Component({
@@ -12,12 +11,16 @@ import { ImagesToDisplayService as imagesToDisplay }
 export class ImageListComponent implements OnDestroy {
 
 	get images(): AppImage[] {
-		return imagesToDisplay.data;
+		return this.__imagesToDisplay.data;
+	}
+
+
+	constructor(private __imagesToDisplay: ImagesToDisplayService) {
 	}
 
 
 	ngOnDestroy(): void {
-		imagesToDisplay.subscription.unsubscribe();
+		this.__imagesToDisplay.subscription.unsubscribe();
 	}
 
 }

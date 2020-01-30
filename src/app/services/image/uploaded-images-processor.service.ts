@@ -1,11 +1,10 @@
 import { AppImage } from '../../interfaces/app-image';
 import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { DirectProcessor } from '../../interfaces/direct-processor';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { getDataURL } from '@writetome51/get-data-url';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { Injectable } from '@angular/core';
-import { LibraryChangesService as libraryChanges } from '../library/library-changes.service';
+import { LibraryChangesService } from '../library/library-changes.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,11 +12,15 @@ import { LibraryChangesService as libraryChanges } from '../library/library-chan
 export class UploadedImagesProcessorService implements DirectProcessor {
 
 
+	constructor(private __libraryChanges: LibraryChangesService) {
+	}
+
+
 	async process(files: FileList | File[]): Promise<void> {
 		let n = -1;
 
-		if (libraryChanges.has('images')) {
-			n = libraryChanges.getHighestImageIndex();
+		if (this.__libraryChanges.has('images')) {
+			n = this.__libraryChanges.getHighestImageIndex();
 		}
 		else if (notEmpty(library.data.images)) n = (library.data.images.length - 1);
 
@@ -34,7 +37,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 				location: ''
 			};
 
-			libraryChanges.set(`images.${n}`, image);
+			this.__libraryChanges.set(`images.${n}`, image);
 
 		}
 

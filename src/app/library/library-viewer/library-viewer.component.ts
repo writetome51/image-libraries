@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { LibraryChangesService as libraryChanges }
-	from '../../services/library/library-changes.service';
-import { ImagesToDisplayService as imagesToDisplay }
-	from '../../services/image/images-to-display.service';
+import { LibraryChangesService } from '../../services/library/library-changes.service';
+import { ImagesToDisplayService } from '../../services/image/images-to-display.service';
 
 
 @Component({
@@ -15,17 +13,24 @@ export class LibraryViewerComponent {
 
 
 	get hasImages(): boolean {
-		return imagesToDisplay.exist;
+		return this.__imagesToDisplay.exist;
 	}
 
 
 	get changesExist(): boolean {
-		return libraryChanges.exist;
+		return this.__libraryChanges.exist;
 	}
 
 
 	get addImagesButtonText() {
 		return (this.addingImages ? 'Cancel' : 'Add Images');
+	}
+
+
+	constructor(
+		private __libraryChanges: LibraryChangesService,
+		private __imagesToDisplay: ImagesToDisplayService
+	) {
 	}
 
 

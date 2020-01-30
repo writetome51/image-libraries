@@ -3,8 +3,8 @@ import { AppImage } from '../../../../interfaces/app-image';
 import { ImageDisplaySettingsData as imageDisplaySettings }
 	from '../../../../data/image-display-settings.data';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { CurrentLibraryData as library } from '../../../../data/current-library.data';
 import { LibraryModuleRouteService } from '../../../library-module-route.service';
+import { ImagesToDisplayService } from '../../../../services/image/images-to-display.service';
 
 
 @Component({
@@ -30,8 +30,12 @@ export class ThumbnailImageComponent {
 	}
 
 
+	constructor(private __imagesToDisplay: ImagesToDisplayService) {
+	}
+
+
 	deleteImage() {
-		removeByIndex(this.index, library.data.images);
+		removeByIndex(this.index, this.__imagesToDisplay.data);
 	}
 
 
