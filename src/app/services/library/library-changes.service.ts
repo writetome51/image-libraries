@@ -8,6 +8,8 @@ import { ListItemMoverService } from '../list-item-mover.service';
 import { ItemBeingMoved } from '../../interfaces/item-being-moved';
 import { removeHead } from '@writetome51/array-remove-head-tail';
 import { Unsubscribable } from 'rxjs';
+import { ListItemRemoverService } from '../list-item-remover.service';
+import { ImagesToDisplayService } from '../image/images-to-display.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -32,16 +34,24 @@ export class LibraryChangesService {
 
 
 	constructor(
-		private __listItemMover: ListItemMoverService
+		private __listItemMover: ListItemMoverService,
+		private __listItemRemover: ListItemRemoverService,
+		private __imagesToDisplay: ImagesToDisplayService
 	) {
-		let subscriptionA = this.__listItemMover.subscribable.subscribe(
+		let listItemMoverSubscrip = this.__listItemMover.subscribable.subscribe(
 			(imageBeingMoved: ItemBeingMoved) => {
-				console.log(imageBeingMoved);
-				if (hasValue(this.getExact('images'))) this.set('images', this.__listItemMover.data);
-				else this.set('images', library.data.images);
+				if (hasValue(this.getExact('images'))) this.set(
+					'images', this.__listItemMover.data);
+				else this.set('images', this.__imagesToDisplay.data);
 			}
 		);
-		this.subscriptions.push(subscriptionA);
+		this.subscriptions.push(listItemMoverSubscrip);
+
+		let listItemRemoverSubscrip = this.__listItemRemover.subscribable.subscribe(
+			(imageBeingRemoved) => {
+			}
+		);
+		this.subscriptions.push(listItemRemoverSubscrip);
 	}
 
 
@@ -105,6 +115,15 @@ export class LibraryChangesService {
 		let keys = Object.keys(this.__data);
 		for (let i = 0; i < keys.length; ++i) {
 			if (keys[i].startsWith(property + '.') || keys[i] === property) return true;
+		}
+		return false;
+	}
+
+
+	hasExact(property): boolean{
+		let keys = Object.keys(this.__data);
+		for (let i = 0; i < keys.length; ++i) {
+			if (keys[i] === property) return true;
 		}
 		return false;
 	}
