@@ -2,18 +2,17 @@ import { Injectable } from '@angular/core';
 import { Subject, Subscribable } from 'rxjs';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { ImagesToDisplayService } from './image/images-to-display.service';
-import { ItemBeingRemoved } from '../interfaces/item-being-removed';
 import { HasSubscribable } from '../interfaces/has-subscribable';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ListItemRemoverService implements HasSubscribable {
+export class ListItemRemoverService implements HasSubscribable<any> {
 
 	private __subject = new Subject();
 
 
-	get subscribable(): Subscribable<ItemBeingRemoved> {
+	get subscribable(): Subscribable<{ indexBeingRemoved: number, previousLength: number }> {
 		return this.__subject;
 	}
 
@@ -23,9 +22,10 @@ export class ListItemRemoverService implements HasSubscribable {
 
 
 	remove(index): void {
+		let previousLength = this.__imagesToDisplay.data.length;
 		removeByIndex(index, this.__imagesToDisplay.data);
 
-		this.__subject.next({indexBeingRemoved: index});
+		this.__subject.next({indexBeingRemoved: index, previousLength});
 	}
 
 

@@ -1,5 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { Component } from '@angular/core';
+import { DBImage } from '../../../interfaces/db-image';
 import { ImagesToDisplayService } from '../../../services/image/images-to-display.service';
 
 
@@ -8,19 +8,14 @@ import { ImagesToDisplayService } from '../../../services/image/images-to-displa
 	templateUrl: './image-list.component.html',
 	styleUrls: ['./image-list.component.css']
 })
-export class ImageListComponent implements OnDestroy {
+export class ImageListComponent {
 
-	get images(): AppImage[] {
+	get images(): DBImage[] {
 		return this.__imagesToDisplay.data;
 	}
 
 
 	constructor(private __imagesToDisplay: ImagesToDisplayService) {
-	}
-
-
-	ngOnDestroy(): void {
-		this.__imagesToDisplay.subscription.unsubscribe();
 	}
 
 }

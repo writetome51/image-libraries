@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppImage } from '../../../interfaces/app-image';
+import { DBImage } from '../../../interfaces/db-image';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { AppImage } from '../../../interfaces/app-image';
 export class FullSizeImageComponent {
 
 
-	@Input() image: AppImage;
+	@Input() image: DBImage;
 
 
 	constructor() {

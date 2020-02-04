@@ -1,6 +1,6 @@
 import { Subscribable } from 'rxjs';
 
 
-export interface HasSubscribable {
-	subscribable: Subscribable;
+export interface HasSubscribable<T> {
+	subscribable: Subscribable<T>;
 }

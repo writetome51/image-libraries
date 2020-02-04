@@ -1,4 +1,4 @@
-import { AppImage } from '../../interfaces/app-image';
+import { DBImage } from '../../interfaces/db-image';
 import { DirectProcessor } from '../../interfaces/direct-processor';
 import { getDataURL } from '@writetome51/get-data-url';
 import { getMax } from '@writetome51/get-max-min';
@@ -12,7 +12,8 @@ import { HasSubscribable } from '../../interfaces/has-subscribable';
 
 @Injectable({providedIn: 'root'})
 
-export class UploadedImagesProcessorService implements DirectProcessor, HasSubscribable {
+export class UploadedImagesProcessorService implements DirectProcessor,
+	HasSubscribable<{ _id: number, index: number }> {
 
 	private __subject = new Subject();
 
@@ -46,13 +47,13 @@ export class UploadedImagesProcessorService implements DirectProcessor, HasSubsc
 
 
 	private __getHighestID(imagesToDisplay): number {
-		let ids = imagesToDisplay.data.map((image: AppImage) => image._id);
+		let ids = imagesToDisplay.data.map((image: DBImage) => image._id);
 		return getMax(ids);
 	}
 
 
 	private async __addTo__imagesToDisplay(file, _id) {
-		let image: AppImage = {
+		let image: DBImage = {
 			_id, // must never change, must be unique in its library.
 			name: file.name,
 			src: await getDataURL(file),

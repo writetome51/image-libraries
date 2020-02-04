@@ -9,7 +9,7 @@ import { HasSubscribable } from '../interfaces/has-subscribable';
 
 @Injectable({providedIn: 'root'})
 
-export class ListItemMoverService extends PublicArrayContainer implements  HasSubscribable {
+export class ListItemMoverService extends PublicArrayContainer implements  HasSubscribable<any> {
 
 	private __subject = new Subject();
 	private __indexBeingMoved: number;

@@ -1,10 +1,10 @@
 import { DBLibrary } from './db-library';
-import { AppImage } from './app-image';
+import { DBImage } from './db-image';
 
 
 export interface LoadedLibrary extends DBLibrary {
 
-	currentImage: AppImage; // image currently being viewed
+	currentImage: DBImage; // image currently being viewed
 
 	currentImageIndex: number;
 

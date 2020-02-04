@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppImage } from '../../../../interfaces/app-image';
+import { DBImage } from '../../../../interfaces/db-image';
 import { ImageDisplaySettingsData as imageDisplaySettings }
 	from '../../../../data/image-display-settings.data';
 import { ListItemRemoverService } from '../../../../services/list-item-remover.service';
@@ -12,7 +12,7 @@ import { ListItemRemoverService } from '../../../../services/list-item-remover.s
 export class ThumbnailImageComponent {
 
 
-	@Input() image: AppImage;
+	@Input() image: DBImage;
 	@Input() index: number;
 	hovered = false;
 

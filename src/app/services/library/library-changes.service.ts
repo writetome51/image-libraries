@@ -1,4 +1,4 @@
-import { AppImage } from '../../interfaces/app-image';
+import { DBImage } from '../../interfaces/db-image';
 import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { getMax } from '@writetome51/get-max-min';
 import { hasValue } from '@writetome51/has-value-no-value';
@@ -28,30 +28,11 @@ export class LibraryChangesService {
 	}
 
 
-	get libraryName(): string {
-		return library.data.name;
-	}
-
-
 	constructor(
 		private __listItemMover: ListItemMoverService,
 		private __listItemRemover: ListItemRemoverService,
 		private __imagesToDisplay: ImagesToDisplayService
 	) {
-		let listItemMoverSubscrip = this.__listItemMover.subscribable.subscribe(
-			(imageBeingMoved: ItemBeingMoved) => {
-				if (hasValue(this.getExact('images'))) this.set(
-					'images', this.__listItemMover.data);
-				else this.set('images', this.__imagesToDisplay.data);
-			}
-		);
-		this.subscriptions.push(listItemMoverSubscrip);
-
-		let listItemRemoverSubscrip = this.__listItemRemover.subscribable.subscribe(
-			(imageBeingRemoved) => {
-			}
-		);
-		this.subscriptions.push(listItemRemoverSubscrip);
 	}
 
 
@@ -81,12 +62,12 @@ export class LibraryChangesService {
 	}
 
 
-	getNewImages(): AppImage[] {
+	getNewImages(): DBImage[] {
 		let newImages = [];
 		let images_changes = this.getInside('images');
 		let keys = Object.keys(images_changes);
 		for (let i = 0; i < keys.length; ++i) {
-			// if current key is integer, its value is an AppImage
+			// if current key is integer, its value is an DBImage
 			if (isInteger(Number(keys[i]))) newImages.push(images_changes[keys[i]]);
 		}
 		return newImages;

@@ -16,6 +16,8 @@ export class LogoutResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
 		if (errMessage.includes(notLoggedIn) || errMessage.includes(noDocumentMatchedCriteria)) {
+
+			//	console.log(errMessage);
 			await this.__notLoggedInErrorHandler.handle();
 		}
 		else super._errorHandler(errMessage);

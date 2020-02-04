@@ -1,6 +1,7 @@
 import { DBLibrary } from '../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
+import { CurrentLibraryData as library } from '../../data/current-library.data';
 import { LibraryChangesService } from './library-changes.service';
 import { LibraryStorageService } from './library-storage.service';
 import { not } from '@writetome51/not';
@@ -28,7 +29,7 @@ export class LibraryUpdaterService {
 			}
 		}
 		return await this.__libraryStorage.update(
-			this.__libraryChanges.libraryName, this.__libraryChanges.getAll()
+			library.data.name, this.__libraryChanges.getAll()
 		);
 	}
 
