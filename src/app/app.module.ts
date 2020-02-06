@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { AllImagesComponent } from './all-images/all-images.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		LoginButtonComponent,
 		LogoutButtonComponent,
 		PageNotFoundComponent,
+		AllImagesComponent,
 	],
 	imports: [
 		BrowserModule,
