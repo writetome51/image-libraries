@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DataOperationStatusData } from '../data/data-operation-status.data';
+import { DataOperationStatusData } from '../runtime-state-data/data-operation-status.data';
 
 
 @Component({

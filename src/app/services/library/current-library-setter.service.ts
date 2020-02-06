@@ -1,5 +1,5 @@
 import { DBLibrary } from '../../interfaces/db-library';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
+import { LibraryData as library } from '../../runtime-state-data/library.data';
 import { LoadedLibrary } from '../../interfaces/loaded-library';
 
 

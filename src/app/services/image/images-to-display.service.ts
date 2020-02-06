@@ -1,5 +1,5 @@
 import { DBImage } from '../../interfaces/db-image';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
+import { LibraryData as library } from '../../runtime-state-data/library.data';
 import { getCopy } from '@writetome51/array-get-copy';
 import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';

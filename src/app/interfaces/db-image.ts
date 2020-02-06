@@ -7,7 +7,7 @@ export interface DBImage {
 	// Foreign key, relating to DBUser._id .  Compound index, combined with 'name'
 	_user_id: string;
 
-	name?: string; // compound index, combined with '_user_id'
+	name: string; // compound index, combined with '_user_id'
 
 	src: string;
 

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '../interfaces/db-image';
-import { ImageDisplaySettingsData as imageDisplaySettings }
-	from '../data/image-display-settings.data';
+import { ThumbnailDisplaySettingsData as imageDisplaySettings }
+	from '../runtime-state-data/thumbnail-display-settings.data';
 import { ListItemRemoverService } from '../services/list-item-remover.service';
 
 

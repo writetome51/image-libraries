@@ -1,20 +1,20 @@
 import { DataTransportProcessorService } from './data-transport-processor.service';
 import { LibraryStorageService } from '../library/library-storage.service';
 import { DBLibrary } from '../../interfaces/db-library';
-import { GetLibrariesResultInterpreterService }
-	from './data-transport-result-interpreter/get-libraries-result-interpreter.service';
+import { GetLibraryNamesResultInterpreterService }
+	from './data-transport-result-interpreter/get-library-names-result-interpreter.service';
 import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
 
-export class GetLibrariesProcessorService extends DataTransportProcessorService {
+export class GetLibraryNamesProcessorService extends DataTransportProcessorService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
-		__getLibrariesResultInterpreter: GetLibrariesResultInterpreterService
+		__getLibraryNamesResultInterpreter: GetLibraryNamesResultInterpreterService
 	) {
-		super(__getLibrariesResultInterpreter);
+		super(__getLibraryNamesResultInterpreter);
 	}
 
 

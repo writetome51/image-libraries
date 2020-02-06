@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { DataTransportResultCheckService }
 	from './data-transport-result-check/data-transport-result-check.service';
-import { GetLibrariesResultProcessorService }
-	from './result-processor/get-libraries-result-processor.service';
+import { GetLibraryNamesResultProcessorService }
+	from './result-processor/get-library-names-result-processor.service';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class GetLibrariesResultInterpreterService extends DataTransportResultInterpreterService {
+export class GetLibraryNamesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__getLibrariesResultProcessor: GetLibrariesResultProcessorService
+		__getLibraryNamesResultProcessor: GetLibraryNamesResultProcessorService
 	) {
 		super(
 			__dataTransportResultCheck,
-			__getLibrariesResultProcessor
+			__getLibraryNamesResultProcessor
 		);
 	}
 

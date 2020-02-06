@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserData as currentUser } from '../../data/current-user.data';
+import { CurrentUserData as currentUser } from '../../runtime-state-data/current-user.data';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
 

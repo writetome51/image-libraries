@@ -1,4 +1,4 @@
-import { DataOperationStatusData as dataOperationStatus } from '../data/data-operation-status.data';
+import { DataOperationStatusData as dataOperationStatus } from '../runtime-state-data/data-operation-status.data';
 import { IndirectProcessor } from '../interfaces/indirect-processor';
 
 

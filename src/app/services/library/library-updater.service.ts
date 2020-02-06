@@ -1,7 +1,7 @@
 import { DBLibrary } from '../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
+import { LibraryData as library } from '../../runtime-state-data/library.data';
 import { LibraryChangesService } from './library-changes.service';
 import { LibraryStorageService } from './library-storage.service';
 import { not } from '@writetome51/not';

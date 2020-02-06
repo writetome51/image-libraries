@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AllImagesData } from '../../data/all-images.data';
+import { AllImagesData } from '../../runtime-state-data/all-images.data';
 import { DBImage } from '../../interfaces/db-image';
 
 

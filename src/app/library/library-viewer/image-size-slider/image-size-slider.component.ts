@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageDisplaySettingsData as imageDisplaySettings}
-	from '../../../data/image-display-settings.data';
+import { ThumbnailDisplaySettingsData as imageDisplaySettings}
+	from '../../../runtime-state-data/thumbnail-display-settings.data';
 
 
 @Component({

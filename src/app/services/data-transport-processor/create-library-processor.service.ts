@@ -4,7 +4,7 @@ import { LibraryCreatorService } from '../library/library-creator.service';
 import { NewLibraryInputsService } from '../validating-inputs/new-library-inputs.service';
 import { NewLibraryResultInterpreterService }
 	from './data-transport-result-interpreter/new-library-result-interpreter.service';
-import { NewLibraryData as newLibrary} from '../../data/new-library.data';
+import { NewLibraryData as newLibrary} from '../../runtime-state-data/new-library.data';
 
 
 @Injectable({providedIn: 'root'})

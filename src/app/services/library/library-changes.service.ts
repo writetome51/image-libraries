@@ -1,5 +1,5 @@
 import { DBImage } from '../../interfaces/db-image';
-import { CurrentLibraryData as library } from '../../data/current-library.data';
+import { LibraryData as library } from '../../runtime-state-data/library.data';
 import { getMax } from '@writetome51/get-max-min';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';

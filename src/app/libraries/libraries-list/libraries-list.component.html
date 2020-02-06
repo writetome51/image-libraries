@@ -1,13 +1,13 @@
 <div>
 
-	<p *ngIf="!(libraries)">Fetching Libraries...</p>
-	<p *ngIf="libraries && libraries.length === 0">{{noLibrariesMessage}}</p>
+	<p *ngIf="!(names)">Fetching Libraries...</p>
+	<p *ngIf="names && names.length === 0">{{noLibrariesMessage}}</p>
 
-	<ul *ngIf="libraries && libraries.length > 0">
-		<li *ngFor="let library of libraries">
+	<ul *ngIf="names && names.length > 0">
+		<li *ngFor="let name of names">
 
-			<a routerLink="/library/{{library}}" routerLinkActive="active">
-				{{library}}
+			<a routerLink="/library/{{name}}" routerLinkActive="active">
+				{{name}}
 			</a>
 
 		</li>

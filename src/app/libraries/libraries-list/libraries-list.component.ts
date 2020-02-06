@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CurrentUserLibrariesData as libraries }
-	from '../../data/current-user-libraries.data';
+import { LibraryNamesData as libraryNames }
+	from '../../runtime-state-data/LibraryNamesData';
 import { noValue } from '@writetome51/has-value-no-value';
-import { GetLibrariesProcessorService }
-	from '../../services/data-transport-processor/get-libraries-processor.service';
+import { GetLibraryNamesProcessorService }
+	from '../../services/data-transport-processor/get-library-names-processor.service';
 
 
 @Component({
@@ -15,13 +15,13 @@ export class LibrariesListComponent {
 	noLibrariesMessage = 'You have no libraries right now';
 
 
-	get libraries(): string[] {
-		return libraries.data;
+	get names(): string[] {
+		return libraryNames.data;
 	}
 
 
-	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
-		if (noValue(libraries.data)) this.__getLibrariesProcessor.process();
+	constructor(private __getLibrariesProcessor: GetLibraryNamesProcessorService) {
+		if (noValue(libraryNames.data)) this.__getLibrariesProcessor.process();
 	}
 
 }

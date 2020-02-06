@@ -1,11 +1,12 @@
-import { CurrentUserLibrariesData as libraries } from '../data/current-user-libraries.data';
-import { CurrentLibrarySetterService as librarySetter } from './library/current-library-setter.service';
+import { LibraryNamesData as libraryNames } from '../runtime-state-data/LibraryNamesData';
+import { CurrentLibrarySetterService as librarySetter }
+	from './library/current-library-setter.service';
 
 
-export class RemoveRuntimeStateDataService {
+export class RemoveRuntimeStateDataService { // implements IDoThis
 
 	static go(): void {
-		libraries.data = undefined;
+		libraryNames.data = undefined;
 		librarySetter.unset();
 	}
 

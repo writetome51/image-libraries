@@ -1,4 +1,4 @@
-import { CurrentUserData as currentUser } from '../../data/current-user.data';
+import { CurrentUserData as currentUser } from '../../runtime-state-data/current-user.data';
 import { Injectable } from '@angular/core';
 import { UserRestAPIService } from './user-rest-api.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
