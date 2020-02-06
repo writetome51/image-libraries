@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryData as library } from '../../runtime-state-data/library.data';
+import { LibraryData as library } from '../../data/runtime-state-data/library.data';
 
 
 @Component({

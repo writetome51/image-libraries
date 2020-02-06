@@ -1,4 +1,4 @@
-import { DBImage } from '../interfaces/db-image';
+import { DBImage } from '../../interfaces/db-image';
 
 // Stores all images belonging to currently logged-in user
 

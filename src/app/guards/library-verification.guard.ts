@@ -1,6 +1,6 @@
 import { AppModuleRouteService } from '../app-module-route.service';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
-import { LibraryData as library } from '../runtime-state-data/library.data';
+import { LibraryData as library } from '../data/runtime-state-data/library.data';
 import { CurrentLibrarySetterService as librarySetter }
 	from '../services/library/current-library-setter.service';
 import { DBLibrary } from '../interfaces/db-library';
@@ -8,10 +8,10 @@ import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LibraryStorageService } from '../services/library/library-storage.service';
 import { LibraryVerificationStatusData as libVerificationStatus }
-	from '../runtime-state-data/library-verification-status.data';
+	from '../data/runtime-state-data/library-verification-status.data';
 import { not } from '@writetome51/not';
 import { RequestedLibraryData as requestedLibrary }
-	from '../runtime-state-data/requested-library.data';
+	from '../data/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -30,8 +30,7 @@ export class LibraryVerificationGuard implements CanActivate {
 
 		await this.__loadRequestedLibrary_ifItExists(requestedLibrary.name);
 
-		// Only return true if requested library was found:
-		if (hasValue(library.data)) return true;
+		if (this.__isFound(library)) return true;
 		else return this.__redirectToLibrariesAndReturnFalse();
 	}
 
@@ -53,9 +52,15 @@ export class LibraryVerificationGuard implements CanActivate {
 	}
 
 
+	private __isFound(library): boolean {
+		return hasValue(library.data);
+	}
+
+
 	private __redirectToLibrariesAndReturnFalse() {
 		this.__router.navigate([`/${AppModuleRouteService.LibrariesModule}`]);
 		return false;
 	}
+
 
 }

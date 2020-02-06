@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NewLibraryData } from '../../runtime-state-data/new-library.data';
+import { NewLibraryData } from '../../data/runtime-state-data/new-library.data';
 import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 

@@ -1,4 +1,4 @@
-import { CurrentUserData as currentUser } from '../../runtime-state-data/current-user.data';
+import { CurrentUserData as currentUser } from '../../data/runtime-state-data/current-user.data';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';

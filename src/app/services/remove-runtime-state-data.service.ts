@@ -1,4 +1,4 @@
-import { LibraryNamesData as libraryNames } from '../runtime-state-data/LibraryNamesData';
+import { LibraryNamesData as libraryNames } from '../data/runtime-state-data/LibraryNamesData';
 import { CurrentLibrarySetterService as librarySetter }
 	from './library/current-library-setter.service';
 

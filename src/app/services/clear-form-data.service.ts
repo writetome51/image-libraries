@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser } from '../runtime-state-data/current-user.data';
-import { NewLibraryData as newLibrary } from '../runtime-state-data/new-library.data';
+import { CurrentUserData as currentUser } from '../data/runtime-state-data/current-user.data';
+import { NewLibraryData as newLibrary } from '../data/runtime-state-data/new-library.data';
 
 
 export class ClearFormDataService { // implements IDoThis

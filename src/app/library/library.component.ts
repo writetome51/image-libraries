@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LibraryData as library } from '../runtime-state-data/library.data';
+import { LibraryData as library } from '../data/runtime-state-data/library.data';
 import { RequestedLibraryData as requestedLibrary }
-	from '../runtime-state-data/requested-library.data';
+	from '../data/runtime-state-data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 
 
