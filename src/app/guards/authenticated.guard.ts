@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
 
@@ -15,10 +15,7 @@ export class AuthenticatedGuard implements CanActivate {
 	}
 
 
-	canActivate(
-		next: ActivatedRouteSnapshot, state: RouterStateSnapshot
-	): boolean {
-
+	canActivate(): boolean {
 		return this.__ifSessionIDExists_returnTrue_ifNot_redirectToLoginAndReturnFalse();
 	}
 

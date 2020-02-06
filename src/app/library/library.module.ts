@@ -4,8 +4,6 @@ import { AddImageUrlButtonComponent }
 import { ChooseImagesFromDeviceComponent }
 	from './library-viewer/add-images/choose-images-from-device/choose-images-from-device.component';
 import { CommonModule } from '@angular/common';
-import { DeleteImageButtonComponent }
-	from './library-viewer/image-list/thumbnail-image/delete-image-button/delete-image-button.component';
 import { EnterImageURLComponent }
 	from './library-viewer/add-images/enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
@@ -21,9 +19,8 @@ import { ProcessingButtonModule } from '../processing-button/processing-button.m
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
-import { ThumbnailImageComponent }
-	from './library-viewer/image-list/thumbnail-image/thumbnail-image.component';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
+import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
 
 
 @NgModule({
@@ -31,14 +28,12 @@ import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button
 		AddImagesComponent,
 		AddImageUrlButtonComponent,
 		ChooseImagesFromDeviceComponent,
-		DeleteImageButtonComponent,
 		EnterImageURLComponent,
 		LibraryComponent,
 		LibraryViewerComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		SaveChangesButtonComponent,
-		ThumbnailImageComponent,
 		UndoChangesButtonComponent
 	],
 	imports: [
@@ -48,6 +43,7 @@ import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
 		ImageViewerModule,
+		ThumbnailImageModule
 	]
 })
 export class LibraryModule {

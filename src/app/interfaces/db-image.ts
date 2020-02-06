@@ -3,10 +3,11 @@
 export interface DBImage {
 	_id: string; // unique, never changes. Primary key
 
-	// Foreign key, relating to DBLibrary._id .  Compound index, combined with 'name'
-	_library_id: string;
+	// Unique, never changes.
+	// Foreign key, relating to DBUser._id .  Compound index, combined with 'name'
+	_user_id: string;
 
-	name?: string; // compound index, combined with '_library_id'
+	name?: string; // compound index, combined with '_user_id'
 
 	src: string;
 
