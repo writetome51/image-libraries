@@ -19,11 +19,8 @@ export class LibraryVersionSaverService {
 		if (isEmpty(library.data.name)) {
 			throw new Error(`The library must be given a name before you save it`);
 		}
-		let lib = {
-			name: library.data.name,
-			images: library.data.images
-		};
-		let txtToWrite = JSON.stringify(lib);
+
+		let txtToWrite = JSON.stringify(library.data);
 
 		let fileName = (library.data.name + '-' + getDateTimeID() + this.__extension);
 		let file = new File([txtToWrite], fileName, this.__writeOptions);

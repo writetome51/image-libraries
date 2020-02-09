@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { LibraryNamesData as libraryNames }
-	from '../../data/runtime-state-data/LibraryNamesData';
 import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibraryNamesProcessorService }
 	from '../../services/data-transport-processor/get-library-names-processor.service';
+import { LibraryNamesData as libraryNames } from '../../data/runtime-state-data/library-names.data';
 
 
 @Component({

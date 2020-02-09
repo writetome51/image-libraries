@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DBImage } from '../../../interfaces/db-image';
 import { DisplayedImagesService } from '../../../services/image/displayed-images.service';
+import { AppImage } from '../../../interfaces/app-image';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { DisplayedImagesService } from '../../../services/image/displayed-images
 })
 export class ImageListComponent {
 
-	get images(): DBImage[] {
+	get images(): AppImage[] {
 		return this.__imagesToDisplay.data;
 	}
 

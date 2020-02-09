@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AllImagesData } from '../../data/runtime-state-data/all-images.data';
+import { AllImagesData as allImages } from '../../data/runtime-state-data/all-images.data';
 import { DBImage } from '../../interfaces/db-image';
 
 
@@ -10,7 +10,7 @@ import { DBImage } from '../../interfaces/db-image';
 export class AllImagesComponent {
 
 	get images(): DBImage[] {
-		return AllImagesData.data;
+		return Object.values(allImages.data);
 	}
 
 }
