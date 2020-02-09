@@ -1,15 +1,12 @@
-import { DBImage } from '../../interfaces/db-image';
 import { LibraryData as library } from '../../data/runtime-state-data/library.data';
-import { getCopy } from '@writetome51/array-get-copy';
 import { Injectable } from '@angular/core';
-import { noValue } from '@writetome51/has-value-no-value';
+import { AppImage } from '../../interfaces/app-image';
+import { LibraryImagesData as images } from '../../data/runtime-state-data/library-images.data';
 
 
 @Injectable({providedIn: 'root'})
 
 export class ImagesToDisplayService {
-
-	private __data: DBImage[];
 
 
 	get exist(): boolean {
@@ -17,10 +14,8 @@ export class ImagesToDisplayService {
 	}
 
 
-	get data(): DBImage[] {
-		if (noValue(this.__data)) this.__data = getCopy(library.data.images);
-
-		return this.__data;
+	get data(): AppImage[] {
+		return library.data._image_ids.map((id) => images.data[id]);
 	}
 
 

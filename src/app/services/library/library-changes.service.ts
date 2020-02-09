@@ -1,14 +1,9 @@
 import { DBImage } from '../../interfaces/db-image';
-import { LibraryData as library } from '../../data/runtime-state-data/library.data';
 import { getMax } from '@writetome51/get-max-min';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { isInteger } from '@writetome51/is-integer-is-float';
-import { ListItemMoverService } from '../list-item-mover.service';
-import { ItemBeingMoved } from '../../interfaces/item-being-moved';
 import { removeHead } from '@writetome51/array-remove-head-tail';
 import { Unsubscribable } from 'rxjs';
-import { ListItemRemoverService } from '../list-item-remover.service';
 import { ImagesToDisplayService } from '../image/images-to-display.service';
 
 
@@ -29,8 +24,6 @@ export class LibraryChangesService {
 
 
 	constructor(
-		private __listItemMover: ListItemMoverService,
-		private __listItemRemover: ListItemRemoverService,
 		private __imagesToDisplay: ImagesToDisplayService
 	) {
 	}
