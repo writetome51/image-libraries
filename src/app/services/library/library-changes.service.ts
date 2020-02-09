@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { isInteger } from '@writetome51/is-integer-is-float';
 import { removeHead } from '@writetome51/array-remove-head-tail';
 import { Unsubscribable } from 'rxjs';
-import { ImagesToDisplayService } from '../image/images-to-display.service';
+import { DisplayedImagesService } from '../image/displayed-images.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -24,7 +24,7 @@ export class LibraryChangesService {
 
 
 	constructor(
-		private __imagesToDisplay: ImagesToDisplayService
+		private __imagesToDisplay: DisplayedImagesService
 	) {
 	}
 

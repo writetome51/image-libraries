@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
-import { ImagesToDisplayService } from '../../services/image/images-to-display.service';
+import { DisplayedImagesService } from '../../services/image/displayed-images.service';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class LibraryViewerComponent {
 
 	constructor(
 		private __libraryChanges: LibraryChangesService,
-		private __imagesToDisplay: ImagesToDisplayService
+		private __imagesToDisplay: DisplayedImagesService
 	) {
 	}
 

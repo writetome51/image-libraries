@@ -1,7 +1,7 @@
 import { DirectProcessor } from '../../interfaces/direct-processor';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
-import { ImagesToDisplayService } from './images-to-display.service';
+import { DisplayedImagesService } from './displayed-images.service';
 import { AppImage } from '../../interfaces/app-image';
 
 
@@ -10,7 +10,7 @@ import { AppImage } from '../../interfaces/app-image';
 export class UploadedImagesProcessorService implements DirectProcessor {
 
 	constructor(
-		private __imagesToDisplay: ImagesToDisplayService
+		private __imagesToDisplay: DisplayedImagesService
 	) {
 	}
 

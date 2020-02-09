@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ImagesToDisplayService } from '../image/images-to-display.service';
+import { DisplayedImagesService } from '../image/displayed-images.service';
 import { Subscription, Unsubscribable } from 'rxjs';
 import { ItemBeingRemoved } from '../../interfaces/item-being-removed';
 import { ListItemRemoverService } from '../list-item-remover.service';
@@ -15,7 +15,7 @@ export class RemovedImageChangeDetectorService {
 
 	/**************
 	constructor(
-		private __imagesToDisplay: ImagesToDisplayService,
+		private __imagesToDisplay: DisplayedImagesService,
 		private __listItemRemover: ListItemRemoverService,
 		private __libraryChanges: LibraryChangesService
 	) {

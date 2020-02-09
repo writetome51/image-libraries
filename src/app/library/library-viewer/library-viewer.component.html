@@ -1,9 +1,5 @@
 <div>
 
-	<button (click)="addingImages = !(addingImages)">{{addImagesButtonText}}</button>
-
-	<add-images *ngIf="addingImages"></add-images>
-
 	<ng-container *ngIf="changesExist">
 		<save-changes-button></save-changes-button>
 		<undo-changes-button></undo-changes-button>

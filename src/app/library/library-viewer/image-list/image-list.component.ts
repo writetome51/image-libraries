@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
-import { ImagesToDisplayService } from '../../../services/image/images-to-display.service';
+import { DisplayedImagesService } from '../../../services/image/displayed-images.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ImageListComponent {
 	}
 
 
-	constructor(private __imagesToDisplay: ImagesToDisplayService) {
+	constructor(private __imagesToDisplay: DisplayedImagesService) {
 	}
 
 }

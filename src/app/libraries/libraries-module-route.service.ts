@@ -4,6 +4,7 @@
 
 export const LibrariesModuleRouteService = {
 
-	AllImagesComponent: 'all-images'
+	AllImagesComponent: 'all-images',
+	AddImagesComponent: 'add-images'
 
 };

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DataProcessorComponent } from '../../../../data-processor.component';
-import { ImageURLProcessorService } from '../../../../services/image/image-url-processor.service';
+import { DataProcessorComponent } from '../../../data-processor.component';
+import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
 
 
 @Component({

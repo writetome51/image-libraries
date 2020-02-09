@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Subscribable } from 'rxjs';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
-import { ImagesToDisplayService } from './image/images-to-display.service';
+import { DisplayedImagesService } from './image/displayed-images.service';
 import { HasSubscribable } from '../interfaces/has-subscribable';
 
 
@@ -17,7 +17,7 @@ export class ListItemRemoverService implements HasSubscribable<any> {
 	}
 
 
-	constructor(private __imagesToDisplay: ImagesToDisplayService) {
+	constructor(private __imagesToDisplay: DisplayedImagesService) {
 	}
 
 

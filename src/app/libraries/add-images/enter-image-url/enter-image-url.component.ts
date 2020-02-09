@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ImageURLProcessorService } from '../../../../services/image/image-url-processor.service';
+import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
 
 
 @Component({
 	selector: 'enter-image-url',
-	templateUrl: './enter-image-url.component.html'
+	template: `<add-image-url-button></add-image-url-button>`
 })
 export class EnterImageURLComponent {
 
