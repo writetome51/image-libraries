@@ -10,6 +10,4 @@ export class AddImagesComponent {
 	gettingImagesInstructions = `The images can come from your own device or from somewhere
 	else in the web.`;
 
-	sizeLimitWarning = 'Each library is limited to 16 MB.';
-
 }

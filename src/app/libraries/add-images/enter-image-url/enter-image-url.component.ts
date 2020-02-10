@@ -4,7 +4,7 @@ import { ImageURLProcessorService } from '../../../services/image/image-url-proc
 
 @Component({
 	selector: 'enter-image-url',
-	template: `<add-image-url-button></add-image-url-button>`
+	templateUrl: './enter-image-url.component.html'
 })
 export class EnterImageURLComponent {
 
