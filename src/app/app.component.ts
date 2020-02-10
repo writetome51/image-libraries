@@ -3,6 +3,7 @@ import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { CurrentRouteService } from './services/current-route.service';
+import { GoogleMapsApiKeyData } from './data/read-only-data/google-maps-api-key.data';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class AppComponent {
 	title = 'Image Libraries';
 	alert = AlertService;
 	moduleRoute = AppModuleRouteService;
+	gMapsApiKey = GoogleMapsApiKeyData;
 
 
 	// Adds keyup listener to document.

@@ -10,8 +10,12 @@ import { AppModuleRouteService as moduleRoute } from '../app-module-route.servic
 })
 export class LoginComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
-	introduction = `This application lets you create libraries of images.  Inside each library you can 
-	rename images, rearrange their order, add descriptions, tags, and do searches.`;
+	hovered = false;
+
+	explanation = `This application lets you save images to your account
+	(either uploaded from your own device or found elsewhere on the web), then organize them in
+	libraries.  Inside each library you can rearrange the image order, add
+	descriptions, tags, pic locations, and do searches.`;
 
 	moduleRoute = moduleRoute;
 

@@ -1,7 +1,12 @@
-<header><p>{{introduction}}</p></header>
-
 <login-form></login-form>
 
 <p>Don't have an account?
 	<a [routerLink]="moduleRoute.NewUserModule" routerLinkActive="active">Create Account</a>
+</p>
+
+<p id="site-explanation" aria-label="site-explanation"
+   (mouseover)="hovered = true" (mouseleave)="hovered = false"
+>
+	<span *ngIf="!(hovered)" style="color:rgb(51, 122, 183);">Explain Site</span>
+	<span *ngIf="hovered">{{explanation}}</span>
 </p>

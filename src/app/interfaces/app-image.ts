@@ -1,6 +1,6 @@
 export interface AppImage {
 
-	name: string;
+	name: string; // indexed
 
 	src: string;
 
@@ -10,6 +10,8 @@ export interface AppImage {
 
 	date?: Date;
 
-	location?: string;
+	rating?: number; // from 1 to 5
+
+	location?: { latitude: number, longitude: number }; // use with Google maps
 
 }

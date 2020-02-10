@@ -31,7 +31,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 			description: '',
 			tags: [],
 			date: new Date(file.lastModified),
-			location: ''
+			location: {latitude: undefined, longitude: undefined}
 		};
 
 		this.__imagesToDisplay.data.push(image);
