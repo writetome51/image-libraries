@@ -30,8 +30,3 @@
 	</main>
 
 </div>
-
-<!-- Only downloads the Google Maps API if user is logged in   -->
-<script async defer *ngIf="sessionIDExists"
-		src="https://maps.googleapis.com/maps/api/js?key={{gMapsApiKey.data}}&callback=initMap">
-</script>

@@ -10,6 +10,7 @@ import { ImageDateComponent } from './image-date/image-date.component';
 import { ImageLocationComponent } from './image-location/image-location.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
 	],
 	imports: [
 		CommonModule,
+		GoogleMapsModule,
 		RouterModule.forChild([
 			{
 				path: ':imageIndex', // can only access when logged in
