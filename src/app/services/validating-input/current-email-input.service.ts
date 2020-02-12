@@ -4,6 +4,7 @@ import { PrefixLabel_to_ValidatingInputService }
 import { LoggedInEmailVerificationInputService } from './logged-in-email-verification-input.service';
 
 
+@Injectable()
 @PrefixLabel_to_ValidatingInputService({prefix: 'current'})
 
 export class __CurrentEmailInputService extends LoggedInEmailVerificationInputService {

@@ -10,7 +10,8 @@ const routes: Routes = [
 
 	{	// lazy-loaded module
 		path: moduleRoute.UpdateUserModule,
-		loadChildren: () => import('./update-user/update-user.module').then(mod => mod.UpdateUserModule)
+		loadChildren: () => import('./update-user/update-user.module')
+			.then(mod => mod.UpdateUserModule)
 	},
 
 	{	// lazy-loaded module
