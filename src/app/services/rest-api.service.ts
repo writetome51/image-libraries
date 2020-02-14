@@ -32,18 +32,25 @@ export abstract class RestAPIService {
 	}
 
 
+	protected _getGetRequestResult(uniqueRoute, params): Observable<any> {
+		let urlQuery = this._getURLQuery(params);
+		let url = `${this._baseURL}${uniqueRoute}${urlQuery}`;
+		return this._http.get(url);
+	}
+
+
 	protected _getPatchRequestResult(url, body): Observable<any> {
-		return this.__getRequestResult('patch', url, body);
+		return this.__getBodyRequestResult('patch', url, body);
 	}
 
 
 	protected _getPostRequestResult(url, body): Observable<any> {
-		return this.__getRequestResult('post', url, body);
+		return this.__getBodyRequestResult('post', url, body);
 	}
 
 
-	private __getRequestResult(
-		requestMethod: 'post' | 'patch',
+	private __getBodyRequestResult(
+		requestMethod: 'post' | 'patch' | 'put',
 		url,
 		body
 	): Observable<any> {

@@ -15,19 +15,18 @@ export class ImagesRestApiService extends RestAPIService {
 
 
 	getAll(params: { sessionID: string }): Observable<any> {
-		return this.__getGetRequestResult(params, 'get-all-images');
+		return this._getGetRequestResult('get-all-images', params);
 	}
 
 
 	getLibrary(params: { sessionID: string, name: string }): Observable<any> {
-		return this.__getGetRequestResult(params, 'get-library-images');
+		return this._getGetRequestResult('get-library-images', params);
 	}
 
 
-	private __getGetRequestResult(params, uniqueRoute): Observable<any> {
-		let urlQuery = this._getURLQuery(params);
-		let url = `${this._baseURL}${uniqueRoute}${urlQuery}`;
-		return this._http.get(url);
+	remove(params: { sessionID: string, imageNames: string[] }): Observable<any> {
+		let url = `${this._baseURL}remove-images`;
+		return this._getPatchRequestResult(url, params);
 	}
 
 
