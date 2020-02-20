@@ -4,9 +4,8 @@ import { Observable } from 'rxjs';
 import { RestAPIService } from '../rest-api.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class LibraryRestApiService extends RestAPIService {
 
 
@@ -16,23 +15,17 @@ export class LibraryRestApiService extends RestAPIService {
 
 
 	create(params: { sessionID: string, name: string }): Observable<any> {
-		let url = `${this._baseURL}create-library`;
-		return this._getPostRequestResult(url, params);
+		return this._getPostRequestResult('create-library', params);
 	}
 
 
 	get(params: { sessionID: string, name: string }): Observable<any> {
-
-		let urlQuery = this._getURLQuery(params);
-		let url = `${this._baseURL}get-library` + urlQuery;
-		return this._http.get(url);
+		return this._getGetRequestResult('get-library', params);
 	}
 
 
 	getLibraries(params: { sessionID: string }): Observable<any> {
-		let urlQuery = this._getURLQuery(params);
-		let url = `${this._baseURL}get-libraries` + urlQuery;
-		return this._http.get(url);
+		return this._getGetRequestResult('get-libraries', params);
 	}
 
 
@@ -40,14 +33,12 @@ export class LibraryRestApiService extends RestAPIService {
 		// The properties in 'changes' can contain dot-notation.
 		params: { sessionID: string, name: string, changes: any }
 	): Observable<any> {
-		let url = `${this._baseURL}update-library`;
-		return this._getPatchRequestResult(url, params);
+		return this._getPatchRequestResult('update-library', params);
 	}
 
 
 	delete(params: { sessionID: string, name: string }): Observable<any> {
-		let url = `${this._baseURL}delete-library` + this._getURLQuery(params);
-		return this._http.delete(url);
+		return this._getDeleteRequestResult('delete-library', params);
 	}
 
 

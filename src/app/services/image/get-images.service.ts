@@ -20,14 +20,14 @@ export class GetImagesService {
 
 	async all(): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getAll({sessionID: this.__localSessionID.get()})
+			this.__imagesRestApi.getAllBatch({sessionID: this.__localSessionID.get()})
 		);
 	}
 
 
 	async inLibrary(name): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getLibrary(
+			this.__imagesRestApi.getLibraryBatch(
 				{sessionID: this.__localSessionID.get(), name}
 			)
 		);

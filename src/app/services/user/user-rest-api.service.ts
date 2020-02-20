@@ -4,9 +4,8 @@ import { RestAPIService } from '../rest-api.service';
 import { HttpClient } from '@angular/common/http';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class UserRestAPIService extends RestAPIService {
 
 
@@ -16,15 +15,14 @@ export class UserRestAPIService extends RestAPIService {
 
 
 	exists(params: { email: string }): Observable<any> {
+		// url query must contain 'sessionID', though here it doesn't need a value.
 		params['sessionID'] = '';
-		let url = `${this._baseURL}user-exists` + this._getURLQuery(params);
-		return this._http.get(url);
+		return this._getGetRequestResult('user-exists', params);
 	}
 
 
 	get(params: { sessionID: string }): Observable<any> {
-		let url = this.__getURLForGettingUser(params);
-		return this._http.get(url);
+		return this._getGetRequestResult('get-user', params);
 	}
 
 
@@ -34,37 +32,28 @@ export class UserRestAPIService extends RestAPIService {
 			securityQuestion: { question: string, answer: string }
 		}
 	): Observable<any> {
+		// request body must contain 'sessionID', though here it doesn't need a value.
 		params['sessionID'] = '';
-		let url = `${this._baseURL}create-user`;
-		return this._getPostRequestResult(url, params);
+		return this._getPostRequestResult('create-user', params);
 	}
 
 
 	delete(params: { email: string, password: string, sessionID: string }): Observable<any> {
-		let url = `${this._baseURL}delete-user` + this._getURLQuery(params);
-		return this._http.delete(url);
+		return this._getDeleteRequestResult('delete-user', params);
 	}
 
 
 	updatePassword(
 		params: { email: string, password: string, newPassword: string, sessionID: string }
 	): Observable<any> {
-		let url = `${this._baseURL}update-password`;
-		return this._getPatchRequestResult(url, params);
+		return this._getPatchRequestResult('update-password', params);
 	}
 
 
 	updateEmail(
 		params: { email: string, password: string, newEmail: string, sessionID: string }
 	): Observable<any> {
-		let url = `${this._baseURL}update-email`;
-		return this._getPatchRequestResult(url, params);
-	}
-
-
-	private __getURLForGettingUser(params: { sessionID: string }) {
-		let urlQuery = this._getURLQuery(params);
-		return `${this._baseURL}get-user` + urlQuery;
+		return this._getPatchRequestResult('update-email', params);
 	}
 
 
