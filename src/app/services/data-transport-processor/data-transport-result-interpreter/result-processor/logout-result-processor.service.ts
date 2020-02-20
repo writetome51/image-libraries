@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 
-export class UserLogoutResultProcessorService implements DirectProcessor {
+export class LogoutResultProcessorService implements DirectProcessor {
 
 	constructor(
 		private __removeCachedData: RemoveCachedDataService,

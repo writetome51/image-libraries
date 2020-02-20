@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserLogoutResultProcessorService }
-	from './result-processor/user-logout-result-processor.service';
+import { LogoutResultProcessorService }
+	from './result-processor/logout-result-processor.service';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { LogoutResultCheckService } from './data-transport-result-check/logout-result-check.service';
 
@@ -12,7 +12,7 @@ export class LogoutResultInterpreterService extends DataTransportResultInterpret
 
 	constructor(
 		__logoutResultCheck: LogoutResultCheckService,
-		__logoutResultProcessor: UserLogoutResultProcessorService
+		__logoutResultProcessor: LogoutResultProcessorService
 	) {
 		super(__logoutResultCheck, __logoutResultProcessor);
 	}
