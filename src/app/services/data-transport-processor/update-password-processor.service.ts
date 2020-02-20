@@ -1,10 +1,10 @@
 import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UserStorageService } from '../user/user-storage.service';
 import { UpdatePasswordFormInputsService }
 	from '../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
 	from './data-transport-result-interpreter/update-password-result-interpreter.service';
+import { UserUpdaterService } from '../user/user-updater.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,7 @@ import { UpdatePasswordResultInterpreterService }
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userStorage: UserStorageService,
+		private __userUpdater: UserUpdaterService,
 		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
 		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
 	) {
@@ -21,7 +21,7 @@ export class UpdatePasswordProcessorService extends FormDataTransportProcessorSe
 
 
 	protected async _getResult(): Promise<any> {
-		return await this.__userStorage.updatePassword();
+		return await this.__userUpdater.updatePassword();
 	}
 
 }

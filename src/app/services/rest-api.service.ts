@@ -20,63 +20,62 @@ export abstract class RestAPIService {
 	}
 
 
-	protected _getGetRequestResult(uniqueRoute, params): Observable<any> {
-		return this.__getURLQueryRequestResult('get', uniqueRoute, params);
+	protected _get(uniqueRoute, params): Observable<any> {
+		return this.__request('get', uniqueRoute, params);
 	}
 
 
-	protected _getDeleteRequestResult(uniqueRoute, params): Observable<any> {
-		return this.__getURLQueryRequestResult('delete', uniqueRoute, params);
+	protected _delete(uniqueRoute, params): Observable<any> {
+		return this.__request('delete', uniqueRoute, params);
 	}
 
 
-	protected _getPatchRequestResult(uniqueRoute, params): Observable<any> {
-		return this.__getBodyRequestResult('patch', uniqueRoute, params);
+	protected _patch(uniqueRoute, params): Observable<any> {
+		return this.__request('patch', uniqueRoute, params);
 	}
 
 
-	protected _getPostRequestResult(uniqueRoute, params): Observable<any> {
-		return this.__getBodyRequestResult('post', uniqueRoute, params);
+	protected _post(uniqueRoute, params): Observable<any> {
+		return this.__request('post', uniqueRoute, params);
 	}
 
 
-	private __getURLQueryRequestResult(
-		requestMethod: 'get' | 'delete',
-		uniqueRoute,
-		params
+	private __request(
+		requestMethod: 'post' | 'patch' | 'put' | 'get' | 'delete',
+		uniqueRoute: string,
+		params: object
 	): Observable<any> {
+
 		// @ts-ignore
 		requestMethod = requestMethod.toLowerCase();
-
-		let urlQuery = this.__getURLQuery(params);
-		let url = `${this._baseURL}${uniqueRoute}${urlQuery}`;
-		return this._http[requestMethod](url);
-	}
-
-
-	private __getBodyRequestResult(
-		requestMethod: 'post' | 'patch' | 'put',
-		uniqueRoute,
-		body
-	): Observable<any> {
-		// @ts-ignore
-		requestMethod = requestMethod.toLowerCase();
-
-		body = this.__getRequiredBody(body);
 		let url = `${this._baseURL}${uniqueRoute}`;
-		return this._http[requestMethod](url, body);
+		let args;
+
+		if (['post', 'patch', 'put'].includes(requestMethod)) {
+			params = this.__makeSureItHasDefaultRequiredProperties(params);
+			args = [url, params];
+		}
+		else {
+			url += this.__getURLQuery(params);
+			args = [url];
+		}
+		// @ts-ignore
+		return this._http[requestMethod](...args);
 	}
 
 
-	private __getRequiredBody(keyValuePairsToAdd): any {
-		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
-		return keyValuePairsToAdd;
+	// Returns url query that begins with '?'
+
+	private __getURLQuery(params): string {
+		params = this.__makeSureItHasDefaultRequiredProperties(params);
+		return getURLQuery(params);
 	}
 
 
-	private __getURLQuery(keyValuePairsToAdd): string {
-		modifyObject(keyValuePairsToAdd, this._requiredInEveryRequest);
-		return getURLQuery(keyValuePairsToAdd);
+	private __makeSureItHasDefaultRequiredProperties(params): object {
+		modifyObject(params, this._requiredInEveryRequest);
+		if (params['sessionID'] === undefined) params['sessionID'] = '';
+		return params;
 	}
 
 

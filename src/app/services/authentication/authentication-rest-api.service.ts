@@ -14,35 +14,25 @@ export class AuthenticationRestAPIService extends RestAPIService {
 
 
 	login(params: { email: string, password: string }): Observable<any> {
-		let url = `${this._baseURL}user-login`;
-		return this.__getPatchRequestResult_currentlyLoggedOut(url, params);
+		return this._patch('user-login', params);
 	}
 
 
 	securityQuestionLogin(
 		params: { email: string, securityQuestion: { question: string, answer: string } }
 	): Observable<any> {
-		let url = `${this._baseURL}security-question-login`;
-		return this.__getPatchRequestResult_currentlyLoggedOut(url, params);
+		return this._patch('security-question-login', params);
 	}
 
 
 	logout(params: { sessionID: string }): Observable<any> {
-		let url = `${this._baseURL}user-logout`;
-		return this._getPatchRequestResult(url, params);
+		return this._patch('user-logout', params);
 	}
 
 
 	getSecurityQuestion(params: { email: string }): Observable<any> {
-		params['sessionID'] = '';
-		let url = `${this._baseURL}get-security-question` + this._getURLQuery(params);
-		return this._http.get(url);
+		return this._get('get-security-question', params);
 	}
 
-
-	private __getPatchRequestResult_currentlyLoggedOut(url, params): Observable<any> {
-		params['sessionID'] = ''; // because currently logged out.
-		return this._getPatchRequestResult(url, params);
-	}
 
 }

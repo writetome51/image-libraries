@@ -18,19 +18,19 @@ export class ImagesRestApiService extends RestAPIService {
 	getAllBatch(
 		params: { sessionID: string, batchSize: number, batchNumber: number }
 	): Observable<any> {
-		return this._getGetRequestResult('get-user-images-batch', params);
+		return this._get('get-user-images-batch', params);
 	}
 
 
 	getLibraryBatch(
 		params: { sessionID: string, name: string, batchSize: number, batchNumber: number }
 	): Observable<any> {
-		return this._getGetRequestResult('get-library-images-batch', params);
+		return this._get('get-library-images-batch', params);
 	}
 
 
 	add(params: { sessionID: string, images: AppImage[] }): Observable<any> {
-		return this._getPostRequestResult('add-images', params);
+		return this._post('add-images', params);
 	}
 
 
@@ -41,12 +41,12 @@ export class ImagesRestApiService extends RestAPIService {
 			images: { name: string, changes: object }[]
 		}
 	): Observable<any> {
-		return this._getPatchRequestResult('update-images', params);
+		return this._patch('update-images', params);
 	}
 
 
 	remove(params: { sessionID: string, imageNames: string[] }): Observable<any> {
-		return this._getPatchRequestResult('remove-images', params);
+		return this._patch('remove-images', params);
 	}
 
 

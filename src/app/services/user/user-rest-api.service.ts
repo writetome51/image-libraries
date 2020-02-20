@@ -15,14 +15,12 @@ export class UserRestAPIService extends RestAPIService {
 
 
 	exists(params: { email: string }): Observable<any> {
-		// url query must contain 'sessionID', though here it doesn't need a value.
-		params['sessionID'] = '';
-		return this._getGetRequestResult('user-exists', params);
+		return this._get('user-exists', params);
 	}
 
 
 	get(params: { sessionID: string }): Observable<any> {
-		return this._getGetRequestResult('get-user', params);
+		return this._get('get-user', params);
 	}
 
 
@@ -32,28 +30,26 @@ export class UserRestAPIService extends RestAPIService {
 			securityQuestion: { question: string, answer: string }
 		}
 	): Observable<any> {
-		// request body must contain 'sessionID', though here it doesn't need a value.
-		params['sessionID'] = '';
-		return this._getPostRequestResult('create-user', params);
+		return this._post('create-user', params);
 	}
 
 
 	delete(params: { email: string, password: string, sessionID: string }): Observable<any> {
-		return this._getDeleteRequestResult('delete-user', params);
+		return this._delete('delete-user', params);
 	}
 
 
 	updatePassword(
 		params: { email: string, password: string, newPassword: string, sessionID: string }
 	): Observable<any> {
-		return this._getPatchRequestResult('update-password', params);
+		return this._patch('update-password', params);
 	}
 
 
 	updateEmail(
 		params: { email: string, password: string, newEmail: string, sessionID: string }
 	): Observable<any> {
-		return this._getPatchRequestResult('update-email', params);
+		return this._patch('update-email', params);
 	}
 
 
