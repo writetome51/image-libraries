@@ -1,11 +1,11 @@
 import { AppModuleRouteService } from '../app-module-route.service';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
-import { LibraryData as library } from '../data/runtime-state-data/library.data';
 import { CurrentLibrarySetterService as librarySetter }
 	from '../services/library/current-library-setter.service';
 import { DBLibrary } from '../interfaces/db-library';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
+import { LibraryData as library } from '../data/runtime-state-data/library.data';
 import { LibraryStorageService } from '../services/library/library-storage.service';
 import { LibraryVerificationStatusData as libVerificationStatus }
 	from '../data/runtime-state-data/library-verification-status.data';

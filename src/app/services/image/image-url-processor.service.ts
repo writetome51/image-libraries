@@ -12,9 +12,7 @@ export class ImageURLProcessorService implements IndirectProcessor {
 
 	async process(): Promise<void> {
 		if (await this.__resourceFound(enteredImageURL.data)) {
-	//		LibraryChangesService.get('images').push(
-	//			{name: '', src: enteredImageURL.data, description: ''}
-	//		);
+
 		}
 		else {
 			alert.error =

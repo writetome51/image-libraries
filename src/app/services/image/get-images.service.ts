@@ -18,18 +18,25 @@ export class GetImagesService {
 	}
 
 
-	async all(): Promise<DBImage[] | { error: object }> {
+	async all(batchSize, batchNumber): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getAllBatch({sessionID: this.__localSessionID.get()})
+			this.__imagesRestApi.getAllBatch({
+				sessionID: this.__localSessionID.get(),
+				batchSize,
+				batchNumber
+			})
 		);
 	}
 
 
-	async inLibrary(name): Promise<DBImage[] | { error: object }> {
+	async inLibrary(name, batchSize, batchNumber): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getLibraryBatch(
-				{sessionID: this.__localSessionID.get(), name}
-			)
+			this.__imagesRestApi.getLibraryBatch({
+				sessionID: this.__localSessionID.get(),
+				name,
+				batchSize,
+				batchNumber
+			})
 		);
 	}
 

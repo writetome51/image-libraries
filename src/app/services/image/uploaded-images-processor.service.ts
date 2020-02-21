@@ -2,8 +2,12 @@ import { DirectProcessor } from '../../interfaces/direct-processor';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
 import { AppImage } from '../../interfaces/app-image';
-import { ImagesRestApiService } from './images-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../perform-data-operation.service';
+import { SaveNewImagesProcessorService }
+	from '../data-transport-processor/save-new-images-processor.service';
+import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,21 +16,19 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	constructor(
-		private __imagesRestApi: ImagesRestApiService,
-		private __localSessionID: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService,
+		private __addNewImagesProcessor: SaveNewImagesProcessorService
 	) {
 	}
 
 
 	async process(files: FileList | File[]): Promise<void> {
-		let images = [];
+		newImages.data = [];
 
 		for (let i = 0; i < files.length; ++i) {
-			images[i] = await this.__getAppImage(files[i]);
+			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
-		this.__imagesRestApi.add(
-			{sessionID: this.__localSessionID.get(), images}
-		);
+		await performDataOperation.go(this.__addNewImagesProcessor);
 	}
 
 
