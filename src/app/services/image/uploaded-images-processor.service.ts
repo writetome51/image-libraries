@@ -17,7 +17,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
-		private __addNewImagesProcessor: SaveNewImagesProcessorService
+		private __saveNewImagesProcessor: SaveNewImagesProcessorService
 	) {
 	}
 
@@ -28,7 +28,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 		for (let i = 0; i < files.length; ++i) {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
-		await performDataOperation.go(this.__addNewImagesProcessor);
+		await performDataOperation.go(this.__saveNewImagesProcessor);
 	}
 
 

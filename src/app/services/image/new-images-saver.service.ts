@@ -8,7 +8,7 @@ import { NewImagesData as newImages } from '../../data/runtime-state-data/new-im
 
 @Injectable({providedIn: 'root'})
 
-export class NewImageSaverService {
+export class NewImagesSaverService {
 
 
 	constructor(
