@@ -1,1 +1,1 @@
-export const BatchData: { size: number, number: number } = {size: undefined, number: 1};
+export const BatchData: { size: number, number: number } = {size: 25, number: 1};

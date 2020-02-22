@@ -15,7 +15,7 @@ export class GetSecurityQuestionResultCheckService extends DataTransportResultCh
 		if (errMessage.includes(userDoesntExist)) {
 			alert.error = accountDoesntExist;
 		}
-		else super._errorHandler(errMessage);
+		else await super._errorHandler(errMessage);
 	}
 
 

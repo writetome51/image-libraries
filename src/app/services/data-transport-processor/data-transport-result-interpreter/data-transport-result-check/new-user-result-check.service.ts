@@ -10,9 +10,9 @@ import { duplicate } from '../../../../string-constants/api-errors';
 })
 export class NewUserResultCheckService extends DataTransportResultCheckService {
 
-	protected _errorHandler(errMessage) {
+	protected async _errorHandler(errMessage) {
 		if (errMessage.includes(duplicate)) alert.error = userAlreadyExists;
-		else super._errorHandler(errMessage);
+		else await super._errorHandler(errMessage);
 	}
 
 }

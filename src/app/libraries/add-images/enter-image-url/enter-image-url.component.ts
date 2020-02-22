@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
+import { EnteredImageURLData as enteredImageURL }
+	from '../../../data/runtime-state-data/entered-image-url.data';
 
 
 @Component({
@@ -8,20 +10,18 @@ import { ImageURLProcessorService } from '../../../services/image/image-url-proc
 })
 export class EnterImageURLComponent {
 
-	private __imgURL = '';
-
 
 	constructor(private __imageURLProcessor: ImageURLProcessorService) {
 	}
 
 
 	set imgURL(value) {
-		this.__imgURL = value.trim();
+		enteredImageURL.data = value.trim();
 	}
 
 
 	get imgURL() {
-		return this.__imgURL;
+		return enteredImageURL.data;
 	}
 
 

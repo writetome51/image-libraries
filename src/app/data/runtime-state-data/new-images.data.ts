@@ -3,4 +3,4 @@
 import { AppImage } from '../../interfaces/app-image';
 
 
-export const NewImagesData: { data: AppImage[] } = {data: undefined};
+export const NewImagesData: { data: AppImage[] } = {data: []};

@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
 import { PerformDataOperationService as performDataOperation } from '../perform-data-operation.service';
-import { SaveNewImagesProcessorService } from '../data-transport-processor/save-new-images-processor.service';
+import { SaveNewImagesProcessorService }
+	from '../data-transport-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -33,6 +34,8 @@ export class ImageURLProcessorService implements IndirectProcessor {
 
 
 	private async __resourceFound(url): Promise<boolean> {
+		let corsProxy = 'https://cors-anywhere.herokuapp.com/';
+		url = corsProxy + url;
 
 		return new Promise((returnData) => {
 			let request = new XMLHttpRequest();
