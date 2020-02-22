@@ -1,9 +1,12 @@
+import { BatchData as batch } from '../../data/runtime-state-data/batch.data';
+import { DBImage } from '../../interfaces/db-image';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { ImagesRestApiService } from './images-rest-api.service';
-import { DBImage } from '../../interfaces/db-image';
+import { LocalSessionIDService } from '../local-data/local-session-id.service';
+import { RequestedLibraryData as requestedLibrary }
+	from '../../data/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,24 +21,24 @@ export class GetImagesService {
 	}
 
 
-	async all(batchSize, batchNumber): Promise<DBImage[] | { error: object }> {
+	async all(): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__imagesRestApi.getAllBatch({
 				sessionID: this.__localSessionID.get(),
-				batchSize,
-				batchNumber
+				batchSize: batch.size,
+				batchNumber: batch.number
 			})
 		);
 	}
 
 
-	async inLibrary(name, batchSize, batchNumber): Promise<DBImage[] | { error: object }> {
+	async inLibrary(): Promise<DBImage[] | { error: object }> {
 		return await getObjectFromSubscription.go(
 			this.__imagesRestApi.getLibraryBatch({
 				sessionID: this.__localSessionID.get(),
-				name,
-				batchSize,
-				batchNumber
+				name: requestedLibrary.name,
+				batchSize: batch.size,
+				batchNumber: batch.number
 			})
 		);
 	}

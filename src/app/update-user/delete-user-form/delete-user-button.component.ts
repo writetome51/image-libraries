@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DeleteUserProcessorService }
-	from '../../services/data-transport-processor/user-deletion-processor.service';
 import { DataProcessorComponent } from '../../data-processor.component';
+import { DeleteUserProcessorService }
+	from '../../services/data-transport-processor/delete-user-processor.service';
 
 
 @Component({
@@ -14,8 +14,8 @@ import { DataProcessorComponent } from '../../data-processor.component';
 })
 export class DeleteUserButtonComponent extends DataProcessorComponent {
 
-	constructor(__userDeletionProcessor: DeleteUserProcessorService) {
-		super(__userDeletionProcessor);
+	constructor(__deleteUserProcessor: DeleteUserProcessorService) {
+		super(__deleteUserProcessor);
 	}
 
 }
