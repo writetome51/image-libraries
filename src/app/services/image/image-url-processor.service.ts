@@ -3,16 +3,27 @@ import { EnteredImageURLData as enteredImageURL }
 	from '../../data/runtime-state-data/entered-image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
+import { GetAppImageService as getAppImage } from '../get-app-image.service';
+import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
+import { PerformDataOperationService as performDataOperation } from '../perform-data-operation.service';
+import { SaveNewImagesProcessorService } from '../data-transport-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class ImageURLProcessorService implements IndirectProcessor {
 
+	constructor(private __saveNewImagesProcessor: SaveNewImagesProcessorService) {
+	}
+
 
 	async process(): Promise<void> {
 		if (await this.__resourceFound(enteredImageURL.data)) {
-
+			newImages.data.push(
+				getAppImage.go({name: undefined, src: enteredImageURL.data})
+			);
+			await performDataOperation.go(this.__saveNewImagesProcessor);
+			newImages.data = [];
 		}
 		else {
 			alert.error =

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 	selector: 'big-loading-spinner',
 	template: `
 		<div class="big-loading-spinner-container">
-			<img [src]="bigSpinner.src" [width]="bigSpinner.width" alt="Waiting for response"/>
+			<img [src]="bigSpinner.src" [width]="bigSpinner.width" alt="Waiting for result"/>
 		</div>
 	`,
 	styleUrls: ['./big-loading-spinner.component.css']

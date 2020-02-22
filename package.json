@@ -36,6 +36,7 @@
     "@writetome51/get-max-min": "^1.0.2",
     "@writetome51/get-object-copy": "^0.0.1",
     "@writetome51/get-property": "^1.0.4",
+    "@writetome51/get-random-integer-s": "^1.0.5",
     "@writetome51/get-subscription-data": "^1.0.0",
     "@writetome51/get-url-query": "^0.0.1",
     "@writetome51/has-value-no-value": "^1.0.2",

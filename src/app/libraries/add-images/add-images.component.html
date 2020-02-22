@@ -4,12 +4,14 @@
 		<p>{{gettingImagesInstructions}}</p>
 	</div>
 
-	<div>
+	<div *ngIf="!(savingNewImages)">
 
 		<choose-images-from-device></choose-images-from-device>
 
 		<enter-image-url></enter-image-url>
 
 	</div>
+
+	<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
 
 </section>
