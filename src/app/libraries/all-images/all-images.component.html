@@ -2,5 +2,14 @@
 
 <p *ngIf="images && images.length === 0">You haven't added any images yet.</p>
 
-<thumbnail-image *ngFor="let img of images; let i = index;" [image]="img" [index]="i">
-</thumbnail-image>
+<ul>
+
+	<li class="grid-list-item" *ngFor="let img of images; let i = index;">
+
+		<div>
+			<thumbnail-image [image]="img" [index]="i"></thumbnail-image>
+		</div>
+
+	</li>
+
+</ul>

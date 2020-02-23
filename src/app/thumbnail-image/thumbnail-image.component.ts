@@ -7,7 +7,8 @@ import { ListItemRemoverService } from '../services/list-item-remover.service';
 
 @Component({
 	selector: 'thumbnail-image',
-	templateUrl: './thumbnail-image.component.html'
+	templateUrl: './thumbnail-image.component.html',
+	styleUrls: ['./thumbnail-image.component.css']
 })
 export class ThumbnailImageComponent {
 

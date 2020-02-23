@@ -27,6 +27,21 @@ li {
 }
 
 
+li.grid-list-item {
+	display: inline-grid;
+	position: relative;
+	padding: 1px;
+	cursor: move;
+	margin: 0;
+}
+
+
+li div {
+	display: flex;
+	height: 100%;
+}
+
+
 header {
 	margin-bottom: 30px;
 }
@@ -40,6 +55,11 @@ nav {
 
 nav div {
 	display: inline-flex;
+}
+
+
+img {
+	margin: 10px 5px;
 }
 
 
@@ -59,3 +79,4 @@ nav div {
 .centered-nav-block-container {
 	margin: auto;
 }
+

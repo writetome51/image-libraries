@@ -13,7 +13,7 @@ import { GetAllImagesProcessorService }
 export class AllImagesComponent {
 
 	get images(): DBImage[] {
-		if (hasValue(allImages.data)) return Object.values(allImages.data);
+		if (hasValue(allImages.data)) return allImages.data;
 	}
 
 
