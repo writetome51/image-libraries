@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { AlertService as alert } from '../../../alert.service';
-import { userAlreadyExists } from '../../../../string-constants/form-submission-errors';
-import { duplicate } from '../../../../string-constants/api-errors';
+import { accountAlreadyExists } from '../../../../string-constants/form-submission-errors';
+import { duplicate } from '../../../../string-constants/rest-api-errors';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { duplicate } from '../../../../string-constants/api-errors';
 export class NewUserResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
-		if (errMessage.includes(duplicate)) alert.error = userAlreadyExists;
+		if (errMessage.includes(duplicate)) alert.error = accountAlreadyExists;
 		else await super._errorHandler(errMessage);
 	}
 

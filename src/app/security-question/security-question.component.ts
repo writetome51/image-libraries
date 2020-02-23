@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrentUserData as currentUser } from '../data/runtime-state-data/current-user.data';
-import { SecurityQuestionStatusData as questionStatus } from '../data/runtime-state-data/security-question-status.data';
+import { SecurityQuestionStatusData as questionStatus }
+	from '../data/runtime-state-data/security-question-status.data';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '../clear-form-on-init-and-alert-on-destroy.component';
 

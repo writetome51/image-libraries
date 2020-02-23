@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { OperationRequiringEmailPasswordResultCheckService }
-	from './data-transport-result-check/operation-requiring-email-password-result-check.service';
 import { UpdatePasswordResultProcessorService }
 	from './result-processor/update-password-result-processor.service';
+import { DataTransportResultCheckService }
+	from './data-transport-result-check/data-transport-result-check.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,11 +11,11 @@ import { UpdatePasswordResultProcessorService }
 export class UpdatePasswordResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__opRequiringEmailPasswordResultCheck: OperationRequiringEmailPasswordResultCheckService,
+		__dataTransportResultCheck: DataTransportResultCheckService,
 		__updatePasswordResultProcessor: UpdatePasswordResultProcessorService
 	) {
 		super(
-			__opRequiringEmailPasswordResultCheck,
+			__dataTransportResultCheck,
 			__updatePasswordResultProcessor
 		);
 	}

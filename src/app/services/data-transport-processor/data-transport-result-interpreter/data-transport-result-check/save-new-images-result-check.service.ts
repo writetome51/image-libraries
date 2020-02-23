@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { AlertService as alert } from '../../../alert.service';
-import { duplicate, sizeRequirement } from '../../../../string-constants/api-errors';
-import { imageSizeLimitExceeded } from '../../../../string-constants/form-submission-errors';
+import { duplicate, sizeRequirement } from '../../../../string-constants/rest-api-errors';
+import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
+	from '../../../../string-constants/form-submission-errors';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,9 +11,7 @@ import { imageSizeLimitExceeded } from '../../../../string-constants/form-submis
 export class SaveNewImagesResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
-		if (errMessage.includes(duplicate)) alert.error =
-			`Unsuccessful.  There is already an image in your account with the
-			same name as an image you just tried to add`;
+		if (errMessage.includes(duplicate)) alert.error = imageWithSameNameAlreadyExists;
 
 		else if (errMessage.includes(sizeRequirement)) alert.error = imageSizeLimitExceeded;
 

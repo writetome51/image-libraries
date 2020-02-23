@@ -1,14 +1,19 @@
 import { AlertService as alert } from '../../../alert.service';
 import { Injectable } from '@angular/core';
-import { invalidSessionID, notLoggedIn } from '../../../../string-constants/api-errors';
+import { noDocumentMatchedCriteria, notLoggedIn }
+	from '../../../../string-constants/rest-api-errors';
 import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-handler.service';
+import { NoRecordMatchErrorHandlerService } from './error/no-record-match-error-handler.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class DataTransportResultCheckService {
 
-	constructor(protected _notLoggedInErrorHandler: NotLoggedInErrorHandlerService) {
+	constructor(
+		private __noRecordMatchErrorHandler: NoRecordMatchErrorHandlerService,
+		protected _notLoggedInErrorHandler: NotLoggedInErrorHandlerService,
+	) {
 	}
 
 
@@ -30,9 +35,11 @@ export class DataTransportResultCheckService {
 	// Default error handler.  Intended to be extended by subclasses.
 
 	protected async _errorHandler(errMessage) {
-		if (errMessage.includes(notLoggedIn) || errMessage.includes(invalidSessionID)) {
-			await this._notLoggedInErrorHandler.handle();
+		if (errMessage.includes(noDocumentMatchedCriteria)) {
+			await this.__noRecordMatchErrorHandler.handle();
 		}
+		else if (errMessage.includes(notLoggedIn)) await this._notLoggedInErrorHandler.handle();
+
 		else alert.error = errMessage;
 	}
 

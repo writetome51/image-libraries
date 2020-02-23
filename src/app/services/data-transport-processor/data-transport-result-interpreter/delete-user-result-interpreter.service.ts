@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { OperationRequiringEmailPasswordResultCheckService }
-	from './data-transport-result-check/operation-requiring-email-password-result-check.service';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { DeleteUserResultProcessorService }
 	from './result-processor/delete-user-result-processor.service';
+import { DataTransportResultCheckService }
+	from './data-transport-result-check/data-transport-result-check.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,10 +11,10 @@ import { DeleteUserResultProcessorService }
 export class DeleteUserResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__deleteUserResultCheck: OperationRequiringEmailPasswordResultCheckService,
+		__dataTransportResultCheckService: DataTransportResultCheckService,
 		__deleteUserResultProcessor: DeleteUserResultProcessorService
 	) {
-		super(__deleteUserResultCheck, __deleteUserResultProcessor);
+		super(__dataTransportResultCheckService, __deleteUserResultProcessor);
 	}
 
 }
