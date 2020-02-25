@@ -1,15 +1,15 @@
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { LibraryData as library } from '../../data/runtime-state-data/library.data';
 import { Injectable } from '@angular/core';
 import { LibraryImagesData as images } from '../../data/runtime-state-data/library-images.data';
-import { noValue } from '@writetome51/has-value-no-value';
 import { DBImage } from '../../interfaces/db-image';
+import { GetLibraryImagesProcessorService }
+	from '../data-transport-processor/get-library-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class DisplayedImagesService {
-
-	private __data: DBImage[];
 
 
 	get exist(): boolean {
@@ -18,10 +18,13 @@ export class DisplayedImagesService {
 
 
 	get data(): DBImage[] {
-		if (noValue(this.__data)) {
-			this.__data = library.data._image_ids.map((id) => images.data[id]);
-		}
-		return this.__data;
+		if (hasValue(images.data)) return library.data._image_ids.map((id) => images.data[id]);
+		else return [];
+	}
+
+
+	constructor(private __getLibraryImagesProcessor: GetLibraryImagesProcessorService) {
+		if (noValue(images.data)) this.__getLibraryImagesProcessor.process();
 	}
 
 

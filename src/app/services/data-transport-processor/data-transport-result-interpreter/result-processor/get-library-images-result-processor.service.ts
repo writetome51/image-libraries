@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBImage } from '../../../../interfaces/db-image';
-import { LibraryImagesData as libImages }
+import { LibraryImagesData as images }
 	from '../../../../data/runtime-state-data/library-images.data';
 
 
@@ -10,10 +10,10 @@ import { LibraryImagesData as libImages }
 export class GetLibraryImagesResultProcessorService implements DirectProcessor {
 
 	async process(result: DBImage[]) {
-		libImages.data = {};
+		images.data = {};
 
 		result.forEach((image: DBImage) => {
-			libImages.data[image._id] = image;
+			images.data[image._id] = image;
 		});
 	}
 

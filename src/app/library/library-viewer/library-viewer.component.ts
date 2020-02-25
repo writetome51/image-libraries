@@ -11,7 +11,7 @@ export class LibraryViewerComponent {
 
 
 	get hasImages(): boolean {
-		return this.__imagesToDisplay.exist;
+		return this.__displayedImages.exist;
 	}
 
 
@@ -22,7 +22,7 @@ export class LibraryViewerComponent {
 
 	constructor(
 		private __libraryChanges: LibraryChangesService,
-		private __imagesToDisplay: DisplayedImagesService
+		private __displayedImages: DisplayedImagesService,
 	) {
 	}
 
