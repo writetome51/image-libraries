@@ -9,8 +9,6 @@ import { DisplayedImagesService } from '../../services/image/displayed-images.se
 })
 export class LibraryViewerComponent {
 
-	addingImages = false;
-
 
 	get hasImages(): boolean {
 		return this.__imagesToDisplay.exist;
@@ -19,11 +17,6 @@ export class LibraryViewerComponent {
 
 	get changesExist(): boolean {
 		return this.__libraryChanges.exist;
-	}
-
-
-	get addImagesButtonText() {
-		return (this.addingImages ? 'Cancel' : 'Add Images');
 	}
 
 
