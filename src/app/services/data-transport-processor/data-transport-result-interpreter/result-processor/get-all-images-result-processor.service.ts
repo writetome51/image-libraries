@@ -9,11 +9,7 @@ import { AllImagesData as allImages } from '../../../../data/runtime-state-data/
 export class GetAllImagesResultProcessorService implements DirectProcessor {
 
 	async process(result: DBImage[]) {
-		allImages.data = {};
-
-		result.forEach((image: DBImage) => {
-			allImages.data[image._id] = image;
-		});
+		allImages.data = result;
 	}
 
 }
