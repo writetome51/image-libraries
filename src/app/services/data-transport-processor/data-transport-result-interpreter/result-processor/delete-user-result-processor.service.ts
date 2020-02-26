@@ -16,9 +16,8 @@ export class DeleteUserResultProcessorService implements DirectProcessor {
 
 	async process(result) {
 		await this.__logoutResultProcessor.process(result);
-		if (result.success) {
-			alert.success = 'Account deleted';
-		}
+
+		alert.success = 'Account deleted';
 	}
 
 }

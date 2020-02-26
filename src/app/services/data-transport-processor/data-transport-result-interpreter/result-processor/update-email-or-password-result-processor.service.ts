@@ -19,7 +19,7 @@ export class UpdateEmailOrPasswordResultProcessorService implements DirectProces
 	async process(result: DBUser) {
 		this.__userResultProcessor.process(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
-		if (result.sessionID) alert.success = this.resultMessage;
+		alert.success = this.resultMessage;
 	}
 
 }

@@ -11,15 +11,15 @@ import { GetLibraryNamesProcessorService } from '../../get-library-names-process
 
 export class NewLibraryResultProcessorService implements DirectProcessor {
 
-	constructor(private __getLibrariesProcessor: GetLibraryNamesProcessorService) {
+	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
 	}
 
 
 	async process(result: DBLibrary) {
-		if (result._user_id && result.name) alert.success = 'Library created';
+		alert.success = 'Library created';
 		creatingNewLibrary.status = false;
 
-		await this.__getLibrariesProcessor.process(); // refreshes LibraryNamesData.data
+		await this.__getLibraryNamesProcessor.process(); // refreshes LibraryNamesData.data
 	}
 
 }

@@ -11,7 +11,6 @@ export class UpdateOrNewLibraryResultCheckService extends DataTransportResultChe
 
 	protected async _errorHandler(errMessage) {
 		if (errMessage.includes(duplicate)) alert.error = libraryAlreadyExists;
-
 		else await super._errorHandler(errMessage);
 	}
 
