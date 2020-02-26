@@ -12,14 +12,8 @@ import { GetLibraryImagesProcessorService }
 export class DisplayedImagesService {
 
 
-	get exist(): boolean {
-		return this.data.length > 0;
-	}
-
-
 	get data(): DBImage[] {
 		if (hasValue(images.data)) return library.data._image_ids.map((id) => images.data[id]);
-		else return [];
 	}
 
 

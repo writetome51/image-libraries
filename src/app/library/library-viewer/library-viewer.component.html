@@ -5,9 +5,10 @@
 		<undo-changes-button></undo-changes-button>
 	</ng-container>
 
-	<p *ngIf="!(hasImages)">This library has no images</p>
+	<p *ngIf="!(images)">Fetching Images...</p>
+	<p *ngIf="(images && images.length === 0)">This library has no images</p>
 
-	<div *ngIf="hasImages">
+	<div *ngIf="images && images.length > 0">
 		<image-size-slider></image-size-slider>
 		<image-list></image-list>
 	</div>

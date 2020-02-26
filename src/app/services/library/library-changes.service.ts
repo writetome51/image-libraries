@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Unsubscribable } from 'rxjs';
+import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,8 +20,18 @@ export class LibraryChangesService {
 	}
 
 
+	get(property){
+		return this.__data[property];
+	}
+
+
 	getAll(): object {
 		return this.__data;
+	}
+
+
+	has(property): boolean {
+		return hasValue(this.__data[property]);
 	}
 
 

@@ -23,7 +23,7 @@ export class LibraryUpdaterService {
 		if (not(this.__libraryChanges.exist)) return;
 
 		if (this.__libraryChanges.has('name')) {
-			let name = this.__libraryChanges.getExact('name').trim();
+			let name = this.__libraryChanges.get('name').trim();
 			if (isEmpty(name)) {
 				this.__libraryChanges.unset('name');
 			}
