@@ -2,8 +2,7 @@ import { CurrentUserData as currentUser } from '../../data/runtime-state-data/cu
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '../get-object-from-subscription.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,14 +18,14 @@ export class UserStorageService {
 
 
 	async exists(): Promise<any> {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__userRestApi.exists({email: currentUser.email})
 		);
 	}
 
 
 	async get(): Promise<any> {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__userRestApi.get({sessionID: this.__localSessionID.get()})
 		);
 	}

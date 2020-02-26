@@ -1,7 +1,6 @@
 import { BatchData as batch } from '../../data/runtime-state-data/batch.data';
 import { DBImage } from '../../interfaces/db-image';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '../get-object-from-subscription.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { ImagesRestApiService } from './images-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
@@ -22,7 +21,7 @@ export class GetImagesService {
 
 
 	async all(): Promise<DBImage[] | { error: object }> {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__imagesRestApi.getAllBatch({
 				sessionID: this.__localSessionID.get(),
 				batchSize: batch.size,
@@ -33,7 +32,7 @@ export class GetImagesService {
 
 
 	async inLibrary(): Promise<DBImage[] | { error: object }> {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__imagesRestApi.getLibraryBatch({
 				sessionID: this.__localSessionID.get(),
 				name: requestedLibrary.name,

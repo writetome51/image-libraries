@@ -2,6 +2,7 @@ import { getObjectFromJSON } from 'get-object-from-json';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Subscribable } from 'rxjs';
 
+// Keep this class until you're positive you no longer need it
 
 export class GetObjectFromSubscriptionService { // implements IDoThis
 

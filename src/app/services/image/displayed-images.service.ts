@@ -5,6 +5,8 @@ import { LibraryImagesData as images } from '../../data/runtime-state-data/libra
 import { DBImage } from '../../interfaces/db-image';
 import { GetLibraryImagesProcessorService }
 	from '../data-transport-processor/get-library-images-processor.service';
+import { PerformDataOperationService as performDataOperation }
+	from '../perform-data-operation.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +20,7 @@ export class DisplayedImagesService {
 
 
 	constructor(private __getLibraryImagesProcessor: GetLibraryImagesProcessorService) {
-		if (noValue(images.data)) this.__getLibraryImagesProcessor.process();
+		if (noValue(images.data)) performDataOperation.go(this.__getLibraryImagesProcessor);
 	}
 
 

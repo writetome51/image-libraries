@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { CurrentUserData as currentUser } from '../../data/runtime-state-data/current-user.data';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '../get-object-from-subscription.service';
+import { getSubscriptionData } from '@writetome51/get-subscription-data';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +13,7 @@ export class AuthenticatorService {
 
 
 	async authenticate() {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__authenticationRestApi.login(
 				{email: currentUser.email, password: currentUser.password}
 			)
@@ -23,7 +22,7 @@ export class AuthenticatorService {
 
 
 	async authenticateBySecurityQuestion() {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__authenticationRestApi.securityQuestionLogin(
 				{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 			)
@@ -32,7 +31,7 @@ export class AuthenticatorService {
 
 
 	async getSecurityQuestion() {
-		return await getObjectFromSubscription.go(
+		return await getSubscriptionData(
 			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
 		);
 	}
