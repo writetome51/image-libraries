@@ -3,7 +3,7 @@ import { EnteredImageURLData as enteredImageURL }
 	from '../../data/runtime-state-data/entered-image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
-import { GetAppImageService as getAppImage } from '../get-app-image.service';
+import { GetAppImageService as getAppImage } from './get-app-image.service';
 import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
 import { PerformDataOperationService as performDataOperation } from '../perform-data-operation.service';
 import { SaveNewImagesProcessorService }

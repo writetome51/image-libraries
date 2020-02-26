@@ -1,7 +1,6 @@
-import { AppImage } from '../interfaces/app-image';
+import { AppImage } from '../../interfaces/app-image';
 import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { getRandomInteger } from '@writetome51/get-random-integer-s';
-// import { getRandomInteger } from '@writetome51/get-random-integer-s';
 
 
 export class GetAppImageService { // implements IDoThis
