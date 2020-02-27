@@ -9,7 +9,8 @@ import { LibraryData as library } from '../../data/runtime-state-data/library.da
 export class ImageViewerComponent {
 
 	get currentImage() {
-		return library.data.currentImage;
+		//return library.data.currentImage;
+		return {};
 	}
 
 }

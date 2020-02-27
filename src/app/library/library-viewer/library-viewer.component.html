@@ -6,7 +6,7 @@
 	</ng-container>
 
 	<p *ngIf="!(images)">Fetching Images...</p>
-	<p *ngIf="(images && images.length === 0)">This library has no images</p>
+	<p *ngIf="(images && images.length === 0)">No images</p>
 
 	<div *ngIf="images && images.length > 0">
 		<image-size-slider></image-size-slider>

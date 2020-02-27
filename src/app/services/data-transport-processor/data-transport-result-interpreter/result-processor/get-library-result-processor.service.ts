@@ -12,10 +12,11 @@ export class GetLibraryResultProcessorService implements DirectProcessor {
 	constructor(private __getLibraryImagesProcessor: GetLibraryImagesProcessorService) {
 	}
 
+
 	async process(result: DBLibrary) {
 		// @ts-ignore
 		library.data = result;
-		await this.__getLibraryImagesProcessor.process();
+		if (library.data._image_ids.length) await this.__getLibraryImagesProcessor.process();
 	}
 
 }

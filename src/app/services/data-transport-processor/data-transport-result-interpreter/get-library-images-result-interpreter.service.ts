@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { DataTransportResultCheckService }
-	from './data-transport-result-check/data-transport-result-check.service';
 import { GetLibraryImagesResultProcessorService }
 	from './result-processor/get-library-images-result-processor.service';
+import { GetLibraryImagesResultCheckService }
+	from './data-transport-result-check/get-library-images-result-check.service';
 
 
 @Injectable({
@@ -12,11 +12,11 @@ import { GetLibraryImagesResultProcessorService }
 export class GetLibraryImagesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheck: DataTransportResultCheckService,
+		__getLibraryImagesResultCheck: GetLibraryImagesResultCheckService,
 		__getLibraryImagesResultProcessor: GetLibraryImagesResultProcessorService
 	) {
 		super(
-			__dataTransportResultCheck,
+			__getLibraryImagesResultCheck,
 			__getLibraryImagesResultProcessor
 		);
 	}

@@ -1,13 +1,17 @@
 import { AppModuleRouteService } from '../app-module-route.service';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { GetLibraryProcessorService }
+	from '../services/data-transport-processor/get-library-processor.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LibraryData as library } from '../data/runtime-state-data/library.data';
+import { LibraryImagesData } from '../data/runtime-state-data/library-images.data';
+import { LibraryVerificationStatusData as verificationStatus }
+	from '../data/runtime-state-data/library-verification-status.data';
+import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
+	from '../services/perform-data-process-requiring-waiting.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
-import { GetLibraryProcessorService }
-	from '../services/data-transport-processor/get-library-processor.service';
-import { PerformDataOperationService } from '../services/perform-data-operation.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -34,7 +38,13 @@ export class LibraryVerificationGuard implements CanActivate {
 	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
 
 		if (noValue(library.data) || requestedLibrary.name !== library.data.name) {
-			await PerformDataOperationService.go(this.__getLibraryProcessor);
+			await performDataProcessRequiringWaiting.go(
+				this.__getLibraryProcessor, verificationStatus
+			);
+
+			//temp:
+			console.log('images: ' + LibraryImagesData.data);
+
 		}
 	}
 

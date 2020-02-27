@@ -5,7 +5,7 @@ import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { GetAppImageService as getAppImage } from './get-app-image.service';
 import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
-import { PerformDataOperationService as performDataOperation } from '../perform-data-operation.service';
+import { PerformDataProcessRequiringWaitingService as performDataOperation } from '../perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from '../data-transport-processor/save-new-images-processor.service';
 
