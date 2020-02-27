@@ -16,7 +16,7 @@ export abstract class DataTransportResultInterpreterService implements Interpret
 
 	async interpret(result): Promise<void> {
 		result = await this.__dataTransportResultCheck.returnIfNoError(result);
-		if (hasValue(result)) this.__resultProcessor.process(result);
+		if (hasValue(result)) await this.__resultProcessor.process(result);
 	}
 
 }

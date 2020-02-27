@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CreatingNewLibraryData as creatingNewLibrary }
 	from '../data/runtime-state-data/creating-new-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
-import { LibraryVerificationStatusData as libVerificationStatus }
-	from '../data/runtime-state-data/library-verification-status.data';
 import { LibrariesModuleRouteService } from './libraries-module-route.service';
+import { DataOperationStatusData as dataOperationStatus }
+	from '../data/runtime-state-data/data-operation-status.data';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class LibrariesComponent extends ClearAlertOnDestroyComponent {
 
 
 	get verifyingLibrary(): boolean {
-		return libVerificationStatus.waitingForResult;
+		return dataOperationStatus.waitingForResult;
 	}
 
 

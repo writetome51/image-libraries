@@ -24,3 +24,4 @@ export const duplicate = 'Duplicate key error: E11000 duplicate key error collec
 export const libraryNotFound = 'No such library found';
 export const userDoesntExist = 'User does not exist';
 export const sizeRequirement = 'Size must be between 0 and 16793600(16MB)';
+export const batchDoesntExist = 'Batch does not exist';

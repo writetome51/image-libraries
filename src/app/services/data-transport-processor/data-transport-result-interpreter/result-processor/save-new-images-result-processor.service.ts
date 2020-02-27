@@ -13,9 +13,7 @@ export class SaveNewImagesResultProcessorService implements DirectProcessor {
 
 
 	async process(result) {
-		if (result.success) alert.success = 'New images saved';
-		else alert.error = 'Unexpected error occurred.  Result: ' + JSON.stringify(result);
-
+		alert.success = 'New images saved';
 		await this.__getAllImagesProcessor.process(); // refreshes AllImagesData.data
 	}
 

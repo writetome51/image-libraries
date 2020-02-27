@@ -10,11 +10,11 @@ import { DBImage } from '../../../interfaces/db-image';
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return this.__imagesToDisplay.data;
+		return this.__displayedImages.data;
 	}
 
 
-	constructor(private __imagesToDisplay: DisplayedImagesService) {
+	constructor(private __displayedImages: DisplayedImagesService) {
 	}
 
 }

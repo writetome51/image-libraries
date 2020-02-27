@@ -7,6 +7,7 @@ import { sss } from '../../assets/.sss';
 
 export abstract class RestAPIService {
 
+	// Try to find a more reliable CORS Proxy.  This can sometimes be flaky.
 	private __corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
 	protected _baseURL = this.__corsProxy +

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { RequestedLibraryData as requestedLibrary}
+	from '../../data/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,10 +19,10 @@ export class LibraryStorageService {
 	}
 
 
-	async get(libraryName: string): Promise<DBLibrary | { error: object }> {
+	async get(): Promise<DBLibrary | { error: object }> {
 		return await getSubscriptionData(
 			this.__libraryRestApi.get(
-				{sessionID: this.__localSessionID.get(), name: libraryName}
+				{sessionID: this.__localSessionID.get(), name: requestedLibrary.name}
 			)
 		);
 	}
