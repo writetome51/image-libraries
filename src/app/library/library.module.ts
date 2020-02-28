@@ -14,6 +14,7 @@ import { ReArrangeableGridListModule }
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
 import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
+import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module'
 	imports: [
 		CommonModule,
 		FormsModule,
+		BigLoadingSpinnerModule,
 		ProcessingButtonModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,

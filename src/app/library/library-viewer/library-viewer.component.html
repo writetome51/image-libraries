@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!(verifyingLibrary)">
 
 	<ng-container *ngIf="changesExist">
 		<save-changes-button></save-changes-button>
@@ -14,3 +14,5 @@
 	</div>
 
 </div>
+
+<big-loading-spinner *ngIf="verifyingLibrary"></big-loading-spinner>

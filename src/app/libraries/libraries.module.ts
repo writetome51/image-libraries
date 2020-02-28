@@ -1,6 +1,5 @@
 import { AllImagesComponent } from './all-images/all-images.component';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { BigLoadingSpinnerComponent } from './big-loading-spinner/big-loading-spinner.component';
 import { CommonModule } from '@angular/common';
 import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +20,7 @@ import { ChooseImagesFromDeviceComponent }
 import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image-url.component';
 import { AddImageUrlButtonComponent }
 	from './add-images/enter-image-url/add-image-url-button.component';
+import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 
 
 @NgModule({
@@ -28,7 +28,6 @@ import { AddImageUrlButtonComponent }
 		AddImageUrlButtonComponent,
 		AllImagesComponent,
 		AddImagesComponent,
-		BigLoadingSpinnerComponent,
 		ChooseImagesFromDeviceComponent,
 		CreateLibraryButtonComponent,
 		EnterImageURLComponent,
@@ -41,6 +40,7 @@ import { AddImageUrlButtonComponent }
 	imports: [
 		CommonModule,
 		FormsModule,
+		BigLoadingSpinnerModule,
 		ThumbnailImageModule,
 		ValidatingInputsModule,
 		ProcessingButtonModule,
