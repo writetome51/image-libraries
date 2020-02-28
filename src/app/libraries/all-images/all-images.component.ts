@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { AllImagesData as allImages } from '../../data/runtime-state-data/all-images.data';
 import { DBImage } from '../../interfaces/db-image';
-import { noValue, hasValue } from '@writetome51/has-value-no-value';
+import { noValue } from '@writetome51/has-value-no-value';
 import { GetAllImagesProcessorService }
 	from '../../services/data-transport-processor/get-all-images-processor.service';
+import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/loaded-images.data';
 
 
 @Component({
@@ -13,12 +13,12 @@ import { GetAllImagesProcessorService }
 export class AllImagesComponent {
 
 	get images(): DBImage[] {
-		if (hasValue(allImages.data)) return allImages.data;
+		return Object.values(loadedImages.data);
 	}
 
 
 	constructor(private __getAllImagesProcessor: GetAllImagesProcessorService) {
-		if (noValue(allImages.data)) this.__getAllImagesProcessor.process();
+		if (noValue(loadedImages.data)) this.__getAllImagesProcessor.process();
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadedLibraryData as library } from '../../data/runtime-state-data/loaded-library.data';
+import { LoadedLibraryData as loadedLibrary } from '../../data/runtime-state-data/loaded-library.data';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { LoadedLibraryData as library } from '../../data/runtime-state-data/load
 export class ImageViewerComponent {
 
 	get currentImage() {
-		//return library.data.currentImage;
+		//return loadedLibrary.data.currentImage;
 		return {};
 	}
 

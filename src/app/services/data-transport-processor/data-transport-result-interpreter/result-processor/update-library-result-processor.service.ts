@@ -3,7 +3,8 @@ import { DBLibrary } from '../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '../../../library/library-changes.service';
-import { LoadedLibraryData as library } from '../../../../data/runtime-state-data/loaded-library.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../../../../data/runtime-state-data/loaded-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,7 +20,7 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 		delete result._id;
 		delete result._user_id;
 
-		library.data = result;
+		loadedLibrary.data = result;
 		this.__libraryChanges.unsetAll();
 		alert.success = 'Library updated';
 	}
