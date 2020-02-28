@@ -2,6 +2,6 @@
 
 export const LibraryVerificationStatusData = {
 
-	waitingForResult: false
+	waiting: false
 
 };

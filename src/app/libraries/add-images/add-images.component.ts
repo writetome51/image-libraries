@@ -14,7 +14,7 @@ export class AddImagesComponent {
 
 
 	get savingNewImages() {
-		return dataOperationStatus.waitingForResult;
+		return dataOperationStatus.waiting;
 	}
 
 }

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { libraryNotFound } from '../../../../string-constants/rest-api-errors';
-import { LibraryData as library } from '../../../../data/runtime-state-data/library.data';
-import { LibraryImagesData as libraryImages }
-	from '../../../../data/runtime-state-data/library-images.data';
+import { LoadedLibraryData as library } from '../../../../data/runtime-state-data/loaded-library.data';
+import { LoadedImagesData as libraryImages }
+	from '../../../../data/runtime-state-data/loaded-images.data';
 import { not } from '@writetome51/not';
 
 

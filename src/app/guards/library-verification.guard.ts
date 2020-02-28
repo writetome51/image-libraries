@@ -4,8 +4,8 @@ import { GetLibraryProcessorService }
 	from '../services/data-transport-processor/get-library-processor.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { LibraryData as library } from '../data/runtime-state-data/library.data';
-import { LibraryImagesData } from '../data/runtime-state-data/library-images.data';
+import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
+import { LoadedImagesData } from '../data/runtime-state-data/loaded-images.data';
 import { LibraryVerificationStatusData as verificationStatus }
 	from '../data/runtime-state-data/library-verification-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
@@ -30,27 +30,27 @@ export class LibraryVerificationGuard implements CanActivate {
 
 		await this.__loadRequestedLibrary_ifItExists();
 
-		if (this.__isFound(library)) return true;
+		if (this.__isLoaded(requestedLibrary.name)) return true;
 		else return this.__redirectToLibrariesAndReturnFalse();
 	}
 
 
 	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
 
-		if (noValue(library.data) || requestedLibrary.name !== library.data.name) {
+		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.data.name) {
 			await performDataProcessRequiringWaiting.go(
 				this.__getLibraryProcessor, verificationStatus
 			);
 
 			//temp:
-			console.log('images: ' + LibraryImagesData.data);
+			console.log('images: ' + LoadedImagesData.data);
 
 		}
 	}
 
 
-	private __isFound(library): boolean {
-		return hasValue(library.data);
+	private __isLoaded(libraryName): boolean {
+		return (hasValue(loadedLibrary.data) && loadedLibrary.data.name === libraryName);
 	}
 
 

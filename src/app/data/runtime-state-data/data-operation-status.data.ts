@@ -2,6 +2,6 @@
 
 export const DataOperationStatusData = {
 
-	waitingForResult: false
+	waiting: false
 
 };

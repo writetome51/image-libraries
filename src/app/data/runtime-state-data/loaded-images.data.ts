@@ -1,5 +1,4 @@
 /******************
- Stores all images in library currently being viewed/edited by user.
  'data' is object whose keys are the _id of each image, i.e:
  data = {
  		'3a4fr53etrr469945ab': DBImage,
@@ -9,4 +8,4 @@
  };
  ******************/
 
-export const LibraryImagesData: { data: object } = {data: undefined};
+export const LoadedImagesData: { data: object } = {data: undefined};

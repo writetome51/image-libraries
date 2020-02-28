@@ -3,7 +3,7 @@ import { DBLibrary } from '../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '../../../library/library-changes.service';
-import { LibraryData as library } from '../../../../data/runtime-state-data/library.data';
+import { LoadedLibraryData as library } from '../../../../data/runtime-state-data/loaded-library.data';
 
 
 @Injectable({providedIn: 'root'})
