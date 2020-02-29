@@ -4,6 +4,9 @@ import { noValue } from '@writetome51/has-value-no-value';
 import { GetAllImagesProcessorService }
 	from '../../services/data-transport-processor/get-all-images-processor.service';
 import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/loaded-images.data';
+import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
+	from '../../services/perform-data-process-requiring-waiting.service';
+import { OperationStatusData } from '../../data/runtime-state-data/operation-status.data';
 
 
 @Component({
@@ -18,7 +21,9 @@ export class AllImagesComponent {
 
 
 	constructor(private __getAllImagesProcessor: GetAllImagesProcessorService) {
-		if (noValue(loadedImages.data)) this.__getAllImagesProcessor.process();
+		if (noValue(loadedImages.data)) performDataProcessRequiringWaiting.go(
+			this.__getAllImagesProcessor, OperationStatusData
+		);
 	}
 
 }

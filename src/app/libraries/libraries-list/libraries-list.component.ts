@@ -3,6 +3,10 @@ import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibraryNamesProcessorService }
 	from '../../services/data-transport-processor/get-library-names-processor.service';
 import { LibraryNamesData as libraryNames } from '../../data/runtime-state-data/library-names.data';
+import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
+	from '../../services/perform-data-process-requiring-waiting.service';
+import { OperationStatusData as operationStatus }
+	from '../../data/runtime-state-data/operation-status.data';
 
 
 @Component({
@@ -19,8 +23,10 @@ export class LibrariesListComponent {
 	}
 
 
-	constructor(private __getLibrariesProcessor: GetLibraryNamesProcessorService) {
-		if (noValue(libraryNames.data)) this.__getLibrariesProcessor.process();
+	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
+		if (noValue(libraryNames.data)) performDataProcessRequiringWaiting.go(
+			this.__getLibraryNamesProcessor, operationStatus
+		);
 	}
 
 }
