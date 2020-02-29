@@ -4,11 +4,9 @@ import { LocalSessionIDService } from '../services/local-data/local-session-id.s
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class DeAuthenticatedGuard implements CanActivate {
+@Injectable({providedIn: 'root'})
 
+export class DeAuthenticatedGuard implements CanActivate {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,

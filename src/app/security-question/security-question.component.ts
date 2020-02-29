@@ -10,7 +10,7 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 	selector: 'security-question',
 	templateUrl: './security-question.component.html'
 })
-export class SecurityQuestionComponent  extends ClearFormOnInitAndAlertOnDestroyComponent {
+export class SecurityQuestionComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
 	heading = 'Security Question';
 

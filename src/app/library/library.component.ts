@@ -19,10 +19,7 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent implements On
 	}
 
 
-	constructor(
-		// private __currentRoute: CurrentRouteService,
-		private __libraryVerifier: LibraryVerifierService
-	) {
+	constructor(private __libraryVerifier: LibraryVerifierService) {
 		super();
 	}
 

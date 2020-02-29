@@ -3,14 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { sss } from '../../assets/.sss';
+import { CORSProxyData as corsProxy } from '../data/read-only-data/cors-proxy.data';
 
 
 export abstract class RestAPIService {
 
-	// Try to find a more reliable CORS Proxy.  This can sometimes be flaky.
-	private __corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
-	protected _baseURL = this.__corsProxy +
+	protected _baseURL = corsProxy.data +
 		'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 

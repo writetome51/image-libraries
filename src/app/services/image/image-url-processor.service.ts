@@ -11,6 +11,7 @@ import { SaveNewImagesProcessorService }
 	from '../data-transport-processor/save-new-images-processor.service';
 import { OperationStatusData as operationStatus }
 	from '../../data/runtime-state-data/operation-status.data';
+import { CORSProxyData as corsProxy } from '../../data/read-only-data/cors-proxy.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -29,7 +30,6 @@ export class ImageURLProcessorService implements IndirectProcessor {
 			await performDataProcessRequiringWaiting.go(
 				this.__saveNewImagesProcessor, operationStatus
 			);
-			newImages.data = [];
 		}
 		else {
 			alert.error =
@@ -39,8 +39,7 @@ export class ImageURLProcessorService implements IndirectProcessor {
 
 
 	private async __resourceFound(url): Promise<boolean> {
-		let corsProxy = 'https://cors-anywhere.herokuapp.com/';
-		url = corsProxy + url;
+		url = corsProxy.data + url;
 
 		return new Promise((returnData) => {
 			let request = new XMLHttpRequest();
