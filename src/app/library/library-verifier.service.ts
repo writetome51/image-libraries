@@ -1,37 +1,42 @@
 import { AppModuleRouteService } from '../app-module-route.service';
-import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { GetLibraryProcessorService }
 	from '../services/data-transport-processor/get-library-processor.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
 import { LoadedImagesData } from '../data/runtime-state-data/loaded-images.data';
-import { LibraryVerificationStatusData as verificationStatus }
-	from '../data/runtime-state-data/library-verification-status.data';
+import { OperationStatusData as verificationStatus }
+	from '../data/runtime-state-data/operation-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../services/perform-data-process-requiring-waiting.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
+import { CurrentRouteService } from '../services/current-route.service';
+import { getTail } from '@writetome51/array-get-head-tail';
+import { getByIndex } from '@writetome51/array-get-by-index';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryVerificationGuard implements CanActivate {
+export class LibraryVerifierService {
 
 	constructor(
 		private __getLibraryProcessor: GetLibraryProcessorService,
-		private __router: Router
+		private __router: Router,
+		private __currentRoute: CurrentRouteService
 	) {
 	}
 
 
-	async canActivate(next: ActivatedRouteSnapshot): Promise<boolean> {
-		requestedLibrary.name = next.url.toString();
+	async verify(): Promise<void> {
+
+		requestedLibrary.name = getByIndex(-1, this.__currentRoute.data.split('/'));
 
 		await this.__loadRequestedLibrary_ifItExists();
 
-		if (this.__isLoaded(requestedLibrary.name)) return true;
-		else return this.__redirectToLibrariesAndReturnFalse();
+		if (this.__isLoaded(requestedLibrary.name)) return;
+		else this.__redirectToLibraries();
 	}
 
 
@@ -54,9 +59,8 @@ export class LibraryVerificationGuard implements CanActivate {
 	}
 
 
-	private __redirectToLibrariesAndReturnFalse() {
-		this.__router.navigate([`/${AppModuleRouteService.LibrariesModule}`]);
-		return false;
+	private async __redirectToLibraries() {
+		await this.__router.navigate([`/${AppModuleRouteService.LibrariesModule}`]);
 	}
 
 

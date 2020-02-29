@@ -5,9 +5,12 @@ import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { GetAppImageService as getAppImage } from './get-app-image.service';
 import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
-import { PerformDataProcessRequiringWaitingService as performDataOperation } from '../perform-data-process-requiring-waiting.service';
+import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
+	from '../perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from '../data-transport-processor/save-new-images-processor.service';
+import { OperationStatusData as operationStatus }
+	from '../../data/runtime-state-data/operation-status.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -23,7 +26,9 @@ export class ImageURLProcessorService implements IndirectProcessor {
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
 			);
-			await performDataOperation.go(this.__saveNewImagesProcessor);
+			await performDataProcessRequiringWaiting.go(
+				this.__saveNewImagesProcessor, operationStatus
+			);
 			newImages.data = [];
 		}
 		else {

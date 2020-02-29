@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
-import { CurrentRouteService } from '../services/current-route.service';
+import { LibraryVerifierService } from './library-verifier.service';
 
 
 @Component({
@@ -12,17 +12,23 @@ import { CurrentRouteService } from '../services/current-route.service';
 		<library-viewer></library-viewer>
 	`
 })
-export class LibraryComponent extends ClearAlertOnDestroyComponent {
+export class LibraryComponent extends ClearAlertOnDestroyComponent implements OnInit {
 
 	get name() {
-		return this.__currentRoute.data;
-
-		// return requestedLibrary.name;
+		return requestedLibrary.name;
 	}
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
+	constructor(
+		// private __currentRoute: CurrentRouteService,
+		private __libraryVerifier: LibraryVerifierService
+	) {
 		super();
+	}
+
+
+	async ngOnInit() {
+		await this.__libraryVerifier.verify();
 	}
 
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../interfaces/db-library';
-import { LoadedLibraryData as loadedLibrary } from '../../../../data/runtime-state-data/loaded-loadedLibrary.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../../../../data/runtime-state-data/loaded-library.data';
 import { GetLibraryImagesProcessorService } from '../../get-library-images-processor.service';
 
 
@@ -15,7 +16,7 @@ export class GetLibraryResultProcessorService implements DirectProcessor {
 
 	async process(result: DBLibrary) {
 		// @ts-ignore
-		library.data = result;
+		loadedLibrary.data = result;
 		if (loadedLibrary.data._image_ids.length) await this.__getLibraryImagesProcessor.process();
 	}
 

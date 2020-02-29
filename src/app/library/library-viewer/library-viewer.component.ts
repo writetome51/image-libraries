@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
 import { DisplayedImagesService } from '../../services/image/displayed-images.service';
-import { LibraryVerificationStatusData as libraryVerificationStatus }
-	from '../../data/runtime-state-data/library-verification-status.data';
+import { OperationStatusData as libraryVerificationStatus }
+	from '../../data/runtime-state-data/operation-status.data';
 
 
 @Component({

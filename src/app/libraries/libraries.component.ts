@@ -3,8 +3,6 @@ import { CreatingNewLibraryData as creatingNewLibrary }
 	from '../data/runtime-state-data/creating-new-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 import { LibrariesModuleRouteService } from './libraries-module-route.service';
-import { LibraryVerificationStatusData as libraryVerificationStatus}
-	from '../data/runtime-state-data/library-verification-status.data';
 
 
 @Component({
@@ -18,11 +16,6 @@ export class LibrariesComponent extends ClearAlertOnDestroyComponent {
 
 	get creatingNewLibrary(): boolean {
 		return creatingNewLibrary.status;
-	}
-
-
-	get verifyingLibrary(): boolean {
-		return libraryVerificationStatus.waiting;
 	}
 
 

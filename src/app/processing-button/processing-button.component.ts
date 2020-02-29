@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DataOperationStatusData } from '../data/runtime-state-data/data-operation-status.data';
+import { ProcessingButtonOperationStatusData } from '../data/runtime-state-data/processing-button-operation-status.data';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class ProcessingButtonComponent {
 
 	clicked = false;
 
-	dataOperationStatus = DataOperationStatusData;
+	dataOperationStatus = ProcessingButtonOperationStatusData;
 
 
 	async run_clickHandler(event) {
