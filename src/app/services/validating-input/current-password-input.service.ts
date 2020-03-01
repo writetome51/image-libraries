@@ -4,8 +4,13 @@ import { PrefixLabel_to_ValidatingInputService }
 	from './prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 
 
-@Injectable({providedIn: 'root'})
 @PrefixLabel_to_ValidatingInputService({prefix: 'current'})
 
-export class CurrentPasswordInputService extends PasswordInputService {
+export class __CurrentPasswordInputService extends PasswordInputService {
+}
+
+
+@Injectable({providedIn: 'root'})
+
+export class CurrentPasswordInputService extends __CurrentPasswordInputService {
 }
