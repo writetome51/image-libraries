@@ -4,12 +4,14 @@ import { UpdateEmailOrPasswordResultProcessorService }
 import { SetResultMessage } from './set-result-message/set-result-message.decorator';
 
 
-@Injectable()
 @SetResultMessage('Password updated')
+
 export class __UpdatePasswordResultProcessorService
 	extends UpdateEmailOrPasswordResultProcessorService {
 }
 
+
 @Injectable({providedIn: 'root'})
+
 export class UpdatePasswordResultProcessorService extends __UpdatePasswordResultProcessorService {
 }

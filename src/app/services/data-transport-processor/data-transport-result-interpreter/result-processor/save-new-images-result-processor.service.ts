@@ -14,9 +14,9 @@ export class SaveNewImagesResultProcessorService implements DirectProcessor {
 
 
 	async process(result) {
-		alert.success = 'New images saved';
 		await this.__getAllImagesProcessor.process(); // refreshes AllImagesData.data
 		newImages.data = [];
+		alert.success = 'New images saved';
 	}
 
 }

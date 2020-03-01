@@ -11,13 +11,13 @@ export const UpdateUserChoicesMapService = {
 		path: 'email', // router path
 		linkText: 'Email',
 		component: UpdateUserEmailFormComponent, // component to load when path is accessed
-		heading: 'Update Email' // used for UpdateUserComponent.formHeading
+		heading: 'Email' // used for UpdateUserComponent.formHeading
 	},
 	password: {
 		path: 'password',
 		linkText: 'Password',
 		component: UpdateUserPasswordFormComponent,
-		heading: 'Update Password'
+		heading: 'Password'
 	},
 	delete: {
 		path: 'delete-account',

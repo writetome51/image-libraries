@@ -1,8 +1,8 @@
-<p *ngIf="!(images)">Fetching Images...</p>
+<big-loading-spinner *ngIf="!(images)"></big-loading-spinner>
 
-<p *ngIf="images && images.length === 0">You haven't added any images yet.</p>
+<p *ngIf="images && images.length === 0">You have no images in your account.</p>
 
-<ul>
+<ul *ngIf="images && images.length > 0">
 
 	<li class="grid-list-item" *ngFor="let img of images; let i = index;">
 
