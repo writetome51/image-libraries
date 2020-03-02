@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DBImage } from '../../interfaces/db-image';
 import { noValue, hasValue } from '@writetome51/has-value-no-value';
 import { GetAllImagesProcessorService }
-	from '../../services/data-transport-processor/get-all-images-processor.service';
+	from '../../services/data-transport-processor/image-fetching-processor/get-all-images-processor.service';
 import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/loaded-images.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../services/perform-data-process-requiring-waiting.service';
