@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
-import { OperationStatusData as libraryVerificationStatus }
+import { OperationStatusData as operationStatus }
 	from '../../data/runtime-state-data/operation-status.data';
-import { PaginatorService } from '../../services/paginator/paginator.service';
+import { LibraryPaginatorService } from '../../services/paginator/library-paginator.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { PaginatorService } from '../../services/paginator/paginator.service';
 export class LibraryViewerComponent {
 
 	get images() {
-		return this.__paginator.currentPage;
+		return this.__libraryPaginator.currentPage;
 	}
 
 
@@ -22,13 +22,13 @@ export class LibraryViewerComponent {
 
 
 	get verifyingLibrary(): boolean {
-		return libraryVerificationStatus.waiting;
+		return operationStatus.waiting;
 	}
 
 
 	constructor(
 		private __libraryChanges: LibraryChangesService,
-		private __paginator: PaginatorService
+		private __libraryPaginator: LibraryPaginatorService
 	) {
 	}
 

@@ -12,10 +12,7 @@ import { ListItemRemoverService } from '../services/list-item-remover.service';
 })
 export class ThumbnailImageComponent {
 
-
-	@Input() image: DBImage;
-	@Input() index: number;
-	hovered = false;
+	@Input() data: DBImage;
 
 
 	get imageWidth(): number {
@@ -23,18 +20,7 @@ export class ThumbnailImageComponent {
 	}
 
 
-	get imageRoute(): string {
-		return `image/${this.index}`;
-	}
-
-
 	constructor(private __listItemRemover: ListItemRemoverService) {
 	}
-
-
-	deleteImage() {
-		this.__listItemRemover.remove(this.index);
-	}
-
 
 }

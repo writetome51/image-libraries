@@ -8,7 +8,8 @@ import { TotalImagesData as totalImages } from '../../../data/runtime-state-data
 import { ImageFetchingProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/image-fetching-processor.service';
 import { LoadedImagesData as loadedImages } from '../../../data/runtime-state-data/loaded-images.data';
-import { LoadedLibraryData as loadedLibrary } from '../../../data/runtime-state-data/loaded-library.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../../../data/runtime-state-data/loaded-library.data';
 import { DBImage } from '../../../interfaces/db-image';
 
 

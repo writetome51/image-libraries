@@ -2,9 +2,9 @@ import { Component} from '@angular/core';
 
 
 @Component({
-	selector: 'delete-image-button',
+	selector: 'delete-item-button',
 	template: `<span class="glyphicon glyphicon-remove-circle"></span>`,
-	styleUrls: ['./delete-image-button.component.css']
+	styleUrls: ['./delete-item-button.component.css']
 })
-export class DeleteImageButtonComponent {
+export class DeleteItemButtonComponent {
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ListItemMoverService } from '../../../../../services/list-item-mover.service';
+import { ListItemRemoverService } from '../../../../../services/list-item-remover.service';
 
 
 @Component({
@@ -14,9 +15,13 @@ export class ReArrangeableGridListItemComponent {
 	isBeingDragged = false;
 	draggedOntoFromRight = false;
 	draggedOntoFromLeft = false;
+	hovered = false;
 
 
-	constructor(private  __listItemMover: ListItemMoverService) {
+	constructor(
+		private  __listItemMover: ListItemMoverService,
+		private __listItemRemover: ListItemRemoverService
+	) {
 	}
 
 
@@ -50,6 +55,11 @@ export class ReArrangeableGridListItemComponent {
 	dropDraggedItemHere() {
 		this.__listItemMover.moveItemTo(this.index);
 		this.unset_isBeingDraggedOnto();
+	}
+
+
+	deleteItem() {
+		this.__listItemRemover.remove(this.index);
 	}
 
 

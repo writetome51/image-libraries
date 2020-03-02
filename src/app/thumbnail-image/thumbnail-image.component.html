@@ -1,14 +1,10 @@
-<div class="image-container" (mouseover)="hovered = true" (mouseleave)="hovered = false">
-
-	<delete-image-button [class.invisible]="!(hovered)" (click)="deleteImage()">
-	</delete-image-button>
+<div class="image-container">
 
 	<!--  Setting draggable to false on the img prevents a ghost-image from being
 	dragged.   -->
-	<a [routerLink]="imageRoute">
-		<img draggable="false" [src]="image.src" alt="{{image.description}}" [width]="imageWidth"
-			 [title]="image.name"
-		/>
-	</a>
+
+	<img draggable="false" [src]="data.src" alt="{{data.description}}" [width]="imageWidth"
+		 [title]="data.name"
+	/>
 
 </div>

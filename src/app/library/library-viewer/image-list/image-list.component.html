@@ -2,7 +2,9 @@
 
 	<re-arrangeable-grid-list-item *ngFor="let img of images; let i = index;" [index]="i">
 
-		<thumbnail-image [image]="img" [index]="i"></thumbnail-image>
+		<a [routerLink]="getImageRoute(i)">
+			<thumbnail-image [data]="img"></thumbnail-image>
+		</a>
 
 	</re-arrangeable-grid-list-item>
 
