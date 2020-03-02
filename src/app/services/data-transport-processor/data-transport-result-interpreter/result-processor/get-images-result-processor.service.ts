@@ -11,11 +11,12 @@ import { TotalImagesData as totalImages } from '../../../../data/runtime-state-d
 export class GetImagesResultProcessorService implements DirectProcessor {
 
 	async process(result: { dataTotal: number, batch: DBImage[] }) {
-		images.data = {};
+		// @ts-ignore
+		images = {};
 		totalImages.data = result.dataTotal;
 
 		result.batch.forEach((image: DBImage) => {
-			images.data[image._id] = image;
+			images[image._id] = image;
 		});
 	}
 

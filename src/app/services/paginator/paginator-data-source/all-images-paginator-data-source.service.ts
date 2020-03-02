@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GetAllImagesProcessorService }
-	from '../data-transport-processor/image-fetching-processor/get-all-images-processor.service';
+	from '../../data-transport-processor/image-fetching-processor/get-all-images-processor.service';
 import { PaginatorDataSourceService } from './paginator-data-source.service';
 
 

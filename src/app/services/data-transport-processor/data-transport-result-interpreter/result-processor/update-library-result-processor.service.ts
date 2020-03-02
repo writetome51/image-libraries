@@ -20,7 +20,8 @@ export class UpdateLibraryResultProcessorService implements DirectProcessor {
 		delete result._id;
 		delete result._user_id;
 
-		loadedLibrary.data = result;
+		// @ts-ignore
+		loadedLibrary = result;
 		this.__libraryChanges.unsetAll();
 		alert.success = 'Library updated';
 	}

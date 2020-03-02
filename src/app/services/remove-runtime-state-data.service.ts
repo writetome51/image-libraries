@@ -15,6 +15,7 @@ export class RemoveRuntimeStateDataService { // implements IDoThis
 	static go(): void {
 
 		this.data.forEach((obj) => {
+			// @ts-ignore
 			if (obj.data) obj.data = undefined;
 			else {
 				let keys = Object.keys(obj);

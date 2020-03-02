@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DBImage } from '../../interfaces/db-image';
 import { noValue, hasValue } from '@writetome51/has-value-no-value';
 import { GetAllImagesProcessorService }
+	// tslint:disable-next-line:max-line-length
 	from '../../services/data-transport-processor/image-fetching-processor/get-all-images-processor.service';
 import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/loaded-images.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
@@ -16,12 +17,12 @@ import { OperationStatusData } from '../../data/runtime-state-data/operation-sta
 export class AllImagesComponent {
 
 	get images(): DBImage[] {
-		if (hasValue(loadedImages.data)) return Object.values(loadedImages.data);
+		if (hasValue(loadedImages)) return Object.values(loadedImages);
 	}
 
 
 	constructor(private __getAllImagesProcessor: GetAllImagesProcessorService) {
-		if (noValue(loadedImages.data)) performDataProcessRequiringWaiting.go(
+		if (noValue(loadedImages)) performDataProcessRequiringWaiting.go(
 			this.__getAllImagesProcessor, OperationStatusData
 		);
 	}

@@ -9,7 +9,7 @@ export class DisplayedImagesService {
 	// Have to make this return array of images both when user is viewing a
 	// library and when user is viewing all their images.
 	static get data(): DBImage[] {
-		if (hasValue(images.data)) return loadedLibrary.data._image_ids.map((id) => images.data[id]);
+		if (hasValue(images)) return loadedLibrary._image_ids.map((id) => images[id]);
 		else return [];
 	}
 

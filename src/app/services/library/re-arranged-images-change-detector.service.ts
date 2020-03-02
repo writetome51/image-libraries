@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ItemBeingMoved } from '../../interfaces/item-being-moved';
-import { DisplayedImagesService } from '../image/displayed-images.service';
 import { ListItemMoverService } from '../list-item-mover.service';
 import { Subscription, Unsubscribable } from 'rxjs';
 
@@ -13,7 +12,6 @@ export class ReArrangedImagesChangeDetectorService {
 
 
 	constructor(
-		private __imagesToDisplay: DisplayedImagesService,
 		private __listItemMover: ListItemMoverService
 	) {
 		this.subscription = this.__listItemMover.subscribable.subscribe(

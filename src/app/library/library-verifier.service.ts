@@ -1,18 +1,13 @@
-import { GetLibraryProcessorService }
-	from '../services/data-transport-processor/get-library-processor.service';
-import { hasValue, noValue } from '@writetome51/has-value-no-value';
-import { Injectable } from '@angular/core';
-import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
-import { LoadedImagesData } from '../data/runtime-state-data/loaded-images.data';
-import { OperationStatusData as verificationStatus }
-	from '../data/runtime-state-data/operation-status.data';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../services/perform-data-process-requiring-waiting.service';
-import { RequestedLibraryData as requestedLibrary }
-	from '../data/runtime-state-data/requested-library.data';
 import { CurrentRouteService } from '../services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
+import { hasValue, noValue } from '@writetome51/has-value-no-value';
+import { Injectable } from '@angular/core';
+import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
+import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
+import { LoadedImagesData as loadedImages } from '../data/runtime-state-data/loaded-images.data';
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
+import { RequestedLibraryData as requestedLibrary }
+	from '../data/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,7 +15,7 @@ import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in
 export class LibraryVerifierService {
 
 	constructor(
-		private __getLibraryProcessor: GetLibraryProcessorService,
+		private __libraryPaginator: LibraryPaginatorService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
 		private __currentRoute: CurrentRouteService
 	) {
@@ -40,19 +35,18 @@ export class LibraryVerifierService {
 
 	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
 
-		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.data.name) {
-			await performDataProcessRequiringWaiting.go(
-				this.__getLibraryProcessor, verificationStatus
-			);
+		if (noValue(loadedLibrary) || requestedLibrary.name !== loadedLibrary.name) {
+			await this.__libraryPaginator.set_currentPageNumber(1);
 
-			//temp:
-			console.log('images: ' + LoadedImagesData.data);
+			// for debugging:
+			console.log('images:');
+			console.log(loadedImages);
 		}
 	}
 
 
 	private __isLoaded(libraryName): boolean {
-		return (hasValue(loadedLibrary.data) && loadedLibrary.data.name === libraryName);
+		return (hasValue(loadedLibrary) && loadedLibrary.name === libraryName);
 	}
 
 
