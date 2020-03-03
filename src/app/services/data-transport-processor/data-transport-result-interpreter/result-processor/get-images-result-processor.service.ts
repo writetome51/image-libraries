@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
-	from '../../../../data/runtime-state-data/loaded-images.data';
-import { TotalImagesData as totalImages } from '../../../../data/runtime-state-data/total-images.data';
+	from '../../../../data/runtime-state-data/static classes/loaded-images.data';
+import { ImageTotalData as totalImages } from '../../../../data/runtime-state-data/static classes/image-total.data';
 
 
 @Injectable({providedIn: 'root'})

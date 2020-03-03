@@ -1,28 +1,27 @@
-import { LibraryNamesData as libraryNames } from '../data/runtime-state-data/library-names.data';
-import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
-import { LoadedImagesData as loadedImages } from '../data/runtime-state-data/loaded-images.data';
+import { LibraryNamesData as libraryNames }
+	from '../data/runtime-state-data/static classes/library-names.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../data/runtime-state-data/static classes/loaded-library.data';
+import { LoadedImagesData as loadedImages }
+	from '../data/runtime-state-data/static classes/loaded-images.data';
 
 
 export class RemoveRuntimeStateDataService { // implements IDoThis
 
-	static readonly data = [
+	private static readonly __data: StaticRuntimeStateData[] = [
 		libraryNames,
-		loadedImages,
 		loadedLibrary,
+		loadedImages,
 	];
 
 
 	static go(): void {
-
-		this.data.forEach((obj) => {
-			// @ts-ignore
-			if (obj.data) obj.data = undefined;
-			else {
-				let keys = Object.keys(obj);
-				keys.forEach((key) => obj[key] = undefined);
-			}
-		});
-
+		this.__data.forEach((obj) => obj.setDefault());
 	}
 
+}
+
+
+interface StaticRuntimeStateData {
+	setDefault: () => void;
 }

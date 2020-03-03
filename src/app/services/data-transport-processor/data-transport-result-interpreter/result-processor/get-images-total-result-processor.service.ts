@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
-import { TotalImagesData as totalImages } from '../../../../data/runtime-state-data/total-images.data';
+import { ImageTotalData as totalImages } from '../../../../data/runtime-state-data/static classes/image-total.data';
 
 
 @Injectable({providedIn: 'root'})

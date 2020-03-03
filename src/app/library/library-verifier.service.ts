@@ -3,11 +3,15 @@ import { getByIndex } from '@writetome51/array-get-by-index';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
-import { LoadedLibraryData as loadedLibrary } from '../data/runtime-state-data/loaded-library.data';
-import { LoadedImagesData as loadedImages } from '../data/runtime-state-data/loaded-images.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../data/runtime-state-data/static classes/loaded-library.data';
+import { LoadedImagesData as loadedImages }
+	from '../data/runtime-state-data/static classes/loaded-images.data';
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
+import { ImageTotalData as imageTotal }
+	from '../data/runtime-state-data/static classes/image-total.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -35,7 +39,10 @@ export class LibraryVerifierService {
 
 	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
 
-		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.data.name) {
+		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.name) {
+			await this.__libraryPaginator.setInitial_dataTotal();
+			console.log('initial dataTotal: ', imageTotal.data);
+
 			await this.__libraryPaginator.set_currentPageNumber(1);
 
 			// for debugging:
@@ -46,7 +53,7 @@ export class LibraryVerifierService {
 
 
 	private __isLoaded(libraryName): boolean {
-		return (hasValue(loadedLibrary.data) && loadedLibrary.data.name === libraryName);
+		return (hasValue(loadedLibrary.data) && loadedLibrary.name === libraryName);
 	}
 
 

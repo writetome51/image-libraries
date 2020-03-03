@@ -1,18 +1,20 @@
 import { AppPaginator } from '@writetome51/app-paginator';
 import { PaginatorDataSourceService } from './paginator-data-source/paginator-data-source.service';
-import { BatchData as batch } from '../../data/runtime-state-data/batch.data';
+import { BatchData as batch } from '../../data/runtime-state-data/static classes/batch.data';
 
 
 export abstract class PaginatorService extends AppPaginator {
 
-	constructor(__dataSource: PaginatorDataSourceService) {
+	constructor(private __dataSource: PaginatorDataSourceService) {
 		super(__dataSource);
 
-		__dataSource.setInitial_dataTotal().then(() => {
-			this.itemsPerPage = 30;
-			this.itemsPerBatch = batch.size;
-		});
+		this.itemsPerPage = batch.size;
+		this.itemsPerBatch = batch.size;
+	}
 
+
+	async setInitial_dataTotal() {
+		await this.__dataSource.setInitial_dataTotal();
 	}
 
 }

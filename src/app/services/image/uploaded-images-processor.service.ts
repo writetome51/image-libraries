@@ -3,7 +3,7 @@ import { DirectProcessor } from '../../interfaces/direct-processor';
 import { GetAppImageService as getAppImage } from './get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
-import { NewImagesData as newImages } from '../../data/runtime-state-data/new-images.data';
+import { NewImagesData as newImages } from '../../data/runtime-state-data/static classes/new-images.data';
 import { OperationStatusData as operationStatus }
 	from '../../data/runtime-state-data/operation-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
