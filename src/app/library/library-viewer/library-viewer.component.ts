@@ -3,7 +3,7 @@ import { LibraryChangesService } from '../../services/library/library-changes.se
 import { OperationStatusData as operationStatus }
 	from '../../data/runtime-state-data/operation-status.data';
 import { LibraryPaginatorService } from '../../services/paginator/library-paginator.service';
-import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/static classes/loaded-images.data';
+import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/static-classes/loaded-images.data';
 
 
 @Component({

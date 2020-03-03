@@ -1,4 +1,4 @@
-import { CurrentUserData as currentUser } from '../data/runtime-state-data/static classes/current-user.data';
+import { CurrentUserData as currentUser } from '../data/runtime-state-data/static-classes/current-user.data';
 import { NewLibraryData as newLibrary } from '../data/runtime-state-data/new-library.data';
 
 

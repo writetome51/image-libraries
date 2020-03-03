@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '../interfaces/i-do-this';
 import { LocalStorageService } from './local-data/local-storage.service';
-import { RemoveRuntimeStateDataService as removeRuntimeStateData }
-	from './remove-runtime-state-data.service';
+import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
+	from './reset-runtime-state-data-to-default-settings.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +14,7 @@ export class RemoveCachedDataService implements IDoThis {
 
 
 	go() {
-		removeRuntimeStateData.go();
+		resetRuntimeStateData.go();
 		this.__localStorage.unsetAll();
 	}
 

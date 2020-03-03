@@ -1,4 +1,4 @@
-import { BatchData as batch } from '../../data/runtime-state-data/static classes/batch.data';
+import { BatchData as batch } from '../../data/runtime-state-data/static-classes/batch.data';
 import { DBImage } from '../../interfaces/db-image';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { LibraryNamesData as libraryNames }
-	from '../../../../data/runtime-state-data/static classes/library-names.data';
+	from '../../../../data/runtime-state-data/static-classes/library-names.data';
 
 
 @Injectable({providedIn: 'root'})

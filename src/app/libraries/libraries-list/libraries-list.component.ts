@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibraryNamesProcessorService }
 	from '../../services/data-transport-processor/get-library-names-processor.service';
-import { LibraryNamesData as libraryNames } from '../../data/runtime-state-data/static classes/library-names.data';
+import { LibraryNamesData as libraryNames } from '../../data/runtime-state-data/static-classes/library-names.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../services/perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
