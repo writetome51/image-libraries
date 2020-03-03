@@ -7,8 +7,8 @@ export class RemoveRuntimeStateDataService { // implements IDoThis
 
 	static readonly data = [
 		libraryNames,
-		loadedLibrary,
 		loadedImages,
+		loadedLibrary,
 	];
 
 

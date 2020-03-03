@@ -11,8 +11,7 @@ import { not } from '@writetome51/not';
 export class GetImagesResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
-		// @ts-ignore
-		loadedImages = {};
+		loadedImages.data = {};
 
 		if (not(errMessage.includes(batchDoesntExist))) await super._errorHandler(errMessage);
 	}

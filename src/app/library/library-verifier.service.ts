@@ -35,18 +35,18 @@ export class LibraryVerifierService {
 
 	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
 
-		if (noValue(loadedLibrary) || requestedLibrary.name !== loadedLibrary.name) {
+		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.data.name) {
 			await this.__libraryPaginator.set_currentPageNumber(1);
 
 			// for debugging:
 			console.log('images:');
-			console.log(loadedImages);
+			console.log(loadedImages.data);
 		}
 	}
 
 
 	private __isLoaded(libraryName): boolean {
-		return (hasValue(loadedLibrary) && loadedLibrary.name === libraryName);
+		return (hasValue(loadedLibrary.data) && loadedLibrary.data.name === libraryName);
 	}
 
 

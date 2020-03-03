@@ -29,7 +29,7 @@ export class LibraryUpdaterService {
 			}
 		}
 		return await this.__libraryStorage.update(
-			loadedLibrary.name, this.__libraryChanges.getAll()
+			loadedLibrary.data.name, this.__libraryChanges.getAll()
 		);
 	}
 

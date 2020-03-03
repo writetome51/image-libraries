@@ -1,6 +1,6 @@
 /******************
- It's an object whose keys are the _id's of each image, i.e:
- LoadedImagesData = {
+ data is object whose keys are the _id's of each image, i.e:
+ LoadedImagesData.data = {
  	'3a4fr53etrr469945ab': DBImage,
 	'3c6fr53etrr449945ac': DBImage,
 	'4c7fr53etrr449945ad': DBImage,
@@ -8,4 +8,4 @@
  };
  ******************/
 
-export let LoadedImagesData: object = undefined;
+export let LoadedImagesData: { data: object } = {data: undefined};
