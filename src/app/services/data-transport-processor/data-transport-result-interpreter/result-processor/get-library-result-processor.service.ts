@@ -3,7 +3,8 @@ import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../../data/runtime-state-data/static-classes/loaded-library.data';
-import { GetLibraryImagesProcessorService } from '../../image-fetching-processor/get-library-images-processor.service';
+import { GetLibraryImagesProcessorService }
+	from '../../image-fetching-processor/get-library-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})

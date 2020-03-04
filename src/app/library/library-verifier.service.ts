@@ -53,7 +53,11 @@ export class LibraryVerifierService {
 
 
 	private __isLoaded(libraryName): boolean {
-		return (hasValue(loadedLibrary.data) && loadedLibrary.name === libraryName);
+		console.log('requested library: ', libraryName);
+
+		console.log('loaded library:');
+		console.log(loadedLibrary.name);
+		return (hasValue(loadedLibrary.data) && loadedLibrary.libName === libraryName);
 	}
 
 

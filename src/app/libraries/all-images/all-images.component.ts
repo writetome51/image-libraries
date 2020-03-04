@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../interfaces/db-image';
 import { noValue, hasValue } from '@writetome51/has-value-no-value';
-import { LoadedImagesData as loadedImages } from '../../data/runtime-state-data/static-classes/loaded-images.data';
+import { LoadedImagesData as loadedImages }
+	from '../../data/runtime-state-data/static-classes/loaded-images.data';
 import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
 
 

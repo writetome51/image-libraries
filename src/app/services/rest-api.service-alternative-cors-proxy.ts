@@ -5,14 +5,18 @@ import { Observable } from 'rxjs';
 import { sss } from '../../assets/.sss';
 import { CORSProxyData as corsProxy } from '../data/read-only-data/cors-proxy.data';
 
+/*************************
 
-export abstract class RestAPIService {
+ export abstract class RestAPIService {
 
 /******************
 	protected _baseURL = corsProxy.data +
 		'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 *******************/
+
+/********************
+
 	private __corsProxy = 'https://writetome51-cors-proxy.herokuapp.com/';
 
 	protected _baseURL = this.__corsProxy + 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
@@ -94,3 +98,5 @@ export abstract class RestAPIService {
 
 
 }
+
+************************/

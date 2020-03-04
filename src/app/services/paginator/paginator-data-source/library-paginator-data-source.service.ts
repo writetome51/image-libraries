@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { GetLibraryImagesProcessorService }
-	from '../../data-transport-processor/image-fetching-processor/get-library-images-processor.service';
 import { PaginatorDataSourceService } from './paginator-data-source.service';
 import { SetInitialDataTotalForLibraryImagesService }
 	from './set-initial-data-total-for-library-images.service';
+import { GetLibraryProcessorService }
+	from '../../data-transport-processor/image-fetching-processor/get-library-processor.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,10 +11,10 @@ import { SetInitialDataTotalForLibraryImagesService }
 export class LibraryPaginatorDataSourceService extends PaginatorDataSourceService {
 
 	constructor(
-		__getLibraryImagesProcessor: GetLibraryImagesProcessorService,
+		__getLibraryProcessor: GetLibraryProcessorService,
 		__setInitial_dataTotal_forLibraryImages: SetInitialDataTotalForLibraryImagesService
 	) {
-		super(__getLibraryImagesProcessor, __setInitial_dataTotal_forLibraryImages);
+		super(__getLibraryProcessor, __setInitial_dataTotal_forLibraryImages);
 	}
 
 }
