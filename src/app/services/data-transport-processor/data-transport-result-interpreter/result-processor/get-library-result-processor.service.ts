@@ -18,7 +18,6 @@ export class GetLibraryResultProcessorService implements DirectProcessor {
 
 
 	async process(result: DBLibrary) {
-		// @ts-ignore
 		loadedLibrary.data = result;
 
 		if (loadedLibrary.data._image_ids.length) await this.__getLibraryImagesProcessor.process();
