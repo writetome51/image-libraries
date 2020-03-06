@@ -4,20 +4,24 @@ import { PerformDataProcessRequiringWaitingService as performDataProcessRequirin
 	from '../../perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
 	from '../../../data/runtime-state-data/operation-status.data';
-import { ImageTotalData as totalImages } from '../../../data/runtime-state-data/static-classes/image-total.data';
+import { ImageTotalData as imageTotal }
+	from '../../../data/runtime-state-data/static-classes/image-total.data';
 import { ImageFetchingProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/image-fetching-processor.service';
-import { LoadedImagesData as loadedImages } from '../../../data/runtime-state-data/static-classes/loaded-images.data';
+import { LoadedImagesData as loadedImages }
+	from '../../../data/runtime-state-data/static-classes/loaded-images.data';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../data/runtime-state-data/static-classes/loaded-library.data';
 import { DBImage } from '../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
+import { RequestedLibraryData as requestedLibrary }
+	from '../../../data/runtime-state-data/requested-library.data';
 
 
 export abstract class PaginatorDataSourceService {
 
 	get dataTotal(): number {
-		return totalImages.data;
+		return imageTotal.data;
 	}
 
 
@@ -25,6 +29,7 @@ export abstract class PaginatorDataSourceService {
 		private __processor: ImageFetchingProcessorService,
 		private __setInitial_dataTotal: SetInitialDataTotalService
 	) {
+
 	}
 
 

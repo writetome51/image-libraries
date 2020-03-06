@@ -1,6 +1,6 @@
 import { AlertService as alert } from '../alert.service';
-import { EnteredImageURLData as enteredImageURL }
-	from '../../data/runtime-state-data/entered-image-url.data';
+import { ImageURLData as enteredImageURL }
+	from '../../data/runtime-state-data/image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { GetAppImageService as getAppImage } from './get-app-image.service';

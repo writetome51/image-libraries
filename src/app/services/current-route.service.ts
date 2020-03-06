@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,15 @@ export class CurrentRouteService {
 	}
 
 
-	constructor(private __router: Router) {
+	get params() {
+		return this.__activatedRoute.snapshot.children[0].children[0].params;
+	}
+
+
+	constructor(
+		private __router: Router,
+		private __activatedRoute: ActivatedRoute
+	) {
 	}
 
 

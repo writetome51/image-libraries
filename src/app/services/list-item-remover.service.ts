@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { Subject, Subscribable } from 'rxjs';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { HasSubscribable } from '../interfaces/has-subscribable';
 import { PaginatorService } from './paginator/paginator.service';
-
+import { Injectable } from '@angular/core';
+import { LibraryPaginatorService } from './paginator/library-paginator.service';
 
 @Injectable({providedIn: 'root'})
 
@@ -17,7 +17,7 @@ export class ListItemRemoverService implements HasSubscribable<any> {
 	}
 
 
-	constructor(private __paginator: PaginatorService) {
+	constructor(private __paginator: LibraryPaginatorService) {
 	}
 
 

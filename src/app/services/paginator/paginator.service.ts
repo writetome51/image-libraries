@@ -14,8 +14,9 @@ export abstract class PaginatorService extends AppPaginator {
 	}
 
 
-	async setInitial_dataTotal() {
+	async reset() {
 		await this.__dataSource.setInitial_dataTotal();
+		await super.reset();
 	}
 
 }

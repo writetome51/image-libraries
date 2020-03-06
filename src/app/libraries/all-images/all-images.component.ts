@@ -18,7 +18,7 @@ export class AllImagesComponent {
 
 
 	constructor(private __allImagesPaginator: AllImagesPaginatorService) {
-		if (noValue(loadedImages.data)) this.__allImagesPaginator.set_currentPageNumber(1);
+		if (noValue(loadedImages.data)) this.__allImagesPaginator.reset();
 	}
 
 }

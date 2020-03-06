@@ -1,4 +1,3 @@
-import { AppModuleRouteService } from './app-module-route.service';
 import { AlertService } from './services/alert.service';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
@@ -16,7 +15,6 @@ export class AppComponent {
 
 	title = 'Image Libraries';
 	alert = AlertService;
-	moduleRoute = AppModuleRouteService;
 	gMapsApiKey = GoogleMapsApiKeyData;
 
 
@@ -28,13 +26,8 @@ export class AppComponent {
 	}
 
 
-	get sessionIDExists() {
-		return (this.__localSessionID.get());
-	}
-
-
-	get updateUserIsActive(): boolean {
-		return this.__currentRoute.isActive(this.moduleRoute.UpdateUserModule);
+	get sessionIDExists(): boolean {
+		return (this.__localSessionID.get().length > 0);
 	}
 
 

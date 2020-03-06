@@ -1,4 +1,4 @@
-import { AlertComponent } from './alert/alert.component';
+import { AppAlertComponent } from './app-alert/app-alert.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,18 +13,20 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProcessingButtonModule } from './processing-button/processing-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+import { AppNavigatorComponent } from './app-navigator/app-navigator.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		AlertComponent,
+		AppAlertComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
 		LoginButtonComponent,
 		LogoutButtonComponent,
-		PageNotFoundComponent
+		AppNavigatorComponent,
+		PageNotFoundComponent,
 	],
 	imports: [
 		BrowserModule,
