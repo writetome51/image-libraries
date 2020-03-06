@@ -7,7 +7,7 @@ import { LoadedLibraryData as loadedLibrary }
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
-import { OperationStatusData as operationStatus}
+import { OperationStatusData as operationStatus }
 	from '../data/runtime-state-data/operation-status.data';
 
 

@@ -8,7 +8,6 @@ export abstract class PaginatorService extends AppPaginator {
 	constructor(private __dataSource: PaginatorDataSourceService) {
 		super(__dataSource);
 
-		console.log(batch.size);
 		this.itemsPerPage = batch.size;
 		this.itemsPerBatch = batch.size;
 	}
@@ -16,7 +15,12 @@ export abstract class PaginatorService extends AppPaginator {
 
 	async reset() {
 		await this.__dataSource.setInitial_dataTotal();
-		await super.reset();
+
+		// If the dataTotal is 0, this will always trigger error in AppPaginator:
+
+		await super.reset().catch((e) => {
+			// just keep running.
+		});
 	}
 
 }

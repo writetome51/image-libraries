@@ -5,7 +5,7 @@
 		<undo-changes-button></undo-changes-button>
 	</ng-container>
 
-	<p *ngIf="(currentPage && currentPage.length === 0)">No images</p>
+	<p *ngIf="((imageTotal !== undefined) && imageTotal === 0)">No images</p>
 
 	<div *ngIf="currentPage && currentPage.length > 0">
 		<image-size-slider></image-size-slider>

@@ -4,6 +4,10 @@ import { batchDoesntExist } from '../../../../string-constants/rest-api-errors';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data/runtime-state-data/static-classes/loaded-images.data';
 import { not } from '@writetome51/not';
+import { ImageTotalData as imageTotal }
+	from '../../../../data/runtime-state-data/static-classes/image-total.data';
+import { LoadedLibraryData }
+	from '../../../../data/runtime-state-data/static-classes/loaded-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,7 +15,12 @@ import { not } from '@writetome51/not';
 export class GetImagesResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
-		loadedImages.setDefault();
+		loadedImages.data = {};
+		imageTotal.data = 0;
+
+		//test:
+		console.log('loaded library data: ', LoadedLibraryData.data);
+
 
 		if (not(errMessage.includes(batchDoesntExist))) await super._errorHandler(errMessage);
 	}

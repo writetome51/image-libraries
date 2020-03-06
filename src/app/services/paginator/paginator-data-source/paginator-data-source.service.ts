@@ -14,8 +14,6 @@ import { LoadedLibraryData as loadedLibrary }
 	from '../../../data/runtime-state-data/static-classes/loaded-library.data';
 import { DBImage } from '../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../../data/runtime-state-data/requested-library.data';
 
 
 export abstract class PaginatorDataSourceService {
