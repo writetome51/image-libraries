@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
 import { LibraryPaginatorService } from '../../../services/paginator/library-paginator.service';
+import { DisplayedImagesService as displayedImages }
+	from '../../../services/image/displayed-images.service';
+import { CurrentRouteService } from '../../../services/current-route.service';
+import { URLParamIDService as paramID } from '../../url-param-id.service';
 
 
 @Component({
@@ -10,16 +14,16 @@ import { LibraryPaginatorService } from '../../../services/paginator/library-pag
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return this.__libraryPaginator.currentPage;
+		return displayedImages.data;
 	}
 
 
-	getImageRoute(index): string {
-		return `image/${index}`;
+	get libName(): string {
+		return this.__currentRoute.params[paramID.libName];
 	}
 
 
-	constructor(private __libraryPaginator: LibraryPaginatorService) {
+	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 }

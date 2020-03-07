@@ -9,6 +9,7 @@ import { RequestedLibraryData as requestedLibrary }
 	from '../data/runtime-state-data/requested-library.data';
 import { OperationStatusData as operationStatus }
 	from '../data/runtime-state-data/operation-status.data';
+import { URLParamIDService as paramID } from './url-param-id.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -25,7 +26,7 @@ export class LibraryVerifierService {
 
 	async verify(): Promise<void> {
 
-		requestedLibrary.name = this.__currentRoute.params['libraryName'];
+		requestedLibrary.name = this.__currentRoute.params[paramID.libName];
 
 		await this.__loadRequestedLibrary_ifItExists();
 

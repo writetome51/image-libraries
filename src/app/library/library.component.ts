@@ -21,16 +21,10 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent implements On
 
 	constructor(private __libraryVerifier: LibraryVerifierService) {
 		super();
-
-		//temp
-		console.log('LibraryComponent constructor()');
 	}
 
 
 	async ngOnInit() {
-		//temp
-		console.log('LibraryComponent ngOnInit()');
-
 		await this.__libraryVerifier.verify();
 	}
 

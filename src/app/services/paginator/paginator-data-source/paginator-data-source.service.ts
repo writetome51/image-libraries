@@ -40,9 +40,6 @@ export abstract class PaginatorDataSourceService {
 		batchNumber: number, itemsPerBatch: number, isLastBatch: boolean
 	): Promise<DBImage[]> {
 
-		BatchData.number = batchNumber;
-		BatchData.size = itemsPerBatch;
-
 		await performDataProcessRequiringWaiting.go(this.__processor, operationStatus);
 		if (hasValue(loadedImages.data)) {
 			return loadedLibrary.data._image_ids.map((id) => loadedImages.data[id]);

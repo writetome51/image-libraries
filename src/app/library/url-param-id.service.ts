@@ -1,4 +1,4 @@
 export const URLParamIDService = {
-	library: ':libraryName',
-	pageNumber: ':pageNumber'
+	libName: 'libraryName',
+	pageNumber: 'pageNumber'
 };

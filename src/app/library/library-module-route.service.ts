@@ -8,7 +8,7 @@ import { URLParamIDService as paramID } from './url-param-id.service';
 
 export const LibraryModuleRouteService = {
 
-	ImageViewerModule: paramID.library + '/image',
-	LibraryComponent: paramID.library + '/page/' + paramID.pageNumber
+	ImageViewerModule: `:${paramID.libName}/image`,
+	LibraryComponent: `:${paramID.libName}/page/:${paramID.pageNumber}`
 
 };
