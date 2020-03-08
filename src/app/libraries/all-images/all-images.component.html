@@ -1,15 +1,21 @@
-<big-loading-spinner *ngIf="!(images)"></big-loading-spinner>
+<big-loading-spinner *ngIf="gettingBatch"></big-loading-spinner>
 
-<p *ngIf="images && images.length === 0">You have no images in your account.</p>
+<ng-container *ngIf="!(gettingBatch)">
 
-<ul *ngIf="images && images.length > 0">
+	<p *ngIf="images && images.length === 0">You have no images in your account.</p>
 
-	<li class="grid-list-item" *ngFor="let img of images; let i = index;">
+	<ul *ngIf="images && images.length > 0">
 
-		<div>
-			<thumbnail-image [data]="img"></thumbnail-image>
-		</div>
+		<li class="grid-list-item" *ngFor="let img of images; let i = index;">
 
-	</li>
+			<div>
+				<thumbnail-image [data]="img"></thumbnail-image>
+			</div>
 
-</ul>
+		</li>
+
+	</ul>
+
+	<div><a [routerLink]="['/libraries', 'all-images', 'page', nextPage]">Next page</a></div>
+
+</ng-container>
