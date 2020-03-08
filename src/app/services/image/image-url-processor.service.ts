@@ -1,17 +1,17 @@
 import { AlertService as alert } from '../alert.service';
 import { ImageURLData as enteredImageURL }
-	from '../../data/runtime-state-data/image-url.data';
+	from '../../data-structures/runtime-state-data/image-url.data';
 import { IndirectProcessor } from '../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { GetAppImageService as getAppImage } from './get-app-image.service';
-import { NewImagesData as newImages } from '../../data/runtime-state-data/static-classes/new-images.data';
+import { NewImagesData as newImages } from '../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from '../data-transport-processor/save-new-images-processor.service';
 import { OperationStatusData as operationStatus }
-	from '../../data/runtime-state-data/operation-status.data';
-import { CORSProxyData as corsProxy } from '../../data/read-only-data/cors-proxy.data';
+	from '../../data-structures/runtime-state-data/operation-status.data';
+import { CORSProxyData as corsProxy } from '../../data-structures/read-only-data/cors-proxy.data';
 
 
 @Injectable({providedIn: 'root'})

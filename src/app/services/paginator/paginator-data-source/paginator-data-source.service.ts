@@ -1,17 +1,15 @@
-import { BatchData } from '../../../data/runtime-state-data/static-classes/batch.data';
-import { hasValue, noValue } from '@writetome51/has-value-no-value';
+import { BatchData as batch } from '../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
-	from '../../../data/runtime-state-data/operation-status.data';
+	from '../../../data-structures/runtime-state-data/operation-status.data';
 import { ImageTotalData as imageTotal }
-	from '../../../data/runtime-state-data/static-classes/image-total.data';
+	from '../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { ImageFetchingProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/image-fetching-processor.service';
 import { LoadedImagesData as loadedImages }
-	from '../../../data/runtime-state-data/static-classes/loaded-images.data';
-import { LoadedLibraryData as loadedLibrary }
-	from '../../../data/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { DBImage } from '../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
 
@@ -24,7 +22,7 @@ export abstract class PaginatorDataSourceService {
 
 
 	constructor(
-		private __processor: ImageFetchingProcessorService,
+		protected _processor: ImageFetchingProcessorService,
 		private __setInitial_dataTotal: SetInitialDataTotalService
 	) {
 
@@ -40,12 +38,16 @@ export abstract class PaginatorDataSourceService {
 		batchNumber: number, itemsPerBatch: number, isLastBatch: boolean
 	): Promise<DBImage[]> {
 
-		await performDataProcessRequiringWaiting.go(this.__processor, operationStatus);
+		batch.number = batchNumber;
+
+		await performDataProcessRequiringWaiting.go(this._processor, operationStatus);
 		if (hasValue(loadedImages.data)) {
-			return loadedLibrary.data._image_ids.map((id) => loadedImages.data[id]);
+			return this._getSomethingFrom_loadedImages();
 		}
 		else return [];
 	}
 
+
+	protected abstract _getSomethingFrom_loadedImages(): DBImage[]
 
 }

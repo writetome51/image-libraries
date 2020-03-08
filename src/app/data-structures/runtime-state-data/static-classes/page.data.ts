@@ -4,7 +4,7 @@ export class PageData {
 
 
 	static setDefault() {
-		this.size = 1;
+		this.size = 10;
 	}
 
 }

@@ -1,15 +1,13 @@
-import { CurrentRouteService } from '../services/current-route.service';
 import { hasValue, noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
 import { LoadedLibraryData as loadedLibrary }
-	from '../data/runtime-state-data/static-classes/loaded-library.data';
+	from '../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 import { RequestedLibraryData as requestedLibrary }
-	from '../data/runtime-state-data/requested-library.data';
+	from '../data-structures/runtime-state-data/requested-library.data';
 import { OperationStatusData as operationStatus }
-	from '../data/runtime-state-data/operation-status.data';
-import { URLParamIDService as paramID } from './url-param-id.service';
+	from '../data-structures/runtime-state-data/operation-status.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,15 +16,14 @@ export class LibraryVerifierService {
 
 	constructor(
 		private __libraryPaginator: LibraryPaginatorService,
-		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
-		private __currentRoute: CurrentRouteService
+		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}
 
 
-	async verify(): Promise<void> {
+	async verify(libName): Promise<void> {
 
-		requestedLibrary.name = this.__currentRoute.params[paramID.libName];
+		requestedLibrary.name = libName;
 
 		await this.__loadRequestedLibrary_ifItExists();
 

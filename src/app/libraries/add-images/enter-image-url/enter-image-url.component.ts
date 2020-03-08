@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ImageURLProcessorService } from '../../../services/image/image-url-processor.service';
 import { ImageURLData as enteredImageURL }
-	from '../../../data/runtime-state-data/image-url.data';
+	from '../../../data-structures/runtime-state-data/image-url.data';
 
 
 @Component({

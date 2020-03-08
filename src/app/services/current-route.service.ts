@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,8 +13,13 @@ export class CurrentRouteService {
 	}
 
 
-	get params() {
+	get params(): object {
 		return this.__activatedRoute.snapshot.children[0].children[0].params;
+	}
+
+
+	get params$(): Observable<object> {
+		return this.__activatedRoute.children[0].children[0].params;
 	}
 
 

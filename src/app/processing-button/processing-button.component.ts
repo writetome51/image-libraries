@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProcessingButtonOperationStatusData }
-	from '../data/runtime-state-data/processing-button-operation-status.data';
+	from '../data-structures/runtime-state-data/processing-button-operation-status.data';
 
 
 @Component({

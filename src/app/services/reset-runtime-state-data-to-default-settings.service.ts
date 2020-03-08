@@ -1,17 +1,19 @@
 import { LibraryNamesData as libraryNames }
-	from '../data/runtime-state-data/static-classes/library-names.data';
+	from '../data-structures/runtime-state-data/static-classes/library-names.data';
 import { LoadedLibraryData as loadedLibrary }
-	from '../data/runtime-state-data/static-classes/loaded-library.data';
+	from '../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { LoadedImagesData as loadedImages }
-	from '../data/runtime-state-data/static-classes/loaded-images.data';
-import { BatchData as batch} from '../data/runtime-state-data/static-classes/batch.data';
+	from '../data-structures/runtime-state-data/static-classes/loaded-images.data';
+import { BatchData as batch} from '../data-structures/runtime-state-data/static-classes/batch.data';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings}
-	from '../data/runtime-state-data/static-classes/thumbnail-display-settings.data';
+	from '../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { NewImagesData as newImages}
-	from '../data/runtime-state-data/static-classes/new-images.data';
+	from '../data-structures/runtime-state-data/static-classes/new-images.data';
 import { ImageTotalData as imageTotal }
-	from '../data/runtime-state-data/static-classes/image-total.data';
-import { PageData as page} from '../data/runtime-state-data/static-classes/page.data';
+	from '../data-structures/runtime-state-data/static-classes/image-total.data';
+import { PageData as page} from '../data-structures/runtime-state-data/static-classes/page.data';
+import { AllImagesStatusData as allImagesStatus }
+	from '../data-structures/runtime-state-data/static-classes/all-images-status.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis
@@ -24,7 +26,8 @@ export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoTh
 		page,
 		thumbnailDisplaySettings,
 		newImages,
-		imageTotal
+		imageTotal,
+		allImagesStatus
 	];
 
 

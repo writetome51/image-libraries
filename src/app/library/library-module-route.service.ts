@@ -1,4 +1,4 @@
-import { URLParamIDService as paramID } from './url-param-id.service';
+import { URLParamIDData as paramID } from '../data-structures/read-only-data/url-param-id.data';
 
 
 // Contains all routes the LibraryModule is concerned with.

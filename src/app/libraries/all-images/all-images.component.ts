@@ -3,14 +3,14 @@ import { DBImage } from '../../interfaces/db-image';
 import { noValue, hasValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { LoadedImagesData as loadedImages }
-	from '../../data/runtime-state-data/static-classes/loaded-images.data';
+	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
 import { AllImagesStatusData as allImagesStatus }
-	from '../../data/runtime-state-data/static-classes/all-images-status.data';
-import { URLParamIDData as paramID } from '../../data/read-only-data/url-param-id.data';
+	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
+import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 import { CurrentRouteService } from '../../services/current-route.service';
 import { Subscription } from 'rxjs';
-import { OperationStatusData } from '../../data/runtime-state-data/operation-status.data';
+import { OperationStatusData } from '../../data-structures/runtime-state-data/operation-status.data';
 
 
 @Component({

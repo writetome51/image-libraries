@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
 import { LibraryPaginatorService } from '../../../services/paginator/library-paginator.service';
 import { CurrentRouteService } from '../../../services/current-route.service';
-import { URLParamIDService as paramID } from '../../url-param-id.service';
+import { URLParamIDData as paramID } from '../../../data-structures/read-only-data/url-param-id.data';
 
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OperationStatusData as operationStatus }
-	from '../../data/runtime-state-data/operation-status.data';
+	from '../../data-structures/runtime-state-data/operation-status.data';
 
 
 @Component({

@@ -1,11 +1,11 @@
-import { BatchData as batch } from '../../data/runtime-state-data/static-classes/batch.data';
+import { BatchData as batch } from '../../data-structures/runtime-state-data/static-classes/batch.data';
 import { DBImage } from '../../interfaces/db-image';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Injectable } from '@angular/core';
 import { ImagesRestApiService } from './images-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { RequestedLibraryData as requestedLibrary }
-	from '../../data/runtime-state-data/requested-library.data';
+	from '../../data-structures/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})

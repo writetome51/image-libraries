@@ -1,6 +1,6 @@
 import { AlertService as alert } from '../../../alert.service';
 import { CreatingNewLibraryData as creatingNewLibrary }
-	from '../../../../data/runtime-state-data/creating-new-library.data';
+	from '../../../../data-structures/runtime-state-data/creating-new-library.data';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';

@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
 import { OperationStatusData as operationStatus }
-	from '../../data/runtime-state-data/operation-status.data';
+	from '../../data-structures/runtime-state-data/operation-status.data';
 import { ImageTotalData as imageTotal }
-	from '../../data/runtime-state-data/static-classes/image-total.data';
+	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LibraryPaginatorService } from '../../services/paginator/library-paginator.service';
 
 
@@ -18,7 +18,7 @@ export class LibraryViewerComponent {
 	}
 
 
-	get pageNumber(){
+	get pageNumber() {
 		return this.__paginator.currentPageNumber;
 	}
 
@@ -37,7 +37,6 @@ export class LibraryViewerComponent {
 		private __paginator: LibraryPaginatorService,
 		private __libraryChanges: LibraryChangesService
 	) {
-
 		// To make the loading spinner run as soon as this component is accessed:
 		operationStatus.waiting = true;
 	}

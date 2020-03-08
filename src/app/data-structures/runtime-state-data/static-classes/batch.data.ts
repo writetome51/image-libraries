@@ -5,7 +5,7 @@ export class BatchData {
 
 
 	static setDefault() {
-		this.size = 2;
+		this.size = 20;
 		this.number = 1;
 	}
 
