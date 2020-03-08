@@ -11,15 +11,17 @@ import { NewImagesData as newImages}
 	from '../data/runtime-state-data/static-classes/new-images.data';
 import { ImageTotalData as imageTotal }
 	from '../data/runtime-state-data/static-classes/image-total.data';
+import { PageData as page} from '../data/runtime-state-data/static-classes/page.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis
 
-	private static readonly __data: StaticRuntimeStateData[] = [
+	private static readonly __data: RuntimeStateDataThatMustBeReset[] = [
 		libraryNames,
 		loadedLibrary,
 		loadedImages,
 		batch,
+		page,
 		thumbnailDisplaySettings,
 		newImages,
 		imageTotal
@@ -33,6 +35,6 @@ export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoTh
 }
 
 
-interface StaticRuntimeStateData {
+interface RuntimeStateDataThatMustBeReset {
 	setDefault: () => void;
 }
