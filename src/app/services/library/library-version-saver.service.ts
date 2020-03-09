@@ -3,12 +3,12 @@ const FileSaver = require('file-saver');
 import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
-import { LoadedLibraryData as loadedLibrary } from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+import { LoadedLibraryData as loadedLibrary }
+	from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class LibraryVersionSaverService {
 
 	private __extension = '.json';
@@ -16,7 +16,7 @@ export class LibraryVersionSaverService {
 
 
 	save(): void {
-		if (isEmpty(loadedLibrary.data.name)) {
+		if (isEmpty(loadedLibrary.libName)) {
 			throw new Error(`The library must be given a name before you save it`);
 		}
 		let txtToWrite = JSON.stringify(loadedLibrary.data);
