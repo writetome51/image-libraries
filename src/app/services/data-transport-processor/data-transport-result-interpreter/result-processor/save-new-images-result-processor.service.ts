@@ -6,9 +6,6 @@ import { GetAllImagesProcessorService }
 import { NewImagesData as newImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { Router } from '@angular/router';
-import { LibrariesModuleRouteService as moduleRoute }
-	from '../../../../libraries/libraries-module-route.service';
-import { AppModuleRouteService } from '../../../../app-module-route.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -23,16 +20,8 @@ export class SaveNewImagesResultProcessorService implements DirectProcessor {
 
 
 	async process(result) {
-		await this.__getAllImagesProcessor.process(); // refreshes LoadedImagesData.data
 		newImages.data = [];
-
-		await this.__router.navigate([this.__getRouteTo_AllImagesComponent()]);
-		alert.success = 'New images saved';
-	}
-
-
-	private __getRouteTo_AllImagesComponent() {
-		return AppModuleRouteService.LibrariesModule + '/' + moduleRoute.AllImagesComponent;
+		if (result.success) alert.success = 'New images saved';
 	}
 
 }

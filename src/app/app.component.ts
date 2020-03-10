@@ -5,7 +5,6 @@ import { CurrentRouteService } from './services/current-route.service';
 import { GoogleMapsApiKeyData } from './data-structures/read-only-data/google-maps-api-key.data';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
 	from './services/reset-runtime-state-data-to-default-settings.service';
-import { TextFileReaderService } from './services/text-file-reader.service';
 
 
 @Component({

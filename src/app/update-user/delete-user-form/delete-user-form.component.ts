@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '../../clear-form-on-init-and-alert-on-destroy.component';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -11,10 +12,10 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
 	gif = {
-		src: '../../../assets/head-exploding.gif',
+		src: environment.assets + 'head-exploding.gif',
 		width: 124,
 		height: 82,
-		alt:'Head exploding'
+		alt: 'Head exploding'
 	};
 
 }

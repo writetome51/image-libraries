@@ -33,7 +33,7 @@
     "@writetome51/array-remove-by-index": "^1.0.2",
     "@writetome51/array-remove-head-tail": "^1.0.4",
     "@writetome51/get-class-modification-decorator": "^0.0.3",
-    "@writetome51/get-data-url": "^0.0.1",
+    "@writetome51/get-data-url": "^0.0.2",
     "@writetome51/get-date-time-id": "^1.0.0",
     "@writetome51/get-max-min": "^1.0.2",
     "@writetome51/get-object-copy": "^0.0.1",

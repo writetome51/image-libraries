@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
 export class BigLoadingSpinnerComponent {
 
 	bigSpinner = {
-		src: '../../assets/loading-gear-225px.gif',
+		src: environment.assets  + 'loading-gear-225px.gif',
 		width: 225,
 		height: 225,
 	};

@@ -20,12 +20,12 @@ import { AppNavigatorComponent } from './app-navigator/app-navigator.component';
 	declarations: [
 		AppComponent,
 		AppAlertComponent,
+		AppNavigatorComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,
 		LoginButtonComponent,
 		LogoutButtonComponent,
-		AppNavigatorComponent,
 		PageNotFoundComponent,
 	],
 	imports: [

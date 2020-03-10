@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { ImagesRestApiService } from './images-rest-api.service';
-import { NewImagesData as newImages } from '../../data-structures/runtime-state-data/static-classes/new-images.data';
+import { NewImagesData as newImages }
+	from '../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 
 
