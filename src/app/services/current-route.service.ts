@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Subscribable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +18,7 @@ export class CurrentRouteService {
 	}
 
 
-	get params$(): Observable<object> {
+	get params$(): Subscribable<object> {
 		return this.__activatedRoute.children[0].children[0].params;
 	}
 

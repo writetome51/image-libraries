@@ -14,8 +14,6 @@ export abstract class FormDataTransportProcessorService extends DataTransportPro
 	}
 
 
-	// The process is only begun if the inputs are valid.
-
 	async process() {
 		if (this.__validatingInputs.areValid()) {
 			await super.process();

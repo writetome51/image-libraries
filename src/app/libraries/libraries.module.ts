@@ -21,6 +21,7 @@ import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image
 import { AddImageUrlButtonComponent }
 	from './add-images/enter-image-url/add-image-url-button.component';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
+import { PaginationControlsModule } from '../pagination-controls/pagination-controls.module';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spin
 		FormsModule,
 		BigLoadingSpinnerModule,
 		ThumbnailImageModule,
+		PaginationControlsModule,
 		ValidatingInputsModule,
 		ProcessingButtonModule,
 		RouterModule.forChild([

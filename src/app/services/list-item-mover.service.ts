@@ -4,12 +4,11 @@ import { ItemBeingMoved } from '../interfaces/item-being-moved';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { Subject, Subscribable } from 'rxjs';
-import { HasSubscribable } from '../interfaces/has-subscribable';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ListItemMoverService extends PublicArrayContainer implements  HasSubscribable<any> {
+export class ListItemMoverService extends PublicArrayContainer {
 
 	private __subject = new Subject();
 	private __indexBeingMoved: number;
@@ -20,7 +19,7 @@ export class ListItemMoverService extends PublicArrayContainer implements  HasSu
 	}
 
 
-	get subscribable(): Subscribable<ItemBeingMoved> {
+	get itemBeingMoved(): Subscribable<ItemBeingMoved> {
 		return this.__subject;
 	}
 

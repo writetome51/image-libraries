@@ -19,7 +19,7 @@ export class RemovedImageChangeDetectorService {
 		private __listItemRemover: ListItemRemoverService,
 		private __libraryChanges: LibraryChangesService
 	) {
-		this.subscription = this.__listItemRemover.subscribable.subscribe(
+		this.subscription = this.__listItemRemover.itemBeingRemoved.subscribe(
 			(removalInfo: { indexBeingRemoved: number, previousLength: number }) => {
 				if (removalInfo.indexBeingRemoved === 0) {
 					this.__libraryChanges.data['images'] = getCopy(this.__imagesToDisplay.data);

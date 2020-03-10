@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PaginatorService } from '../services/paginator/paginator.service';
 
 
 @Component({
@@ -7,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./pagination-controls.component.css']
 })
 export class PaginationControlsComponent implements OnInit {
+
+	@Input() paginator: PaginatorService;
+
+
+	get nextPage() {
+		return this.paginator.currentPageNumber + 1;
+	}
+
 
 	constructor() {
 	}

@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DBImage } from '../../interfaces/db-image';
-import { noValue, hasValue } from '@writetome51/has-value-no-value';
+import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { LoadedImagesData as loadedImages }
 	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
@@ -10,22 +10,26 @@ import { AllImagesStatusData as allImagesStatus }
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 import { CurrentRouteService } from '../../services/current-route.service';
 import { Subscription } from 'rxjs';
-import { OperationStatusData } from '../../data-structures/runtime-state-data/operation-status.data';
+import { OperationStatusData as operationStatus }
+	from '../../data-structures/runtime-state-data/operation-status.data';
+import { HasSubscriptions } from '../../interfaces/has-subscribtions';
+import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 
 
 @Component({
 	selector: 'all-images',
 	templateUrl: './all-images.component.html'
 })
-export class AllImagesComponent implements OnInit, OnDestroy {
+export class AllImagesComponent extends UnsubscribeOnDestroyComponent
+	implements OnInit, HasSubscriptions {
+
 
 	private __images;
 	private __page: number;
-	private __routeParamsSubscription: Subscription;
 
 
 	get gettingBatch(): boolean {
-		return OperationStatusData.waiting;
+		return operationStatus.waiting;
 	}
 
 
@@ -34,36 +38,32 @@ export class AllImagesComponent implements OnInit, OnDestroy {
 	}
 
 
-	get nextPage() {
-		return this.__page + 1;
-	}
-
-
 	constructor(
-		private __allImagesPaginator: AllImagesPaginatorService,
+		public allImagesPaginator: AllImagesPaginatorService,
 		private __currentRoute: CurrentRouteService
 	) {
+		super();
+
+		// It looks better if the spinner shows up as soon as this component loads:
+		operationStatus.waiting = true;
 	}
 
 
 	async ngOnInit() {
 		if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
-			await this.__allImagesPaginator.reset();
+			await this.allImagesPaginator.reset();
 			allImagesStatus.loaded = true;
 		}
 
-		this.__routeParamsSubscription = this.__currentRoute.params$.subscribe(
+		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 			async (params) => {
 				this.__page = Number(params[paramID.pageNumber]);
-				await this.__allImagesPaginator.set_currentPageNumber(this.__page);
-				this.__images = this.__allImagesPaginator.currentPage;
+				await this.allImagesPaginator.set_currentPageNumber(this.__page);
+				this.__images = this.allImagesPaginator.currentPage;
 			}
 		);
+		this._subscriptions.push(routeParamsSubscription);
 	}
 
-
-	ngOnDestroy(): void {
-		this.__routeParamsSubscription.unsubscribe();
-	}
 
 }

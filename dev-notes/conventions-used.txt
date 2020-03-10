@@ -1,0 +1,19 @@
+The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.
+
+Each class/object in src/app/data-structures is named with 'Data' at the end, denoting that it's a
+data structure.
+
+'data processing' is general data manipulation.  The data might not be sent anywhere but simply
+be manipulated in the browser.
+
+Any component that initiates data processing is a subclass of DataProcessorComponent.  These
+components usually represent UI buttons.
+
+'data transport processing' refers to any data processing that involves sending the data to an
+external resource that returns a result.  All processing of this kind is handled by subclasses of
+DataTransportProcessorService.
+
+Any form <input> that self-validates during the 'blur' event is an instance of
+ValidatingInputComponent.  ValidatingInputComponent depends on the interface ValidatingInput defined
+in npm package '@writetome51/validating-inputs'.  ValidatingInput only represents an input of type
+'text', 'password', or 'number'.
