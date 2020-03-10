@@ -4,7 +4,8 @@ import { LoadedLibraryData as loadedLibrary }
 	from '../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { LoadedImagesData as loadedImages }
 	from '../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { BatchData as batch} from '../data-structures/runtime-state-data/static-classes/batch.data';
+import { BatchSizeData as batchSize}
+	from '../data-structures/runtime-state-data/static-classes/batch-size.data';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings}
 	from '../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { NewImagesData as newImages}
@@ -14,6 +15,8 @@ import { ImageTotalData as imageTotal }
 import { PageData as page} from '../data-structures/runtime-state-data/static-classes/page.data';
 import { AllImagesStatusData as allImagesStatus }
 	from '../data-structures/runtime-state-data/static-classes/all-images-status.data';
+import { BatchNumberData as batchNumber}
+	from '../data-structures/runtime-state-data/static-classes/batch-number.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis
@@ -22,8 +25,9 @@ export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoTh
 		libraryNames,
 		loadedLibrary,
 		loadedImages,
-		batch,
-		page,
+		page, // must be listed before batch!
+		batchNumber,
+		batchSize,
 		thumbnailDisplaySettings,
 		newImages,
 		imageTotal,

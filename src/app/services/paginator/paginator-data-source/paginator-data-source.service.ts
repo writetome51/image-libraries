@@ -1,4 +1,3 @@
-import { BatchData as batch } from '../../../data-structures/runtime-state-data/static-classes/batch.data';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../perform-data-process-requiring-waiting.service';
@@ -12,6 +11,8 @@ import { LoadedImagesData as loadedImages }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { DBImage } from '../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
+import { BatchNumberData as batchNumber}
+	from '../../../data-structures/runtime-state-data/static-classes/batch-number.data';
 
 
 export abstract class PaginatorDataSourceService {
@@ -35,10 +36,10 @@ export abstract class PaginatorDataSourceService {
 
 
 	async getBatch(
-		batchNumber: number, itemsPerBatch: number, isLastBatch: boolean
+		batchNum: number, itemsPerBatch: number, isLastBatch: boolean
 	): Promise<DBImage[]> {
 
-		batch.number = batchNumber;
+		batchNumber.data = batchNum;
 
 		await performDataProcessRequiringWaiting.go(this._processor, operationStatus);
 		if (hasValue(loadedImages.data)) {

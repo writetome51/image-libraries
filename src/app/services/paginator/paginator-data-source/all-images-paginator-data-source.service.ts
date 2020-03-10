@@ -6,7 +6,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { SetInitialDataTotalForAllImagesService }
 	from './set-initial-data-total-for-all-images.service';
 import { DBImage } from '../../../interfaces/db-image';
-import { BatchData as batch } from '../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { BatchSizeData as batch } from '../../../data-structures/runtime-state-data/static-classes/batch-size.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
