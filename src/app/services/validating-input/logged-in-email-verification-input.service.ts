@@ -10,12 +10,10 @@ export class LoggedInEmailVerificationInputService extends EmailInputService {
 	constructor(private  __localEmail: LocalEmailService) {
 		super();
 
-		// @ts-ignore
 		this.data.isValid = () => (
 			this.data.objectToBind[this.data.propertyToBind] === this.__localEmail.get()
 		);
 
-		// @ts-ignore
 		this.data.errorMessage = `The email entered is not the logged-in user's email.`;
 	}
 }

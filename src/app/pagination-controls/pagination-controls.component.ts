@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PaginatorService } from '../services/paginator/paginator.service';
+import {
+	ValidatingInputService,
+	ValidatingNumberInputService
+} from '@writetome51/validating-inputs';
 
 
 @Component({
@@ -10,14 +14,23 @@ import { PaginatorService } from '../services/paginator/paginator.service';
 export class PaginationControlsComponent implements OnInit {
 
 	@Input() paginator: PaginatorService;
+	@Input() jumpToPageNumberInput: ValidatingNumberInputService;
 
+	get currentPage(){
+		return this.paginator.currentPageNumber;
+	}
+
+	get totalPages(){
+		return this.paginator.totalPages;
+	}
 
 	get nextPage() {
 		return this.paginator.currentPageNumber + 1;
 	}
 
 
-	constructor() {
+	get previousPage() {
+		return this.paginator.currentPageNumber - 1;
 	}
 
 

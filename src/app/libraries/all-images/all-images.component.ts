@@ -9,11 +9,12 @@ import { AllImagesStatusData as allImagesStatus }
 	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 import { CurrentRouteService } from '../../services/current-route.service';
-import { Subscription } from 'rxjs';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
 import { HasSubscriptions } from '../../interfaces/has-subscribtions';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
+import { AllImagesJumpToPageNumberInputService }
+	from '../../services/validating-input/all-images-jump-to-page-number-input.service';
 
 
 @Component({
@@ -40,6 +41,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 
 	constructor(
 		public allImagesPaginator: AllImagesPaginatorService,
+		public jumpToPageNumberInput: AllImagesJumpToPageNumberInputService,
 		private __currentRoute: CurrentRouteService
 	) {
 		super();
