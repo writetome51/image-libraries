@@ -23,7 +23,7 @@ export class NoRecordMatchErrorHandlerService implements Handler {
 	async handle() {
 		let assumeLoggedIn = (this.__localSessionID.get() ? true: false);
 
-		if ((await this.__userStorage.exists()).success) { // user exists in db.
+		if (await this.__userExists()) { // user exists in db.
 
 			if (assumeLoggedIn && (await this.__userStorage.get()).error) {
 				// user isn't logged in. If user was logged in, __userStorage.get() would not
@@ -35,6 +35,12 @@ export class NoRecordMatchErrorHandlerService implements Handler {
 			}
 		}
 		else alert.error = noAccountWithThatEmail;
+	}
+
+
+	private async __userExists() {
+		let result = await this.__userStorage.exists();
+		return JSON.parse(result).success;
 	}
 
 }

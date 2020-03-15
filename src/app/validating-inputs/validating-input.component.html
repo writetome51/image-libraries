@@ -1,7 +1,7 @@
 <div
-	 class="validating-input-container"
-	 [class.validating-input-with-error]="input.__error.length"
-	 [class.required]="input.required"
+	class="validating-input-container"
+	[class.validating-input-with-error]="input.__error.length"
+	[class.required]="input.required"
 >
 	<p *ngIf="input.prompt" class="validating-input-prompt">{{input.prompt}}</p>
 
@@ -10,7 +10,9 @@
 	</label>
 
 	<input [type]="input.type"
-		   (change)="validate()"
+		   (keyup)="input.type === 'number' ? validate(): undefined"
+		   (change)="input.type === 'number' ? validate(): undefined"
+		   (blur)="validate()"
 
 		   id="{{input.id}}"
 		   class="validating-input"

@@ -36,6 +36,7 @@ export class DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {
 		if (errMessage.includes(noDocumentMatchedCriteria)) {
+
 			await this.__noRecordMatchErrorHandler.handle();
 		}
 		else if (errMessage.includes(notLoggedIn)) await this._notLoggedInErrorHandler.handle();

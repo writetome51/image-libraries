@@ -9,9 +9,6 @@ export class AllImagesJumpToPageNumberInputService extends JumpToPageNumberInput
 
 	constructor(private __allImagesPaginator: AllImagesPaginatorService) {
 		super(__allImagesPaginator);
-
-		this.data.objectToMatch = this.__allImagesPaginator;
-		this.data.propertyToMatch = 'totalPages';
 	}
 
 }

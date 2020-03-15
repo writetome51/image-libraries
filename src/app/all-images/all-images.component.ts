@@ -35,7 +35,12 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 
 
 	get images(): DBImage[] {
-		return this.__images;
+		try {
+			return this.allImagesPaginator.currentPage;
+		}
+		catch (e) {
+			return undefined;
+		}
 	}
 
 
@@ -54,21 +59,20 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 			this.allImagesPaginator.reset().then(() => {
 				allImagesStatus.loaded = true;
 
+				this.jumpToPageNumberInput.setMax();
+
 				let routeParamsSubscrp = this.__currentRoute.params$.subscribe(
 					async (params) => {
 						this.__page = Number(params[paramID.pageNumber]);
 						await this.allImagesPaginator.set_currentPageNumber(this.__page);
-						this.__images = this.allImagesPaginator.currentPage;
 					}
 				);
 				this._subscriptions.push(routeParamsSubscrp);
 			});
 
 		}
+		else operationStatus.waiting = false;
 
-
-		this.jumpToPageNumberInput.data.max =
-			this.jumpToPageNumberInput.data.objectToMatch[this.jumpToPageNumberInput.data.propertyToMatch];
 	}
 
 

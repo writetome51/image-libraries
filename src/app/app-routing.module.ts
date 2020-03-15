@@ -35,6 +35,12 @@ const routes: Routes = [
 			.then(mod => mod.SecurityQuestionModule)
 	},
 
+	{	// lazy-loaded module
+		path: moduleRoute.AllImagesModule,
+		loadChildren: () => import('./all-images/all-images.module').then(
+			mod => mod.AllImagesModule)
+	},
+
 	{
 		path: '', // the logged-out homepage
 		component: LoginComponent,

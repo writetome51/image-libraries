@@ -12,7 +12,6 @@ button {
 input {
 	margin: auto;
 	padding: 5px;
-	width: 60%;
 	text-align: center;
 }
 
@@ -80,3 +79,14 @@ img {
 	margin: auto;
 }
 
+.validating-input-container input[type='text'], .validating-input-container input[type='password']{
+	width: 300px;
+}
+
+
+#jump-to-page-number-input {
+	width: 100px;
+	height: 30px;
+	margin: auto;
+	font-size: 20px;
+}
