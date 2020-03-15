@@ -22,9 +22,10 @@ export abstract class PaginatorService extends AppPaginator {
 		await this.__dataSource.setInitial_dataTotal();
 
 		// If the dataTotal is 0, this will always trigger error in AppPaginator.reset():
-		await super.reset().catch((e) => {
+	//	await super.reset().catch((e) => {
 			// just keep running.
-		});
+	//	});
+		await super.reset();
 	}
 
 }

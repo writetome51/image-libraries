@@ -35,6 +35,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 
 
 	get images(): DBImage[] {
+		// If paginator.currentPage is undefined it triggers error, so we catch it:
 		try {
 			return this.allImagesPaginator.currentPage;
 		}
@@ -54,24 +55,23 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 		// It looks better if the spinner shows up as soon as this component loads:
 		operationStatus.waiting = true;
 
-		if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
 
-			this.allImagesPaginator.reset().then(() => {
-				allImagesStatus.loaded = true;
+		let routeParamsSubscrp = this.__currentRoute.params$.subscribe(
+			async (params) => {
+				if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
 
-				this.jumpToPageNumberInput.setMax();
+					await this.allImagesPaginator.reset();
+					allImagesStatus.loaded = true;
+					this.jumpToPageNumberInput.setMax();
 
-				let routeParamsSubscrp = this.__currentRoute.params$.subscribe(
-					async (params) => {
-						this.__page = Number(params[paramID.pageNumber]);
-						await this.allImagesPaginator.set_currentPageNumber(this.__page);
-					}
-				);
-				this._subscriptions.push(routeParamsSubscrp);
-			});
+				}
 
-		}
-		else operationStatus.waiting = false;
+				this.__page = Number(params[paramID.pageNumber]);
+				await this.allImagesPaginator.set_currentPageNumber(this.__page);
+				operationStatus.waiting = false;
+			}
+		);
+		this._subscriptions.push(routeParamsSubscrp);
 
 	}
 

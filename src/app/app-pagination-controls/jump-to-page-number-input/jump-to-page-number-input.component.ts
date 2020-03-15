@@ -4,8 +4,7 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 
 @Component({
 	selector: 'jump-to-page-number-input',
-	template: `<validating-input [input]="data"></validating-input>`,
-	styleUrls: ['./jump-to-page-number-input.component.css']
+	template: `<validating-input [input]="data"></validating-input>`
 })
 export class JumpToPageNumberInputComponent {
 

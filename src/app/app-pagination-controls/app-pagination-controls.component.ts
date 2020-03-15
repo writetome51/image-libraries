@@ -5,8 +5,7 @@ import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
 
 @Component({
 	selector: 'app-pagination-controls',
-	templateUrl: './app-pagination-controls.component.html',
-	styleUrls: ['./app-pagination-controls.component.css']
+	templateUrl: './app-pagination-controls.component.html'
 })
 export class AppPaginationControlsComponent {
 

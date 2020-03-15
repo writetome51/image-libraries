@@ -1,6 +1,6 @@
 <div>
-	<a [routerLink]="[routeBeforePageNumber, previousPage]">previous</a>
-	<a [routerLink]="[routeBeforePageNumber, nextPage]">next</a>
+	<a *ngIf="currentPage > 1" [routerLink]="[routeBeforePageNumber, previousPage]">previous</a>
+	<a *ngIf="currentPage < totalPages" [routerLink]="[routeBeforePageNumber, nextPage]">next</a>
 
 	<p>Page {{currentPage}} of {{totalPages}}</p>
 
