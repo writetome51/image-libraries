@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PaginatorService } from '../services/paginator/paginator.service';
-import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
+import { JumpToPageNumberInputService }
+	from '../services/validating-input/jump-to-page-number-input.service';
 
 
 @Component({
@@ -9,9 +9,13 @@ import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
 })
 export class AppPaginationControlsComponent {
 
-	@Input() paginator: PaginatorService;
+	@Input() paginator: { currentPageNumber: number, totalPages: number };
 	@Input() routeBeforePageNumber: string;
-	@Input() jumpToPageNumberInput: ValidatingNumberInputService;
+
+
+	// Optional
+
+	@Input() jumpToPageInput: JumpToPageNumberInputService;
 
 
 	get currentPage() {

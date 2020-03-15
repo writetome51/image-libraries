@@ -3,10 +3,10 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 
 
 @Component({
-	selector: 'jump-to-page-number-input',
+	selector: 'jump-to-page-input',
 	template: `<validating-input [input]="data"></validating-input>`
 })
-export class JumpToPageNumberInputComponent {
+export class JumpToPageInputComponent {
 
 	@Input() data: ValidatingInput;
 

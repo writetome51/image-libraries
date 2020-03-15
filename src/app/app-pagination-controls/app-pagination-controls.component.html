@@ -1,8 +1,15 @@
 <div>
-	<a *ngIf="currentPage > 1" [routerLink]="[routeBeforePageNumber, previousPage]">previous</a>
-	<a *ngIf="currentPage < totalPages" [routerLink]="[routeBeforePageNumber, nextPage]">next</a>
+
+	<a *ngIf="currentPage > 1" [routerLink]="[routeBeforePageNumber, previousPage]">
+		previous
+	</a>
+
+	<a *ngIf="currentPage < totalPages" [routerLink]="[routeBeforePageNumber, nextPage]">
+		next
+	</a>
 
 	<p>Page {{currentPage}} of {{totalPages}}</p>
 
-	<jump-to-page-number-input [data]="jumpToPageNumberInput.data"></jump-to-page-number-input>
+	<jump-to-page-input *ngIf="jumpToPageInput" [data]="jumpToPageInput.data"></jump-to-page-input>
+
 </div>

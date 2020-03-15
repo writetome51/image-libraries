@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RequestedLibraryData as requestedLibrary }
 	from '../data-structures/runtime-state-data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
@@ -19,7 +19,7 @@ import { AllImagesStatusData as allImagesStatus }
 		<button (click)="previousPage()">Previous Page</button>
 	`
 })
-export class LibraryComponent extends ClearAlertOnDestroyComponent implements OnInit {
+export class LibraryComponent extends ClearAlertOnDestroyComponent {
 
 	get name() {
 		return requestedLibrary.name;
@@ -33,14 +33,13 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent implements On
 	) {
 		super();
 		allImagesStatus.loaded = false;
-	}
 
-
-	async ngOnInit() {
-		await this.__libraryVerifier.verify(this.__currentRoute.params[paramID.libName]);
-
-		let page = Number(this.__currentRoute.params[paramID.pageNumber]);
-		if (page > 1) await this.__paginator.set_currentPageNumber(page);
+		this.__libraryVerifier.verify(this.__currentRoute.params[paramID.libName]).then(
+			async () => {
+				let page = Number(this.__currentRoute.params[paramID.pageNumber]);
+				if (page > 1) await this.__paginator.set_currentPageNumber(page);
+			}
+		);
 	}
 
 
