@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';

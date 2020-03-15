@@ -32,11 +32,11 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent implements On
 		private __currentRoute: CurrentRouteService
 	) {
 		super();
+		allImagesStatus.loaded = false;
 	}
 
 
 	async ngOnInit() {
-		allImagesStatus.loaded = false;
 		await this.__libraryVerifier.verify(this.__currentRoute.params[paramID.libName]);
 
 		let page = Number(this.__currentRoute.params[paramID.pageNumber]);

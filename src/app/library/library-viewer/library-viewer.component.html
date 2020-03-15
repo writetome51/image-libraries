@@ -5,7 +5,7 @@
 		<undo-changes-button></undo-changes-button>
 	</ng-container>
 
-	<p *ngIf="((imageTotal !== undefined) && imageTotal === 0)">No images</p>
+	<p *ngIf="(imageTotal === 0)">No images</p>
 
 	<div *ngIf="imageTotal > 0">
 		<p>Page {{pageNumber}}</p>
