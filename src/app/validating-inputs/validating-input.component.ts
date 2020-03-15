@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { InputValidatorService, ValidatingInput } from '@writetome51/validating-inputs';
+import { InputValidatorService as inputValidator, ValidatingInput }
+	from '@writetome51/validating-inputs';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class ValidatingInputComponent implements OnInit {
 
 
 	validate(): void {
-		InputValidatorService.validate(this.input);
+		inputValidator.validate(this.input);
 	}
 
 }

@@ -1,4 +1,4 @@
-import { AllImagesComponent } from './all-images/all-images.component';
+import { AllImagesComponent } from '../all-images/all-images.component';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
@@ -21,13 +21,12 @@ import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image
 import { AddImageUrlButtonComponent }
 	from './add-images/enter-image-url/add-image-url-button.component';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
-import { PaginationControlsModule } from '../pagination-controls/pagination-controls.module';
+import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
 
 
 @NgModule({
 	declarations: [
 		AddImageUrlButtonComponent,
-		AllImagesComponent,
 		AddImagesComponent,
 		ChooseImagesFromDeviceComponent,
 		CreateLibraryButtonComponent,
@@ -43,7 +42,7 @@ import { PaginationControlsModule } from '../pagination-controls/pagination-cont
 		FormsModule,
 		BigLoadingSpinnerModule,
 		ThumbnailImageModule,
-		PaginationControlsModule,
+		AppPaginationControlsModule,
 		ValidatingInputsModule,
 		ProcessingButtonModule,
 		RouterModule.forChild([
@@ -55,9 +54,8 @@ import { PaginationControlsModule } from '../pagination-controls/pagination-cont
 			},
 
 			{
-				path: moduleRoute.AllImagesComponent,
-				component: AllImagesComponent,
-				canActivate: [AuthenticatedGuard]
+				path:  moduleRoute.AllImagesModule,
+				loadChildren: () => import('../all-images/all-images.module').then(mod => mod.AllImagesModule)
 			},
 
 			{

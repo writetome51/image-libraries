@@ -1,28 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PaginatorService } from '../services/paginator/paginator.service';
-import {
-	ValidatingInputService,
-	ValidatingNumberInputService
-} from '@writetome51/validating-inputs';
+import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
 
 
 @Component({
 	selector: 'app-pagination-controls',
-	templateUrl: './pagination-controls.component.html',
-	styleUrls: ['./pagination-controls.component.css']
+	templateUrl: './app-pagination-controls.component.html',
+	styleUrls: ['./app-pagination-controls.component.css']
 })
-export class PaginationControlsComponent implements OnInit {
+export class AppPaginationControlsComponent {
 
 	@Input() paginator: PaginatorService;
+	@Input() routeBeforePageNumber: string;
 	@Input() jumpToPageNumberInput: ValidatingNumberInputService;
 
-	get currentPage(){
+
+	get currentPage() {
 		return this.paginator.currentPageNumber;
 	}
 
-	get totalPages(){
+
+	get totalPages() {
 		return this.paginator.totalPages;
 	}
+
 
 	get nextPage() {
 		return this.paginator.currentPageNumber + 1;
@@ -31,10 +32,6 @@ export class PaginationControlsComponent implements OnInit {
 
 	get previousPage() {
 		return this.paginator.currentPageNumber - 1;
-	}
-
-
-	ngOnInit(): void {
 	}
 
 }

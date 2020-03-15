@@ -1,0 +1,8 @@
+<div>
+	<a [routerLink]="[routeBeforePageNumber, previousPage]">previous</a>
+	<a [routerLink]="[routeBeforePageNumber, nextPage]">next</a>
+
+	<p>Page {{currentPage}} of {{totalPages}}</p>
+
+	<jump-to-page-number-input [data]="jumpToPageNumberInput.data"></jump-to-page-number-input>
+</div>

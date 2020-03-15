@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginationControlsComponent } from './pagination-controls.component';
+import { AppPaginationControlsComponent } from './app-pagination-controls.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
@@ -9,14 +9,14 @@ import { JumpToPageNumberInputComponent }
 
 
 @NgModule({
-	declarations: [PaginationControlsComponent, JumpToPageNumberInputComponent],
+	declarations: [AppPaginationControlsComponent, JumpToPageNumberInputComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
 		ValidatingInputsModule,
 		RouterModule
 	],
-	exports: [PaginationControlsComponent]
+	exports: [AppPaginationControlsComponent]
 })
-export class PaginationControlsModule {
+export class AppPaginationControlsModule {
 }

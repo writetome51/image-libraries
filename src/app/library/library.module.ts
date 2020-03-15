@@ -1,3 +1,5 @@
+import { AppPaginationControlsModule }
+	from '../app-pagination-controls/app-pagination-controls.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ImageListComponent } from './library-viewer/image-list/image-list.component';
@@ -31,10 +33,11 @@ import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spin
 		FormsModule,
 		BigLoadingSpinnerModule,
 		ProcessingButtonModule,
+		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
 		ImageViewerModule,
-		ThumbnailImageModule
+		ThumbnailImageModule,
 	]
 })
 export class LibraryModule {

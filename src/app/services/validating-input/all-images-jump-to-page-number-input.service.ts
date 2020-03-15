@@ -8,7 +8,7 @@ import { JumpToPageNumberInputService } from './jump-to-page-number-input.servic
 export class AllImagesJumpToPageNumberInputService extends JumpToPageNumberInputService {
 
 	constructor(private __allImagesPaginator: AllImagesPaginatorService) {
-		super();
+		super(__allImagesPaginator);
 
 		this.data.objectToMatch = this.__allImagesPaginator;
 		this.data.propertyToMatch = 'totalPages';

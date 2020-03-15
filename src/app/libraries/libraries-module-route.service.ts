@@ -7,7 +7,7 @@ import { URLParamIDData as paramID } from '../data-structures/read-only-data/url
 
 export const LibrariesModuleRouteService = {
 
-	AllImagesComponent: `all-images/page/:${paramID.pageNumber}`,
+	AllImagesModule: `all-images/page/:${paramID.pageNumber}`,
 	AddImagesComponent: 'add-images'
 
 };
