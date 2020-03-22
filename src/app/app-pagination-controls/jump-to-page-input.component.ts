@@ -6,11 +6,17 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 	selector: 'jump-to-page-input',
 	template: `
 		<validating-input [input]="data"></validating-input>
-		<button>Go</button>
+		<a [routerLink]="[routeBeforePageNumber, pageNumber]">Go</a>
 	`
 })
 export class JumpToPageInputComponent {
 
 	@Input() data: ValidatingInput;
+	@Input() routeBeforePageNumber: string;
+
+
+	get pageNumber() {
+		return this.data.objectToBind[this.data.propertyToBind];
+	}
 
 }

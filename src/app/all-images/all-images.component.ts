@@ -47,7 +47,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 
 	constructor(
 		public allImagesPaginator: AllImagesPaginatorService,
-		public jumpToPageNumberInput: AllImagesJumpToPageNumberInputService,
+		public allImagesJumpToPageNumberInput: AllImagesJumpToPageNumberInputService,
 		private __currentRoute: CurrentRouteService
 	) {
 		super();
@@ -55,15 +55,13 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent
 		// It looks better if the spinner shows up as soon as this component loads:
 		operationStatus.waiting = true;
 
-
 		let routeParamsSubscrp = this.__currentRoute.params$.subscribe(
 			async (params) => {
-				if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
 
+				if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
 					await this.allImagesPaginator.reset();
 					allImagesStatus.loaded = true;
-					this.jumpToPageNumberInput.setMax();
-
+					this.allImagesJumpToPageNumberInput.setMax();
 				}
 
 				this.__page = Number(params[paramID.pageNumber]);

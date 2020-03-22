@@ -1,6 +1,5 @@
 import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
 import { Router } from '@angular/router';
-import { removeTail } from '@writetome51/array-remove-head-tail';
 
 
 export abstract class JumpToPageNumberInputService extends ValidatingNumberInputService {
@@ -21,7 +20,7 @@ export abstract class JumpToPageNumberInputService extends ValidatingNumberInput
 
 		this.data.isValid = () => {
 			if (this.__pageNumber === undefined) this.__pageNumber = 1;
-			this.__pageNumber *= 1; // coerce to number.
+			this.__pageNumber *= 1; // coerced to number.
 
 			// Instead of returning false if not valid, we're forcing the entered value
 			// to be valid, and always returning true.
@@ -31,22 +30,12 @@ export abstract class JumpToPageNumberInputService extends ValidatingNumberInput
 				this.__pageNumber = this._paginator.totalPages;
 			}
 
-			//	let route = this.getRouteUpTo_butNotIncluding_pageNumber();
-			//	this.__router.navigate([route, this.data.objectToBind[this.data.propertyToBind]]);
-
 			return true;
 		};
 
 		this.data.hideLabel = false;
 		this.data.hidePlaceholder = true;
 		this.data.min = 1;
-	}
-
-
-	getRouteUpTo_butNotIncluding_pageNumber(): string {
-		let parts = this.__router.routerState.snapshot.url.split('/');
-		removeTail(1, parts);
-		return parts.join('/');
 	}
 
 
