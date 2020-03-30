@@ -5,4 +5,3 @@ The workaround is detailed in src/app/injectable-decorator-workaround.ts.
 Any custom typescript decorators created by calling getClassModificationDecorator() have been
 pre-transpiled into javascript files.  This is done to avoid an Angular build error which says
 'Function calls are not supported in decorators...'.
-
