@@ -48,7 +48,7 @@
 		"@writetome51/not": "^1.0.5",
 		"@writetome51/object-in-local-storage": "^0.0.1",
 		"@writetome51/public-array-container": "^3.0.0",
-		"@writetome51/subscription-service": "^1.0.0",
+		"@writetome51/subscription-service": "^2.0.0",
 		"@writetome51/unsubscribe-on-destroy-component": "^3.0.0",
 		"@writetome51/validating-inputs": "^1.0.1",
 		"angular-draggable-droppable": "^4.3.8",

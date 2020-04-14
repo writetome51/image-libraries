@@ -1,15 +1,13 @@
 import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
-import { Router } from '@angular/router';
 
 
 export abstract class JumpToPageNumberInputService extends ValidatingNumberInputService {
 
-	private __pageNumber: number;
+	private __pageNumber = 1;
 
 
 	constructor(
-		protected _paginator: { totalPages: number, set_currentPageNumber: (value) => void },
-		private __router: Router
+		protected _paginator: { totalPages: number, set_currentPageNumber: (value) => void }
 	) {
 		super();
 

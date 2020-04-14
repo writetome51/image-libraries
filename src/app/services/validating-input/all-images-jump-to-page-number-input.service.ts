@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JumpToPageNumberInputService } from './jump-to-page-number-input.service';
 import { AllImagesPaginatorService } from '../paginator/all-images-paginator.service';
-import { Router } from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
@@ -9,10 +8,9 @@ import { Router } from '@angular/router';
 export class AllImagesJumpToPageNumberInputService extends JumpToPageNumberInputService {
 
 	constructor(
-		_allImagesPaginator: AllImagesPaginatorService,
-		__router: Router
+		_allImagesPaginator: AllImagesPaginatorService
 	) {
-		super(_allImagesPaginator, __router);
+		super(_allImagesPaginator);
 	}
 
 }
