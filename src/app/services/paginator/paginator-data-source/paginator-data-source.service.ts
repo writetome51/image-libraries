@@ -26,7 +26,6 @@ export abstract class PaginatorDataSourceService {
 		protected _processor: DataTransportProcessorService,
 		private __setInitial_dataTotal: SetInitialDataTotalService
 	) {
-
 	}
 
 
