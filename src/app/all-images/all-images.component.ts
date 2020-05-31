@@ -26,9 +26,6 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent implements
 	) {
 		super();
 
-		// It looks better if the spinner shows up as soon as this component loads:
-		// operationStatus.waiting = true;
-
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 			this.__allImagesRouteParamsSubscriptionHandler.handle()
 		);
