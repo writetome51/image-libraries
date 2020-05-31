@@ -12,12 +12,12 @@ import { GetImagesResultCheckService }
 export class GetImagesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__getLibraryImagesResultCheck: GetImagesResultCheckService,
-		__getLibraryImagesResultProcessor: GetImagesResultProcessorService
+		__getImagesResultCheck: GetImagesResultCheckService,
+		__getImagesResultProcessor: GetImagesResultProcessorService
 	) {
 		super(
-			__getLibraryImagesResultCheck,
-			__getLibraryImagesResultProcessor
+			__getImagesResultCheck,
+			__getImagesResultProcessor
 		);
 	}
 

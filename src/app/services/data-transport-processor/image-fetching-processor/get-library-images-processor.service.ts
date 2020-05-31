@@ -1,6 +1,6 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { GetImagesService } from '../../image/get-images.service';
+import { GetImagesFromStorageService } from '../../image/get-images-from-storage.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { GetImagesResultInterpreterService }
 	from '../data-transport-result-interpreter/get-images-result-interpreter.service';
@@ -17,7 +17,7 @@ export class GetLibraryImagesProcessorService extends DataTransportProcessorServ
 	implements ImageFetchingProcessorService {
 
 	constructor(
-		private __getImages: GetImagesService,
+		private __getImagesFromStorage: GetImagesFromStorageService,
 		__getImagesResultInterpreter: GetImagesResultInterpreterService
 	) {
 		super(__getImagesResultInterpreter);
@@ -25,7 +25,7 @@ export class GetLibraryImagesProcessorService extends DataTransportProcessorServ
 
 
 	protected async _getResult(): Promise<DBImage[] | { error: object }> {
-		return await this.__getImages.inLibrary();
+		return await this.__getImagesFromStorage.inLibrary();
 	}
 
 }
