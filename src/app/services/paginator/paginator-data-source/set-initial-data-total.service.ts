@@ -1,11 +1,11 @@
 import { IDoThis } from '../../../../interfaces/i-do-this';
-import { TotalFetchingProcessorService }
-	from '../../data-transport-processor/image-fetching-processor/total-fetching-processor.service';
+import { DataTransportProcessorService }
+	from '../../data-transport-processor/data-transport-processor.service';
 
 
 export abstract class SetInitialDataTotalService implements IDoThis {
 
-	constructor(private __totalFetchingProcessor: TotalFetchingProcessorService) {
+	constructor(private __totalFetchingProcessor: DataTransportProcessorService) {
 	}
 
 	async go() {
