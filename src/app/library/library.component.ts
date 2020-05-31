@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RequestedLibraryData as requestedLibrary }
-	from '../data-structures/runtime-state-data/requested-library.data';
+	from '../../data-structures/runtime-state-data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 import { LibraryVerifierService } from './library-verifier.service';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
 import { CurrentRouteService } from '../services/current-route.service';
-import { URLParamIDData as paramID } from '../data-structures/read-only-data/url-param-id.data';
+import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 import { AllImagesStatusData as allImagesStatus }
-	from '../data-structures/runtime-state-data/static-classes/all-images-status.data';
+	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
 
 
 @Component({

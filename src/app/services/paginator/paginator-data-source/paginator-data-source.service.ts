@@ -2,17 +2,17 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
+	from '../../../../data-structures/runtime-state-data/operation-status.data';
 import { ImageTotalData as imageTotal }
-	from '../../../data-structures/runtime-state-data/static-classes/image-total.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { ImageFetchingProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/image-fetching-processor.service';
 import { LoadedImagesData as loadedImages }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { DBImage } from '../../../interfaces/db-image';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+import { DBImage } from '../../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
 import { BatchNumberData as batchNumber}
-	from '../../../data-structures/runtime-state-data/static-classes/batch-number.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/batch-number.data';
 
 
 export abstract class PaginatorDataSourceService {

@@ -1,10 +1,10 @@
-import { DBLibrary } from '../../interfaces/db-library';
+import { DBLibrary } from '../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { RequestedLibraryData as requestedLibrary}
-	from '../../data-structures/runtime-state-data/requested-library.data';
+	from '../../../data-structures/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})

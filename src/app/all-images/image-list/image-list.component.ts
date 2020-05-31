@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DBImage } from '../../interfaces/db-image';
+import { DBImage } from '../../../interfaces/db-image';
 import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
 
 

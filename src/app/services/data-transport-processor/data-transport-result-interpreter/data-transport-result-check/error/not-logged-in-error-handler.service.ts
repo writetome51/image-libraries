@@ -1,9 +1,9 @@
 import { AlertService as alert } from '../../../../alert.service';
 import { Injectable } from '@angular/core';
-import { notLoggedIn } from '../../../../../string-constants/form-submission-errors';
+import { notLoggedIn } from '../../../../../../string-constants/form-submission-errors';
 import { RemoveCachedDataService }
 	from '../../../../remove-cached-data.service';
-import { Handler } from '../../../../../interfaces/handler';
+import { Handler } from '../../../../../../interfaces/handler';
 import { Router } from '@angular/router';
 
 

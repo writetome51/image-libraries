@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
-	from '../../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { ThumbnailDisplayDefaultSettingsData as thumbnailDisplayDefaultSettings }
-	from '../../../data-structures/read-only-data/thumbnail-display-default-settings.data';
+	from '../../../../data-structures/read-only-data/thumbnail-display-default-settings.data';
 
 
 @Component({

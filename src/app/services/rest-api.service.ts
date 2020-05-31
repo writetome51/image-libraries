@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 import { sss } from '../special/.sss';
-import { CORSProxyData as corsProxy } from '../data-structures/read-only-data/cors-proxy.data';
+import { CORSProxyData as corsProxy } from '../../data-structures/read-only-data/cors-proxy.data';
 
 
 export abstract class RestAPIService {

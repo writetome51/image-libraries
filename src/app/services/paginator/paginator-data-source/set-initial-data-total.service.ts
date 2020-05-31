@@ -1,4 +1,4 @@
-import { IDoThis } from '../../../interfaces/i-do-this';
+import { IDoThis } from '../../../../interfaces/i-do-this';
 import { TotalFetchingProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/total-fetching-processor.service';
 

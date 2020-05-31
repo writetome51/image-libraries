@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '../../services/library/library-changes.service';
 import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
+	from '../../../data-structures/runtime-state-data/operation-status.data';
 import { ImageTotalData as imageTotal }
-	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
+	from '../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LibraryPaginatorService } from '../../services/paginator/library-paginator.service';
 
 

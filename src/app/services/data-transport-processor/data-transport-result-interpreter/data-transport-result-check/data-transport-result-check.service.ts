@@ -1,7 +1,7 @@
 import { AlertService as alert } from '../../../alert.service';
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn }
-	from '../../../../string-constants/rest-api-errors';
+	from '../../../../../string-constants/rest-api-errors';
 import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-handler.service';
 import { NoRecordMatchErrorHandlerService } from './error/no-record-match-error-handler.service';
 

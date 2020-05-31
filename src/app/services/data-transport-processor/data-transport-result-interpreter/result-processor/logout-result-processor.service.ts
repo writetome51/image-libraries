@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RemoveCachedDataService } from '../../../remove-cached-data.service';
-import { DirectProcessor } from '../../../../interfaces/direct-processor';
+import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Router } from '@angular/router';
 
 

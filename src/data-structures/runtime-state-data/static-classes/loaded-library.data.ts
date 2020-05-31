@@ -17,7 +17,6 @@ export class LoadedLibraryData {
 
 
 	// Can't call this property 'name' because it conflicts with built-in constructor
-	// property 'name'
 
 	static get libName() {
 		return this.data.name;

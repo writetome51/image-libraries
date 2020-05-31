@@ -1,8 +1,8 @@
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { Injectable } from '@angular/core';
 import { AlertService as alert } from '../../../alert.service';
-import { userDoesntExist } from '../../../../string-constants/rest-api-errors';
-import { noAccountWithThatEmail } from '../../../../string-constants/form-submission-errors';
+import { userDoesntExist } from '../../../../../string-constants/rest-api-errors';
+import { noAccountWithThatEmail } from '../../../../../string-constants/form-submission-errors';
 
 
 @Injectable({providedIn: 'root'})

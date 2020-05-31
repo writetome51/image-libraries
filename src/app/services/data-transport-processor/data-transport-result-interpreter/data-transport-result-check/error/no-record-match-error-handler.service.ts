@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../../local-data/local-session-id.service';
-import { Handler } from '../../../../../interfaces/handler';
+import { Handler } from '../../../../../../interfaces/handler';
 import { AlertService as alert } from '../../../../alert.service';
 import { incorrectPassword, noAccountWithThatEmail }
-	from '../../../../../string-constants/form-submission-errors';
+	from '../../../../../../string-constants/form-submission-errors';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
 import { UserStorageService } from '../../../../user/user-storage.service';
 

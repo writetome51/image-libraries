@@ -1,8 +1,8 @@
 import { AppPaginator } from '@writetome51/app-paginator';
 import { PaginatorDataSourceService } from './paginator-data-source/paginator-data-source.service';
 import { BatchSizeData as batch }
-	from '../../data-structures/runtime-state-data/static-classes/batch-size.data';
-import { PageData as page } from '../../data-structures/runtime-state-data/static-classes/page.data';
+	from '../../../data-structures/runtime-state-data/static-classes/batch-size.data';
+import { PageData as page } from '../../../data-structures/runtime-state-data/static-classes/page.data';
 
 
 export abstract class PaginatorService extends AppPaginator {

@@ -1,8 +1,8 @@
-import { DBUser } from '../../../../interfaces/db-user';
+import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';
 import { UserResultProcessorService } from './user-result-processor.service';
-import { DirectProcessor } from '../../../../interfaces/direct-processor';
+import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 
 
 @Injectable({providedIn: 'root'})

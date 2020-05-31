@@ -1,9 +1,9 @@
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { LoadedImagesData as loadedImages }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { DBImage } from '../../interfaces/db-image';
+	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+import { DBImage } from '../../../interfaces/db-image';
 
 
 export class DisplayedImagesService {

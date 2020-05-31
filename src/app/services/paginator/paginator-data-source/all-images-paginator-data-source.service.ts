@@ -4,9 +4,9 @@ import { GetAllImagesProcessorService }
 import { PaginatorDataSourceService } from './paginator-data-source.service';
 import { SetInitialDataTotalForAllImagesService }
 	from './set-initial-data-total-for-all-images.service';
-import { DBImage } from '../../../interfaces/db-image';
+import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 
 
 @Injectable({providedIn: 'root'})

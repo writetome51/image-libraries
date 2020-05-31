@@ -1,8 +1,8 @@
 import { DataTransportResultCheckService }
 	from './data-transport-result-check/data-transport-result-check.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { Interpreter } from '../../../interfaces/interpreter';
-import { DirectProcessor } from '../../../interfaces/direct-processor';
+import { Interpreter } from '../../../../interfaces/interpreter';
+import { DirectProcessor } from '../../../../interfaces/direct-processor';
 import { getObjectFromJSON } from 'get-object-from-json';
 
 

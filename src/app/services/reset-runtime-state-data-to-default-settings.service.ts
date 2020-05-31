@@ -1,22 +1,22 @@
 import { LibraryNamesData as libraryNames }
-	from '../data-structures/runtime-state-data/static-classes/library-names.data';
+	from '../../data-structures/runtime-state-data/static-classes/library-names.data';
 import { LoadedLibraryData as loadedLibrary }
-	from '../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { LoadedImagesData as loadedImages }
-	from '../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { BatchSizeData as batchSize}
-	from '../data-structures/runtime-state-data/static-classes/batch-size.data';
+	from '../../data-structures/runtime-state-data/static-classes/batch-size.data';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings}
-	from '../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
+	from '../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { NewImagesData as newImages}
-	from '../data-structures/runtime-state-data/static-classes/new-images.data';
+	from '../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { ImageTotalData as imageTotal }
-	from '../data-structures/runtime-state-data/static-classes/image-total.data';
-import { PageData as page} from '../data-structures/runtime-state-data/static-classes/page.data';
+	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
+import { PageData as page} from '../../data-structures/runtime-state-data/static-classes/page.data';
 import { AllImagesStatusData as allImagesStatus }
-	from '../data-structures/runtime-state-data/static-classes/all-images-status.data';
+	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
 import { BatchNumberData as batchNumber}
-	from '../data-structures/runtime-state-data/static-classes/batch-number.data';
+	from '../../data-structures/runtime-state-data/static-classes/batch-number.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis

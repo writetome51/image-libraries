@@ -1,10 +1,10 @@
 import { AlertService as alert } from '../../../alert.service';
-import { DBLibrary } from '../../../../interfaces/db-library';
-import { DirectProcessor } from '../../../../interfaces/direct-processor';
+import { DBLibrary } from '../../../../../interfaces/db-library';
+import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '../../../library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 
 
 @Injectable({providedIn: 'root'})

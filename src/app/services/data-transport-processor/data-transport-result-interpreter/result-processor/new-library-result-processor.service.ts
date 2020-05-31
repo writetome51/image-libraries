@@ -1,8 +1,8 @@
 import { AlertService as alert } from '../../../alert.service';
 import { CreatingNewLibraryData as creatingNewLibrary }
-	from '../../../../data-structures/runtime-state-data/creating-new-library.data';
-import { DBLibrary } from '../../../../interfaces/db-library';
-import { DirectProcessor } from '../../../../interfaces/direct-processor';
+	from '../../../../../data-structures/runtime-state-data/creating-new-library.data';
+import { DBLibrary } from '../../../../../interfaces/db-library';
+import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { GetLibraryNamesProcessorService } from '../../get-library-names-processor.service';
 

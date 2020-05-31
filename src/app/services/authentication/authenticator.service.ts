@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserData as currentUser } from '../../data-structures/runtime-state-data/static-classes/current-user.data';
+import { CurrentUserData as currentUser }
+	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 
 

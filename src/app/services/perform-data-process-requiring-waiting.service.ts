@@ -1,4 +1,4 @@
-import { IndirectProcessor } from '../interfaces/indirect-processor';
+import { IndirectProcessor } from '../../interfaces/indirect-processor';
 
 
 export class PerformDataProcessRequiringWaitingService { // implements IDoThis

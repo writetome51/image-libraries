@@ -4,11 +4,11 @@ import { SetInitialDataTotalForLibraryService }
 	from './set-initial-data-total-for-library.service';
 import { GetLibraryProcessorService }
 	from '../../data-transport-processor/image-fetching-processor/get-library-processor.service';
-import { DBImage } from '../../../interfaces/db-image';
+import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 
 
 @Injectable({providedIn: 'root'})

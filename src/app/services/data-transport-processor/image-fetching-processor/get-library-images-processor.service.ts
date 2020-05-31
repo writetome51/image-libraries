@@ -1,7 +1,7 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { GetImagesService } from '../../image/get-images.service';
-import { DBImage } from '../../../interfaces/db-image';
+import { DBImage } from '../../../../interfaces/db-image';
 import { GetImagesResultInterpreterService }
 	from '../data-transport-result-interpreter/get-images-result-interpreter.service';
 import { ImageFetchingProcessorService } from './image-fetching-processor.service';
