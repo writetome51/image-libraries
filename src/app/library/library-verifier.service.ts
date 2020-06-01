@@ -8,6 +8,8 @@ import { RequestedLibraryData as requestedLibrary }
 	from '../../data-structures/runtime-state-data/requested-library.data';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
+import { LoadedImagesStatusData as loadedImagesStatus }
+	from '../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -22,12 +24,11 @@ export class LibraryVerifierService {
 
 
 	async verify(libName): Promise<void> {
+		loadedImagesStatus.data = 'none';
+		await this.__loadRequestedLibrary_ifItExists(libName);
 
-		requestedLibrary.name = libName;
-
-		await this.__loadRequestedLibrary_ifItExists();
-
-		if (this.__isLoaded(requestedLibrary.name)) {
+		if (this.__isLoaded(libName)) {
+			loadedImagesStatus.data = 'library';
 			operationStatus.waiting = false;
 			return;
 		}
@@ -35,7 +36,8 @@ export class LibraryVerifierService {
 	}
 
 
-	private async __loadRequestedLibrary_ifItExists(): Promise<void> {
+	private async __loadRequestedLibrary_ifItExists(libName): Promise<void> {
+		requestedLibrary.name = libName;
 
 		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.libName) {
 			await this.__libraryPaginator.reset();

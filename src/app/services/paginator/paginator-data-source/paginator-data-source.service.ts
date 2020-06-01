@@ -9,8 +9,8 @@ import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { DBImage } from '../../../../interfaces/db-image';
 import { SetInitialDataTotalService } from './set-initial-data-total.service';
-import { BatchNumberData as batchNumber }
-	from '../../../../data-structures/runtime-state-data/static-classes/batch-number.data';
+import { BatchData as batch }
+	from '../../../../data-structures/runtime-state-data/static-classes/batch.data';
 import { DataTransportProcessorService }
 	from '../../data-transport-processor/data-transport-processor.service';
 
@@ -38,7 +38,7 @@ export abstract class PaginatorDataSourceService {
 		batchNum: number, itemsPerBatch: number, isLastBatch: boolean
 	): Promise<DBImage[]> {
 
-		batchNumber.data = batchNum;
+		batch.number = batchNum;
 
 		await performDataProcessRequiringWaiting.go(this._processor, operationStatus);
 		if (hasValue(loadedImages.data)) {

@@ -1,5 +1,4 @@
 "use strict";
-
 Object.defineProperty(exports, "__esModule", {value: true});
 var get_class_modification_decorator_1 = require("@writetome51/get-class-modification-decorator");
 

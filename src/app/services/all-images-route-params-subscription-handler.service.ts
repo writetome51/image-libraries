@@ -3,8 +3,8 @@ import { AllImagesPaginatorService } from './paginator/all-images-paginator.serv
 import { Handler } from '../../interfaces/handler';
 import { LoadedImagesData as loadedImages }
 	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { AllImagesStatusData as allImagesStatus }
-	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
+import { LoadedImagesStatusData as loadedImagesStatus }
+	from '../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
 import { noValue } from '@writetome51/has-value-no-value';
@@ -32,10 +32,10 @@ export class AllImagesRouteParamsSubscriptionHandlerService implements Handler {
 
 		return async (params) => {
 
-			if (noValue(loadedImages.data) || not(allImagesStatus.loaded)) {
+			if (noValue(loadedImages.data) || not(loadedImagesStatus.data === 'all')) {
 				await this.__allImagesPaginator.reset();
 				this.__allImagesJumpToPageNumberInput.setMax();
-				allImagesStatus.loaded = true;
+				loadedImagesStatus.data = 'all';
 			}
 
 			await this.__routeParamsHandler.handle(params);

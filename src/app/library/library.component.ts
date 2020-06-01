@@ -6,8 +6,6 @@ import { LibraryVerifierService } from './library-verifier.service';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
 import { CurrentRouteService } from '../services/current-route.service';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
-import { AllImagesStatusData as allImagesStatus }
-	from '../../data-structures/runtime-state-data/static-classes/all-images-status.data';
 
 
 @Component({
@@ -32,7 +30,6 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent {
 		private __currentRoute: CurrentRouteService
 	) {
 		super();
-		allImagesStatus.loaded = false;
 
 		this.__libraryVerifier.verify(this.__currentRoute.params[paramID.libName]).then(
 			async () => {
