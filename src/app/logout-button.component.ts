@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LogoutProcessorService } from './services/data-transport-processor/logout-processor.service';
+import { LogoutProcessorService }
+	from './services/data-transport-processor/authentication/logout-processor.service';
 import { DataProcessorComponent } from './data-processor.component';
 
 

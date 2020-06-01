@@ -4,8 +4,8 @@ import { OperationStatusData as operationStatus }
 import { HasSubscriptions } from '../../interfaces/has-subscriptions';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { CurrentRouteService } from '../services/current-route.service';
-import { AllImagesRouteParamsSubscriptionHandlerService }
-	from '../services/all-images-route-params-subscription-handler.service';
+import { GetAllImagesRouteParamsSubscriptionHandlerService }
+	from '../services/get-all-images-route-params-subscription-handler.service';
 
 
 @Component({
@@ -22,12 +22,12 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent implements
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __allImagesRouteParamsSubscriptionHandler: AllImagesRouteParamsSubscriptionHandlerService
+		private __getRouteParamsSubscriptionHandler: GetAllImagesRouteParamsSubscriptionHandlerService
 	) {
 		super();
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__allImagesRouteParamsSubscriptionHandler.handle()
+			this.__getRouteParamsSubscriptionHandler.go()
 		);
 
 		this._subscriptions.push(routeParamsSubscription);

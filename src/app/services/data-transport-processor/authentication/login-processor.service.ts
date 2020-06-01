@@ -1,10 +1,10 @@
-import { AuthenticatorService } from '../authentication/authenticator.service';
-import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
+import { AuthenticatorService } from '../../authentication/authenticator.service';
+import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginEmailPasswordInputsService }
-	from '../validating-inputs/login-email-password-inputs.service';
+	from '../../validating-inputs/login-email-password-inputs.service';
 import { LoginResultInterpreterService }
-	from './data-transport-result-interpreter/login-result-interpreter.service';
+	from '../data-transport-result-interpreter/login-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

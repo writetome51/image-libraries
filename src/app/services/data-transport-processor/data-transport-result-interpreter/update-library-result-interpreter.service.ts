@@ -3,7 +3,7 @@ import { DataTransportResultInterpreterService } from './data-transport-result-i
 import { UpdateOrNewLibraryResultCheckService }
 	from './data-transport-result-check/update-or-new-library-result-check.service';
 import { UpdateLibraryResultProcessorService }
-	from './result-processor/update-library-result-processor.service';
+	from './result-processor/update/update-library-result-processor.service';
 
 
 @Injectable({providedIn: 'root'})

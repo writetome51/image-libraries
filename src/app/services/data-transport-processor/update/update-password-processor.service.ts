@@ -1,10 +1,10 @@
-import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
+import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UpdatePasswordFormInputsService }
-	from '../validating-inputs/update-password-form-inputs.service';
+	from '../../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
-	from './data-transport-result-interpreter/update-password-result-interpreter.service';
-import { UserUpdaterService } from '../user/user-updater.service';
+	from '../data-transport-result-interpreter/update-password-result-interpreter.service';
+import { UserUpdaterService } from '../../user/user-updater.service';
 
 
 @Injectable({providedIn: 'root'})

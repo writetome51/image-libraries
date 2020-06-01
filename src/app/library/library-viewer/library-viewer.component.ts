@@ -37,8 +37,6 @@ export class LibraryViewerComponent {
 		private __paginator: LibraryPaginatorService,
 		private __libraryChanges: LibraryChangesService
 	) {
-		// To make the loading spinner run as soon as this component is accessed:
-		operationStatus.waiting = true;
 	}
 
 }

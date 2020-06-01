@@ -24,7 +24,7 @@ export class LibraryVerifierService {
 
 
 	async verify(libName): Promise<void> {
-		loadedImagesStatus.data = 'none';
+		operationStatus.waiting = true;
 		await this.__loadRequestedLibrary_ifItExists(libName);
 
 		if (this.__isLoaded(libName)) {

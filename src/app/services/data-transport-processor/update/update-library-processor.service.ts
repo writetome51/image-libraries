@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { DataTransportProcessorService } from './data-transport-processor.service';
-import { LibraryUpdaterService } from '../library/library-updater.service';
+import { DataTransportProcessorService } from '../data-transport-processor.service';
+import { LibraryUpdaterService } from '../../library/library-updater.service';
 import { UpdateLibraryResultInterpreterService }
-	from './data-transport-result-interpreter/update-library-result-interpreter.service';
+	from '../data-transport-result-interpreter/update-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
