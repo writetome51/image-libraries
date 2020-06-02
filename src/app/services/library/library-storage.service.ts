@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
-import { RequestedLibraryData as requestedLibrary}
+import { RequestedLibraryData as requestedLibrary }
 	from '../../../data-structures/runtime-state-data/requested-library.data';
 
 
@@ -37,7 +37,6 @@ export class LibraryStorageService {
 
 	async update(
 		libraryName: string,
-
 		// The properties in 'changes' can contain dot-notation
 		changes: object
 	): Promise<DBLibrary | { error: object }> {
@@ -47,6 +46,16 @@ export class LibraryStorageService {
 				sessionID: this.__localSessionID.get(),
 				name: libraryName,
 				changes
+			})
+		);
+	}
+
+
+	async delete(libraryName: string): Promise<any | { error: object }> {
+		return await getSubscriptionData(
+			this.__libraryRestApi.delete({
+				sessionID: this.__localSessionID.get(),
+				name: libraryName
 			})
 		);
 	}
