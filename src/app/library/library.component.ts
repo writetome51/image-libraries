@@ -15,6 +15,8 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 		<library-viewer></library-viewer>
 		<button (click)="nextPage()">Next Page</button>
 		<button (click)="previousPage()">Previous Page</button>
+
+		<delete-library-button></delete-library-button>
 	`
 })
 export class LibraryComponent extends ClearAlertOnDestroyComponent {

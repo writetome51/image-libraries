@@ -17,6 +17,7 @@ import { SaveChangesButtonComponent } from './library-viewer/save-changes-button
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
 import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
+import { DeleteLibraryButtonComponent } from './delete-library-button.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spin
 		ImageListComponent,
 		ImageSizeSliderComponent,
 		SaveChangesButtonComponent,
-		UndoChangesButtonComponent
+		UndoChangesButtonComponent,
+		DeleteLibraryButtonComponent
 	],
 	imports: [
 		CommonModule,
