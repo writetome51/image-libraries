@@ -14,17 +14,26 @@ export class LibraryRestApiService extends RestAPIService {
 	}
 
 
-	create(params: { sessionID: string, name: string }): Observable<any> {
+	create(
+		params: { sessionID: string, name: string }
+	): Observable<string> // string is JSON containing: DBLibrary
+	{
 		return this._post('create-library', params);
 	}
 
 
-	get(params: { sessionID: string, name: string }): Observable<any> {
+	get(
+		params: { sessionID: string, name: string }
+	): Observable<string> // string is JSON containing: DBLibrary
+	{
 		return this._get('get-library', params);
 	}
 
 
-	getLibraries(params: { sessionID: string }): Observable<any> {
+	getLibraries(
+		params: { sessionID: string }
+	): Observable<string>  // string is JSON containing: DBLibrary[]
+	{
 		return this._get('get-libraries', params);
 	}
 
@@ -32,7 +41,7 @@ export class LibraryRestApiService extends RestAPIService {
 	update(
 		// The properties in 'changes' can contain dot-notation.
 		params: { sessionID: string, name: string, changes: any }
-	): Observable<any> {
+	): Observable<string> {
 		return this._patch('update-library', params);
 	}
 

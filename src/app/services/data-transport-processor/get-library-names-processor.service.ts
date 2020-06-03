@@ -19,7 +19,7 @@ export class GetLibraryNamesProcessorService extends DataTransportProcessorServi
 
 
 	protected async _getResult(): Promise<DBLibrary[] | { error: object }> {
-		return await this.__libraryStorage.getLibraries();
+		return await this.__libraryStorage.getAll();
 	}
 
 }

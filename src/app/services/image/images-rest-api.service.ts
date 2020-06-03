@@ -17,19 +17,24 @@ export class ImagesRestApiService extends RestAPIService {
 
 	getAllBatch(
 		params: { sessionID: string, batchSize: number, batchNumber: number }
-	): Observable<any> {
+	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
+	{
 		return this._get('get-user-images-batch', params);
 	}
 
 
 	getLibraryBatch(
 		params: { sessionID: string, name: string, batchSize: number, batchNumber: number }
-	): Observable<any> {
+	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
+	{
 		return this._get('get-library-images-batch', params);
 	}
 
 
-	add(params: { sessionID: string, images: AppImage[] }): Observable<any> {
+	add(
+		params: { sessionID: string, images: AppImage[] }
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return this._post('add-images', params);
 	}
 
@@ -40,12 +45,16 @@ export class ImagesRestApiService extends RestAPIService {
 			// `changes` can contain any property from AppImage
 			images: { name: string, changes: object }[]
 		}
-	): Observable<any> {
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return this._patch('update-images', params);
 	}
 
 
-	remove(params: { sessionID: string, imageNames: string[] }): Observable<any> {
+	remove(
+		params: { sessionID: string, imageNames: string[] }
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return this._patch('remove-images', params);
 	}
 

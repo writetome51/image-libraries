@@ -20,10 +20,9 @@ export class DeleteLibraryButtonComponent extends DataProcessorComponent {
 
 
 	async process(): Promise<void> {
-		let affirmative = window.confirm('Are you sure you want to delete the library?');
+		let confirmed = window.confirm('Are you sure you want to delete the library?');
 
-		if (affirmative) super.process();
-		else return;
+		if (confirmed) super.process();
 	}
 
 }

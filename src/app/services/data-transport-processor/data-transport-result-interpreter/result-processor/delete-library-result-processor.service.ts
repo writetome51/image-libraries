@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AlertService as alert } from '../../../alert.service';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
+import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';
+import { GetLibraryNamesProcessorService } from '../../get-library-names-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class DeleteLibraryResultProcessorService implements DirectProcessor {
 
-	constructor() {
+	constructor(
+		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
+		private __getLibraryNamesProcessor: GetLibraryNamesProcessorService
+	) {
 	}
 
 
 	async process(result) {
-
+		await this.__getLibraryNamesProcessor.process();
+		await this.__redirectToLoggedInHome.go();
 		alert.success = 'Library deleted';
 	}
 

@@ -4,6 +4,8 @@ import { LibraryStorageService } from '../../library/library-storage.service';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { GetLibraryResultInterpreterService }
 	from '../data-transport-result-interpreter/get-library-result-interpreter.service';
+import { RequestedLibraryData as requestedLibrary}
+	from '../../../../data-structures/runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,7 +21,7 @@ export class GetLibraryProcessorService extends DataTransportProcessorService {
 
 
 	protected async _getResult(): Promise<DBLibrary | { error: object }> {
-		return await this.__libraryStorage.get();
+		return await this.__libraryStorage.get(requestedLibrary.name);
 	}
 
 }
