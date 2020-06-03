@@ -16,7 +16,9 @@ export class LibraryCreatorService {
 	}
 
 
-	async create(libraryName: string): Promise<any> {
+	async create(libraryName: string): Promise<string>
+		// JSON containing: DBLibrary | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__libraryRestApi.create(
 				{

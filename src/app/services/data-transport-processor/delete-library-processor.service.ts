@@ -17,7 +17,9 @@ export class DeleteLibraryProcessorService extends DataTransportProcessorService
 	}
 
 
-	protected async _getResult(): Promise<any | { error: object }> {
+	protected async _getResult(): Promise<string>
+		// JSON containing: {success: true} | {error: {message: string}}
+	{
 		return await this.__libraryDeleter.delete();
 	}
 

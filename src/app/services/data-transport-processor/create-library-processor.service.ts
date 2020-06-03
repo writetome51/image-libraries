@@ -21,7 +21,9 @@ export class CreateLibraryProcessorService extends FormDataTransportProcessorSer
 	}
 
 
-	protected async _getResult(): Promise<any> {
+	protected async _getResult(): Promise<string>
+		// JSON containing: DBLibrary | {error: {message: string}}
+	{
 		return await this.__libraryCreator.create(newLibrary.name);
 	}
 

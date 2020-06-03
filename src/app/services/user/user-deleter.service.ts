@@ -17,7 +17,8 @@ export class UserDeleterService {
 	}
 
 
-	async delete(): Promise<any> {
+	async delete(): Promise<string> // JSON containing: {success: boolean} | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__userRestApi.delete({
 				email: currentUser.email,

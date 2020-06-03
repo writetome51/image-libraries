@@ -21,7 +21,8 @@ export class GetImagesFromStorageService {
 	}
 
 
-	async all(): Promise<DBImage[] | { error: object }> {
+	async all(): Promise<string> // JSON containing: ImageBatch | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__imagesRestApi.getAllBatch({
 				sessionID: this.__localSessionID.get(),

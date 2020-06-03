@@ -18,7 +18,8 @@ export class NewImagesSaverService {
 	}
 
 
-	async save(): Promise<{ success: boolean } | { error: object }> {
+	async save(): Promise<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__imagesRestApi.add(
 				{sessionID: this.__localSessionID.get(), images: newImages.data}

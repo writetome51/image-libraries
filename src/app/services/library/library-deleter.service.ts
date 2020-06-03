@@ -16,7 +16,8 @@ export class LibraryDeleterService {
 
 	// Right now you can only delete the library that's currently loaded.
 
-	async delete(): Promise<any | { error: object }> {
+	async delete(): Promise<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return await this.__libraryStorage.delete(loadedLibrary.libName);
 	}
 

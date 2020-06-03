@@ -17,7 +17,7 @@ export class LibraryStorageService {
 	}
 
 
-	async get(libraryName): Promise<DBLibrary | { error: object }> {
+	async get(libraryName): Promise<string> {
 		return await getSubscriptionData(
 			this.__libraryRestApi.get(
 				{sessionID: this.__localSessionID.get(), name: libraryName}
@@ -26,7 +26,8 @@ export class LibraryStorageService {
 	}
 
 
-	async getAll(): Promise<DBLibrary[] | { error: object }> {
+	async getAll(): Promise<string> // JSON containing: DBLibrary[] | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
@@ -35,10 +36,9 @@ export class LibraryStorageService {
 
 	async update(
 		libraryName: string,
-		// The properties in 'changes' can contain dot-notation
-		changes: object
-	): Promise<DBLibrary | { error: object }> {
-
+		changes: object // The properties in 'changes' can contain dot-notation.
+	): Promise<string> // JSON containing: DBLibrary | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__libraryRestApi.update({
 				sessionID: this.__localSessionID.get(),
@@ -49,7 +49,9 @@ export class LibraryStorageService {
 	}
 
 
-	async delete(libraryName: string): Promise<any | { error: object }> {
+	async delete(libraryName: string): Promise<string>
+		// JSON containing: {success: true} | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__libraryRestApi.delete({
 				sessionID: this.__localSessionID.get(),
