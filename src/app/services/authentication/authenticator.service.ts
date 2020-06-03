@@ -3,6 +3,7 @@ import { AuthenticationRestAPIService } from './authentication-rest-api.service'
 import { CurrentUserData as currentUser }
 	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { DBUser } from '../../../interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,7 +14,8 @@ export class AuthenticatorService {
 	}
 
 
-	async authenticate() {
+	async authenticate(): Promise<string> // JSON containing: DBUser | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__authenticationRestApi.login(
 				{email: currentUser.email, password: currentUser.password}
@@ -22,7 +24,9 @@ export class AuthenticatorService {
 	}
 
 
-	async authenticateBySecurityQuestion() {
+	async authenticateBySecurityQuestion(): Promise<string>
+		// JSON containing: DBUser | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__authenticationRestApi.securityQuestionLogin(
 				{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
@@ -31,7 +35,9 @@ export class AuthenticatorService {
 	}
 
 
-	async getSecurityQuestion() {
+	async getSecurityQuestion(): Promise<string>
+		// JSON containing: {question: string, answer: string} | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
 		);

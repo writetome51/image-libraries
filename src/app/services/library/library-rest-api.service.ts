@@ -16,7 +16,7 @@ export class LibraryRestApiService extends RestAPIService {
 
 	create(
 		params: { sessionID: string, name: string }
-	): Observable<string> // string is JSON containing: DBLibrary
+	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
 	{
 		return this._post('create-library', params);
 	}
@@ -24,7 +24,7 @@ export class LibraryRestApiService extends RestAPIService {
 
 	get(
 		params: { sessionID: string, name: string }
-	): Observable<string> // string is JSON containing: DBLibrary
+	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
 	{
 		return this._get('get-library', params);
 	}
@@ -32,7 +32,7 @@ export class LibraryRestApiService extends RestAPIService {
 
 	getLibraries(
 		params: { sessionID: string }
-	): Observable<string>  // string is JSON containing: DBLibrary[]
+	): Observable<string>  // JSON containing: DBLibrary[] | {error: {message: string}}
 	{
 		return this._get('get-libraries', params);
 	}
@@ -41,12 +41,16 @@ export class LibraryRestApiService extends RestAPIService {
 	update(
 		// The properties in 'changes' can contain dot-notation.
 		params: { sessionID: string, name: string, changes: any }
-	): Observable<string> {
+	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
+	{
 		return this._patch('update-library', params);
 	}
 
 
-	delete(params: { sessionID: string, name: string }): Observable<any> {
+	delete(
+		params: { sessionID: string, name: string }
+	): Observable<any> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return this._delete('delete-library', params);
 	}
 

@@ -20,7 +20,8 @@ export class LoginBySecurityQuestionProcessorService extends FormDataTransportPr
 	}
 
 
-	protected async _getResult(): Promise<any> {
+	protected async _getResult(): Promise<string> // JSON containing: DBUser | {error: {message:string}}
+	{
 		return await this.__authenticator.authenticateBySecurityQuestion();
 	}
 

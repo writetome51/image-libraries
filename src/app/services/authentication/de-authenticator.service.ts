@@ -15,7 +15,9 @@ export class DeAuthenticatorService {
 	}
 
 
-	async deAuthenticate() {
+	async deAuthenticate(): Promise<string>
+		// JSON containing: {success: true} | {error: {message: string}}
+	{
 		return await getSubscriptionData(
 			this.__authenticationRestApi.logout({sessionID: this.__localSessionID.get()})
 		);

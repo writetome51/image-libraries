@@ -38,21 +38,26 @@ export class UserRestAPIService extends RestAPIService {
 	}
 
 
-	delete(params: { email: string, password: string, sessionID: string }): Observable<string> {
+	delete(
+		params: { email: string, password: string, sessionID: string }
+	): Observable<string> // JSON containing: {success: boolean} | {error: {message: string}}
+	{
 		return this._delete('delete-user', params);
 	}
 
 
 	updatePassword(
 		params: { email: string, password: string, newPassword: string, sessionID: string }
-	): Observable<string> {
+	): Observable<string>  // JSON containing: DBUser | {error: {message: string}}
+	{
 		return this._patch('update-password', params);
 	}
 
 
 	updateEmail(
 		params: { email: string, password: string, newEmail: string, sessionID: string }
-	): Observable<string> {
+	): Observable<string> // JSON containing: DBUser | {error: {message: string}}
+	{
 		return this._patch('update-email', params);
 	}
 

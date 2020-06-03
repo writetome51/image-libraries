@@ -20,7 +20,9 @@ export class GetSecurityQuestionProcessorService extends FormDataTransportProces
 	}
 
 
-	protected async _getResult(): Promise<any> {
+	protected async _getResult(): Promise<string>
+		// JSON containing: {question: string, answer: string} | {error: {message: string}}
+	{
 		return await this.__authenticator.getSecurityQuestion();
 	}
 

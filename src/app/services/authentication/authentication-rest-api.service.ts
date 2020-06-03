@@ -13,24 +13,35 @@ export class AuthenticationRestAPIService extends RestAPIService {
 	}
 
 
-	login(params: { email: string, password: string }): Observable<string> {
+	login(
+		params: { email: string, password: string }
+	): Observable<string> // JSON containing:  DBUser | {error: {message: string}}
+	{
 		return this._patch('user-login', params);
 	}
 
 
 	securityQuestionLogin(
 		params: { email: string, securityQuestion: { question: string, answer: string } }
-	): Observable<string> {
+	): Observable<string> // JSON containing:  DBUser | {error: {message: string}}
+	{
 		return this._patch('security-question-login', params);
 	}
 
 
-	logout(params: { sessionID: string }): Observable<string> {
+	logout(
+		params: { sessionID: string }
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
+	{
 		return this._patch('user-logout', params);
 	}
 
 
-	getSecurityQuestion(params: { email: string }): Observable<string> {
+	getSecurityQuestion(
+		params: { email: string }
+	): Observable<string>
+		// JSON containing: {question: string, answer: string} | {error: {message: string}}
+	{
 		return this._get('get-security-question', params);
 	}
 
