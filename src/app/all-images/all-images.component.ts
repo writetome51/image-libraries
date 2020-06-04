@@ -5,7 +5,7 @@ import { HasSubscriptions } from '../../interfaces/has-subscriptions';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionHandlerService }
-	from '../services/get-all-images-route-params-subscription-handler.service';
+	from '../services/all-images-route-params/get-all-images-route-params-subscription-handler.service';
 
 
 @Component({

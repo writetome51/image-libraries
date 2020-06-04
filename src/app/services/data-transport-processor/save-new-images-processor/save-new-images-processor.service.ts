@@ -1,8 +1,8 @@
-import { DataTransportProcessorService } from './data-transport-processor.service';
+import { DataTransportProcessorService } from '../data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { NewImagesSaverService } from '../image/new-images-saver.service';
+import { NewImagesSaverService } from './new-images-saver.service';
 import { SaveNewImagesResultInterpreterService }
-	from './data-transport-result-interpreter/save-new-images-result-interpreter.service';
+	from '../data-transport-result-interpreter/save-new-images-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,8 +17,7 @@ export class SaveNewImagesProcessorService extends DataTransportProcessorService
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: {success: true} | {error: {message: string}}
+	protected async _getResult(): Promise< {success: true} | {error: {message: string}}>
 	{
 		return await this.__newImagesSaver.save();
 	}

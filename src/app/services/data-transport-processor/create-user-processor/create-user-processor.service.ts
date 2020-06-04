@@ -1,9 +1,10 @@
-import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
+import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { NewUserFormInputsService } from '../validating-inputs/new-user-form-inputs.service';
+import { NewUserFormInputsService } from '../../validating-inputs/new-user-form-inputs.service';
 import { NewUserResultInterpreterService }
-	from './data-transport-result-interpreter/new-user-result-interpreter.service';
-import { UserCreatorService } from '../user/user-creator.service';
+	from '../data-transport-result-interpreter/new-user-result-interpreter.service';
+import { UserCreatorService } from './user-creator.service';
+import { DBUser } from '../../../../interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,8 +20,7 @@ export class CreateUserProcessorService extends FormDataTransportProcessorServic
 	}
 
 
-	protected async _getResult(): Promise<string> // JSON containing: DBUser | {error: {message: string}}
-	{
+	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__userCreator.create();
 	}
 

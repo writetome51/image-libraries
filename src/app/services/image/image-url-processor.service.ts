@@ -9,7 +9,7 @@ import { NewImagesData as newImages }
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
-	from '../data-transport-processor/save-new-images-processor.service';
+	from '../data-transport-processor/save-new-images-processor/save-new-images-processor.service';
 import { OperationStatusData as operationStatus }
 	from '../../../data-structures/runtime-state-data/operation-status.data';
 import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';

@@ -1,10 +1,10 @@
-import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
+import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { LibraryCreatorService } from '../library/library-creator.service';
-import { NewLibraryInputsService } from '../validating-inputs/new-library-inputs.service';
+import { LibraryCreatorService } from './library-creator.service';
+import { NewLibraryInputsService } from '../../validating-inputs/new-library-inputs.service';
 import { NewLibraryResultInterpreterService }
-	from './data-transport-result-interpreter/new-library-result-interpreter.service';
-import { DBLibrary } from '../../../interfaces/db-library';
+	from '../data-transport-result-interpreter/new-library-result-interpreter.service';
+import { DBLibrary } from '../../../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})

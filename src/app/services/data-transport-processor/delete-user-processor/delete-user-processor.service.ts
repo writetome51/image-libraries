@@ -1,10 +1,10 @@
-import { FormDataTransportProcessorService } from './form-data-transport-processor.service';
+import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UserDeleterService } from '../user/user-deleter.service';
+import { UserDeleterService } from './user-deleter.service';
 import { DeleteUserResultInterpreterService }
-	from './data-transport-result-interpreter/delete-user-result-interpreter.service';
+	from '../data-transport-result-interpreter/delete-user-result-interpreter.service';
 import { DeleteUserEmailPasswordInputsService }
-	from '../validating-inputs/delete-user-email-password-inputs.service';
+	from '../../validating-inputs/delete-user-email-password-inputs.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,8 +20,7 @@ export class DeleteUserProcessorService extends FormDataTransportProcessorServic
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: {success: boolean} | {error: {message: string}}
+	protected async _getResult(): Promise<{success: true} | {error: {message: string}}>
 	{
 		return await this.__userDeleter.delete();
 	}
