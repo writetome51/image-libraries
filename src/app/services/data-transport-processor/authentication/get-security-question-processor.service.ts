@@ -5,6 +5,7 @@ import { GetSecurityQuestionInputsService }
 	from '../../validating-inputs/get-security-question-inputs.service';
 import { GetSecurityQuestionResultInterpreterService }
 	from '../data-transport-result-interpreter/get-security-question-result-interpreter.service';
+import { SecurityQuestion } from '../../../../interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,9 +21,7 @@ export class GetSecurityQuestionProcessorService extends FormDataTransportProces
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: {question: string, answer: string} | {error: {message: string}}
-	{
+	protected async _getResult(): Promise<SecurityQuestion | {error: {message: string}}> {
 		return await this.__authenticator.getSecurityQuestion();
 	}
 

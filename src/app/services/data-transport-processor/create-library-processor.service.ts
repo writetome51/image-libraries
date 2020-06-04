@@ -4,8 +4,7 @@ import { LibraryCreatorService } from '../library/library-creator.service';
 import { NewLibraryInputsService } from '../validating-inputs/new-library-inputs.service';
 import { NewLibraryResultInterpreterService }
 	from './data-transport-result-interpreter/new-library-result-interpreter.service';
-import { NewLibraryData as newLibrary}
-	from '../../../data-structures/runtime-state-data/new-library.data';
+import { DBLibrary } from '../../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -21,10 +20,8 @@ export class CreateLibraryProcessorService extends FormDataTransportProcessorSer
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: DBLibrary | {error: {message: string}}
-	{
-		return await this.__libraryCreator.create(newLibrary.name);
+	protected async _getResult(): Promise<DBLibrary | { error: { message: string } }> {
+		return await this.__libraryCreator.create();
 	}
 
 }

@@ -40,7 +40,7 @@ export class UserRestAPIService extends RestAPIService {
 
 	delete(
 		params: { email: string, password: string, sessionID: string }
-	): Observable<string> // JSON containing: {success: boolean} | {error: {message: string}}
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
 		return this._delete('delete-user', params);
 	}

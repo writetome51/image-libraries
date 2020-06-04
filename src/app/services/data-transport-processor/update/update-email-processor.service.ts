@@ -4,7 +4,7 @@ import { UpdateEmailFormInputsService }
 	from '../../validating-inputs/update-email-form-inputs.service';
 import { UpdateEmailResultInterpreterService }
 	from '../data-transport-result-interpreter/update-email-result-interpreter.service';
-import { UserUpdaterService } from '../../user/user-updater.service';
+import { UserStorageUpdaterService } from '../../user/user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,7 @@ import { UserUpdaterService } from '../../user/user-updater.service';
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userUpdater: UserUpdaterService,
+		private __userUpdater: UserStorageUpdaterService,
 		__updateEmailFormInputs: UpdateEmailFormInputsService,
 		__updateEmailResultInterpreter: UpdateEmailResultInterpreterService
 	) {

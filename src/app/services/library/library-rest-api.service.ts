@@ -49,7 +49,7 @@ export class LibraryRestApiService extends RestAPIService {
 
 	delete(
 		params: { sessionID: string, name: string }
-	): Observable<any> // JSON containing: {success: true} | {error: {message: string}}
+	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
 		return this._delete('delete-library', params);
 	}

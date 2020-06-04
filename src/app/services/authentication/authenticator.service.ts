@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
 import { CurrentUserData as currentUser }
 	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { DBUser } from '../../../interfaces/db-user';
+import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
+import { SecurityQuestion } from '../../../interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
 
-export class AuthenticatorService {
+export class AuthenticatorService extends GetObjectFromSubscriptionService {
 
 	constructor(private __authenticationRestApi: AuthenticationRestAPIService) {
+		super();
 	}
 
 
-	async authenticate(): Promise<string> // JSON containing: DBUser | {error: {message: string}}
-	{
-		return await getSubscriptionData(
+	async authenticate(): Promise<DBUser | { error: { message: string } }> {
+		return await this.go(
 			this.__authenticationRestApi.login(
 				{email: currentUser.email, password: currentUser.password}
 			)
@@ -24,10 +25,9 @@ export class AuthenticatorService {
 	}
 
 
-	async authenticateBySecurityQuestion(): Promise<string>
-		// JSON containing: DBUser | {error: {message: string}}
+	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }>
 	{
-		return await getSubscriptionData(
+		return await this.go(
 			this.__authenticationRestApi.securityQuestionLogin(
 				{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 			)
@@ -35,10 +35,9 @@ export class AuthenticatorService {
 	}
 
 
-	async getSecurityQuestion(): Promise<string>
-		// JSON containing: {question: string, answer: string} | {error: {message: string}}
+	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }>
 	{
-		return await getSubscriptionData(
+		return await this.go(
 			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
 		);
 	}

@@ -3,6 +3,7 @@ import { LibraryStorageService } from '../library/library-storage.service';
 import { GetLibraryNamesResultInterpreterService }
 	from './data-transport-result-interpreter/get-library-names-result-interpreter.service';
 import { Injectable } from '@angular/core';
+import { DBLibrary } from '../../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,9 +18,7 @@ export class GetLibraryNamesProcessorService extends DataTransportProcessorServi
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: DBLibrary[] | {error: {message: string}}
-	{
+	protected async _getResult(): Promise<DBLibrary[] | {error: {message: string}}> {
 		return await this.__libraryStorage.getAll();
 	}
 

@@ -3,24 +3,24 @@ import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { ImagesRestApiService } from './images-rest-api.service';
 import { NewImagesData as newImages }
 	from '../../../data-structures/runtime-state-data/static-classes/new-images.data';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class NewImagesSaverService {
+export class NewImagesSaverService extends GetObjectFromSubscriptionService {
 
 
 	constructor(
 		private __imagesRestApi: ImagesRestApiService,
 		private __localSessionID: LocalSessionIDService
 	) {
+		super();
 	}
 
 
-	async save(): Promise<string> // JSON containing: {success: true} | {error: {message: string}}
-	{
-		return await getSubscriptionData(
+	async save(): Promise<{ success: true } | { error: { message: string } }> {
+		return await this.go(
 			this.__imagesRestApi.add(
 				{sessionID: this.__localSessionID.get(), images: newImages.data}
 			)

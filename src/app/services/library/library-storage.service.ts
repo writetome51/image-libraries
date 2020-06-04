@@ -2,23 +2,24 @@ import { DBLibrary } from '../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestApiService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryStorageService {
+export class LibraryStorageService extends GetObjectFromSubscriptionService {
 
 
 	constructor(
 		private __libraryRestApi: LibraryRestApiService,
 		private __localSessionID: LocalSessionIDService
 	) {
+		super();
 	}
 
 
-	async get(libraryName): Promise<string> {
-		return await getSubscriptionData(
+	async get(libraryName): Promise<DBLibrary | { error: { message: string } }> {
+		return await this.go(
 			this.__libraryRestApi.get(
 				{sessionID: this.__localSessionID.get(), name: libraryName}
 			)
@@ -26,38 +27,41 @@ export class LibraryStorageService {
 	}
 
 
-	async getAll(): Promise<string> // JSON containing: DBLibrary[] | {error: {message: string}}
-	{
-		return await getSubscriptionData(
+	async getAll(): Promise<DBLibrary[] | { error: { message: string } }> {
+		return await this.go(
 			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
+	}
+
+
+	async create(libraryName: string): Promise<DBLibrary | { error: { message: string } }>
+	{
+		return await this.go(this.__libraryRestApi.create({
+			sessionID: this.__localSessionID.get(),
+			name: libraryName
+		}));
 	}
 
 
 	async update(
 		libraryName: string,
 		changes: object // The properties in 'changes' can contain dot-notation.
-	): Promise<string> // JSON containing: DBLibrary | {error: {message: string}}
+	): Promise<DBLibrary | { error: { message: string } }>
 	{
-		return await getSubscriptionData(
-			this.__libraryRestApi.update({
-				sessionID: this.__localSessionID.get(),
-				name: libraryName,
-				changes
-			})
-		);
+		return await this.go(this.__libraryRestApi.update({
+			sessionID: this.__localSessionID.get(),
+			name: libraryName,
+			changes
+		}));
 	}
 
 
-	async delete(libraryName: string): Promise<string>
-		// JSON containing: {success: true} | {error: {message: string}}
+	async delete(libraryName: string): Promise<{ success: true } | { error: { message: string } }>
 	{
-		return await getSubscriptionData(
-			this.__libraryRestApi.delete({
-				sessionID: this.__localSessionID.get(),
-				name: libraryName
-			})
-		);
+		return await this.go(this.__libraryRestApi.delete({
+			sessionID: this.__localSessionID.get(),
+			name: libraryName
+		}));
 	}
 
 

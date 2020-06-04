@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { DataTransportProcessorService } from './data-transport-processor.service';
-import { LibraryDeleterService } from '../library/library-deleter.service';
+import { DataTransportProcessorService } from '../data-transport-processor.service';
+import { LibraryDeleterService } from './library-deleter.service';
 import { DeleteLibraryResultInterpreterService }
-	from './data-transport-result-interpreter/delete-library-result-interpreter.service';
+	from '../data-transport-result-interpreter/delete-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,8 +17,7 @@ export class DeleteLibraryProcessorService extends DataTransportProcessorService
 	}
 
 
-	protected async _getResult(): Promise<string>
-		// JSON containing: {success: true} | {error: {message: string}}
+	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }>
 	{
 		return await this.__libraryDeleter.delete();
 	}

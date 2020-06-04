@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RestAPIService } from '../rest-api.service';
+// Keep this for reference:
+import { SecurityQuestion } from '../../../interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
@@ -40,7 +42,7 @@ export class AuthenticationRestAPIService extends RestAPIService {
 	getSecurityQuestion(
 		params: { email: string }
 	): Observable<string>
-		// JSON containing: {question: string, answer: string} | {error: {message: string}}
+		// JSON containing: SecurityQuestion | {error: {message: string}}
 	{
 		return this._get('get-security-question', params);
 	}

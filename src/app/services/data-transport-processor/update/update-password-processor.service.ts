@@ -4,7 +4,7 @@ import { UpdatePasswordFormInputsService }
 	from '../../validating-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
 	from '../data-transport-result-interpreter/update-password-result-interpreter.service';
-import { UserUpdaterService } from '../../user/user-updater.service';
+import { UserStorageUpdaterService } from '../../user/user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,7 @@ import { UserUpdaterService } from '../../user/user-updater.service';
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userUpdater: UserUpdaterService,
+		private __userUpdater: UserStorageUpdaterService,
 		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
 		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
 	) {

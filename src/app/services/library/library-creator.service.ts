@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { LibraryRestApiService } from './library-rest-api.service';
-import { LocalSessionIDService } from '../local-data/local-session-id.service';
-import { getSubscriptionData } from '@writetome51/get-subscription-data';
+import { DBLibrary } from '../../../interfaces/db-library';
+import { LibraryStorageService } from './library-storage.service';
+import { NewLibraryData as newLibrary }
+	from '../../../data-structures/runtime-state-data/new-library.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -9,24 +10,12 @@ import { getSubscriptionData } from '@writetome51/get-subscription-data';
 export class LibraryCreatorService {
 
 
-	constructor(
-		private __libraryRestApi: LibraryRestApiService,
-		private __localSessionID: LocalSessionIDService
-	) {
+	constructor(private __libraryStorage: LibraryStorageService) {
 	}
 
 
-	async create(libraryName: string): Promise<string>
-		// JSON containing: DBLibrary | {error: {message: string}}
-	{
-		return await getSubscriptionData(
-			this.__libraryRestApi.create(
-				{
-					sessionID: this.__localSessionID.get(),
-					name: libraryName
-				}
-			)
-		);
+	async create(): Promise<DBLibrary | { error: { message: string } }> {
+		return this.__libraryStorage.create(newLibrary.name);
 	}
 
 
