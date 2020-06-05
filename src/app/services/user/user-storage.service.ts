@@ -19,8 +19,8 @@ export class UserStorageService extends GetObjectFromSubscriptionService {
 	}
 
 
-	async exists(user: { email: string }): Promise<{ success: boolean }> {
-		return await this.go(this.__userRestApi.exists({email: user.email}));
+	async exists(email: string): Promise<{ success: boolean }> {
+		return await this.go(this.__userRestApi.exists({email}));
 	}
 
 

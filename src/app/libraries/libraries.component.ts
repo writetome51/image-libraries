@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { CreatingNewLibraryData as creatingNewLibrary }
-	from '../../data-structures/runtime-state-data/creating-new-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 import { LibrariesModuleRouteService } from './libraries-module-route.service';
+import { NewLibraryData as newLibrary }
+	from '../../data-structures/runtime-state-data/new-library.data';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class LibrariesComponent extends ClearAlertOnDestroyComponent {
 
 
 	get creatingNewLibrary(): boolean {
-		return creatingNewLibrary.status;
+		return newLibrary.beingCreated;
 	}
 
 

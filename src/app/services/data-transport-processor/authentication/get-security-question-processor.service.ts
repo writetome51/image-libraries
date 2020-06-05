@@ -2,7 +2,7 @@ import { AuthenticatorService } from '../../authentication/authenticator.service
 import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { GetSecurityQuestionInputsService }
-	from '../../validating-inputs/get-security-question-inputs.service';
+	from '../../validating-inputs/current-user-inputs/get-security-question-inputs.service';
 import { GetSecurityQuestionResultInterpreterService }
 	from '../data-transport-result-interpreter/get-security-question-result-interpreter.service';
 import { SecurityQuestion } from '../../../../interfaces/security-question';

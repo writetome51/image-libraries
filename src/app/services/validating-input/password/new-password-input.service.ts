@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PasswordInputService } from './password-input.service';
 import { PrefixLabel_to_ValidatingInputService }
-	from './prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
+	from '../prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new', prefix_propertyToBind: true})

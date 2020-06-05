@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EmailInputService } from './email-input.service';
-import { LocalEmailService } from '../local-data/local-email.service';
+import { LocalEmailService } from '../../local-data/local-email.service';
 
 
 @Injectable({providedIn: 'root'})

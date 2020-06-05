@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataProcessorComponent } from '../../data-processor.component';
-import { LoginBySecurityQuestionProcessorService }
-	from '../../services/data-transport-processor/authentication/login-by-security-question-processor.service';
+import { StartDataProcessComponent } from '../../start-data-process.component';
+import { LoginBySecurityQuestionProcessorService } from
+		'../../services/data-transport-processor/authentication/login-by-security-question-processor.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '../../../data-structures/runtime-state-data/security-question-status.data';
 
@@ -9,20 +9,20 @@ import { SecurityQuestionStatusData as questionStatus }
 @Component({
 	selector: 'submit-answer-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="process">
+		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
 			Submit Answer
 		</processing-button>
 	`
 })
-export class SubmitAnswerButtonComponent extends DataProcessorComponent {
+export class SubmitAnswerButtonComponent extends StartDataProcessComponent {
 
 	constructor(__loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
 		super(__loginBySecurityQuestionProcessor);
 	}
 
 
-	async process() {
-		await super.process();
+	async start() {
+		await super.start();
 		questionStatus.received = false;
 	}
 

@@ -6,7 +6,7 @@ data structure.
 'data processing' is general data manipulation.  The data might not be sent anywhere but simply
 be manipulated in the browser.
 
-Any component that initiates data processing is a subclass of DataProcessorComponent.  These
+Any component that initiates data processing is a subclass of StartDataProcessComponent.  These
 components usually represent UI buttons.
 
 'data transport processing' refers to any data processing that involves sending the data to an

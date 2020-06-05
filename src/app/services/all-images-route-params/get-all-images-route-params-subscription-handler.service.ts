@@ -9,7 +9,7 @@ import { OperationStatusData as operationStatus }
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { AllImagesJumpToPageNumberInputService }
-	from '../validating-input/all-images-jump-to-page-number-input.service';
+	from '../validating-input/jump-to-page-number/all-images-jump-to-page-number-input.service';
 import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';

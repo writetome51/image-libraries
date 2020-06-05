@@ -7,7 +7,6 @@ import { URLParamIDData as paramID } from '../data-structures/read-only-data/url
 
 export const AppModuleRouteService = {
 
-	UpdateUserModule: 'update-account',
 	NewUserModule: 'create-account',
 	LibrariesModule: 'libraries',
 	LibraryModule: 'library',

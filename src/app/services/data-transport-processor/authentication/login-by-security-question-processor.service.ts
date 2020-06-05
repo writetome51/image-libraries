@@ -1,6 +1,6 @@
 import { AuthenticatorService } from '../../authentication/authenticator.service';
 import { AnswerSecurityQuestionInputsService }
-	from '../../validating-inputs/answer-security-question-inputs.service';
+	from '../../validating-inputs/current-user-inputs/answer-security-question-inputs.service';
 import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService }

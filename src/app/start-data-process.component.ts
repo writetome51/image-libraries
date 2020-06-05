@@ -5,13 +5,13 @@ import { ProcessingButtonOperationStatusData as operationStatus }
 	from '../data-structures/runtime-state-data/processing-button-operation-status.data';
 
 
-export abstract class DataProcessorComponent implements IndirectProcessor {
+export abstract class StartDataProcessComponent {
 
 	constructor(private __processor: IndirectProcessor) {
 	}
 
 
-	async process() {
+	async start() {
 		await performDataProcessRequiringWaiting.go(this.__processor, operationStatus);
 	}
 

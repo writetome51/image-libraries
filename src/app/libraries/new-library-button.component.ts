@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CreatingNewLibraryData as creatingNewLibrary }
-	from '../../data-structures/runtime-state-data/creating-new-library.data';
+import { NewLibraryData as newLibrary }
+	from '../../data-structures/runtime-state-data/new-library.data';
 
 
 @Component({
@@ -15,12 +15,12 @@ export class NewLibraryButtonComponent {
 
 
 	get creatingNewLibrary(): boolean {
-		return creatingNewLibrary.status;
+		return newLibrary.beingCreated;
 	}
 
 
 	set creatingNewLibrary(value){
-		creatingNewLibrary.status = value;
+		newLibrary.beingCreated = value;
 	}
 
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
 import { AllImagesJumpToPageNumberInputService }
-	from '../../services/validating-input/all-images-jump-to-page-number-input.service';
+	from '../../services/validating-input/jump-to-page-number/all-images-jump-to-page-number-input.service';
 
 
 @Component({

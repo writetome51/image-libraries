@@ -8,37 +8,31 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 
-	{	// lazy-loaded module
-		path: moduleRoute.UpdateUserModule,
-		loadChildren: () => import('./update-user/update-user.module')
-			.then(mod => mod.UpdateUserModule)
-	},
-
-	{	// lazy-loaded module
+	{
 		path: moduleRoute.NewUserModule, // can only access when logged out
+		// example of lazy-loading a module:
 		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
 
-	{	// lazy-loaded module
+	{
 		path: moduleRoute.LibrariesModule,
 		loadChildren: () => import('./libraries/libraries.module').then(mod => mod.LibrariesModule)
 	},
 
-	{	// lazy-loaded module
+	{
 		path: moduleRoute.LibraryModule,
 		loadChildren: () => import('./library/library.module').then(mod => mod.LibraryModule)
 	},
 
-	{	// lazy-loaded module
+	{
 		path: moduleRoute.SecurityQuestionModule,
 		loadChildren: () => import('./security-question/security-question.module')
 			.then(mod => mod.SecurityQuestionModule)
 	},
 
-	{	// lazy-loaded module
+	{
 		path: moduleRoute.AllImagesModule,
-		loadChildren: () => import('./all-images/all-images.module').then(
-			mod => mod.AllImagesModule)
+		loadChildren: () => import('./all-images/all-images.module').then(mod => mod.AllImagesModule)
 	},
 
 	{

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserValidationRulesData as rules } from '../../../data-structures/read-only-data/user-validation-rules.data';
+import { UserValidationRulesData as rules }
+	from '../../../../data-structures/read-only-data/user-validation-rules.data';
 import { ValidatingPasswordInputService } from '@writetome51/validating-inputs';
 
 

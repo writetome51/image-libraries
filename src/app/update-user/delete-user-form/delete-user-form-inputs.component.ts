@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 import { DeleteUserEmailPasswordInputsService }
-	from '../../services/validating-inputs/delete-user-email-password-inputs.service';
+	from '../../services/validating-inputs/current-user-inputs/delete-user-email-password-inputs.service';
 
 
 @Component({
