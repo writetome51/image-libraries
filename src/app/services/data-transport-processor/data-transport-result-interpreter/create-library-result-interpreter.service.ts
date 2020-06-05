@@ -6,10 +6,9 @@ import { UpdateOrNewLibraryResultCheckService }
 	from './data-transport-result-check/update-or-new-library-result-check.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class NewLibraryResultInterpreterService extends DataTransportResultInterpreterService {
+@Injectable({providedIn: 'root'})
+
+export class CreateLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
 		__updateLibraryResultCheck: UpdateOrNewLibraryResultCheckService,

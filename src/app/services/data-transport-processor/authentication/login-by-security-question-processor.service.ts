@@ -5,6 +5,7 @@ import { FormDataTransportProcessorService } from '../form-data-transport-proces
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService }
 	from '../data-transport-result-interpreter/login-result-interpreter.service';
+import { DBUser } from '../../../../interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,8 +21,7 @@ export class LoginBySecurityQuestionProcessorService extends FormDataTransportPr
 	}
 
 
-	protected async _getResult(): Promise<string> // JSON containing: DBUser | {error: {message:string}}
-	{
+	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__authenticator.authenticateBySecurityQuestion();
 	}
 

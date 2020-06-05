@@ -6,7 +6,7 @@ import { RestAPIService } from '../rest-api.service';
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryRestApiService extends RestAPIService {
+export class LibraryRestAPIService extends RestAPIService {
 
 
 	constructor(_http: HttpClient) {

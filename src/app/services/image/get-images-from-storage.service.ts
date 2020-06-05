@@ -1,6 +1,6 @@
 import { BatchData as batch }
 	from '../../../data-structures/runtime-state-data/static-classes/batch.data';
-import { ImagesRestApiService } from './images-rest-api.service';
+import { ImagesRestAPIService } from './images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { RequestedLibraryData as requestedLibrary }
@@ -15,7 +15,7 @@ export class GetImagesFromStorageService extends GetObjectFromSubscriptionServic
 
 
 	constructor(
-		private __imagesRestApi: ImagesRestApiService,
+		private __imagesRestApi: ImagesRestAPIService,
 		private __localSessionID: LocalSessionIDService
 	) {
 		super();

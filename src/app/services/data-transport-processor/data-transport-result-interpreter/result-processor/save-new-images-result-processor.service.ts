@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { AlertService as alert } from '../../../alert.service';
 import { GetAllImagesProcessorService }
-	from '../../get-images-processor/get-all-images-processor.service';
+	from '../../get-images/get-all-images-processor.service';
 import { NewImagesData as newImages }
 	from '../../../../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { Router } from '@angular/router';

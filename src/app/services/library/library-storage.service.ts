@@ -1,6 +1,6 @@
 import { DBLibrary } from '../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LibraryRestApiService } from './library-rest-api.service';
+import { LibraryRestAPIService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
 
@@ -11,7 +11,7 @@ export class LibraryStorageService extends GetObjectFromSubscriptionService {
 
 
 	constructor(
-		private __libraryRestApi: LibraryRestApiService,
+		private __libraryRestApi: LibraryRestAPIService,
 		private __localSessionID: LocalSessionIDService
 	) {
 		super();

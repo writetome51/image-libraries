@@ -5,6 +5,7 @@ import { LoginEmailPasswordInputsService }
 	from '../../validating-inputs/current-user-inputs/login-email-password-inputs.service';
 import { LoginResultInterpreterService }
 	from '../data-transport-result-interpreter/login-result-interpreter.service';
+import { DBUser } from '../../../../interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
@@ -20,8 +21,7 @@ export class LoginProcessorService extends FormDataTransportProcessorService {
 	}
 
 
-	protected async _getResult(): Promise<string> // JSON containing: DBUser | {error: {message: string}}
-	{
+	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__authenticator.authenticate();
 	}
 

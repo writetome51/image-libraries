@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../local-data/local-session-id.service';
-import { ImagesRestApiService } from '../../image/images-rest-api.service';
+import { ImagesRestAPIService } from '../../image/images-rest-api.service';
 import { NewImagesData as newImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { GetObjectFromSubscriptionService } from '../../get-object-from-subscription.service';
@@ -12,7 +12,7 @@ export class NewImagesSaverService extends GetObjectFromSubscriptionService {
 
 
 	constructor(
-		private __imagesRestApi: ImagesRestApiService,
+		private __imagesRestApi: ImagesRestAPIService,
 		private __localSessionID: LocalSessionIDService
 	) {
 		super();

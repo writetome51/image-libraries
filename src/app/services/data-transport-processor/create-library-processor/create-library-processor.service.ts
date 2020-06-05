@@ -2,8 +2,8 @@ import { FormDataTransportProcessorService } from '../form-data-transport-proces
 import { Injectable } from '@angular/core';
 import { LibraryCreatorService } from './library-creator.service';
 import { NewLibraryInputsService } from '../../validating-inputs/new-library-inputs.service';
-import { NewLibraryResultInterpreterService }
-	from '../data-transport-result-interpreter/new-library-result-interpreter.service';
+import { CreateLibraryResultInterpreterService }
+	from '../data-transport-result-interpreter/create-library-result-interpreter.service';
 import { DBLibrary } from '../../../../interfaces/db-library';
 
 
@@ -14,9 +14,9 @@ export class CreateLibraryProcessorService extends FormDataTransportProcessorSer
 	constructor(
 		private __libraryCreator: LibraryCreatorService,
 		__newLibraryInputs: NewLibraryInputsService,
-		__newLibraryResultInterpreter: NewLibraryResultInterpreterService
+		__createLibraryResultInterpreter: CreateLibraryResultInterpreterService
 	) {
-		super(__newLibraryInputs, __newLibraryResultInterpreter);
+		super(__newLibraryInputs, __createLibraryResultInterpreter);
 	}
 
 

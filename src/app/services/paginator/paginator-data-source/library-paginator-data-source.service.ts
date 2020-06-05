@@ -3,7 +3,7 @@ import { PaginatorDataSourceService } from './paginator-data-source.service';
 import { SetInitialDataTotalForLibraryService }
 	from './set-initial-data-total-for-library.service';
 import { GetLibraryProcessorService }
-	from '../../data-transport-processor/get-images-processor/get-library-processor.service';
+	from '../../data-transport-processor/get-images/get-library-processor.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';

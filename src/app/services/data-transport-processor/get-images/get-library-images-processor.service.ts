@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DBImage } from '../../../../interfaces/db-image';
 import { GetImagesProcessorService } from './get-images-processor.service';
+import { ImageBatch } from '../../../../interfaces/image-batch';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,7 +11,7 @@ import { GetImagesProcessorService } from './get-images-processor.service';
 
 export class GetLibraryImagesProcessorService extends GetImagesProcessorService {
 
-	protected async _getResult(): Promise<DBImage[] | { error: object }> {
+	protected async _getResult(): Promise<ImageBatch | { error: { message: string } }> {
 		return await this._getImagesFromStorage.inLibrary();
 	}
 

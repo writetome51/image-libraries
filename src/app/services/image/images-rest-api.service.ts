@@ -7,7 +7,7 @@ import { AppImage } from '../../../interfaces/app-image';
 
 @Injectable({providedIn: 'root'})
 
-export class ImagesRestApiService extends RestAPIService {
+export class ImagesRestAPIService extends RestAPIService {
 
 
 	constructor(_http: HttpClient) {
