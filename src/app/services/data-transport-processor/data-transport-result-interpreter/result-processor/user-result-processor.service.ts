@@ -1,7 +1,7 @@
 import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../local-data/local-session-id.service';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { LocalEmailService } from '../../../local-data/local-email.service';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 

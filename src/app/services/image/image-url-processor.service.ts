@@ -1,4 +1,4 @@
-import { AlertService as alert } from '../alert.service';
+import { AlertData as alert } from '../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { ImageURLData as enteredImageURL }
 	from '../../../data-structures/runtime-state-data/image-url.data';
 import { IndirectProcessor } from '../../../interfaces/indirect-processor';

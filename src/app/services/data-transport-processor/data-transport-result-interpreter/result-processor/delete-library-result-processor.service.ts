@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';
 import { GetLibraryNamesProcessorService } from '../../get-library-names-processor.service';

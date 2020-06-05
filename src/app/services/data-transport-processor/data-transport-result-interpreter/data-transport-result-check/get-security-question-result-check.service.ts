@@ -1,6 +1,6 @@
 import { DataTransportResultCheckService } from './data-transport-result-check.service';
 import { Injectable } from '@angular/core';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { userDoesntExist } from '../../../../../string-constants/rest-api-errors';
 import { noAccountWithThatEmail } from '../../../../../string-constants/form-submission-errors';
 

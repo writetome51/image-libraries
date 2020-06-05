@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LogoutResultProcessorService } from './logout-result-processor.service';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 
 

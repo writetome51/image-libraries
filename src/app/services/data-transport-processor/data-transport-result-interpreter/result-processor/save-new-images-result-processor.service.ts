@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
-import { AlertService as alert } from '../../../alert.service';
+import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { GetAllImagesProcessorService }
 	from '../../get-images/get-all-images-processor.service';
 import { NewImagesData as newImages }

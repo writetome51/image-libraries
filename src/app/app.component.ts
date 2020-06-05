@@ -1,4 +1,4 @@
-import { AlertService } from './services/alert.service';
+import { AlertData } from '../data-structures/runtime-state-data/static-classes/alert.data';
 import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { GoogleMapsApiKeyData } from '../data-structures/read-only-data/google-maps-api-key.data';
@@ -13,7 +13,7 @@ import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData 
 export class AppComponent {
 
 	title = 'Image Libraries';
-	alert = AlertService;
+	alert = AlertData;
 	gMapsApiKey = GoogleMapsApiKeyData;
 
 
