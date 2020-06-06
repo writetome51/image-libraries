@@ -7,9 +7,9 @@ import { CreateLibraryProcessorService }
 @Component({
 	selector: 'create-library-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Create
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class CreateLibraryButtonComponent extends StartDataProcessComponent {

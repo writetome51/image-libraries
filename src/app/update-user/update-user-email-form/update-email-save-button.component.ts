@@ -7,9 +7,9 @@ import { StartDataProcessComponent } from '../../start-data-process.component';
 @Component({
 	selector: 'update-email-save-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Save Changes
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class UpdateEmailSaveButtonComponent extends StartDataProcessComponent {

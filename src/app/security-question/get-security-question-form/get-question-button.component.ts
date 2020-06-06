@@ -7,9 +7,9 @@ import { GetSecurityQuestionProcessorService }
 @Component({
 	selector: 'get-question-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Get Security Question
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class GetQuestionButtonComponent extends StartDataProcessComponent {

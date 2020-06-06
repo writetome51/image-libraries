@@ -17,7 +17,7 @@ import { NgModule } from '@angular/core';
 import { NewLibraryFormComponent } from './new-library-form/new-library-form.component';
 import { NewLibraryFormInputsComponent } from './new-library-form/new-library-form-inputs.component';
 import { NewLibraryButtonComponent } from './new-library-button.component';
-import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { StartDataProcessButtonModule } from '../start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
 import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
@@ -43,7 +43,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		ThumbnailImageModule,
 		AppPaginationControlsModule,
 		ValidatingInputsModule,
-		ProcessingButtonModule,
+		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',

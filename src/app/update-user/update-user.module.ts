@@ -4,7 +4,7 @@ import { DeleteUserButtonComponent } from './delete-user-form/delete-user-button
 import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { StartDataProcessButtonModule } from '../start-data-process-button/start-data-process-button.module';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
 	from './update-user-email-form/update-user-email-form-inputs.component';
@@ -39,7 +39,7 @@ import { UpdatePasswordSaveButtonComponent }
 		CommonModule,
 		FormsModule,
 		ValidatingInputsModule,
-		ProcessingButtonModule,
+		StartDataProcessButtonModule,
 		UpdateUserRoutingModule
 	]
 })

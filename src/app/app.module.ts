@@ -11,7 +11,8 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LoginButtonComponent } from './login/login-form/login-button.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ProcessingButtonModule } from './processing-button/processing-button.module';
+import { StartDataProcessButtonModule }
+	from './start-data-process-button/start-data-process-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
 
 
@@ -31,7 +32,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 		HttpClientModule,
 		AppNavigatorModule,
 		ValidatingInputsModule,
-		ProcessingButtonModule,
+		StartDataProcessButtonModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 	],
 	bootstrap: [AppComponent]

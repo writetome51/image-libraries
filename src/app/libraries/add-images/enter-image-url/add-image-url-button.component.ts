@@ -6,9 +6,9 @@ import { ImageURLProcessorService } from '../../../services/image/image-url-proc
 @Component({
 	selector: 'add-image-url-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Add URL
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class AddImageUrlButtonComponent extends StartDataProcessComponent {

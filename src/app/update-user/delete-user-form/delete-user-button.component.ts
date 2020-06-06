@@ -7,9 +7,9 @@ import { DeleteUserProcessorService }
 @Component({
 	selector: 'delete-user-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Delete
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class DeleteUserButtonComponent extends StartDataProcessComponent {

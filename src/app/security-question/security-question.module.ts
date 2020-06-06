@@ -9,7 +9,8 @@ import { GetSecurityQuestionFormComponent }
 import { GetSecurityQuestionFormInputsComponent }
 	from './get-security-question-form/get-security-question-form-inputs.component';
 import { NgModule } from '@angular/core';
-import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { StartDataProcessButtonModule }
+	from '../start-data-process-button/start-data-process-button.module';
 import { SecurityQuestionComponent } from './security-question.component';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
@@ -32,7 +33,7 @@ import { GetQuestionButtonComponent }
 	imports: [
 		CommonModule,
 		ValidatingInputsModule,
-		ProcessingButtonModule,
+		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',

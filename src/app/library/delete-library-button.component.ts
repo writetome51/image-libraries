@@ -7,9 +7,7 @@ import { DeleteLibraryProcessorService }
 @Component({
 	selector: 'delete-library-button',
 	template: `
-		<processing-button [context]="this" [clickHandler]="start">
-			Delete Library
-		</processing-button>
+		<start-data-process-button [context]="this">Delete Library</start-data-process-button>
 	`
 })
 export class DeleteLibraryButtonComponent extends StartDataProcessComponent {

@@ -7,9 +7,9 @@ import { StartDataProcessComponent } from '../../start-data-process.component';
 @Component({
 	selector: 'create-user-button',
 	template: `
-		<processing-button [type]="'submit'" [context]="this" [clickHandler]="start">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Create
-		</processing-button>
+		</start-data-process-button>
 	`
 })
 export class CreateUserButtonComponent extends StartDataProcessComponent {

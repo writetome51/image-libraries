@@ -10,7 +10,7 @@ import { LibraryComponent } from './library.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { NgModule } from '@angular/core';
-import { ProcessingButtonModule } from '../processing-button/processing-button.module';
+import { StartDataProcessButtonModule } from '../start-data-process-button/start-data-process-button.module';
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
@@ -34,7 +34,7 @@ import { DeleteLibraryButtonComponent } from './delete-library-button.component'
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
-		ProcessingButtonModule,
+		StartDataProcessButtonModule,
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
