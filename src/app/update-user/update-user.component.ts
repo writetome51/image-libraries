@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UpdateUserChoicesMapService } from './update-user-choices-map.service';
+import { UpdateUserChoiceData } from './update-user-choice.data';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { UpdateUserChoicesMapService } from './update-user-choices-map.service';
 export class UpdateUserComponent {
 
 	heading = 'Update';
-	choicesMap = UpdateUserChoicesMapService;
+	choicesMap = UpdateUserChoiceData;
 	choices = Object.keys(this.choicesMap);
 
 

@@ -1,8 +1,8 @@
-import { AppModuleRouteService } from '../app-module-route.service';
+import { AppModuleRouteData } from '../app-module-route.data';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
-import { LibraryModuleRouteService as moduleRoute } from './library-module-route.service';
+import { LibraryModuleRouteData as moduleRoute } from './library-module-route.data';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -27,7 +27,7 @@ const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: '/' + AppModuleRouteService.LibrariesModule
+		redirectTo: '/' + AppModuleRouteData.LibrariesModule
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.

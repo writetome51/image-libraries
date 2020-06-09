@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '../clear-form-on-init-and-alert-on-destroy.component';
-import { AppModuleRouteService } from '../app-module-route.service';
+import { AppModuleRouteData } from '../app-module-route.data';
 
 
 @Component({
@@ -17,6 +17,6 @@ export class LoginComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 	libraries.  Inside each library you can rearrange the image order, add
 	descriptions, tags, pic locations, and do searches.`;
 
-	moduleRoute = AppModuleRouteService;
+	moduleRoute = AppModuleRouteData;
 
 }

@@ -1,23 +1,16 @@
-import { Component } from '@angular/core';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../data-structures/runtime-state-data/requested-library.data';
 import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
+import { Component } from '@angular/core';
+import { CurrentRouteService } from '../services/current-route.service';
 import { LibraryVerifierService } from './library-verifier.service';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
-import { CurrentRouteService } from '../services/current-route.service';
+import { RequestedLibraryData as requestedLibrary }
+	from '../../data-structures/runtime-state-data/requested-library.data';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 
 
 @Component({
 	selector: 'app-library',
-	template: `
-		<header><h2>{{name}}</h2></header>
-		<library-viewer></library-viewer>
-		<button (click)="nextPage()">Next Page</button>
-		<button (click)="previousPage()">Previous Page</button>
-
-		<delete-library-button></delete-library-button>
-	`
+	templateUrl: './library.component.html'
 })
 export class LibraryComponent extends ClearAlertOnDestroyComponent {
 

@@ -6,9 +6,9 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 // their route is accessed.
 
 
-export const LibraryModuleRouteService = {
+export class LibraryModuleRouteData {
 
-	ImageViewerModule: `:${paramID.libName}/image`,
-	LibraryComponent: `:${paramID.libName}/page/:${paramID.pageNumber}`
+	static readonly ImageViewerModule = `:${paramID.libName}/image`;
+	static readonly LibraryComponent = `:${paramID.libName}/page/:${paramID.pageNumber}`;
 
-};
+}

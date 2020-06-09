@@ -40,7 +40,7 @@ export class LibraryVerifierService {
 		requestedLibrary.name = libName;
 
 		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.libName) {
-			await this.__libraryPaginator.reset();
+			await this.__libraryPaginator.resetToFirstPage();
 		}
 	}
 

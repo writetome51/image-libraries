@@ -17,8 +17,6 @@ export class StartDataProcessButtonComponent {
 	// required.  Instance of the component this component is used in.
 	@Input() context: StartDataProcessComponent;
 
-//	@Input() clickHandler: () => void; // required.  Method belonging to this.context.
-
 	clicked = false;
 
 	operationStatus = ProcessingButtonOperationStatusData;
@@ -28,7 +26,6 @@ export class StartDataProcessButtonComponent {
 		event.preventDefault();
 
 		this.clicked = true;
-		// await this.clickHandler.apply(this.context);
 		await this.context.start();
 		this.clicked = false;
 	}

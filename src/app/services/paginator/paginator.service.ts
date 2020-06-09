@@ -18,11 +18,11 @@ export abstract class PaginatorService extends AppPaginator {
 	}
 
 
-	async reset() {
+	async resetToFirstPage() {
 		await this.__dataSource.setInitial_dataTotal();
 
-		// If the dataTotal is 0, this will always trigger error in AppPaginator.reset():
-		await super.reset().catch((e) => {}); // just keep running.
+		// If the dataTotal is 0, this will always trigger error in AppPaginator.resetToFirstPage():
+		await super.resetToFirstPage().catch((e) => {}); // just keep running.
 	}
 
 }

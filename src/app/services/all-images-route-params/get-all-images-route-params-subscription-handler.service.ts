@@ -35,7 +35,7 @@ export class GetAllImagesRouteParamsSubscriptionHandlerService implements IDoThi
 		return async (params) => {
 
 			if (noValue(loadedImages.data) || not(loadedImagesStatus.data === 'all')) {
-				await this.__allImagesPaginator.reset();
+				await this.__allImagesPaginator.resetToFirstPage();
 				this.__allImagesJumpToPageNumberInput.setMax();
 				loadedImagesStatus.data = 'all';
 				loadedLibrary.data = undefined;
