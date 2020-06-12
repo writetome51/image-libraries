@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
-import { HasSubscriptions } from '../../interfaces/has-subscriptions';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { CurrentRouteService } from '../services/current-route.service';
-import { GetAllImagesRouteParamsSubscriptionHandlerService }
-	from '../services/all-images-route-params/get-all-images-route-params-subscription-handler.service';
+import { GetAllImagesRouteParamsSubscriptionObserverService }
+	from './services/get-all-images-route-params-subscription-observer.service';
 
 
 @Component({
 	selector: 'all-images',
 	templateUrl: './all-images.component.html'
 })
-export class AllImagesComponent extends UnsubscribeOnDestroyComponent implements HasSubscriptions {
+export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 
 	get gettingImages(): boolean {
@@ -22,12 +21,13 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent implements
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionHandler: GetAllImagesRouteParamsSubscriptionHandlerService
+		private __getRouteParamsSubscriptionObserver: GetAllImagesRouteParamsSubscriptionObserverService
 	) {
 		super();
+		operationStatus.waiting = true;
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionHandler.go()
+			this.__getRouteParamsSubscriptionObserver.go()
 		);
 
 		this._subscriptions.push(routeParamsSubscription);

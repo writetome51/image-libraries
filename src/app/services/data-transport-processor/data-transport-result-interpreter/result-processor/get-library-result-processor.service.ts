@@ -7,6 +7,8 @@ import { GetLibraryImagesProcessorService }
 	from '../../get-images/get-library-images-processor.service';
 import { ImageTotalData as imageTotal }
 	from '../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
+import { LoadedImagesStatusData as loadedImagesStatus }
+	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -22,6 +24,8 @@ export class GetLibraryResultProcessorService implements DirectProcessor {
 
 		if (loadedLibrary.data._image_ids.length) await this.__getLibraryImagesProcessor.process();
 		else imageTotal.data = 0;
+
+		loadedImagesStatus.data = 'library';
 	}
 
 }

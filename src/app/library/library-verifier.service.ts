@@ -1,53 +1,25 @@
-import { hasValue, noValue } from '@writetome51/has-value-no-value';
+import { noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
-import { LoadedLibraryData as loadedLibrary }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
-import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../data-structures/runtime-state-data/requested-library.data';
-import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
-import { LoadedImagesStatusData as loadedImagesStatus }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { GetLibraryNamesProcessorService }
+	from '../services/data-transport-processor/get-library-names-processor.service';
+import { LibraryNamesData as libraryNames }
+	from '../../data-structures/runtime-state-data/static-classes/library-names.data';
+import { isEmpty } from '@writetome51/is-empty-not-empty';
 
 
 @Injectable({providedIn: 'root'})
 
 export class LibraryVerifierService {
 
-	constructor(
-		private __libraryPaginator: LibraryPaginatorService,
-		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
-	) {
+	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
 	}
 
 
-	async verify(libName): Promise<void> {
-		operationStatus.waiting = true;
-		await this.__loadRequestedLibrary_ifItExists(libName);
-
-		if (this.__isLoaded(libName)) {
-			loadedImagesStatus.data = 'library';
-			operationStatus.waiting = false;
-			return;
+	async verify(libName): Promise<boolean> {
+		if (noValue(libraryNames.data) || isEmpty(libraryNames.data)) {
+			await this.__getLibraryNamesProcessor.process();
 		}
-		else await this.__redirectToLoggedInHome.go();
+		return libraryNames.data.includes(libName);
 	}
-
-
-	private async __loadRequestedLibrary_ifItExists(libName): Promise<void> {
-		requestedLibrary.name = libName;
-
-		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.libName) {
-			await this.__libraryPaginator.resetToFirstPage();
-		}
-	}
-
-
-	private __isLoaded(libraryName): boolean {
-		return (hasValue(loadedLibrary.data) && loadedLibrary.libName === libraryName);
-	}
-
 
 }

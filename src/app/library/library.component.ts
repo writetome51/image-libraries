@@ -1,18 +1,18 @@
-import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
-import { LibraryVerifierService } from './library-verifier.service';
 import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../../data-structures/runtime-state-data/requested-library.data';
-import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
+import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
+import { GetLibraryRouteParamsSubscriptionObserverService }
+	from './get-library-route-params-subscription-observer.service';
 
 
 @Component({
 	selector: 'app-library',
 	templateUrl: './library.component.html'
 })
-export class LibraryComponent extends ClearAlertOnDestroyComponent {
+export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 
 	get name() {
 		return requestedLibrary.name;
@@ -20,18 +20,18 @@ export class LibraryComponent extends ClearAlertOnDestroyComponent {
 
 
 	constructor(
-		private __libraryVerifier: LibraryVerifierService,
 		private __paginator: LibraryPaginatorService,
-		private __currentRoute: CurrentRouteService
+		private __currentRoute: CurrentRouteService,
+		private __getRouteParamsSubscriptionHandler: GetLibraryRouteParamsSubscriptionObserverService
 	) {
 		super();
 
-		this.__libraryVerifier.verify(this.__currentRoute.params[paramID.libName]).then(
-			async () => {
-				let page = Number(this.__currentRoute.params[paramID.pageNumber]);
-				if (page > 1) await this.__paginator.set_currentPageNumber(page);
-			}
+		console.log('constructor called');
+
+		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
+			this.__getRouteParamsSubscriptionHandler.go()
 		);
+		this._subscriptions.push(routeParamsSubscription);
 	}
 
 

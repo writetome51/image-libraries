@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { GetAllImagesProcessorService }
 	from '../../data-transport-processor/get-images/get-all-images-processor.service';
 import { PaginatorDataSourceService } from './paginator-data-source.service';
-import { SetInitialDataTotalForAllImagesService }
-	from './set-initial-data-total-for-all-images.service';
+import { DataTotalForAllImagesService }
+	from './data-total-for-all-images.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
@@ -15,9 +15,9 @@ export class AllImagesPaginatorDataSourceService extends PaginatorDataSourceServ
 
 	constructor(
 		__getAllImagesProcessor: GetAllImagesProcessorService,
-		__setInitial_dataTotal: SetInitialDataTotalForAllImagesService
+		__set_dataTotal: DataTotalForAllImagesService
 	) {
-		super(__getAllImagesProcessor, __setInitial_dataTotal);
+		super(__getAllImagesProcessor, __set_dataTotal);
 	}
 
 

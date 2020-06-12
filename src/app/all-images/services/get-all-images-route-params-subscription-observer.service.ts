@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AllImagesPaginatorService } from '../paginator/all-images-paginator.service';
+import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
 import { LoadedImagesData as loadedImages }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { LoadedImagesStatusData as loadedImagesStatus }
@@ -9,16 +9,20 @@ import { OperationStatusData as operationStatus }
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { AllImagesJumpToPageNumberInputService }
-	from '../validating-input/jump-to-page-number/all-images-jump-to-page-number-input.service';
+	from '../../services/validating-input/jump-to-page-number/all-images-jump-to-page-number-input.service';
 import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { IDoThis } from '../../../interfaces/i-do-this';
+import { AllImagesModule } from '../all-images.module';
 
 
-@Injectable({providedIn: 'root'})
 
-export class GetAllImagesRouteParamsSubscriptionHandlerService implements IDoThis {
+// @Injectable({providedIn: 'root'})
+// Temp: trying this instead:
+@Injectable({providedIn: AllImagesModule})
+
+export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoThis {
 
 
 	constructor(
@@ -30,9 +34,9 @@ export class GetAllImagesRouteParamsSubscriptionHandlerService implements IDoThi
 
 
 	go(): (params) => Promise<void> {
-		operationStatus.waiting = true;
 
 		return async (params) => {
+			operationStatus.waiting = true;
 
 			if (noValue(loadedImages.data) || not(loadedImagesStatus.data === 'all')) {
 				await this.__allImagesPaginator.resetToFirstPage();

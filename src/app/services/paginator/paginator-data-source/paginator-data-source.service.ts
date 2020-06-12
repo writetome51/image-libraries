@@ -1,36 +1,34 @@
+import { BatchData as batch }
+	from '../../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { DBImage } from '../../../../interfaces/db-image';
+import { DataTotalService } from './data-total.service';
+import { DataTransportProcessorService }
+	from '../../data-transport-processor/data-transport-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../perform-data-process-requiring-waiting.service';
 import { OperationStatusData as operationStatus }
 	from '../../../../data-structures/runtime-state-data/operation-status.data';
-import { ImageTotalData as imageTotal }
-	from '../../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { DBImage } from '../../../../interfaces/db-image';
-import { SetInitialDataTotalService } from './set-initial-data-total.service';
-import { BatchData as batch }
-	from '../../../../data-structures/runtime-state-data/static-classes/batch.data';
-import { DataTransportProcessorService }
-	from '../../data-transport-processor/data-transport-processor.service';
 
 
 export abstract class PaginatorDataSourceService {
 
 	get dataTotal(): number {
-		return imageTotal.data;
+		return this.__dataTotal.get();
 	}
 
 
 	constructor(
 		protected _processor: DataTransportProcessorService,
-		private __setInitial_dataTotal: SetInitialDataTotalService
+		private __dataTotal: DataTotalService
 	) {
 	}
 
 
-	async setInitial_dataTotal() {
-		await this.__setInitial_dataTotal.go();
+	async set_dataTotal() {
+		await this.__dataTotal.set();
 	}
 
 
