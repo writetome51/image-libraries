@@ -1,7 +1,7 @@
 import { BatchData as batch }
 	from '../../../../data-structures/runtime-state-data/static-classes/batch.data';
 import { DBImage } from '../../../../interfaces/db-image';
-import { DataTotalService } from './data-total.service';
+import { DataTotalService } from './data-total/data-total.service';
 import { DataTransportProcessorService }
 	from '../../data-transport-processor/data-transport-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';

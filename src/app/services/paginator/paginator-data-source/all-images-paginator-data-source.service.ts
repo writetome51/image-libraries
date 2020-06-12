@@ -3,7 +3,7 @@ import { GetAllImagesProcessorService }
 	from '../../data-transport-processor/get-images/get-all-images-processor.service';
 import { PaginatorDataSourceService } from './paginator-data-source.service';
 import { DataTotalForAllImagesService }
-	from './data-total-for-all-images.service';
+	from './data-total/data-total-for-all-images.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
@@ -14,10 +14,10 @@ import { LoadedImagesData as loadedImages }
 export class AllImagesPaginatorDataSourceService extends PaginatorDataSourceService {
 
 	constructor(
-		__getAllImagesProcessor: GetAllImagesProcessorService,
-		__set_dataTotal: DataTotalForAllImagesService
+		_getAllImagesProcessor: GetAllImagesProcessorService,
+		__dataTotal: DataTotalForAllImagesService
 	) {
-		super(__getAllImagesProcessor, __set_dataTotal);
+		super(_getAllImagesProcessor, __dataTotal);
 	}
 
 
