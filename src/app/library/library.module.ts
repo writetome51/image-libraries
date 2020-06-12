@@ -10,7 +10,8 @@ import { LibraryComponent } from './library.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { NgModule } from '@angular/core';
-import { StartDataProcessButtonModule } from '../start-data-process-button/start-data-process-button.module';
+import { StartDataProcessButtonModule }
+	from '../start-data-process-button/start-data-process-button.module';
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
@@ -18,6 +19,7 @@ import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button
 import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 import { DeleteLibraryButtonComponent } from './delete-library-button.component';
+import { PaginationControlsComponent } from './pagination-controls.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { DeleteLibraryButtonComponent } from './delete-library-button.component'
 		ImageSizeSliderComponent,
 		SaveChangesButtonComponent,
 		UndoChangesButtonComponent,
-		DeleteLibraryButtonComponent
+		DeleteLibraryButtonComponent,
+		PaginationControlsComponent
 	],
 	imports: [
 		CommonModule,

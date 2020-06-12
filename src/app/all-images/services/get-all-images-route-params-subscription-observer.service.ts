@@ -14,13 +14,9 @@ import { AllImagesRouteParamsHandlerService } from './all-images-route-params-ha
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { IDoThis } from '../../../interfaces/i-do-this';
-import { AllImagesModule } from '../all-images.module';
 
 
-
-// @Injectable({providedIn: 'root'})
-// Temp: trying this instead:
-@Injectable({providedIn: AllImagesModule})
+@Injectable({providedIn: 'root'})
 
 export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoThis {
 

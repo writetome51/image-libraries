@@ -24,6 +24,9 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 		private __getRouteParamsSubscriptionObserver: GetAllImagesRouteParamsSubscriptionObserverService
 	) {
 		super();
+
+		console.log('constructor called');
+
 		operationStatus.waiting = true;
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(

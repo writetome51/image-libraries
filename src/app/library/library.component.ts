@@ -10,7 +10,11 @@ import { GetLibraryRouteParamsSubscriptionObserverService }
 
 @Component({
 	selector: 'app-library',
-	templateUrl: './library.component.html'
+	template: `
+		<header><h2>{{name}}</h2></header>
+		<library-viewer></library-viewer>
+		<delete-library-button></delete-library-button>
+	`
 })
 export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 
@@ -26,22 +30,11 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 	) {
 		super();
 
-		console.log('constructor called');
-
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 			this.__getRouteParamsSubscriptionHandler.go()
 		);
 		this._subscriptions.push(routeParamsSubscription);
 	}
 
-
-	nextPage() {
-		this.__paginator.set_currentPageNumber(this.__paginator.currentPageNumber + 1);
-	}
-
-
-	previousPage() {
-		this.__paginator.set_currentPageNumber(this.__paginator.currentPageNumber - 1);
-	}
 
 }
