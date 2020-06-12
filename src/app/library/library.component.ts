@@ -14,6 +14,7 @@ import { GetLibraryRouteParamsSubscriptionObserverService }
 		<header><h2>{{name}}</h2></header>
 		<library-viewer></library-viewer>
 		<delete-library-button></delete-library-button>
+		<pagination-controls></pagination-controls>
 	`
 })
 export class LibraryComponent extends UnsubscribeOnDestroyComponent {

@@ -15,7 +15,7 @@ import { URLParamIDData } from '../../data-structures/read-only-data/url-param-i
 		</app-pagination-controls>
 	`
 })
-export class PaginationControlsComponent {
+export class LibraryPaginationControlsComponent {
 
 	paramID = URLParamIDData;
 

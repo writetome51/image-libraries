@@ -5,7 +5,7 @@
 
  @Injectable()
  @Your_Own_Custom_Decorator()
- export class ExampleClass {}
+ export class ExampleClass { ... }
 
  If you do the above, Angular's dependency injector probably won't work.
 

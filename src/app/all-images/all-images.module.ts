@@ -8,15 +8,14 @@ import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module'
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
 import { ImageListComponent } from './image-list/image-list.component';
-import { PaginationControlsComponent }
-	from './pagination-controls/pagination-controls.component';
+import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
 
 
 @NgModule({
 	declarations: [
 		AllImagesComponent,
 		ImageListComponent,
-		PaginationControlsComponent
+		AllImagesPaginationControlsComponent
 	],
 	imports: [
 		CommonModule,
