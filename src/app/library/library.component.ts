@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
-import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../services/app-paginator/library-paginator.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '../../data-structures/runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
@@ -27,12 +27,12 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 	constructor(
 		private __paginator: LibraryPaginatorService,
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionHandler: GetLibraryRouteParamsSubscriptionObserverService
+		private __getRouteParamsSubscriptionObserver: GetLibraryRouteParamsSubscriptionObserverService
 	) {
 		super();
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionHandler.go()
+			this.__getRouteParamsSubscriptionObserver.go()
 		);
 		this._subscriptions.push(routeParamsSubscription);
 	}

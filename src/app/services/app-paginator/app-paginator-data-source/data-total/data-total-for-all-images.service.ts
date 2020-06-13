@@ -7,8 +7,8 @@ import { GetAllImagesProcessorService }
 
 export class DataTotalForAllImagesService extends DataTotalService {
 
-	constructor(__get_dataTotal_Processor: GetAllImagesProcessorService) {
-		super(__get_dataTotal_Processor);
+	constructor(__set_dataTotal_Processor: GetAllImagesProcessorService) {
+		super(__set_dataTotal_Processor);
 	}
 
 }

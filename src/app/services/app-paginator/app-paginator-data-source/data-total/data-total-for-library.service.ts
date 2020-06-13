@@ -8,8 +8,8 @@ import { GetLibraryProcessorService }
 
 export class DataTotalForLibraryService extends DataTotalService {
 
-	constructor(__getLibraryTotalProcessor: GetLibraryProcessorService) {
-		super(__getLibraryTotalProcessor);
+	constructor(__set_dataTotal_Processor: GetLibraryProcessorService) {
+		super(__set_dataTotal_Processor);
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PaginatorDataSourceService } from './paginator-data-source.service';
+import { AppPaginatorDataSourceService } from './app-paginator-data-source.service';
 import { DataTotalForLibraryService }
 	from './data-total/data-total-for-library.service';
 import { GetLibraryProcessorService }
@@ -13,13 +13,13 @@ import { LoadedLibraryData as loadedLibrary }
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryPaginatorDataSourceService extends PaginatorDataSourceService {
+export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceService {
 
 	constructor(
-		_getLibraryProcessor: GetLibraryProcessorService,
+		__getLibraryProcessor: GetLibraryProcessorService,
 		__dataTotal: DataTotalForLibraryService
 	) {
-		super(_getLibraryProcessor, __dataTotal);
+		super(__getLibraryProcessor, __dataTotal);
 	}
 
 

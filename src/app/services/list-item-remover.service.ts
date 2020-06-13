@@ -1,7 +1,7 @@
 import { Subject, Subscribable } from 'rxjs';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { Injectable } from '@angular/core';
-import { LibraryPaginatorService } from './paginator/library-paginator.service';
+import { LibraryPaginatorService } from './app-paginator/library-paginator.service';
 import { ItemBeingRemoved } from '../../interfaces/item-being-removed';
 
 @Injectable({providedIn: 'root'})

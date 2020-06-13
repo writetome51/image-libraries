@@ -5,15 +5,11 @@ import { DataTotalService } from './data-total/data-total.service';
 import { DataTransportProcessorService }
 	from '../../data-transport-processor/data-transport-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../perform-data-process-requiring-waiting.service';
-import { OperationStatusData as operationStatus }
-	from '../../../../data-structures/runtime-state-data/operation-status.data';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 
 
-export abstract class PaginatorDataSourceService {
+export abstract class AppPaginatorDataSourceService {
 
 	get dataTotal(): number {
 		return this.__dataTotal.get();
@@ -21,7 +17,7 @@ export abstract class PaginatorDataSourceService {
 
 
 	constructor(
-		protected _processor: DataTransportProcessorService,
+		private __set_loadedImages_processor: DataTransportProcessorService,
 		private __dataTotal: DataTotalService
 	) {
 	}
@@ -37,8 +33,8 @@ export abstract class PaginatorDataSourceService {
 	): Promise<DBImage[]> {
 
 		batch.number = batchNum;
+		await this.__set_loadedImages_processor.process();
 
-		await performDataProcessRequiringWaiting.go(this._processor, operationStatus);
 		if (hasValue(loadedImages.data)) {
 			return this._getSomethingFrom_loadedImages();
 		}

@@ -4,7 +4,7 @@ import { OperationStatusData as operationStatus }
 	from '../../../data-structures/runtime-state-data/operation-status.data';
 import { ImageTotalData as imageTotal }
 	from '../../../data-structures/runtime-state-data/static-classes/image-total.data';
-import { LibraryPaginatorService } from '../../services/paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../../services/app-paginator/library-paginator.service';
 
 
 @Component({

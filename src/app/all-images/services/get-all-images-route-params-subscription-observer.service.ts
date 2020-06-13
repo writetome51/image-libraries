@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AllImagesPaginatorService } from '../../services/paginator/all-images-paginator.service';
+import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
 import { LoadedImagesData as loadedImages }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { LoadedImagesStatusData as loadedImagesStatus }

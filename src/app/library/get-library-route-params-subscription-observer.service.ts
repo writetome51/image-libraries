@@ -4,12 +4,14 @@ import { not } from '@writetome51/not';
 import { RequestedLibraryData as requestedLibrary }
 	from '../../data-structures/runtime-state-data/requested-library.data';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
-import { LibraryPaginatorService } from '../services/paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../services/app-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';
 import { RedirectToLoggedInHomeService } from '../services/redirect-to-logged-in-home.service';
 import { IDoThis } from '../../interfaces/i-do-this';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+import { OperationStatusData as operationStatus }
+	from '../../data-structures/runtime-state-data/operation-status.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -28,14 +30,17 @@ export class GetLibraryRouteParamsSubscriptionObserverService implements IDoThis
 	go(): (params) => Promise<void> {
 
 		return async (params) => {
+			operationStatus.waiting = true;
+
 			requestedLibrary.name = params[paramID.libName];
 
 			if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.libName) {
-				this.if_LibraryDoesntExist_redirectToLoggedInHome_else_showFirstPage();
+				await this.if_LibraryDoesntExist_redirectToLoggedInHome_else_showFirstPage();
 			}
-
 			let page = Number(params[paramID.pageNumber]);
 			if (page > 1) await this.__paginator.set_currentPageNumber(page);
+
+			operationStatus.waiting = false;
 		};
 
 	}
