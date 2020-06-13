@@ -12,8 +12,12 @@ export abstract class AppPaginatorService extends AppPaginator {
 	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
 
+		//temp:
+		console.log('batch.number:');
+		console.log(batch.number);
+
 		this.itemsPerPage = page.size;
-		this.__ensureTheyMatch(this.itemsPerBatch, batch.size);
+		this.__ensureTheyMatch( /* itemsPerBatch, batchSize */ );
 
 	}
 
@@ -21,13 +25,14 @@ export abstract class AppPaginatorService extends AppPaginator {
 	async resetToFirstPage(): Promise<void> {
 		// this.__dataSource.dataTotal must be set before fetching any pages.
 		await this.__dataSource.set_dataTotal();
+		console.log(this.__dataSource.dataTotal);
 
 		// If the dataTotal is 0, this will trigger error in super.resetToFirstPage():
 		await super.resetToFirstPage().catch(() => {}); // just keep running.
 	}
 
 
-	private __ensureTheyMatch(itemsPerBatch, batchSize) { // params are merely illustrative.
+	private __ensureTheyMatch() {
 
 		// this.itemsPerBatch must be evenly divisible by this.itemsPerPage.
 		// If it isn't, its value is lowered until it is.
