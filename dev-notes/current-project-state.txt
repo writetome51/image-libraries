@@ -1,17 +1,18 @@
 You can create an account.  After clicking 'create' it immediately logs you in and
-takes you to a list of all your libraries.
+takes you to the /libraries route.
+You can log in to an existing account (both via email/password or answering your security
+question), and log out.
+You can delete your account.
+You can update your email and password.
+
 At the /libraries route, you're shown a list of all your libraries.  You can open a library
 by clicking on one.
 You can create a new library.
-
-You can log in to an existing account (both via email/password or answering your security
-question), and log out.
-
-You can update your email and password.
-You can delete your account.
+You can delete a library.
 
 You can add images to your account.
 You can view all the images in your account.
+
 
 Todo: add a sample library allowing any user to test features like rearranging images, search, and
 slideshow mode.  Any user should be able to do this without creating an account.
