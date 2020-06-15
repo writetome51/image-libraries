@@ -2,6 +2,8 @@
 
 <ng-container *ngIf="!(gettingImages)">
 
+	<delete-selected-images-button *ngIf="imagesSelected"></delete-selected-images-button>
+
 	<image-list></image-list>
 
 	<pagination-controls></pagination-controls>

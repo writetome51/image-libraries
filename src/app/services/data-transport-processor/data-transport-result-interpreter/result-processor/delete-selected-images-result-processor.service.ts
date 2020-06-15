@@ -8,7 +8,7 @@ import { GetLibraryNamesProcessorService } from '../../get-library-names-process
 
 @Injectable({providedIn: 'root'})
 
-export class DeleteLibraryResultProcessorService implements DirectProcessor {
+export class DeleteSelectedImagesResultProcessorService implements DirectProcessor {
 
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,

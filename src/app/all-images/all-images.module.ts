@@ -9,13 +9,18 @@ import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spin
 import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
 import { ImageListComponent } from './image-list/image-list.component';
 import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
+import { DeleteSelectedImagesButtonComponent }
+	from './delete-selected-images-button/delete-selected-images-button.component';
+import { StartDataProcessButtonModule }
+	from '../start-data-process-button/start-data-process-button.module';
 
 
 @NgModule({
 	declarations: [
 		AllImagesComponent,
 		ImageListComponent,
-		AllImagesPaginationControlsComponent
+		AllImagesPaginationControlsComponent,
+		DeleteSelectedImagesButtonComponent
 	],
 	imports: [
 		CommonModule,
@@ -23,6 +28,7 @@ import { AllImagesPaginationControlsComponent } from './all-images-pagination-co
 		ThumbnailImageModule,
 		AppPaginationControlsModule,
 		ValidatingInputsModule,
+		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',

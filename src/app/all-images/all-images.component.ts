@@ -5,6 +5,8 @@ import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destr
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
 	from './services/get-all-images-route-params-subscription-observer.service';
+import { SelectedImageNamesData as selectedImageNames}
+	from '../../data-structures/runtime-state-data/selected-image-names.data';
 
 
 @Component({
@@ -16,6 +18,11 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	get gettingImages(): boolean {
 		return operationStatus.waiting;
+	}
+
+
+	get imagesSelected(): boolean {
+		return selectedImageNames.data.length > 0;
 	}
 
 
