@@ -1,3 +1,4 @@
+import { AppActionMenuComponent } from './app-action-menu/app-action-menu.component';
 import { AppAlertComponent } from './app-alert/app-alert.component';
 import { AppComponent } from './app.component';
 import { AppNavigatorModule } from './app-navigator/app-navigator.module';
@@ -20,6 +21,7 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 	declarations: [
 		AppComponent,
 		AppAlertComponent,
+		AppActionMenuComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,

@@ -1,4 +1,5 @@
-import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn }
 	from '../../../../../string-constants/rest-api-errors';

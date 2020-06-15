@@ -3,7 +3,6 @@ import { DataTransportResultCheckService }
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Interpreter } from '../../../../interfaces/interpreter';
 import { DirectProcessor } from '../../../../interfaces/direct-processor';
-import { getObjectFromJSON } from 'get-object-from-json';
 
 
 export abstract class DataTransportResultInterpreterService implements Interpreter {
@@ -15,8 +14,7 @@ export abstract class DataTransportResultInterpreterService implements Interpret
 	}
 
 
-	async interpret(result): Promise<void> {
-		if (typeof result === 'string') result = getObjectFromJSON(result);
+	async interpret(result: object): Promise<void> {
 		result = await this.__dataTransportResultCheck.returnIfNoError(result);
 		if (hasValue(result)) await this.__resultProcessor.process(result);
 	}

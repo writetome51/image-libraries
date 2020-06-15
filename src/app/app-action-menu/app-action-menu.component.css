@@ -1,0 +1,8 @@
+ul.dropdown-menu li {
+	border-bottom: 1px dotted lightgrey;
+	margin-left: 20px;
+}
+
+ul.dropdown-menu li.hovered {
+	background-color: lightgrey;
+}

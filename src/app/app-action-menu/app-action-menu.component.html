@@ -1,0 +1,21 @@
+<div class="dropdown">
+
+	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+
+		{{buttonText}}
+		<span class="caret"></span>
+
+	</button>
+
+	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+
+		<li *ngFor="let choice of choices; let i = index;" role="presentation"
+			(mouseover)="hovered = true" (mouseleave)="hovered = false"
+			[class.hovered]="hovered"
+		>
+			{{choice}}
+		</li>
+
+	</ul>
+
+</div>
