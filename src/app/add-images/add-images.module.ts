@@ -10,7 +10,6 @@ import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { AddImagesModuleRoutesData as moduleRoutes } from './add-images-module-routes.data';
 import { ChooseImagesFromDeviceComponent }
 	from './choose-images-from-device/choose-images-from-device.component';
 
@@ -34,9 +33,7 @@ import { ChooseImagesFromDeviceComponent }
 				pathMatch: 'full',
 				component: AddImagesComponent,
 				canActivate: [AuthenticatedGuard]
-			},
-
-			{path: '**', redirectTo: ''}
+			}
 		])
 	]
 })

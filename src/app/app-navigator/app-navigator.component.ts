@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
 import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
+import { not } from '@writetome51/not';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class AppNavigatorComponent {
 	moduleRoutes = AppNavigatorModuleRoutesData;
 
 
-	get updateUserIsActive(): boolean {
-		return this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule);
+	get updateUserNotActive(): boolean {
+		return not(this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule));
 	}
 
 

@@ -28,6 +28,12 @@ import { StartDataProcessButtonModule }
 				loadChildren: () => import('../add-images/add-images.module')
 					.then(mod => mod.AddImagesModule)
 			},
+
+			{
+				path: moduleRoutes.AllImagesModule,
+				loadChildren: () => import('../all-images/all-images.module')
+					.then(mod => mod.AllImagesModule)
+			},
 		])
 	],
 

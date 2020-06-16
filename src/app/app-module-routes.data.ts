@@ -9,6 +9,5 @@ export class AppModuleRoutesData {
 	static readonly LibrariesModule = 'libraries';
 	static readonly LibraryModule = 'library';
 	static readonly SecurityQuestionModule = 'security-question';
-	static readonly AllImagesModule = `all-images`;
 
 }
