@@ -3,8 +3,9 @@
 // their route is accessed.
 
 
-export const AppNavigatorModuleRouteService = {
+export class AppNavigatorModuleRoutesData {
 
-	UpdateUserModule: 'update-account',
+	static readonly UpdateUserModule = 'update-account';
+	static readonly AddImagesModule = 'add-images';
 
-};
+}

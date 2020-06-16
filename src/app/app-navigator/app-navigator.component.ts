@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
-import { AppNavigatorModuleRouteService } from './app-navigator-module-route.service';
+import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
 
 
 @Component({
@@ -9,11 +9,11 @@ import { AppNavigatorModuleRouteService } from './app-navigator-module-route.ser
 })
 export class AppNavigatorComponent {
 
-	moduleRoute = AppNavigatorModuleRouteService;
+	moduleRoutes = AppNavigatorModuleRoutesData;
 
 
 	get updateUserIsActive(): boolean {
-		return this.__currentRoute.isActive(this.moduleRoute.UpdateUserModule);
+		return this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule);
 	}
 
 

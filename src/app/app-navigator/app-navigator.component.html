@@ -4,10 +4,15 @@
 		<logout-button></logout-button>
 
 		<div *ngIf="!(updateUserIsActive)" class="input-container nav-link-container">
-			<a [routerLink]="moduleRoute.UpdateUserModule" [routerLinkActive]="'active'">
+			<a [routerLink]="moduleRoutes.UpdateUserModule" [routerLinkActive]="'active'">
 				Update Account
 			</a>
 		</div>
+
+		<a [routerLink]="moduleRoutes.AddImagesModule">Add Images</a>
+
+		<a [routerLink]="['all-images', 'page', 1]">All Images</a>
+
 	</div>
 
 </nav>
