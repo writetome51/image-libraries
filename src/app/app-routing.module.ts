@@ -1,4 +1,4 @@
-import { AppModuleRouteData as moduleRoute } from './app-module-route.data';
+import { AppModuleRoutesData as moduleRoute } from './app-module-routes.data';
 import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';

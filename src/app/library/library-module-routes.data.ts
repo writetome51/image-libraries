@@ -6,7 +6,7 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 // their route is accessed.
 
 
-export class LibraryModuleRouteData {
+export class LibraryModuleRoutesData {
 
 	static readonly ImageViewerModule = `:${paramID.libName}/image`;
 	static readonly LibraryComponent = `:${paramID.libName}/page/:${paramID.pageNumber}`;

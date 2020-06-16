@@ -1,8 +1,7 @@
-import { AppModuleRouteData } from '../app-module-route.data';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
-import { LibraryModuleRouteData as moduleRoute } from './library-module-route.data';
+import { LibraryModuleRoutesData as moduleRoutes } from './library-module-routes.data';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,13 +9,13 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: moduleRoute.ImageViewerModule,
+		path: moduleRoutes.ImageViewerModule,
 		loadChildren: () => import('./image-viewer/image-viewer.module')
 			.then(mod => mod.ImageViewerModule)
 	},
 
 	{
-		path: moduleRoute.LibraryComponent,
+		path: moduleRoutes.LibraryComponent,
 		component: LibraryComponent,
 		canActivate: [AuthenticatedGuard],
 		// 'canDeactivate' means the guard decides if the component can be destroyed.
@@ -27,11 +26,11 @@ const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: '/' + AppModuleRouteData.LibrariesModule
+		redirectTo: '/'
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.
-	{path: '**', redirectTo: '/**'}
+	{path: '**', redirectTo: '/'}
 ];
 
 

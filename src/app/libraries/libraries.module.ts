@@ -12,7 +12,7 @@ import { EnterImageURLComponent } from './add-images/enter-image-url/enter-image
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
-import { LibrariesModuleRouteData as moduleRoute } from './libraries-module-route.data';
+import { LibrariesModuleRoutesData as moduleRoutes } from './libraries-module-routes.data';
 import { NgModule } from '@angular/core';
 import { NewLibraryFormComponent } from './new-library-form/new-library-form.component';
 import { NewLibraryFormInputsComponent } from './new-library-form/new-library-form-inputs.component';
@@ -54,7 +54,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 			},
 
 			{
-				path: moduleRoute.AddImagesComponent,
+				path: moduleRoutes.AddImagesComponent,
 				component: AddImagesComponent,
 				canActivate: [AuthenticatedGuard]
 			},

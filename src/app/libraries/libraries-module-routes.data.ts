@@ -3,7 +3,7 @@
 // their route is accessed.
 
 
-export class LibrariesModuleRouteData {
+export class LibrariesModuleRoutesData {
 
 	static readonly AddImagesComponent = 'add-images';
 
