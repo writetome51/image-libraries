@@ -1,4 +1,4 @@
-import { URLParamIDData as paramID } from '../data-structures/read-only-data/url-param-id.data';
+
 
 // Contains all routes the AppModule is concerned with.
 // The keys are the modules or components that will be loaded when
@@ -11,6 +11,6 @@ export class AppModuleRouteData {
 	static readonly LibrariesModule = 'libraries';
 	static readonly LibraryModule = 'library';
 	static readonly SecurityQuestionModule = 'security-question';
-	static readonly AllImagesModule = `all-images/page/:${paramID.pageNumber}`;
+	static readonly AllImagesModule = `all-images`;
 
 }
