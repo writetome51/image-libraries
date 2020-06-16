@@ -1,40 +1,40 @@
 import { AllImagesComponent } from './all-images.component';
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
-import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
-import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
-import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
-import { ImageListComponent } from './image-list/image-list.component';
+import { AllImagesModuleRoutesData as moduleRoutes } from './all-images-module-routes.data';
 import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
+import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
+import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
+import { AuthenticatedGuard } from '../guards/authenticated.guard';
+import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
+import { CommonModule } from '@angular/common';
 import { DeleteSelectedImagesButtonComponent }
 	from './delete-selected-images-button/delete-selected-images-button.component';
+import { ImageListComponent } from './image-list/image-list.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
-import { AllImagesModuleRouteData as moduleRoute} from './all-images-module-route.data';
-import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
+import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
+import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 
 
 @NgModule({
 	declarations: [
 		AllImagesComponent,
-		ImageListComponent,
 		AllImagesPaginationControlsComponent,
-		DeleteSelectedImagesButtonComponent
+		DeleteSelectedImagesButtonComponent,
+		ImageListComponent,
 	],
 	imports: [
 		CommonModule,
-		BigLoadingSpinnerModule,
 		AppActionMenuModule,
-		ThumbnailImageModule,
 		AppPaginationControlsModule,
-		ValidatingInputsModule,
+		BigLoadingSpinnerModule,
 		StartDataProcessButtonModule,
+		ThumbnailImageModule,
+		ValidatingInputsModule,
 		RouterModule.forChild([
 			{
-				path: moduleRoute.AllImagesComponent,
+				path: moduleRoutes.AllImagesComponent,
 				component: AllImagesComponent,
 				canActivate: [AuthenticatedGuard]
 			},
