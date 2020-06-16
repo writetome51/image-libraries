@@ -14,6 +14,7 @@ import { DeleteSelectedImagesButtonComponent }
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
 import { AllImagesModuleRouteData as moduleRoute} from './all-images-module-route.data';
+import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AllImagesModuleRouteData as moduleRoute} from './all-images-module-rout
 	imports: [
 		CommonModule,
 		BigLoadingSpinnerModule,
+		AppActionMenuModule,
 		ThumbnailImageModule,
 		AppPaginationControlsModule,
 		ValidatingInputsModule,
