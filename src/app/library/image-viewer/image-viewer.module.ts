@@ -11,6 +11,7 @@ import { ImageLocationComponent } from './image-location/image-location.componen
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { LibraryModuleRoutesData } from '../library-module-routes.data';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: '/library/:libraryName'
+				redirectTo: '/library/' + LibraryModuleRoutesData.LibraryComponent
 			}
 		])
 	]

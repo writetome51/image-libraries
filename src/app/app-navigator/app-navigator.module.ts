@@ -1,11 +1,12 @@
 import { AppNavigatorComponent } from './app-navigator.component';
-import { AppNavigatorModuleRouteService as moduleRoute } from './app-navigator-module-route.service';
+import { AppNavigatorModuleRoutesData as moduleRoutes } from './app-navigator-module-routes.data';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { LogoutButtonComponent } from './logout-button.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartDataProcessButtonModule } from '../start-data-process-button/start-data-process-button.module';
+import { StartDataProcessButtonModule }
+	from '../start-data-process-button/start-data-process-button.module';
 
 
 @NgModule({
@@ -17,10 +18,22 @@ import { StartDataProcessButtonModule } from '../start-data-process-button/start
 		StartDataProcessButtonModule,
 		RouterModule.forRoot([
 			{
-				path: moduleRoute.UpdateUserModule,
+				path: moduleRoutes.UpdateUserModule,
 				loadChildren: () => import('../update-user/update-user.module')
 					.then(mod => mod.UpdateUserModule)
-			}
+			},
+
+			{
+				path: moduleRoutes.AddImagesModule,
+				loadChildren: () => import('../add-images/add-images.module')
+					.then(mod => mod.AddImagesModule)
+			},
+
+			{
+				path: moduleRoutes.AllImagesModule,
+				loadChildren: () => import('../all-images/all-images.module')
+					.then(mod => mod.AllImagesModule)
+			},
 		])
 	],
 

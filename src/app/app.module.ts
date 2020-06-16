@@ -21,7 +21,6 @@ import { ValidatingInputsModule } from './validating-inputs/validating-inputs.mo
 	declarations: [
 		AppComponent,
 		AppAlertComponent,
-		AppActionMenuComponent,
 		LoginComponent,
 		LoginFormComponent,
 		LoginFormInputsComponent,

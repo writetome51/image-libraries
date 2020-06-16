@@ -20,6 +20,7 @@ import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module'
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 import { DeleteLibraryButtonComponent } from './delete-library-button.component';
 import { LibraryPaginationControlsComponent } from './library-pagination-controls.component';
+import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LibraryPaginationControlsComponent } from './library-pagination-control
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
+		AppActionMenuModule,
 		StartDataProcessButtonModule,
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,

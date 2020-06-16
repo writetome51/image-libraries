@@ -13,6 +13,8 @@ import { DeleteSelectedImagesButtonComponent }
 	from './delete-selected-images-button/delete-selected-images-button.component';
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
+import { AllImagesModuleRouteData as moduleRoute} from './all-images-module-route.data';
+import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 
 
 @NgModule({
@@ -25,19 +27,19 @@ import { StartDataProcessButtonModule }
 	imports: [
 		CommonModule,
 		BigLoadingSpinnerModule,
+		AppActionMenuModule,
 		ThumbnailImageModule,
 		AppPaginationControlsModule,
 		ValidatingInputsModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
-				path: '',
-				pathMatch: 'full',
+				path: moduleRoute.AllImagesComponent,
 				component: AllImagesComponent,
 				canActivate: [AuthenticatedGuard]
 			},
 
-			{path: '**', redirectTo: ''}
+			{path: '**', redirectTo: '/'}
 		])
 	]
 })

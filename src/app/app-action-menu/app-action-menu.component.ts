@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppActionMenuComponent {
 
 	buttonText = 'Action';
-	choices: string[] = [];
+	choices: string[] = ['Delete Selected', 'Get Info on Selected'];
+
 	hovered = false;
 
 

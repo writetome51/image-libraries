@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppModuleRouteData } from '../../app-module-route.data';
+import { AppModuleRoutesData } from '../../app-module-routes.data';
 
 
 @Component({
@@ -8,6 +8,6 @@ import { AppModuleRouteData } from '../../app-module-route.data';
 })
 export class LoginFormComponent {
 
-	moduleRoute = AppModuleRouteData;
+	moduleRoutes = AppModuleRoutesData;
 
 }
