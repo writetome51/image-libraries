@@ -1,17 +1,22 @@
 <nav>
 
 	<div class="centered-nav-block-container">
+
 		<logout-button></logout-button>
 
 		<div *ngIf="updateUserNotActive" class="input-container nav-link-container">
-			<a [routerLink]="moduleRoutes.UpdateUserModule" [routerLinkActive]="'active'">
+			<a [routerLink]="moduleRoutes.UpdateUserModule" [routerLinkActive]="'true'">
 				Update Account
 			</a>
 		</div>
 
-		<a [routerLink]="moduleRoutes.AddImagesModule">Add Images</a>
+		<div class="input-container nav-link-container">
+			<a [routerLink]="moduleRoutes.AddImagesModule">Add Images</a>
+		</div>
 
-		<a [routerLink]="[moduleRoutes.AllImagesModule, 'page', 1]">All Images</a>
+		<div class="input-container nav-link-container">
+			<a [routerLink]="[moduleRoutes.AllImagesModule, 'page', 1]">All Images</a>
+		</div>
 
 	</div>
 

@@ -8,10 +8,7 @@
 		</button>
 
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML CSSSSS</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+			<li *ngFor="let choice of choices"  role="presentation">{{choice}}</li>
 		</ul>
 	</div>
 </div>

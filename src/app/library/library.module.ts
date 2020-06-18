@@ -21,10 +21,13 @@ import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spin
 import { DeleteLibraryButtonComponent } from './delete-library-button.component';
 import { LibraryPaginationControlsComponent } from './library-pagination-controls.component';
 import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
+import { DeleteItemButtonComponent }
+	from './library-viewer/image-list/delete-item-button/delete-item-button.component';
 
 
 @NgModule({
 	declarations: [
+		DeleteItemButtonComponent,
 		LibraryComponent,
 		LibraryViewerComponent,
 		ImageListComponent,

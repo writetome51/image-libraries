@@ -2,6 +2,9 @@
 
 	<re-arrangeable-grid-list-item *ngFor="let img of images; let i = index;" [index]="i">
 
+		<delete-item-button [class.invisible]="!(hovered)" (click)="deleteItem(i)">
+		</delete-item-button>
+
 		<a [routerLink]="['/library', libName, 'image', i]">
 			<thumbnail-image [data]="img"></thumbnail-image>
 		</a>

@@ -1,6 +1,5 @@
 ul.dropdown-menu li {
-	border-bottom: 1px dotted lightgrey;
-	margin-left: 20px;
+	padding-left: 10px;
 }
 
 ul.dropdown-menu li.hovered {

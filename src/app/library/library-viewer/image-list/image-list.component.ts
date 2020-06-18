@@ -4,6 +4,7 @@ import { LibraryPaginatorService } from '../../../services/app-paginator/library
 import { CurrentRouteService } from '../../../services/current-route.service';
 import { URLParamIDData as paramID }
 	from '../../../../data-structures/read-only-data/url-param-id.data';
+import { ListItemRemoverService } from '../../../services/list-item-remover.service';
 
 
 @Component({
@@ -24,8 +25,14 @@ export class ImageListComponent {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __libraryPaginator: LibraryPaginatorService
+		private __libraryPaginator: LibraryPaginatorService,
+		private __listItemRemover: ListItemRemoverService
 	) {
+	}
+
+
+	deleteItem(index) {
+		this.__listItemRemover.remove(index);
 	}
 
 }

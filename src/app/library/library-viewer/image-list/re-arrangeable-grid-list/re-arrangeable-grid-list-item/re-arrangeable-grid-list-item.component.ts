@@ -58,9 +58,4 @@ export class ReArrangeableGridListItemComponent {
 	}
 
 
-	deleteItem() {
-		this.__listItemRemover.remove(this.index);
-	}
-
-
 }

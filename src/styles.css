@@ -67,7 +67,7 @@ img {
 }
 
 
-.input-container.nav-link-container {
+.nav-link-container {
 	display: inline;
 	margin: auto;
 	padding: 0 3px;
@@ -114,9 +114,19 @@ ul.dropdown-menu {
 ul.dropdown-menu li {
 	width: inherit;
 	border-bottom: 1px dotted lightgrey;
-	padding: 0;
+	margin-bottom: 0px;
+	padding: 5px 0 5px 10px;
 }
 
+
+ul.dropdown-menu li.hovered {
+	background-color: lightgrey;
+}
+
+
+ul.dropdown-menu li {
+
+}
 
 ul.dropdown-menu li.hovered {
 	background-color: lightgrey;
