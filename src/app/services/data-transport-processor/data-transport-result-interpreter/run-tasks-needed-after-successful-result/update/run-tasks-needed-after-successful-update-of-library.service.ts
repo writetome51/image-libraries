@@ -1,21 +1,22 @@
-import { AlertData as alert } from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DBLibrary } from '../../../../../../interfaces/db-library';
-import { DirectProcessor } from '../../../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '../../../../library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UpdateLibraryResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulUpdateOfLibraryService implements IDoThis {
 
 	constructor(private __libraryChanges: LibraryChangesService) {
 	}
 
 
-	async process(result: DBLibrary) {
+	async go(result: DBLibrary) {
 		// for security:
 		delete result._id;
 		delete result._user_id;

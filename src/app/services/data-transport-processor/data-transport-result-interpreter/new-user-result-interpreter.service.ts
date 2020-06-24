@@ -1,7 +1,7 @@
 import { NewUserResultCheckService } from './data-transport-result-check/new-user-result-check.service';
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { NewUserResultProcessorService } from './result-processor/new-user-result-processor.service';
+import { NewUserResultProcessorService } from './run-tasks-needed-after-successful-result/new-user-result-processor.service';
 
 
 @Injectable({

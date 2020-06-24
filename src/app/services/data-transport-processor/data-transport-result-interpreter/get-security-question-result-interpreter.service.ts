@@ -3,7 +3,7 @@ import { DataTransportResultInterpreterService } from './data-transport-result-i
 import { GetSecurityQuestionResultCheckService }
 	from './data-transport-result-check/get-security-question-result-check.service';
 import { GetSecurityQuestionResultProcessorService }
-	from './result-processor/get-security-question-result-processor.service';
+	from './run-tasks-needed-after-successful-result/get-security-question-result-processor.service';
 
 
 @Injectable({

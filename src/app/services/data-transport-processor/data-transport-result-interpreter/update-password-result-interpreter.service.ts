@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { UpdatePasswordResultProcessorService }
-	from './result-processor/update/update-password-result-processor.service';
+import { RunTasksNeededAfterSuccessfulUpdateOfPasswordService }
+	from './run-tasks-needed-after-successful-result/update/run-tasks-needed-after-successful-update-of-password.service';
 import { DataTransportResultCheckService }
 	from './data-transport-result-check/data-transport-result-check.service';
 
@@ -12,7 +12,7 @@ export class UpdatePasswordResultInterpreterService extends DataTransportResultI
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__updatePasswordResultProcessor: UpdatePasswordResultProcessorService
+		__updatePasswordResultProcessor: RunTasksNeededAfterSuccessfulUpdateOfPasswordService
 	) {
 		super(
 			__dataTransportResultCheck,

@@ -1,13 +1,14 @@
 import { DBUser } from '../../../../../../interfaces/db-user';
 import { UserResultProcessorService } from '../user-result-processor.service';
-import { AlertData as alert } from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../../../../interfaces/direct-processor';
+import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UpdateEmailOrPasswordResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulUpdateOfEmailOrPasswordService implements IDoThis {
 
 	resultMessage: string;
 
@@ -16,7 +17,7 @@ export class UpdateEmailOrPasswordResultProcessorService implements DirectProces
 	}
 
 
-	async process(result: DBUser) {
+	async go(result: DBUser) {
 		this.__userResultProcessor.process(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
 		alert.success = this.resultMessage;

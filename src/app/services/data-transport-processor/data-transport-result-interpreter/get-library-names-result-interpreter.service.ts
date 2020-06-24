@@ -3,7 +3,7 @@ import { DataTransportResultInterpreterService } from './data-transport-result-i
 import { DataTransportResultCheckService }
 	from './data-transport-result-check/data-transport-result-check.service';
 import { GetLibraryNamesResultProcessorService }
-	from './result-processor/get-library-names-result-processor.service';
+	from './run-tasks-needed-after-successful-result/get-library-names-result-processor.service';
 
 
 @Injectable({

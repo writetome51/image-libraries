@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { DeleteUserResultProcessorService }
-	from './result-processor/delete-user-result-processor.service';
+import { RunTasksNeededAfterSuccessfulDeletionOfUserService }
+	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-deletion-of-user.service';
 import { DataTransportResultCheckService }
 	from './data-transport-result-check/data-transport-result-check.service';
 
@@ -12,7 +12,7 @@ export class DeleteUserResultInterpreterService extends DataTransportResultInter
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__deleteUserResultProcessor: DeleteUserResultProcessorService
+		__deleteUserResultProcessor: RunTasksNeededAfterSuccessfulDeletionOfUserService
 	) {
 		super(__dataTransportResultCheckService, __deleteUserResultProcessor);
 	}

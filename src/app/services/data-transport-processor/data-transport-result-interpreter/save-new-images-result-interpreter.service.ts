@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { SaveNewImagesResultProcessorService }
-	from './result-processor/save-new-images-result-processor.service';
+	from './run-tasks-needed-after-successful-result/save-new-images-result-processor.service';
 import { SaveNewImagesResultCheckService }
 	from './data-transport-result-check/save-new-images-result-check.service';
 

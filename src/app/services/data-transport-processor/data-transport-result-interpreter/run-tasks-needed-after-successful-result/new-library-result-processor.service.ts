@@ -1,4 +1,5 @@
-import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DBLibrary } from '../../../../../interfaces/db-library';
 import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
@@ -19,7 +20,12 @@ export class NewLibraryResultProcessorService implements DirectProcessor {
 		alert.success = 'Library created';
 		newLibrary.beingCreated = false;
 
-		await this.__getLibraryNamesProcessor.process(); // refreshes LibraryNamesData.data
+		await this.__refreshLoadedLibraryNames();
+	}
+
+
+	private async __refreshLoadedLibraryNames() {
+		await this.__getLibraryNamesProcessor.process();
 	}
 
 }
