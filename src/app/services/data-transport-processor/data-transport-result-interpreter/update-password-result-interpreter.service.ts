@@ -12,11 +12,11 @@ export class UpdatePasswordResultInterpreterService extends DataTransportResultI
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__updatePasswordResultProcessor: RunTasksNeededAfterSuccessfulUpdateOfPasswordService
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulUpdateOfPasswordService
 	) {
 		super(
 			__dataTransportResultCheck,
-			__updatePasswordResultProcessor
+			__runTasksNeededAfterSuccessfulResult
 		);
 	}
 

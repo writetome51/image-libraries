@@ -12,12 +12,9 @@ export class UpdateEmailResultInterpreterService extends DataTransportResultInte
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__updateEmailResultProcessor: RunTasksNeededAfterSuccessfulUpdateOfEmailService
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulUpdateOfEmailService
 	) {
-		super(
-			__dataTransportResultCheck,
-			__updateEmailResultProcessor
-		);
+		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

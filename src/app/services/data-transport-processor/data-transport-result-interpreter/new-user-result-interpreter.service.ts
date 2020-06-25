@@ -1,7 +1,8 @@
 import { NewUserResultCheckService } from './data-transport-result-check/new-user-result-check.service';
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { NewUserResultProcessorService } from './run-tasks-needed-after-successful-result/new-user-result-processor.service';
+import { RunTasksNeededAfterSuccessfulCreationOfNewUserService }
+	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-creation-of-new-user.service';
 
 
 @Injectable({
@@ -11,9 +12,9 @@ export class NewUserResultInterpreterService extends DataTransportResultInterpre
 
 	constructor(
 		__newUserResultCheck: NewUserResultCheckService,
-		__newUserResultProcessor: NewUserResultProcessorService,
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulCreationOfNewUserService,
 	) {
-		super(__newUserResultCheck, __newUserResultProcessor);
+		super(__newUserResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

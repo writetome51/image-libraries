@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { GetSecurityQuestionResultCheckService }
 	from './data-transport-result-check/get-security-question-result-check.service';
-import { GetSecurityQuestionResultProcessorService }
-	from './run-tasks-needed-after-successful-result/get-security-question-result-processor.service';
+import { RunTasksNeededAfterSuccessfulGettingSecurityQuestionService }
+	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-getting-security-question.service';
 
 
 @Injectable({
@@ -14,12 +14,10 @@ export class GetSecurityQuestionResultInterpreterService
 
 	constructor(
 		__getSecurityQuestionResultCheck: GetSecurityQuestionResultCheckService,
-		__getSecurityQuestionResultProcessor: GetSecurityQuestionResultProcessorService
+		__runTasksNeededAfterSuccessfulResult:
+			RunTasksNeededAfterSuccessfulGettingSecurityQuestionService
 	) {
-		super(
-			__getSecurityQuestionResultCheck,
-			__getSecurityQuestionResultProcessor
-		);
+		super(__getSecurityQuestionResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../../interfaces/db-library';
 import { LibraryNamesData as libraryNames }
 	from '../../../../../data-structures/runtime-state-data/static-classes/library-names.data';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class GetLibraryNamesResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulGettingLibraryNamesService implements IDoThis {
 
-	async process(result: DBLibrary[]) {
+	async go(result: DBLibrary[]) {
 		libraryNames.data = result.map((library: DBLibrary) => library.name);
 	}
 

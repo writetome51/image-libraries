@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { GetImagesResultProcessorService }
-	from './run-tasks-needed-after-successful-result/get-images-result-processor.service';
+import { RunTasksNeededAfterSuccessfulGettingImagesService }
+	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-getting-images.service';
 import { GetImagesResultCheckService }
 	from './data-transport-result-check/get-images-result-check.service';
 
@@ -13,11 +13,11 @@ export class GetImagesResultInterpreterService extends DataTransportResultInterp
 
 	constructor(
 		__getImagesResultCheck: GetImagesResultCheckService,
-		__getImagesResultProcessor: GetImagesResultProcessorService
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulGettingImagesService
 	) {
 		super(
 			__getImagesResultCheck,
-			__getImagesResultProcessor
+			__runTasksNeededAfterSuccessfulResult
 		);
 	}
 

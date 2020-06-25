@@ -1,5 +1,6 @@
 import { DBUser } from '../../../../../../interfaces/db-user';
-import { UserResultProcessorService } from '../user-result-processor.service';
+import { RunTasksNeededAfterSuccessfulGettingUserService }
+	from '../run-tasks-needed-after-successful-getting-user.service';
 import { AlertData as alert }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
@@ -13,12 +14,15 @@ export class RunTasksNeededAfterSuccessfulUpdateOfEmailOrPasswordService impleme
 	resultMessage: string;
 
 
-	constructor(private __userResultProcessor: UserResultProcessorService) {
+	constructor(
+		private __runTasksNeededAfterSuccessfulRetrievalOfUser:
+			RunTasksNeededAfterSuccessfulGettingUserService
+	) {
 	}
 
 
 	async go(result: DBUser) {
-		this.__userResultProcessor.process(result);
+		this.__runTasksNeededAfterSuccessfulRetrievalOfUser.go(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
 		alert.success = this.resultMessage;
 	}

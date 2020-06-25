@@ -9,14 +9,14 @@ export abstract class DataTransportResultInterpreterService implements Interpret
 
 	constructor(
 		private __dataTransportResultCheck: DataTransportResultCheckService,
-		private __runTasksNeededAfterReceivingSuccessfulResult: IDoThis
+		private __runTasksNeededAfterSuccessfulResult: IDoThis
 	) {
 	}
 
 
 	async interpret(result: object): Promise<void> {
 		result = await this.__dataTransportResultCheck.returnIfNoError(result);
-		if (hasValue(result)) await this.__runTasksNeededAfterReceivingSuccessfulResult.go(result);
+		if (hasValue(result)) await this.__runTasksNeededAfterSuccessfulResult.go(result);
 	}
 
 }

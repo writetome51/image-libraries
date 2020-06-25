@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { DBLibrary } from '../../../../../interfaces/db-library';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
@@ -9,17 +8,18 @@ import { ImageTotalData as imageTotal }
 	from '../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LoadedImagesStatusData as loadedImagesStatus }
 	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class GetLibraryResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulGettingLibraryService implements IDoThis {
 
 	constructor(private __getLibraryImagesProcessor: GetLibraryImagesProcessorService) {
 	}
 
 
-	async process(result: DBLibrary) {
+	async go(result: DBLibrary) {
 		loadedLibrary.data = result;
 
 		if (loadedLibrary.data._image_ids.length) await this.__getLibraryImagesProcessor.process();

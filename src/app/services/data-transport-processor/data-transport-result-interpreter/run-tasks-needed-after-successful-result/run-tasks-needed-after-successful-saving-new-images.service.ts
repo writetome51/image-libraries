@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
-import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { GetAllImagesProcessorService }
 	from '../../get-images/get-all-images-processor.service';
 import { NewImagesData as newImages }
 	from '../../../../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { Router } from '@angular/router';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class SaveNewImagesResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulSavingNewImagesService implements IDoThis {
 
 	constructor(
 		private __getAllImagesProcessor: GetAllImagesProcessorService,
@@ -19,9 +20,9 @@ export class SaveNewImagesResultProcessorService implements DirectProcessor {
 	}
 
 
-	async process(result) {
+	async go(result) {
 		newImages.data = [];
-		if (result.success) alert.success = 'New images saved';
+		alert.success = 'New images saved';
 	}
 
 }

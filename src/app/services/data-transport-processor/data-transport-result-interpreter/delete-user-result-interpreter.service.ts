@@ -12,9 +12,9 @@ export class DeleteUserResultInterpreterService extends DataTransportResultInter
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__deleteUserResultProcessor: RunTasksNeededAfterSuccessfulDeletionOfUserService
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulDeletionOfUserService
 	) {
-		super(__dataTransportResultCheckService, __deleteUserResultProcessor);
+		super(__dataTransportResultCheckService, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

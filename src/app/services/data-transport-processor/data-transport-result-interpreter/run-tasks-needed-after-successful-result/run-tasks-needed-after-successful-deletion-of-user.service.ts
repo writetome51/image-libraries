@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LogoutResultProcessorService } from './logout-result-processor.service';
+import { RunTasksNeededAfterSuccessfulLogoutService } from './run-tasks-needed-after-successful-logout.service';
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { IDoThis } from '../../../../../interfaces/i-do-this';
@@ -10,7 +10,7 @@ import { IDoThis } from '../../../../../interfaces/i-do-this';
 export class RunTasksNeededAfterSuccessfulDeletionOfUserService implements IDoThis {
 
 	constructor(
-		private __logoutResultProcessor: LogoutResultProcessorService
+		private __logoutResultProcessor: RunTasksNeededAfterSuccessfulLogoutService
 	) {
 	}
 

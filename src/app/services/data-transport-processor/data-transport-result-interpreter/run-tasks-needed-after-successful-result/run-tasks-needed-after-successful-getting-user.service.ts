@@ -1,15 +1,13 @@
 import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../local-data/local-session-id.service';
-import { AlertData as alert } from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { LocalEmailService } from '../../../local-data/local-email.service';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
-@Injectable({
-	providedIn: 'root'
-})
-export class UserResultProcessorService implements DirectProcessor {
+@Injectable({providedIn: 'root'})
+
+export class RunTasksNeededAfterSuccessfulGettingUserService implements IDoThis {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
@@ -18,7 +16,7 @@ export class UserResultProcessorService implements DirectProcessor {
 	}
 
 
-	process(result: DBUser): void {
+	go(result: DBUser): void {
 		delete result._id; // for security
 
 		this.__localSessionID.set(result.sessionID);

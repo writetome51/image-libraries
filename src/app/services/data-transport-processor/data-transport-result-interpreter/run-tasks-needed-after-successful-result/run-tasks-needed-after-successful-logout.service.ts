@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { RemoveCachedDataService } from '../../../remove-cached-data.service';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Router } from '@angular/router';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LogoutResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulLogoutService implements IDoThis {
 
 	constructor(
 		private __removeCachedData: RemoveCachedDataService,
@@ -15,7 +15,7 @@ export class LogoutResultProcessorService implements DirectProcessor {
 	}
 
 
-	async process(result) {
+	async go(result) {
 		this.__removeCachedData.go();
 		await this.__router.navigate(['/']); // logged-out homepage.
 	}

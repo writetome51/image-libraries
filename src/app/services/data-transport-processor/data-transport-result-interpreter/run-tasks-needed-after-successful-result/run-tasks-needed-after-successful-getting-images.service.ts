@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { DBImage } from '../../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
 	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { ImageTotalData as imageTotal }
 	from '../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class GetImagesResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulGettingImagesService implements IDoThis {
 
-	async process(result: { dataTotal: number, batch: DBImage[] }) {
+	async go(result: { dataTotal: number, batch: DBImage[] }) {
 
 		loadedImages.data = {};
 

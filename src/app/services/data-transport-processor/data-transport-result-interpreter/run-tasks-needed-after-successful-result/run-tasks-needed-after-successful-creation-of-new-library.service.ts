@@ -1,22 +1,22 @@
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DBLibrary } from '../../../../../interfaces/db-library';
-import { DirectProcessor } from '../../../../../interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { GetLibraryNamesProcessorService } from '../../get-library-names-processor.service';
 import { NewLibraryData as newLibrary }
 	from '../../../../../data-structures/runtime-state-data/new-library.data';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class NewLibraryResultProcessorService implements DirectProcessor {
+export class RunTasksNeededAfterSuccessfulCreationOfNewLibraryService implements IDoThis {
 
 	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
 	}
 
 
-	async process(result: DBLibrary) {
+	async go(result: DBLibrary) {
 		alert.success = 'Library created';
 		newLibrary.beingCreated = false;
 

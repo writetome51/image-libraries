@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
-import { NewLibraryResultProcessorService }
-	from './run-tasks-needed-after-successful-result/new-library-result-processor.service';
+import { RunTasksNeededAfterSuccessfulCreationOfNewLibraryService }
+	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-creation-of-new-library.service';
 import { UpdateOrNewLibraryResultCheckService }
 	from './data-transport-result-check/update-or-new-library-result-check.service';
 
@@ -12,9 +12,9 @@ export class CreateLibraryResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__updateLibraryResultCheck: UpdateOrNewLibraryResultCheckService,
-		__newLibraryResultProcessor: NewLibraryResultProcessorService,
+		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulCreationOfNewLibraryService,
 	) {
-		super(__updateLibraryResultCheck, __newLibraryResultProcessor);
+		super(__updateLibraryResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }
