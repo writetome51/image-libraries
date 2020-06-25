@@ -1,0 +1,17 @@
+<delete-item-button [class.invisible]="!(hovered)" (click)="deleteItem(i)">
+</delete-item-button>
+
+<a [routerLink]="['/library', libName, 'image', i]">
+
+	<div class="image-container">
+
+		<!--  Setting draggable to false on the img prevents a ghost-image from being
+		dragged.   -->
+
+		<img draggable="false" [src]="data.src" alt="{{data.description}}" [width]="imageWidth"
+			 [title]="data.name"
+		/>
+
+	</div>
+
+</a>

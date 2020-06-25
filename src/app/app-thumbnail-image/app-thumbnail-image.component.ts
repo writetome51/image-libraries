@@ -6,11 +6,11 @@ import { ListItemRemoverService } from '../services/list-item-remover.service';
 
 
 @Component({
-	selector: 'thumbnail-image',
-	templateUrl: './thumbnail-image.component.html',
-	styleUrls: ['./thumbnail-image.component.css']
+	selector: 'app-thumbnail-image',
+	templateUrl: './app-thumbnail-image.component.html',
+	styleUrls: ['./app-thumbnail-image.component.css']
 })
-export class ThumbnailImageComponent {
+export class AppThumbnailImageComponent {
 
 	@Input() data: DBImage;
 
