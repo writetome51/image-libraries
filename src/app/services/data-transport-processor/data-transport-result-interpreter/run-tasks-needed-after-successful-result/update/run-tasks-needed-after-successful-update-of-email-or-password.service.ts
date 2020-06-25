@@ -1,6 +1,6 @@
 import { DBUser } from '../../../../../../interfaces/db-user';
 import { RunTasksNeededAfterSuccessfulGettingUserService }
-	from '../run-tasks-needed-after-successful-getting-user.service';
+	from '../get/run-tasks-needed-after-successful-getting-user.service';
 import { AlertData as alert }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';

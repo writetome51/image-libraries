@@ -14,10 +14,7 @@ export class UpdatePasswordResultInterpreterService extends DataTransportResultI
 		__dataTransportResultCheck: DataTransportResultCheckService,
 		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulUpdateOfPasswordService
 	) {
-		super(
-			__dataTransportResultCheck,
-			__runTasksNeededAfterSuccessfulResult
-		);
+		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

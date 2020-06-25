@@ -2,7 +2,7 @@ import { NewUserResultCheckService } from './data-transport-result-check/new-use
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { RunTasksNeededAfterSuccessfulCreationOfNewUserService }
-	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-creation-of-new-user.service';
+	from './run-tasks-needed-after-successful-result/create/run-tasks-needed-after-successful-creation-of-new-user.service';
 
 
 @Injectable({

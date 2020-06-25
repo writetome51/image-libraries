@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CurrentUserData as currentUser }
-	from '../../../../../data-structures/runtime-state-data/static-classes/current-user.data';
+	from '../../../../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { SecurityQuestionStatusData as questionStatus }
-	from '../../../../../data-structures/runtime-state-data/security-question-status.data';
-import { IDoThis } from '../../../../../interfaces/i-do-this';
+	from '../../../../../../data-structures/runtime-state-data/security-question-status.data';
+import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

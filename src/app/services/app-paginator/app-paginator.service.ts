@@ -1,9 +1,9 @@
 import { AppPaginator } from '@writetome51/app-paginator';
 import { AppPaginatorDataSourceService }
 	from './app-paginator-data-source/app-paginator-data-source.service';
-import { PageData as page } from '../../../data-structures/runtime-state-data/static-classes/page.data';
 import { BatchData as batch }
 	from '../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { PageData as page } from '../../../data-structures/runtime-state-data/static-classes/page.data';
 
 
 export abstract class AppPaginatorService extends AppPaginator {
@@ -13,7 +13,7 @@ export abstract class AppPaginatorService extends AppPaginator {
 		super(__dataSource);
 
 		this.itemsPerPage = page.size;
-		this.__ensureTheyMatch( /* itemsPerBatch, batchSize */ );
+		this.__ensureTheyMatch( /* this.itemsPerBatch, batch.size */ );
 	}
 
 

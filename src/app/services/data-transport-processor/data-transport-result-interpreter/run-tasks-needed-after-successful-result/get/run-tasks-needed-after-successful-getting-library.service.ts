@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '../../../../../interfaces/db-library';
+import { DBLibrary } from '../../../../../../interfaces/db-library';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
 import { GetLibraryImagesProcessorService }
-	from '../../get-images/get-library-images-processor.service';
+	from '../../../get-images/get-library-images-processor.service';
 import { ImageTotalData as imageTotal }
-	from '../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
+	from '../../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LoadedImagesStatusData as loadedImagesStatus }
-	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
-import { IDoThis } from '../../../../../interfaces/i-do-this';
+	from '../../../../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

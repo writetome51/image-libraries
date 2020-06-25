@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
 import { RunTasksNeededAfterSuccessfulGettingLibraryService }
-	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-getting-library.service';
+	from './run-tasks-needed-after-successful-result/get/run-tasks-needed-after-successful-getting-library.service';
 import { GetLibraryResultCheckService }
 	from './data-transport-result-check/get-library-result-check.service';
 
