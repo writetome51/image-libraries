@@ -51,11 +51,11 @@ export class ImagesRestAPIService extends RestAPIService {
 	}
 
 
-	remove(
+	delete(
 		params: { sessionID: string, imageNames: string[] }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._patch('remove-images', params);
+		return this._patch('delete-images', params);
 	}
 
 

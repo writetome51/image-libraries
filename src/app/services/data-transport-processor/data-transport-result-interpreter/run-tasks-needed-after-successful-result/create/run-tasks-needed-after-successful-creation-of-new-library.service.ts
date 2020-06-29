@@ -2,7 +2,7 @@ import { AlertData as alert }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DBLibrary } from '../../../../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { GetLibraryNamesProcessorService } from '../../../get-library-names-processor.service';
+import { GetLibrariesProcessorService } from '../../../get-libraries-processor.service';
 import { NewLibraryData as newLibrary }
 	from '../../../../../../data-structures/runtime-state-data/new-library.data';
 import { IDoThis } from '../../../../../../interfaces/i-do-this';
@@ -12,7 +12,7 @@ import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 export class RunTasksNeededAfterSuccessfulCreationOfNewLibraryService implements IDoThis {
 
-	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
+	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
 	}
 
 
@@ -25,7 +25,7 @@ export class RunTasksNeededAfterSuccessfulCreationOfNewLibraryService implements
 
 
 	private async __refreshLoadedLibraryNames() {
-		await this.__getLibraryNamesProcessor.process();
+		await this.__getLibrariesProcessor.process();
 	}
 
 }

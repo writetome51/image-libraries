@@ -1,4 +1,4 @@
-import { PageData } from './page.data';
+import { PageData as page} from './page.data';
 
 
 export class BatchData {
@@ -14,14 +14,14 @@ export class BatchData {
 
 
 	static set size(value) {
-		if (value < PageData.size) value = PageData.size;
+		if (value < page.size) value = page.size;
 		this.__size = value;
 	}
 
 
 	static setDefault() {
 		this.number = 1;
-		this.size = PageData.size * 2;
+		this.size = page.size * 2;
 	}
 
 }

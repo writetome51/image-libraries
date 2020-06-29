@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AlertData as alert }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { RedirectToLoggedInHomeService } from '../../../../redirect-to-logged-in-home.service';
-import { GetLibraryNamesProcessorService } from '../../../get-library-names-processor.service';
+import { GetLibrariesProcessorService } from '../../../get-libraries-processor.service';
 import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 
@@ -12,13 +12,13 @@ export class RunTasksNeededAfterSuccessfulDeletionOfLibraryService implements ID
 
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
-		private __getLibraryNamesProcessor: GetLibraryNamesProcessorService
+		private __getLibrariesProcessor: GetLibrariesProcessorService
 	) {
 	}
 
 
 	async go(result) {
-		await this.__getLibraryNamesProcessor.process();
+		await this.__getLibrariesProcessor.process();
 		await this.__redirectToLoggedInHome.go();
 		alert.success = 'Library deleted';
 	}

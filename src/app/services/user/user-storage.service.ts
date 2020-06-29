@@ -32,13 +32,7 @@ export class UserStorageService extends GetObjectFromSubscriptionService {
 
 
 	async create(user: AppUser): Promise<DBUser | { error: { message: string } }> {
-		return await this.go(
-			this.__userRestApi.create({
-				email: user.email,
-				password: user.password,
-				securityQuestion: user.securityQuestion
-			})
-		);
+		return await this.go(this.__userRestApi.create(user));
 	}
 
 

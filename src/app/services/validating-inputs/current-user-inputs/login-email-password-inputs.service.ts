@@ -8,14 +8,8 @@ import { CurrentUserInputsService } from './current-user-inputs.service';
 
 export class LoginEmailPasswordInputsService extends CurrentUserInputsService {
 
-	constructor(
-		emailInput: EmailInputService,
-		passwordInput: PasswordInputService
-	) {
-		super(
-			emailInput,
-			passwordInput
-		);
+	constructor(emailInput: EmailInputService, passwordInput: PasswordInputService) {
+		super(emailInput, passwordInput);
 	}
 
 }

@@ -21,7 +21,7 @@ export class SelectedImagesDeleterService extends GetObjectFromSubscriptionServi
 
 	async delete(): Promise<{ success: true } | { error: { message: string } }> {
 		return await this.go(
-			this.__imagesRestApi.remove(
+			this.__imagesRestApi.delete(
 				{sessionID: this.__localSessionID.get(), imageNames: selectedImageNames.data}
 			)
 		);
