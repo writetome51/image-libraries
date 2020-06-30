@@ -11,23 +11,22 @@ export class MenuChoiceComponent {
 
 	@Input() data: string | Submenu;
 
+	clicked = false;
+	hovered = false;
+
 
 	get label(): string {
-		return (typeof this.data === 'string'? this.data: this.data['label']);
+		return (typeof this.data === 'string' ? this.data : this.data['label']);
+	}
+
+
+	get isSubmenu(): boolean {
+		return (this.data['label'] && this.data['choices']);
 	}
 
 
 	get choices(): Array<string | Submenu> {
 		return this.data['choices'];
-	}
-
-
-	constructor() {
-	}
-
-
-	isSubmenu(): boolean {
-		return (this.data['label'] && this.data['choices']);
 	}
 
 

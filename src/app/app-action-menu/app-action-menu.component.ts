@@ -12,8 +12,6 @@ export class AppActionMenuComponent {
 	label = 'Action';
 	choices: Array<string | Submenu> = [];
 
-	hovered = false;
-
 
 	constructor() {
 	}
