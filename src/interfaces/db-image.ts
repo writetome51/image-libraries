@@ -1,7 +1,7 @@
 import { AppImage } from './app-image';
 
 
-// Represents a document in a MongoDB 'images' collection.
+// Represents a record in a db 'images' collection.
 
 export interface DBImage extends AppImage {
 	_id: string; // unique, never changes. Primary key

@@ -10,7 +10,7 @@ import { Submenu } from './submenu';
 export class AppActionMenuComponent {
 
 	label = 'Action';
-	choices: Array<string | Submenu> = [];
+	choices: Array<string | Submenu> = ['choice1'];
 
 
 	constructor() {

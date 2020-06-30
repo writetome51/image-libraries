@@ -1,5 +1,5 @@
-import { AuthenticatedGuard } from '../../guards/authenticated.guard';
-import { CanDeactivateGuard } from '../../guards/can-deactivate.guard';
+import { AuthenticatedGuard } from '../guards/authenticated.guard';
+import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image/full-size-image.component';
 import { ImageViewerComponent } from './image-viewer.component';
@@ -11,7 +11,7 @@ import { ImageLocationComponent } from './image-location/image-location.componen
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { LibraryModuleRoutesData } from '../library-module-routes.data';
+import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { LibraryModuleRoutesData } from '../library-module-routes.data';
 				redirectTo: '/library/' + LibraryModuleRoutesData.LibraryComponent
 			}
 		])
-	]
+	],
+	exports: [ImageViewerComponent]
 })
 export class ImageViewerModule {
 }

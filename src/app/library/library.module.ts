@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { ImageListComponent } from './library-viewer/image-list/image-list.component';
 import { ImageSizeSliderComponent }
 	from './library-viewer/image-size-slider/image-size-slider.component';
-import { ImageViewerModule } from './image-viewer/image-viewer.module';
 import { LibraryComponent } from './library.component';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { LibraryRoutingModule } from './library-routing.module';
@@ -43,7 +42,6 @@ import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
-		ImageViewerModule,
 		AppThumbnailImageModule,
 	]
 })

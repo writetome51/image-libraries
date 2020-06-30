@@ -3,6 +3,10 @@ import { DBImage } from '../../interfaces/db-image';
 import { ThumbnailDisplaySettingsData as imageDisplaySettings }
 	from '../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { ListItemRemoverService } from '../services/list-item-remover.service';
+import { SelectedImagesDeleterService }
+	from '../services/data-transport-processor/delete-selected-images-processor/selected-images-deleter.service';
+import { SelectedImageNamesData as selectedImageNames}
+	from '../../data-structures/runtime-state-data/selected-image-names.data';
 
 
 @Component({
@@ -14,13 +18,24 @@ export class AppThumbnailImageComponent {
 
 	@Input() data: DBImage;
 
+	hovered = false;
+
 
 	get imageWidth(): number {
 		return imageDisplaySettings.width;
 	}
 
 
-	constructor(private __listItemRemover: ListItemRemoverService) {
+	constructor(
+		private __listItemRemover: ListItemRemoverService,
+		private __selectedImagesDeleter: SelectedImagesDeleterService
+	) {
+	}
+
+
+	async deleteImage() {
+		selectedImageNames.data = [this.data.name];
+		await this.__selectedImagesDeleter.delete();
 	}
 
 }

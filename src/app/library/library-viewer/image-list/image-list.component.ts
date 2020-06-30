@@ -30,9 +30,4 @@ export class ImageListComponent {
 	) {
 	}
 
-
-	deleteItem(index) {
-		this.__listItemRemover.remove(index);
-	}
-
 }
