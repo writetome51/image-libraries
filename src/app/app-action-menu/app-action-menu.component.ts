@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Submenu } from './submenu';
 
 
 @Component({
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppActionMenuComponent {
 
-	buttonText = 'Action';
-	choices: string[] = ['Delete Selected', 'Get Info on Selected'];
+	label = 'Action';
+	choices: Array<string | Submenu> = [];
 
 	hovered = false;
 

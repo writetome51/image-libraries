@@ -1,0 +1,9 @@
+<li role="presentation">
+	{{label}}
+
+	<span *ngIf="isSubmenu()"> —></span>
+
+	<ul *ngIf="isSubmenu()">
+		<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
+	</ul>
+</li>

@@ -1,14 +1,15 @@
 <div>
 	<div class="dropdown">
+
 		<button class="btn btn-default dropdown-toggle" type="button" id="menu1"
 				data-toggle="dropdown">
 
-			{{buttonText}}
+			{{label}}
 			<span class="caret"></span>
 		</button>
 
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-			<li *ngFor="let choice of choices"  role="presentation">{{choice}}</li>
+			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
 		</ul>
 	</div>
 </div>
