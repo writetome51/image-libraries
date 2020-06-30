@@ -15,9 +15,9 @@ export class RunTasksNeededAfterSuccessfulLogoutService implements IDoThis {
 	}
 
 
-	async go(result) {
+	async go() {
 		this.__removeCachedData.go();
-		await this.__router.navigate(['/']); // logged-out homepage.
+		await this.__router.navigate(['/']);
 	}
 
 }

@@ -25,7 +25,7 @@ export class NotLoggedInErrorHandlerService implements Handler {
 
 	async handle() {
 		this.__removeCachedData.go();
-		await this.__router.navigate(['/']); // logged-out homepage.
+		await this.__router.navigate(['/']);
 		alert.error = notLoggedIn;
 	}
 
