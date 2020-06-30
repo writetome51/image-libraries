@@ -2,7 +2,7 @@ import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image/full-size-image.component';
-import { ImageViewerComponent } from './image-viewer.component';
+import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';
 import { ImageNameComponent } from './image-name/image-name.component';
 import { ImageDescriptionComponent } from './image-description/image-description.component';
 import { ImageTagsComponent } from './image-tags/image-tags.component';
@@ -17,7 +17,7 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 @NgModule({
 	declarations: [
 		FullSizeImageComponent,
-		ImageViewerComponent,
+		FullSizeImageViewerComponent,
 		ImageNameComponent,
 		ImageDescriptionComponent,
 		ImageTagsComponent,
@@ -30,7 +30,7 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 		RouterModule.forChild([
 			{
 				path: ':imageIndex', // can only access when logged in
-				component: ImageViewerComponent,
+				component: FullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]
 			},
@@ -41,7 +41,7 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 			}
 		])
 	],
-	exports: [ImageViewerComponent]
+	exports: [FullSizeImageViewerComponent]
 })
-export class ImageViewerModule {
+export class FullSizeImageViewerModule {
 }

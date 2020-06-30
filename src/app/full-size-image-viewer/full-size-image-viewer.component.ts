@@ -4,10 +4,10 @@ import { LoadedLibraryData as loadedLibrary }
 
 
 @Component({
-	selector: 'image-viewer',
-	templateUrl: './image-viewer.component.html'
+	selector: 'full-size-image-viewer',
+	templateUrl: './full-size-image-viewer.component.html'
 })
-export class ImageViewerComponent {
+export class FullSizeImageViewerComponent {
 
 	get currentImage() {
 		//return loadedLibrary.data.currentImage;
