@@ -3,15 +3,16 @@ import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image/full-size-image.component';
 import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { ImageNameComponent } from './image-name/image-name.component';
 import { ImageDescriptionComponent } from './image-description/image-description.component';
 import { ImageTagsComponent } from './image-tags/image-tags.component';
 import { ImageDateComponent } from './image-date/image-date.component';
 import { ImageLocationComponent } from './image-location/image-location.component';
+import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
+import { LocationMapComponent } from './location-map/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 
 
 @NgModule({
@@ -22,11 +23,13 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 		ImageDescriptionComponent,
 		ImageTagsComponent,
 		ImageDateComponent,
-		ImageLocationComponent
+		ImageLocationComponent,
+		LocationMapComponent
 	],
 	imports: [
 		CommonModule,
 		GoogleMapsModule,
+
 		RouterModule.forChild([
 			{
 				path: ':imageIndex', // can only access when logged in
@@ -40,7 +43,9 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 				redirectTo: '/library/' + LibraryModuleRoutesData.LibraryComponent
 			}
 		])
+
 	],
+
 	exports: [FullSizeImageViewerComponent]
 })
 export class FullSizeImageViewerModule {

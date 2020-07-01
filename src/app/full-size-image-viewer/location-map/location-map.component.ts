@@ -3,14 +3,17 @@ import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 
 @Component({
-	selector: 'app-map',
-	templateUrl: './map.component.html',
-	styleUrls: ['./map.component.css']
+	selector: 'location-map',
+	templateUrl: './location-map.component.html',
+	styleUrls: ['./location-map.component.css']
 })
-export class MapComponent implements OnInit {
+export class LocationMapComponent implements OnInit {
 
-	@ViewChild(GoogleMap, { static: false }) map: GoogleMap;
-	@ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow;
+	@ViewChild(GoogleMap, {static: false})
+	map: GoogleMap;
+
+	@ViewChild(MapInfoWindow, {static: false})
+	info: MapInfoWindow;
 
 	zoom = 18;
 	center: google.maps.LatLngLiteral;
@@ -22,10 +25,6 @@ export class MapComponent implements OnInit {
 	};
 	markers = [];
 	infoContent = '';
-
-
-	constructor() {
-	}
 
 
 	ngOnInit(): void {

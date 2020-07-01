@@ -4,7 +4,6 @@ import { AppNavigatorModule } from './app-navigator/app-navigator.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginButtonComponent } from './login/login-form/login-button.component';
 import { LoginComponent } from './login/login.component';
@@ -15,7 +14,6 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { StartDataProcessButtonModule }
 	from './start-data-process-button/start-data-process-button.module';
 import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
-import { MapComponent } from './map/map.component';
 
 
 
@@ -28,7 +26,6 @@ import { MapComponent } from './map/map.component';
 		LoginFormInputsComponent,
 		LoginButtonComponent,
 		PageNotFoundComponent,
-		MapComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -37,7 +34,6 @@ import { MapComponent } from './map/map.component';
 		AppNavigatorModule,
 		ValidatingInputsModule,
 		StartDataProcessButtonModule,
-		GoogleMapsModule,
 		AppRoutingModule, // must be loaded before any other routing module.
 	],
 	bootstrap: [AppComponent]

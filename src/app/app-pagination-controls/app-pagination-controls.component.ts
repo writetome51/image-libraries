@@ -14,7 +14,6 @@ export class AppPaginationControlsComponent {
 
 
 	// Optional
-
 	@Input() jumpToPageInput: JumpToPageNumberInputService;
 
 
