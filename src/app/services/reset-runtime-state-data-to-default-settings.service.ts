@@ -13,8 +13,8 @@ import { ImageTotalData as imageTotal }
 import { PageData as page} from '../../data-structures/runtime-state-data/static-classes/page.data';
 import { LoadedImagesStatusData as loadedImagesStatus }
 	from '../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
-import { BatchData as batch }
-	from '../../data-structures/runtime-state-data/static-classes/batch.data';
+import { LoadData as batch }
+	from '../../data-structures/runtime-state-data/static-classes/load.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis

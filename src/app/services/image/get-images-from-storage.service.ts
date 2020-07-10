@@ -1,5 +1,5 @@
-import { BatchData as batch }
-	from '../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { LoadData as batch }
+	from '../../../data-structures/runtime-state-data/static-classes/load.data';
 import { ImagesRestAPIService } from './images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';

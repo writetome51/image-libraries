@@ -1,7 +1,7 @@
 import { PageData as page} from './page.data';
 
 
-export class BatchData {
+export class LoadData {
 
 	static number: number;
 

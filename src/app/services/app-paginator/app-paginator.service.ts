@@ -1,19 +1,19 @@
-import { AppPaginator } from '@writetome51/app-paginator';
 import { AppPaginatorDataSourceService }
 	from './app-paginator-data-source/app-paginator-data-source.service';
-import { BatchData as batch }
-	from '../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
+import { LoadData as load }
+	from '../../../data-structures/runtime-state-data/static-classes/load.data';
 import { PageData as page } from '../../../data-structures/runtime-state-data/static-classes/page.data';
 
 
-export abstract class AppPaginatorService extends AppPaginator {
+export abstract class AppPaginatorService extends BigDatasetPaginator {
 
 
 	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
 
-		this.itemsPerPage = page.size;
-		this.__ensureTheyMatch( /* this.itemsPerBatch, batch.size */ );
+		this.setItemsPerPage(page.size);
+		this.__ensureTheyMatch( /* itemsPerLoad, load.size */ );
 	}
 
 
@@ -28,11 +28,11 @@ export abstract class AppPaginatorService extends AppPaginator {
 
 	private __ensureTheyMatch() {
 
-		// this.itemsPerBatch must be evenly divisible by this.itemsPerPage.
+		// itemsPerLoad must be evenly divisible by itemsPerPage.
 		// If it isn't, its value is lowered until it is.
 
-		this.itemsPerBatch = batch.size; // this.itemsPerBatch is validated and possibly lowered.
-		batch.size = this.itemsPerBatch; // Just in case itemsPerBatch got lowered.
+		this.setItemsPerLoad(load.size);
+		load.size = this.getItemsPerLoad(); // Just in case it got lowered.
 	}
 
 }

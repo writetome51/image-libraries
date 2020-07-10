@@ -1,5 +1,5 @@
-import { BatchData as batch }
-	from '../../../../data-structures/runtime-state-data/static-classes/batch.data';
+import { LoadData as batch }
+	from '../../../../data-structures/runtime-state-data/static-classes/load.data';
 import { DBImage } from '../../../../interfaces/db-image';
 import { DataTotalService } from './data-total/data-total.service';
 import { DataTransportProcessorService }
@@ -28,11 +28,11 @@ export abstract class AppPaginatorDataSourceService {
 	}
 
 
-	async getBatch(
-		batchNum: number, itemsPerBatch: number, isLastBatch: boolean
+	async getLoad(
+		loadNum: number, itemsPerLoad: number, isLastLoad: boolean
 	): Promise<DBImage[]> {
 
-		batch.number = batchNum;
+		batch.number = loadNum;
 		await this.__set_loadedImages_processor.process();
 
 		if (hasValue(loadedImages.data)) {

@@ -7,7 +7,7 @@ import { NewLibraryData as newLibrary }
 	selector: 'new-library-button',
 	template: `
 		<div class="input-container">
-			<button (click)="creatingNewLibrary = !(creatingNewLibrary)">{{buttonText}}</button>
+			<button (click)="creatingNewLibrary = !(creatingNewLibrary)">{{label}}</button>
 		</div>
 	`
 })
@@ -24,7 +24,7 @@ export class NewLibraryButtonComponent {
 	}
 
 
-	get buttonText() {
+	get label() {
 		return (this.creatingNewLibrary ? 'Cancel' : 'New Library');
 	}
 

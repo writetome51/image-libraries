@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { LocalSessionIDService } from './services/local-data/local-session-id.service';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
 	from './services/reset-runtime-state-data-to-default-settings.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -28,8 +29,13 @@ export class AppComponent {
 	}
 
 
-	constructor(private __localSessionID: LocalSessionIDService) {
+	constructor(private __localSessionID: LocalSessionIDService, private __title: Title) {
 		resetRuntimeStateData.go();
+	}
+
+
+	setTitle(newTitle: string) {
+		this.__title.setTitle(newTitle);
 	}
 
 }
