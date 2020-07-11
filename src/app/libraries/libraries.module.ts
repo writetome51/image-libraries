@@ -13,7 +13,8 @@ import { NewLibraryButtonComponent } from './new-library-button.component';
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
-import { AppThumbnailImageModule } from '../app-thumbnail-image/app-thumbnail-image.module';
+import { ThumbnailImageContainerModule }
+	from '../thumbnail-image-container/thumbnail-image-container.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 
 
@@ -30,7 +31,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
-		AppThumbnailImageModule,
+		ThumbnailImageContainerModule,
 		AppPaginationControlsModule,
 		ValidatingInputsModule,
 		StartDataProcessButtonModule,
