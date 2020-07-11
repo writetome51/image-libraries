@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AppThumbnailImageComponent } from './app-thumbnail-image.component';
+import { ThumbnailImageContainerComponent } from './thumbnail-image-container.component';
 import { DeleteItemButtonComponent } from './delete-item-button/delete-item-button.component';
 
 
 @NgModule({
-	declarations: [AppThumbnailImageComponent, DeleteItemButtonComponent],
+	declarations: [ThumbnailImageContainerComponent, DeleteItemButtonComponent],
 	imports: [
 		CommonModule,
 		RouterModule
 	],
-	exports: [AppThumbnailImageComponent]
+	exports: [ThumbnailImageContainerComponent]
 })
-export class AppThumbnailImageModule {
+export class ThumbnailImageContainerModule {
 }

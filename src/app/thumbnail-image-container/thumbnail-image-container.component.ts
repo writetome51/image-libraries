@@ -10,13 +10,13 @@ import { SelectedImageNamesData as selectedImageNames}
 
 
 @Component({
-	selector: 'app-thumbnail-image',
-	templateUrl: './app-thumbnail-image.component.html',
-	styleUrls: ['./app-thumbnail-image.component.css']
+	selector: 'thumbnail-image-container',
+	templateUrl: './thumbnail-image-container.component.html',
+	styleUrls: ['./thumbnail-image-container.component.css']
 })
-export class AppThumbnailImageComponent {
+export class ThumbnailImageContainerComponent {
 
-	@Input() data: DBImage;
+	@Input() image: DBImage;
 
 	hovered = false;
 
@@ -34,8 +34,10 @@ export class AppThumbnailImageComponent {
 
 
 	async deleteImage() {
-		selectedImageNames.data = [this.data.name];
-		await this.__selectedImagesDeleter.delete();
+		// Whether to delete the image from the user account or to delete it from a
+		// library depends on where the user is viewing it.  If viewing it from library,
+		// delete it from that library.  If viewing from 'all-images' route, delete it
+		// from account.
 	}
 
 }
