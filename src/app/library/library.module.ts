@@ -15,7 +15,8 @@ import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
-import { AppThumbnailImageModule } from '../app-thumbnail-image/app-thumbnail-image.module';
+import { ThumbnailImageContainerModule }
+	from '../thumbnail-image-container/thumbnail-image-container.module';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 import { DeleteLibraryButtonComponent } from './delete-library-button.component';
 import { LibraryPaginationControlsComponent } from './library-pagination-controls.component';
@@ -24,14 +25,14 @@ import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 
 @NgModule({
 	declarations: [
-		LibraryComponent,
-		LibraryViewerComponent,
+		DeleteLibraryButtonComponent,
 		ImageListComponent,
 		ImageSizeSliderComponent,
+		LibraryComponent,
+		LibraryPaginationControlsComponent,
+		LibraryViewerComponent,
 		SaveChangesButtonComponent,
 		UndoChangesButtonComponent,
-		DeleteLibraryButtonComponent,
-		LibraryPaginationControlsComponent
 	],
 	imports: [
 		CommonModule,
@@ -42,7 +43,7 @@ import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
-		AppThumbnailImageModule,
+		ThumbnailImageContainerModule,
 	]
 })
 export class LibraryModule {
