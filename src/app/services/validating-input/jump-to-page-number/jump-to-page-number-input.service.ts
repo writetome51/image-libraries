@@ -7,7 +7,7 @@ export abstract class JumpToPageNumberInputService extends ValidatingNumberInput
 
 
 	constructor(
-		protected _paginator: { totalPages: number, set_currentPageNumber: (value) => void }
+		protected _paginator: { getTotalPages: () => number, setCurrentPageNumber: (value) => void }
 	) {
 		super();
 
@@ -24,8 +24,8 @@ export abstract class JumpToPageNumberInputService extends ValidatingNumberInput
 			// to be valid, and always returning true.
 			if (this.__pageNumber < 1) this.__pageNumber = 1;
 
-			if (this.__pageNumber > this._paginator.totalPages) {
-				this.__pageNumber = this._paginator.totalPages;
+			if (this.__pageNumber > this._paginator.getTotalPages()) {
+				this.__pageNumber = this._paginator.getTotalPages();
 			}
 
 			return true;
@@ -39,11 +39,11 @@ export abstract class JumpToPageNumberInputService extends ValidatingNumberInput
 
 	setMax(): void {
 		try {
-			this.data.max = this._paginator.totalPages;
+			this.data.max = this._paginator.getTotalPages();
 		}
 		catch (e) {
 			throw new Error(
-				`The paginator's "totalPages" property is still undefined.  You can't call setMax() yet`
+				`The paginator's "totalPages" is still undefined.  You can't call setMax() yet`
 			);
 		}
 	}

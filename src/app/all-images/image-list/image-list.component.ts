@@ -10,9 +10,9 @@ import { AllImagesPaginatorService } from '../../services/app-paginator/all-imag
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		// If paginator.currentPage is undefined it triggers error, so we catch it:
+		// If the currentPage is undefined it triggers error, so we catch it:
 		try {
-			return this.allImagesPaginator.currentPage;
+			return this.allImagesPaginator.getCurrentPage();
 		}
 		catch (e) {
 			return undefined;

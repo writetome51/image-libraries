@@ -14,7 +14,7 @@ import { ListItemRemoverService } from '../../../services/list-item-remover.serv
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return this.__libraryPaginator.currentPage;
+		return this.__libraryPaginator.getCurrentPage();
 	}
 
 

@@ -8,9 +8,9 @@ import { AllImagesPaginatorService } from '../../app-paginator/all-images-pagina
 export class AllImagesJumpToPageNumberInputService extends JumpToPageNumberInputService {
 
 	constructor(
-		_allImagesPaginator: AllImagesPaginatorService
+		_paginator: AllImagesPaginatorService
 	) {
-		super(_allImagesPaginator);
+		super(_paginator);
 	}
 
 }

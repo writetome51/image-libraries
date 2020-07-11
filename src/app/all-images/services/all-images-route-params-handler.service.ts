@@ -15,7 +15,7 @@ export class AllImagesRouteParamsHandlerService implements Handler {
 	async handle(params) {
 
 		let page = Number(params[paramID.pageNumber]);
-		await this.__allImagesPaginator.set_currentPageNumber(page);
+		await this.__allImagesPaginator.setCurrentPageNumber(page);
 	}
 
 }

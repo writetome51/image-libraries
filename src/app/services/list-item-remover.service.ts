@@ -21,8 +21,8 @@ export class ListItemRemoverService {
 
 
 	remove(index): void {
-		let previousLength = this.__libraryPaginator.currentPage.length;
-		removeByIndex(index, this.__libraryPaginator.currentPage);
+		let previousLength = this.__libraryPaginator.getCurrentPage().length;
+		removeByIndex(index, this.__libraryPaginator.getCurrentPage());
 
 		this.__subject.next({indexBeingRemoved: index, previousLength});
 	}

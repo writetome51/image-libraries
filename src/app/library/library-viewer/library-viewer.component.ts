@@ -19,7 +19,7 @@ export class LibraryViewerComponent {
 
 
 	get pageNumber() {
-		return this.__paginator.currentPageNumber;
+		return this.__paginator.getCurrentPageNumber();
 	}
 
 

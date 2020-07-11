@@ -38,7 +38,7 @@ export class GetLibraryRouteParamsSubscriptionObserverService implements IDoThis
 				await this.if_LibraryDoesntExist_redirectToLoggedInHome_else_showFirstPage();
 			}
 			let page = Number(params[paramID.pageNumber]);
-			if (page > 1) await this.__paginator.set_currentPageNumber(page);
+			if (page > 1) await this.__paginator.setCurrentPageNumber(page);
 
 			operationStatus.waiting = false;
 		};

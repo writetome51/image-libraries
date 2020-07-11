@@ -17,7 +17,7 @@ export class RunTasksNeededAfterSuccessfulDeletionOfUserService implements IDoTh
 
 
 	async go(result) {
-		await this.__runTasksNeededAfterSuccessfulLogout.go(result);
+		await this.__runTasksNeededAfterSuccessfulLogout.go();
 
 		alert.success = 'Account deleted';
 	}

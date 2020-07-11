@@ -9,7 +9,7 @@ import { JumpToPageNumberInputService }
 })
 export class AppPaginationControlsComponent {
 
-	@Input() paginator: { currentPageNumber: number, totalPages: number };
+	@Input() paginator: { getCurrentPageNumber: () => number, getTotalPages: () => number };
 	@Input() routeBeforePageNumber: string;
 
 
@@ -18,22 +18,22 @@ export class AppPaginationControlsComponent {
 
 
 	get currentPage() {
-		return this.paginator.currentPageNumber;
+		return this.paginator.getCurrentPageNumber();
 	}
 
 
 	get totalPages() {
-		return this.paginator.totalPages;
+		return this.paginator.getTotalPages();
 	}
 
 
 	get nextPage() {
-		return this.paginator.currentPageNumber + 1;
+		return this.paginator.getCurrentPageNumber() + 1;
 	}
 
 
 	get previousPage() {
-		return this.paginator.currentPageNumber - 1;
+		return this.paginator.getCurrentPageNumber() - 1;
 	}
 
 }
