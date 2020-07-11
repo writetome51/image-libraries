@@ -17,22 +17,22 @@ export class AppPaginationControlsComponent {
 	@Input() jumpToPageInput: JumpToPageNumberInputService;
 
 
-	get currentPage() {
+	getCurrentPage() {
 		return this.paginator.getCurrentPageNumber();
 	}
 
 
-	get totalPages() {
+	getTotalPages() {
 		return this.paginator.getTotalPages();
 	}
 
 
-	get nextPage() {
+	getNextPage() {
 		return this.paginator.getCurrentPageNumber() + 1;
 	}
 
 
-	get previousPage() {
+	getPreviousPage() {
 		return this.paginator.getCurrentPageNumber() - 1;
 	}
 
