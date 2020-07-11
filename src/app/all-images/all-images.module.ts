@@ -13,7 +13,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
-import { AppThumbnailImageModule } from '../app-thumbnail-image/app-thumbnail-image.module';
+import { ThumbnailImageContainerModule }
+	from '../thumbnail-image-container/thumbnail-image-container.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 
 
@@ -30,7 +31,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		AppPaginationControlsModule,
 		BigLoadingSpinnerModule,
 		StartDataProcessButtonModule,
-		AppThumbnailImageModule,
+		ThumbnailImageContainerModule,
 		ValidatingInputsModule,
 		RouterModule.forChild([
 			{
