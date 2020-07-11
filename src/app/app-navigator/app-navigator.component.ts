@@ -13,7 +13,7 @@ export class AppNavigatorComponent {
 	moduleRoutes = AppNavigatorModuleRoutesData;
 
 
-	get updateUserNotActive(): boolean {
+	updateUserNotActive(): boolean {
 		return not(this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule));
 	}
 

@@ -4,7 +4,7 @@
 
 		<logout-button></logout-button>
 
-		<div *ngIf="updateUserNotActive" class="input-container nav-link-container">
+		<div *ngIf="updateUserNotActive()" class="input-container nav-link-container">
 			<a [routerLink]="moduleRoutes.UpdateUserModule" [routerLinkActive]="'true'">
 				Update Account
 			</a>
