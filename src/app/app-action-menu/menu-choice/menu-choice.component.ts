@@ -15,18 +15,18 @@ export class MenuChoiceComponent {
 	hovered = false;
 
 
-	get label(): string {
+	get choices(): Array<string | Submenu> {
+		return this.data['choices'];
+	}
+
+
+	getLabel(): string {
 		return (typeof this.data === 'string' ? this.data : this.data['label']);
 	}
 
 
-	get isSubmenu(): boolean {
+	isSubmenu(): boolean {
 		return (this.data['label'] && this.data['choices']);
-	}
-
-
-	get choices(): Array<string | Submenu> {
-		return this.data['choices'];
 	}
 
 
