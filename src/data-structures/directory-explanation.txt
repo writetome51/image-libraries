@@ -1,10 +1,11 @@
 Each class/object in this directory is intended to be used as a singleton without requiring
-instantiation, which is why some are declared as constants and others are static classes.
-Each instance is intended to be referred to without the 'data' at the end, i.e. 'NewLibraryData' is
+instantiation, which is why they're declared as either constants or static classes.
+Each instance, in use, is referred to without the 'data' at the end, i.e. 'NewLibraryData' is
 referred to as 'newLibrary'.
 
 For any class/object which has a 'data' property: 'data' is exactly what the class/object
-represents.  For example, ImageURLData, when referred to as an instance, will be imageURL, and a
-reference to its 'data' property will be written as imageURL.data .  Here, 'data' is referring to
-the image url itself.
+represents.  For example, ImageURLData's 'data' property, when referred to, will look like
+'imageURL.data', and is referring to the image url itself.  Example:
 
+// import { ImageURLData as imageURL } from './data-structures/...';
+// imageURL.data = 'http://images.com/yosemite.jpg';

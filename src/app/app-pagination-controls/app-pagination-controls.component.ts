@@ -12,7 +12,6 @@ export class AppPaginationControlsComponent {
 	@Input() paginator: { getCurrentPageNumber: () => number, getTotalPages: () => number };
 	@Input() routeBeforePageNumber: string;
 
-
 	// Optional
 	@Input() jumpToPageInput: JumpToPageNumberInputService;
 

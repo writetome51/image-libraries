@@ -1,35 +1,35 @@
 <div
 	class="validating-input-container"
-	[class.validating-input-with-error]="input.__error.length"
-	[class.required]="input.required"
+	[class.validating-input-with-error]="data.__error.length"
+	[class.required]="data.required"
 >
-	<p *ngIf="input.prompt" class="validating-input-prompt">{{input.prompt}}</p>
+	<p *ngIf="data.prompt" class="validating-input-prompt">{{data.prompt}}</p>
 
-	<label for="{{input.id}}" class="validating-input-label" [hidden]="input.hideLabel">
-		{{input.label}}
+	<label for="{{data.id}}" class="validating-input-label" [hidden]="data.hideLabel">
+		{{data.label}}
 	</label>
 
-	<input [type]="input.type"
-		   (keyup)="input.type === 'number' ? validate(): undefined"
-		   (change)="input.type === 'number' ? validate(): undefined"
+	<input [type]="data.type"
+		   (keyup)="data.type === 'number' ? validate(): undefined"
+		   (change)="data.type === 'number' ? validate(): undefined"
 		   (blur)="validate()"
 
-		   id="{{input.id}}"
+		   id="{{data.id}}"
 		   class="validating-input"
-		   [class.validating-input-with-error]="input.__error.length"
+		   [class.validating-input-with-error]="data.__error.length"
 
-		   [name]="input.id"
-		   [required]="input.required"
+		   [name]="data.id"
+		   [required]="data.required"
 
-		   [placeholder]="input.hidePlaceholder ? '' : input.label"
-		   [(ngModel)]="input.objectToBind[input.propertyToBind]"
+		   [placeholder]="data.hidePlaceholder ? '' : data.label"
+		   [(ngModel)]="data.objectToBind[data.propertyToBind]"
 
-		   [maxLength]="input.maxLength ? input.maxLength : 200"
-		   [minLength]="input.minLength"
-		   [max]="input.max"
-		   [min]="input.min"
+		   [maxLength]="data.maxLength ? data.maxLength : 200"
+		   [minLength]="data.minLength"
+		   [max]="data.max"
+		   [min]="data.min"
 	/>
 
-	<p *ngIf="input.__error.length" class="validating-input-error">{{input.__error}}</p>
+	<p *ngIf="data.__error.length" class="validating-input-error">{{data.__error}}</p>
 
 </div>

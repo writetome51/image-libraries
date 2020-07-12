@@ -15,7 +15,7 @@ export class ImagesRestAPIService extends RestAPIService {
 	}
 
 
-	getAllBatch(
+	getAllLoad(
 		params: { sessionID: string, batchSize: number, batchNumber: number }
 	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
 	{
@@ -23,7 +23,7 @@ export class ImagesRestAPIService extends RestAPIService {
 	}
 
 
-	getLibraryBatch(
+	getLibraryLoad(
 		params: { sessionID: string, name: string, batchSize: number, batchNumber: number }
 	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
 	{
@@ -42,7 +42,9 @@ export class ImagesRestAPIService extends RestAPIService {
 	update(
 		params: {
 			sessionID: string,
+
 			// `changes` can contain any property from AppImage
+			// The properties in 'changes' can contain dot-notation.
 			images: { name: string, changes: object }[]
 		}
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}

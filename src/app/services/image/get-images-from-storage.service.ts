@@ -1,4 +1,4 @@
-import { LoadData as batch }
+import { LoadData as load }
 	from '../../../data-structures/runtime-state-data/static-classes/load.data';
 import { ImagesRestAPIService } from './images-rest-api.service';
 import { Injectable } from '@angular/core';
@@ -25,10 +25,10 @@ export class GetImagesFromStorageService {
 	async all(): Promise<ImageBatch | { error: { message: string } }>
 	{
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getAllBatch({
+			this.__imagesRestApi.getAllLoad({
 				sessionID: this.__localSessionID.get(),
-				batchSize: batch.size,
-				batchNumber: batch.number
+				batchSize: load.size,
+				batchNumber: load.number
 			})
 		);
 	}
@@ -37,11 +37,11 @@ export class GetImagesFromStorageService {
 	async inLibrary(): Promise<ImageBatch | { error: { message: string } }>
 	{
 		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.getLibraryBatch({
+			this.__imagesRestApi.getLibraryLoad({
 				sessionID: this.__localSessionID.get(),
 				name: requestedLibrary.name,
-				batchSize: batch.size,
-				batchNumber: batch.number
+				batchSize: load.size,
+				batchNumber: load.number
 			})
 		);
 	}

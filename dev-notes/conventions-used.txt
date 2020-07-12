@@ -1,17 +1,18 @@
-The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.
+Each instance of a Service class is referred to without the word 'service' at the end.
 
-Each class/object used as a data structure (with limited behavior or no behavior) is named with
-'Data' at the end, and their filenames end with '.data.ts'.
+Each class/object used as a data structure is named with 'Data' at the end, and their filenames end with
+'.data.ts'.
 
 'data processing' is any data manipulation that requires the user to wait for a result.
 
-Any UI button component that initiates data processing is a subclass of StartDataProcessComponent.
+Any UI button Component that initiates data processing is a subclass of StartDataProcessComponent.
 
 'data transport processing' refers to any data processing that involves sending the data to an
 external resource that returns a result.  All processing of this kind is handled by subclasses of
 DataTransportProcessorService.
 
-Any form <input> that self-validates during its 'blur' event is an instance of
-ValidatingInputComponent.  ValidatingInputComponent depends on the interface ValidatingInput (npm
-package @writetome51/validating-inputs).  ValidatingInput only represents an input of type
-'text', 'password', or 'number'.
+Any use of the word 'Load' is referring to the total number of images the app is configured to
+have stored in the browser at once.  For example, ImagesRestAPIService.getAllLoad() retrieves N
+of all a user's images, where N is the load size.
+
+The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.

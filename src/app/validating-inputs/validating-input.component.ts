@@ -14,16 +14,16 @@ import { InputValidatorService as inputValidator, ValidatingInput }
 
 export class ValidatingInputComponent implements OnInit {
 
-	@Input() input: ValidatingInput;
+	@Input() data: ValidatingInput;
 
 
 	ngOnInit(): void {
-		this.input.__error = '';
+		this.data.__error = '';
 	}
 
 
 	validate(): void {
-		inputValidator.validate(this.input);
+		inputValidator.validate(this.data);
 	}
 
 }

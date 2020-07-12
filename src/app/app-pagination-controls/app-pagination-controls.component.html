@@ -10,10 +10,10 @@
 
 	<p>Page {{getCurrentPage()}} of {{getTotalPages()}}</p>
 
-	<jump-to-page-input *ngIf="jumpToPageInput && (getTotalPages() > 1)"
-						[data]="jumpToPageInput.data"
-						[routeBeforePageNumber]="routeBeforePageNumber"
+	<jump-to-page *ngIf="jumpToPageInput && (getTotalPages() > 1)"
+				  [data]="jumpToPageInput.data"
+				  [routeBeforePageNumber]="routeBeforePageNumber"
 	>
-	</jump-to-page-input>
+	</jump-to-page>
 
 </div>

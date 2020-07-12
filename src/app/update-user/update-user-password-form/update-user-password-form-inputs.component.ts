@@ -6,7 +6,8 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 @Component({
 	selector: 'update-user-password-form-inputs',
-	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
+	template: `
+		<validating-inputs [data]="inputs"></validating-inputs>`
 })
 export class UpdateUserPasswordFormInputsComponent extends ValidatingFormInputsComponent {
 

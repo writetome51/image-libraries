@@ -6,7 +6,8 @@ import { AnswerSecurityQuestionInputsService }
 
 @Component({
 	selector: 'answer-security-question-form-inputs',
-	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
+	template: `
+		<validating-inputs [data]="inputs"></validating-inputs>`
 })
 export class AnswerSecurityQuestionFormInputsComponent extends ValidatingFormInputsComponent {
 
