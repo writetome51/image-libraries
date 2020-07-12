@@ -3,21 +3,23 @@ import { AuthenticationRestAPIService } from './authentication-rest-api.service'
 import { CurrentUserData as currentUser }
 	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '../../../interfaces/db-user';
-import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
+import {
+	GetObjectFromSubscriptionService as getObjectFromSubscription,
+	GetObjectFromSubscriptionService
+} from '../get-object-from-subscription.service';
 import { SecurityQuestion } from '../../../interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
 
-export class AuthenticatorService extends GetObjectFromSubscriptionService {
+export class AuthenticatorService {
 
 	constructor(private __authenticationRestApi: AuthenticationRestAPIService) {
-		super();
 	}
 
 
 	async authenticate(): Promise<DBUser | { error: { message: string } }> {
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.login(
 				{email: currentUser.email, password: currentUser.password}
 			)
@@ -27,7 +29,7 @@ export class AuthenticatorService extends GetObjectFromSubscriptionService {
 
 	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }>
 	{
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.securityQuestionLogin(
 				{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 			)
@@ -37,7 +39,7 @@ export class AuthenticatorService extends GetObjectFromSubscriptionService {
 
 	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }>
 	{
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
 		);
 	}

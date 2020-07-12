@@ -2,24 +2,24 @@ import { DBLibrary } from '../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestAPIService } from './library-rest-api.service';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
-import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription}
+	from '../get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryStorageService extends GetObjectFromSubscriptionService {
+export class LibraryStorageService {
 
 
 	constructor(
 		private __libraryRestApi: LibraryRestAPIService,
 		private __localSessionID: LocalSessionIDService
 	) {
-		super();
 	}
 
 
-	async get(libraryName): Promise<DBLibrary | { error: { message: string } }> {
-		return await this.go(
+	async get(libraryName: string): Promise<DBLibrary | { error: { message: string } }> {
+		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.get(
 				{sessionID: this.__localSessionID.get(), name: libraryName}
 			)
@@ -28,7 +28,7 @@ export class LibraryStorageService extends GetObjectFromSubscriptionService {
 
 
 	async getAll(): Promise<DBLibrary[] | { error: { message: string } }> {
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__libraryRestApi.getLibraries({sessionID: this.__localSessionID.get()})
 		);
 	}
@@ -36,7 +36,7 @@ export class LibraryStorageService extends GetObjectFromSubscriptionService {
 
 	async create(libraryName: string): Promise<DBLibrary | { error: { message: string } }>
 	{
-		return await this.go(this.__libraryRestApi.create({
+		return await getObjectFromSubscription.go(this.__libraryRestApi.create({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName
 		}));
@@ -48,7 +48,7 @@ export class LibraryStorageService extends GetObjectFromSubscriptionService {
 		changes: object // The properties in 'changes' can contain dot-notation.
 	): Promise<DBLibrary | { error: { message: string } }>
 	{
-		return await this.go(this.__libraryRestApi.update({
+		return await getObjectFromSubscription.go(this.__libraryRestApi.update({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName,
 			changes
@@ -58,7 +58,7 @@ export class LibraryStorageService extends GetObjectFromSubscriptionService {
 
 	async delete(libraryName: string): Promise<{ success: true } | { error: { message: string } }>
 	{
-		return await this.go(this.__libraryRestApi.delete({
+		return await getObjectFromSubscription.go(this.__libraryRestApi.delete({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName
 		}));

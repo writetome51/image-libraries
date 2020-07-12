@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
 import { LocalEmailService } from '../local-data/local-email.service';
-import { GetObjectFromSubscriptionService } from '../get-object-from-subscription.service';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription}
+	from '../get-object-from-subscription.service';
 import { DBUser } from '../../../interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UserStorageUpdaterService extends GetObjectFromSubscriptionService {
+export class UserStorageUpdaterService {
 
 
 	constructor(
@@ -18,12 +19,11 @@ export class UserStorageUpdaterService extends GetObjectFromSubscriptionService 
 		private __localSessionID: LocalSessionIDService,
 		private __localEmail: LocalEmailService
 	) {
-		super();
 	}
 
 
 	async updatePassword(): Promise<DBUser | { error: { message: string } }> {
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__userRestApi.updatePassword(
 				{
 					email: this.__localEmail.get(),
@@ -37,7 +37,7 @@ export class UserStorageUpdaterService extends GetObjectFromSubscriptionService 
 
 
 	async updateEmail(): Promise<DBUser | { error: { message: string } }> {
-		return await this.go(
+		return await getObjectFromSubscription.go(
 			this.__userRestApi.updateEmail(
 				{
 					email: currentUser.email,

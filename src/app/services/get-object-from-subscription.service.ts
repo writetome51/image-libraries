@@ -1,12 +1,11 @@
 import { getObjectFromJSON } from 'get-object-from-json';
 import { getSubscriptionData } from '@writetome51/get-subscription-data';
 import { Subscribable } from 'rxjs';
-import { IDoThis } from '../../interfaces/i-do-this';
 
 
-export abstract class GetObjectFromSubscriptionService implements IDoThis {
+export class GetObjectFromSubscriptionService {
 
-	async go(
+	static async go(
 		subscribable: Subscribable<any>
 	): Promise<any> {
 		let result = await getSubscriptionData(subscribable);
@@ -14,7 +13,7 @@ export abstract class GetObjectFromSubscriptionService implements IDoThis {
 	}
 
 
-	private  __getAsObject(result) {
+	private static __getAsObject(result) {
 		if (typeof result === 'string') {
 			result = getObjectFromJSON(result);
 		}
