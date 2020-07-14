@@ -22,7 +22,7 @@ export class StartDataProcessButtonComponent {
 	operationStatus = ProcessingButtonOperationStatusData;
 
 
-	async run_clickHandler(event) {
+	async runClickHandler(event) {
 		event.preventDefault();
 
 		this.clicked = true;
