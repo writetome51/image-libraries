@@ -1,12 +1,12 @@
 <div class="image-container"
-	 [class.selected-image-container]="selected" (click)="handleClick()"
+	 [class.selected-image-container]="selected" (click)="toggleSelect()"
 	 (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
-	<delete-item-button [class.invisible]="!(hovered)" (click)="deleteImage()">
+	<delete-item-button [class.invisible]="!(isHovered())" (click)="deleteImage()">
 	</delete-item-button>
 
-	<a [routerLink]="[]">
+	<a [routerLink]="getRouterLink()">
 
 		<!--  Setting draggable to false on the img prevents a ghost-image from being
 		dragged.   -->

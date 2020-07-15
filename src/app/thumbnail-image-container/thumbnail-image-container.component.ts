@@ -3,6 +3,7 @@ import { DBImage } from '../../interfaces/db-image';
 import { ListItemRemoverService } from '../services/list-item-remover.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImagesDeleterService }
+	// tslint:disable-next-line:max-line-length
 	from '../services/data-transport-processor/delete-selected-images-processor/selected-images-deleter.service';
 import { SelectedImageNamesData as selectedImageNames }
 	from '../../data-structures/runtime-state-data/selected-image-names.data';
@@ -18,9 +19,10 @@ import { ThumbnailDisplaySettingsData as imageDisplaySettings }
 export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
-	@Input() clickSelectEnabled = false;
-	hovered = false;
+	@Input() selectEnabled = false;
 	selected = false;
+
+	private __hovered = false;
 
 
 	get imageWidth(): number {
@@ -36,34 +38,43 @@ export class ThumbnailImageContainerComponent {
 
 
 	hover() {
-		if (!(this.clickSelectEnabled)) this.hovered = true;
+		if (!(this.selectEnabled)) this.__hovered = true;
 	}
 
 
 	unHover() {
-		if (!(this.clickSelectEnabled)) this.hovered = false;
+		if (!(this.selectEnabled)) this.__hovered = false;
 	}
 
 
-	handleClick(): void {
-		if (this.selected) {
-			this.unSelect();
-		}
-		else {
-			this.select();
+	isHovered(): boolean {
+		if (this.selectEnabled) return false;
+		else return this.__hovered;
+	}
+
+
+	toggleSelect(): void {
+		if (this.selectEnabled) {
+			if (this.selected) this.unSelect();
+			else this.select();
 		}
 	}
 
 
 	select() {
 		this.selected = true;
-		if (this.clickSelectEnabled) selectedImageNames.data.push(this.image.name);
+		selectedImageNames.data.push(this.image.name);
 	}
 
 
 	unSelect() {
 		this.selected = false;
-		if (this.clickSelectEnabled) removeFirstOf(this.image.name, selectedImageNames.data);
+		removeFirstOf(this.image.name, selectedImageNames.data);
+	}
+
+
+	getRouterLink(): string[] {
+		if (this.selectEnabled) return [];
 	}
 
 

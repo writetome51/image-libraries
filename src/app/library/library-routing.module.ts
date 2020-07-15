@@ -9,7 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: moduleRoutes.ImageViewerModule,
+		path: moduleRoutes.FullSizeImageViewerModule,
 		loadChildren: () => import('../full-size-image-viewer/full-size-image-viewer.module')
 			.then(mod => mod.FullSizeImageViewerModule)
 	},

@@ -5,7 +5,7 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 
 export class LibraryModuleRoutesData {
 
-	static readonly ImageViewerModule = `:${paramID.libName}/image`;
+	static readonly FullSizeImageViewerModule = `:${paramID.libName}/image`;
 	static readonly LibraryComponent = `:${paramID.libName}/page/:${paramID.pageNumber}`;
 
 }
