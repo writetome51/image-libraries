@@ -1,6 +1,6 @@
 <div class="image-container"
-	 [class.selected-image-container]="selected" (click)="toggleSelect()"
-	 (mouseover)="hovered = true" (mouseleave)="hovered = false"
+	 [class.selected-image-container]="selected" (click)="handleClick()"
+	 (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
 	<delete-item-button [class.invisible]="!(hovered)" (click)="deleteImage()">

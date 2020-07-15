@@ -12,8 +12,8 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
 
+		this.setItemsPerLoad(load.size);
 		this.setItemsPerPage(page.size);
-		this.__ensureTheyMatch( /* itemsPerLoad, load.size */ );
 	}
 
 
@@ -26,13 +26,17 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	}
 
 
-	private __ensureTheyMatch() {
-
-		// itemsPerLoad must be evenly divisible by itemsPerPage.
-		// If it isn't, its value is lowered until it is.
-
-		this.setItemsPerLoad(load.size);
-		load.size = this.getItemsPerLoad(); // Just in case it got lowered.
+	setItemsPerPage(num: number) {
+		super.setItemsPerPage(num);
+		page.size = this.getItemsPerPage();
+		load.size = this.getItemsPerLoad(); // in case items per load was adjusted.
 	}
+
+
+	setItemsPerLoad(num: number) {
+		super.setItemsPerLoad(num);
+		load.size = this.getItemsPerLoad();
+	}
+
 
 }

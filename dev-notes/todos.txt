@@ -1,0 +1,9 @@
+Todo: implement multiple-image selection mode inside /all-images route.  When this mode is on,
+toggle-selecting images should be activated, hover-functionality should be off, and app action menu
+should give choices like 'delete selected' or 'add selected to library' (with submenu letting you choose
+ what library). (deadline July 21)
+
+
+Todo: add a screen-capture youtube video to home page showing how to use the site. Video must show
+examples of doing most things, i.e., creating account, adding images and image urls, creating a library,
+adding images to library, re-arranging images, and editing image metadata, such as location.

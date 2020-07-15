@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
 import { AppPaginatorDataSourceService } from './app-paginator-data-source.service';
 import { DataTotalForLibraryService }
 	from './data-total/data-total-for-library.service';
+import { DBImage } from '../../../../interfaces/db-image';
 import { GetLibraryProcessorService }
 	from '../../data-transport-processor/get-images/get-library-processor.service';
-import { DBImage } from '../../../../interfaces/db-image';
+import { Injectable } from '@angular/core';
 import { LoadedImagesData as loadedImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { LoadedLibraryData as loadedLibrary }
@@ -24,7 +24,7 @@ export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceSer
 
 
 	protected _getSomethingFrom_loadedImages(): DBImage[] {
-		return loadedLibrary.data._image_ids.map((id) => loadedImages.data[id]);
+		return loadedLibrary._image_ids.map((id) => loadedImages.data[id]);
 	}
 
 }

@@ -12,7 +12,3 @@ You can delete a library.
 
 You can add images to your account.
 You can view all the images in your account.
-
-
-Todo: add a sample library allowing any user to test features like rearranging images, search, and
-slideshow mode.  Any user should be able to do this without creating an account.

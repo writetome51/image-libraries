@@ -11,10 +11,10 @@ import { UpdateOrNewLibraryResultCheckService }
 export class CreateLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__updateLibraryResultCheck: UpdateOrNewLibraryResultCheckService,
+		__newLibraryResultCheck: UpdateOrNewLibraryResultCheckService,
 		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulCreationOfNewLibraryService,
 	) {
-		super(__updateLibraryResultCheck, __runTasksNeededAfterSuccessfulResult);
+		super(__newLibraryResultCheck, __runTasksNeededAfterSuccessfulResult);
 	}
 
 }

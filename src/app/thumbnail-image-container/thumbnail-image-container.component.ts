@@ -4,7 +4,7 @@ import { ListItemRemoverService } from '../services/list-item-remover.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImagesDeleterService }
 	from '../services/data-transport-processor/delete-selected-images-processor/selected-images-deleter.service';
-import { SelectedImageNamesData as selectedImageNames}
+import { SelectedImageNamesData as selectedImageNames }
 	from '../../data-structures/runtime-state-data/selected-image-names.data';
 import { ThumbnailDisplaySettingsData as imageDisplaySettings }
 	from '../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
@@ -18,6 +18,7 @@ import { ThumbnailDisplaySettingsData as imageDisplaySettings }
 export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
+	@Input() clickSelectEnabled = false;
 	hovered = false;
 	selected = false;
 
@@ -34,11 +35,35 @@ export class ThumbnailImageContainerComponent {
 	}
 
 
-	toggleSelect(): void {
-		this.selected = !(this.selected);
+	hover() {
+		if (!(this.clickSelectEnabled)) this.hovered = true;
+	}
 
-		if (this.selected) selectedImageNames.data.push(this.image.name);
-		else removeFirstOf(this.image.name, selectedImageNames.data);
+
+	unHover() {
+		if (!(this.clickSelectEnabled)) this.hovered = false;
+	}
+
+
+	handleClick(): void {
+		if (this.selected) {
+			this.unSelect();
+		}
+		else {
+			this.select();
+		}
+	}
+
+
+	select() {
+		this.selected = true;
+		if (this.clickSelectEnabled) selectedImageNames.data.push(this.image.name);
+	}
+
+
+	unSelect() {
+		this.selected = false;
+		if (this.clickSelectEnabled) removeFirstOf(this.image.name, selectedImageNames.data);
 	}
 
 
