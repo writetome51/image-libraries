@@ -7,9 +7,7 @@ import { LibraryPaginatorService } from '../../app-paginator/library-paginator.s
 
 export class LibraryJumpToPageNumberInputService extends JumpToPageNumberInputService {
 
-	constructor(
-		_paginator: LibraryPaginatorService
-	) {
+	constructor(_paginator: LibraryPaginatorService) {
 		super(_paginator);
 	}
 
