@@ -1,4 +1,4 @@
-export class LoadedImagesStatusData {
+export class ImagesLoadedFromData {
 
 	static data: 'all' | 'library' | 'none';
 

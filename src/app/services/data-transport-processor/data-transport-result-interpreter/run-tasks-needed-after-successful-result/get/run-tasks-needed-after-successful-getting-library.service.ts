@@ -6,8 +6,8 @@ import { GetLibraryImagesProcessorService }
 	from '../../../get-images/get-library-images-processor.service';
 import { ImageTotalData as imageTotal }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
-import { LoadedImagesStatusData as loadedImagesStatus }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { ImagesLoadedFromData as loadedImagesStatus }
+	from '../../../../../../data-structures/runtime-state-data/static-classes/images-loaded-from.data';
 import { IDoThis } from '../../../../../../interfaces/i-do-this';
 
 

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
 import { LoadedImagesData as loadedImages }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
-import { LoadedImagesStatusData as loadedImagesStatus }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { ImagesLoadedFromData as loadedImagesStatus }
+	from '../../../data-structures/runtime-state-data/static-classes/images-loaded-from.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { AllImagesJumpToPageNumberInputService }

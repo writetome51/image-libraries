@@ -11,10 +11,12 @@ import { NewImagesData as newImages}
 import { ImageTotalData as imageTotal }
 	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { PageData as page} from '../../data-structures/runtime-state-data/static-classes/page.data';
-import { LoadedImagesStatusData as loadedImagesStatus }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-images-status.data';
+import { ImagesLoadedFromData as imagesLoadedFrom }
+	from '../../data-structures/runtime-state-data/static-classes/images-loaded-from.data';
 import { LoadData as batch }
 	from '../../data-structures/runtime-state-data/static-classes/load.data';
+import { PageImagesData as pageImages }
+	from '../../data-structures/runtime-state-data/static-classes/page-images.data';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis
@@ -24,11 +26,12 @@ export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoTh
 		loadedLibrary,
 		loadedImages,
 		page, // must be listed before batch!
+		pageImages,
 		batch,
 		thumbnailDisplaySettings,
 		newImages,
 		imageTotal,
-		loadedImagesStatus
+		imagesLoadedFrom
 	];
 
 
