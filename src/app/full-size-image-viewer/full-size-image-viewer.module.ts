@@ -13,6 +13,7 @@ import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
 import { LocationMapComponent } from './location-map/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { URLParamIDData as paramID} from '../../data-structures/read-only-data/url-param-id.data';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { RouterModule } from '@angular/router';
 
 		RouterModule.forChild([
 			{
-				path: ':imageName', // can only access when logged in
+				path: `:${paramID.imageName}`,
 				component: FullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]

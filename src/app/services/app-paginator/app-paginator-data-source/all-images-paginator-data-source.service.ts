@@ -20,10 +20,4 @@ export class AllImagesPaginatorDataSourceService extends AppPaginatorDataSourceS
 		super(__getAllImagesProcessor, __dataTotal);
 	}
 
-
-	protected _getSomethingFrom_loadedImages(): DBImage[] {
-		return Object.values(loadedImages.data);
-	}
-
-
 }

@@ -8,12 +8,10 @@ import { DBImage } from '../../../interfaces/db-image';
 })
 export class FullSizeImageComponent {
 
-
-	@Input() image: DBImage;
+	@Input() data: DBImage;
 
 
 	constructor() {
 	}
-
 
 }

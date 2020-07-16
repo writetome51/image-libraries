@@ -22,9 +22,4 @@ export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceSer
 		super(__getLibraryProcessor, __dataTotal);
 	}
 
-
-	protected _getSomethingFrom_loadedImages(): DBImage[] {
-		return loadedLibrary._image_ids.map((id) => loadedImages.data[id]);
-	}
-
 }

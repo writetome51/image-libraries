@@ -13,13 +13,8 @@ export class RunTasksNeededAfterSuccessfulGettingImagesService implements IDoThi
 
 	async go(result: { dataTotal: number, batch: DBImage[] }) {
 
-		loadedImages.data = {};
-
+		loadedImages.data = result.batch;
 		imageTotal.data = result.dataTotal;
-
-		result.batch.forEach((image: DBImage) => {
-			loadedImages.data[image._id] = image;
-		});
 	}
 
 }
