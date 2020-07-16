@@ -3,8 +3,8 @@
 	 (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
-	<delete-item-button [class.invisible]="!(isHovered())" (click)="deleteImage()">
-	</delete-item-button>
+	<delete-image-glyphicon [class.invisible]="!(isHovered())" (click)="deleteImage()">
+	</delete-image-glyphicon>
 
 	<a [routerLink]="getRouterLink()">
 

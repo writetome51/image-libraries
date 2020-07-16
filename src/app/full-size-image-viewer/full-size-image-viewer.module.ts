@@ -32,7 +32,7 @@ import { RouterModule } from '@angular/router';
 
 		RouterModule.forChild([
 			{
-				path: ':imageIndex', // can only access when logged in
+				path: ':imageName', // can only access when logged in
 				component: FullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]

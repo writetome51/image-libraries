@@ -55,26 +55,27 @@ export class ThumbnailImageContainerComponent {
 
 	toggleSelect(): void {
 		if (this.selectEnabled) {
-			if (this.selected) this.unSelect();
-			else this.select();
+			if (this.selected) this.__unSelect();
+			else this.__select();
 		}
-	}
-
-
-	select() {
-		this.selected = true;
-		selectedImageNames.data.push(this.image.name);
-	}
-
-
-	unSelect() {
-		this.selected = false;
-		removeFirstOf(this.image.name, selectedImageNames.data);
 	}
 
 
 	getRouterLink(): string[] {
 		if (this.selectEnabled) return [];
+		else return ['image', this.image.name];
+	}
+
+
+	private __select() {
+		this.selected = true;
+		selectedImageNames.data.push(this.image.name);
+	}
+
+
+	private __unSelect() {
+		this.selected = false;
+		removeFirstOf(this.image.name, selectedImageNames.data);
 	}
 
 

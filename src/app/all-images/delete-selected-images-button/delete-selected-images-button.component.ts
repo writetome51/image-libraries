@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StartDataProcessComponent } from '../../start-data-process.component';
 import { DeleteSelectedImagesProcessorService }
+	// tslint:disable-next-line:max-line-length
 	from '../../services/data-transport-processor/delete-selected-images-processor/delete-selected-images-processor.service';
 
 
