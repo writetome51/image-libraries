@@ -2,7 +2,7 @@ import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagi
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
+import { CreateLibraryButtonComponent } from './new-library-form/create-library-button/create-library-button.component';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';

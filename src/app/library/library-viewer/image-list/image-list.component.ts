@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../../../services/current-route.service';
 import { DBImage } from '../../../../interfaces/db-image';
-import { LibraryPaginatorService } from '../../../services/app-paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../../services/library-paginator.service';
 import { ListItemRemoverService } from '../../../services/list-item-remover.service';
 import { PageImagesData as pageImages }
 	from '../../../../data-structures/runtime-state-data/static-classes/page-images.data';

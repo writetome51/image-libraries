@@ -1,6 +1,7 @@
 import { AllImagesComponent } from './all-images.component';
 import { AllImagesModuleRoutesData as moduleRoutes } from './all-images-module-routes.data';
-import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
+import { AllImagesPaginationControlsComponent }
+	from './all-images-pagination-controls.component';
 import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';

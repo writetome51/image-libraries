@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { DataTransportProcessorService }
-	from '../../services/data-transport-processor/data-transport-processor.service';
+	from '../../../services/data-transport-processor/data-transport-processor.service';
 import { LibraryUpdaterService } from './library-updater.service';
 import { UpdateLibraryResultInterpreterService }
 	// tslint:disable-next-line:max-line-length
-	from '../../services/data-transport-processor/data-transport-result-interpreter/update-library-result-interpreter.service';
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/update-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

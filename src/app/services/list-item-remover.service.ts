@@ -1,8 +1,8 @@
 import { Subject, Subscribable } from 'rxjs';
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { Injectable } from '@angular/core';
-import { LibraryPaginatorService } from './app-paginator/library-paginator.service';
 import { ItemBeingRemoved } from '../../interfaces/item-being-removed';
+
 
 @Injectable({providedIn: 'root'})
 
@@ -16,15 +16,17 @@ export class ListItemRemoverService {
 	}
 
 
-	constructor(private __libraryPaginator: LibraryPaginatorService) {
+	constructor() {
 	}
 
 
 	remove(index): void {
-		let previousLength = this.__libraryPaginator.getCurrentPage().length;
-		removeByIndex(index, this.__libraryPaginator.getCurrentPage());
+		/******************
+		let previousLength = loadedImages.data.length;
+		removeByIndex(index, pageImages.data);
 
 		this.__subject.next({indexBeingRemoved: index, previousLength});
+		 *****************/
 	}
 
 

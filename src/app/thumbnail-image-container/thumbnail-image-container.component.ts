@@ -30,10 +30,7 @@ export class ThumbnailImageContainerComponent {
 	}
 
 
-	constructor(
-		private __listItemRemover: ListItemRemoverService,
-		private __selectedImagesDeleter: SelectedImagesDeleterService
-	) {
+	constructor(private __selectedImagesDeleter: SelectedImagesDeleterService) {
 	}
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { URLParamIDData as paramID } from '../../../data-structures/read-only-data/url-param-id.data';
-import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
+import { AllImagesPaginatorService } from './all-images-paginator.service';
 import { Handler } from '../../../interfaces/handler';
 
 

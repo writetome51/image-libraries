@@ -1,6 +1,5 @@
-import { AppPaginatorService } from './app-paginator.service';
-import { AllImagesPaginatorDataSourceService }
-	from './app-paginator-data-source/all-images-paginator-data-source.service';
+import { AppPaginatorService } from '../../services/app-paginator/app-paginator.service';
+import { AllImagesPaginatorDataSourceService } from './all-images-paginator-data-source.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})

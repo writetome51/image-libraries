@@ -9,13 +9,15 @@ import { ImageListComponent } from './library-viewer/image-list/image-list.compo
 import { ImageSizeSliderComponent }
 	from './library-viewer/image-size-slider/image-size-slider.component';
 import { LibraryComponent } from './library.component';
-import { LibraryPaginationControlsComponent } from './library-pagination-controls.component';
+import { LibraryPaginationControlsComponent }
+	from './library-pagination-controls/library-pagination-controls.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { LibraryViewerComponent } from './library-viewer/library-viewer.component';
 import { NgModule } from '@angular/core';
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
-import { SaveChangesButtonComponent } from './library-viewer/save-changes-button.component';
+import { SaveChangesButtonComponent }
+	from './library-viewer/save-changes-button/save-changes-button.component';
 import { StartDataProcessButtonModule }
 	from '../start-data-process-button/start-data-process-button.module';
 import { ThumbnailImageContainerModule }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
-import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
+import { AllImagesPaginatorService } from '../services/all-images-paginator.service';
 import { PageImagesData as pageImages }
 	from '../../../data-structures/runtime-state-data/static-classes/page-images.data';
 

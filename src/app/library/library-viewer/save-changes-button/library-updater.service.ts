@@ -1,10 +1,10 @@
-import { DBLibrary } from '../../../interfaces/db-library';
+import { DBLibrary } from '../../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
-import { LibraryChangesService } from '../../services/library/library-changes.service';
-import { LibraryStorageService } from '../../services/library/library-storage.service';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+import { LibraryChangesService } from '../../../services/library/library-changes.service';
+import { LibraryStorageService } from '../../../services/library/library-storage.service';
 import { not } from '@writetome51/not';
 
 

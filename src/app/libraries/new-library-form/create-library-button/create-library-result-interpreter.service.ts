@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
+import { DataTransportResultInterpreterService }
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { RunTasksNeededAfterSuccessfulCreationOfNewLibraryService }
-	from './run-tasks-needed-after-successful-result/create/run-tasks-needed-after-successful-creation-of-new-library.service';
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-result/create/run-tasks-needed-after-successful-creation-of-new-library.service';
 import { UpdateOrNewLibraryResultCheckService }
-	from './data-transport-result-check/update-or-new-library-result-check.service';
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/update-or-new-library-result-check.service';
 
 
 @Injectable({providedIn: 'root'})
