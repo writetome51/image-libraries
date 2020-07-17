@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { CurrentRouteService } from '../../../services/current-route.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LibraryPaginatorService } from '../../../services/app-paginator/library-paginator.service';
-import { CurrentRouteService } from '../../../services/current-route.service';
-import { URLParamIDData as paramID }
-	from '../../../../data-structures/read-only-data/url-param-id.data';
 import { ListItemRemoverService } from '../../../services/list-item-remover.service';
+import { PageImagesData as pageImages }
+	from '../../../../data-structures/runtime-state-data/static-classes/page-images.data';
 
 
 @Component({
@@ -14,12 +14,7 @@ import { ListItemRemoverService } from '../../../services/list-item-remover.serv
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return this.__libraryPaginator.getCurrentPage();
-	}
-
-
-	get libName(): string {
-		return this.__currentRoute.params[paramID.libName];
+		return pageImages.data;
 	}
 
 
@@ -28,6 +23,7 @@ export class ImageListComponent {
 		private __libraryPaginator: LibraryPaginatorService,
 		private __listItemRemover: ListItemRemoverService
 	) {
+		pageImages.data = this.__libraryPaginator.getCurrentPage();
 	}
 
 }

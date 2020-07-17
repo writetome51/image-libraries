@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
 import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
+import { PageImagesData as pageImages }
+	from '../../../data-structures/runtime-state-data/static-classes/page-images.data';
 
 
 @Component({
@@ -12,7 +14,8 @@ export class ImageListComponent {
 	get images(): DBImage[] {
 		// If the currentPage is undefined it triggers error, so we catch it:
 		try {
-			return this.allImagesPaginator.getCurrentPage();
+			pageImages.data =  this.allImagesPaginator.getCurrentPage();
+			return pageImages.data;
 		}
 		catch (e) {
 			return undefined;

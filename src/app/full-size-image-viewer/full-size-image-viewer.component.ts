@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
-import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 import { DBImage } from '../../interfaces/db-image';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LoadedImagesData as loadedImages }
 	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class FullSizeImageViewerComponent {
 
 
 	private __getImageByName(name): DBImage {
-		let foundItem: { value: DBImage, index: number };
+		let foundItem: { value: DBImage };
 
 		foundItem = getByTest(
 			(image: DBImage) => image.name === name,

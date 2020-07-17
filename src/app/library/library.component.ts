@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
+import { GetLibraryRouteParamsSubscriptionObserverService }
+	from './services/get-library-route-params-subscription-observer.service';
+import { ImageTotalData as imageTotal}
+	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
 import { LibraryPaginatorService } from '../services/app-paginator/library-paginator.service';
+import { OperationStatusData as operationStatus }
+	from '../../data-structures/runtime-state-data/operation-status.data';
 import { RequestedLibraryData as requestedLibrary }
 	from '../../data-structures/runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
-import { GetLibraryRouteParamsSubscriptionObserverService }
-	from './get-library-route-params-subscription-observer.service';
-import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
-import { ImageTotalData as imageTotal}
-	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
 
 
 @Component({
