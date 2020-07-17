@@ -1,4 +1,5 @@
-import { AllImagesPaginatorService } from './services/all-images-paginator.service';
+import { AllImagesPaginatorService }
+	from './services/all-images-paginator/all-images-paginator.service';
 import { AllImagesJumpToPageNumberInputService }
 	from './services/all-images-jump-to-page-number-input.service';
 import { AppNavigatorModuleRoutesData as appNavigatorModuleRoutes}

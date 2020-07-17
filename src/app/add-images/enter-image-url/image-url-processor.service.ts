@@ -13,8 +13,7 @@ import { OperationStatusData as operationStatus }
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
-	// tslint:disable-next-line:max-line-length
-	from '../services/save-new-images-processor.service';
+	from '../services/save-new-images-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
