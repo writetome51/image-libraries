@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { CreateUserButtonComponent } from './new-user-form/create-user-button.component';
+import { CreateUserButtonComponent }
+	from './new-user-form/create-user-button/create-user-button.component';
 import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
 import { NewUserComponent } from './new-user.component';

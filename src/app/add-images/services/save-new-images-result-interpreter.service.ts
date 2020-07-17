@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
+import { DataTransportResultInterpreterService }
+	// tslint:disable-next-line:max-line-length
+	from '../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { RunTasksNeededAfterSuccessfulSavingNewImagesService }
-	from './run-tasks-needed-after-successful-result/run-tasks-needed-after-successful-saving-new-images.service';
-import { SaveNewImagesResultCheckService }
-	from './data-transport-result-check/save-new-images-result-check.service';
+	from './run-tasks-needed-after-successful-saving-new-images.service';
+import { SaveNewImagesResultCheckService } from './save-new-images-result-check.service';
 
 
 @Injectable({providedIn: 'root'})
