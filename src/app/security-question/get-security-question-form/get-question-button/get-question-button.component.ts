@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '../../start-data-process.component';
+import { StartDataProcessComponent } from '../../../start-data-process.component';
 import { GetSecurityQuestionProcessorService }
-	from './get-security-question-processor.service';
+	from './get-security-question-processor/get-security-question-processor.service';
 
 
 @Component({

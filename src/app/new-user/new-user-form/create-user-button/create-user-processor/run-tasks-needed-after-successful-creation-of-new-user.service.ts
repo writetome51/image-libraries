@@ -1,10 +1,10 @@
-import { DBUser } from '../../../../interfaces/db-user';
+import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { RunTasksNeededAfterSuccessfulLoginService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-result/authentication/run-tasks-needed-after-successful-login.service';
+	from '../../../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-result/authentication/run-tasks-needed-after-successful-login.service';
 import { AlertData as alert }
-	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
-import { IDoThis } from '../../../../interfaces/i-do-this';
+	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

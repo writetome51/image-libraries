@@ -1,4 +1,5 @@
-import { DataTransportResultCheckService } from './data-transport-result-check.service';
+import { DataTransportResultCheckService }
+	from '../../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { Injectable } from '@angular/core';
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';

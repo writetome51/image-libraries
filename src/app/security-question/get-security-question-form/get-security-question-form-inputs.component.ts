@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
-import { GetSecurityQuestionInputsService }
-	from '../../services/validating-inputs/current-user-inputs/get-security-question-inputs.service';
+import { GetSecurityQuestionInputsService } from './get-security-question-inputs.service';
 
 
 @Component({

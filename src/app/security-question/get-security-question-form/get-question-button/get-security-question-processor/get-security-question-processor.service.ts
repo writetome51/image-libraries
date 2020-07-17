@@ -1,13 +1,11 @@
-import { AuthenticatorService } from '../../services/authentication/authenticator.service';
+import { AuthenticatorService } from '../../../../services/authentication/authenticator.service';
 import { FormDataTransportProcessorService }
-	from '../../services/data-transport-processor/form-data-transport-processor.service';
+	from '../../../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { GetSecurityQuestionInputsService }
-	from '../../services/validating-inputs/current-user-inputs/get-security-question-inputs.service';
+import { GetSecurityQuestionInputsService } from '../../get-security-question-inputs.service';
 import { GetSecurityQuestionResultInterpreterService }
-	// tslint:disable-next-line:max-line-length
-	from '../../services/data-transport-processor/data-transport-result-interpreter/get-security-question-result-interpreter.service';
-import { SecurityQuestion } from '../../../interfaces/security-question';
+	from './get-security-question-result-interpreter.service';
+import { SecurityQuestion } from '../../../../../interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})

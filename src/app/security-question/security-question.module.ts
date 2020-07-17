@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
 import { SubmitAnswerButtonComponent }
 	from './answer-security-question-form/submit-answer-button.component';
 import { GetQuestionButtonComponent }
-	from './get-security-question-form/get-question-button.component';
+	from './get-security-question-form/get-question-button/get-question-button.component';
 
 
 @NgModule({
