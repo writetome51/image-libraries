@@ -14,6 +14,4 @@ export interface AppImage {
 
 	location?: { latitude: number, longitude: number }; // use with Google maps
 
-	selected?: boolean // not to be saved to db.
-
 }

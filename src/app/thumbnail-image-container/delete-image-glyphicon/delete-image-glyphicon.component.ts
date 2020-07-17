@@ -17,10 +17,7 @@ export class DeleteImageGlyphiconComponent {
 
 
 	async deleteImage(): Promise<void> {
-		// Whether to delete the image from the user account or to delete it from a
-		// library depends on where the user is viewing it.  If viewing it from library,
-		// delete it from that library.  If viewing from 'all-images' route, delete it
-		// from account.
+
 	}
 
 }

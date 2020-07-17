@@ -21,8 +21,6 @@ export class ThumbnailImageContainerComponent {
 	// Only works if hovering is enabled.
 	@Input() deleteGlyphiconEnabled = false;
 
-	selected = false;
-
 	private __hovered = false;
 
 
