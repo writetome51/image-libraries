@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetLibraryRouteParamsSubscriptionObserverService }
-	from './services/get-library-route-params-subscription-observer.service';
+	from './services/get-library-route-params-subscription-observer/get-library-route-params-subscription-observer.service';
 import { ImageTotalData as imageTotal}
 	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
-import { LibraryPaginatorService } from './services/library-paginator.service';
+import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
 import { RequestedLibraryData as requestedLibrary }

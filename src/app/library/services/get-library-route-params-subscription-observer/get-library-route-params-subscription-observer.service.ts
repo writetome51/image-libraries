@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '../../../interfaces/i-do-this';
+import { IDoThis } from '../../../../interfaces/i-do-this';
 import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
+	from '../../../../data-structures/runtime-state-data/operation-status.data';
 import { RunTasksNeededAfterLibraryRouteParamsReceivedService }
 	from './run-tasks-needed-after-library-route-params-received.service';
 

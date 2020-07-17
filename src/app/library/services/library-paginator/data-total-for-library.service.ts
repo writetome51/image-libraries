@@ -1,8 +1,8 @@
 import { DataTotalService }
-	from '../../services/app-paginator/data-total.service';
+	from '../../../services/app-paginator/data-total.service';
 import { Injectable } from '@angular/core';
 import { GetLibraryProcessorService }
-	from '../../services/data-transport-processor/get-images/get-library-processor.service';
+	from './get-library-processor/get-library-processor.service';
 
 
 @Injectable({providedIn: 'root'})

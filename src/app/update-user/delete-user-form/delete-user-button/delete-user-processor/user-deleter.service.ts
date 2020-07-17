@@ -1,8 +1,8 @@
 import { CurrentUserData as currentUser }
-	from '../../../../data-structures/runtime-state-data/static-classes/current-user.data';
+	from '../../../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../../../services/local-data/local-session-id.service';
-import { UserStorageService } from '../../../services/user/user-storage.service';
+import { LocalSessionIDService } from '../../../../services/local-data/local-session-id.service';
+import { UserStorageService } from '../../../../services/user/user-storage.service';
 
 
 @Injectable({providedIn: 'root'})
