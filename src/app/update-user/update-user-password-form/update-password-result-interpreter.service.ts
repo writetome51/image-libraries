@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService } from './data-transport-result-interpreter.service';
+import { DataTransportResultInterpreterService }
+	from '../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { RunTasksNeededAfterSuccessfulUpdateOfPasswordService }
-	from './run-tasks-needed-after-successful-result/update/run-tasks-needed-after-successful-update-of-password.service';
+	from './run-tasks-needed-after-successful-update-of-password.service';
 import { DataTransportResultCheckService }
-	from './data-transport-result-check/data-transport-result-check.service';
+	from '../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 
 
 @Injectable({providedIn: 'root'})

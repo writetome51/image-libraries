@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { RunTasksNeededAfterSuccessfulUpdateOfEmailOrPasswordService }
-	from './run-tasks-needed-after-successful-update-of-email-or-password.service';
-import { SetResultMessage } from './set-result-message/set-result-message.decorator';
+	from '../run-tasks-needed-after-successful-update-of-email-or-password.service';
+import { SetResultMessage }
+	from '../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-result/update/set-result-message/set-result-message.decorator';
 
 
 @SetResultMessage('Password updated')

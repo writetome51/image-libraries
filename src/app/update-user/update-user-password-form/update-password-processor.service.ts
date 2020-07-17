@@ -1,11 +1,12 @@
-import { FormDataTransportProcessorService } from '../../services/data-transport-processor/form-data-transport-processor.service';
+import { FormDataTransportProcessorService }
+	from '../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UpdatePasswordFormInputsService }
 	from '../../services/validating-inputs/current-user-inputs/update-password-form-inputs.service';
 import { UpdatePasswordResultInterpreterService }
 	// tslint:disable-next-line:max-line-length
-	from '../../services/data-transport-processor/data-transport-result-interpreter/update-password-result-interpreter.service';
-import { UserStorageUpdaterService } from '../../services/user/user-storage-updater.service';
+	from './update-password-result-interpreter.service';
+import { UserStorageUpdaterService } from '../user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})

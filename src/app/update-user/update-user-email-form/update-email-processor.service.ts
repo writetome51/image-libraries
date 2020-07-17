@@ -5,8 +5,8 @@ import { UpdateEmailFormInputsService }
 	from '../../services/validating-inputs/current-user-inputs/update-email-form-inputs.service';
 import { UpdateEmailResultInterpreterService }
 	// tslint:disable-next-line:max-line-length
-	from '../../services/data-transport-processor/data-transport-result-interpreter/update-email-result-interpreter.service';
-import { UserStorageUpdaterService } from '../../services/user/user-storage-updater.service';
+	from './update-email-result-interpreter.service';
+import { UserStorageUpdaterService } from '../user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})
