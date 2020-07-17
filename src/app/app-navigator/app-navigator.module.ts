@@ -2,7 +2,7 @@ import { AppNavigatorComponent } from './app-navigator.component';
 import { AppNavigatorModuleRoutesData as moduleRoutes } from './app-navigator-module-routes.data';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { LogoutButtonComponent } from './logout-button.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }

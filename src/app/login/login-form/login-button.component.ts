@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginProcessorService }
-	from '../../services/data-transport-processor/authentication/login-processor.service';
+	from './login-processor.service';
 import { StartDataProcessComponent } from '../../start-data-process.component';
 
 

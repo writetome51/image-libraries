@@ -1,10 +1,13 @@
-import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
+import { FormDataTransportProcessorService }
+	from '../../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UserDeleterService } from './user-deleter.service';
 import { DeleteUserResultInterpreterService }
-	from '../data-transport-result-interpreter/delete-user-result-interpreter.service';
+	// tslint:disable-next-line:max-line-length
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/delete-user-result-interpreter.service';
 import { DeleteUserEmailPasswordInputsService }
-	from '../../validating-inputs/current-user-inputs/delete-user-email-password-inputs.service';
+	// tslint:disable-next-line:max-line-length
+	from '../../../services/validating-inputs/current-user-inputs/delete-user-email-password-inputs.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -4,7 +4,7 @@ import { ListItemRemoverService } from '../services/list-item-remover.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImagesDeleterService }
 	// tslint:disable-next-line:max-line-length
-	from '../services/data-transport-processor/delete-selected-images-processor/selected-images-deleter.service';
+	from '../all-images/delete-selected-images-button/services/selected-images-deleter.service';
 import { SelectedImageNamesData as selectedImageNames }
 	from '../../data-structures/runtime-state-data/selected-image-names.data';
 import { ThumbnailDisplaySettingsData as imageDisplaySettings }

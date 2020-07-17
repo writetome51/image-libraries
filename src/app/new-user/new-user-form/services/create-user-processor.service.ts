@@ -1,9 +1,9 @@
-import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
+import { FormDataTransportProcessorService } from '../../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { NewUserFormInputsService }
-	from '../../validating-inputs/current-user-inputs/new-user-form-inputs.service';
+	from '../../../services/validating-inputs/current-user-inputs/new-user-form-inputs.service';
 import { NewUserResultInterpreterService }
-	from '../data-transport-result-interpreter/new-user-result-interpreter.service';
+	from '../../../services/data-transport-processor/data-transport-result-interpreter/new-user-result-interpreter.service';
 import { UserCreatorService } from './user-creator.service';
 import { DBUser } from '../../../../interfaces/db-user';
 

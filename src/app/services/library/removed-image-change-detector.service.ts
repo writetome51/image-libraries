@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DisplayedImagesService } from '../image/displayed-images.service';
 import { Subscription, Unsubscribable } from 'rxjs';
 import { ItemBeingRemoved } from '../../../interfaces/item-being-removed';
 import { ListItemRemoverService } from '../list-item-remover.service';

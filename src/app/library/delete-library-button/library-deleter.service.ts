@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
-import { LibraryStorageService } from '../../library/library-storage.service';
+	from '../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+import { LibraryStorageService } from '../../services/library/library-storage.service';
 
 
 @Injectable({providedIn: 'root'})

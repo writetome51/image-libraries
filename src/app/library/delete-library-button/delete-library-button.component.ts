@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '../start-data-process.component';
+import { StartDataProcessComponent } from '../../start-data-process.component';
 import { DeleteLibraryProcessorService }
-	from '../services/data-transport-processor/delete-library-processor/delete-library-processor.service';
+	from './delete-library-processor.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class DeleteLibraryButtonComponent extends StartDataProcessComponent {
 	async start(): Promise<void> {
 		let confirmed = window.confirm('Are you sure you want to delete the library?');
 
-		if (confirmed) super.start();
+		if (confirmed) await super.start();
 	}
 
 }

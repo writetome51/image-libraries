@@ -7,7 +7,7 @@ import { RequestedLibraryData as requestedLibrary }
 	from '../../../data-structures/runtime-state-data/requested-library.data';
 import { URLParamIDData as paramID } from '../../../data-structures/read-only-data/url-param-id.data';
 import { LibraryPaginatorService } from '../../services/app-paginator/library-paginator.service';
-import { LibraryVerifierService } from '../library-verifier.service';
+import { LibraryVerifierService } from './library-verifier.service';
 import { RedirectToLoggedInHomeService } from '../../services/redirect-to-logged-in-home.service';
 import { IDoThis } from '../../../interfaces/i-do-this';
 import { LoadedLibraryData as loadedLibrary }

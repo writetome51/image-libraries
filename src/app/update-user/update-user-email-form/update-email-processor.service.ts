@@ -1,10 +1,12 @@
-import { FormDataTransportProcessorService } from '../form-data-transport-processor.service';
+import { FormDataTransportProcessorService }
+	from '../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UpdateEmailFormInputsService }
-	from '../../validating-inputs/current-user-inputs/update-email-form-inputs.service';
+	from '../../services/validating-inputs/current-user-inputs/update-email-form-inputs.service';
 import { UpdateEmailResultInterpreterService }
-	from '../data-transport-result-interpreter/update-email-result-interpreter.service';
-import { UserStorageUpdaterService } from '../../user/user-storage-updater.service';
+	// tslint:disable-next-line:max-line-length
+	from '../../services/data-transport-processor/data-transport-result-interpreter/update-email-result-interpreter.service';
+import { UserStorageUpdaterService } from '../../services/user/user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})

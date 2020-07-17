@@ -1,8 +1,10 @@
-import { DeAuthenticatorService } from '../../authentication/de-authenticator.service';
+import { DeAuthenticatorService } from './de-authenticator.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService }
-	from '../data-transport-result-interpreter/logout-result-interpreter.service';
-import { DataTransportProcessorService } from '../data-transport-processor.service';
+	// tslint:disable-next-line:max-line-length
+	from '../../services/data-transport-processor/data-transport-result-interpreter/logout-result-interpreter.service';
+import { DataTransportProcessorService }
+	from '../../services/data-transport-processor/data-transport-processor.service';
 
 
 @Injectable({providedIn: 'root'})

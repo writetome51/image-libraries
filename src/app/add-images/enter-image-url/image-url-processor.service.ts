@@ -1,23 +1,26 @@
-import { AlertData as alert } from '../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert }
+	from '../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';
+import { GetAppImageService as getAppImage } from '../../services/image/get-app-image.service';
 import { ImageURLData as enteredImageURL }
 	from '../../../data-structures/runtime-state-data/image-url.data';
 import { IndirectProcessor } from '../../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
-import { GetAppImageService as getAppImage } from './get-app-image.service';
 import { NewImagesData as newImages }
 	from '../../../data-structures/runtime-state-data/static-classes/new-images.data';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../perform-data-process-requiring-waiting.service';
-import { SaveNewImagesProcessorService }
-	from '../data-transport-processor/save-new-images-processor/save-new-images-processor.service';
 import { OperationStatusData as operationStatus }
 	from '../../../data-structures/runtime-state-data/operation-status.data';
-import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';
+import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
+	from '../../services/perform-data-process-requiring-waiting.service';
+import { SaveNewImagesProcessorService }
+	// tslint:disable-next-line:max-line-length
+	from '../../services/data-transport-processor/save-new-images-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class ImageURLProcessorService implements IndirectProcessor {
+
 
 	constructor(private __saveNewImagesProcessor: SaveNewImagesProcessorService) {
 	}

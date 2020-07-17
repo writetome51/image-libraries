@@ -9,11 +9,11 @@ export class GetObjectFromSubscriptionService {
 		subscribable: Subscribable<any>
 	): Promise<any> {
 		let result = await getSubscriptionData(subscribable);
-		return this.__getAsObject(result);
+		return this.__getAsObjectIfString(result);
 	}
 
 
-	private static __getAsObject(result) {
+	private static __getAsObjectIfString(result) {
 		if (typeof result === 'string') {
 			result = getObjectFromJSON(result);
 		}
