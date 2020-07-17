@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultCheckService } from './data-transport-result-check.service';
+import { DataTransportResultCheckService }
+	from '../../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { libraryNotFound } from '../../../../../string-constants/rest-api-errors';
 import { LoadedLibraryData as loadedLibrary }
 	from '../../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';

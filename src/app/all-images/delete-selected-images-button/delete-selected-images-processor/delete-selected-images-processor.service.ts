@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { DataTransportProcessorService } from '../../../services/data-transport-processor/data-transport-processor.service';
+import { DataTransportProcessorService }
+	from '../../../services/data-transport-processor/data-transport-processor.service';
 import { SelectedImagesDeleterService } from './selected-images-deleter.service';
 import { DeleteSelectedImagesResultInterpreterService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/delete-selected-images-result-interpreter.service';
+	from './delete-selected-images-result-interpreter/delete-selected-images-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})

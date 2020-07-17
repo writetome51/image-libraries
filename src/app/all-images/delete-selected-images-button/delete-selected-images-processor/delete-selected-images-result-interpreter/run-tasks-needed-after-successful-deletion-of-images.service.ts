@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
-import { RedirectToLoggedInHomeService } from '../../../../redirect-to-logged-in-home.service';
-import { IDoThis } from '../../../../../../interfaces/i-do-this';
+	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { RedirectToLoggedInHomeService } from '../../../../services/redirect-to-logged-in-home.service';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

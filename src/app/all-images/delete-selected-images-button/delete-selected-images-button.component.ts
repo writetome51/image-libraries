@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { StartDataProcessComponent } from '../../start-data-process.component';
 import { DeleteSelectedImagesProcessorService }
-	from './services/delete-selected-images-processor.service';
+	from './delete-selected-images-processor/delete-selected-images-processor.service';
 
 
 @Component({

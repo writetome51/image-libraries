@@ -1,11 +1,11 @@
-import { DBUser } from '../../../../../../interfaces/db-user';
+import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { RedirectToLoggedInHomeService } from '../../../../redirect-to-logged-in-home.service';
+import { RedirectToLoggedInHomeService } from '../../redirect-to-logged-in-home.service';
 import { RunTasksNeededAfterSuccessfulGettingUserService }
-	from '../get/run-tasks-needed-after-successful-getting-user.service';
+	from './run-tasks-needed-after-successful-result/get/run-tasks-needed-after-successful-getting-user.service';
 import { SecurityQuestionStatusData as questionStatus }
-	from '../../../../../../data-structures/runtime-state-data/security-question-status.data';
-import { IDoThis } from '../../../../../../interfaces/i-do-this';
+	from '../../../../data-structures/runtime-state-data/security-question-status.data';
+import { IDoThis } from '../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

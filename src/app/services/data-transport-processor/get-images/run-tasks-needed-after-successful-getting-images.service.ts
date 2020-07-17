@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DBImage } from '../../../../../../interfaces/db-image';
+import { DBImage } from '../../../../interfaces/db-image';
 import { LoadedImagesData as loadedImages }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { ImageTotalData as imageTotal }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/image-total.data';
-import { IDoThis } from '../../../../../../interfaces/i-do-this';
+	from '../../../../data-structures/runtime-state-data/static-classes/image-total.data';
+import { IDoThis } from '../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
