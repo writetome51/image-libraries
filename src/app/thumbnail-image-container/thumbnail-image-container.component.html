@@ -1,9 +1,11 @@
 <div class="image-container"
-	 [class.selected-image-container]="selected" (click)="toggleSelect()"
+	 [class.selected-image-container]="image.selected" (click)="toggleSelect()"
 	 (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
-	<delete-image-glyphicon [class.invisible]="!(isHovered())" (click)="deleteImage()">
+	<delete-image-glyphicon [image]="image"
+							[class.invisible]="!(isHovered()) && !(deleteGlyphiconEnabled)"
+	>
 	</delete-image-glyphicon>
 
 	<a [routerLink]="getRouterLink()">
