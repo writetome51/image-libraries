@@ -3,7 +3,7 @@ import { AlertData as alert }
 	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { RedirectToLoggedInHomeService } from '../../../services/redirect-to-logged-in-home.service';
 import { GetLibrariesProcessorService }
-	from '../../../services/data-transport-processor/get-libraries-processor.service';
+	from '../../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { IDoThis } from '../../../../interfaces/i-do-this';
 
 

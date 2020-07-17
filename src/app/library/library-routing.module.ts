@@ -10,8 +10,8 @@ const routes: Routes = [
 
 	{	// lazy-loaded module
 		path: moduleRoutes.FullSizeImageViewerModule,
-		loadChildren: () => import('../full-size-image-viewer/full-size-image-viewer.module')
-			.then(mod => mod.FullSizeImageViewerModule)
+		loadChildren: () => import('../app-full-size-image-viewer/app-full-size-image-viewer.module')
+			.then(mod => mod.AppFullSizeImageViewerModule)
 	},
 
 	{

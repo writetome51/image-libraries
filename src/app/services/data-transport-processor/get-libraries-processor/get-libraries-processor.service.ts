@@ -1,9 +1,9 @@
-import { DataTransportProcessorService } from './data-transport-processor.service';
-import { LibraryStorageService } from '../library/library-storage.service';
+import { DataTransportProcessorService } from '../data-transport-processor.service';
+import { LibraryStorageService } from '../../library/library-storage.service';
 import { GetLibrariesResultInterpreterService }
-	from './data-transport-result-interpreter/get-libraries-result-interpreter.service';
+	from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '../../../interfaces/db-library';
+import { DBLibrary } from '../../../../interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})

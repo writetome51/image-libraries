@@ -5,7 +5,7 @@ import { NewLibraryData as newLibrary }
 
 
 @Component({
-	selector: 'libraries',
+	selector: 'app-libraries',
 	templateUrl: './libraries.component.html'
 })
 export class LibrariesComponent extends ClearAlertOnDestroyComponent {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetLibraryRouteParamsSubscriptionObserverService }
+	// tslint:disable-next-line:max-line-length
 	from './services/get-library-route-params-subscription-observer/get-library-route-params-subscription-observer.service';
 import { ImageTotalData as imageTotal}
 	from '../../data-structures/runtime-state-data/static-classes/image-total.data';

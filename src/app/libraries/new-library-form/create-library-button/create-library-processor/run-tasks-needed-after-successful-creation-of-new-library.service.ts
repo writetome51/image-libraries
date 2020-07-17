@@ -3,7 +3,7 @@ import { AlertData as alert }
 import { DBLibrary } from '../../../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { GetLibrariesProcessorService }
-	from '../../../../services/data-transport-processor/get-libraries-processor.service';
+	from '../../../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { NewLibraryData as newLibrary }
 	from '../../../../../data-structures/runtime-state-data/new-library.data';
 import { IDoThis } from '../../../../../interfaces/i-do-this';

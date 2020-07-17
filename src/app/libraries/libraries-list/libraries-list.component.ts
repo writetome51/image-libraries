@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibrariesProcessorService }
-	from '../../services/data-transport-processor/get-libraries-processor.service';
+	from '../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { LibraryNamesData as libraryNames }
 	from '../../../data-structures/runtime-state-data/static-classes/library-names.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }

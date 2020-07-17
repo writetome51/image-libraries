@@ -1,8 +1,8 @@
+import { AppFullSizeImageViewerComponent } from './app-full-size-image-viewer.component';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image/full-size-image.component';
-import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ImageNameComponent } from './image-name/image-name.component';
 import { ImageDescriptionComponent } from './image-description/image-description.component';
@@ -18,8 +18,8 @@ import { URLParamIDData as paramID} from '../../data-structures/read-only-data/u
 
 @NgModule({
 	declarations: [
+		AppFullSizeImageViewerComponent,
 		FullSizeImageComponent,
-		FullSizeImageViewerComponent,
 		ImageNameComponent,
 		ImageDescriptionComponent,
 		ImageTagsComponent,
@@ -34,7 +34,7 @@ import { URLParamIDData as paramID} from '../../data-structures/read-only-data/u
 		RouterModule.forChild([
 			{
 				path: `:${paramID.imageName}`,
-				component: FullSizeImageViewerComponent,
+				component: AppFullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]
 			},
@@ -47,7 +47,7 @@ import { URLParamIDData as paramID} from '../../data-structures/read-only-data/u
 
 	],
 
-	exports: [FullSizeImageViewerComponent]
+	exports: [AppFullSizeImageViewerComponent]
 })
-export class FullSizeImageViewerModule {
+export class AppFullSizeImageViewerModule {
 }

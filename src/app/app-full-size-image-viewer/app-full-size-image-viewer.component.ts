@@ -8,10 +8,10 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 
 
 @Component({
-	selector: 'full-size-image-viewer',
-	templateUrl: './full-size-image-viewer.component.html'
+	selector: 'app-full-size-image-viewer',
+	templateUrl: './app-full-size-image-viewer.component.html'
 })
-export class FullSizeImageViewerComponent {
+export class AppFullSizeImageViewerComponent {
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
