@@ -1,7 +1,7 @@
+import { IDoThis } from '../../../interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { OperationStatusData as operationStatus }
 	from '../../../data-structures/runtime-state-data/operation-status.data';
-import { IDoThis } from '../../../interfaces/i-do-this';
 import { RunTasksNeededAfterAllImagesRouteParamsReceivedService }
 	from './run-tasks-needed-after-all-images-route-params-received.service';
 
@@ -9,7 +9,6 @@ import { RunTasksNeededAfterAllImagesRouteParamsReceivedService }
 @Injectable({providedIn: 'root'})
 
 export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoThis {
-
 
 	constructor(
 		private __runTasksNeededAfterAllImagesRouteParamsReceived:
@@ -25,8 +24,6 @@ export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoTh
 			await this.__runTasksNeededAfterAllImagesRouteParamsReceived.go(params);
 			operationStatus.waiting = false;
 		};
-
 	}
-
 
 }
