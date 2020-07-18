@@ -1,8 +1,8 @@
 import { FormDataTransportProcessorService }
 	from '../../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UpdatePasswordFormInputsService }
-	from '../../../services/validating-inputs/current-user-inputs/update-password-form-inputs.service';
+import { UpdatePasswordInputsService }
+	from '../update-password-inputs.service';
 import { UpdatePasswordResultInterpreterService }
 	// tslint:disable-next-line:max-line-length
 	from './update-password-result-interpreter.service';
@@ -15,7 +15,7 @@ export class UpdatePasswordProcessorService extends FormDataTransportProcessorSe
 
 	constructor(
 		private __userUpdater: UserStorageUpdaterService,
-		__updatePasswordFormInputs: UpdatePasswordFormInputsService,
+		__updatePasswordFormInputs: UpdatePasswordInputsService,
 		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
 	) {
 		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);

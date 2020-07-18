@@ -1,10 +1,10 @@
-import { LoadData as load }
-	from '../../../data-structures/runtime-state-data/static-classes/load.data';
 import { DBImage } from '../../../interfaces/db-image';
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
 	from '../data-transport-processor/data-transport-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
+import { LoadData as load }
+	from '../../../data-structures/runtime-state-data/static-classes/load.data';
 import { LoadedImagesData as loadedImages }
 	from '../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
