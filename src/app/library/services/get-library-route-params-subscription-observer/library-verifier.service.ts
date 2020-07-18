@@ -1,6 +1,6 @@
 import { noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
-import { GetLibrariesProcessorService }
+import { GetLibrariesProcessorService } // tslint:disable-next-line:max-line-length
 	from '../../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { LibraryNamesData as libraryNames }
 	from '../../../../data-structures/runtime-state-data/static-classes/library-names.data';

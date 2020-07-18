@@ -1,6 +1,6 @@
 import { DBUser } from '../../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { RunTasksNeededAfterLoginService }
+import { RunTasksNeededAfterLoginService } // tslint:disable-next-line:max-line-length
 	from '../../../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-login.service';
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';

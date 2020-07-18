@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../../../services/local-data/local-session-id.service';
-import { ImagesRestAPIService } from '../../../services/image/images-rest-api.service';
+import { LocalSessionIDService } from '../../services/local-data/local-session-id.service';
+import { ImagesRestAPIService } from '../../services/image/images-rest-api.service';
 import { NewImagesData as newImages }
-	from '../../../../data-structures/runtime-state-data/static-classes/new-images.data';
+	from '../../../data-structures/runtime-state-data/static-classes/new-images.data';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
-	from '../../../services/get-object-from-subscription.service';
+	from '../../services/get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})

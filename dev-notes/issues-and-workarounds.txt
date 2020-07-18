@@ -1,8 +1,11 @@
-If you combine your own custom decorator(s) with @Injectable() decorator,
-Angular's dependency injector won't work.
-The solution is detailed in src/app/injectable-decorator-workaround.ts. and is used as a
-convention in the app.
+Custom TypeScript Decorators
+
+If you combine your own custom decorator(s) with @Injectable() decorator, Angular's dependency
+injector won't work.  The solution is detailed in src/app/injectable-decorator-workaround.ts. and is
+used as a convention in the app.
 
 Any custom typescript decorators created by calling getClassModificationDecorator() have been
 pre-transpiled into javascript files.  This is done to avoid an Angular build error which says
 'Function calls are not supported in decorators...'.
+
+

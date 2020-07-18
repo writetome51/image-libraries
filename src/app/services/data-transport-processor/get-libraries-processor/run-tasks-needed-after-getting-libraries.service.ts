@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { DBLibrary } from '../../../../interfaces/db-library';
+import { IDoThis } from '../../../../interfaces/i-do-this';
+import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '../../../../data-structures/runtime-state-data/static-classes/library-names.data';
-import { IDoThis } from '../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

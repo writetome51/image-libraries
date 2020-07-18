@@ -1,7 +1,7 @@
 import { AlertData as alert }
 	from '../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';
-import { GetAppImageService as getAppImage } from '../../services/image/get-app-image.service';
+import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { ImageURLData as enteredImageURL }
 	from '../../../data-structures/runtime-state-data/image-url.data';
 import { IndirectProcessor } from '../../../interfaces/indirect-processor';
@@ -13,7 +13,7 @@ import { OperationStatusData as operationStatus }
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
-	from '../services/save-new-images-processor/save-new-images-processor.service';
+	from '../save-new-images-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
