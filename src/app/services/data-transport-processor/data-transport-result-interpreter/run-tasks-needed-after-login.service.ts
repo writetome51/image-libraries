@@ -1,8 +1,8 @@
 import { DBUser } from '../../../../interfaces/db-user';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '../../redirect-to-logged-in-home.service';
-import { RunTasksNeededAfterSuccessfulGettingUserService }
-	from './run-tasks-needed-after-successful-result/get/run-tasks-needed-after-successful-getting-user.service';
+import { RunTasksNeededAfterGettingUserService }
+	from './run-tasks-needed-after-successful-process/run-tasks-needed-after-getting-user.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '../../../../data-structures/runtime-state-data/security-question-status.data';
 import { IDoThis } from '../../../../interfaces/i-do-this';
@@ -10,11 +10,10 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulLoginService implements IDoThis {
+export class RunTasksNeededAfterLoginService implements IDoThis {
 
 	constructor(
-		private __runTasksNeededAfterSuccessfulGettingUser:
-			RunTasksNeededAfterSuccessfulGettingUserService,
+		private __runTasksNeededAfterGettingUser: RunTasksNeededAfterGettingUserService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}
@@ -22,7 +21,7 @@ export class RunTasksNeededAfterSuccessfulLoginService implements IDoThis {
 
 	async go(result: DBUser) {
 		questionStatus.received = false;
-		this.__runTasksNeededAfterSuccessfulGettingUser.go(result);
+		this.__runTasksNeededAfterGettingUser.go(result);
 
 		await this.__redirectToLoggedInHome.go();
 	}

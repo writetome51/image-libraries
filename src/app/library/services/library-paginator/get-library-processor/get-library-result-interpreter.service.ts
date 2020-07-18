@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService }
 	from '../../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { RunTasksNeededAfterSuccessfulGettingLibraryService }
-	from './run-tasks-needed-after-successful-getting-library.service';
+import { RunTasksNeededAfterGettingLibraryService }
+	from './run-tasks-needed-after-getting-library.service';
 import { GetLibraryResultCheckService }
 	from './get-library-result-check.service';
 
@@ -13,9 +13,9 @@ export class GetLibraryResultInterpreterService extends DataTransportResultInter
 
 	constructor(
 		__getLibraryResultCheck: GetLibraryResultCheckService,
-		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulGettingLibraryService,
+		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterGettingLibraryService,
 	) {
-		super(__getLibraryResultCheck, __runTasksNeededAfterSuccessfulResult);
+		super(__getLibraryResultCheck, __runTasksNeededAfterSuccessfulProcess);
 	}
 
 }

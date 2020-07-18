@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
 import { SelectedImageNamesData as selectedImageNames }
 	from '../../data-structures/runtime-state-data/selected-image-names.data';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 
-@Injectable({providedIn: 'root'})
 
 export class ImageSelectorService {
 

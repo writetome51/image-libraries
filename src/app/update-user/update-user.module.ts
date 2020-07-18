@@ -21,7 +21,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 import { UpdateEmailSaveButtonComponent }
 	from './update-user-email-form/update-email-save-button.component';
 import { UpdatePasswordSaveButtonComponent }
-	from './update-user-password-form/update-password-save-button.component';
+	from './update-user-password-form/update-password-save-button/update-password-save-button.component';
 
 
 @NgModule({

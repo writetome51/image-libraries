@@ -11,7 +11,7 @@ import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulCreationOfNewLibraryService implements IDoThis {
+export class RunTasksNeededAfterCreationOfNewLibraryService implements IDoThis {
 
 	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
 	}

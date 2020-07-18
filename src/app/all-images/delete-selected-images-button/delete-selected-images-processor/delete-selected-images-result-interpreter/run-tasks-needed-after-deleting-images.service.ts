@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';
-import { RedirectToLoggedInHomeService } from '../../../../services/redirect-to-logged-in-home.service';
 import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulDeletionOfImagesService implements IDoThis {
+export class RunTasksNeededAfterDeletingImagesService implements IDoThis {
 
-	constructor(private __redirectToLoggedInHome: RedirectToLoggedInHomeService) {
-	}
-
-
-	async go(result) {
+	async go() {
 		alert.success = 'Image(s) deleted';
 	}
 

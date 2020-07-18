@@ -11,7 +11,6 @@ import { SelectedImageNamesData as selectedImageNames }
 
 export class SelectedImagesDeleterService {
 
-
 	constructor(
 		private __imagesRestApi: ImagesRestAPIService,
 		private __localSessionID: LocalSessionIDService
@@ -26,6 +25,5 @@ export class SelectedImagesDeleterService {
 			)
 		);
 	}
-
 
 }

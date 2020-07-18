@@ -8,7 +8,7 @@ import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulGettingSecurityQuestionService implements IDoThis {
+export class RunTasksNeededAfterGettingSecurityQuestionService implements IDoThis {
 
 	async go(result: { question: string, answer: string }) {
 

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { RemoveCachedDataService } from '../../../../remove-cached-data.service';
+import { RemoveCachedDataService } from '../../../remove-cached-data.service';
 import { Router } from '@angular/router';
-import { IDoThis } from '../../../../../../interfaces/i-do-this';
+import { IDoThis } from '../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulLogoutService implements IDoThis {
+export class RunTasksNeededAfterLogoutService implements IDoThis {
 
 	constructor(
 		private __removeCachedData: RemoveCachedDataService,

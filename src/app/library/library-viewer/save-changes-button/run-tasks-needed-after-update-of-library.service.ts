@@ -10,7 +10,7 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulUpdateOfLibraryService implements IDoThis {
+export class RunTasksNeededAfterUpdateOfLibraryService implements IDoThis {
 
 	constructor(private __libraryChanges: LibraryChangesService) {
 	}

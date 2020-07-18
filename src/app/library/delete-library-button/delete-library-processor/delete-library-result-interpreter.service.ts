@@ -3,8 +3,8 @@ import { DataTransportResultInterpreterService }
 	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { DataTransportResultCheckService }
 	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
-import { RunTasksNeededAfterSuccessfulDeletionOfLibraryService }
-	from './run-tasks-needed-after-successful-deletion-of-library.service';
+import { RunTasksNeededAfterDeletionOfLibraryService }
+	from './run-tasks-needed-after-deletion-of-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,9 +13,9 @@ export class DeleteLibraryResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulDeletionOfLibraryService
+		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterDeletionOfLibraryService
 	) {
-		super(__dataTransportResultCheckService, __runTasksNeededAfterSuccessfulResult);
+		super(__dataTransportResultCheckService, __runTasksNeededAfterSuccessfulProcess);
 	}
 
 }

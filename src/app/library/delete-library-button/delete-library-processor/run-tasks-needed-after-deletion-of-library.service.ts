@@ -9,7 +9,7 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulDeletionOfLibraryService implements IDoThis {
+export class RunTasksNeededAfterDeletionOfLibraryService implements IDoThis {
 
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,

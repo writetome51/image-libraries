@@ -14,7 +14,11 @@ export class UpdateUserComponent {
 	choices = Object.keys(this.choicesMap);
 
 
-	get formHeading() {
+	constructor(private __router: Router) {
+	}
+
+
+	getFormHeading(): string {
 		let url = this.__router.routerState.snapshot.url;
 
 		for (let i = 0; i < this.choices.length; ++i) {
@@ -24,10 +28,6 @@ export class UpdateUserComponent {
 				return map.heading;
 			}
 		}
-	}
-
-
-	constructor(private __router: Router) {
 	}
 
 }

@@ -11,7 +11,7 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulSavingNewImagesService implements IDoThis {
+export class RunTasksNeededAfterSavingNewImagesService implements IDoThis {
 
 	constructor(
 		private __getAllImagesProcessor: GetAllImagesProcessorService,

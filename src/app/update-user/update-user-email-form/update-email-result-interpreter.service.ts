@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService }
 	from '../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { RunTasksNeededAfterSuccessfulUpdateOfEmailService }
-	from './run-tasks-needed-after-successful-update-of-email.service';
+import { RunTasksNeededAfterUpdateOfEmailService }
+	from './run-tasks-needed-after-update-of-email.service';
 import { DataTransportResultCheckService }
 	from '../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 
@@ -13,9 +13,9 @@ export class UpdateEmailResultInterpreterService extends DataTransportResultInte
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulResult: RunTasksNeededAfterSuccessfulUpdateOfEmailService
+		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterUpdateOfEmailService
 	) {
-		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulResult);
+		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulProcess);
 	}
 
 }

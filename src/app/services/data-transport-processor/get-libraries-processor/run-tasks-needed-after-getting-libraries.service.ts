@@ -7,7 +7,7 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulGettingLibrariesService implements IDoThis {
+export class RunTasksNeededAfterGettingLibrariesService implements IDoThis {
 
 	async go(result: DBLibrary[]) {
 		libraryNames.data = result.map((library: DBLibrary) => library.name);

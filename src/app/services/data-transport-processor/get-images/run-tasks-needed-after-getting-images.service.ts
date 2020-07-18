@@ -9,7 +9,7 @@ import { IDoThis } from '../../../../interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSuccessfulGettingImagesService implements IDoThis {
+export class RunTasksNeededAfterGettingImagesService implements IDoThis {
 
 	async go(result: { dataTotal: number, batch: DBImage[] }) {
 
