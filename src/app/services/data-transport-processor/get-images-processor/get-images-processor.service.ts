@@ -1,6 +1,7 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
 import { GetImagesFromStorageService } from './get-images-from-storage.service';
-import { GetImagesResultInterpreterService } from './get-images-result-interpreter.service';
+import { GetImagesResultInterpreterService }
+	from './get-images-result-interpreter/get-images-result-interpreter.service';
 import { Injectable } from '@angular/core';
 
 

@@ -1,4 +1,4 @@
-import { LocalStorageService } from './local-storage.service';
+import { LocalStorageService } from '../local-storage.service';
 
 
 export abstract class LocalDataService {

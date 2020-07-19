@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService }
-	from '../data-transport-result-interpreter/data-transport-result-interpreter.service';
+	from '../../data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { GetImagesResultCheckService } from './get-images-result-check.service';
+import { Injectable } from '@angular/core';
 import { RunTasksNeededAfterGettingImagesService }
 	from './run-tasks-needed-after-getting-images.service';
-import { GetImagesResultCheckService } from './get-images-result-check.service';
 
 
 @Injectable({providedIn: 'root'})

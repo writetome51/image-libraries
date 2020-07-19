@@ -3,8 +3,9 @@ import { AlertData as alert }
 import { Injectable } from '@angular/core';
 import { noDocumentMatchedCriteria, notLoggedIn }
 	from '../../../../../string-constants/rest-api-errors';
-import { NotLoggedInErrorHandlerService } from './error/not-logged-in-error-handler.service';
-import { NoRecordMatchErrorHandlerService } from './error/no-record-match-error-handler.service';
+import { NotLoggedInErrorHandlerService } from './error-handler/not-logged-in-error-handler.service';
+import { NoRecordMatchErrorHandlerService }
+	from './error-handler/no-record-match-error-handler.service';
 
 
 @Injectable({providedIn: 'root'})

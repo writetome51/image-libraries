@@ -1,9 +1,9 @@
 import { FormDataTransportProcessorService }
-	from '../../services/data-transport-processor/form-data-transport-processor.service';
+	from '../../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UpdateEmailInputsService } from './update-email-inputs.service';
+import { UpdateEmailInputsService } from '../update-email-inputs.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
-import { UserStorageUpdaterService } from '../user-storage-updater.service';
+import { UserStorageUpdaterService } from '../../user-storage-updater.service';
 
 
 @Injectable({providedIn: 'root'})

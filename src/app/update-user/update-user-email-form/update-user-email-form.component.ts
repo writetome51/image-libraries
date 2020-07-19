@@ -5,7 +5,10 @@ import { ClearFormOnInitAndAlertOnDestroyComponent }
 
 @Component({
 	selector: 'update-user-email-form',
-	templateUrl: './update-user-email-form.component.html'
+	template: `
+		<update-user-email-form-inputs></update-user-email-form-inputs>
+		<update-email-save-button></update-email-save-button>
+	`
 })
 export class UpdateUserEmailFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 }

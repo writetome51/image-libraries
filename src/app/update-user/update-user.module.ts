@@ -19,7 +19,7 @@ import { UpdateUserPasswordFormInputsComponent }
 import { UpdateUserRoutingModule } from './update-user-routing.module';
 import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
 import { UpdateEmailSaveButtonComponent }
-	from './update-user-email-form/update-email-save-button.component';
+	from './update-user-email-form/update-email-save-button/update-email-save-button.component';
 import { UpdatePasswordSaveButtonComponent }
 	from './update-user-password-form/update-password-save-button/update-password-save-button.component';
 

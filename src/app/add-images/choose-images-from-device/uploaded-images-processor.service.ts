@@ -9,7 +9,8 @@ import { OperationStatusData as operationStatus }
 	from '../../../data-structures/runtime-state-data/operation-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../services/perform-data-process-requiring-waiting.service';
-import { SaveNewImagesProcessorService } from '../save-new-images-processor/save-new-images-processor.service';
+import { SaveNewImagesProcessorService }
+	from '../save-new-images-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})
