@@ -1,6 +1,6 @@
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../../../services/get-object-from-subscription.service';
-import { ImagesRestAPIService } from '../../../services/image/images-rest-api.service';
+import { ImagesRestAPIService } from '../../../services/images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../services/local-data/local-session-id.service';
 import { SelectedImageNamesData as selectedImageNames }

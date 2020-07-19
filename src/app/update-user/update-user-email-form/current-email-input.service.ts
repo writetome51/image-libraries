@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { PrefixLabel_to_ValidatingInputService }
-	from '../prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
-import { LoggedInEmailVerificationInputService } from './logged-in-email-verification-input.service';
+	from '../../services/validating-input/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
+import { LoggedInEmailVerificationInputService }
+	from '../../services/validating-input/email/logged-in-email-verification-input.service';
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'current'})

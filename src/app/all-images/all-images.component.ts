@@ -4,7 +4,7 @@ import { OperationStatusData as operationStatus }
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
-	from './services/get-all-images-route-params-subscription-observer.service';
+	from './services/get-all-images-route-params-subscription-observer/get-all-images-route-params-subscription-observer.service';
 import { SelectedImageNamesData as selectedImageNames}
 	from '../../data-structures/runtime-state-data/selected-image-names.data';
 

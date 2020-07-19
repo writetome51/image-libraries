@@ -1,6 +1,6 @@
 import { LoadData as load }
 	from '../../../../data-structures/runtime-state-data/static-classes/load.data';
-import { ImagesRestAPIService } from '../../image/images-rest-api.service';
+import { ImagesRestAPIService } from '../../images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../local-data/local-session-id.service';
 import { RequestedLibraryData as requestedLibrary }

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert }
-	from '../../../data-structures/runtime-state-data/static-classes/alert.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { NewImagesData as newImages }
-	from '../../../data-structures/runtime-state-data/static-classes/new-images.data';
-import { IDoThis } from '../../../interfaces/i-do-this';
+	from '../../../../data-structures/runtime-state-data/static-classes/new-images.data';
+import { IDoThis } from '../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
