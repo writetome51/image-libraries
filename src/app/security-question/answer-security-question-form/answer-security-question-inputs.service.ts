@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserInputsService } from './current-user-inputs.service';
+import { CurrentUserInputsService }
+	from '../../services/validating-inputs/current-user-inputs.service';
 import { SecurityAnswerToLoginInputService }
-	from '../../validating-input/security-question/security-answer-to-login-input.service';
+	from './security-answer-to-login-input.service';
 
 
 @Injectable({providedIn: 'root'})

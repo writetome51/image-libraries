@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { PasswordAgainInputService } from './password-again-input.service';
+import { PasswordAgainInputService }
+	from '../../services/validating-input/password/password-again-input.service';
 import { PrefixLabel_to_ValidatingInputService }
-	from '../prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
+	from '../../services/validating-input/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new'})
 
 export class __NewPasswordAgainInputService extends PasswordAgainInputService {
 }
-
 
 @Injectable({providedIn: 'root'})
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SecurityAnswerInputService } from './security-answer-input.service';
+import { SecurityAnswerInputService } from '../../services/validating-input/security-answer-input.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { PasswordInputService } from '../../services/validating-input/password/password-input.service';
 import { CurrentUserInputsService }
-	from '../../services/validating-inputs/current-user-inputs/current-user-inputs.service';
+	from '../../services/validating-inputs/current-user-inputs.service';
 import { LoggedInEmailVerificationInputService }
-	from '../../services/validating-input/email/logged-in-email-verification-input.service';
+	from '../logged-in-email-verification-input.service';
 
 
 @Injectable({providedIn: 'root'})

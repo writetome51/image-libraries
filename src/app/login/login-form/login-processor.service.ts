@@ -4,7 +4,7 @@ import { FormDataTransportProcessorService }
 	from '../../services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginEmailPasswordInputsService }
-	from '../../services/validating-inputs/current-user-inputs/login-email-password-inputs.service';
+	from './login-email-password-inputs.service';
 import { LoginResultInterpreterService } // tslint:disable-next-line:max-line-length
 	from '../../services/data-transport-processor/data-transport-result-interpreter/login-result-interpreter.service';
 

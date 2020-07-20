@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from './email-input.service';
+import { EmailInputService } from '../../services/validating-input/email-input.service';
 
 
 @Injectable({providedIn: 'root'})

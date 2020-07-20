@@ -1,6 +1,6 @@
 import { AuthenticatorService } from '../../services/authentication/authenticator.service';
 import { AnswerSecurityQuestionInputsService }
-	from '../../services/validating-inputs/current-user-inputs/answer-security-question-inputs.service';
+	from './answer-security-question-inputs.service';
 import { DBUser } from '../../../interfaces/db-user';
 import { FormDataTransportProcessorService }
 	from '../../services/data-transport-processor/form-data-transport-processor.service';

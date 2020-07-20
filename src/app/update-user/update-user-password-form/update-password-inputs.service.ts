@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CurrentPasswordInputService }
-	from '../../services/validating-input/password/current-password-input.service';
-import { NewPasswordInputService }
-	from '../../services/validating-input/password/new-password-input.service';
+	from './current-password-input.service';
+import { NewPasswordInputService } from './new-password-input.service';
 import { NewPasswordAgainInputService }
-	from '../../services/validating-input/password/new-password-again-input.service';
+	from './new-password-again-input.service';
 import { CurrentUserInputsService }
-	from '../../services/validating-inputs/current-user-inputs/current-user-inputs.service';
+	from '../../services/validating-inputs/current-user-inputs.service';
 
 
 @Injectable({providedIn: 'root'})
