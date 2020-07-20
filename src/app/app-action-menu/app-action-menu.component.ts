@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Submenu } from './submenu';
+import { ActionMenuChoicesData as actionMenuChoices }
+	from '../../data-structures/runtime-state-data/static-classes/action-menu-choices.data';
 
 
 @Component({
@@ -10,6 +12,6 @@ import { Submenu } from './submenu';
 export class AppActionMenuComponent {
 
 	label = 'Action';
-	choices: Array<string | Submenu> = ['choice1'];
+	choices: Array<string | Submenu> = actionMenuChoices.data;
 
 }
