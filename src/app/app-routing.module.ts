@@ -31,6 +31,12 @@ const routes: Routes = [
 	},
 
 	{
+		path: moduleRoutes.AppFullSizeImageViewer,
+		loadChildren: () => import('./app-full-size-image-viewer/app-full-size-image-viewer.module')
+			.then(mod => mod.AppFullSizeImageViewerModule)
+	},
+
+	{
 		path: '', // the logged-out homepage
 		component: LoginComponent,
 		pathMatch: 'full',

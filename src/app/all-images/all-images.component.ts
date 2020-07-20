@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
-import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
+import { SelectedImageNamesData as selectedImageNames }
+	from '../../data-structures/runtime-state-data/selected-image-names.data';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
+	// tslint:disable-next-line:max-line-length
 	from './services/get-all-images-route-params-subscription-observer/get-all-images-route-params-subscription-observer.service';
-import { SelectedImageNamesData as selectedImageNames}
-	from '../../data-structures/runtime-state-data/selected-image-names.data';
 
 
 @Component({
@@ -14,7 +15,6 @@ import { SelectedImageNamesData as selectedImageNames}
 	templateUrl: './all-images.component.html'
 })
 export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
-
 
 	get gettingImages(): boolean {
 		return operationStatus.waiting;
@@ -28,7 +28,8 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver: GetAllImagesRouteParamsSubscriptionObserverService
+		private __getRouteParamsSubscriptionObserver:
+			GetAllImagesRouteParamsSubscriptionObserverService
 	) {
 		super();
 
@@ -40,6 +41,5 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 		this._subscriptions.push(routeParamsSubscription);
 	}
-
 
 }

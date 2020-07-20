@@ -24,7 +24,7 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		AllImagesComponent,
 		AllImagesPaginationControlsComponent,
 		DeleteSelectedImagesButtonComponent,
-		ImageListComponent,
+		ImageListComponent
 	],
 	imports: [
 		CommonModule,

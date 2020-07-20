@@ -58,7 +58,7 @@ export class ThumbnailImageContainerComponent {
 
 	getRouterLink(): string[] {
 		if (this.selectEnabled) return [];
-		else return ['image', this.image.name];
+		else return ['/image', this.image.name];
 	}
 
 
