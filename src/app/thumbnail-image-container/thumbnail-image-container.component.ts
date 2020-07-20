@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '../../interfaces/db-image';
 import { not } from '@writetome51/not';
-import { ThumbnailDisplaySettingsData as imageDisplaySettings }
+import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '../../data-structures/runtime-state-data/static-classes/thumbnail-display-settings.data';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 
@@ -15,7 +15,7 @@ export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
 
-	// if selectEnabled is true, hovering is disabled.
+	// if selectEnabled is true, hovering is disabled and the image has no url link.
 	@Input() selectEnabled = false;
 
 	// Only works if hovering is enabled.
@@ -25,7 +25,7 @@ export class ThumbnailImageContainerComponent {
 
 
 	get imageWidth(): number {
-		return imageDisplaySettings.width;
+		return thumbnailDisplaySettings.width;
 	}
 
 
@@ -48,6 +48,11 @@ export class ThumbnailImageContainerComponent {
 	toggleSelect(): void {
 		if (not(this.selectEnabled)) return;
 		imageSelector.toggleSelect(this.image);
+	}
+
+
+	deleteGlyphIsHidden(): boolean {
+		return (not(this.isHovered()) || not(this.deleteGlyphiconEnabled));
 	}
 
 

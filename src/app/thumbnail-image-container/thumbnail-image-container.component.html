@@ -4,8 +4,8 @@
 	 (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
-	<delete-image-glyphicon [image]="image"
-							[class.invisible]="!(isHovered()) && !(deleteGlyphiconEnabled)"
+	<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
+							[class.invisible]="deleteGlyphIsHidden()"
 	>
 	</delete-image-glyphicon>
 
