@@ -12,8 +12,8 @@ import { LoginFormInputsComponent } from './login/login-form/login-form-inputs.c
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { StartDataProcessButtonModule }
-	from './start-data-process-button/start-data-process-button.module';
-import { ValidatingInputsModule } from './validating-inputs/validating-inputs.module';
+	from './shared-modules/start-data-process-button/start-data-process-button.module';
+import { ValidatingInputsModule } from './shared-modules/validating-inputs/validating-inputs.module';
 
 
 @NgModule({

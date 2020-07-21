@@ -26,7 +26,7 @@ export class ImageListComponent {
 
 
 	get fullSizeImageRoute(){
-		return '/' + appModuleRoutes.AppFullSizeImageViewerModule;
+		return '/' + appModuleRoutes.FullSizeImageViewerModule;
 	}
 
 	constructor(public allImagesPaginator: AllImagesPaginatorService) {

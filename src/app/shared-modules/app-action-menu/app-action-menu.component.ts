@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Submenu } from '../../interfaces/submenu';
+import { Submenu } from '../../../interfaces/submenu';
 import { ActionMenuChoicesData as actionMenuChoices }
-	from '../../data-structures/runtime-state-data/static-classes/action-menu-choices.data';
+	from '../../../data-structures/runtime-state-data/static-classes/action-menu-choices.data';
 
 
 @Component({

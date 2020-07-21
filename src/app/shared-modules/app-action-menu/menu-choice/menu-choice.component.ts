@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Submenu } from '../../../interfaces/submenu';
+import { Submenu } from '../../../../interfaces/submenu';
 
 
 @Component({

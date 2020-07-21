@@ -9,8 +9,8 @@ import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
-	from '../start-data-process-button/start-data-process-button.module';
-import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
+	from '../shared-modules/start-data-process-button/start-data-process-button.module';
+import { ValidatingInputsModule } from '../shared-modules/validating-inputs/validating-inputs.module';
 
 
 @NgModule({

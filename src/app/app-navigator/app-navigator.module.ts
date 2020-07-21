@@ -6,7 +6,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
-	from '../start-data-process-button/start-data-process-button.module';
+	from '../shared-modules/start-data-process-button/start-data-process-button.module';
 
 
 @NgModule({

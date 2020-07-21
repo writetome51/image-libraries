@@ -1,7 +1,7 @@
-import { AppActionMenuModule } from '../app-action-menu/app-action-menu.module';
+import { AppActionMenuModule } from '../shared-modules/app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule }
-	from '../app-pagination-controls/app-pagination-controls.module';
-import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
+	from '../shared-modules/app-pagination-controls/app-pagination-controls.module';
+import { BigLoadingSpinnerModule } from '../shared-modules/big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
 import { DeleteLibraryButtonComponent } from './delete-library-button/delete-library-button.component';
 import { FormsModule } from '@angular/forms';
@@ -19,9 +19,9 @@ import { ReArrangeableGridListModule }
 import { SaveChangesButtonComponent }
 	from './library-viewer/save-changes-button/save-changes-button.component';
 import { StartDataProcessButtonModule }
-	from '../start-data-process-button/start-data-process-button.module';
+	from '../shared-modules/start-data-process-button/start-data-process-button.module';
 import { ThumbnailImageContainerModule }
-	from '../thumbnail-image-container/thumbnail-image-container.module';
+	from '../shared-modules/thumbnail-image-container/thumbnail-image-container.module';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
 
 
