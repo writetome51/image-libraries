@@ -40,7 +40,6 @@ export class MenuChoiceComponent extends StartDataProcessComponent {
 
 	handleClick(): void {
 		this.clicked = !(this.clicked);
-		if (isString(this.data)) this.__menuChoiceProcessor.process(this.data);
 	}
 
 
