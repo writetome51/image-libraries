@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ProcessingButtonOperationStatusData }
 	from '../../../data-structures/runtime-state-data/processing-button-operation-status.data';
-import { StartDataProcessComponent } from '../../start-data-process.component';
+import { StartDataProcessElementComponent } from '../../start-data-process-element.component';
 
 
 @Component({
@@ -9,26 +9,12 @@ import { StartDataProcessComponent } from '../../start-data-process.component';
 	templateUrl: './start-data-process-button.component.html',
 	styleUrls: ['./start-data-process-button.component.css']
 })
-export class StartDataProcessButtonComponent {
+export class StartDataProcessButtonComponent extends StartDataProcessElementComponent {
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
 	@Input() type: 'button' | 'submit' = 'button';
 
-	// required.  Instance of the component this component is used in.
-	@Input() context: StartDataProcessComponent;
-
-	clicked = false;
 
 	operationStatus = ProcessingButtonOperationStatusData;
-
-
-	async runClickHandler(event) {
-		event.preventDefault();
-
-		this.clicked = true;
-		await this.context.start();
-		this.clicked = false;
-	}
-
 
 }

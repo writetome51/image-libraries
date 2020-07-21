@@ -1,13 +1,13 @@
-import { IndirectProcessor } from '../../interfaces/indirect-processor';
+import { Processor } from '../../interfaces/processor';
 
 
 export class PerformDataProcessRequiringWaitingService { // implements IDoThis
 
 	static async go(
-		processor: IndirectProcessor, processStatus: { waiting: boolean }
+		processor: Processor, processStatus: { waiting: boolean }, processArgs = []
 	) {
 		processStatus.waiting = true;
-		await processor.process();
+		await processor.process(...processArgs);
 		processStatus.waiting = false;
 	}
 

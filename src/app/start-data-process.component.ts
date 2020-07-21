@@ -1,18 +1,20 @@
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from './services/perform-data-process-requiring-waiting.service';
-import { IndirectProcessor } from '../interfaces/indirect-processor';
 import { ProcessingButtonOperationStatusData as operationStatus }
 	from '../data-structures/runtime-state-data/processing-button-operation-status.data';
+import { Processor } from '../interfaces/processor';
 
 
 export abstract class StartDataProcessComponent {
 
-	constructor(private __processor: IndirectProcessor) {
+	constructor(private __processor: Processor) {
 	}
 
 
-	async start() {
-		await performDataProcessRequiringWaiting.go(this.__processor, operationStatus);
+	async start(processArgs = []) {
+		await performDataProcessRequiringWaiting.go(
+			this.__processor, operationStatus, processArgs
+		);
 	}
 
 }

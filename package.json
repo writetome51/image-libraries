@@ -46,6 +46,7 @@
 		"@writetome51/has-value-no-value": "^1.0.2",
 		"@writetome51/is-empty-not-empty": "^1.0.0",
 		"@writetome51/is-integer-is-float": "^1.0.0",
+		"@writetome51/is-string-not-string": "^1.0.0",
 		"@writetome51/modify-object": "^1.0.0",
 		"@writetome51/not": "^1.0.5",
 		"@writetome51/object-in-local-storage": "^0.0.1",

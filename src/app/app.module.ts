@@ -24,7 +24,7 @@ import { ValidatingInputsModule } from './shared-modules/validating-inputs/valid
 		LoginFormComponent,
 		LoginFormInputsComponent,
 		LoginButtonComponent,
-		PageNotFoundComponent,
+		PageNotFoundComponent
 	],
 	imports: [
 		BrowserModule,
