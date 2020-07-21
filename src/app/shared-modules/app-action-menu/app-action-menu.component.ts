@@ -11,7 +11,7 @@ import { ActionMenuChoicesData as actionMenuChoices }
 })
 export class AppActionMenuComponent {
 
-	label = 'Action';
-	choices: Array<string | Submenu> = actionMenuChoices.data;
+	readonly label = 'Action';
+	readonly choices: Array<string | Submenu> = actionMenuChoices.data;
 
 }
