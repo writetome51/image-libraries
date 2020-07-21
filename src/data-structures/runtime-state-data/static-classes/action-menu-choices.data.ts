@@ -1,4 +1,4 @@
-import { Submenu } from '../../../app/app-action-menu/submenu';
+import { Submenu } from '../../../interfaces/submenu';
 
 
 export class ActionMenuChoicesData {

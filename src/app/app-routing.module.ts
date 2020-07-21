@@ -31,7 +31,7 @@ const routes: Routes = [
 	},
 
 	{
-		path: moduleRoutes.AppFullSizeImageViewer,
+		path: moduleRoutes.AppFullSizeImageViewerModule,
 		loadChildren: () => import('./app-full-size-image-viewer/app-full-size-image-viewer.module')
 			.then(mod => mod.AppFullSizeImageViewerModule)
 	},

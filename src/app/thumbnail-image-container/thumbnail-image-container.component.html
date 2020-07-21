@@ -5,7 +5,7 @@
 >
 
 	<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
-							[class.invisible]="deleteGlyphIsHidden()"
+							[class.invisible]="!(isHovered())"
 	>
 	</delete-image-glyphicon>
 

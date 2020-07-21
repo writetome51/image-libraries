@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DBImage } from '../../../interfaces/db-image';
-import { AllImagesPaginatorService } from '../services/all-images-paginator/all-images-paginator.service';
+import { AllImagesPaginatorService }
+	from '../services/all-images-paginator/all-images-paginator.service';
+import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';
 import { PageImagesData as pageImages }
 	from '../../../data-structures/runtime-state-data/static-classes/page-images.data';
 
@@ -20,6 +22,11 @@ export class ImageListComponent {
 		catch (e) {
 			return undefined;
 		}
+	}
+
+
+	get fullSizeImageRoute(){
+		return '/' + appModuleRoutes.AppFullSizeImageViewerModule;
 	}
 
 	constructor(public allImagesPaginator: AllImagesPaginatorService) {

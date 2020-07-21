@@ -19,7 +19,7 @@ export class ImageSelectorService {
 
 
 	private static __unSelect(image) {
-		image['selected'] = false;
+		delete image['selected'];
 		removeFirstOf(image.name, selectedImageNames.data);
 	}
 

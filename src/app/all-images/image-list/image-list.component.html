@@ -5,7 +5,8 @@
 	<li class="grid-list-item" *ngFor="let img of images; let i = index;">
 
 		<div>
-			<thumbnail-image-container [image]="img"></thumbnail-image-container>
+			<thumbnail-image-container [image]="img" [imageRouterLink]="[fullSizeImageRoute, img.name]">
+			</thumbnail-image-container>
 		</div>
 
 	</li>

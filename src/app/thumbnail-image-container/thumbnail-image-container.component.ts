@@ -14,8 +14,9 @@ import { ImageSelectorService as imageSelector } from './image-selector.service'
 export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
+	@Input() imageRouterLink: string[] | string = [];
 
-	// if selectEnabled is true, hovering is disabled and the image has no url link.
+	// if selectEnabled is true, hovering is disabled and the image has no routerLink.
 	@Input() selectEnabled = false;
 
 	// Only works if hovering is enabled.
@@ -51,14 +52,9 @@ export class ThumbnailImageContainerComponent {
 	}
 
 
-	deleteGlyphIsHidden(): boolean {
-		return (not(this.isHovered()) || not(this.deleteGlyphiconEnabled));
-	}
-
-
-	getRouterLink(): string[] {
+	getRouterLink(): string[] | string {
 		if (this.selectEnabled) return [];
-		else return ['/image', this.image.name];
+		else return this.imageRouterLink;
 	}
 
 

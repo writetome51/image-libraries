@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { OperationStatusData as operationStatus }
 	from '../../data-structures/runtime-state-data/operation-status.data';
-import { SelectedImageNamesData as selectedImageNames }
-	from '../../data-structures/runtime-state-data/selected-image-names.data';
 import { CurrentRouteService } from '../services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
 	// tslint:disable-next-line:max-line-length
@@ -18,11 +16,6 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	get gettingImages(): boolean {
 		return operationStatus.waiting;
-	}
-
-
-	get imagesSelected(): boolean {
-		return selectedImageNames.data.length > 0;
 	}
 
 
