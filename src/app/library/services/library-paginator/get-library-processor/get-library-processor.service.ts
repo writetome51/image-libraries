@@ -2,7 +2,8 @@ import { DataTransportProcessorService }
 	from '../../../../shared/services/data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { DBLibrary } from '../../../../../interfaces/db-library';
-import { GetLibraryResultInterpreterService } from './get-library-result-interpreter.service';
+import { GetLibraryResultInterpreterService }
+	from './get-library-result-interpreter/get-library-result-interpreter.service';
 import { GetRequestedLibraryService } from './get-requested-library.service';
 
 

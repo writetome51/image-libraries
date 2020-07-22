@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '../../shared/abstract-components/start-data-process.component';
+import { StartDataProcessComponent }
+	from '../../shared/abstract-components/start-data-process.component';
 import { DeleteLibraryProcessorService }
 	from './delete-library-processor/delete-library-processor.service';
 

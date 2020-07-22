@@ -1,7 +1,9 @@
 import { AppPaginatorDataSourceService } from './app-paginator-data-source.service';
 import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
-import { LoadData as load } from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/load.data';
-import { PageData as page } from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/page.data';
+import { LoadData as load }
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/load.data';
+import { PageData as page }
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/page.data';
 
 
 export abstract class AppPaginatorService extends BigDatasetPaginator {

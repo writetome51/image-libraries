@@ -37,7 +37,8 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 	constructor(
 		private __paginator: LibraryPaginatorService,
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver: GetLibraryRouteParamsSubscriptionObserverService
+		private __getRouteParamsSubscriptionObserver:
+			GetLibraryRouteParamsSubscriptionObserverService
 	) {
 		super();
 

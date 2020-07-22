@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '../../../../../interfaces/db-library';
+import { DBLibrary } from '../../../../../../../interfaces/db-library';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
+	from '../../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
 import { GetLibraryImagesProcessorService } from './get-library-images-processor.service';
 import { ImageTotalData as imageTotal }
-	from '../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/image-total.data';
+	from '../../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/image-total.data';
 import { ImagesLoadedFromData as loadedImagesStatus }
-	from '../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/images-loaded-from.data';
-import { IDoThis } from '../../../../../interfaces/i-do-this';
+	from '../../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/images-loaded-from.data';
+import { IDoThis } from '../../../../../../../interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
