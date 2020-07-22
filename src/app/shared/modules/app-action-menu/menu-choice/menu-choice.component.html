@@ -1,4 +1,4 @@
-<li role="presentation" (click)="handleClick()">
+<li role="presentation" (click)="toggleClick()">
 
 	<start-data-process-content *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
 		{{ getLabel() }}

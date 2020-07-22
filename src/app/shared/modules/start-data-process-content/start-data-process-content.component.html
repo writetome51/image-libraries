@@ -4,7 +4,7 @@ The text inside the element, when clicked, is replaced by a loading spinner.
 
 <div class="content-container" (click)="runClickHandler($event)">
 
-	<ng-content *ngIf="!(clicked)"></ng-content>
+	<ng-content></ng-content>
 
 	<tiny-loading-spinner *ngIf="clicked && operationStatus.waiting"></tiny-loading-spinner>
 

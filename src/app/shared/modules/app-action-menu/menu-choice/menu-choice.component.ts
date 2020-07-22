@@ -38,7 +38,7 @@ export class MenuChoiceComponent extends StartDataProcessComponent {
 	}
 
 
-	handleClick(): void {
+	toggleClick(): void {
 		this.clicked = !(this.clicked);
 	}
 
