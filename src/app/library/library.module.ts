@@ -1,7 +1,8 @@
 import { AppActionMenuModule } from '../shared/modules/app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule }
 	from '../shared/modules/app-pagination-controls/app-pagination-controls.module';
-import { BigLoadingSpinnerModule } from '../shared/modules/big-loading-spinner/big-loading-spinner.module';
+import { BigLoadingSpinnerModule }
+	from '../shared/modules/big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
 import { DeleteLibraryButtonComponent } from './delete-library-button/delete-library-button.component';
 import { FormsModule } from '@angular/forms';

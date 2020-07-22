@@ -3,7 +3,7 @@ import { CurrentUserData as currentUser } from '../../data-structures/runtime-st
 import { SecurityQuestionStatusData as questionStatus }
 	from '../../data-structures/runtime-state-data/security-question-status.data';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '../clear-form-on-init-and-alert-on-destroy.component';
+	from '../shared/abstract-components/clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({

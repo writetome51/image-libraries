@@ -8,7 +8,7 @@ import { CurrentUserInputsService }
 
 @Injectable({providedIn: 'root'})
 
-export class LoginEmailPasswordInputsService extends CurrentUserInputsService {
+export class LoginFormInputsService extends CurrentUserInputsService {
 
 	constructor(emailInput: EmailInputService, passwordInput: PasswordInputService) {
 		super(emailInput, passwordInput);

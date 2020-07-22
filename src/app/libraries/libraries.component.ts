@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ClearAlertOnDestroyComponent } from '../clear-alert-on-destroy.component';
+import { ClearAlertOnDestroyComponent } from '../shared/abstract-components/clear-alert-on-destroy.component';
 import { NewLibraryData as newLibrary }
 	from '../../data-structures/runtime-state-data/new-library.data';
 

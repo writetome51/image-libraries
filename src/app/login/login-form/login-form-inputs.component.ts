@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { LoginEmailPasswordInputsService }
-	from './login-email-password-inputs.service';
+import { LoginFormInputsService }
+	from './login-form-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
 @Component({
 	selector: 'login-form-inputs',
-	template: `
-		<validating-inputs [data]="inputs"></validating-inputs>`
+	template: `<validating-inputs [data]="inputs"></validating-inputs>`
 })
 export class LoginFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__emailPasswordInputs: LoginEmailPasswordInputsService) {
-		super(__emailPasswordInputs);
+	constructor(__loginFormInputs: LoginFormInputsService) {
+		super(__loginFormInputs);
 	}
 
 }

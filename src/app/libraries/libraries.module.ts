@@ -1,8 +1,11 @@
-import { AppPaginationControlsModule } from '../shared/modules/app-pagination-controls/app-pagination-controls.module';
+import { AppPaginationControlsModule }
+	from '../shared/modules/app-pagination-controls/app-pagination-controls.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { BigLoadingSpinnerModule } from '../shared/modules/big-loading-spinner/big-loading-spinner.module';
+import { BigLoadingSpinnerModule }
+	from '../shared/modules/big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { CreateLibraryButtonComponent } from './new-library-form/create-library-button/create-library-button.component';
+import { CreateLibraryButtonComponent }
+	from './new-library-form/create-library-button/create-library-button.component';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
