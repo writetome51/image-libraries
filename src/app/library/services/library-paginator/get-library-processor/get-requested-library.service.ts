@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '../../../../services/library/library-storage.service';
+import { LibraryStorageService } from '../../../../shared/services/library/library-storage.service';
 import { DBLibrary } from '../../../../../interfaces/db-library';
 import { RequestedLibraryData as requestedLibrary }
 	from '../../../../../data-structures/runtime-state-data/requested-library.data';

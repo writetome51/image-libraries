@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { GetLibrariesProcessorService }
-	from '../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '../../shared/services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { LibraryNamesData as libraryNames }
-	from '../../../data-structures/runtime-state-data/static-classes/library-names.data';
+	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/library-names.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../services/perform-data-process-requiring-waiting.service';
-import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
+	from '../../shared/services/perform-data-process-requiring-waiting.service';
+import { BackgroundProcessingStatusData as operationStatus }
+	from '../../../data-structures/runtime-state-data/background-processing-status.data';
 
 
 @Component({

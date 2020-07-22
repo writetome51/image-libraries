@@ -1,7 +1,7 @@
 import { CurrentUserData as currentUser }
 	from '../../../../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { UserStorageService } from '../../../../services/user/user-storage.service';
+import { UserStorageService } from '../../../../shared/services/user/user-storage.service';
 import { DBUser } from '../../../../../interfaces/db-user';
 
 

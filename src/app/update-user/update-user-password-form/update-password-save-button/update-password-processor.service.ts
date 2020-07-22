@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '../../../services/data-transport-processor/form-data-transport-processor.service';
+	from '../../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UpdatePasswordInputsService }
 	from '../update-password-inputs.service';

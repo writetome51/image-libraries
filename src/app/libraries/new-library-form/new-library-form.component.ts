@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClearFormDataService as clearFormData } from '../../services/clear-form-data.service';
+import { ClearFormDataService as clearFormData } from '../../shared/services/clear-form-data.service';
 
 
 @Component({

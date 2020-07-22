@@ -4,7 +4,7 @@ import { AllImagesPaginatorService }
 	from '../services/all-images-paginator/all-images-paginator.service';
 import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';
 import { PageImagesData as pageImages }
-	from '../../../data-structures/runtime-state-data/static-classes/page-images.data';
+	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/page-images.data';
 
 
 @Component({

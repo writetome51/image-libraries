@@ -1,9 +1,10 @@
 import { AlertData } from '../data-structures/runtime-state-data/static-classes/alert.data';
 import { Component, HostListener } from '@angular/core';
-import { LocalSessionIDService } from './services/local-data/local-session-id.service';
-import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
-	from './services/reset-runtime-state-data-to-default-settings.service';
+import { LocalSessionIDService } from './shared/services/local-data/local-session-id.service';
+import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
+	from './shared/services/reset-runtime-state-data-to-default-settings.service';
 import { Title } from '@angular/platform-browser';
+import { AppNameData as appName } from '../data-structures/read-only-data/app-name.data';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent {
 
-	title = 'Image Libraries';
+	siteHeading = appName.data;
 	alert = AlertData;
 
 
@@ -30,12 +31,10 @@ export class AppComponent {
 
 
 	constructor(private __localSessionID: LocalSessionIDService, private __title: Title) {
-		resetRuntimeStateData.go();
+		resetRuntimeStateDataToDefaults.go();
+
+		this.__title.setTitle(appName.data);
 	}
 
-
-	setTitle(newTitle: string) {
-		this.__title.setTitle(newTitle);
-	}
 
 }

@@ -5,7 +5,7 @@ import { NewPasswordInputService } from './new-password-input.service';
 import { NewPasswordAgainInputService }
 	from './new-password-again-input.service';
 import { CurrentUserInputsService }
-	from '../../services/validating-inputs/current-user-inputs.service';
+	from '../../shared/services/validating-inputs/current-user-inputs.service';
 
 
 @Injectable({providedIn: 'root'})

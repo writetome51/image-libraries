@@ -3,12 +3,12 @@ import { AllImagesJumpToPageNumberInputService } from '../all-images-jump-to-pag
 import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
 import { IDoThis } from '../../../../interfaces/i-do-this';
 import { ImagesLoadedFromData as imagesLoadedFrom }
-	from '../../../../data-structures/runtime-state-data/static-classes/images-loaded-from.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/images-loaded-from.data';
 import { Injectable } from '@angular/core';
 import { LoadedImagesData as loadedImages }
-	from '../../../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 

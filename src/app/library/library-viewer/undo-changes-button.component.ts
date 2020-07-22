@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryChangesService}	from '../../services/library/library-changes.service';
+import { LibraryChangesService}	from '../../shared/services/library/library-changes.service';
 
 
 @Component({

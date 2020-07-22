@@ -2,9 +2,9 @@ import { AlertData as alert }
 	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { DBLibrary } from '../../../../interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LibraryChangesService } from '../../../services/library/library-changes.service';
+import { LibraryChangesService } from '../../../shared/services/library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../../data-structures/runtime-state-data/static-classes/loaded-library.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
 import { IDoThis } from '../../../../interfaces/i-do-this';
 
 

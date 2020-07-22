@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '../../../../services/data-transport-processor/form-data-transport-processor.service';
+	from '../../../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UserDeleterService } from './user-deleter.service';
 import { DeleteUserResultInterpreterService } from './delete-user-result-interpreter.service';

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { RunTasksNeededAfterLogoutService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-process/run-tasks-needed-after-logout.service';
+	from '../../../shared/services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-process/run-tasks-needed-after-logout.service';
 import { DataTransportResultInterpreterService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
+	from '../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { DataTransportResultCheckService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
+	from '../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 
 
 @Injectable({providedIn: 'root'})

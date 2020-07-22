@@ -7,11 +7,11 @@ import { ImageURLData as enteredImageURL }
 import { IndirectProcessor } from '../../../interfaces/indirect-processor';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
-	from '../../../data-structures/runtime-state-data/static-classes/new-images.data';
-import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
+	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/new-images.data';
+import { BackgroundProcessingStatusData as operationStatus }
+	from '../../../data-structures/runtime-state-data/background-processing-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../services/perform-data-process-requiring-waiting.service';
+	from '../../shared/services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from '../save-new-images-processor/save-new-images-processor.service';
 

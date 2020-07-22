@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppValidatingInputsService } from '../../services/validating-inputs/app-validating-inputs.service';
+import { AppValidatingInputsService } from '../../shared/services/validating-inputs/app-validating-inputs.service';
 import { ImageUrlInputService } from './image-url-input.service';
 
 

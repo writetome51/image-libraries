@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CurrentRouteService } from '../services/current-route.service';
+import { CurrentRouteService } from '../shared/services/current-route.service';
 import { DBImage } from '../../interfaces/db-image';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LoadedImagesData as loadedImages }
-	from '../../data-structures/runtime-state-data/static-classes/loaded-images.data';
+	from '../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 
 

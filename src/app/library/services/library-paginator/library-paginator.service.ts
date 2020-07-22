@@ -1,4 +1,4 @@
-import { AppPaginatorService } from '../../../services/app-paginator/app-paginator.service';
+import { AppPaginatorService } from '../../../shared/services/app-paginator/app-paginator.service';
 import { LibraryPaginatorDataSourceService }
 	from './library-paginator-data-source.service';
 import { Injectable } from '@angular/core';

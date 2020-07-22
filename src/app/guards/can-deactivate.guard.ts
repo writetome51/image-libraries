@@ -5,7 +5,7 @@ import { FullSizeImageComponent }
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
 import { AlertData as alert } from '../../data-structures/runtime-state-data/static-classes/alert.data';
-import { LibraryChangesService } from '../services/library/library-changes.service';
+import { LibraryChangesService } from '../shared/services/library/library-changes.service';
 
 
 @Injectable({

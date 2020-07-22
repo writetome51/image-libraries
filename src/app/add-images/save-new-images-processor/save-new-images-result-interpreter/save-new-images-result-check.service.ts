@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService }
-	from '../../../services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
+	from '../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { AlertData as alert }
 	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { duplicate, sizeRequirement } from '../../../../string-constants/rest-api-errors';

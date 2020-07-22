@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CurrentRouteService } from '../../../services/current-route.service';
+import { CurrentRouteService } from '../../../shared/services/current-route.service';
 import { DBImage } from '../../../../interfaces/db-image';
 import { LibraryPaginatorService } from '../../services/library-paginator/library-paginator.service';
-import { ListItemRemoverService } from '../../../services/list-item-remover.service';
+import { ListItemRemoverService } from '../../../shared/services/list-item-remover.service';
 import { PageImagesData as pageImages }
-	from '../../../../data-structures/runtime-state-data/static-classes/page-images.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/page-images.data';
 
 
 @Component({

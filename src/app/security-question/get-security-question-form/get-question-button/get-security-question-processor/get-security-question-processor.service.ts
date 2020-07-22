@@ -1,6 +1,6 @@
-import { AuthenticatorService } from '../../../../services/authentication/authenticator.service';
+import { AuthenticatorService } from '../../../../shared/services/authentication/authenticator.service';
 import { FormDataTransportProcessorService }
-	from '../../../../services/data-transport-processor/form-data-transport-processor.service';
+	from '../../../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { GetSecurityQuestionInputsService } from '../../get-security-question-inputs/get-security-question-inputs.service';
 import { GetSecurityQuestionResultInterpreterService }

@@ -1,11 +1,11 @@
 import { CurrentUserData as currentUser }
 	from '../../data-structures/runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
-import { UserRestAPIService } from '../services/user/user-rest-api.service';
-import { LocalEmailService } from '../services/local-data/local-email.service';
+import { LocalSessionIDService } from '../shared/services/local-data/local-session-id.service';
+import { UserRestAPIService } from '../shared/services/user/user-rest-api.service';
+import { LocalEmailService } from '../shared/services/local-data/local-email.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
-	from '../services/get-object-from-subscription.service';
+	from '../shared/services/get-object-from-subscription.service';
 import { DBUser } from '../../interfaces/db-user';
 
 

@@ -1,7 +1,7 @@
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from './services/perform-data-process-requiring-waiting.service';
-import { ProcessingButtonOperationStatusData as operationStatus }
-	from '../data-structures/runtime-state-data/processing-button-operation-status.data';
+	from './shared/services/perform-data-process-requiring-waiting.service';
+import { ClickInitiatedProcessingStatusData as processingStatus }
+	from '../data-structures/runtime-state-data/click-initiated-processing-status.data';
 import { Processor } from '../interfaces/processor';
 
 
@@ -12,9 +12,7 @@ export abstract class StartDataProcessComponent {
 
 
 	async start(processArgs = []) {
-		await performDataProcessRequiringWaiting.go(
-			this.__processor, operationStatus, processArgs
-		);
+		await performDataProcessRequiringWaiting.go(this.__processor, processingStatus, processArgs);
 	}
 
 }

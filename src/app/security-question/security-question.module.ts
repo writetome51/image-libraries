@@ -10,9 +10,9 @@ import { GetSecurityQuestionFormInputsComponent }
 	from './get-security-question-form/get-security-question-form-inputs.component';
 import { NgModule } from '@angular/core';
 import { StartDataProcessButtonModule }
-	from '../shared-modules/start-data-process-button/start-data-process-button.module';
+	from '../shared/modules/start-data-process-button/start-data-process-button.module';
 import { SecurityQuestionComponent } from './security-question.component';
-import { ValidatingInputsModule } from '../shared-modules/validating-inputs/validating-inputs.module';
+import { ValidatingInputsModule } from '../shared/modules/validating-inputs/validating-inputs.module';
 import { RouterModule } from '@angular/router';
 import { SubmitAnswerButtonComponent }
 	from './answer-security-question-form/submit-answer-button.component';

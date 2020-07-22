@@ -1,5 +1,5 @@
 import { AppPaginatorDataSourceService }
-	from '../../../services/app-paginator/app-paginator-data-source.service';
+	from '../../../shared/services/app-paginator/app-paginator-data-source.service';
 import { DataTotalForLibraryService }
 	from './data-total-for-library.service';
 import { GetLibraryProcessorService }

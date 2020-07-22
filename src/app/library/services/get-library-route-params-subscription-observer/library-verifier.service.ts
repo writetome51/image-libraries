@@ -1,9 +1,9 @@
 import { noValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { GetLibrariesProcessorService } // tslint:disable-next-line:max-line-length
-	from '../../../services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '../../../shared/services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { LibraryNamesData as libraryNames }
-	from '../../../../data-structures/runtime-state-data/static-classes/library-names.data';
+	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/library-names.data';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 
 
