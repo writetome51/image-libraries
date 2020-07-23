@@ -3,13 +3,12 @@ import { __Bind_ValidatingInputsService_to_ObjectDecorator }
 
 
 /*****************
-Decorator for some ValidatingInputsService subclasses.
+Decorator for some subclasses of ValidatingInputsService and ValidatingInputService.
  Usage:
 
 @Bind_ValidatingInputsService_to_Object(obj)
 export class TheClass {...}
  *****************/
 
-// @ts-ignore
 export const Bind_ValidatingInputsService_to_Object: (obj) => Function =
 	__Bind_ValidatingInputsService_to_ObjectDecorator;
