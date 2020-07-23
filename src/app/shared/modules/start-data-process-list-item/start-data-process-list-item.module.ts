@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StartDataProcessContentComponent } from './start-data-process-content.component';
+import { StartDataProcessListItemComponent } from './start-data-process-list-item.component';
 import { TinyLoadingSpinnerModule }
 	from '../tiny-loading-spinner/tiny-loading-spinner.module';
 
 
 @NgModule({
-	declarations: [StartDataProcessContentComponent],
+	declarations: [StartDataProcessListItemComponent],
 	imports: [
 		CommonModule, TinyLoadingSpinnerModule
 	],
-	exports: [StartDataProcessContentComponent]
+	exports: [StartDataProcessListItemComponent]
 })
-export class StartDataProcessContentModule {
+export class StartDataProcessListItemModule {
 }

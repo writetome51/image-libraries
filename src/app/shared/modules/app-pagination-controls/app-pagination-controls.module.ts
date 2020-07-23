@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AppPaginationControlsComponent } from './app-pagination-controls.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
+import { AppValidatingFormInputsModule } from '../app-validating-form-inputs/app-validating-form-inputs.module';
 import { JumpToPageComponent }
 	from './jump-to-page.component';
 
@@ -13,7 +13,7 @@ import { JumpToPageComponent }
 	imports: [
 		CommonModule,
 		FormsModule,
-		ValidatingInputsModule,
+		AppValidatingFormInputsModule,
 		RouterModule
 	],
 	exports: [AppPaginationControlsComponent]

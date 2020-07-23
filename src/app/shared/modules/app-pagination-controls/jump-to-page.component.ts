@@ -5,7 +5,7 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 @Component({
 	selector: 'jump-to-page',
 	template: `
-		<validating-input [data]="pageNumberInput"></validating-input>
+		<app-validating-form-input [data]="pageNumberInput"></app-validating-form-input>
 		<a [routerLink]="[routeBeforePageNumber, pageNumber]">Go</a>
 	`
 })

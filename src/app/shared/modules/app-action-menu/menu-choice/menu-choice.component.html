@@ -1,8 +1,8 @@
 <li role="presentation" (click)="toggleClick()">
 
-	<start-data-process-content *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
+	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
 		{{ getLabel() }}
-	</start-data-process-content>
+	</start-data-process-list-item>
 
 	<ng-container *ngIf="isSubmenu()">
 		{{ getLabel() }} —>
