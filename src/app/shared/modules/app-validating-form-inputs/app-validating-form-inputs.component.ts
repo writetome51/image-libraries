@@ -3,14 +3,17 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 
 
 @Component({
-	selector: 'validating-inputs',
-	template: `<validating-input *ngFor="let input of data" [data]="input"></validating-input>`
+	selector: 'app-validating-form-inputs',
+	template: `
+		<app-validating-form-input *ngFor="let input of data" [data]="input">
+		</app-validating-form-input>
+	`
 })
 
 // Can be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
 // Also, create equivalent UI component of this for ReactJS.
 
-export class ValidatingInputsComponent {
+export class AppValidatingFormInputsComponent {
 
 	@Input() data: ValidatingInput[];
 

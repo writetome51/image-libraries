@@ -4,15 +4,15 @@ import { InputValidatorService as inputValidator, ValidatingInput }
 
 
 @Component({
-	selector: 'validating-input',
-	templateUrl: './validating-input.component.html',
-	styleUrls: ['./validating-input.component.css']
+	selector: 'app-validating-form-input',
+	templateUrl: './app-validating-form-input.component.html',
+	styleUrls: ['./app-validating-form-input.component.css']
 })
 
 // Can be used with ValidatingFormInputComponent from '@writetome51/validating-inputs'
 // Also, create equivalent UI component of this for ReactJS.
 
-export class ValidatingInputComponent implements OnInit {
+export class AppValidatingFormInputComponent implements OnInit {
 
 	@Input() data: ValidatingInput;
 
