@@ -1,21 +1,22 @@
 import { AnswerSecurityQuestionFormComponent }
 	from './answer-security-question-form/answer-security-question-form.component';
-import { AnswerSecurityQuestionFormInputsComponent }
-	from './answer-security-question-form/answer-security-question-form-inputs.component';
+import { AnswerSecurityQuestionFormInputComponent }
+	from './answer-security-question-form/answer-security-question-form-input.component';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
 import { GetSecurityQuestionFormComponent }
 	from './get-security-question-form/get-security-question-form.component';
-import { GetSecurityQuestionFormInputsComponent }
-	from './get-security-question-form/get-security-question-form-inputs.component';
+import { GetSecurityQuestionFormInputComponent }
+	from './get-security-question-form/get-security-question-form-input.component';
 import { NgModule } from '@angular/core';
 import { StartDataProcessButtonModule }
 	from '../shared/modules/start-data-process-button/start-data-process-button.module';
 import { SecurityQuestionComponent } from './security-question.component';
-import { ValidatingInputsModule } from '../shared/modules/validating-inputs/validating-inputs.module';
+import { AppValidatingFormInputsModule }
+	from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 import { RouterModule } from '@angular/router';
 import { SubmitAnswerButtonComponent }
-	from './answer-security-question-form/submit-answer-button.component';
+	from './answer-security-question-form/submit-answer-button/submit-answer-button.component';
 import { GetQuestionButtonComponent }
 	from './get-security-question-form/get-question-button/get-question-button.component';
 
@@ -23,16 +24,16 @@ import { GetQuestionButtonComponent }
 @NgModule({
 	declarations: [
 		AnswerSecurityQuestionFormComponent,
-		AnswerSecurityQuestionFormInputsComponent,
+		AnswerSecurityQuestionFormInputComponent,
 		GetSecurityQuestionFormComponent,
-		GetSecurityQuestionFormInputsComponent,
+		GetSecurityQuestionFormInputComponent,
 		GetQuestionButtonComponent,
 		SecurityQuestionComponent,
 		SubmitAnswerButtonComponent
 	],
 	imports: [
 		CommonModule,
-		ValidatingInputsModule,
+		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from '../../../shared/services/validating-input/email-input.service';
+import { EmailInputService } from '../../shared/services/validating-input/email-input.service';
 import { CurrentUserData }
-	from '../../../../data-structures/runtime-state-data/static-classes/current-user.data';
+	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
 
 
 @Injectable({providedIn: 'root'})
