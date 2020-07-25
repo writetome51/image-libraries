@@ -1,5 +1,7 @@
 import { Input } from '@angular/core';
 import { StartDataProcessComponent } from './start-data-process.component';
+import { ClickInitiatedProcessingStatusData }
+	from '../../../data-structures/runtime-state-data/click-initiated-processing-status.data';
 
 
 export abstract class StartDataProcessElementComponent {
@@ -11,6 +13,7 @@ export abstract class StartDataProcessElementComponent {
 	@Input() processArgs: any[] = [];
 
 	clicked = false;
+	processingStatus = ClickInitiatedProcessingStatusData;
 
 
 	async runClickHandler(event) {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PasswordInputService } from '../../shared/services/validating-input/password/password-input.service';
+import { PasswordInputService }
+	from '../../shared/services/validating-input/password/password-input.service';
 import { CurrentUserInputsService }
 	from '../../shared/services/validating-inputs/current-user-inputs.service';
 import { LoggedInEmailVerificationInputService }

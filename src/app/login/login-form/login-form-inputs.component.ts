@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { LoginFormInputsService }
-	from './login-form-inputs.service';
+import { LoginFormInputsService } from './login-form-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
 @Component({
 	selector: 'login-form-inputs',
-	template: `<validating-inputs [data]="inputs"></validating-inputs>`
+	template: `<app-validating-form-inputs [data]="inputs"></app-validating-form-inputs>`
 })
 export class LoginFormInputsComponent extends ValidatingFormInputsComponent {
 

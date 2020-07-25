@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
-
 import {ValidatingInputService} from '@writetome51/validating-inputs';
 import {getClassModificationDecorator} from '@writetome51/get-class-modification-decorator';
 
 
-exports.__Bind_ValidatingInputsService_to_ObjectDecorator =
+export const __Bind_ValidatingInputsService_to_ObjectDecorator =
 	getClassModificationDecorator((inputs, decoratorArgs) => {
 		let objectToBind = decoratorArgs[0];
 

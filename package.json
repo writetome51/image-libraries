@@ -53,7 +53,7 @@
 		"@writetome51/public-array-container": "^3.0.0",
 		"@writetome51/subscription-service": "^2.0.0",
 		"@writetome51/unsubscribe-on-destroy-component": "^3.0.0",
-		"@writetome51/validating-inputs": "^1.0.1",
+		"@writetome51/validating-inputs": "^1.1.1",
 		"angular-draggable-droppable": "^4.3.8",
 		"constants": "0.0.2",
 		"copy-object": "^1.0.0",

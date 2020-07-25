@@ -8,7 +8,7 @@ The text inside the button, when clicked, is replaced by a loading spinner.
 
 		<ng-content *ngIf="!(clicked)"></ng-content>
 
-		<tiny-loading-spinner *ngIf="clicked && operationStatus.waiting"></tiny-loading-spinner>
+		<tiny-loading-spinner *ngIf="clicked && processingStatus.waiting"></tiny-loading-spinner>
 
 	</button>
 

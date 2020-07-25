@@ -9,7 +9,8 @@ import { StartDataProcessElementComponent }
 		<div class="content-container" (click)="runClickHandler($event)">
 
 			<ng-content></ng-content>
-			<tiny-loading-spinner *ngIf="clicked && operationStatus.waiting"></tiny-loading-spinner>
+			<tiny-loading-spinner
+				*ngIf="clicked && processingStatus.waiting"></tiny-loading-spinner>
 
 		</div>
 	`

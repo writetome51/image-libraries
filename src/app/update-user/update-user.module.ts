@@ -17,7 +17,7 @@ import { UpdateUserPasswordFormComponent }
 import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
-import { ValidatingInputsModule } from '../shared/modules/validating-inputs/validating-inputs.module';
+import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 import { UpdateEmailSaveButtonComponent }
 	from './update-user-email-form/update-email-save-button/update-email-save-button.component';
 import { UpdatePasswordSaveButtonComponent }
@@ -40,7 +40,7 @@ import { UpdatePasswordSaveButtonComponent }
 	imports: [
 		CommonModule,
 		FormsModule,
-		ValidatingInputsModule,
+		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
 		UpdateUserRoutingModule
 	]

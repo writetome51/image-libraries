@@ -6,7 +6,7 @@ import { NewLibraryInputsService } from './new-library-inputs.service';
 @Component({
 	selector: 'new-library-form-inputs',
 	template: `
-		<validating-inputs [data]="inputs"></validating-inputs>`
+		<app-validating-form-inputs [data]="inputs"></app-validating-form-inputs>`
 })
 export class NewLibraryFormInputsComponent extends ValidatingFormInputsComponent {
 

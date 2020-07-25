@@ -1,7 +1,7 @@
 import { AlertData as alert }
 	from '../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
-import { noDocumentMatchedCriteria, notLoggedIn }
+import { noRecordMatchedCriteria, notLoggedIn }
 	from '../../../../../../string-constants/rest-api-errors';
 import { NotLoggedInErrorHandlerService } from './error-handler/not-logged-in-error-handler.service';
 import { NoRecordMatchErrorHandlerService }
@@ -37,7 +37,7 @@ export class DataTransportResultCheckService {
 	// Default error handler.  Intended to be extended by subclasses.
 
 	protected async _errorHandler(errMessage) {
-		if (errMessage.includes(noDocumentMatchedCriteria)) {
+		if (errMessage.includes(noRecordMatchedCriteria)) {
 
 			await this.__noRecordMatchErrorHandler.handle();
 		}

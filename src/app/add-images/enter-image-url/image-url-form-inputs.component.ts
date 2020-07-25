@@ -4,10 +4,11 @@ import { ImageUrlInputsService } from './image-url-inputs.service';
 
 
 @Component({
-	selector: 'image-form-inputs',
-	template: `<validating-inputs [data]="inputs"></validating-inputs>`
+	selector: 'image-url-form-inputs',
+	template: `
+		<app-validating-form-inputs [data]="inputs"></app-validating-form-inputs>`
 })
-export class EnterImageUrlFormInputsComponent extends ValidatingFormInputsComponent {
+export class ImageUrlFormInputsComponent extends ValidatingFormInputsComponent {
 
 	constructor(__imageURLInputs: ImageUrlInputsService) {
 		super(__imageURLInputs);

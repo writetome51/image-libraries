@@ -7,7 +7,6 @@ import { LocalSessionIDService } from '../shared/services/local-data/local-sessi
 
 export class AuthenticatedGuard implements CanActivate {
 
-
 	constructor(
 		private __localSessionID: LocalSessionIDService,
 		private __router: Router
@@ -27,6 +26,5 @@ export class AuthenticatedGuard implements CanActivate {
 		this.__router.navigate(['/']);
 		return false;
 	}
-
 
 }

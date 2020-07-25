@@ -18,7 +18,7 @@ import { StartDataProcessButtonModule }
 	from '../shared/modules/start-data-process-button/start-data-process-button.module';
 import { ThumbnailImageContainerModule }
 	from '../shared/modules/thumbnail-image-container/thumbnail-image-container.module';
-import { ValidatingInputsModule } from '../shared/modules/validating-inputs/validating-inputs.module';
+import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { ValidatingInputsModule } from '../shared/modules/validating-inputs/vali
 		BigLoadingSpinnerModule,
 		StartDataProcessButtonModule,
 		ThumbnailImageContainerModule,
-		ValidatingInputsModule,
+		AppValidatingFormInputsModule,
 		RouterModule.forChild([
 			{
 				path: moduleRoutes.AllImagesComponent,
