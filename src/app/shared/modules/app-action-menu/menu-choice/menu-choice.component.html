@@ -6,9 +6,11 @@
 		{{ getLabel() }}
 	</click-start-data-process-list-item>
 
+
 	<ng-container *ngIf="isSubmenu()">
-		{{ getLabel() }} —>
-		<ul *ngIf="clicked">
+		{{ getLabel() }} <span class="caret"></span>
+
+		<ul *ngIf="clicked" class="dropdown-menu">
 			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
 		</ul>
 	</ng-container>
