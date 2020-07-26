@@ -1,9 +1,9 @@
-import { AppUser } from '@shared/interfaces/app-user';
-import { DBUser } from '@shared/interfaces/db-user';
+import { AppUser } from '@interfaces/app-user';
+import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
 
 

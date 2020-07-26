@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '@shared/abstract-components/start-data-process.component';
+import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
 import { ImageURLProcessorService } from './image-url-processor.service';
 
 

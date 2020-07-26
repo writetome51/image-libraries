@@ -4,17 +4,18 @@
     "baseUrl": "./",
 	  "paths": {
 		  "@app/*": ["src/app/*"],
-		  "@interfaces/*": ["src/interfaces/*"],
-		  "@string-constants/*": ["src/string-constants/*"],
-		  "@shared/*": ["src/app/shared/*"],
+		  "@interfaces/*": ["src/app/shared/interfaces/*"],
+		  "@string-constants/*": ["src/app/shared/string-constants/*"],
 		  "@app-action-menu/*": ["src/app/shared/modules/app-action-menu/*"],
 		  "@app-pagination-controls/*": ["src/app/shared/modules/app-pagination-controls/*"],
 		  "@app-validating-form-inputs/*": ["src/app/shared/modules/app-validating-form-inputs/*"],
 		  "@big-loading-spinner/*": ["src/app/shared/modules/big-loading-spinner/*"],
+		  "@tiny-loading-spinner/*": ["src/app/shared/modules/tiny-loading-spinner/*"],
 		  "@start-data-process-button/*": ["src/app/shared/modules/start-data-process-button/*"],
+		  "@click-start-data-process-list-item/*": ["src/app/shared/modules/click-start-data-process-list-item/*"],
 		  "@thumbnail-image-container/*": ["src/app/shared/modules/thumbnail-image-container/*"],
 		  "@services/*": ["src/app/shared/services/*"],
-		  "@local-data/*": ["src/app/shared/services/local-data/*"],
+		  "@abstract-components/*": ["src/app/shared/abstract-components/*"],
 		  "@read-only-data/*": ["src/app/shared/data/read-only/*"],
 		  "@runtime-state-data/*": ["src/app/shared/data/runtime-state/*"]
 

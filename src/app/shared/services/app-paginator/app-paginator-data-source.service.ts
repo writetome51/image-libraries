@@ -3,7 +3,7 @@ import { BackgroundProcessingStatusData as processingStatus }
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
 	from '../data-transport-processor/data-transport-processor.service';
-import { DBImage } from '@shared/interfaces/db-image';
+import { DBImage } from '@interfaces/db-image';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

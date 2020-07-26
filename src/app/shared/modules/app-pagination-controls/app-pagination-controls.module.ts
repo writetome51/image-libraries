@@ -4,9 +4,8 @@ import { AppPaginationControlsComponent } from './app-pagination-controls.compon
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppValidatingFormInputsModule }
-	from '../app-validating-form-inputs/app-validating-form-inputs.module';
-import { JumpToPageComponent }
-	from './jump-to-page.component';
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
+import { JumpToPageComponent } from './jump-to-page.component';
 
 
 @NgModule({

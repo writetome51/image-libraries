@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertData } from '../shared/data/runtime-state/static-classes/alert.data';
+import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 
 
 @Component({

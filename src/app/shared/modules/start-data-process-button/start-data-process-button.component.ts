@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ClickStartDataProcessElementComponent }
-	from '../../abstract-components/click-start-data-process-element.component';
+	from '@abstract-components/click-start-data-process-element.component';
 
 
 @Component({

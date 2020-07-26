@@ -1,7 +1,8 @@
-import { DBLibrary } from '@shared/interfaces/db-library';
-import { IDoThis } from '@shared/interfaces/i-do-this';
+import { DBLibrary } from '@interfaces/db-library';
+import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { LibraryNamesData as libraryNames } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryNamesData as libraryNames }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Injectable({providedIn: 'root'})

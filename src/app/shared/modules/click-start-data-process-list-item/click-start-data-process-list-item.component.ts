@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ClickStartDataProcessElementComponent }
-	from '../../abstract-components/click-start-data-process-element.component';
-import { AlertData } from '../../data/runtime-state/static-classes/alert.data';
+	from '@abstract-components/click-start-data-process-element.component';
+import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 
 
 @Component({

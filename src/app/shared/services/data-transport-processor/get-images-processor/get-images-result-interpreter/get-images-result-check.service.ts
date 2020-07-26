@@ -1,4 +1,4 @@
-import { batchDoesntExist } from '@shared/string-constants/rest-api-errors';
+import { batchDoesntExist } from '@string-constants/rest-api-errors';
 import { DataTransportResultCheckService } // tslint:disable-next-line:max-line-length
 	from '../../data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { ImageTotalData as imageTotal, LoadedImagesData as loadedImages }

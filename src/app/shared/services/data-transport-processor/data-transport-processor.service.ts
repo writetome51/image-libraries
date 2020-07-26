@@ -1,6 +1,6 @@
 import { DataTransportResultInterpreterService }
 	from './data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { IndirectProcessor } from '@shared/interfaces/indirect-processor';
+import { IndirectProcessor } from '@interfaces/indirect-processor';
 
 
 export abstract class DataTransportProcessorService implements IndirectProcessor {
