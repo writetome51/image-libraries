@@ -18,7 +18,8 @@ import { StartDataProcessButtonModule }
 import { RouterModule } from '@angular/router';
 import { ThumbnailImageContainerModule }
 	from '../shared/modules/thumbnail-image-container/thumbnail-image-container.module';
-import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
+import { AppValidatingFormInputsModule }
+	from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({

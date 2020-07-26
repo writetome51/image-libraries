@@ -14,7 +14,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
 	from '../shared/modules/start-data-process-button/start-data-process-button.module';
-import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
+import { AppValidatingFormInputsModule }
+	from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({

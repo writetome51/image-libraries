@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ItemBeingMoved } from '../../../../interfaces/item-being-moved';
+import { ItemBeingMoved } from '@interfaces/item-being-moved';
 import { ListItemMoverService } from '../list-item-mover.service';
 import { Subscription, Unsubscribable } from 'rxjs';
 

@@ -1,13 +1,11 @@
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../../get-object-from-subscription.service';
-import { ImageBatch } from '../../../../../interfaces/image-batch';
+import { ImageBatch } from '@interfaces/image-batch';
 import { ImagesRestAPIService } from '../../images-rest-api.service';
 import { Injectable } from '@angular/core';
-import { LoadData as load }
-	from '../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/load.data';
-import { LocalSessionIDService } from '../../local-data/local-session-id.service';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../../../../data-structures/runtime-state-data/requested-library.data';
+import { LoadData as load } from '@runtime-state-data/static-classes/resettable-to-default/load.data';
+import { LocalSessionIDService } from '@local-data/local-session-id.service';
+import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 
 
 @Injectable({providedIn: 'root'})

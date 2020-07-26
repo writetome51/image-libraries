@@ -4,13 +4,13 @@
 	<p *ngIf="names && names.length === 0">{{noLibrariesMessage}}</p>
 
 	<ul *ngIf="names && names.length > 0">
-		<li *ngFor="let name of names">
 
+		<li *ngFor="let name of names">
 			<a [routerLink]="['/library', name, 'page', 1]">
 				{{name}}
 			</a>
-
 		</li>
+
 	</ul>
 
 </div>

@@ -1,16 +1,15 @@
-import { DBImage } from '../../../../interfaces/db-image';
+import { BackgroundProcessingStatusData as operationStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
 	from '../data-transport-processor/data-transport-processor.service';
+import { DBImage } from '@interfaces/db-image';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LoadData as load }
-	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/load.data';
+import { LoadData as load } from '@runtime-state-data/static-classes/resettable-to-default/load.data';
 import { LoadedImagesData as loadedImages }
-	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
+	from '@runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../perform-data-process-requiring-waiting.service';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../../../../data-structures/runtime-state-data/background-processing-status.data';
 
 
 export abstract class AppPaginatorDataSourceService {

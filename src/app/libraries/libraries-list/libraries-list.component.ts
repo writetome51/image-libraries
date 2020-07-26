@@ -1,13 +1,13 @@
+import { BackgroundProcessingStatusData as processingStatus }
+	from '../../../data-structures/runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { noValue } from '@writetome51/has-value-no-value';
-import { GetLibrariesProcessorService }
+import { GetLibrariesProcessorService }	// tslint:disable-next-line:max-line-length
 	from '../../shared/services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
-import { LibraryNamesData as libraryNames }
+import { LibraryNamesData as libraryNames }	// tslint:disable-next-line:max-line-length
 	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/library-names.data';
+import { noValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../shared/services/perform-data-process-requiring-waiting.service';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/background-processing-status.data';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class LibrariesListComponent {
 
 	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
 		if (noValue(libraryNames.data)) performDataProcessRequiringWaiting.go(
-			this.__getLibrariesProcessor, operationStatus
+			this.__getLibrariesProcessor, processingStatus
 		);
 	}
 

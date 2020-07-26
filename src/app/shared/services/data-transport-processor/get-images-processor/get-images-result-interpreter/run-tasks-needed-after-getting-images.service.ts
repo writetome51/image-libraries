@@ -1,10 +1,10 @@
-import { DBImage } from '../../../../../../interfaces/db-image';
-import { IDoThis } from '../../../../../../interfaces/i-do-this';
+import { DBImage } from '@interfaces/db-image';
+import { IDoThis } from '@interfaces/i-do-this';
 import { ImageTotalData as imageTotal }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/image-total.data';
+	from '@runtime-state-data/static-classes/resettable-to-default/image-total.data';
 import { Injectable } from '@angular/core';
 import { LoadedImagesData as loadedImages }
-	from '../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
+	from '@runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
 
 
 @Injectable({providedIn: 'root'})

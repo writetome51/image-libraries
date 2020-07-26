@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './logout-processor/logout-processor.service';
-import { StartDataProcessComponent } from '../../shared/abstract-components/start-data-process.component';
+import { StartDataProcessComponent }
+	from '../../shared/abstract-components/start-data-process.component';
 
 
 @Component({

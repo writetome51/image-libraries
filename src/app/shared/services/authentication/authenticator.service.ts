@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserData as currentUser }
-	from '../../../../data-structures/runtime-state-data/static-classes/current-user.data';
-import { DBUser } from '../../../../interfaces/db-user';
+import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
+import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
-import { SecurityQuestion } from '../../../../interfaces/security-question';
+import { Injectable } from '@angular/core';
+import { SecurityQuestion } from '@interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})

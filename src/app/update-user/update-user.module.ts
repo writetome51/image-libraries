@@ -1,3 +1,5 @@
+import { AppValidatingFormInputsModule }
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { DeleteUserButtonComponent }
@@ -6,7 +8,7 @@ import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-fo
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { StartDataProcessButtonModule }
-	from '../shared/modules/start-data-process-button/start-data-process-button.module';
+	from '@start-data-process-button/start-data-process-button.module';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserEmailFormInputsComponent }
 	from './update-user-email-form/update-user-email-form-inputs.component';
@@ -17,7 +19,6 @@ import { UpdateUserPasswordFormComponent }
 import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
-import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 import { UpdateEmailSaveButtonComponent }
 	from './update-user-email-form/update-email-save-button/update-email-save-button.component';
 import { UpdatePasswordSaveButtonComponent }

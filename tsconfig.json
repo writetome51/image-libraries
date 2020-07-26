@@ -2,7 +2,25 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+	  "paths": {
+		  "@app/*": ["src/app/*"],
+		  "@interfaces/*": ["src/interfaces/*"],
+		  "@string-constants/*": ["src/string-constants/*"],
+		  "@shared/*": ["src/app/shared/*"],
+		  "@app-action-menu/*": ["src/app/shared/modules/app-action-menu/*"],
+		  "@app-pagination-controls/*": ["src/app/shared/modules/app-pagination-controls/*"],
+		  "@app-validating-form-inputs/*": ["src/app/shared/modules/app-validating-form-inputs/*"],
+		  "@big-loading-spinner/*": ["src/app/shared/modules/big-loading-spinner/*"],
+		  "@start-data-process-button/*": ["src/app/shared/modules/start-data-process-button/*"],
+		  "@thumbnail-image-container/*": ["src/app/shared/modules/thumbnail-image-container/*"],
+
+		  "@services/*": ["src/app/shared/services/*"],
+		  "@local-data/*": ["src/app/shared/services/local-data/*"],
+		  "@read-only-data/*": ["src/data-structures/read-only-data/*"],
+		  "@runtime-state-data/*": ["src/data-structures/runtime-state-data/*"]
+
+	  },
+	  "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

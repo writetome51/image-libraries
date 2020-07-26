@@ -3,7 +3,7 @@ import { CurrentRouteService } from '../../../shared/services/current-route.serv
 import { DBImage } from '../../../../interfaces/db-image';
 import { LibraryPaginatorService } from '../../services/library-paginator/library-paginator.service';
 import { ListItemRemoverService } from '../../../shared/services/list-item-remover.service';
-import { PageImagesData as pageImages }
+import { PageImagesData as pageImages }	// tslint:disable-next-line:max-line-length
 	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/page-images.data';
 
 

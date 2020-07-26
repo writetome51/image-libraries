@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../../../../local-data/local-session-id.service';
-import { Handler } from '../../../../../../../interfaces/handler';
-import { AlertData as alert }
-	from '../../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
-import { incorrectPassword, noAccountWithThatEmail }
-	from '../../../../../../../string-constants/form-submission-errors';
+import { LocalSessionIDService } from '@local-data/local-session-id.service';
+import { Handler } from '@interfaces/handler';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { incorrectPassword, noAccountWithThatEmail } from '@string-constants/form-submission-errors';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
-import { UserStorageService } from '../../../../user/user-storage.service';
-import { CurrentUserData as currentUser}
-	from '../../../../../../../data-structures/runtime-state-data/static-classes/current-user.data';
+import { UserStorageService } from '@services/user/user-storage.service';
+import { CurrentUserData as currentUser} from '@runtime-state-data/static-classes/current-user.data';
 
 
 @Injectable({providedIn: 'root'})

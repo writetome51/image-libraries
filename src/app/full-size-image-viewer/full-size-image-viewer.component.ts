@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '../shared/services/current-route.service';
 import { DBImage } from '../../interfaces/db-image';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { LoadedImagesData as loadedImages }
+import { LoadedImagesData as loadedImages }	// tslint:disable-next-line:max-line-length
 	from '../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
 import { URLParamIDData as paramID } from '../../data-structures/read-only-data/url-param-id.data';
 

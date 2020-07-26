@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultCheckService }
+import { DataTransportResultCheckService }	// tslint:disable-next-line:max-line-length
 	from '../../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { AlertData as alert }
 	from '../../../../../data-structures/runtime-state-data/static-classes/alert.data';

@@ -1,8 +1,8 @@
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../services/perform-data-process-requiring-waiting.service';
 import { ClickStartedProcessingStatusData as processingStatus }
-	from '../../../data-structures/runtime-state-data/click-started-processing-status.data';
-import { Processor } from '../../../interfaces/processor';
+	from '@runtime-state-data/click-started-processing-status.data';
+import { Processor } from '@interfaces/processor';
 
 
 export abstract class StartDataProcessComponent {

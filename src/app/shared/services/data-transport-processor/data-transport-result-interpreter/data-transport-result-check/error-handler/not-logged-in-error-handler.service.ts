@@ -1,10 +1,8 @@
-import { AlertData as alert }
-	from '../../../../../../../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
-import { notLoggedIn } from '../../../../../../../string-constants/form-submission-errors';
-import { RemoveCachedDataService }
-	from '../../../../remove-cached-data.service';
-import { Handler } from '../../../../../../../interfaces/handler';
+import { notLoggedIn } from '@string-constants/form-submission-errors';
+import { RemoveCachedDataService } from '@services/remove-cached-data.service';
+import { Handler } from '@interfaces/handler';
 import { Router } from '@angular/router';
 
 

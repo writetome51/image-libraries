@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EmailInputService } from '../../shared/services/validating-input/email-input.service';
-import { PrefixLabel_to_ValidatingInputService }
+import { PrefixLabel_to_ValidatingInputService }	// tslint:disable-next-line:max-line-length
 	from '../../shared/services/validating-input/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 
 

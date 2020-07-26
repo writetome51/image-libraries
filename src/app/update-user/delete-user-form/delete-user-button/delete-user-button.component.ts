@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '../../../shared/abstract-components/start-data-process.component';
+import { StartDataProcessComponent } from '@shared/abstract-components/start-data-process.component';
 import { DeleteUserProcessorService } from './delete-user-processor/delete-user-processor.service';
 
 
