@@ -1,10 +1,10 @@
 import { Input } from '@angular/core';
 import { StartDataProcessComponent } from './start-data-process.component';
-import { ClickInitiatedProcessingStatusData }
-	from '../../../data-structures/runtime-state-data/click-initiated-processing-status.data';
+import { ClickStartedProcessingStatusData }
+	from '../../../data-structures/runtime-state-data/click-started-processing-status.data';
 
 
-export abstract class StartDataProcessElementComponent {
+export abstract class ClickStartDataProcessElementComponent {
 
 	// required.  Instance of the component this component is used in.
 	@Input() context: StartDataProcessComponent;
@@ -13,7 +13,7 @@ export abstract class StartDataProcessElementComponent {
 	@Input() processArgs: any[] = [];
 
 	clicked = false;
-	processingStatus = ClickInitiatedProcessingStatusData;
+	processingStatus = ClickStartedProcessingStatusData;
 
 
 	async runClickHandler(event) {
