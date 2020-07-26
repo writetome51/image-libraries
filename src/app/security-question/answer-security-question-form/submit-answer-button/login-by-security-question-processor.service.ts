@@ -1,5 +1,5 @@
 import { AuthenticatorService } from '../../../shared/services/authentication/authenticator.service';
-import { DBUser } from '../../../../interfaces/db-user';
+import { DBUser } from '../../../shared/interfaces/db-user';
 import { FormDataTransportProcessorService }
 	from '../../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';

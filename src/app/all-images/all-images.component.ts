@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { BackgroundProcessingStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/background-processing-status.data';
+	from '../shared/data/runtime-state/background-processing-status.data';
 import { CurrentRouteService } from '../shared/services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
 	// tslint:disable-next-line:max-line-length

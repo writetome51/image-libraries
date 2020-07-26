@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Submenu } from '../../../../interfaces/submenu';
-import { ActionMenuChoicesData as actionMenuChoices }	// tslint:disable-next-line:max-line-length
-	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/action-menu-choices.data';
+import { Submenu } from '../../interfaces/submenu';
+import { ActionMenuChoicesData as actionMenuChoices }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({

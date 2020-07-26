@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { UploadedImagesProcessorService }
-	from './uploaded-images-processor.service';
+import { UploadedImagesProcessorService } from './uploaded-images-processor.service';
 
 
 @Component({

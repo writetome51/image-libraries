@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService }
 	from '../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { AlertData as alert }
-	from '../../../../data-structures/runtime-state-data/static-classes/alert.data';
-import { duplicate, sizeRequirement } from '../../../../string-constants/rest-api-errors';
+	from '../../../shared/data/runtime-state/static-classes/alert.data';
+import { duplicate, sizeRequirement } from '../../../shared/string-constants/rest-api-errors';
 import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
-	from '../../../../string-constants/form-submission-errors';
+	from '../../../shared/string-constants/form-submission-errors';
 
 
 @Injectable({providedIn: 'root'})

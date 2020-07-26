@@ -1,9 +1,7 @@
-import { ActionMenuChoicesData as menuChoices }
-	from '@runtime-state-data/static-classes/resettable-to-default/action-menu-choices.data';
+import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames}
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from './current-route.service';
 import { Injectable } from '@angular/core';
-import { LibraryNamesData }
-	from '@runtime-state-data/static-classes/resettable-to-default/library-names.data';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
@@ -25,7 +23,7 @@ export class ActionMenuChoicesManagerService {
 
 		if (notEmpty(selectedImageNames.data)) {
 			menuChoices.data.push(
-				{label: 'Add Selected to Library', choices: LibraryNamesData.data},
+				{label: 'Add Selected to Library', choices: libraryNames.data},
 				'Delete Selected'
 			);
 		}

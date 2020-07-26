@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../shared/services/local-data/local-session-id.service';
 import { ImagesRestAPIService } from '../../shared/services/images-rest-api.service';
 import { NewImagesData as newImages }	// tslint:disable-next-line:max-line-length
-	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/new-images.data';
+	from '../../shared/data/runtime-state/static-classes/resettable-to-default/new-images.data';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../../shared/services/get-object-from-subscription.service';
 

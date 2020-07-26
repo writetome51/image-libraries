@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RestAPIService } from '../rest-api.service';
-import { SecurityQuestion } from '@interfaces/security-question';
+import { SecurityQuestion } from '@shared/interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})

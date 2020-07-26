@@ -5,7 +5,7 @@ import { NewUserInputsService }
 	from '../../new-user-inputs.service';
 import { NewUserResultInterpreterService } from './new-user-result-interpreter.service';
 import { UserCreatorService } from './user-creator.service';
-import { DBUser } from '../../../../../interfaces/db-user';
+import { DBUser } from '../../../../shared/interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})

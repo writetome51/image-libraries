@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataTransportResultCheckService }	// tslint:disable-next-line:max-line-length
-	from '../../../../../shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
-import { libraryNotFound } from '../../../../../../string-constants/rest-api-errors';
-import { LoadedLibraryData as loadedLibrary }	// tslint:disable-next-line:max-line-length
-	from '../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
-import { LoadedImagesData as loadedImages }	// tslint:disable-next-line:max-line-length
-	from '../../../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-images.data';
+	from '@services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
+import { libraryNotFound } from '@shared/string-constants/rest-api-errors';
+import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
 
 

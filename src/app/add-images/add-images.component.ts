@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BackgroundProcessingStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/background-processing-status.data';
+	from '../shared/data/runtime-state/background-processing-status.data';
 
 
 @Component({

@@ -1,14 +1,13 @@
-import { AppImage } from '../../../interfaces/app-image';
-import { DirectProcessor } from '../../../interfaces/direct-processor';
+import { AppImage } from '@shared/interfaces/app-image';
+import { DirectProcessor } from '@shared/interfaces/direct-processor';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
-import { NewImagesData as newImages }
-	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/new-images.data';
+import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { BackgroundProcessingStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/background-processing-status.data';
+	from '@runtime-state-data/background-processing-status.data';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../shared/services/perform-data-process-requiring-waiting.service';
+	from '@services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from '../save-new-images-processor/save-new-images-processor.service';
 

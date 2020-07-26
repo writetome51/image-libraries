@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@shared/interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestAPIService } from './library-rest-api.service';
 import { LocalSessionIDService } from '@local-data/local-session-id.service';

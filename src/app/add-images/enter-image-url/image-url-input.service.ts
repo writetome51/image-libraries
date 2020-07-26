@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 import { not } from '@writetome51/not';
-import { ImageURLData } from '../../../data-structures/runtime-state-data/image-url.data';
+import { ImageURLData } from '@runtime-state-data/image-url.data';
 
 
 @Injectable({providedIn: 'root'})

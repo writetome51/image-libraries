@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	// tslint:disable-next-line:max-line-length
-	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/thumbnail-display-settings.data';
+	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/thumbnail-display-settings.data';
 
 
 @Component({

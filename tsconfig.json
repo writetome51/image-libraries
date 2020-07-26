@@ -13,11 +13,10 @@
 		  "@big-loading-spinner/*": ["src/app/shared/modules/big-loading-spinner/*"],
 		  "@start-data-process-button/*": ["src/app/shared/modules/start-data-process-button/*"],
 		  "@thumbnail-image-container/*": ["src/app/shared/modules/thumbnail-image-container/*"],
-
 		  "@services/*": ["src/app/shared/services/*"],
 		  "@local-data/*": ["src/app/shared/services/local-data/*"],
-		  "@read-only-data/*": ["src/data-structures/read-only-data/*"],
-		  "@runtime-state-data/*": ["src/data-structures/runtime-state-data/*"]
+		  "@read-only-data/*": ["src/app/shared/data/read-only/*"],
+		  "@runtime-state-data/*": ["src/app/shared/data/runtime-state/*"]
 
 	  },
 	  "outDir": "./dist/out-tsc",

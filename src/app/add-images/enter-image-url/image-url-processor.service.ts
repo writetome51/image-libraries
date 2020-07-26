@@ -1,13 +1,13 @@
-import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';
+import { CORSProxyData as corsProxy } from '../../shared/data/read-only/cors-proxy.data';
 import { FormDataTransportProcessorService }
 	from '../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { ImageURLData as enteredImageURL }
-	from '../../../data-structures/runtime-state-data/image-url.data';
+	from '../../shared/data/runtime-state/image-url.data';
 import { ImageURLInputService } from './image-url-input.service';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages } // tslint:disable-next-line:max-line-length
-	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/new-images.data';
+	from '../../shared/data/runtime-state/static-classes/resettable-to-default/new-images.data';
 import { NewImagesSaverService } from '../save-new-images-processor/new-images-saver.service';
 import { SaveNewImagesResultInterpreterService } // tslint:disable-next-line:max-line-length
 	from '../save-new-images-processor/save-new-images-result-interpreter/save-new-images-result-interpreter.service';

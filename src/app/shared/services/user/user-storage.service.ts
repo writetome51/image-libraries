@@ -1,5 +1,5 @@
-import { AppUser } from '@interfaces/app-user';
-import { DBUser } from '@interfaces/db-user';
+import { AppUser } from '@shared/interfaces/app-user';
+import { DBUser } from '@shared/interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '../../../../../interfaces/db-image';
+import { DBImage } from '../../../interfaces/db-image';
 
 
 @Component({

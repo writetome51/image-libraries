@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@shared/interfaces/i-do-this';
 import { LocalStorageService } from './local-storage.service';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
 	from './reset-runtime-state-data-to-default-settings.service';

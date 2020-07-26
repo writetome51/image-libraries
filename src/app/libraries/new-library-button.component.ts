@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NewLibraryData as newLibrary }
-	from '../../data-structures/runtime-state-data/new-library.data';
+	from '../shared/data/runtime-state/new-library.data';
 
 
 @Component({

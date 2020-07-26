@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '../../../../shared/services/library/library-storage.service';
-import { DBLibrary } from '../../../../../interfaces/db-library';
+import { LibraryStorageService } from '@services/library/library-storage.service';
+import { DBLibrary } from '@shared/interfaces/db-library';
 import { RequestedLibraryData as requestedLibrary }
-	from '../../../../../data-structures/runtime-state-data/requested-library.data';
-import { IDoThis } from '../../../../../interfaces/i-do-this';
+	from '../../../../shared/data/runtime-state/requested-library.data';
+import { IDoThis } from '@shared/interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

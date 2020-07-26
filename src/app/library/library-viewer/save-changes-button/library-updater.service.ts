@@ -1,8 +1,8 @@
-import { DBLibrary } from '../../../../interfaces/db-library';
+import { DBLibrary } from '../../../shared/interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LoadedLibraryData as loadedLibrary }	// tslint:disable-next-line:max-line-length
-	from '../../../../data-structures/runtime-state-data/static-classes/resettable-to-default/loaded-library.data';
+	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/loaded-library.data';
 import { LibraryChangesService } from '../../../shared/services/library/library-changes.service';
 import { LibraryStorageService } from '../../../shared/services/library/library-storage.service';
 import { not } from '@writetome51/not';

@@ -1,10 +1,9 @@
 import { BackgroundProcessingStatusData as processingStatus }
-	from '../../../data-structures/runtime-state-data/background-processing-status.data';
+	from '../../shared/data/runtime-state/background-processing-status.data';
 import { Component } from '@angular/core';
-import { GetLibrariesProcessorService }	// tslint:disable-next-line:max-line-length
-	from '../../shared/services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
-import { LibraryNamesData as libraryNames }	// tslint:disable-next-line:max-line-length
-	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/library-names.data';
+import { GetLibrariesProcessorService }
+	from '@services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+import { LibraryNamesData as libraryNames } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '../../shared/services/perform-data-process-requiring-waiting.service';

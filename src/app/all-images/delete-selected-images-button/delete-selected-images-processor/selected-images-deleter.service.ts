@@ -4,7 +4,7 @@ import { ImagesRestAPIService } from '../../../shared/services/images-rest-api.s
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '../../../shared/services/local-data/local-session-id.service';
 import { SelectedImageNamesData as selectedImageNames }
-	from '../../../../data-structures/runtime-state-data/selected-image-names.data';
+	from '../../../shared/data/runtime-state/selected-image-names.data';
 
 
 @Injectable({providedIn: 'root'})

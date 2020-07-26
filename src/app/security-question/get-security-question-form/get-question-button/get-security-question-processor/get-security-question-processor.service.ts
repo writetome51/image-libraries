@@ -4,7 +4,7 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { GetSecurityQuestionResultInterpreterService }
 	from './get-security-question-result-interpreter.service';
-import { SecurityQuestion } from '../../../../../interfaces/security-question';
+import { SecurityQuestion } from '../../../../shared/interfaces/security-question';
 import { EmailToGetSecurityQuestionInputService }
 	from '../../email-to-get-security-question-input.service';
 

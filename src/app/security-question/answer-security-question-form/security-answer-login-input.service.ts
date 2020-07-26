@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SecurityAnswerInputService }
 	from '../../shared/services/validating-input/security-answer-input.service';
 import { CurrentUserData }
-	from '../../../data-structures/runtime-state-data/static-classes/current-user.data';
+	from '../../shared/data/runtime-state/static-classes/current-user.data';
 
 
 @Injectable({providedIn: 'root'})
