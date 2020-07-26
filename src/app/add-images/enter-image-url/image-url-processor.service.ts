@@ -1,43 +1,45 @@
-import { AlertData as alert }
-	from '../../../data-structures/runtime-state-data/static-classes/alert.data';
 import { CORSProxyData as corsProxy } from '../../../data-structures/read-only-data/cors-proxy.data';
+import { FormDataTransportProcessorService }
+	from '../../shared/services/data-transport-processor/form-data-transport-processor.service';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { ImageURLData as enteredImageURL }
 	from '../../../data-structures/runtime-state-data/image-url.data';
-import { IndirectProcessor } from '../../../interfaces/indirect-processor';
+import { ImageURLInputService } from './image-url-input.service';
 import { Injectable } from '@angular/core';
-import { NewImagesData as newImages }
+import { NewImagesData as newImages } // tslint:disable-next-line:max-line-length
 	from '../../../data-structures/runtime-state-data/static-classes/resettable-to-default/new-images.data';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/background-processing-status.data';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../shared/services/perform-data-process-requiring-waiting.service';
-import { SaveNewImagesProcessorService }
-	from '../save-new-images-processor/save-new-images-processor.service';
+import { NewImagesSaverService } from '../save-new-images-processor/new-images-saver.service';
+import { SaveNewImagesResultInterpreterService } // tslint:disable-next-line:max-line-length
+	from '../save-new-images-processor/save-new-images-result-interpreter/save-new-images-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ImageURLProcessorService implements IndirectProcessor {
+export class ImageURLProcessorService extends FormDataTransportProcessorService {
 
 
-	constructor(private __saveNewImagesProcessor: SaveNewImagesProcessorService) {
+	constructor(
+		private __newImagesSaver: NewImagesSaverService,
+		__imageURLInput: ImageURLInputService,
+		__saveNewImagesResultInterpreter: SaveNewImagesResultInterpreterService
+	) {
+		super(__imageURLInput, __saveNewImagesResultInterpreter);
 	}
 
 
-	async process(): Promise<void> {
+	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
 		if (await this.__resourceFound(enteredImageURL.data)) {
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
 			);
-			await performDataProcessRequiringWaiting.go(
-				this.__saveNewImagesProcessor, operationStatus
-			);
+			return await this.__newImagesSaver.save();
 		}
 		else {
-			alert.error =
-				'The URL you entered is either not connected to a resource, or access is denied.';
+			return { error: { message: 'The URL you entered is either not connected to a' +
+						' resource, or access is denied.'
+			}};
 		}
+
 	}
 
 

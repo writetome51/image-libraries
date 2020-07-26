@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '../../../../interfaces/i-do-this';
-import { BackgroundProcessingStatusData as operationStatus }
+import { BackgroundProcessingStatusData as processingStatus }
 	from '../../../../data-structures/runtime-state-data/background-processing-status.data';
 import { RunTasksNeededAfterLibraryRouteParamsReceivedService }
 	from './run-tasks-needed-after-library-route-params-received.service';
@@ -21,9 +21,9 @@ export class GetLibraryRouteParamsSubscriptionObserverService implements IDoThis
 	go(): (params) => Promise<void> {
 
 		return async (params) => {
-			operationStatus.waiting = true;
+			processingStatus.waiting = true;
 			await this.__runTasksNeededAfterLibraryRouteParamsReceived.go(params);
-			operationStatus.waiting = false;
+			processingStatus.waiting = false;
 		};
 
 	}

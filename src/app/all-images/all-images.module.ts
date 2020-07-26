@@ -5,6 +5,8 @@ import { AllImagesPaginationControlsComponent }
 import { AppActionMenuModule } from '../shared/modules/app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule }
 	from '../shared/modules/app-pagination-controls/app-pagination-controls.module';
+import { AppValidatingFormInputsModule }
+	from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { BigLoadingSpinnerModule }
 	from '../shared/modules/big-loading-spinner/big-loading-spinner.module';
@@ -18,7 +20,6 @@ import { StartDataProcessButtonModule }
 	from '../shared/modules/start-data-process-button/start-data-process-button.module';
 import { ThumbnailImageContainerModule }
 	from '../shared/modules/thumbnail-image-container/thumbnail-image-container.module';
-import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({

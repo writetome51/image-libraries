@@ -6,7 +6,7 @@ import { ImageURLData } from '../../../data-structures/runtime-state-data/image-
 
 @Injectable({providedIn: 'root'})
 
-export class ImageUrlInputService extends ValidatingTextInputService {
+export class ImageURLInputService extends ValidatingTextInputService {
 
 	constructor() {
 		super();

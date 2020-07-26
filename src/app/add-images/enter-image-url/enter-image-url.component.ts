@@ -1,28 +1,12 @@
 import { Component } from '@angular/core';
-import { ImageURLProcessorService } from './image-url-processor.service';
-import { ImageURLData as enteredImageURL }
-	from '../../../data-structures/runtime-state-data/image-url.data';
 
 
 @Component({
 	selector: 'enter-image-url',
-	templateUrl: './enter-image-url.component.html'
+	template: `
+		<image-url-form-input></image-url-form-input>
+		<add-image-url-button></add-image-url-button>
+	`
 })
 export class EnterImageURLComponent {
-
-
-	constructor(private __imageURLProcessor: ImageURLProcessorService) {
-	}
-
-
-	set imgURL(value) {
-		enteredImageURL.data = value.trim();
-	}
-
-
-	get imgURL() {
-		return enteredImageURL.data;
-	}
-
-
 }

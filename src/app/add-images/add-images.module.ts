@@ -6,8 +6,8 @@ import { BigLoadingSpinnerModule }
 import { ChooseImagesFromDeviceComponent }
 	from './choose-images-from-device/choose-images-from-device.component';
 import { CommonModule } from '@angular/common';
-import { ImageUrlFormInputsComponent }
-	from './enter-image-url/image-url-form-inputs.component';
+import { ImageURLFormInputComponent }
+	from './enter-image-url/image-url-form-input.component';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -23,7 +23,7 @@ import { AppValidatingFormInputsModule } from '../shared/modules/app-validating-
 		AddImageUrlButtonComponent,
 		ChooseImagesFromDeviceComponent,
 		EnterImageURLComponent,
-		ImageUrlFormInputsComponent
+		ImageURLFormInputComponent
 	],
 	imports: [
 		CommonModule,
