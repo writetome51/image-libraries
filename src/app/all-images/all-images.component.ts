@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../shared/data/runtime-state/background-processing-status.data';
-import { CurrentRouteService } from '../shared/services/current-route.service';
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
+import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
 	// tslint:disable-next-line:max-line-length
 	from './services/get-all-images-route-params-subscription-observer/get-all-images-route-params-subscription-observer.service';
@@ -15,7 +15,7 @@ import { GetAllImagesRouteParamsSubscriptionObserverService }
 export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	get gettingImages(): boolean {
-		return operationStatus.waiting;
+		return processingStatus.waiting;
 	}
 
 
@@ -26,7 +26,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 	) {
 		super();
 
-		operationStatus.waiting = true;
+		processingStatus.waiting = true;
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 			this.__getRouteParamsSubscriptionObserver.go()

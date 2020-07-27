@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { LoadedLibraryData as loadedLibrary }	// tslint:disable-next-line:max-line-length
-	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/loaded-library.data';
-import { LibraryStorageService } from '../../../shared/services/library/library-storage.service';
+import { LoadedLibraryData as loadedLibrary }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryStorageService } from '@services/library/library-storage.service';
 
 
 @Injectable({providedIn: 'root'})

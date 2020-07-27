@@ -5,10 +5,9 @@ import { GetLibraryRouteParamsSubscriptionObserverService }
 	from './services/get-library-route-params-subscription-observer/get-library-route-params-subscription-observer.service';
 import { ImageTotalData as imageTotal} from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../shared/data/runtime-state/background-processing-status.data';
-import { RequestedLibraryData as requestedLibrary }
-	from '../shared/data/runtime-state/requested-library.data';
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
+import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 
 
@@ -24,7 +23,7 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 
 
 	get gettingImages(): boolean {
-		return operationStatus.waiting;
+		return processingStatus.waiting;
 	}
 
 

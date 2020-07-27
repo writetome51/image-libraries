@@ -5,7 +5,11 @@ import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 @Component({
 	selector: 'app-alert',
 	templateUrl: './app-alert.component.html',
-	styles: [`.fixed-alert { display: block; position: fixed; margin: auto; width: 96%; z-index: 1000;}`]
+	styles: [`
+		.fixed-alert {
+			display: block; position: fixed; margin: auto; width: 96%; z-index: 1000;
+		}
+	`]
 })
 export class AppAlertComponent {
 

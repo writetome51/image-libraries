@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DBImage } from '@shared/interfaces/db-image';
+import { DBImage } from '@interfaces/db-image';
 import { AllImagesPaginatorService }
 	from '../services/all-images-paginator/all-images-paginator.service';
 import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';

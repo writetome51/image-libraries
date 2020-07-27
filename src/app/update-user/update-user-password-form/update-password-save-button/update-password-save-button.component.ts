@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { UpdatePasswordProcessorService }
-	from './update-password-processor.service';
-import { StartDataProcessComponent } from '../../../shared/abstract-components/start-data-process.component';
+import { UpdatePasswordProcessorService } from './update-password-processor.service';
+import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
 
 
 @Component({

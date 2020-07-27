@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AlertData as alert }
-	from '../../../shared/data/runtime-state/static-classes/alert.data';
-import { RedirectToLoggedInHomeService } from '../../../shared/services/redirect-to-logged-in-home.service';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { GetLibrariesProcessorService }
-	from '../../../shared/services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
-import { IDoThis } from '../../../shared/interfaces/i-do-this';
+	from '@services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

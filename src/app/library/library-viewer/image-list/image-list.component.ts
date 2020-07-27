@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CurrentRouteService } from '../../../shared/services/current-route.service';
-import { DBImage } from '../../../shared/interfaces/db-image';
+import { CurrentRouteService } from '@services/current-route.service';
+import { DBImage } from '@interfaces/db-image';
 import { LibraryPaginatorService } from '../../services/library-paginator/library-paginator.service';
-import { ListItemRemoverService } from '../../../shared/services/list-item-remover.service';
-import { PageImagesData as pageImages }	// tslint:disable-next-line:max-line-length
-	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/page-images.data';
+import { ListItemRemoverService } from '@services/list-item-remover.service';
+import { PageImagesData as pageImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({

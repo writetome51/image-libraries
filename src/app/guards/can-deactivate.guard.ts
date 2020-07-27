@@ -1,11 +1,10 @@
-import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
-	from '@angular/router';
+import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FullSizeImageComponent }
 	from '../full-size-image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { AlertData as alert } from '../shared/data/runtime-state/static-classes/alert.data';
-import { LibraryChangesService } from '../shared/services/library/library-changes.service';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 
 
 @Injectable({

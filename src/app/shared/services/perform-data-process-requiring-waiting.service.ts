@@ -1,4 +1,4 @@
-import { Processor } from '@shared/interfaces/processor';
+import { Processor } from '@interfaces/processor';
 
 
 export class PerformDataProcessRequiringWaitingService { // implements IDoThis

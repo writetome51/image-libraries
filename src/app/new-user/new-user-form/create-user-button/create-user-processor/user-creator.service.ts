@@ -1,8 +1,7 @@
-import { CurrentUserData as currentUser }
-	from '../../../../shared/data/runtime-state/static-classes/current-user.data';
+import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { UserStorageService } from '../../../../shared/services/user/user-storage.service';
-import { DBUser } from '../../../../shared/interfaces/db-user';
+import { UserStorageService } from '@services/user/user-storage.service';
+import { DBUser } from '@interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})

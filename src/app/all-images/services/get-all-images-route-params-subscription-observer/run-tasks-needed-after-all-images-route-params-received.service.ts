@@ -1,7 +1,7 @@
 import { AllImagesPaginatorService } from '../all-images-paginator/all-images-paginator.service';
 import { AllImagesJumpToPageNumberInputService } from '../all-images-jump-to-page-number-input.service';
 import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
-import { IDoThis } from '@shared/interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this';
 import {
 	ImagesLoadedFromData as imagesLoadedFrom,
 	LoadedImagesData as loadedImages,

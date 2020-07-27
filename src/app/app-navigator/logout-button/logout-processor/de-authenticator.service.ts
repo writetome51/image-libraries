@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationRestAPIService }
 	from '@services/authentication/authentication-rest-api.service';
-import { LocalSessionIDService } from '@local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
-	from '../../../shared/services/get-object-from-subscription.service';
+	from '@services/get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})

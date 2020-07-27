@@ -1,8 +1,7 @@
 import { AllImagesPaginatorService } from '../all-images-paginator/all-images-paginator.service';
-import { Handler } from '../../../shared/interfaces/handler';
+import { Handler } from '@interfaces/handler';
 import { Injectable } from '@angular/core';
-import { URLParamIDData as paramID }
-	from '../../../shared/data/read-only/url-param-id.data';
+import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,4 +1,4 @@
-import { DataTotalService } from '../../../shared/services/app-paginator/data-total.service';
+import { DataTotalService } from '@services/app-paginator/data-total.service';
 import { Injectable } from '@angular/core';
 import { GetLibraryProcessorService } from './get-library-processor/get-library-processor.service';
 

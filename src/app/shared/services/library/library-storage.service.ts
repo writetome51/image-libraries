@@ -1,7 +1,7 @@
-import { DBLibrary } from '@shared/interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryRestAPIService } from './library-rest-api.service';
-import { LocalSessionIDService } from '@local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 

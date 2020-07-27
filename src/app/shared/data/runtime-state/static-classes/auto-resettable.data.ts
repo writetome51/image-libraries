@@ -1,7 +1,7 @@
-import { Submenu } from '@shared/interfaces/submenu';
-import { DBImage } from '@shared/interfaces/db-image';
-import { DBLibrary } from '@shared/interfaces/db-library';
-import { AppImage } from '@shared/interfaces/app-image';
+import { Submenu } from '@interfaces/submenu';
+import { DBImage } from '@interfaces/db-image';
+import { DBLibrary } from '@interfaces/db-library';
+import { AppImage } from '@interfaces/app-image';
 
 
 export class ActionMenuChoicesData {

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '@shared/interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library';
 import {
 	LoadedLibraryData as loadedLibrary,
 	ImageTotalData as imageTotal,
 	ImagesLoadedFromData as loadedImagesStatus
 } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { GetLibraryImagesProcessorService } from './get-library-images-processor.service';
-import { IDoThis } from '@shared/interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

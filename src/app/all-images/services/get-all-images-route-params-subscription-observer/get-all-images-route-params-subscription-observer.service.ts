@@ -1,7 +1,7 @@
-import { IDoThis } from '../../../shared/interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { BackgroundProcessingStatusData as operationStatus }
-	from '../../../shared/data/runtime-state/background-processing-status.data';
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { RunTasksNeededAfterAllImagesRouteParamsReceivedService }
 	from './run-tasks-needed-after-all-images-route-params-received.service';
 
@@ -20,9 +20,9 @@ export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoTh
 	go(): (params) => Promise<void> {
 
 		return async (params) => {
-			operationStatus.waiting = true;
+			processingStatus.waiting = true;
 			await this.__runTasksNeededAfterAllImagesRouteParamsReceived.go(params);
-			operationStatus.waiting = false;
+			processingStatus.waiting = false;
 		};
 	}
 

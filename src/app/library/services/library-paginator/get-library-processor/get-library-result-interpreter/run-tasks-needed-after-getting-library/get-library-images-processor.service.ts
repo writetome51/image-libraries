@@ -1,6 +1,6 @@
-import { GetImagesProcessorService }	// tslint:disable-next-line:max-line-length
-	from '../../../../../../shared/services/data-transport-processor/get-images-processor/get-images-processor.service';
-import { ImageBatch } from '../../../../../../shared/interfaces/image-batch';
+import { GetImagesProcessorService }
+	from '@services/data-transport-processor/get-images-processor/get-images-processor.service';
+import { ImageBatch } from '@interfaces/image-batch';
 import { Injectable } from '@angular/core';
 
 
