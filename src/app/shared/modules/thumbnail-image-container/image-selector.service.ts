@@ -1,5 +1,5 @@
 import { SelectedImageNamesData as selectedImageNames }
-	from '../../data/runtime-state/selected-image-names.data';
+	from '@runtime-state-data/selected-image-names.data';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 
 

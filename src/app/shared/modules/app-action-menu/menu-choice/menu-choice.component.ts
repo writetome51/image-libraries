@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Submenu } from '../../../interfaces/submenu';
+import { Submenu } from '@interfaces/submenu';
 import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
-import { StartDataProcessComponent } from '../../../abstract-components/start-data-process.component';
+import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
 
 
 @Component({

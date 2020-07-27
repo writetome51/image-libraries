@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../../shared/data/runtime-state/requested-library.data';
-import { URLParamIDData as paramID }
-	from '../../../shared/data/read-only/url-param-id.data';
+import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
+import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 import { LibraryPaginatorService } from '../library-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';
-import { RedirectToLoggedInHomeService } from '../../../shared/services/redirect-to-logged-in-home.service';
-import { IDoThis } from '../../../shared/interfaces/i-do-this';
+import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
+import { IDoThis } from '@interfaces/i-do-this';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/loaded-library.data';
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Injectable({providedIn: 'root'})

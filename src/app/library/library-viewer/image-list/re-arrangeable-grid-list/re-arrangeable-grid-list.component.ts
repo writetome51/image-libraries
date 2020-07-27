@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ListItemMoverService } from '../../../../shared/services/list-item-mover.service';
+import { ListItemMoverService } from '@services/list-item-mover.service';
 
 
 @Component({

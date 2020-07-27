@@ -1,5 +1,5 @@
 import { AppValidatingFormInputsModule }
-	from '../shared/modules/app-validating-form-inputs/app-validating-form-inputs.module';
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AnswerSecurityQuestionFormComponent }
 	from './answer-security-question-form/answer-security-question-form.component';
 import { AnswerSecurityQuestionFormInputComponent }
@@ -15,7 +15,7 @@ import { GetSecurityQuestionFormInputComponent }
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
-	from '../shared/modules/start-data-process-button/start-data-process-button.module';
+	from '@start-data-process-button/start-data-process-button.module';
 import { SecurityQuestionComponent } from './security-question.component';
 import { SubmitAnswerButtonComponent }
 	from './answer-security-question-form/submit-answer-button/submit-answer-button.component';

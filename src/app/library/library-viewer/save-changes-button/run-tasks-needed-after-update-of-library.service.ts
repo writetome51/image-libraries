@@ -1,11 +1,10 @@
-import { AlertData as alert }
-	from '../../../shared/data/runtime-state/static-classes/alert.data';
-import { DBLibrary } from '../../../shared/interfaces/db-library';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LibraryChangesService } from '../../../shared/services/library/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }
-	from '../../../shared/data/runtime-state/static-classes/resettable-to-default/loaded-library.data';
-import { IDoThis } from '../../../shared/interfaces/i-do-this';
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
 import { LibraryJumpToPageNumberInputService } from './library-jump-to-page-number-input.service';
-import { URLParamIDData } from '../../shared/data/read-only/url-param-id.data';
+import { URLParamIDData } from '@read-only-data/url-param-id.data';
 
 
 @Component({

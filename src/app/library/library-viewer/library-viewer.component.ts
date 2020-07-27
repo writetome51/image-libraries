@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LibraryChangesService } from '../../shared/services/library/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 import { BackgroundProcessingStatusData as processingStatus }
-	from '../../shared/data/runtime-state/background-processing-status.data';
+	from '@runtime-state-data/background-processing-status.data';
 import { ImageTotalData as imageTotal } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
 

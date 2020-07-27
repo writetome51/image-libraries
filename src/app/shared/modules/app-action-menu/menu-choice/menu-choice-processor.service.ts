@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DirectProcessor } from '../../../interfaces/direct-processor';
+import { DirectProcessor } from '@interfaces/direct-processor';
 
 
 @Injectable({providedIn: 'root'})

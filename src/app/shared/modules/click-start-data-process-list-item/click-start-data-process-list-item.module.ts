@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClickStartDataProcessListItemComponent }
 	from './click-start-data-process-list-item.component';
-import { TinyLoadingSpinnerModule }
-	from '../tiny-loading-spinner/tiny-loading-spinner.module';
+import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner/tiny-loading-spinner.module';
 
 
 @NgModule({

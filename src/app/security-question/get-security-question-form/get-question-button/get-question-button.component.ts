@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent }
-	from '../../../shared/abstract-components/start-data-process.component';
+import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
 import { GetSecurityQuestionProcessorService }
 	from './get-security-question-processor/get-security-question-processor.service';
 
