@@ -13,7 +13,9 @@
 		  "@big-loading-spinner/*": ["src/app/shared/modules/big-loading-spinner/*"],
 		  "@tiny-loading-spinner/*": ["src/app/shared/modules/tiny-loading-spinner/*"],
 		  "@start-data-process-button/*": ["src/app/shared/modules/start-data-process-button/*"],
-		  "@click-start-data-process-list-item/*": ["src/app/shared/modules/click-start-data-process-list-item/*"],
+		  "@click-start-data-process-list-item/*": [
+			  "src/app/shared/modules/click-start-data-process-list-item/*"
+		  ],
 		  "@thumbnail-image-container/*": ["src/app/shared/modules/thumbnail-image-container/*"],
 		  "@services/*": ["src/app/shared/services/*"],
 		  "@abstract-components/*": ["src/app/shared/abstract-components/*"],

@@ -4,10 +4,10 @@
 
 export class AppModuleRoutesData {
 
-	static readonly NewUserModule = 'create-account';
+	static readonly FullSizeImageViewerModule = 'image';
 	static readonly LibrariesModule = 'libraries';
 	static readonly LibraryModule = 'library';
+	static readonly NewUserModule = 'create-account';
 	static readonly SecurityQuestionModule = 'security-question';
-	static readonly FullSizeImageViewerModule = 'image';
 
 }
