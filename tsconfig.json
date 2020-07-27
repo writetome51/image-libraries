@@ -4,6 +4,7 @@
     "baseUrl": "./",
 	  "paths": {
 		  "@app/*": ["src/app/*"],
+		  "@environments/*": ["src/environments/*"],
 		  "@interfaces/*": ["src/app/shared/interfaces/*"],
 		  "@string-constants/*": ["src/app/shared/string-constants/*"],
 		  "@app-action-menu/*": ["src/app/shared/modules/app-action-menu/*"],

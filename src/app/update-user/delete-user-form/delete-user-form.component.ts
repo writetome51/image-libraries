@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '../../shared/abstract-components/clear-form-on-init-and-alert-on-destroy.component';
-import { environment } from '../../../environments/environment';
+	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
+import { environment } from '@environments/environment';
 
 
 @Component({

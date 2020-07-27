@@ -1,9 +1,9 @@
-import { DBUser } from '../shared/interfaces/db-user';
+import { DBUser } from '@interfaces/db-user';
 import { RunTasksNeededAfterGettingUserService }
-	from '../shared/services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-process/run-tasks-needed-after-getting-user.service';
-import { AlertData as alert } from '../shared/data/runtime-state/static-classes/alert.data';
+	from '@services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-process/run-tasks-needed-after-getting-user.service';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
-import { IDoThis } from '../shared/interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppModuleRoutesData } from '../../app-module-routes.data';
+import { AppModuleRoutesData } from '@app/app-module-routes.data';
 
 
 @Component({
