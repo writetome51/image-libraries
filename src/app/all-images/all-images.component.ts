@@ -4,7 +4,7 @@ import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsSubscriptionObserverService }
-	// tslint:disable-next-line:max-line-length
+// tslint:disable-next-line:max-line-length
 	from './services/get-all-images-route-params-subscription-observer/get-all-images-route-params-subscription-observer.service';
 
 
