@@ -24,14 +24,11 @@ export class FullSizeImageViewerComponent {
 
 
 	private __getImageByName(name): DBImage {
-		let foundItem: { value: DBImage };
 
-		foundItem = getByTest(
+		return getByTest(
 			(image: DBImage) => image.name === name,
 			loadedImages.data
 		)[0]; // result expected to only have one item.
-
-		return foundItem.value;
 	}
 
 }

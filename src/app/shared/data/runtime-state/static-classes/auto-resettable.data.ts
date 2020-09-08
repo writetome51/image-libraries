@@ -54,6 +54,28 @@ export class LibraryNamesData {
 }
 
 
+export class PageData {
+
+	private static __size;
+
+
+	static get size(): number {
+		return this.__size;
+	}
+
+
+	static set size(value) {
+		this.__size = value;
+	}
+
+
+	static setDefault() {
+		this.size = 20;
+	}
+
+}
+
+
 export class LoadData {
 
 	static number: number;
@@ -134,28 +156,6 @@ export class NewImagesData {
 
 	static setDefault() {
 		this.data = [];
-	}
-
-}
-
-
-export class PageData {
-
-	private static __size;
-
-
-	static get size(): number {
-		return this.__size;
-	}
-
-
-	static set size(value) {
-		this.__size = value;
-	}
-
-
-	static setDefault() {
-		this.size = 20;
 	}
 
 }
