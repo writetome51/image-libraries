@@ -7,7 +7,7 @@ import { LocalSessionIDService } from '@services/local-data/local-session-id.ser
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterGettingUserService implements IDoThis {
+export class RunTasksAfterGettingUserService implements IDoThis {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,

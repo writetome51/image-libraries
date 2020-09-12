@@ -6,7 +6,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterLogoutService implements IDoThis {
+export class RunTasksAfterLogoutService implements IDoThis {
 
 	constructor(
 		private __removeCachedData: RemoveCachedDataService,

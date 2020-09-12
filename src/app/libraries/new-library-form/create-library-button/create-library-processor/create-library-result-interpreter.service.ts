@@ -13,9 +13,9 @@ export class CreateLibraryResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__newLibraryResultCheck: UpdateOrNewLibraryResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterCreationOfNewLibraryService,
+		__runPostSuccessTasks: RunTasksNeededAfterCreationOfNewLibraryService,
 	) {
-		super(__newLibraryResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__newLibraryResultCheck, __runPostSuccessTasks);
 	}
 
 }

@@ -13,9 +13,9 @@ export class DeleteLibraryResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterDeletionOfLibraryService
+		__runPostSuccessTasks: RunTasksNeededAfterDeletionOfLibraryService
 	) {
-		super(__dataTransportResultCheckService, __runTasksNeededAfterSuccessfulProcess);
+		super(__dataTransportResultCheckService, __runPostSuccessTasks);
 	}
 
 }

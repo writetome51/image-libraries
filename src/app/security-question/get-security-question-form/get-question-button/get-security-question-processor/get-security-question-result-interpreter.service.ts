@@ -12,10 +12,10 @@ export class GetSecurityQuestionResultInterpreterService extends DataTransportRe
 
 	constructor(
 		__getSecurityQuestionResultCheck: GetSecurityQuestionResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess:
+		__runPostSuccessTasks:
 			RunTasksNeededAfterGettingSecurityQuestionService
 	) {
-		super(__getSecurityQuestionResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__getSecurityQuestionResultCheck, __runPostSuccessTasks);
 	}
 
 }

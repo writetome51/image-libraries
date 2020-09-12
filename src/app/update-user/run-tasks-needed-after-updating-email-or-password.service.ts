@@ -1,6 +1,6 @@
 import { DBUser } from '@interfaces/db-user';
-import { RunTasksNeededAfterGettingUserService }
-	from '@services/data-transport-processor/data-transport-result-interpreter/run-tasks-needed-after-successful-process/run-tasks-needed-after-getting-user.service';
+import { RunTasksAfterGettingUserService }
+	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this';
@@ -13,7 +13,7 @@ export class RunTasksNeededAfterUpdatingEmailOrPasswordService implements IDoThi
 	resultMessage: string;
 
 
-	constructor(private __runTasksNeededAfterGettingUser: RunTasksNeededAfterGettingUserService) {
+	constructor(private __runTasksNeededAfterGettingUser: RunTasksAfterGettingUserService) {
 	}
 
 

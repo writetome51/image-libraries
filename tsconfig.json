@@ -1,47 +1,88 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-	  "paths": {
-		  "@app/*": ["src/app/*"],
-		  "@environments/*": ["src/environments/*"],
-		  "@interfaces/*": ["src/app/shared/interfaces/*"],
-		  "@string-constants/*": ["src/app/shared/string-constants/*"],
-		  "@app-action-menu/*": ["src/app/shared/modules/app-action-menu/*"],
-		  "@app-pagination-controls/*": ["src/app/shared/modules/app-pagination-controls/*"],
-		  "@app-validating-form-inputs/*": ["src/app/shared/modules/app-validating-form-inputs/*"],
-		  "@big-loading-spinner/*": ["src/app/shared/modules/big-loading-spinner/*"],
-		  "@tiny-loading-spinner/*": ["src/app/shared/modules/tiny-loading-spinner/*"],
-		  "@start-data-process-button/*": ["src/app/shared/modules/start-data-process-button/*"],
-		  "@click-start-data-process-list-item/*": [
-			  "src/app/shared/modules/click-start-data-process-list-item/*"
-		  ],
-		  "@thumbnail-image-container/*": ["src/app/shared/modules/thumbnail-image-container/*"],
-		  "@services/*": ["src/app/shared/services/*"],
-		  "@abstract-components/*": ["src/app/shared/abstract-components/*"],
-		  "@read-only-data/*": ["src/app/shared/data/read-only/*"],
-		  "@runtime-state-data/*": ["src/app/shared/data/runtime-state/*"]
-
-	  },
-	  "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@abstract-components/*": [
+				"src/app/shared/abstract-components/*"
+			],
+			"@app/*": [
+				"src/app/*"
+			],
+			"@app-action-menu/*": [
+				"src/app/shared/modules/app-action-menu/*"
+			],
+			"@app-pagination-controls/*": [
+				"src/app/shared/modules/app-pagination-controls/*"
+			],
+			"@app-validating-form-inputs/*": [
+				"src/app/shared/modules/app-validating-form-inputs/*"
+			],
+			"@big-loading-spinner/*": [
+				"src/app/shared/modules/big-loading-spinner/*"
+			],
+			"@click-start-data-process-list-item/*": [
+				"src/app/shared/modules/click-start-data-process-list-item/*"
+			],
+			"@data-transport-processor/*": [
+				"src/app/shared/services/data-transport-processor/*"
+			],
+			"@data-transport-result-check/*": [
+				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/*"
+			],
+			"@data-transport-result-interpreter/*": [
+				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
+			],
+			"@environments/*": [
+				"src/environments/*"
+			],
+			"@interfaces/*": [
+				"src/app/shared/interfaces/*"
+			],
+			"@read-only-data/*": [
+				"src/app/shared/data/read-only/*"
+			],
+			"@run-post-success-tasks/*": [
+				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/run-post-success-tasks/*"
+			],
+			"@runtime-state-data/*": [
+				"src/app/shared/data/runtime-state/*"
+			],
+			"@services/*": [
+				"src/app/shared/services/*"
+			],
+			"@string-constants/*": [
+				"src/app/shared/string-constants/*"
+			],
+			"@start-data-process-button/*": [
+				"src/app/shared/modules/start-data-process-button/*"
+			],
+			"@tiny-loading-spinner/*": [
+				"src/app/shared/modules/tiny-loading-spinner/*"
+			],
+			"@thumbnail-image-container/*": [
+				"src/app/shared/modules/thumbnail-image-container/*"
+			]
+		},
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"lib": [
+			"es2018",
+			"dom"
+		]
+	},
+	"angularCompilerOptions": {
+		"fullTemplateTypeCheck": true,
+		"strictInjectionParameters": true
+	}
 }

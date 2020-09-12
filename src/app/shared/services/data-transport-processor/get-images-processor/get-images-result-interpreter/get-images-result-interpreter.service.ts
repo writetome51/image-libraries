@@ -12,9 +12,9 @@ export class GetImagesResultInterpreterService extends DataTransportResultInterp
 
 	constructor(
 		__getImagesResultCheck: GetImagesResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterGettingImagesService
+		__runPostSuccessTasks: RunTasksNeededAfterGettingImagesService
 	) {
-		super(__getImagesResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__getImagesResultCheck, __runPostSuccessTasks);
 	}
 
 }

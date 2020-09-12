@@ -13,9 +13,9 @@ export class NewUserResultInterpreterService extends DataTransportResultInterpre
 
 	constructor(
 		__newUserResultCheck: NewUserResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterCreatingNewUserService,
+		__runPostSuccessTasks: RunTasksNeededAfterCreatingNewUserService,
 	) {
-		super(__newUserResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__newUserResultCheck, __runPostSuccessTasks);
 	}
 
 }

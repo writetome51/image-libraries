@@ -1,9 +1,9 @@
 import { DBUser } from '@interfaces/db-user';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { RedirectToLoggedInHomeService } from '../../redirect-to-logged-in-home.service';
-import { RunTasksNeededAfterGettingUserService }
-	from './run-tasks-needed-after-successful-process/run-tasks-needed-after-getting-user.service';
+import { RedirectToLoggedInHomeService } from '../../../redirect-to-logged-in-home.service';
+import { RunTasksAfterGettingUserService }
+	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 
@@ -13,7 +13,7 @@ import { SecurityQuestionStatusData as questionStatus }
 export class RunTasksNeededAfterLoginService implements IDoThis {
 
 	constructor(
-		private __runTasksNeededAfterGettingUser: RunTasksNeededAfterGettingUserService,
+		private __runTasksNeededAfterGettingUser: RunTasksAfterGettingUserService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}

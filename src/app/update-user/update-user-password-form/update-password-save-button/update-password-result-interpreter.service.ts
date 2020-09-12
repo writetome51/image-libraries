@@ -13,9 +13,9 @@ export class UpdatePasswordResultInterpreterService extends DataTransportResultI
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterUpdatingPasswordService
+		__runPostSuccessTasks: RunTasksNeededAfterUpdatingPasswordService
 	) {
-		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}
 
 }

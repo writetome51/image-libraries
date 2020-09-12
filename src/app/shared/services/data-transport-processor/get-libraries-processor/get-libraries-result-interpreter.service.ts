@@ -13,9 +13,9 @@ export class GetLibrariesResultInterpreterService extends DataTransportResultInt
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterGettingLibrariesService
+		__runPostSuccessTasks: RunTasksNeededAfterGettingLibrariesService
 	) {
-		super(__dataTransportResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}
 
 }

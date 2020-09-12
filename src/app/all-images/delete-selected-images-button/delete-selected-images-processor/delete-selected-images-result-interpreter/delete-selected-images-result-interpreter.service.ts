@@ -14,9 +14,9 @@ export class DeleteSelectedImagesResultInterpreterService
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterDeletingImagesService
+		__runPostSuccessTasks: RunTasksNeededAfterDeletingImagesService
 	) {
-		super(__dataTransportResultCheckService, __runTasksNeededAfterSuccessfulProcess);
+		super(__dataTransportResultCheckService, __runPostSuccessTasks);
 	}
 
 }

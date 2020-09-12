@@ -12,9 +12,9 @@ export class SaveNewImagesResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__saveNewImagesResultCheck: SaveNewImagesResultCheckService,
-		__runTasksNeededAfterSuccessfulProcess: RunTasksNeededAfterSavingNewImagesService
+		__runPostSuccessTasks: RunTasksNeededAfterSavingNewImagesService
 	) {
-		super(__saveNewImagesResultCheck, __runTasksNeededAfterSuccessfulProcess);
+		super(__saveNewImagesResultCheck, __runPostSuccessTasks);
 	}
 
 }

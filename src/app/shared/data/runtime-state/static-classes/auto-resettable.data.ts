@@ -30,9 +30,9 @@ export class ImageTotalData {
 
 export class ImagesLoadedFromData {
 
-	static __all;
-	static __library;
-	static __none;
+	static __all: boolean;
+	static __library: boolean;
+	static __none: boolean;
 
 
 	static set data(value: 'all' | 'library' | 'none') {
