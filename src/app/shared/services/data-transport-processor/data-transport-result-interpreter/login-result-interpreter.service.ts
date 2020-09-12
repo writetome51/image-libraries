@@ -2,8 +2,8 @@ import { DataTransportResultInterpreterService } from './data-transport-result-i
 import { DataTransportResultCheckService }
 	from '@data-transport-result-check/data-transport-result-check.service';
 import { Injectable } from '@angular/core';
-import { RunTasksNeededAfterLoginService }
-	from '@run-post-success-tasks/run-tasks-needed-after-login.service';
+import { RunTasksAfterLoginService }
+	from '@run-post-success-tasks/run-tasks-after-login.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,7 +12,7 @@ export class LoginResultInterpreterService extends DataTransportResultInterprete
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterLoginService
+		__runPostSuccessTasks: RunTasksAfterLoginService
 	) {
 		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}

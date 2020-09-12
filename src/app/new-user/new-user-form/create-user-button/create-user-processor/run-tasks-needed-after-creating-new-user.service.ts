@@ -1,7 +1,7 @@
 import { DBUser } from '@interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { RunTasksNeededAfterLoginService } // tslint:disable-next-line:max-line-length
-	from '@run-post-success-tasks/run-tasks-needed-after-login.service';
+import { RunTasksAfterLoginService } // tslint:disable-next-line:max-line-length
+	from '@run-post-success-tasks/run-tasks-after-login.service';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { IDoThis } from '@interfaces/i-do-this';
 
@@ -10,7 +10,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 export class RunTasksNeededAfterCreatingNewUserService implements IDoThis {
 
-	constructor(private __runTasksNeededAfterLogin: RunTasksNeededAfterLoginService) {
+	constructor(private __runTasksNeededAfterLogin: RunTasksAfterLoginService) {
 	}
 
 
