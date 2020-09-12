@@ -35,7 +35,9 @@ export abstract class AppPaginatorDataSourceService {
 	): Promise<DBImage[]> {
 
 		load.number = loadNum;
-		await performDataProcessRequiringWaiting.go(this.__set_loadedImages_processor, processingStatus);
+		await performDataProcessRequiringWaiting.go(
+			this.__set_loadedImages_processor, processingStatus
+		);
 
 		if (hasValue(loadedImages.data)) return loadedImages.data;
 		else return [];
