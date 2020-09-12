@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 import { LoginBySecurityQuestionProcessorService }
 	from './login-by-security-question-processor.service';
 
@@ -12,7 +12,7 @@ import { LoginBySecurityQuestionProcessorService }
 		</start-data-process-button>
 	`
 })
-export class SubmitAnswerButtonComponent extends StartDataProcessComponent {
+export class SubmitAnswerButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__loginBySecurityQuestionProcessor: LoginBySecurityQuestionProcessorService) {
 		super(__loginBySecurityQuestionProcessor);

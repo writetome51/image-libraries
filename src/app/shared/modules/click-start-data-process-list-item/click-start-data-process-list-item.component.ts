@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ClickStartDataProcessElementComponent }
-	from '@abstract-components/click-start-data-process-element.component';
+import { ClickStartDataProcessComponent }
+	from '@abstract-components/click-start-data-process.component';
 import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 
 
@@ -18,7 +18,7 @@ import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 		</ng-container>
 	`
 })
-export class ClickStartDataProcessListItemComponent extends ClickStartDataProcessElementComponent {
+export class ClickStartDataProcessListItemComponent extends ClickStartDataProcessComponent {
 
 	alert = AlertData;
 

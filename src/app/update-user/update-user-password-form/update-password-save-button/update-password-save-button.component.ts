@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UpdatePasswordProcessorService } from './update-password-processor.service';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { StartDataProcessComponent } from '@abstract-components/start-data-proce
 		</start-data-process-button>
 	`
 })
-export class UpdatePasswordSaveButtonComponent extends StartDataProcessComponent {
+export class UpdatePasswordSaveButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__updatePasswordProcessor: UpdatePasswordProcessorService) {
 		super(__updatePasswordProcessor);

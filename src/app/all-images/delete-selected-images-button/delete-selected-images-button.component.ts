@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor/delete-selected-images-processor.service';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { StartDataProcessComponent } from '@abstract-components/start-data-proce
 		</start-data-process-button>
 	`
 })
-export class DeleteSelectedImagesButtonComponent extends StartDataProcessComponent {
+export class DeleteSelectedImagesButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService) {
 		super(__deleteSelectedImagesProcessor);

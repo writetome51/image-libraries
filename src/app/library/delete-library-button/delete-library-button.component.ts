@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 import { DeleteLibraryProcessorService }
 	from './delete-library-processor/delete-library-processor.service';
 
@@ -10,7 +10,7 @@ import { DeleteLibraryProcessorService }
 		<start-data-process-button [context]="this">Delete Library</start-data-process-button>
 	`
 })
-export class DeleteLibraryButtonComponent extends StartDataProcessComponent {
+export class DeleteLibraryButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__deleteLibraryProcessor: DeleteLibraryProcessorService) {
 		super(__deleteLibraryProcessor);

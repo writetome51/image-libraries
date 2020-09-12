@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CreateUserProcessorService } from './create-user-processor/create-user-processor.service';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { StartDataProcessComponent } from '@abstract-components/start-data-proce
 		</start-data-process-button>
 	`
 })
-export class CreateUserButtonComponent extends StartDataProcessComponent {
+export class CreateUserButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__createUserProcessor: CreateUserProcessorService) {
 		super(__createUserProcessor);

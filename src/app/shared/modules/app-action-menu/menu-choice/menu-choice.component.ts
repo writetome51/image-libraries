@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Submenu } from '@interfaces/submenu';
 import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { StartDataProcessComponent } from '@abstract-components/start-data-proce
 	templateUrl: './menu-choice.component.html',
 	styleUrls: ['./menu-choice.component.css']
 })
-export class MenuChoiceComponent extends StartDataProcessComponent {
+export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: string | Submenu;
 

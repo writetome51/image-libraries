@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService } from './update-email-processor.service';
-import { StartDataProcessComponent } from '@abstract-components/start-data-process.component';
+import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { StartDataProcessComponent } from '@abstract-components/start-data-proce
 		</start-data-process-button>
 	`
 })
-export class UpdateEmailSaveButtonComponent extends StartDataProcessComponent {
+export class UpdateEmailSaveButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__updateEmailProcessor: UpdateEmailProcessorService) {
 		super(__updateEmailProcessor);

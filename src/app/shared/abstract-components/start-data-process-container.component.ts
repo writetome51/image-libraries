@@ -5,7 +5,7 @@ import { PerformDataProcessRequiringWaitingService as performDataProcessRequirin
 import { Processor } from '@interfaces/processor';
 
 
-export abstract class StartDataProcessComponent {
+export abstract class StartDataProcessContainerComponent {
 
 	constructor(private __processor: Processor) {
 	}

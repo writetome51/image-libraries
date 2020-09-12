@@ -1,5 +1,5 @@
-import { ClickStartDataProcessElementComponent }
-	from '@abstract-components/click-start-data-process-element.component';
+import { ClickStartDataProcessComponent }
+	from '@abstract-components/click-start-data-process.component';
 import { Component, Input } from '@angular/core';
 
 
@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 	templateUrl: './start-data-process-button.component.html',
 	styleUrls: ['./start-data-process-button.component.css']
 })
-export class StartDataProcessButtonComponent extends ClickStartDataProcessElementComponent {
+export class StartDataProcessButtonComponent extends ClickStartDataProcessComponent {
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
 	@Input() type: 'button' | 'submit' = 'button';

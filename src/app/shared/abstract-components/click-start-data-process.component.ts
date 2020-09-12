@@ -1,14 +1,14 @@
 import { Input } from '@angular/core';
-import { StartDataProcessComponent } from './start-data-process.component';
+import { StartDataProcessContainerComponent } from './start-data-process-container.component';
 import { ClickStartedProcessingStatusData }
 	from '@runtime-state-data/click-started-processing-status.data';
 
 
 
-export abstract class ClickStartDataProcessElementComponent {
+export abstract class ClickStartDataProcessComponent {
 
 	// required.  Instance of the component this component is used in.
-	@Input() context: StartDataProcessComponent;
+	@Input() context: StartDataProcessContainerComponent;
 
 	// Passed to this.context.start()
 	@Input() processArgs: any[] = [];
