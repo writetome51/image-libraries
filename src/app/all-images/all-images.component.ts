@@ -3,9 +3,8 @@ import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destr
 import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
 import { CurrentRouteService } from '@services/current-route.service';
-import { GetAllImagesRouteParamsSubscriptionObserverService }
-// tslint:disable-next-line:max-line-length
-	from './services/get-all-images-route-params-subscription-observer/get-all-images-route-params-subscription-observer.service';
+import { GetAllImagesRouteParamsObserverService }
+	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
 
 
 @Component({
@@ -21,15 +20,14 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver:
-			GetAllImagesRouteParamsSubscriptionObserverService
+		private __getRouteParamsObserver: GetAllImagesRouteParamsObserverService
 	) {
 		super();
 
 		processingStatus.waiting = true;
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionObserver.go()
+			this.__getRouteParamsObserver.go()
 		);
 
 		this._subscriptions.push(routeParamsSubscription);

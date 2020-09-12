@@ -8,13 +8,13 @@ import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 export class AllImagesRouteParamsHandlerService implements Handler {
 
-	constructor(private __allImagesPaginator: AllImagesPaginatorService) {
+	constructor(private __paginator: AllImagesPaginatorService) {
 	}
 
 
 	async handle(params) {
 		let page = Number(params[paramID.pageNumber]);
-		await this.__allImagesPaginator.setCurrentPageNumber(page);
+		await this.__paginator.setCurrentPageNumber(page);
 	}
 
 }

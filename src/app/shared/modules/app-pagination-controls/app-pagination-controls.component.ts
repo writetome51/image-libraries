@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { JumpToPageNumberInputService } from './jump-to-page-number-input.service';
+import { JumpToPageInputService } from './jump-to-page-input.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class AppPaginationControlsComponent {
 	@Input() routeBeforePageNumber: string;
 
 	// Optional
-	@Input() jumpToPageInput: JumpToPageNumberInputService;
+	@Input() jumpToPageInput: JumpToPageInputService;
 
 
 	getCurrentPage() {

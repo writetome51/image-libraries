@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CreateUserProcessorService } from './create-user-processor/create-user-processor.service';
-import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
+import { StartDataProcessContainerComponent }
+	from '@abstract-components/start-data-process-container.component';
 
 
 @Component({

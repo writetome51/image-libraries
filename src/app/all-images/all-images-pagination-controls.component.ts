@@ -1,7 +1,6 @@
+import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
 import { AllImagesPaginatorService }
 	from './services/all-images-paginator/all-images-paginator.service';
-import { AllImagesJumpToPageNumberInputService }
-	from './services/all-images-jump-to-page-number-input.service';
 import { AppNavigatorModuleRoutesData as appNavigatorModuleRoutes}
 	from '../app-navigator/app-navigator-module-routes.data';
 import { Component } from '@angular/core';
@@ -12,7 +11,7 @@ import { Component } from '@angular/core';
 	template: `
 		<app-pagination-controls
 			[routeBeforePageNumber]="routeBeforePageNumber"
-			[paginator]="allImagesPaginator" [jumpToPageInput]="allImagesJumpToPageNumberInput"
+			[paginator]="paginator" [jumpToPageInput]="jumpToPageInput"
 		>
 		</app-pagination-controls>
 	`
@@ -24,8 +23,8 @@ export class AllImagesPaginationControlsComponent {
 
 
 	constructor(
-		public allImagesPaginator: AllImagesPaginatorService,
-		public allImagesJumpToPageNumberInput: AllImagesJumpToPageNumberInputService
+		public paginator: AllImagesPaginatorService,
+		public jumpToPageInput: AllImagesJumpToPageInputService
 	) {
 	}
 

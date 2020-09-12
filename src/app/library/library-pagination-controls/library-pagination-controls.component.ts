@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
-import { LibraryJumpToPageNumberInputService } from './library-jump-to-page-number-input.service';
+import { LibraryJumpToPageInputService } from './library-jump-to-page-input.service';
 import { URLParamIDData } from '@read-only-data/url-param-id.data';
 
 
@@ -20,7 +20,7 @@ export class LibraryPaginationControlsComponent {
 
 	constructor(
 		public libraryPaginator: LibraryPaginatorService,
-		public libraryJumpToPageNumberInput: LibraryJumpToPageNumberInputService
+		public libraryJumpToPageNumberInput: LibraryJumpToPageInputService
 	) {
 	}
 

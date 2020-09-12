@@ -5,7 +5,4 @@ referred to as 'newLibrary'.
 
 For any class/object which has a 'data' property: 'data' is exactly what the class/object
 represents.  For example, ImageURLData's 'data' property, when referred to, will look like
-'imageURL.data', and is referring to the image url itself.  Example:
-
-// import { ImageURLData as imageURL } from './data-structures/...';
-// imageURL.data = 'http://images.com/yosemite.jpg';
+'imageURL.data', and is referring to the image url itself.

@@ -8,10 +8,10 @@ import { RunTasksNeededAfterAllImagesRouteParamsReceivedService }
 
 @Injectable({providedIn: 'root'})
 
-export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoThis {
+export class GetAllImagesRouteParamsObserverService implements IDoThis {
 
 	constructor(
-		private __runTasksNeededAfterAllImagesRouteParamsReceived:
+		private __runTasksNeededAfterRouteParamsReceived:
 			RunTasksNeededAfterAllImagesRouteParamsReceivedService
 	) {
 	}
@@ -21,7 +21,7 @@ export class GetAllImagesRouteParamsSubscriptionObserverService implements IDoTh
 
 		return async (params) => {
 			processingStatus.waiting = true;
-			await this.__runTasksNeededAfterAllImagesRouteParamsReceived.go(params);
+			await this.__runTasksNeededAfterRouteParamsReceived.go(params);
 			processingStatus.waiting = false;
 		};
 	}

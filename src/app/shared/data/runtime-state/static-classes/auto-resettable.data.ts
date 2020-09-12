@@ -1,7 +1,7 @@
-import { Submenu } from '@interfaces/submenu';
+import { AppImage } from '@interfaces/app-image';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
-import { AppImage } from '@interfaces/app-image';
+import { Submenu } from '@interfaces/submenu';
 
 
 export class ActionMenuChoicesData {
@@ -30,7 +30,30 @@ export class ImageTotalData {
 
 export class ImagesLoadedFromData {
 
-	static data: 'all' | 'library' | 'none';
+	static __all;
+	static __library;
+	static __none;
+
+
+	static set data(value: 'all' | 'library' | 'none') {
+		let choices = ['all', 'library', 'none'];
+		for (let i = 0; i < choices.length; ++i) this[`__${choices[i]}`] = (value === choices[i]);
+	}
+
+
+	static get all() {
+		return this.__all;
+	}
+
+
+	static get library() {
+		return this.__library;
+	}
+
+
+	static get none() {
+		return this.__none;
+	}
 
 
 	static setDefault() {

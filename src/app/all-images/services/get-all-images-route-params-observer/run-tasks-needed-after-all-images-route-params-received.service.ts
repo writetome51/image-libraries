@@ -1,10 +1,9 @@
 import { AllImagesPaginatorService } from '../all-images-paginator/all-images-paginator.service';
-import { AllImagesJumpToPageNumberInputService } from '../all-images-jump-to-page-number-input.service';
+import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
 import { IDoThis } from '@interfaces/i-do-this';
 import {
-	ImagesLoadedFromData as imagesLoadedFrom,
-	LoadedImagesData as loadedImages,
+	ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages,
 	LoadedLibraryData as loadedLibrary
 } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Injectable } from '@angular/core';
@@ -18,8 +17,8 @@ export class RunTasksNeededAfterAllImagesRouteParamsReceivedService implements I
 
 
 	constructor(
-		private __allImagesPaginator: AllImagesPaginatorService,
-		private __allImagesJumpToPageNumberInput: AllImagesJumpToPageNumberInputService,
+		private __paginator: AllImagesPaginatorService,
+		private __jumpToPageInput: AllImagesJumpToPageInputService,
 		private __routeParamsHandler: AllImagesRouteParamsHandlerService
 	) {
 	}
@@ -27,9 +26,9 @@ export class RunTasksNeededAfterAllImagesRouteParamsReceivedService implements I
 
 	async go(params): Promise<void> {
 
-		if (noValue(loadedImages.data) || not(imagesLoadedFrom.data === 'all')) {
-			await this.__allImagesPaginator.resetToFirstPage();
-			this.__allImagesJumpToPageNumberInput.setMax();
+		if (noValue(loadedImages.data) || not(imagesLoadedFrom.all)) {
+			await this.__paginator.resetToFirstPage();
+			this.__jumpToPageInput.setMax();
 			imagesLoadedFrom.data = 'all';
 			loadedLibrary.data = undefined;
 		}
