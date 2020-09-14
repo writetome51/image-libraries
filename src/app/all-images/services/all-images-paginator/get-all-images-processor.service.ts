@@ -1,7 +1,7 @@
+import { GetImagesProcessorService }
+	from '@data-transport-processor/get-images-processor/get-images-processor.service';
 import { ImageBatch } from '@interfaces/image-batch';
 import { Injectable } from '@angular/core';
-import { GetImagesProcessorService }
-	from '@services/data-transport-processor/get-images-processor/get-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -6,7 +6,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterSavingNewImagesService implements IDoThis {
+export class RunTasksAfterSavingNewImagesService implements IDoThis {
 
 	async go(result) {
 		newImages.data = [];

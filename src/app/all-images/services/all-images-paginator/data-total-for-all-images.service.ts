@@ -1,6 +1,6 @@
 import { DataTotalService } from '@services/app-paginator/data-total.service';
-import { Injectable } from '@angular/core';
 import { GetAllImagesProcessorService } from './get-all-images-processor.service';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})

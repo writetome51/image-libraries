@@ -11,11 +11,10 @@ export const __Bind_ValidatingInputsService_to_ObjectDecorator =
 			if (inputs.data.propertyToMatch) inputs.data.objectToMatch = objectToBind;
 		}
 		else { // else it's instanceof ValidatingInputsService
-			for (let i = 0; i < inputs.data.length; ++i) {
+			for (let i = 0, length = inputs.data.length; i < length; ++i) {
 				let input = inputs.data[i];
 				input.objectToBind = objectToBind;
-				if (input.propertyToMatch)
-					input.objectToMatch = objectToBind;
+				if (input.propertyToMatch) input.objectToMatch = objectToBind;
 			}
 		}
 	});

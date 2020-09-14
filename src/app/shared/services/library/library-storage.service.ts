@@ -1,9 +1,9 @@
 import { DBLibrary } from '@interfaces/db-library';
+import { GetObjectFromSubscriptionService as getObjectFromSubscription }
+	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestAPIService } from './library-rest-api.service';
 import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription}
-	from '../get-object-from-subscription.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -34,8 +34,7 @@ export class LibraryStorageService {
 	}
 
 
-	async create(libraryName: string): Promise<DBLibrary | { error: { message: string } }>
-	{
+	async create(libraryName: string): Promise<DBLibrary | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(this.__libraryRestApi.create({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName
@@ -46,8 +45,7 @@ export class LibraryStorageService {
 	async update(
 		libraryName: string,
 		changes: object // The properties in 'changes' can contain dot-notation.
-	): Promise<DBLibrary | { error: { message: string } }>
-	{
+	): Promise<DBLibrary | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(this.__libraryRestApi.update({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName,
@@ -56,8 +54,7 @@ export class LibraryStorageService {
 	}
 
 
-	async delete(libraryName: string): Promise<{ success: true } | { error: { message: string } }>
-	{
+	async delete(libraryName: string): Promise<{ success: true } | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(this.__libraryRestApi.delete({
 			sessionID: this.__localSessionID.get(),
 			name: libraryName

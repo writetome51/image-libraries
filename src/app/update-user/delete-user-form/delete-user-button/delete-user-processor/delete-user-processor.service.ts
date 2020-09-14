@@ -1,9 +1,9 @@
-import { FormDataTransportProcessorService }
-	from '@services/data-transport-processor/form-data-transport-processor.service';
-import { Injectable } from '@angular/core';
-import { UserDeleterService } from './user-deleter.service';
 import { DeleteUserResultInterpreterService } from './delete-user-result-interpreter.service';
 import { DeleteUserEmailPasswordInputsService } from '../../delete-user-email-password-inputs.service';
+import { FormDataTransportProcessorService }
+	from '@data-transport-processor/form-data-transport-processor.service';
+import { Injectable } from '@angular/core';
+import { UserDeleterService } from './user-deleter.service';
 
 
 @Injectable({providedIn: 'root'})

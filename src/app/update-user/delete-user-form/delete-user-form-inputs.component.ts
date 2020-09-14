@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 import { DeleteUserEmailPasswordInputsService } from './delete-user-email-password-inputs.service';
+import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
 @Component({

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { PasswordInputService } from '@services/validating-input/password/password-input.service';
 import { CurrentUserInputsService } from '@services/validating-inputs/current-user-inputs.service';
+import { Injectable } from '@angular/core';
 import { LoggedInEmailVerificationInputService } from '../logged-in-email-verification-input.service';
+import { PasswordInputService } from '@services/validating-input/password/password-input.service';
 
 
 @Injectable({providedIn: 'root'})
