@@ -1,4 +1,4 @@
-<li role="presentation" [class.dropdown-submenu]="isSubmenu()" (click)="toggleClick()">
+<li role="presentation" [class.dropdown-submenu]="isSubmenu()" (click)="toggleClick($event)">
 
 	<click-start-data-process-list-item *ngIf="!(isSubmenu())"
 		[context]="this" [processArgs]="[data]"
@@ -8,7 +8,7 @@
 
 
 	<ng-container *ngIf="isSubmenu()">
-		{{ getLabel() }} <span class="caret"></span>
+		{{ getLabel() }} <span class="glyphicon-chevron-right"></span>
 
 		<ul *ngIf="clicked" class="dropdown-menu">
 			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>

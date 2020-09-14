@@ -1,7 +1,7 @@
 import { LocalStorageService } from '../local-storage.service';
 
 
-export abstract class LocalDataService {
+export abstract class LocalStorageDataService {
 
 	protected _key: string;
 

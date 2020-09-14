@@ -1,7 +1,22 @@
+.action-menu-closed {
+	display: none;
+
+}
+.action-menu-open {
+	position: absolute;
+	display: block;
+	z-index: 1000;
+	background-color: white;
+}
+
 ul.dropdown-menu li {
 	padding-left: 10px;
 }
 
 ul.dropdown-menu li.hovered {
 	background-color: lightgrey;
+}
+
+ul.dropdown-menu .submenu {
+
 }

@@ -4,7 +4,7 @@ import { ImageBatch } from '@interfaces/image-batch';
 import { ImagesRestAPIService } from '../../images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
 import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 
 

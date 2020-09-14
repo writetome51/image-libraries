@@ -39,8 +39,10 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	toggleClick(): void {
+	toggleClick(event): void {
+		event.preventDefault();
 		this.clicked = !(this.clicked);
+		console.log(this.clicked);
 	}
 
 

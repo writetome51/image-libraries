@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
 import { ImagesRestAPIService } from '@services/images-rest-api.service';
 import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}

@@ -1,16 +1,16 @@
 <div>
 	<div class="dropdown">
 
-		<button class="btn btn-default dropdown-toggle" type="button" id="menu1"
+		<button class="btn btn-default dropdown-toggle" type="button" id="menu1" (click)="toggleClick()"
 				data-toggle="dropdown"
 		>
-
 			{{label}}
-
 			<span class="caret"></span>
 		</button>
 
-		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1"
+			[class.action-menu-closed]="!(open)" [class.action-menu-open]="open"
+		>
 			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
 		</ul>
 	</div>

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { LocalDataService } from './local-data.service';
+import { LocalStorageDataService } from './local-storage-data.service';
 import { LocalStorageService } from '../local-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LocalSessionIDService extends LocalDataService {
+export class LocalSessionIDService extends LocalStorageDataService {
 
 	constructor(__localStorage: LocalStorageService) {
 		super(__localStorage);

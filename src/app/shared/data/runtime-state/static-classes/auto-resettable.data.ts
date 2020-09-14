@@ -4,13 +4,21 @@ import { DBLibrary } from '@interfaces/db-library';
 import { Submenu } from '@interfaces/submenu';
 
 
+// All data structures intended to be auto-reset to their default values when
+// the user loads the logged-out home page are defined here.  Each must implement
+// interface ResettableToDefault.
+
+
 export class ActionMenuChoicesData {
 
 	static data: Array<string | Submenu>;
 
 
 	static setDefault() {
-		this.data = [];
+		this.data = [
+			'choice 1',
+			{label: 'choice 2', choices: ['choice 3', 'choice 4']}
+		];
 	}
 
 }

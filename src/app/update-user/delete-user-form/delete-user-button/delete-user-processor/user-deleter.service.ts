@@ -1,6 +1,6 @@
 import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
 import { UserStorageService } from '@services/user/user-storage.service';
 
 
