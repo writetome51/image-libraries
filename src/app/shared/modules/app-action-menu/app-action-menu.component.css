@@ -1,3 +1,7 @@
+.action-menu{
+	cursor: pointer;
+}
+
 .action-menu-closed {
 	display: none;
 
