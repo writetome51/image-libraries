@@ -6,6 +6,8 @@ a, a:hover {
 
 button {
 	/*	height: 100%;  */
+	background-color: white;
+	border:none;
 }
 
 

@@ -4,7 +4,6 @@
 
 .action-menu-closed {
 	display: none;
-
 }
 .action-menu-open {
 	position: absolute;
@@ -15,6 +14,11 @@
 
 ul.dropdown-menu li {
 	padding-left: 10px;
+}
+
+div.processing-button-container button{
+	border: none;
+	background-color: white;
 }
 
 ul.dropdown-menu li.hovered {

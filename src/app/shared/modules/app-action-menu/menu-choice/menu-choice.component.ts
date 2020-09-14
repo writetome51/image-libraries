@@ -4,6 +4,7 @@ import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 import { Submenu } from '@interfaces/submenu';
+import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	clicked = false;
 	hovered = false;
+	alert = AlertData;
 
 
 	get choices(): Array<string | Submenu> {
