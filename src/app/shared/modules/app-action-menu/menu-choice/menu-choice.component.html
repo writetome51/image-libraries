@@ -1,6 +1,6 @@
 <li role="presentation" class="menu-choice"
 	[class.dropdown-submenu]="isSubmenu()" [class.hovered]="hovered"
-	(click)="toggleClick($event)" (mouseover)="hovered=true" (mouseleave)="hovered=false"
+	(click)="toggleClick($event)" (mouseover)="hover()" (mouseleave)="unHover()"
 >
 
 	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
