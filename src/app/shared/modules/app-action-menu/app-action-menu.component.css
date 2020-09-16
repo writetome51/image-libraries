@@ -20,11 +20,3 @@ div.processing-button-container button{
 	border: none;
 	background-color: white;
 }
-
-ul.dropdown-menu li.hovered {
-	background-color: lightgrey;
-}
-
-ul.dropdown-menu .submenu {
-
-}

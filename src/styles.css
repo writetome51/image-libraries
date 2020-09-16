@@ -117,8 +117,3 @@ ul.dropdown-menu li {
 	margin-bottom: 0px;
 	padding: 5px 0 5px 10px;
 }
-
-
-ul.dropdown-menu li.hovered {
-	background-color: #ececec;
-}

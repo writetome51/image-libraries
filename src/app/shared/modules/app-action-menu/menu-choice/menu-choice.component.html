@@ -1,4 +1,6 @@
-<li role="presentation" [class.dropdown-submenu]="isSubmenu()" (click)="toggleClick($event)">
+<li role="presentation" [class.dropdown-submenu]="isSubmenu()" [class.hovered]="hovered"
+	(click)="toggleClick($event)" (mouseover)="hovered=true" (mouseleave)="hovered=false"
+>
 
 	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
 		{{ getLabel() }}
