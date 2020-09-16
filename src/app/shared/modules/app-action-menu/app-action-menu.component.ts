@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { Submenu } from '@interfaces/submenu';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { Component } from '@angular/core';
+import { Submenu } from '@interfaces/submenu';
 
 
 @Component({

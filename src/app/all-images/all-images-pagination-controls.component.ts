@@ -1,8 +1,8 @@
 import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
 import { AllImagesPaginatorService }
 	from './services/all-images-paginator/all-images-paginator.service';
-import { AppNavigatorModuleRoutesData as appNavigatorModuleRoutes}
-	from '../app-navigator/app-navigator-module-routes.data';
+import { AppNavigatorModuleRoutesData as appNavigatorModuleRoutes }
+	from '@app-navigator/app-navigator-module-routes.data';
 import { Component } from '@angular/core';
 
 

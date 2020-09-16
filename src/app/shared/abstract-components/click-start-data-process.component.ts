@@ -1,8 +1,7 @@
-import { Input } from '@angular/core';
-import { StartDataProcessContainerComponent } from './start-data-process-container.component';
 import { ClickStartedProcessingStatusData }
 	from '@runtime-state-data/click-started-processing-status.data';
-
+import { Input } from '@angular/core';
+import { StartDataProcessContainerComponent } from './start-data-process-container.component';
 
 
 export abstract class ClickStartDataProcessComponent {

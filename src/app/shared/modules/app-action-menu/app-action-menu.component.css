@@ -1,7 +1,7 @@
 .action-menu {
 	cursor: pointer;
 
-	/* This makes sure there's no gap between the menu and the dropdown button, and
+	/* This makes sure there's no gap between the dropdown button and the menu, and
 	prevents accidental un-hovering from happening */
 	margin: 0;
 }

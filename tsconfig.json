@@ -12,6 +12,9 @@
 			"@app-action-menu/*": [
 				"src/app/shared/modules/app-action-menu/*"
 			],
+			"@app-navigator/*": [
+				"src/app/app-navigator/*"
+			],
 			"@app-pagination-controls/*": [
 				"src/app/shared/modules/app-pagination-controls/*"
 			],
@@ -57,6 +60,7 @@
 			"@start-data-process-button/*": [
 				"src/app/shared/modules/start-data-process-button/*"
 			],
+			"@start-data-process-list-item/*": ["src/app/shared/modules/start-data-process-list-item/*"],
 			"@tiny-loading-spinner/*": [
 				"src/app/shared/modules/tiny-loading-spinner/*"
 			],
