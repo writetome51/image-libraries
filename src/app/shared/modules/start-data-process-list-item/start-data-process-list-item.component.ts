@@ -5,7 +5,7 @@ import { ClickStartDataProcessComponent }
 
 
 @Component({
-	selector: 'click-start-data-process-list-item',
+	selector: 'start-data-process-list-item',
 	template: `
 		<ng-container (click)="runClickHandler($event)">
 			<ng-content></ng-content>
@@ -18,7 +18,7 @@ import { ClickStartDataProcessComponent }
 		</ng-container>
 	`
 })
-export class ClickStartDataProcessListItemComponent extends ClickStartDataProcessComponent {
+export class StartDataProcessListItemComponent extends ClickStartDataProcessComponent {
 
 	alert = AlertData;
 

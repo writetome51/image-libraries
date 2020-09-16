@@ -5,6 +5,7 @@ import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 import { Submenu } from '@interfaces/submenu';
 import { AlertData } from '@runtime-state-data/static-classes/alert.data';
+import { environment } from '@environments/environment';
 
 
 @Component({
@@ -19,6 +20,12 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	clicked = false;
 	hovered = false;
 	alert = AlertData;
+	triangle = {
+		src: environment.assets + 'right-pointing-triangle.png',
+		width: 7,
+		height: 8,
+		alt: 'sub-menu'
+	};
 
 
 	get choices(): Array<string | Submenu> {

@@ -6,8 +6,6 @@ a, a:hover {
 
 button {
 	/*	height: 100%;  */
-	background-color: white;
-	border:none;
 }
 
 
@@ -122,14 +120,5 @@ ul.dropdown-menu li {
 
 
 ul.dropdown-menu li.hovered {
-	background-color: lightgrey;
-}
-
-
-ul.dropdown-menu li {
-
-}
-
-ul.dropdown-menu li.hovered {
-	background-color: lightgrey;
+	background-color: #ececec;
 }

@@ -1,20 +1,18 @@
 <li role="presentation" [class.dropdown-submenu]="isSubmenu()" (click)="toggleClick($event)">
 
-	<start-data-process-button
-		*ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]" class="dropdown-item"
-	>
+	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
 		{{ getLabel() }}
-		<!--   When process finished, have spinner replaced by checkmark. That checkmark
-	 stays there as long as the dropdown list stays open.
-	 -->
-		<span *ngIf="alert.success" class="glyphicon glyphicon-ok"></span>
-	</start-data-process-button>
+	</start-data-process-list-item>
 
 
 	<ng-container *ngIf="isSubmenu()">
-		{{ getLabel() }} <span class="glyphicon-chevron-right"></span>
+		{{ getLabel() }}
 
-		<ul *ngIf="clicked" class="dropdown-menu dropdown-submenu action-menu">
+		<img [src]="triangle.src" [width]="triangle.width" [height]="triangle.height"
+			 [alt]="triangle.alt"
+		/>
+
+		<ul *ngIf="clicked" class="dropdown-menu">
 			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
 		</ul>
 	</ng-container>
