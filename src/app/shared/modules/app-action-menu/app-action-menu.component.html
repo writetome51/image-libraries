@@ -1,9 +1,7 @@
 <div>
-	<div class="dropdown">
+	<div class="dropdown" (mouseover)="hover()" (mouseleave)="unHover()">
 
-		<button class="btn btn-default" type="button" id="menu1" (click)="toggleClick()"
-
-		>
+		<button class="btn btn-default" type="button" id="menu1" (click)="toggleOpen()">
 			{{label}}
 			<span class="caret"></span>
 		</button>

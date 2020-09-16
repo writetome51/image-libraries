@@ -2,12 +2,22 @@
 	position: relative;
 }
 
+
 .dropdown-submenu .dropdown-menu {
 	top: 0;
 	left: 100%;
 	margin-top: -1px;
 }
 
-li.hovered {
+
+li.menu-choice {
+	width: inherit;
+	border-bottom: 1px dotted lightgrey;
+	margin-bottom: 0;
+	padding: 5px 0 5px 10px;
+}
+
+
+li.menu-choice.hovered {
 	background-color: #ececec;
 }

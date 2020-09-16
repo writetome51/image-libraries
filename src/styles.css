@@ -102,18 +102,3 @@ div.dropdown {
 div.dropdown button {
 	width: 100%;
 }
-
-
-ul.dropdown-menu {
-	/*  min-width: 100px; */
-
-
-}
-
-
-ul.dropdown-menu li {
-	width: inherit;
-	border-bottom: 1px dotted lightgrey;
-	margin-bottom: 0px;
-	padding: 5px 0 5px 10px;
-}

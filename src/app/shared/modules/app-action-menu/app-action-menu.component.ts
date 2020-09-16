@@ -13,12 +13,23 @@ export class AppActionMenuComponent {
 
 	readonly label = 'Action';
 	readonly choices: Array<string | Submenu> = actionMenuChoices.data;
+	hovered = false;
 	open = false;
 
 
-	toggleClick(): void {
+	toggleOpen(): void {
 		this.open = !(this.open);
-		console.log(this.open);
+	}
+
+
+	hover(): void {
+		this.hovered = true;
+	}
+
+
+	unHover(): void {
+		this.hovered = false;
+		this.open = false;
 	}
 
 }
