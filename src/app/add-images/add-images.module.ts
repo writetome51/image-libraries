@@ -1,5 +1,8 @@
 import { AddImagesComponent } from './add-images.component';
-import { AddImageUrlButtonComponent } from './enter-image-url/add-image-url-button.component';
+import { AddImageUrlButtonComponent }
+	from './enter-image-url/add-image-url-button/add-image-url-button.component';
+import { AppValidatingFormInputsModule }
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { BigLoadingSpinnerModule }
 	from '@big-loading-spinner/big-loading-spinner.module';
@@ -14,8 +17,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
-import { AppValidatingFormInputsModule }
-	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({

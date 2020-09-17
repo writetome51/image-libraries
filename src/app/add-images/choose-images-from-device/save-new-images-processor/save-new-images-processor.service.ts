@@ -1,7 +1,7 @@
 import { DataTransportProcessorService }
-	from '@services/data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { NewImagesSaverService } from './new-images-saver.service';
+import { NewImagesSaverService } from '../../new-images-saver.service';
 import { SaveNewImagesResultInterpreterService }
 	from './save-new-images-result-interpreter/save-new-images-result-interpreter.service';
 

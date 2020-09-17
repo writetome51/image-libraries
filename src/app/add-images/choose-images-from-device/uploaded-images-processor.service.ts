@@ -9,7 +9,7 @@ import { NewImagesData as newImages } from '@runtime-state-data/static-classes/a
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '@services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
-	from '../save-new-images-processor/save-new-images-processor.service';
+	from './save-new-images-processor/save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})

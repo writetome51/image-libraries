@@ -1,4 +1,4 @@
-import { AlertData as alert } from '../../../shared/data/runtime-state/static-classes/alert.data';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { DataTransportResultCheckService }
 	from '@data-transport-result-check/data-transport-result-check.service';
 import { duplicate, sizeRequirement } from '@string-constants/rest-api-errors';
