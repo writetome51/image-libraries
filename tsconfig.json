@@ -24,9 +24,6 @@
 			"@big-loading-spinner/*": [
 				"src/app/shared/modules/big-loading-spinner/*"
 			],
-			"@click-start-data-process-list-item/*": [
-				"src/app/shared/modules/click-start-data-process-list-item/*"
-			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/data-transport-processor/*"
 			],
@@ -66,6 +63,12 @@
 			],
 			"@thumbnail-image-container/*": [
 				"src/app/shared/modules/thumbnail-image-container/*"
+			],
+			"@validating-input/*": [
+				"src/app/shared/services/validating-input/*"
+			],
+			"@validating-inputs/*": [
+				"src/app/shared/services/validating-inputs/*"
 			]
 		},
 		"outDir": "./dist/out-tsc",

@@ -1,8 +1,8 @@
 import { AuthenticatedGuard } from '../guards/authenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserChoiceData as choice } from './update-user-choice.data';
+import { UpdateUserComponent } from './update-user.component';
 
 
 const routes: Routes = [

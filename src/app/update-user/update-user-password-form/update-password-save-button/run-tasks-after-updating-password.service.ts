@@ -4,14 +4,14 @@ import { RunTasksAfterUpdatingEmailOrPasswordService }
 import { SetResultMessage } from '../../set-result-message/set-result-message.decorator';
 
 
-@SetResultMessage('Email updated')
+@SetResultMessage('Password updated')
 
-export class __RunTasksNeededAfterUpdatingEmailService
+export class __RunTasksAfterUpdatingPasswordService
 	extends RunTasksAfterUpdatingEmailOrPasswordService {
 }
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterUpdatingEmailService extends
-	__RunTasksNeededAfterUpdatingEmailService {
+export class RunTasksAfterUpdatingPasswordService
+	extends __RunTasksAfterUpdatingPasswordService {
 }

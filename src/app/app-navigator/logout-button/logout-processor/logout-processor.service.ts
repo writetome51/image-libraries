@@ -1,5 +1,5 @@
 import { DataTransportProcessorService }
-	from '@services/data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.service';
 import { DeAuthenticatorService } from './de-authenticator.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';

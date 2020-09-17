@@ -4,7 +4,7 @@ import { LibraryChangesService}	from '@services/library/library-changes.service'
 
 @Component({
 	selector: 'undo-changes-button',
-	template: `<div><button (click)="undoChanges()">Undo Changes</button></div>`
+	template: `<div><button class="btn btn-default" (click)="undoChanges()">Undo Changes</button></div>`
 })
 export class UndoChangesButtonComponent {
 

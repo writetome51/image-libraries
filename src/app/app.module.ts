@@ -15,7 +15,6 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
-import { AppActionMenuModule } from '@app-action-menu/app-action-menu.module';
 
 
 @NgModule({
@@ -32,10 +31,6 @@ import { AppActionMenuModule } from '@app-action-menu/app-action-menu.module';
 		BrowserModule,
 		FormsModule,
 		HttpClientModule,
-
-		//temp
-		AppActionMenuModule,
-
 		AppNavigatorModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,

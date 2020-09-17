@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
+import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 

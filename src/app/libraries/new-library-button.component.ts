@@ -6,7 +6,9 @@ import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.da
 	selector: 'new-library-button',
 	template: `
 		<div class="input-container">
-			<button (click)="creatingNewLibrary = !(creatingNewLibrary)">{{label}}</button>
+			<button class="btn btn-default" (click)="creatingNewLibrary = !(creatingNewLibrary)">
+				{{label}}
+			</button>
 		</div>
 	`
 })

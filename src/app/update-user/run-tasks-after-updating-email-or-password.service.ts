@@ -8,17 +8,17 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterUpdatingEmailOrPasswordService implements IDoThis {
+export class RunTasksAfterUpdatingEmailOrPasswordService implements IDoThis {
 
 	resultMessage: string;
 
 
-	constructor(private __runTasksNeededAfterGettingUser: RunTasksAfterGettingUserService) {
+	constructor(private __runTasksAfterGettingUser: RunTasksAfterGettingUserService) {
 	}
 
 
 	async go(result: DBUser) {
-		this.__runTasksNeededAfterGettingUser.go(result);
+		this.__runTasksAfterGettingUser.go(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
 		alert.success = this.resultMessage;
 	}

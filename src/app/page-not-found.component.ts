@@ -6,15 +6,16 @@ import { environment } from '@environments/environment';
 	selector: 'page-not-found',
 	template: `
 		<h2>Oops. Page not found.</h2>
-		<img [src]="frownyFace.src" [alt]="frownyFace.alt" [width]="frownyFace.width"/>
+		<img [src]="faces.src" [alt]="faces.alt" [width]="faces.width" [height]="faces.height"/>
+		<p>This could make you happy, or sad. It depends on you.</p>
 	`
 })
 export class PageNotFoundComponent {
 
-	frownyFace = {
-		src: environment.assets + 'frowny-face-200.png',
-		alt: 'sad face',
-		width: 200,
-		height: 200
+	faces = {
+		src: environment.assets + 'happy-or-sad.png',
+		alt: 'happy and sad faces',
+		width: 362,
+		height: 175
 	};
 }

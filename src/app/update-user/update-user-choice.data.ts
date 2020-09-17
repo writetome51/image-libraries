@@ -1,8 +1,8 @@
+import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { UpdateUserEmailFormComponent }
 	from './update-user-email-form/update-user-email-form.component';
 import { UpdateUserPasswordFormComponent }
 	from './update-user-password-form/update-user-password-form.component';
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 
 
 export class UpdateUserChoiceData {
