@@ -9,7 +9,7 @@ import { URLParamIDData } from '@read-only-data/url-param-id.data';
 	template: `
 		<app-pagination-controls
 			[routeBeforePageNumber]="'/library/' + paramID.libName + '/page'"
-			[paginator]="libraryPaginator" [jumpToPageInput]="libraryJumpToPageNumberInput"
+			[paginator]="paginator" [jumpToPageInput]="jumpToPageInput"
 		>
 		</app-pagination-controls>
 	`
@@ -19,8 +19,8 @@ export class LibraryPaginationControlsComponent {
 	paramID = URLParamIDData;
 
 	constructor(
-		public libraryPaginator: LibraryPaginatorService,
-		public libraryJumpToPageNumberInput: LibraryJumpToPageInputService
+		public paginator: LibraryPaginatorService,
+		public jumpToPageInput: LibraryJumpToPageInputService
 	) {
 	}
 
