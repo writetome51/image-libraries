@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 @Component({
 	selector: 'start-data-process-list-item',
 	template: `
-		<ng-container (click)="runClickHandler($event)">
+		<div (click)="runClickHandler($event)">
 			<ng-content></ng-content>
 
 			<tiny-loading-spinner *ngIf="clicked && processingStatus.waiting"></tiny-loading-spinner>
@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
 			 stays there as long as the dropdown list stays open.
 			 -->
 			<span *ngIf="alert.success"  class="glyphicon glyphicon-ok"></span>
-		</ng-container>
+		</div>
 	`
 })
 export class StartDataProcessListItemComponent extends ClickStartDataProcessComponent {

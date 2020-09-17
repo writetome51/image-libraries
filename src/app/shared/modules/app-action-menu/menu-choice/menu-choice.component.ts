@@ -1,11 +1,11 @@
+import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { Component, Input } from '@angular/core';
+import { environment } from '@environments/environment';
 import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 import { Submenu } from '@interfaces/submenu';
-import { AlertData } from '@runtime-state-data/static-classes/alert.data';
-import { environment } from '@environments/environment';
 
 
 @Component({
@@ -49,8 +49,8 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 
 	toggleClick(event): void {
-		event.stopPropagation();
 		event.preventDefault();
+		event.stopPropagation();
 		this.clicked = !(this.clicked);
 	}
 

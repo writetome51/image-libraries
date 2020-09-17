@@ -1,3 +1,9 @@
+Todo: implement adding image to a library while in /all-images route.
+Hover-functionality should be on, and when hovering on any image, action menu should appear
+under it and give choice 'add to library' (with submenu letting you choose what library).
+(deadline Sept 19)
+
+
 Todo: implement multiple-image selection mode inside /all-images route.  When this mode is on,
 toggle-selecting images should be activated, hover-functionality should be off, and app action menu
 should give choices like 'delete selected' or 'add selected to library' (with submenu letting you choose

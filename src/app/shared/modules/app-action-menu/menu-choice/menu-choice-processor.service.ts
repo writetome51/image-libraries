@@ -7,7 +7,7 @@ import { DirectProcessor } from '@interfaces/direct-processor';
 export class MenuChoiceProcessorService implements DirectProcessor {
 
 	process(choice) {
-
+		console.log(choice);
 	}
 
 

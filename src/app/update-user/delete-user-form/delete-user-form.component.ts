@@ -11,7 +11,7 @@ import { environment } from '@environments/environment';
 })
 export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
-	gif = {
+	headExploding = {
 		src: environment.assets + 'head-exploding.gif',
 		width: 124,
 		height: 82,

@@ -18,6 +18,7 @@ export abstract class ClickStartDataProcessComponent {
 
 	async runClickHandler(event) {
 		event.preventDefault();
+		event.stopPropagation();
 
 		this.clicked = true;
 		await this.context.start(this.processArgs);
