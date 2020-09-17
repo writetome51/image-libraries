@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
 import { DataTransportResultInterpreterService }
-	from '@services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { UpdateOrNewLibraryResultCheckService }
-	from '@services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/update-or-new-library-result-check.service';
+	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { Injectable } from '@angular/core';
 import { RunTasksNeededAfterUpdateOfLibraryService }
 	from './run-tasks-needed-after-update-of-library.service';
+import { UpdateOrNewLibraryResultCheckService }
+	from '@data-transport-result-check/update-or-new-library-result-check.service';
 
 
 @Injectable({providedIn: 'root'})

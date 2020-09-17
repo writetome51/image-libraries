@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { CurrentRouteService } from '@services/current-route.service';
-import { GetLibraryRouteParamsSubscriptionObserverService }
-	// tslint:disable-next-line:max-line-length
-	from './services/get-library-route-params-subscription-observer/get-library-route-params-subscription-observer.service';
-import { ImageTotalData as imageTotal} from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
 import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
+import { Component } from '@angular/core';
+import { CurrentRouteService } from '@services/current-route.service';
+import { GetLibraryRouteParamsObserverService }
+	from './services/get-library-route-params-observer/get-library-route-params-observer.service';
+import { ImageTotalData as imageTotal} from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
 import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 
@@ -36,7 +35,7 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 		private __paginator: LibraryPaginatorService,
 		private __currentRoute: CurrentRouteService,
 		private __getRouteParamsSubscriptionObserver:
-			GetLibraryRouteParamsSubscriptionObserverService
+			GetLibraryRouteParamsObserverService
 	) {
 		super();
 

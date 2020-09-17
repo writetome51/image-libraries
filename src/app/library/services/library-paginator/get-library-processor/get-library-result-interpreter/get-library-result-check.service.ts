@@ -1,6 +1,6 @@
+import { DataTransportResultCheckService }
+	from '@data-transport-result-check/data-transport-result-check.service';
 import { Injectable } from '@angular/core';
-import { DataTransportResultCheckService }	// tslint:disable-next-line:max-line-length
-	from '@services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
 import { libraryNotFound } from '@string-constants/rest-api-errors';
 import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

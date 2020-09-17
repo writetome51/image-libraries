@@ -1,19 +1,19 @@
+import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { noValue } from '@writetome51/has-value-no-value';
-import { not } from '@writetome51/not';
-import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
-import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 import { LibraryPaginatorService } from '../library-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';
-import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
-import { IDoThis } from '@interfaces/i-do-this';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { noValue } from '@writetome51/has-value-no-value';
+import { not } from '@writetome51/not';
+import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
+import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
+import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterLibraryRouteParamsReceivedService implements IDoThis {
+export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 
 	constructor(

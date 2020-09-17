@@ -1,6 +1,6 @@
 import { AppAlertComponent } from './app-alert/app-alert.component';
 import { AppComponent } from './app.component';
-import { AppNavigatorModule } from './app-navigator/app-navigator.module';
+import { AppNavigatorModule } from '@app-navigator/app-navigator.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';

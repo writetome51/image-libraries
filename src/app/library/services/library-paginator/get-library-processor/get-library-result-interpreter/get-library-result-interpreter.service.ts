@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService }	// tslint:disable-next-line:max-line-length
-	from '@services/data-transport-processor/data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { RunTasksNeededAfterGettingLibraryService }
-	from './run-tasks-needed-after-getting-library/run-tasks-needed-after-getting-library.service';
+import { DataTransportResultInterpreterService }
+	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { GetLibraryResultCheckService } from './get-library-result-check.service';
+import { Injectable } from '@angular/core';
+import { RunTasksAfterGettingLibraryService }
+	from './run-tasks-after-getting-library/run-tasks-after-getting-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,10 +11,10 @@ import { GetLibraryResultCheckService } from './get-library-result-check.service
 export class GetLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(
-		__getLibraryResultCheck: GetLibraryResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterGettingLibraryService,
+		__dataTransportResultCheck: GetLibraryResultCheckService,
+		__runPostSuccessTasks: RunTasksAfterGettingLibraryService,
 	) {
-		super(__getLibraryResultCheck, __runPostSuccessTasks);
+		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}
 
 }

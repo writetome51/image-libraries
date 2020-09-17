@@ -1,6 +1,6 @@
+import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
 import { not } from '@writetome51/not';
 
 
