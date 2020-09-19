@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 	template: `
 		<app-pagination-controls
 			[routeBeforePageNumber]="routeBeforePageNumber"
-			[paginator]="paginator" [jumpToPageInput]="jumpToPageInput"
+			[paginator]="allImagesPaginator" [jumpToPageInput]="allImagesJumpToPageInput"
 		>
 		</app-pagination-controls>
 	`
@@ -23,8 +23,8 @@ export class AllImagesPaginationControlsComponent {
 
 
 	constructor(
-		public paginator: AllImagesPaginatorService,
-		public jumpToPageInput: AllImagesJumpToPageInputService
+		public allImagesPaginator: AllImagesPaginatorService,
+		public allImagesJumpToPageInput: AllImagesJumpToPageInputService
 	) {
 	}
 

@@ -1,11 +1,12 @@
 Each instance of a Service class is referred to without the word 'service' at the end.
 
-Each class/object used as a data structure is named with 'Data' at the end, and their filenames end with
-'.data.ts'.
+Each class/object used as a data structure is named with 'Data' at the end, and their filenames end
+with '.data.ts'.
 
 'data processing' is any data manipulation that requires the user to wait for a result.
 
-Any UI button Component that initiates data processing is a subclass of StartDataProcessContainerComponent.
+Any UI button Component that initiates data processing is a subclass of
+StartDataProcessContainerComponent.
 
 'data transport processing' refers to any data processing that involves sending the data to an
 external resource that returns a result.  All processing of this kind is handled by subclasses of

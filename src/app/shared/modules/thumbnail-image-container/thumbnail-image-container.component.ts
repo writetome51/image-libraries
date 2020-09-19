@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '@interfaces/db-image';
+import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ImageSelectorService as imageSelector } from './image-selector.service';
 
 
 @Component({

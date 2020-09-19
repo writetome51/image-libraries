@@ -34,7 +34,7 @@ import { StartDataProcessButtonModule }
 		AppNavigatorModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
-		AppRoutingModule, // must be loaded before any other routing module.
+		AppRoutingModule
 	],
 	providers: [Title],
 	bootstrap: [AppComponent]
