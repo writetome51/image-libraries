@@ -1,11 +1,13 @@
 <div>
 
-	<a *ngIf="getCurrentPage() > 1" [routerLink]="[routeBeforePageNumber, getPreviousPage()]">
+	<a *ngIf="getCurrentPage() > 1"
+	   [routerLink]="['/' + routeBeforePageNumber, getPreviousPage()]"
+	>
 		previous
 	</a>
 
 	<a *ngIf="getCurrentPage() < getTotalPages()"
-	   [routerLink]="[routeBeforePageNumber, getNextPage()]"
+	   [routerLink]="['/' + routeBeforePageNumber, getNextPage()]"
 	>
 		next
 	</a>

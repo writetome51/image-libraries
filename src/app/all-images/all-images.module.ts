@@ -40,6 +40,11 @@ import { ThumbnailImageContainerModule }
 				component: AllImagesComponent,
 				canActivate: [AuthenticatedGuard]
 			},
+			{
+				path: '',
+				pathMatch: 'full',
+				redirectTo: moduleRoutes.defaultRoute
+			},
 
 			{path: '**', redirectTo: '/'}
 		])
