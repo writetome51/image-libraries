@@ -9,5 +9,5 @@ import { URLParamIDData as paramID } from '../../data-structures/read-only-data/
 export class AllImagesModuleRouteData {
 
 	static readonly AllImagesComponent =  `page/:${paramID.pageNumber}`;
-
+	static readonly defaultRoute = `page/1`;
 }
