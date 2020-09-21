@@ -1,9 +1,17 @@
 <div>
 	<div class="dropdown" (mouseover)="hover()" (mouseleave)="unHover()">
 
-		<button class="btn btn-default" type="button" id="menu1" (click)="toggleOpen()">
-			{{label}}
-			<span class="caret"></span>
+		<button class="btn btn-default" type="button" id="menu1" (click)="toggleOpen()"
+			[class.single-image-mode]="singleImageMode"
+		>
+			<div>
+				<ng-container *ngIf="!(singleImageMode)">{{label}}</ng-container>
+
+				<img *ngIf="singleImageMode" [src]="sprocket.src" [width]="sprocket.width"
+					 [height]="sprocket.height" [alt]="sprocket.alt"
+				/>
+				<span class="caret"></span>
+			</div>
 		</button>
 
 		<ul class="dropdown-menu action-menu"

@@ -1,6 +1,7 @@
 .image-container {
 	display: inline-block;
 	border: 2px solid rgba(0, 0, 0, 0);
+	margin-bottom: 10px;
 }
 
 .selected-image-container {

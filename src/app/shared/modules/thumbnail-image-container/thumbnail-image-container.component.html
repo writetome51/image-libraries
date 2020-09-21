@@ -20,6 +20,6 @@
 
 	</a>
 
-	<app-action-menu *ngIf="isHovered()"></app-action-menu>
+	<app-action-menu [class.invisible]="!(isHovered())" [singleImageMode]="true"></app-action-menu>
 
 </div>

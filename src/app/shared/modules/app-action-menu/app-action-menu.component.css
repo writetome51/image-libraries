@@ -1,3 +1,19 @@
+button.single-image-mode {
+	width: 40px;
+	height: 30px;
+	padding: 0;
+}
+
+button.single-image-mode div {
+	margin: auto;
+}
+
+button.single-image-mode div span.caret {
+	position: relative;
+	top: 14px;
+	right: 3px;
+}
+
 .action-menu {
 	cursor: pointer;
 

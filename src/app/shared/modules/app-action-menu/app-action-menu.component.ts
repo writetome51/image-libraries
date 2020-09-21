@@ -1,7 +1,8 @@
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Submenu } from '@interfaces/submenu';
+import { environment } from '@environments/environment';
 
 
 @Component({
@@ -11,6 +12,13 @@ import { Submenu } from '@interfaces/submenu';
 })
 export class AppActionMenuComponent {
 
+	@Input() singleImageMode = false;
+	readonly sprocket = {
+		src: environment.assets + 'sprocket-wheel.png',
+		width: 11,
+		height: 11,
+		alt: 'action menu'
+	};
 	readonly label = 'Action';
 	readonly choices: Array<string | Submenu> = actionMenuChoices.data;
 	hovered = false;
