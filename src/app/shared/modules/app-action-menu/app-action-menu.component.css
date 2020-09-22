@@ -1,12 +1,27 @@
+.action-menu-container.single-image-mode {
+	position: relative;
+	z-index: 1000;
+}
+
+.dropdown.single-image-mode {
+	display: none;
+}
+
+.dropdown.single-image-mode.hovered {
+	display: block;
+}
+
 button.single-image-mode {
 	width: 40px;
 	height: 30px;
 	padding: 0;
 }
 
+
 button.single-image-mode div {
 	margin: auto;
 }
+
 
 button.single-image-mode div span.caret {
 	position: relative;
@@ -14,7 +29,9 @@ button.single-image-mode div span.caret {
 	right: 3px;
 }
 
+
 .action-menu {
+	display: none;
 	cursor: pointer;
 
 	/* This makes sure there's no gap between the dropdown button and the menu, and
@@ -23,14 +40,14 @@ button.single-image-mode div span.caret {
 }
 
 
-.action-menu-closed {
-	display: none;
-}
-
-
 .action-menu-open {
 	position: absolute;
 	display: block;
 	z-index: 1000;
 	background-color: white;
+}
+
+
+.action-menu-open.single-image-mode {
+	top: 30px;
 }
