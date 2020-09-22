@@ -1,5 +1,5 @@
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image/full-size-image.component';
 import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';

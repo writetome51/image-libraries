@@ -36,6 +36,7 @@
 			"@environments/*": [
 				"src/environments/*"
 			],
+			"@guards/*": ["src/app/guards/*"],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],

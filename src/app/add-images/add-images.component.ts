@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
+import { Component } from '@angular/core';
 
 
 @Component({
