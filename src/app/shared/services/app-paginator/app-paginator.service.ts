@@ -19,8 +19,14 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 		// this.__dataSource.dataTotal must be set before fetching any pages.
 		await this.__dataSource.set_dataTotal();
 
-		// If the dataTotal is 0, this will trigger error in super.resetToFirstPage():
+		// If dataTotal is 0, this triggers error in super.resetToFirstPage():
 		await super.resetToFirstPage().catch(() => {}); // just keep running.
+	}
+
+
+	async setCurrentPageNumber(num): Promise<void> {
+		// If dataTotal is 0, this triggers error in super.setCurrentPageNumber():
+		await super.setCurrentPageNumber(num).catch(() => {}); // just keep running.
 	}
 
 
