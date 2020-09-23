@@ -33,12 +33,18 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 
 
 	private async __getAppImage(file): Promise<AppImage> {
+
 		return getAppImage.go({
-			name: file.name,
+			name: getFormattedName(file.name),
 			src: await getDataURL(file),
 			date: new Date(file.lastModified),
 			location: file.location
 		});
+
+
+		function getFormattedName(name: string) {
+			return name.split(' ').join('-');
+		}
 	}
 
 

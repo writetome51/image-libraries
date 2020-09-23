@@ -14,7 +14,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
-	@Input() imageRouterLink: string[] | string = [];
+	@Input() imageRouterLink: (string[] | string) = [];
 
 	// if selectEnabled is true, hovering is disabled and the image has no routerLink.
 	@Input() selectEnabled = false;

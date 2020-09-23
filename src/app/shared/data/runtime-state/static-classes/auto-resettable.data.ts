@@ -1,6 +1,7 @@
 import { AppImage } from '@interfaces/app-image';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
+import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { Submenu } from '@interfaces/submenu';
 
 

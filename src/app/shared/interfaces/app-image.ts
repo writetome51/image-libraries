@@ -14,4 +14,6 @@ export interface AppImage {
 
 	location?: { latitude: number, longitude: number }; // use with Google maps
 
+	libraryNames?: string[] // libraries image is in.
+
 }
