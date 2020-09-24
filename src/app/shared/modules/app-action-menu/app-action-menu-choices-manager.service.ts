@@ -12,7 +12,7 @@ import { SelectedImageNamesData as selectedImageNames }
 
 
 @Injectable()
-export class ActionMenuChoicesManagerService {
+export class AppActionMenuChoicesManagerService {
 
 	private readonly __addSelected = 'Add Selected to Library';
 	private readonly __deleteSelected = 'Delete Selected';
