@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { removeByTest } from '@writetome51/array-remove-by-test';
+import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
-import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,6 +17,7 @@ export class ActionMenuChoicesManagerService {
 
 	private readonly __addSelected = 'Add Selected to Library';
 	private readonly __deleteSelected = 'Delete Selected';
+	private readonly __selectedImages = selectedImageNames.data;
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
@@ -24,21 +25,19 @@ export class ActionMenuChoicesManagerService {
 
 
 	manage(): void {
-		// Must check conditions concerning the state of certain data structures,
-		// i.e, if selectedImageNames.data contains items, add 'Delete Selected Images'
-		// to menuChoices.data
-
-		if (notEmpty(selectedImageNames.data)) this.__includeAddSelectedToLibrary();
-		else this.__removeAddSelectedToLibrary();
+		if (notEmpty(this.__selectedImages)) this.__includeManipulateSelected();
+		else this.__removeManipulateSelected();
 	}
 
+
+	// For when action menu is used on one particular image
 
 	manageImage(image: AppImage): void {
 
 	}
 
 
-	private __includeAddSelectedToLibrary() {
+	private __includeManipulateSelected() {
 		menuChoices.data.push(
 			{label: this.__addSelected, choices: libraryNames.data},
 			this.__deleteSelected
@@ -46,7 +45,7 @@ export class ActionMenuChoicesManagerService {
 	}
 
 
-	private __removeAddSelectedToLibrary() {
+	private __removeManipulateSelected() {
 		removeByTest(
 			(value) => (isObject(value) && (value.label === this.__addSelected)),
 			menuChoices.data
