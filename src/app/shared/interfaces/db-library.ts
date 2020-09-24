@@ -13,6 +13,5 @@ export interface DBLibrary {
 
 	// listed in order they appear in library.
 	// Foreign keys, each relating to DBImage._id
-	// Will probably remove this property.
 	_image_ids: string[];
 }
