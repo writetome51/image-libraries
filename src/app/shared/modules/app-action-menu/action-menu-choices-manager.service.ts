@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { AppImage } from '@interfaces/app-image';
-import { CurrentRouteService } from './current-route.service';
+import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
@@ -11,8 +11,7 @@ import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
 
 
-@Injectable({providedIn: 'root'})
-
+@Injectable()
 export class ActionMenuChoicesManagerService {
 
 	private readonly __addSelected = 'Add Selected to Library';
@@ -24,7 +23,7 @@ export class ActionMenuChoicesManagerService {
 	}
 
 
-	manage(): void {
+	manageGlobal(): void {
 		if (notEmpty(this.__selectedImages)) this.__includeManipulateSelected();
 		else this.__removeManipulateSelected();
 	}
@@ -33,12 +32,11 @@ export class ActionMenuChoicesManagerService {
 	// For when action menu is used on one particular image
 
 	manageImage(image: AppImage): void {
-
 	}
 
 
 	private __includeManipulateSelected() {
-		menuChoices.data.push(
+		menuChoices.global.push(
 			{label: this.__addSelected, choices: libraryNames.data},
 			this.__deleteSelected
 		);
@@ -48,9 +46,9 @@ export class ActionMenuChoicesManagerService {
 	private __removeManipulateSelected() {
 		removeByTest(
 			(value) => (isObject(value) && (value.label === this.__addSelected)),
-			menuChoices.data
+			menuChoices.global
 		);
-		removeFirstOf(this.__deleteSelected, menuChoices.data);
+		removeFirstOf(this.__deleteSelected, menuChoices.global);
 	}
 
 

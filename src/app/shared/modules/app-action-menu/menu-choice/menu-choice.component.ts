@@ -1,11 +1,11 @@
 import { AlertData } from '@runtime-state-data/static-classes/alert.data';
+import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { Component, Input } from '@angular/core';
 import { environment } from '@environments/environment';
 import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
-import { Submenu } from '@interfaces/submenu';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { Submenu } from '@interfaces/submenu';
 })
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
-	@Input() data: string | Submenu;
+	@Input() data: AppActionMenuChoice;
 
 	clicked = false;
 	hovered = false;
@@ -28,7 +28,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	};
 
 
-	get choices(): Array<string | Submenu> {
+	get choices(): AppActionMenuChoice[] {
 		return this.data['choices'];
 	}
 

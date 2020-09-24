@@ -1,7 +1,7 @@
+import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Component, Input } from '@angular/core';
-import { Submenu } from '@interfaces/submenu';
 import { environment } from '@environments/environment';
 
 
@@ -20,7 +20,7 @@ export class AppActionMenuComponent {
 		alt: 'action menu'
 	};
 	readonly label = 'Action';
-	readonly choices: Array<string | Submenu> = actionMenuChoices.data;
+	readonly choices: AppActionMenuChoice[] = actionMenuChoices.global;
 	hovered = false;
 	open = false;
 

@@ -2,7 +2,7 @@ import { AppImage } from '@interfaces/app-image';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
 import { ResettableToDefault } from '@interfaces/resettable-to-default';
-import { Submenu } from '@interfaces/submenu';
+import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 
 
 // All data structures intended to be auto-reset to their default values when
@@ -12,14 +12,16 @@ import { Submenu } from '@interfaces/submenu';
 
 export class ActionMenuChoicesData {
 
-	static data: Array<string | Submenu>;
+	static global: AppActionMenuChoice[];
+	static images: object;
 
 
 	static setDefault() {
-		this.data = [
-			'choice 1',
-			{label: 'choice 2', choices: ['choice 3', 'choice 4']}
+		this.global = [
+			'choice 1', // both label and choice
+			{label: 'choice 2', choices: ['choice 3', 'choice 4']} // submenu example
 		];
+		this.images = {}; // keys will be image names, values will be menu choice
 	}
 
 }

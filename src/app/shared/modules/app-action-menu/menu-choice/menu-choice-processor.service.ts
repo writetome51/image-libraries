@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { DirectProcessor } from '@interfaces/direct-processor';
 
 
-@Injectable({providedIn: 'root'})
-
+@Injectable()
 export class MenuChoiceProcessorService implements DirectProcessor {
 
 	process(choice) {
