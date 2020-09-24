@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
 	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
+import { DeleteUserProcessorService } from './delete-user-processor/delete-user-processor.service';
 import { environment } from '@environments/environment';
 
 
@@ -17,5 +18,10 @@ export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyCom
 		height: 82,
 		alt: 'Head exploding'
 	};
+
+
+	constructor(public processor: DeleteUserProcessorService) {
+		super();
+	}
 
 }

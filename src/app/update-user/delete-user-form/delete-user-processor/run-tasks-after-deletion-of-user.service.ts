@@ -7,16 +7,16 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterDeletionOfUserService implements IDoThis {
+export class RunTasksAfterDeletionOfUserService implements IDoThis {
 
 	constructor(
-		private __runTasksNeededAfterLogout: RunTasksAfterLogoutService
+		private __runTasksAfterLogout: RunTasksAfterLogoutService
 	) {
 	}
 
 
 	async go(result) {
-		await this.__runTasksNeededAfterLogout.go();
+		await this.__runTasksAfterLogout.go();
 
 		alert.success = 'Account deleted';
 	}

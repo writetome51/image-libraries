@@ -6,12 +6,12 @@ import { SetResultMessage } from '../../set-result-message/set-result-message.de
 
 @SetResultMessage('Email updated')
 
-export class __RunTasksNeededAfterUpdatingEmailService
+export class __RunTasksAfterUpdatingEmailService
 	extends RunTasksAfterUpdatingEmailOrPasswordService {
 }
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterUpdatingEmailService extends
-	__RunTasksNeededAfterUpdatingEmailService {
+export class RunTasksAfterUpdatingEmailService extends
+	__RunTasksAfterUpdatingEmailService {
 }

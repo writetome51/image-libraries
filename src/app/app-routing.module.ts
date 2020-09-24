@@ -1,5 +1,5 @@
 import { AppModuleRoutesData as moduleRoutes } from './app-module-routes.data';
-import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
+import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';

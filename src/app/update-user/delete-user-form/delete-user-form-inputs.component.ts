@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DeleteUserEmailPasswordInputsService } from './delete-user-email-password-inputs.service';
+import { DeleteUserInputsService } from './delete-user-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
@@ -9,7 +9,7 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class DeleteUserFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__emailPasswordInputs: DeleteUserEmailPasswordInputsService) {
+	constructor(__emailPasswordInputs: DeleteUserInputsService) {
 		super(__emailPasswordInputs);
 	}
 

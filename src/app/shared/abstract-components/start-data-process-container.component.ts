@@ -7,12 +7,12 @@ import { Processor } from '@interfaces/processor';
 
 export abstract class StartDataProcessContainerComponent {
 
-	constructor(private __processor: Processor) {
+	constructor(protected _processor?: Processor) {
 	}
 
 
 	async start(processArgs = []) {
-		await performDataProcessRequiringWaiting.go(this.__processor, processingStatus, processArgs);
+		await performDataProcessRequiringWaiting.go(this._processor, processingStatus, processArgs);
 	}
 
 }

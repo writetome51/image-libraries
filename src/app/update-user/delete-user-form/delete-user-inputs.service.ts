@@ -6,7 +6,7 @@ import { PasswordInputService } from '@validating-input/password/password-input.
 
 @Injectable({providedIn: 'root'})
 
-export class DeleteUserEmailPasswordInputsService extends CurrentUserInputsService {
+export class DeleteUserInputsService extends CurrentUserInputsService {
 
 	constructor(
 		loggedInEmailVerificationInput: LoggedInEmailVerificationInputService,

@@ -1,6 +1,5 @@
 
 .processing-button-container {
-	width: 100px;
 	height: 35px;
 	margin: auto;
 }
@@ -9,12 +8,6 @@
 .processing-button-container div {
 	margin: auto;
 	height: 100%;
-}
-
-
-.processing-button-container button {
-	width: 100px;
-	/*	height: 35px; */
 }
 
 

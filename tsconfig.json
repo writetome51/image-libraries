@@ -49,6 +49,9 @@
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
 			],
+			"@save-changes-button/*": [
+				"src/app/shared/modules/save-changes-button/*"
+			],
 			"@services/*": [
 				"src/app/shared/services/*"
 			],
