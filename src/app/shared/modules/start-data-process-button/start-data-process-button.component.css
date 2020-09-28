@@ -1,21 +1,30 @@
+img {
+	display: block;
+	margin: 0;
+}
 
 .processing-button-container {
-	height: 35px;
+	min-height: 35px;
+	max-height: 35px;
 	margin: auto;
+	min-width: 100px;
+	max-width: fit-content;
+}
+
+.processing-button-container button, .processing-button-container button div {
+	min-width: 100px;
+	max-width: fit-content;
+	height: 34px;
 }
 
 
 .processing-button-container div {
-	margin: auto;
-	height: 100%;
+	display: block;
+	margin: 0;
 }
 
 
 .processing-button-container button div {
 	margin: 0;
-}
-
-
-.processing-button-container div {
-	display: inline-flex;
+	max-height: 35px;
 }

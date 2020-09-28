@@ -6,15 +6,17 @@ import { environment } from '@environments/environment';
 	selector: 'tiny-loading-spinner',
 	template: `
 		<div class="loading-spinner-container">
-			<img [src]="littleSpinner.src" [width]="littleSpinner.width" alt="Waiting for response"/>
+			<img [src]="littleSpinner.src" [width]="littleSpinner.width" [height]="littleSpinner.height"
+				 alt="Waiting for response"
+			/>
 		</div>
 	`,
-	styles: [`div { position: relative; }`]
+	styleUrls: [`./tiny-loading-spinner.component.css`]
 })
 export class TinyLoadingSpinnerComponent {
 
 	littleSpinner = {
-		src: environment.assets + 'loading-gear-50px.gif',
+		src: environment.assets + 'gear-24px.gif',
 		width: 24,
 		height: 24,
 	};

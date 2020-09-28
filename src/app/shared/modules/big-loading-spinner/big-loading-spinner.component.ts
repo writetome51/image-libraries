@@ -14,7 +14,7 @@ import { environment } from '@environments/environment';
 export class BigLoadingSpinnerComponent {
 
 	bigSpinner = {
-		src: environment.assets  + 'loading-gear-225px.gif',
+		src: environment.assets  + 'gear-200px.gif',
 		width: 225,
 		height: 225,
 	};

@@ -9,7 +9,7 @@ import { StartDataProcessContainerComponent }
 	selector: 'get-question-button',
 	template: `
 		<start-data-process-button [type]="'submit'" [context]="this">
-			Get Security Question
+			Get Question
 		</start-data-process-button>
 	`
 })
