@@ -1,5 +1,5 @@
 import { DataTransportResultInterpreterService }
-	from './data-transport-result-interpreter/data-transport-result-interpreter.service';
+	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { IndirectProcessor } from '@interfaces/indirect-processor';
 
 

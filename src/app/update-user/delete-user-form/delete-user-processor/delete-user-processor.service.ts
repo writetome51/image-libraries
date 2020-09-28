@@ -12,10 +12,10 @@ export class DeleteUserProcessorService extends FormDataTransportProcessorServic
 
 	constructor(
 		private __userDeleter: UserDeleterService,
-		__emailPasswordInputs: DeleteUserInputsService,
+		__deleteUserInputs: DeleteUserInputsService,
 		__deleteUserResultInterpreter: DeleteUserResultInterpreterService
 	) {
-		super(__emailPasswordInputs, __deleteUserResultInterpreter);
+		super(__deleteUserInputs, __deleteUserResultInterpreter);
 	}
 
 

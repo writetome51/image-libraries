@@ -30,7 +30,7 @@ export class ImageURLProcessorService extends FormDataTransportProcessorService 
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
 			);
-			return await this.__newImagesSaver.save();
+			return await this.__newImagesSaver.save(newImages.data);
 		}
 		else {
 			return { error: { message: 'The URL you entered is either not connected to a' +
