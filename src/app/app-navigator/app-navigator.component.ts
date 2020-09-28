@@ -13,12 +13,22 @@ export class AppNavigatorComponent {
 	moduleRoutes = AppNavigatorModuleRoutesData;
 
 
+	constructor(private __currentRoute: CurrentRouteService) {
+	}
+
+
 	updateUserNotActive(): boolean {
 		return not(this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule));
 	}
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
+	addImagesNotActive(): boolean {
+		return not(this.__currentRoute.isActive(this.moduleRoutes.AddImagesModule));
+	}
+
+
+	allImagesNotActive(): boolean {
+		return not(this.__currentRoute.isActive(this.moduleRoutes.AllImagesModule));
 	}
 
 }

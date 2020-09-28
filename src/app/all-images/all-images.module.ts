@@ -5,11 +5,9 @@ import { AppActionMenuModule } from '@app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
+import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { DeleteSelectedImagesButtonComponent }
-	from './delete-selected-images-button/delete-selected-images-button.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -23,7 +21,6 @@ import { ThumbnailImageContainerModule }
 	declarations: [
 		AllImagesComponent,
 		AllImagesPaginationControlsComponent,
-		DeleteSelectedImagesButtonComponent,
 		ImageListComponent
 	],
 	imports: [

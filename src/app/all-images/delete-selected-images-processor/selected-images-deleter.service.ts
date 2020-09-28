@@ -1,5 +1,5 @@
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
-	from '../../../shared/services/get-object-from-subscription.service';
+	from '@services/get-object-from-subscription.service';
 import { ImagesRestAPIService } from '@services/images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
