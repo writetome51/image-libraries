@@ -13,4 +13,6 @@ export class StartDataProcessButtonComponent extends ClickStartDataProcessCompon
 	// If 'submit', it's automatically clicked when pressing RETURN in a form
 	@Input() type: 'button' | 'submit' = 'button';
 
+	@Input() pixelWidth = 100;
+
 }

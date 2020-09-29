@@ -2,7 +2,7 @@
 The text inside the button, when clicked, is replaced by a loading spinner.
 -->
 
-<div class="processing-button-container">
+<div class="processing-button-container" [style]="'width:' + pixelWidth + 'px;'">
 
 	<button class="btn btn-default" [type]="type" (click)="runClickHandler($event)">
 
