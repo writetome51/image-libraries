@@ -3,8 +3,7 @@ import { DataTransportResultInterpreterService }
 import { DataTransportResultCheckService }
 	from '@data-transport-result-check/data-transport-result-check.service';
 import { Injectable } from '@angular/core';
-import { RunTasksNeededAfterDeletionOfLibraryService }
-	from './run-tasks-needed-after-deletion-of-library.service';
+import { RunTasksAfterDeletionOfLibraryService } from './run-tasks-after-deletion-of-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,7 +12,7 @@ export class DeleteLibraryResultInterpreterService extends DataTransportResultIn
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterDeletionOfLibraryService
+		__runPostSuccessTasks: RunTasksAfterDeletionOfLibraryService
 	) {
 		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}

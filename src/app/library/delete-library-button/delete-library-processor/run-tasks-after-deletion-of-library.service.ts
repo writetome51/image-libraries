@@ -8,7 +8,7 @@ import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-h
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterDeletionOfLibraryService implements IDoThis {
+export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
@@ -17,7 +17,7 @@ export class RunTasksNeededAfterDeletionOfLibraryService implements IDoThis {
 	}
 
 
-	async go(result) {
+	async go() {
 		await this.__getLibrariesProcessor.process();
 		await this.__redirectToLoggedInHome.go();
 		alert.success = 'Library deleted';
