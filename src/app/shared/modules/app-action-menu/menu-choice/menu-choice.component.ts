@@ -6,6 +6,7 @@ import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
+import { MenuChoiceData } from '@interfaces/menu-choice-data';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { StartDataProcessContainerComponent }
 })
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
-	@Input() data: AppActionMenuChoice;
+	@Input() data: MenuChoiceData;
 
 	clicked = false;
 	hovered = false;
@@ -29,7 +30,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 
 	get choices(): AppActionMenuChoice[] {
-		return this.data['choices'];
+		return this.data.choice['choices'];
 	}
 
 
@@ -39,12 +40,12 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 
 	getLabel(): string {
-		return (isString(this.data) ? this.data : this.data['label']);
+		return (isString(this.data.choice) ? this.data.choice : this.data.choice['label']);
 	}
 
 
 	isSubmenu(): boolean {
-		return (this.data['label'] && this.data['choices']);
+		return (this.data.choice['label'] && this.data.choice['choices']);
 	}
 
 

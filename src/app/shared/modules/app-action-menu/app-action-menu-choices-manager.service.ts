@@ -33,7 +33,8 @@ export class AppActionMenuChoicesManagerService {
 
 	manageImage(image: AppImage): void {
 		menuChoices.images[image.name] = [
-			{label: 'add/remove library', choices: []}
+			{label: 'Add/Remove in library', choices: []},
+			'Delete'
 		];
 
 	}

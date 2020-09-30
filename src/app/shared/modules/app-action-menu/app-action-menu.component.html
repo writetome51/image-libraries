@@ -19,7 +19,8 @@
 		<ul class="dropdown-menu action-menu" [class.action-menu-open]="open"
 			[class.single-image-mode]="image"
 		>
-			<menu-choice *ngFor="let choice of choices" [data]="choice"></menu-choice>
+			<menu-choice *ngFor="let choice of choices" [data]="{choice: choice, image: image}">
+			</menu-choice>
 		</ul>
 	</div>
 </div>
