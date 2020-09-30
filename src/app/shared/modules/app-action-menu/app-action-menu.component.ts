@@ -1,7 +1,9 @@
-import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { Component, Input } from '@angular/core';
+import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
+import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-manager.service';
+import { AppImage } from '@interfaces/app-image';
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '@environments/environment';
 
 
@@ -10,9 +12,9 @@ import { environment } from '@environments/environment';
 	templateUrl: './app-action-menu.component.html',
 	styleUrls: ['./app-action-menu.component.css']
 })
-export class AppActionMenuComponent {
+export class AppActionMenuComponent implements OnInit {
 
-	@Input() singleImageMode = false;
+	@Input() image: AppImage;
 	readonly sprocket = {
 		src: environment.assets + 'sprocket-wheel.png',
 		width: 11,
@@ -20,9 +22,24 @@ export class AppActionMenuComponent {
 		alt: 'action menu'
 	};
 	readonly label = 'Action';
-	readonly choices: AppActionMenuChoice[] = actionMenuChoices.global;
 	hovered = false;
 	open = false;
+
+
+	get choices(): AppActionMenuChoice[] {
+		if (this.image) return actionMenuChoices.images[this.image.name];
+		else return actionMenuChoices.global;
+	}
+
+
+	constructor(private __choicesManager: AppActionMenuChoicesManagerService) {
+	}
+
+
+	ngOnInit() {
+		if (this.image) this.__choicesManager.manageImage(this.image);
+		else this.__choicesManager.manageGlobal();
+	}
 
 
 	toggleOpen(): void {

@@ -32,6 +32,10 @@ export class AppActionMenuChoicesManagerService {
 	// For when action menu is used on one particular image
 
 	manageImage(image: AppImage): void {
+		menuChoices.images[image.name] = [
+			{label: 'add/remove library', choices: []}
+		];
+
 	}
 
 

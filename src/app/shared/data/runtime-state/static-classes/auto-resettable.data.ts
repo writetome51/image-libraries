@@ -21,7 +21,7 @@ export class ActionMenuChoicesData {
 			'choice 1', // both label and choice
 			{label: 'choice 2', choices: ['choice 3', 'choice 4']} // submenu example
 		];
-		this.images = {}; // keys will be image names, values will be menu choice
+		this.images = {}; // keys will be image names, values will be menu choices
 	}
 
 }
