@@ -11,7 +11,7 @@ import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 
 export class DeleteSelectedImagesProcessorService extends DataTransportProcessorService {
 

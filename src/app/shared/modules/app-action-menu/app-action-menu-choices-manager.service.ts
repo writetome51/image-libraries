@@ -15,6 +15,7 @@ import { SelectedImageNamesData as selectedImageNames }
 export class AppActionMenuChoicesManagerService {
 
 	private readonly __addSelected = 'Add Selected to Library';
+	private readonly __removeSelected = 'Remove Selected from Library';
 	private readonly __deleteSelected = 'Delete Selected';
 	private readonly __selectedImages = selectedImageNames.data;
 
@@ -33,8 +34,7 @@ export class AppActionMenuChoicesManagerService {
 
 	manageImage(image: AppImage): void {
 		menuChoices.images[image.name] = [
-			{label: 'Add/Remove in library', choices: []},
-			'Delete'
+			{label: 'Add/Remove in Library', choices: []}
 		];
 
 	}

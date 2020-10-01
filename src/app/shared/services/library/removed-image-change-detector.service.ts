@@ -3,7 +3,7 @@ import { Subscription, Unsubscribable } from 'rxjs';
 import { ItemBeingRemoved } from '../../interfaces/item-being-removed';
 import { ListItemRemoverService } from '../list-item-remover.service';
 import { LibraryChangesService } from './library-changes.service';
-import { getCopy } from '@writetome51/array-get-copy';
+// import { getCopy } from '@writetome51/array-get-copy';
 
 
 @Injectable({providedIn: 'root'})

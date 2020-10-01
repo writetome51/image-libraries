@@ -13,7 +13,7 @@ import { not } from '@writetome51/not';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterAllImagesRouteParamsReceivedService implements IDoThis {
+export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis {
 
 
 	constructor(

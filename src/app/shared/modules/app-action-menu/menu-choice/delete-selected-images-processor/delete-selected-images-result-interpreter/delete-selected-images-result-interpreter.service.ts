@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService }	// tslint:disable-next-line:max-line-length
+import { DataTransportResultInterpreterService }
 	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { DataTransportResultCheckService }	// tslint:disable-next-line:max-line-length
+import { DataTransportResultCheckService }
 	from '@data-transport-result-check/data-transport-result-check.service';
-import { RunTasksNeededAfterDeletingImagesService }
-	from './run-tasks-needed-after-deleting-images.service';
+import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
 
 
-@Injectable({providedIn: 'root'})
-
+@Injectable()
 export class DeleteSelectedImagesResultInterpreterService
 	extends DataTransportResultInterpreterService {
 
 	constructor(
 		__dataTransportResultCheckService: DataTransportResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterDeletingImagesService
+		__runPostSuccessTasks: RunTasksAfterDeletingImagesService
 	) {
 		super(__dataTransportResultCheckService, __runPostSuccessTasks);
 	}

@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import {
-	LoadedImagesData as loadedImages, ImagesLoadedFromData as imagesLoadedFrom,
-	NewImagesData as newImages
-} from '@runtime-state-data/static-classes/auto-resettable.data';
+import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this';
+import { RunTasksAfterModifyingLoadedImagesService }
+	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class RunTasksAfterSavingNewImagesService implements IDoThis {
 
-	async go() {
-		alert.success = 'New images saved';
-		this.__emptyImageCacheSoImagesWillBeForcedToRefresh();
+	constructor(
+		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService
+	) {
 	}
 
-
-	private __emptyImageCacheSoImagesWillBeForcedToRefresh() {
+	go() {
+		alert.success = 'New images saved';
 		newImages.data = [];
-		loadedImages.setDefault();
-		imagesLoadedFrom.setDefault();
+		this.__runTasksAfterModifyingLoadedImages.go();
 	}
 
 }
