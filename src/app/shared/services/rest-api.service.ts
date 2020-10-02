@@ -3,7 +3,7 @@ import { getURLQuery } from '@writetome51/get-url-query';
 import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
-import { sss } from '../../.special/.sss';
+import { sss } from '@app/.special/.sss';
 
 
 export abstract class RestAPIService {
