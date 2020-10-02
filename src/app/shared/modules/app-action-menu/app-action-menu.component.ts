@@ -52,7 +52,7 @@ export class AppActionMenuComponent implements OnInit {
 	}
 
 
-	unHover(): void {
+	unHover_and_close(): void {
 		this.hovered = false;
 		this.open = false;
 	}

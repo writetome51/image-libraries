@@ -12,10 +12,11 @@ import { RunTasksAfterDeletingImagesService }
 	from './menu-choice/delete-selected-images-processor/delete-selected-images-result-interpreter/run-tasks-after-deleting-images.service';
 import { StartDataProcessListItemModule }
 	from '@start-data-process-list-item/start-data-process-list-item.module';
+import { SubmenuPointerComponent } from './menu-choice/submenu-pointer.component';
 
 
 @NgModule({
-	declarations: [AppActionMenuComponent, MenuChoiceComponent],
+	declarations: [AppActionMenuComponent, MenuChoiceComponent, SubmenuPointerComponent],
 	imports: [CommonModule, StartDataProcessListItemModule],
 	providers: [
 		AppActionMenuChoicesManagerService,

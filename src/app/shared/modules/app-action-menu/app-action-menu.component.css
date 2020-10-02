@@ -1,3 +1,4 @@
+
 .action-menu-container.single-image-mode {
 	position: relative;
 	z-index: 1000;
@@ -47,8 +48,8 @@ button.single-image-mode div span.caret {
 
 
 ul.action-menu-open {
-	/*  position: absolute;  */
 	display: block;
+	width: max-content;
 	z-index: 1000;
 	background-color: white;
 }

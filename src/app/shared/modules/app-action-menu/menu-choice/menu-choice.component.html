@@ -1,6 +1,6 @@
 <li role="presentation" class="menu-choice"
 	[class.dropdown-submenu]="isSubmenu()" [class.hovered]="hovered"
-	(click)="toggleClick($event)" (mouseover)="hover()" (mouseleave)="unHover()"
+	(click)="toggleClick($event)" (mouseover)="hover()" (mouseleave)="unHover_and_unClick()"
 >
 
 	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
@@ -9,11 +9,8 @@
 
 
 	<ng-container *ngIf="isSubmenu()">
-		{{ getLabel() }}
 
-		<img [src]="triangle.src" [width]="triangle.width" [height]="triangle.height"
-			 [alt]="triangle.alt"
-		/>
+			{{ getLabel() }} <submenu-pointer></submenu-pointer>
 
 		<ul *ngIf="clicked" class="dropdown-menu">
 			<menu-choice *ngFor="let choice of choices" [data]="{choice: choice, image: data.image}">

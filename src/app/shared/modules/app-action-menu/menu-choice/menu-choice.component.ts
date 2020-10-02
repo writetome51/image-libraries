@@ -1,12 +1,10 @@
-import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { Component, Input } from '@angular/core';
-import { environment } from '@environments/environment';
 import { isString } from '@writetome51/is-string-not-string';
+import { MenuChoiceData } from '@interfaces/menu-choice-data';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
-import { MenuChoiceData } from '@interfaces/menu-choice-data';
 
 
 @Component({
@@ -20,13 +18,6 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	clicked = false;
 	hovered = false;
-	alert = AlertData;
-	triangle = {
-		src: environment.assets + 'right-pointing-triangle.png',
-		width: 7,
-		height: 8,
-		alt: 'sub-menu'
-	};
 
 
 	get choices(): AppActionMenuChoice[] {
@@ -61,7 +52,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	unHover(): void {
+	unHover_and_unClick(): void {
 		this.hovered = false;
 		this.clicked = false;
 	}

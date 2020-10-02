@@ -4,7 +4,9 @@ import { AppImage } from '@interfaces/app-image';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
+import { MenuChoiceLibraryData as choiceLibrary} from './menu-choice-library.data';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
@@ -14,9 +16,6 @@ import { SelectedImageNamesData as selectedImageNames }
 @Injectable()
 export class AppActionMenuChoicesManagerService {
 
-	private readonly __addSelected = 'Add Selected to Library';
-	private readonly __removeSelected = 'Remove Selected from Library';
-	private readonly __deleteSelected = 'Delete Selected';
 	private readonly __selectedImages = selectedImageNames.data;
 
 
@@ -34,7 +33,7 @@ export class AppActionMenuChoicesManagerService {
 
 	manageImage(image: AppImage): void {
 		menuChoices.images[image.name] = [
-			{label: 'Add/Remove in Library', choices: []}
+			{label: choiceLibrary.toggleAddRemoveImageToLibrary, choices: []}
 		];
 
 	}
@@ -42,19 +41,20 @@ export class AppActionMenuChoicesManagerService {
 
 	private __includeManipulateSelected() {
 		menuChoices.global.push(
-			{label: this.__addSelected, choices: libraryNames.data},
-			this.__deleteSelected
+			{label: choiceLibrary.addSelected, choices: libraryNames.data},
+			choiceLibrary.deleteSelected
 		);
 	}
 
 
 	private __removeManipulateSelected() {
 		removeByTest(
-			(value) => (isObject(value) && (value.label === this.__addSelected)),
+			(value) => (isObject(value) && (value.label === choiceLibrary.addSelected)),
 			menuChoices.global
 		);
-		removeFirstOf(this.__deleteSelected, menuChoices.global);
-	}
+		removeFirstOf(choiceLibrary.deleteSelected, menuChoices.global);
 
+		prepend(choiceLibrary.selectMultiple, menuChoices.global);
+	}
 
 }
