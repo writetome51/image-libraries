@@ -10,7 +10,7 @@
 
 	<ng-container *ngIf="isSubmenu()">
 
-			{{ getLabel() }} <submenu-pointer></submenu-pointer>
+		{{ getLabel() }} <submenu-pointer></submenu-pointer>
 
 		<ul *ngIf="clicked" class="dropdown-menu">
 			<menu-choice *ngFor="let choice of choices" [data]="{choice: choice, image: data.image}">

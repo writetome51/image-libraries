@@ -1,7 +1,7 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { DeleteSelectedImagesResultInterpreterService }
-	from './delete-selected-images-result-interpreter/delete-selected-images-result-interpreter.service';
+	from './delete-selected-images-result-interpreter.service';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '@services/get-object-from-subscription.service';
 import { ImagesRestAPIService } from '@services/images-rest-api.service';
@@ -12,7 +12,6 @@ import { SelectedImageNamesData as selectedImageNames }
 
 
 @Injectable()
-
 export class DeleteSelectedImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(

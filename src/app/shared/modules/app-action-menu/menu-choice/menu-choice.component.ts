@@ -2,7 +2,7 @@ import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { Component, Input } from '@angular/core';
 import { isString } from '@writetome51/is-string-not-string';
 import { MenuChoiceData } from '@interfaces/menu-choice-data';
-import { MenuChoiceProcessorService } from './menu-choice-processor.service';
+import { MenuChoiceProcessorService } from './menu-choice-processor/menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 
@@ -15,7 +15,6 @@ import { StartDataProcessContainerComponent }
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: MenuChoiceData;
-
 	clicked = false;
 	hovered = false;
 
