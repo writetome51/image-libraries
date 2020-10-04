@@ -1,4 +1,4 @@
-import { CORSProxyData as corsProxy } from '../data/read-only/cors-proxy.data';
+import { CORSProxyData as corsProxy } from '@read-only-data/cors-proxy.data';
 import { getURLQuery } from '@writetome51/get-url-query';
 import { HttpClient } from '@angular/common/http';
 import { modifyObject } from '@writetome51/modify-object';

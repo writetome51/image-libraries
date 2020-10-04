@@ -34,7 +34,7 @@
 				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
 			],
 			"@delete-selected-images-processor/*": [
-				"src/app/shared/services/delete-selected-images-processor/*"
+				"src/app/shared/modules/app-action-menu/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
 			],
 			"@environments/*": [
 				"src/environments/*"

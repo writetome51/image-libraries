@@ -4,7 +4,8 @@ import { AppImage } from '@interfaces/app-image';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
-import { MenuChoiceLibraryData as choiceLibrary} from './menu-choice-library.data';
+import { MenuChoiceLibraryData as choiceLibrary } from './menu-choice-library.data';
+import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
@@ -33,7 +34,7 @@ export class AppActionMenuChoicesManagerService {
 
 	manageImage(image: AppImage): void {
 		menuChoices.images[image.name] = [
-			{label: choiceLibrary.toggleAddRemoveImageToLibrary, choices: []}
+			{label: choiceLibrary.toggleAddRemoveImageToLibrary, choices: libraryNames.data}
 		];
 
 	}
@@ -54,7 +55,9 @@ export class AppActionMenuChoicesManagerService {
 		);
 		removeFirstOf(choiceLibrary.deleteSelected, menuChoices.global);
 
-		prepend(choiceLibrary.selectMultiple, menuChoices.global);
+		if (not(menuChoices.global.includes(choiceLibrary.selectMultiple))) {
+			prepend(choiceLibrary.selectMultiple, menuChoices.global);
+		}
 	}
 
 }

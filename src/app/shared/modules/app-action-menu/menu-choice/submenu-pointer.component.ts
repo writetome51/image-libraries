@@ -5,15 +5,15 @@ import { environment } from '@environments/environment';
 @Component({
 	selector: 'submenu-pointer',
 	template: `
-		<img [src]="triangle.src" [width]="triangle.width" [height]="triangle.height"
-			 [alt]="triangle.alt"
+		<img [src]="pointer.src" [width]="pointer.width" [height]="pointer.height"
+			 [alt]="pointer.alt"
 		/>
 	`
 })
 export class SubmenuPointerComponent {
 
-	triangle = {
-		src: environment.assets + 'right-pointing-triangle.png',
+	pointer = {
+		src: environment.assets + 'submenu-pointer.png',
 		width: 7,
 		height: 8,
 		alt: 'sub-menu'
