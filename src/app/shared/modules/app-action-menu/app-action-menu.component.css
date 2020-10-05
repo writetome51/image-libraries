@@ -5,56 +5,18 @@
 	height: 35px;
 }
 
+
 .action-menu-container.single-image-mode.action-menu-open {
 	height: fit-content;
 }
+
 
 .dropdown.single-image-mode {
 	display: none;
 }
 
+
 .dropdown.single-image-mode.hovered {
 	display: block;
 	max-height: 90px;
-}
-
-button.single-image-mode {
-	width: 40px;
-	height: 30px;
-	padding: 0;
-}
-
-
-button.single-image-mode div {
-	margin: auto;
-}
-
-
-button.single-image-mode div span.caret {
-	position: relative;
-	top: 14px;
-	right: 3px;
-}
-
-
-.action-menu {
-	display: none;
-	cursor: pointer;
-
-	/* This makes sure there's no gap between the dropdown button and the menu, and
-	prevents accidental un-hovering from happening */
-	margin: 0;
-}
-
-
-ul.action-menu-open {
-	display: block;
-	width: max-content;
-	z-index: 1000;
-	background-color: white;
-}
-
-
-ul.action-menu-open.single-image-mode {
-	top: 30px;
 }

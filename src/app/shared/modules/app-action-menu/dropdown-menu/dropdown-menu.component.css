@@ -1,4 +1,14 @@
 
+.action-menu {
+	display: none;
+	cursor: pointer;
+
+	/* This makes sure there's no gap between the dropdown button and the menu, and
+	prevents accidental un-hovering from happening */
+	margin: 0;
+}
+
+
 ul.action-menu-open {
 	display: block;
 	width: max-content;

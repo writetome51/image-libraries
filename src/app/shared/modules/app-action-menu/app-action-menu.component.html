@@ -1,26 +1,8 @@
 <div class="action-menu-container" (mouseover)="hover()" (mouseleave)="unHover_and_close()"
-	 [class.single-image-mode]="image" [class.action-menu-open]="open"
+	 [class.single-image-mode]="image" [class.action-menu-open]="menuButton.open"
 >
 	<div class="dropdown" [class.hovered]="hovered">
-
-		<button class="btn btn-default" type="button" id="menu1" (click)="toggleOpen()"
-				[class.single-image-mode]="image"
-		>
-			<div>
-				<ng-container *ngIf="!(image)">{{label}}</ng-container>
-
-				<img *ngIf="image" [src]="sprocket.src" [width]="sprocket.width"
-					 [height]="sprocket.height" [alt]="sprocket.alt"
-				/>
-				<span class="caret"></span>
-			</div>
-		</button>
-
-		<ul class="dropdown-menu action-menu" [class.action-menu-open]="open"
-			[class.single-image-mode]="image"
-		>
-			<menu-choice *ngFor="let choice of choices" [data]="{choice: choice, image: image}">
-			</menu-choice>
-		</ul>
+		<menu-button></menu-button>
+		<dropdown-menu [image]="image" [open]="menuButton.open" [choices]="choices"></dropdown-menu>
 	</div>
 </div>

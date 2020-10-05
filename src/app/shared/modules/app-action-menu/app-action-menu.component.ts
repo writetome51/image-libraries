@@ -3,8 +3,8 @@ import { ActionMenuChoicesData as actionMenuChoices }
 import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-manager.service';
 import { AppImage } from '@interfaces/app-image';
-import { Component, Input, OnInit } from '@angular/core';
-import { environment } from '@environments/environment';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MenuButtonComponent } from '@app-action-menu/menu-button/menu-button.component';
 
 
 @Component({
@@ -15,15 +15,8 @@ import { environment } from '@environments/environment';
 export class AppActionMenuComponent implements OnInit {
 
 	@Input() image: AppImage;
-	readonly sprocket = {
-		src: environment.assets + 'sprocket-wheel.png',
-		width: 11,
-		height: 11,
-		alt: 'action menu'
-	};
-	readonly label = 'Action';
+	@ViewChild(MenuButtonComponent) menuButton: MenuButtonComponent;
 	hovered = false;
-	open = false;
 
 
 	get choices(): AppActionMenuChoice[] {
@@ -42,11 +35,6 @@ export class AppActionMenuComponent implements OnInit {
 	}
 
 
-	toggleOpen(): void {
-		this.open = !(this.open);
-	}
-
-
 	hover(): void {
 		this.hovered = true;
 	}
@@ -54,7 +42,7 @@ export class AppActionMenuComponent implements OnInit {
 
 	unHover_and_close(): void {
 		this.hovered = false;
-		this.open = false;
+		this.menuButton.open = false;
 	}
 
 }
