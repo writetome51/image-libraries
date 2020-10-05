@@ -4,7 +4,7 @@ import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LoadedLibraryData as loadedLibrary }
-	from '@runtime-state-data/static-classes/auto-resettable.data';loaded-library.data';
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Injectable({providedIn: 'root'})

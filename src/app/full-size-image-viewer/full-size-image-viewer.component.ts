@@ -18,15 +18,15 @@ export class FullSizeImageViewerComponent {
 
 
 	getCurrentImage(): DBImage {
-		let name = this.__currentRoute.params[paramID.imageName];
-		return this.__getImageByName(name);
+		let id = this.__currentRoute.params[paramID.imageID];
+		return this.__getImageByID(id);
 	}
 
 
-	private __getImageByName(name): DBImage {
+	private __getImageByID(id): DBImage {
 
 		return getByTest(
-			(image: DBImage) => image.name === name,
+			(image: DBImage) => image._id === id,
 			loadedImages.data
 		)[0]; // result expected to only have one item.
 	}

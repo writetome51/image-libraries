@@ -12,6 +12,7 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
+import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 
 
 @Injectable()
@@ -55,8 +56,13 @@ export class AppActionMenuChoicesManagerService {
 		);
 		removeFirstOf(choiceLibrary.deleteSelected, menuChoices.global);
 
-		if (not(menuChoices.global.includes(choiceLibrary.selectMultiple))) {
-			prepend(choiceLibrary.selectMultiple, menuChoices.global);
+		this.__includeInGlobal(choiceLibrary.selectMultiple);
+	}
+
+
+	private __includeInGlobal(choice: AppActionMenuChoice) {
+		if (not(menuChoices.global.includes(choice))) {
+			prepend(choice, menuChoices.global);
 		}
 	}
 

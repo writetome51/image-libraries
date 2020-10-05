@@ -1,13 +1,12 @@
-import { BackgroundProcessingStatusData as processingStatus }
-	from '@runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { GetLibrariesProcessorService }
-	from '@services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+import { MakeSureLibrariesAreLoadedService } from '@services/make-sure-libraries-are-loaded.service';
+import { LocalLibrariesService } from '@services/local-storage-data/local-libraries.service';
+import { getObjectFromJSON } from 'get-object-from-json';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { noValue } from '@writetome51/has-value-no-value';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '@services/perform-data-process-requiring-waiting.service';
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 
 
 @Component({
@@ -16,7 +15,12 @@ import { PerformDataProcessRequiringWaitingService as performDataProcessRequirin
 })
 export class LibrariesListComponent {
 
+
 	noLibrariesMessage = 'You have no libraries right now';
+
+	get gettingLibraries() {
+		return processingStatus.waiting;
+	}
 
 
 	get names(): string[] {
@@ -24,10 +28,11 @@ export class LibrariesListComponent {
 	}
 
 
-	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {
-		if (noValue(libraryNames.data)) performDataProcessRequiringWaiting.go(
-			this.__getLibrariesProcessor, processingStatus
-		);
+	constructor(
+		private __makeSureLibrariesAreLoaded: MakeSureLibrariesAreLoadedService,
+		private __localLibraries: LocalLibrariesService
+	) {
+		this.__makeSureLibrariesAreLoaded.go();
 	}
 
 }

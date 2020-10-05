@@ -3,8 +3,8 @@ import { DataTransportResultInterpreterService }
 	from '../data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { DataTransportResultCheckService } // tslint:disable-next-line:max-line-length
 	from '../data-transport-result-interpreter/data-transport-result-check/data-transport-result-check.service';
-import { RunTasksNeededAfterGettingLibrariesService }
-	from './run-tasks-needed-after-getting-libraries.service';
+import { RunTasksAfterGettingLibrariesService }
+	from './run-tasks-after-getting-libraries.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,7 +13,7 @@ export class GetLibrariesResultInterpreterService extends DataTransportResultInt
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterGettingLibrariesService
+		__runPostSuccessTasks: RunTasksAfterGettingLibrariesService
 	) {
 		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}

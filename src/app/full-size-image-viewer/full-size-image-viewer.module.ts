@@ -33,7 +33,7 @@ import { URLParamIDData as paramID} from '@read-only-data/url-param-id.data';
 
 		RouterModule.forChild([
 			{
-				path: `:${paramID.imageName}`,
+				path: `:${paramID.imageID}`,
 				component: FullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]

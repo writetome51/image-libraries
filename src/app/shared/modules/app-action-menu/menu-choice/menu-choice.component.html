@@ -13,7 +13,9 @@
 		{{ getLabel() }} <submenu-pointer></submenu-pointer>
 
 		<ul *ngIf="clicked" class="dropdown-menu">
-			<menu-choice *ngFor="let choice of choices" [data]="{choice: choice, image: data.image}">
+			<menu-choice *ngFor="let choice of choices"
+					[data]="{choice: choice, parent: getLabel(), image: data.image}"
+			>
 			</menu-choice>
 		</ul>
 	</ng-container>

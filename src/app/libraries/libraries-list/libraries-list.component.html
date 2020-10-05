@@ -1,6 +1,7 @@
 <div>
 
-	<p *ngIf="!(names)">Fetching Libraries...</p>
+	<big-loading-spinner *ngIf="!(names)"></big-loading-spinner>
+
 	<p *ngIf="names && names.length === 0">{{noLibrariesMessage}}</p>
 
 	<ul *ngIf="names && names.length > 0">
