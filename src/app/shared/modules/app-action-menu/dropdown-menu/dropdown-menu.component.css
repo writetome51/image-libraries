@@ -1,0 +1,12 @@
+
+ul.action-menu-open {
+	display: block;
+	width: max-content;
+	z-index: 1000;
+	background-color: white;
+}
+
+
+ul.action-menu-open.single-image-mode {
+	top: 30px;
+}
