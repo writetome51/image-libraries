@@ -1,0 +1,11 @@
+<button class="btn btn-default" type="button" id="menu1" (click)="toggleOpen()"
+		[class.single-image-mode]="image"
+>
+	<div>
+		<ng-container *ngIf="!(image)">{{label}}</ng-container>
+
+		<sprocket-wheel *ngIf="image"></sprocket-wheel>
+
+		<span class="caret"></span>
+	</div>
+</button>
