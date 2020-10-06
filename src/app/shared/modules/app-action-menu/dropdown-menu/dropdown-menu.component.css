@@ -1,4 +1,3 @@
-
 .action-menu {
 	display: none;
 	cursor: pointer;
@@ -17,6 +16,6 @@ ul.action-menu-open {
 }
 
 
-ul.action-menu-open.single-image-mode {
+ul.action-menu-open.image-mode {
 	top: 30px;
 }

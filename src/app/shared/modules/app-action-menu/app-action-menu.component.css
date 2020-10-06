@@ -1,22 +1,22 @@
 
-.action-menu-container.single-image-mode {
+.action-menu-container.image-mode {
 	position: relative;
 	z-index: 1000;
 	height: 35px;
 }
 
 
-.action-menu-container.single-image-mode.action-menu-open {
+.action-menu-container.image-mode.action-menu-open {
 	height: fit-content;
 }
 
 
-.dropdown.single-image-mode {
+.dropdown.image-mode {
 	display: none;
 }
 
 
-.dropdown.single-image-mode.hovered {
+.dropdown.image-mode.hovered {
 	display: block;
 	max-height: 90px;
 }

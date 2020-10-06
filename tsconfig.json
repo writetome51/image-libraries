@@ -34,7 +34,7 @@
 				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
 			],
 			"@delete-selected-images-processor/*": [
-				"src/app/shared/modules/app-action-menu/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
+				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
@@ -42,6 +42,9 @@
 			"@guards/*": ["src/app/guards/*"],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
+			],
+			"@menu-choice/*": [
+				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"

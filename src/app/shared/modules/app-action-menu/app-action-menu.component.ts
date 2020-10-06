@@ -3,8 +3,7 @@ import { ActionMenuChoicesData as actionMenuChoices }
 import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-manager.service';
 import { AppImage } from '@interfaces/app-image';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { MenuButtonComponent } from '@app-action-menu/menu-button/menu-button.component';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -15,8 +14,8 @@ import { MenuButtonComponent } from '@app-action-menu/menu-button/menu-button.co
 export class AppActionMenuComponent implements OnInit {
 
 	@Input() image: AppImage;
-	@ViewChild(MenuButtonComponent) menuButton: MenuButtonComponent;
 	hovered = false;
+	open = false;
 
 
 	get choices(): AppActionMenuChoice[] {
@@ -42,7 +41,7 @@ export class AppActionMenuComponent implements OnInit {
 
 	unHover_and_close(): void {
 		this.hovered = false;
-		this.menuButton.open = false;
+		this.open = false;
 	}
 
 }
