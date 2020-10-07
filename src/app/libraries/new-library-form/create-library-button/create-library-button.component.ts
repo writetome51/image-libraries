@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { StartDataProcessContainerComponent } from '@abstract-components/start-data-process-container.component';
 import { CreateLibraryProcessorService }
 	from './create-library-processor/create-library-processor.service';
+import { StartDataProcessContainerComponent }
+	from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
