@@ -2,14 +2,13 @@ import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-ma
 import { AppActionMenuComponent } from './app-action-menu.component';
 import { CommonModule } from '@angular/common';
 import { DropdownMenuModule } from '@app-action-menu/dropdown-menu/dropdown-menu.module';
-import { MenuButtonComponent } from './menu-button/menu-button.component';
 import { NgModule } from '@angular/core';
-import { SprocketWheelComponent } from './menu-button/sprocket-wheel.component';
+import { MenuButtonModule } from '@app-action-menu/menu-button/menu-button.module';
 
 
 @NgModule({
-	declarations: [AppActionMenuComponent, SprocketWheelComponent, MenuButtonComponent],
-	imports: [CommonModule, DropdownMenuModule],
+	declarations: [AppActionMenuComponent],
+	imports: [CommonModule, DropdownMenuModule, MenuButtonModule],
 	providers: [AppActionMenuChoicesManagerService],
 	exports: [AppActionMenuComponent]
 })

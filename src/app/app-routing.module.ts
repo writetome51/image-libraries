@@ -1,6 +1,4 @@
 import { AppModuleRoutesData as moduleRoutes } from './app-module-routes.data';
-import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
-import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -37,10 +35,9 @@ const routes: Routes = [
 	},
 
 	{
-		path: '', // the logged-out homepage
-		component: LoginComponent,
+		path: moduleRoutes.LoginModule,
 		pathMatch: 'full',
-		canActivate: [DeAuthenticatedGuard]
+		loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.

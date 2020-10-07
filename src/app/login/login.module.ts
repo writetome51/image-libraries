@@ -1,13 +1,12 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
-import { CreateUserButtonComponent }
-	from './new-user-form/create-user-button/create-user-button.component';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
-import { NewUserComponent } from './new-user.component';
-import { NewUserFormComponent } from './new-user-form/new-user-form.component';
-import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs.component';
+import { LoginComponent } from './login.component';
+import { LoginButtonComponent } from './login-form/login-button.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginFormInputsComponent } from './login-form/login-form-inputs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
@@ -16,10 +15,10 @@ import { StartDataProcessButtonModule }
 
 @NgModule({
 	declarations: [
-		CreateUserButtonComponent,
-		NewUserComponent,
-		NewUserFormComponent,
-		NewUserFormInputsComponent,
+		LoginComponent,
+		LoginButtonComponent,
+		LoginFormComponent,
+		LoginFormInputsComponent
 	],
 	imports: [
 		CommonModule,
@@ -28,9 +27,9 @@ import { StartDataProcessButtonModule }
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
-				path: '',
+				path: '', // the logged-out homepage
 				pathMatch: 'full',
-				component: NewUserComponent,
+				component: LoginComponent,
 				canActivate: [DeAuthenticatedGuard]
 			},
 
@@ -38,5 +37,5 @@ import { StartDataProcessButtonModule }
 		])
 	]
 })
-export class NewUserModule {
+export class LoginModule {
 }

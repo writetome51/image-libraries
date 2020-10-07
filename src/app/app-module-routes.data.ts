@@ -7,6 +7,7 @@ export class AppModuleRoutesData {
 	static readonly FullSizeImageViewerModule = 'image';
 	static readonly LibrariesModule = 'libraries';
 	static readonly LibraryModule = 'library';
+	static readonly LoginModule = '';
 	static readonly NewUserModule = 'create-account';
 	static readonly SecurityQuestionModule = 'security-question';
 
