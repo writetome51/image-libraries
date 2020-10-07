@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { UpdateUserChoiceData } from './update-user-choice.data';
+import { CurrentRouteService } from '@services/current-route.service';
 
 
 @Component({
@@ -14,12 +14,12 @@ export class UpdateUserComponent {
 	choices = Object.keys(this.choicesMap);
 
 
-	constructor(private __router: Router) {
+	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
 	getFormHeading(): string {
-		let url = this.__router.routerState.snapshot.url;
+		let url = this.__currentRoute.data;
 
 		for (let i = 0; i < this.choices.length; ++i) {
 			let map: { path: string, heading: string } = this.choicesMap[this.choices[i]];

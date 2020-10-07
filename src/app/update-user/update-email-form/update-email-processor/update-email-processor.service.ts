@@ -3,7 +3,8 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { UpdateEmailInputsService } from '../update-email-inputs/update-email-inputs.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
-import { UserStorageUpdaterService } from '../../user-storage-updater.service';
+import { UserUpdaterService } from '../../user-updater.service';
+import { DBUser } from '@interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,7 +12,7 @@ import { UserStorageUpdaterService } from '../../user-storage-updater.service';
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userUpdater: UserStorageUpdaterService,
+		private __userUpdater: UserUpdaterService,
 		__updateEmailInputs: UpdateEmailInputsService,
 		__updateEmailResultInterpreter: UpdateEmailResultInterpreterService
 	) {
@@ -19,7 +20,7 @@ export class UpdateEmailProcessorService extends FormDataTransportProcessorServi
 	}
 
 
-	protected async _getResult(): Promise<any> {
+	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__userUpdater.updateEmail();
 	}
 

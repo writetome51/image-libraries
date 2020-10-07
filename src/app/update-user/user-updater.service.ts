@@ -10,7 +10,7 @@ import { UserRestAPIService } from '@services/user/user-rest-api.service';
 
 @Injectable({providedIn: 'root'})
 
-export class UserStorageUpdaterService {
+export class UserUpdaterService {
 
 
 	constructor(

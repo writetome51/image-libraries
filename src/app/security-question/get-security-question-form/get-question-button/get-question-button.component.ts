@@ -8,7 +8,7 @@ import { StartDataProcessContainerComponent }
 @Component({
 	selector: 'get-question-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [context]="this" [pixelWidth]="110">
+		<start-data-process-button [type]="'submit'" [context]="this">
 			Get Question
 		</start-data-process-button>
 	`

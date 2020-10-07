@@ -11,7 +11,7 @@ export class UpdateUserChoiceData {
 		path: 'email', // router path
 		linkText: 'Email',
 		component: UpdateEmailFormComponent, // component to load when path is accessed
-		heading: 'Email' // used for UpdateUserComponent.formHeading
+		heading: 'Email'
 	};
 	static readonly password = {
 		path: 'password',
