@@ -7,9 +7,8 @@ import { LibraryComponent } from '../library/library.component';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
 	constructor(private __libraryChanges: LibraryChangesService) {

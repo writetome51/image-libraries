@@ -1,4 +1,4 @@
-import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
+import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { not } from '@writetome51/not';
@@ -10,25 +10,15 @@ import { not } from '@writetome51/not';
 })
 export class AppNavigatorComponent {
 
-	moduleRoutes = AppNavigatorModuleRoutesData;
+	choices = Object.values(AppNavigatorChoiceData);
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
-	updateUserNotActive(): boolean {
-		return not(this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule));
-	}
-
-
-	addImagesNotActive(): boolean {
-		return not(this.__currentRoute.isActive(this.moduleRoutes.AddImagesModule));
-	}
-
-
-	allImagesNotActive(): boolean {
-		return not(this.__currentRoute.isActive(this.moduleRoutes.AllImagesModule));
+	routeInactive(route): boolean {
+		return not(this.__currentRoute.isActive(route));
 	}
 
 }
