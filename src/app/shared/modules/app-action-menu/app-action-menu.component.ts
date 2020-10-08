@@ -4,6 +4,7 @@ import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-manager.service';
 import { AppImage } from '@interfaces/app-image';
 import { Component, Input, OnInit } from '@angular/core';
+import { HoverableComponent } from '@abstract-components/hoverable.component';
 
 
 @Component({
@@ -11,10 +12,9 @@ import { Component, Input, OnInit } from '@angular/core';
 	templateUrl: './app-action-menu.component.html',
 	styleUrls: ['./app-action-menu.component.css']
 })
-export class AppActionMenuComponent implements OnInit {
+export class AppActionMenuComponent extends HoverableComponent implements OnInit {
 
 	@Input() image: AppImage;
-	hovered = false;
 	open = false;
 
 
@@ -25,6 +25,7 @@ export class AppActionMenuComponent implements OnInit {
 
 
 	constructor(private __choicesManager: AppActionMenuChoicesManagerService) {
+		super();
 	}
 
 
@@ -34,13 +35,8 @@ export class AppActionMenuComponent implements OnInit {
 	}
 
 
-	hover(): void {
-		this.hovered = true;
-	}
-
-
 	unHover_and_close(): void {
-		this.hovered = false;
+		this.unHover();
 		this.open = false;
 	}
 

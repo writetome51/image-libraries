@@ -1,7 +1,7 @@
 <div class="action-menu-container" (mouseover)="hover()" (mouseleave)="unHover_and_close()"
 	 [class.image-mode]="image" [class.action-menu-open]="open"
 >
-	<div class="dropdown" [class.hovered]="hovered">
+	<div class="dropdown" [class.hovered]="isHovered()">
 
 		<menu-button [menu]="this" [imageMode]="image"></menu-button>
 

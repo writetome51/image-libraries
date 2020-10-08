@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { HoverableComponent } from '@abstract-components/hoverable.component';
 import { ListItemMoverService } from '@services/list-item-mover.service';
 import { ListItemRemoverService } from '@services/list-item-remover.service';
 
@@ -8,20 +9,20 @@ import { ListItemRemoverService } from '@services/list-item-remover.service';
 	templateUrl: './re-arrangeable-grid-list-item.component.html',
 	styleUrls: ['./re-arrangeable-grid-list-item.component.css']
 })
-export class ReArrangeableGridListItemComponent {
+export class ReArrangeableGridListItemComponent extends HoverableComponent {
 
 
 	@Input() index: number; // required
 	isBeingDragged = false;
 	draggedOntoFromRight = false;
 	draggedOntoFromLeft = false;
-	hovered = false;
 
 
 	constructor(
 		private  __listItemMover: ListItemMoverService,
 		private __listItemRemover: ListItemRemoverService
 	) {
+		super();
 	}
 
 

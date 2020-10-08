@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '@interfaces/db-image';
+import { HoverableComponent } from '@abstract-components/hoverable.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
@@ -11,7 +12,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	templateUrl: './thumbnail-image-container.component.html',
 	styleUrls: ['./thumbnail-image-container.component.css']
 })
-export class ThumbnailImageContainerComponent {
+export class ThumbnailImageContainerComponent extends HoverableComponent {
 
 	@Input() image: DBImage;
 	@Input() imageRouterLink: (string[] | string) = [];
@@ -22,8 +23,6 @@ export class ThumbnailImageContainerComponent {
 	// Only works if hovering is enabled.
 	@Input() deleteGlyphiconEnabled = false;
 
-	private __hovered = false;
-
 
 	get imageWidth(): number {
 		return thumbnailDisplaySettings.width;
@@ -31,18 +30,12 @@ export class ThumbnailImageContainerComponent {
 
 
 	hover() {
-		if (not(this.selectEnabled)) this.__hovered = true;
-	}
-
-
-	unHover() {
-		this.__hovered = false;
+		if (not(this.selectEnabled)) super.hover();
 	}
 
 
 	isHovered(): boolean {
-		if (this.selectEnabled) return false;
-		else return this.__hovered;
+		return (this.selectEnabled ? false : super.isHovered());
 	}
 
 
@@ -56,6 +49,5 @@ export class ThumbnailImageContainerComponent {
 		if (this.selectEnabled) return [];
 		else return this.imageRouterLink;
 	}
-
 
 }

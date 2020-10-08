@@ -11,8 +11,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
 	declarations: [
-		AppComponent,
 		AppAlertComponent,
+		AppComponent,
 		PageNotFoundComponent
 	],
 	imports: [
@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		AppNavigatorModule,
 		AppRoutingModule
 	],
-	providers: [Title],
+	providers: [Title], // for setting <title>
 	bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -14,7 +14,7 @@
 		[class.item-dragged-onto-from-right]="draggedOntoFromRight"
 >
 
-	<div (mouseover)="hovered = true" (mouseleave)="hovered = false">
+	<div (mouseover)="hover()" (mouseleave)="unHover()">
 
 		<div class="spacer  left-spacer"></div>
 

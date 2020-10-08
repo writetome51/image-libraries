@@ -1,5 +1,5 @@
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
 import { LibraryModuleRoutesData as moduleRoutes } from './library-module-routes.data';
 import { NgModule } from '@angular/core';

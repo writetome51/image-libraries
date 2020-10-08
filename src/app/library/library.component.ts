@@ -34,13 +34,12 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 	constructor(
 		private __paginator: LibraryPaginatorService,
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver:
-			GetLibraryRouteParamsObserverService
+		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService
 	) {
 		super();
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionObserver.go()
+			this.__getRouteParamsObserver.go()
 		);
 		this._subscriptions.push(routeParamsSubscription);
 	}
