@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
-import { NewLibraryInputsService } from '../../services/validating-inputs/new-library-inputs.service';
+import { NewLibraryInputsService } from './new-library-inputs.service';
 
 
 @Component({
 	selector: 'new-library-form-inputs',
-	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
+	template: `<app-validating-form-inputs [data]="inputs"></app-validating-form-inputs>`
 })
 export class NewLibraryFormInputsComponent extends ValidatingFormInputsComponent {
 

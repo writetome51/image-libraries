@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '../../clear-form-on-init-and-alert-on-destroy.component';
-import { environment } from '../../../environments/environment';
+	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
+import { DeleteUserProcessorService } from './delete-user-processor/delete-user-processor.service';
+import { environment } from '@environments/environment';
+import { HTMLImage } from '@interfaces/html-image';
 
 
 @Component({
@@ -11,11 +13,16 @@ import { environment } from '../../../environments/environment';
 })
 export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
 
-	gif = {
+	explodingHead: HTMLImage = {
 		src: environment.assets + 'head-exploding.gif',
+		alt: 'Exploding head',
 		width: 124,
 		height: 82,
-		alt: 'Head exploding'
 	};
+
+
+	constructor(public processor: DeleteUserProcessorService) {
+		super();
+	}
 
 }

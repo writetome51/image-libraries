@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragAndDropModule } from 'angular-draggable-droppable';
+import { NgModule } from '@angular/core';
 import { ReArrangeableGridListComponent } from './re-arrangeable-grid-list.component';
 import { ReArrangeableGridListItemComponent }
 	from './re-arrangeable-grid-list-item/re-arrangeable-grid-list-item.component';
-import { DeleteItemButtonComponent }
-	from './re-arrangeable-grid-list-item/delete-item-button/delete-item-button.component';
+import { HoverableContainerModule }
+	from '@app/shared/modules/hoverable-container/hoverable-container.module';
 
 
 @NgModule({
 	declarations: [
 		ReArrangeableGridListComponent,
-		ReArrangeableGridListItemComponent,
-		DeleteItemButtonComponent
+		ReArrangeableGridListItemComponent
 	],
 	imports: [
 		CommonModule,
 		DragAndDropModule,
+		HoverableContainerModule
 	],
 	exports: [
 		ReArrangeableGridListComponent,

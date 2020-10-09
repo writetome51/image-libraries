@@ -1,9 +1,10 @@
 <div>
-	<img [src]="gif.src" [width]="gif.width" [height]="gif.height"  [alt]="gif.alt"/>
+	<app-image [data]="explodingHead"></app-image>
+
 	<p class="warning-text">You cannot undo this.</p>
 	<p>If you wish to proceed, enter your info and click Delete</p>
 </div>
 
 <delete-user-form-inputs></delete-user-form-inputs>
 
-<delete-user-button></delete-user-button>
+<save-changes-button [label]="'Delete'" [processor]="processor"></save-changes-button>

@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { noValue } from '@writetome51/has-value-no-value';
-import { GetLibraryNamesProcessorService }
-	from '../../services/data-transport-processor/get-library-names-processor.service';
-import { LibraryNamesData as libraryNames } from '../../../data-structures/runtime-state-data/static-classes/library-names.data';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '../../services/perform-data-process-requiring-waiting.service';
-import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
+import { LibraryNamesData as libraryNames }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { MakeSureLibrariesAreLoadedService }
+	from '@services/make-sure-libraries-are-loaded.service';
 
 
 @Component({
@@ -23,10 +19,8 @@ export class LibrariesListComponent {
 	}
 
 
-	constructor(private __getLibraryNamesProcessor: GetLibraryNamesProcessorService) {
-		if (noValue(libraryNames.data)) performDataProcessRequiringWaiting.go(
-			this.__getLibraryNamesProcessor, operationStatus
-		);
+	constructor(private __makeSureLibrariesAreLoaded: MakeSureLibrariesAreLoadedService) {
+		this.__makeSureLibrariesAreLoaded.go();
 	}
 
 }

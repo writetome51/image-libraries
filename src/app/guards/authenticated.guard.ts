@@ -1,12 +1,11 @@
 import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '../services/local-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
 
 
 @Injectable({providedIn: 'root'})
 
 export class AuthenticatedGuard implements CanActivate {
-
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,
@@ -27,6 +26,5 @@ export class AuthenticatedGuard implements CanActivate {
 		this.__router.navigate(['/']);
 		return false;
 	}
-
 
 }

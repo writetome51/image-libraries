@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginProcessorService }
-	from '../../services/data-transport-processor/authentication/login-processor.service';
-import { StartDataProcessComponent } from '../../start-data-process.component';
+import { LoginProcessorService } from './login-processor.service';
+import { StartDataProcessContainerComponent }
+	from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { StartDataProcessComponent } from '../../start-data-process.component';
 		</start-data-process-button>
 	`
 })
-export class LoginButtonComponent extends StartDataProcessComponent {
+export class LoginButtonComponent extends StartDataProcessContainerComponent {
 
 	constructor(__loginProcessor: LoginProcessorService) {
 		super(__loginProcessor);

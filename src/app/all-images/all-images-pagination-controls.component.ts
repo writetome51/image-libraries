@@ -1,8 +1,8 @@
+import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
+import { AllImagesPaginatorService }
+	from './services/all-images-paginator/all-images-paginator.service';
+import { AppNavigatorChoiceData as choice } from '@app-navigator/app-navigator-choice.data';
 import { Component } from '@angular/core';
-import { AllImagesPaginatorService } from '../services/app-paginator/all-images-paginator.service';
-import { AllImagesJumpToPageNumberInputService }
-	from '../services/validating-input/jump-to-page-number/all-images-jump-to-page-number-input.service';
-import { AppModuleRoutesData } from '../app-module-routes.data';
 
 
 @Component({
@@ -10,20 +10,20 @@ import { AppModuleRoutesData } from '../app-module-routes.data';
 	template: `
 		<app-pagination-controls
 			[routeBeforePageNumber]="routeBeforePageNumber"
-			[paginator]="allImagesPaginator" [jumpToPageInput]="allImagesJumpToPageNumberInput"
+			[paginator]="allImagesPaginator" [jumpToPageInput]="allImagesJumpToPageInput"
 		>
 		</app-pagination-controls>
 	`
 })
 export class AllImagesPaginationControlsComponent {
 
-	thisModulesRoute = AppModuleRoutesData.AllImagesModule;
-	routeBeforePageNumber = `${this.thisModulesRoute}/page`;
+	moduleRoute = choice.AllImagesModule.path;
+	routeBeforePageNumber = `${this.moduleRoute}/page`;
 
 
 	constructor(
 		public allImagesPaginator: AllImagesPaginatorService,
-		public allImagesJumpToPageNumberInput: AllImagesJumpToPageNumberInputService
+		public allImagesJumpToPageInput: AllImagesJumpToPageInputService
 	) {
 	}
 

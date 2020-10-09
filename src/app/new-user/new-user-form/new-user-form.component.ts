@@ -5,15 +5,10 @@ import { Component } from '@angular/core';
 	selector: 'new-user-form',
 	template: `
 		<div class="form-container">
-
 			<form>
-
 				<new-user-form-inputs></new-user-form-inputs>
-
 				<create-user-button></create-user-button>
-
 			</form>
-
 		</div>
 	`
 })

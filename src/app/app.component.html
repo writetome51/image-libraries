@@ -3,7 +3,7 @@
 	<header id="site-header">
 
 		<h1>
-			<a routerLink="/" routerLinkActive="active" title="home page">{{ title }}</a>
+			<a routerLink="/" routerLinkActive="active" title="home page">{{ siteHeading }}</a>
 		</h1>
 
 		<app-navigator *ngIf="sessionIDExists"></app-navigator>
@@ -13,9 +13,7 @@
 	<app-alert *ngIf="alert.data"></app-alert>
 
 	<main>
-		<section>
-			<router-outlet></router-outlet>
-		</section>
+		<router-outlet></router-outlet>
 	</main>
 
 </div>

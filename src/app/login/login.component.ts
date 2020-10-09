@@ -1,7 +1,7 @@
+import { AppModuleRoutesData } from '../app-module-routes.data';
 import { Component } from '@angular/core';
 import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '../clear-form-on-init-and-alert-on-destroy.component';
-import { AppModuleRoutesData } from '../app-module-routes.data';
+	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
 
 
 @Component({

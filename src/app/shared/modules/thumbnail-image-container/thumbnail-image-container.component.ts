@@ -1,0 +1,50 @@
+import { Component, Input } from '@angular/core';
+import { DBImage } from '@interfaces/db-image';
+import { HoverableContainerComponent }
+	from '@app/shared/modules/hoverable-container/hoverable-container.component';
+import { ImageSelectorService as imageSelector }
+	from '@thumbnail-image-container/image-selector.service';
+import { not } from '@writetome51/not';
+import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+
+
+@Component({
+	selector: 'thumbnail-image-container',
+	templateUrl: './thumbnail-image-container.component.html',
+	styleUrls: ['./thumbnail-image-container.component.css']
+})
+export class ThumbnailImageContainerComponent {
+
+	@Input() image: DBImage;
+	@Input() imageRouterLink: (string[] | string) = [];
+
+	// if selectEnabled is true, hovering is disabled and the image has no routerLink.
+	@Input() selectEnabled = false;
+
+	// Only works if hovering is enabled.
+	@Input() deleteGlyphiconEnabled = false;
+
+
+	get imageWidth(): number {
+		return thumbnailDisplaySettings.width;
+	}
+
+
+	isHovered(container: HoverableContainerComponent): boolean {
+		return (this.selectEnabled ? false : container.isHovered());
+	}
+
+
+	toggleSelect(): void {
+		if (not(this.selectEnabled)) return;
+		imageSelector.toggleSelect(this.image);
+	}
+
+
+	getRouterLink(): string[] | string {
+		if (this.selectEnabled) return [];
+		else return this.imageRouterLink;
+	}
+
+}

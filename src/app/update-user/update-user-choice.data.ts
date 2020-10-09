@@ -1,8 +1,8 @@
-import { UpdateUserEmailFormComponent }
-	from './update-user-email-form/update-user-email-form.component';
+import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
+import { UpdateEmailFormComponent }
+	from './update-email-form/update-email-form.component';
 import { UpdateUserPasswordFormComponent }
 	from './update-user-password-form/update-user-password-form.component';
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 
 
 export class UpdateUserChoiceData {
@@ -10,8 +10,8 @@ export class UpdateUserChoiceData {
 	static readonly email = {
 		path: 'email', // router path
 		linkText: 'Email',
-		component: UpdateUserEmailFormComponent, // component to load when path is accessed
-		heading: 'Email' // used for UpdateUserComponent.formHeading
+		component: UpdateEmailFormComponent, // component to load when path is accessed
+		heading: 'Email'
 	};
 	static readonly password = {
 		path: 'password',

@@ -1,17 +1,14 @@
 <nav>
 
 	<div class="centered-nav-block-container">
+
 		<logout-button></logout-button>
 
-		<div *ngIf="!(updateUserIsActive)" class="input-container nav-link-container">
-			<a [routerLink]="moduleRoutes.UpdateUserModule" [routerLinkActive]="'active'">
-				Update Account
-			</a>
-		</div>
-
-		<a [routerLink]="moduleRoutes.AddImagesModule">Add Images</a>
-
-		<a [routerLink]="['all-images']">All Images</a>
+		<ng-container *ngFor="let choice of choices">
+			<div *ngIf="routeInactive(choice.path)" class="input-container nav-link-container">
+				<a [routerLink]="choice.path">{{choice.linkText}}</a>
+			</div>
+		</ng-container>
 
 	</div>
 

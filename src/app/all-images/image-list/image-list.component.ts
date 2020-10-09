@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { DBImage } from '../../../interfaces/db-image';
-import { AllImagesPaginatorService } from '../../services/app-paginator/all-images-paginator.service';
+import { DBImage } from '@interfaces/db-image';
+import { AllImagesPaginatorService }
+	from '../services/all-images-paginator/all-images-paginator.service';
+import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';
+import { PageImagesData as pageImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({
@@ -10,13 +14,19 @@ import { AllImagesPaginatorService } from '../../services/app-paginator/all-imag
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		// If paginator.currentPage is undefined it triggers error, so we catch it:
+		// If the currentPage is undefined it triggers error, so we catch it:
 		try {
-			return this.allImagesPaginator.currentPage;
+			pageImages.data =  this.allImagesPaginator.getCurrentPage();
+			return pageImages.data;
 		}
 		catch (e) {
 			return undefined;
 		}
+	}
+
+
+	get fullSizeImageRoute(){
+		return '/' + appModuleRoutes.FullSizeImageViewerModule;
 	}
 
 	constructor(public allImagesPaginator: AllImagesPaginatorService) {

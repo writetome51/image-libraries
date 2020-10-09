@@ -10,7 +10,10 @@
 	<link rel="stylesheet"
 		  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
 	>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <noscript>
 	<div class="container" style="text-align:center;position: relative;top:50px;">
@@ -21,5 +24,12 @@
 
 <app-root></app-root>
 
+<!--  Required by GoogleMapsModule  -->
+<script src="google-map.js"></script>
+<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_ZngPxWmoZeB63JcsRLFdxXFOszZR8Co&callback=googleMap.initMap"
+>
+</script>
 </body>
+
 </html>

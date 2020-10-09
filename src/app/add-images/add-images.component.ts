@@ -1,6 +1,6 @@
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class AddImagesComponent {
 
 
 	get savingNewImages() {
-		return operationStatus.waiting;
+		return processingStatus.waiting;
 	}
 
 }

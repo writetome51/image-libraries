@@ -1,6 +1,4 @@
-import { AppModuleRoutesData as moduleRoute } from './app-module-routes.data';
-import { DeAuthenticatedGuard } from './guards/de-authenticated.guard';
-import { LoginComponent } from './login/login.component';
+import { AppModuleRoutesData as moduleRoutes } from './app-module-routes.data';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,37 +7,37 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{
-		path: moduleRoute.NewUserModule, // can only access when logged out
+		path: moduleRoutes.NewUserModule, // can only access when logged out
 		// example of lazy-loading a module:
 		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
 
 	{
-		path: moduleRoute.LibrariesModule,
+		path: moduleRoutes.LibrariesModule,
 		loadChildren: () => import('./libraries/libraries.module').then(mod => mod.LibrariesModule)
 	},
 
 	{
-		path: moduleRoute.LibraryModule,
+		path: moduleRoutes.LibraryModule,
 		loadChildren: () => import('./library/library.module').then(mod => mod.LibraryModule)
 	},
 
 	{
-		path: moduleRoute.SecurityQuestionModule,
+		path: moduleRoutes.SecurityQuestionModule,
 		loadChildren: () => import('./security-question/security-question.module')
 			.then(mod => mod.SecurityQuestionModule)
 	},
 
 	{
-		path: moduleRoute.AllImagesModule,
-		loadChildren: () => import('./all-images/all-images.module').then(mod => mod.AllImagesModule)
+		path: moduleRoutes.FullSizeImageViewerModule,
+		loadChildren: () => import('./full-size-image-viewer/full-size-image-viewer.module')
+			.then(mod => mod.FullSizeImageViewerModule)
 	},
 
 	{
-		path: '', // the logged-out homepage
-		component: LoginComponent,
+		path: moduleRoutes.LoginModule,
 		pathMatch: 'full',
-		canActivate: [DeAuthenticatedGuard]
+		loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
 	},
 
 	// This path must come last, meaning if none of the above paths apply, do this.

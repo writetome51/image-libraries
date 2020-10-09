@@ -1,12 +1,11 @@
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
+import { CurrentRouteService } from '@services/current-route.service';
+import { GetAllImagesRouteParamsObserverService }
+	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
+import { MakeSureLibrariesAreLoadedService } from '@services/make-sure-libraries-are-loaded.service';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
-import { CurrentRouteService } from '../services/current-route.service';
-import { GetAllImagesRouteParamsSubscriptionObserverService }
-	from './services/get-all-images-route-params-subscription-observer.service';
-import { SelectedImageNamesData as selectedImageNames}
-	from '../../data-structures/runtime-state-data/selected-image-names.data';
 
 
 @Component({
@@ -15,31 +14,29 @@ import { SelectedImageNamesData as selectedImageNames}
 })
 export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
-
 	get gettingImages(): boolean {
-		return operationStatus.waiting;
-	}
-
-
-	get imagesSelected(): boolean {
-		return selectedImageNames.data.length > 0;
+		return processingStatus.waiting;
 	}
 
 
 	constructor(
+		private __makeSureLibrariesAreLoaded: MakeSureLibrariesAreLoadedService,
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver: GetAllImagesRouteParamsSubscriptionObserverService
+		private __getRouteParamsObserver: GetAllImagesRouteParamsObserverService
 	) {
 		super();
 
-		operationStatus.waiting = true;
+		processingStatus.waiting = true;
 
-		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionObserver.go()
+		this.__makeSureLibrariesAreLoaded.go().then(
+			() => {
+				let routeParamsSubscription = this.__currentRoute.params$.subscribe(
+					this.__getRouteParamsObserver.go()
+				);
+
+				this._subscriptions.push(routeParamsSubscription);
+			}
 		);
-
-		this._subscriptions.push(routeParamsSubscription);
 	}
-
 
 }

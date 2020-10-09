@@ -1,16 +1,14 @@
-import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
-	from '@angular/router';
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FullSizeImageComponent }
-	from '../library/image-viewer/full-size-image/full-size-image.component';
+	from '../full-size-image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '../library/library.component';
-import { AlertData as alert } from '../../data-structures/runtime-state-data/static-classes/alert.data';
-import { LibraryChangesService } from '../services/library/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
 	constructor(private __libraryChanges: LibraryChangesService) {

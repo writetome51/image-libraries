@@ -1,8 +1,11 @@
-import { AppPaginationControlsModule } from '../app-pagination-controls/app-pagination-controls.module';
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { BigLoadingSpinnerModule } from '../big-loading-spinner/big-loading-spinner.module';
+import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
+import { AppValidatingFormInputsModule }
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
+import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { CreateLibraryButtonComponent } from './new-library-form/create-library-button.component';
+import { CreateLibraryButtonComponent }
+	from './new-library-form/create-library-button/create-library-button.component';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
@@ -11,10 +14,10 @@ import { NewLibraryFormComponent } from './new-library-form/new-library-form.com
 import { NewLibraryFormInputsComponent } from './new-library-form/new-library-form-inputs.component';
 import { NewLibraryButtonComponent } from './new-library-button.component';
 import { StartDataProcessButtonModule }
-	from '../start-data-process-button/start-data-process-button.module';
+	from '@start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
-import { ThumbnailImageModule } from '../thumbnail-image/thumbnail-image.module';
-import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.module';
+import { ThumbnailImageContainerModule }
+	from '@thumbnail-image-container/thumbnail-image-container.module';
 
 
 @NgModule({
@@ -30,9 +33,9 @@ import { ValidatingInputsModule } from '../validating-inputs/validating-inputs.m
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
-		ThumbnailImageModule,
+		ThumbnailImageContainerModule,
 		AppPaginationControlsModule,
-		ValidatingInputsModule,
+		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{

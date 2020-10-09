@@ -1,5 +1,5 @@
-import { AuthenticatedGuard } from '../guards/authenticated.guard';
-import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
 import { LibraryModuleRoutesData as moduleRoutes } from './library-module-routes.data';
 import { NgModule } from '@angular/core';
@@ -9,9 +9,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: moduleRoutes.ImageViewerModule,
-		loadChildren: () => import('./image-viewer/image-viewer.module')
-			.then(mod => mod.ImageViewerModule)
+		path: moduleRoutes.FullSizeImageViewerModule,
+		loadChildren: () => import('../full-size-image-viewer/full-size-image-viewer.module')
+			.then(mod => mod.FullSizeImageViewerModule)
 	},
 
 	{

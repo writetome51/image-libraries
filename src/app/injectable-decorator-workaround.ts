@@ -24,7 +24,7 @@
  @Modify({name: 'Biff'}) // created with getClassModificationDecorator()
  export class __TheClass {
 
- 	constructor(public local: LocalSessionIDService) {
+ 	constructor(public obj: ExampleService) {
 	}
 
  }

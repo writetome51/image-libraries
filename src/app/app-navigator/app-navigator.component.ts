@@ -1,6 +1,7 @@
+import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
-import { CurrentRouteService } from '../services/current-route.service';
-import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data';
+import { CurrentRouteService } from '@services/current-route.service';
+import { not } from '@writetome51/not';
 
 
 @Component({
@@ -9,15 +10,15 @@ import { AppNavigatorModuleRoutesData } from './app-navigator-module-routes.data
 })
 export class AppNavigatorComponent {
 
-	moduleRoutes = AppNavigatorModuleRoutesData;
-
-
-	get updateUserIsActive(): boolean {
-		return this.__currentRoute.isActive(this.moduleRoutes.UpdateUserModule);
-	}
+	choices = Object.values(AppNavigatorChoiceData);
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
+	}
+
+
+	routeInactive(route): boolean {
+		return not(this.__currentRoute.isActive(route));
 	}
 
 }

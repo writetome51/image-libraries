@@ -1,15 +1,13 @@
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { CurrentRouteService } from '../services/current-route.service';
-import { LibraryPaginatorService } from '../services/app-paginator/library-paginator.service';
-import { RequestedLibraryData as requestedLibrary }
-	from '../../data-structures/runtime-state-data/requested-library.data';
+import { CurrentRouteService } from '@services/current-route.service';
+import { GetLibraryRouteParamsObserverService }
+	from './services/get-library-route-params-observer/get-library-route-params-observer.service';
+import { ImageTotalData as imageTotal} from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
+import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
-import { GetLibraryRouteParamsSubscriptionObserverService }
-	from './get-library-route-params-subscription-observer.service';
-import { OperationStatusData as operationStatus }
-	from '../../data-structures/runtime-state-data/operation-status.data';
-import { ImageTotalData as imageTotal}
-	from '../../data-structures/runtime-state-data/static-classes/image-total.data';
 
 
 @Component({
@@ -24,7 +22,7 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 
 
 	get gettingImages(): boolean {
-		return operationStatus.waiting;
+		return processingStatus.waiting;
 	}
 
 
@@ -36,12 +34,12 @@ export class LibraryComponent extends UnsubscribeOnDestroyComponent {
 	constructor(
 		private __paginator: LibraryPaginatorService,
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsSubscriptionObserver: GetLibraryRouteParamsSubscriptionObserverService
+		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService
 	) {
 		super();
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsSubscriptionObserver.go()
+			this.__getRouteParamsObserver.go()
 		);
 		this._subscriptions.push(routeParamsSubscription);
 	}

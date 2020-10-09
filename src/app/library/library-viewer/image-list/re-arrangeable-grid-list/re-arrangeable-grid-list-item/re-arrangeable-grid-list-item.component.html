@@ -14,17 +14,14 @@
 		[class.item-dragged-onto-from-right]="draggedOntoFromRight"
 >
 
-	<div (mouseover)="hovered = true" (mouseleave)="hovered = false">
+	<hoverable-container>
 
 		<div class="spacer  left-spacer"></div>
-
-		<delete-item-button [class.invisible]="!(hovered)" (click)="deleteItem()">
-		</delete-item-button>
 
 		<ng-content></ng-content>
 
 		<div class="spacer  right-spacer"></div>
 
-	</div>
+	</hoverable-container>
 
 </li>

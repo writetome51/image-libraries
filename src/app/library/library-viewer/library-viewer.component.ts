@@ -1,10 +1,9 @@
+import { BackgroundProcessingStatusData as processingStatus }
+	from '@runtime-state-data/background-processing-status.data';
 import { Component } from '@angular/core';
-import { LibraryChangesService } from '../../services/library/library-changes.service';
-import { OperationStatusData as operationStatus }
-	from '../../../data-structures/runtime-state-data/operation-status.data';
-import { ImageTotalData as imageTotal }
-	from '../../../data-structures/runtime-state-data/static-classes/image-total.data';
-import { LibraryPaginatorService } from '../../services/app-paginator/library-paginator.service';
+import { ImageTotalData as imageTotal } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryChangesService } from '@services/library/library-changes.service';
+import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
 
 
 @Component({
@@ -19,7 +18,7 @@ export class LibraryViewerComponent {
 
 
 	get pageNumber() {
-		return this.__paginator.currentPageNumber;
+		return this.__paginator.getCurrentPageNumber();
 	}
 
 
@@ -29,7 +28,7 @@ export class LibraryViewerComponent {
 
 
 	get verifyingLibrary(): boolean {
-		return operationStatus.waiting;
+		return processingStatus.waiting;
 	}
 
 

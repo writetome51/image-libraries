@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { UpdatePasswordFormInputsService }
-	from '../../services/validating-inputs/current-user-inputs/update-password-form-inputs.service';
+import { UpdatePasswordInputsService } from './update-password-inputs/update-password-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
 @Component({
 	selector: 'update-user-password-form-inputs',
-	template: `<validating-inputs [inputs]="inputs"></validating-inputs>`
+	template: `<app-validating-form-inputs [data]="inputs"></app-validating-form-inputs>`
 })
 export class UpdateUserPasswordFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__updatePasswordFormInputs: UpdatePasswordFormInputsService) {
+	constructor(__updatePasswordFormInputs: UpdatePasswordInputsService) {
 		super(__updatePasswordFormInputs);
 	}
 

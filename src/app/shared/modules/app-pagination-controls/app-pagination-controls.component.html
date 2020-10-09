@@ -1,0 +1,25 @@
+<div>
+
+	<a *ngIf="(getTotalPages() > 0) && (getCurrentPage() > 1)"
+	   [routerLink]="['/' + routeBeforePageNumber, getPreviousPage()]"
+	>
+		previous
+	</a>
+
+	<a *ngIf="getCurrentPage() < getTotalPages()"
+	   [routerLink]="['/' + routeBeforePageNumber, getNextPage()]"
+	>
+		next
+	</a>
+
+	<p *ngIf="getTotalPages() > 0">
+		Page {{getCurrentPage()}} of {{getTotalPages()}}
+	</p>
+
+	<jump-to-page *ngIf="jumpToPageInput && (getTotalPages() > 1)"
+				  [pageNumberInput]="jumpToPageInput.data"
+				  [routeBeforePageNumber]="routeBeforePageNumber"
+	>
+	</jump-to-page>
+
+</div>

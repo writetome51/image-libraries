@@ -2,6 +2,13 @@
 
 	<p>Choose images from your own device:</p>
 
-	<input type="file" multiple (change)="upload($event.target.files)"/>
+	<div class="input-group">
+		<input type="file" multiple (change)="upload($event.target.files)"
+			   class="custom-file-input" id="inputGroupFile01" style="display: none;"
+		/>
+		<label class="custom-file-input btn btn-default" for="inputGroupFile01">
+			Choose File(s)
+		</label>
+	</div>
 
 </div>

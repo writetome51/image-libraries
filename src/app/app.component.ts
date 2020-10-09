@@ -1,9 +1,10 @@
-import { AlertData } from '../data-structures/runtime-state-data/static-classes/alert.data';
+import { AlertData } from '@runtime-state-data/static-classes/alert.data';
+import { AppNameData as appName } from '@read-only-data/app-name.data';
 import { Component, HostListener } from '@angular/core';
-import { LocalSessionIDService } from './services/local-data/local-session-id.service';
-import { GoogleMapsApiKeyData } from '../data-structures/read-only-data/google-maps-api-key.data';
-import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData }
-	from './services/reset-runtime-state-data-to-default-settings.service';
+import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
+import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
+	from '@services/reset-runtime-state-data-to-default-settings.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,9 +13,20 @@ import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateData 
 })
 export class AppComponent {
 
-	title = 'Image Libraries';
+	siteHeading = appName.data;
 	alert = AlertData;
-	gMapsApiKey = GoogleMapsApiKeyData;
+
+
+	get sessionIDExists(): boolean {
+		return (this.__localSessionID.get().length > 0);
+	}
+
+
+	constructor(private __localSessionID: LocalSessionIDService, private __title: Title) {
+		resetRuntimeStateDataToDefaults.go();
+
+		this.__title.setTitle(appName.data);
+	}
 
 
 	// Adds keyup listener to document.
@@ -24,14 +36,5 @@ export class AppComponent {
 		// console.log(event);
 	}
 
-
-	get sessionIDExists(): boolean {
-		return (this.__localSessionID.get().length > 0);
-	}
-
-
-	constructor(private __localSessionID: LocalSessionIDService) {
-		resetRuntimeStateData.go();
-	}
 
 }

@@ -3,9 +3,8 @@ a, a:hover {
 	text-decoration: none;
 }
 
-
 button {
-	/*	height: 100%;  */
+	width: fit-content;
 }
 
 
@@ -67,7 +66,7 @@ img {
 }
 
 
-.input-container.nav-link-container {
+.nav-link-container {
 	display: inline;
 	margin: auto;
 	padding: 0 3px;
@@ -94,30 +93,11 @@ img {
 
 
 div.dropdown {
-	width: 100px;
+	width: fit-content;
 	margin: auto;
 }
 
 
 div.dropdown button {
-	width: 100%;
-}
-
-
-ul.dropdown-menu {
-	/*  min-width: 100px; */
-
-
-}
-
-
-ul.dropdown-menu li {
-	width: inherit;
-	border-bottom: 1px dotted lightgrey;
-	padding: 0;
-}
-
-
-ul.dropdown-menu li.hovered {
-	background-color: lightgrey;
+/*	width: 100%; */
 }

@@ -1,0 +1,17 @@
+<!--
+The text inside the button, when clicked, is replaced by a loading spinner.
+-->
+
+<div class="processing-button-container">
+
+	<button #button class="btn btn-default" [type]="type" (click)="runClickHandler($event)"
+			[style]="width"
+	>
+
+		<ng-content *ngIf="!(clicked)"></ng-content>
+
+		<tiny-loading-spinner *ngIf="clicked && processingStatus.waiting"></tiny-loading-spinner>
+
+	</button>
+
+</div>

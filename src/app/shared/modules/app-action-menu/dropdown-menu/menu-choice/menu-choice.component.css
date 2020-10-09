@@ -1,0 +1,36 @@
+li {
+	display: block;
+	width: auto;
+}
+
+.dropdown-submenu {
+	position: relative;
+}
+
+
+.dropdown-submenu .dropdown-menu {
+	display: block;
+	top: 0;
+	left: 100%;
+	margin-top: -1px;
+}
+
+
+li.menu-choice {
+	border-bottom: 1px dotted lightgrey;
+	padding: 5px 10px 5px 10px;
+}
+
+
+li.menu-choice.hovered {
+	background-color: #ececec;
+}
+
+.submenu-label-container {
+	display: inline;
+	width: fit-content;
+}
+
+img {
+	display: inline;
+}
