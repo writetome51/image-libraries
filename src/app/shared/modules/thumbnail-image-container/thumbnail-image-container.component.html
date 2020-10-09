@@ -1,7 +1,7 @@
 <hoverable-container #container>
 
 	<div class="image-container"
-		 [class.selected-image-container]="image['selected'] || isHovered(container)"
+		 [class.highlighted-image-container]="image['selected'] || isHovered(container)"
 		 (click)="toggleSelect()"
 	>
 

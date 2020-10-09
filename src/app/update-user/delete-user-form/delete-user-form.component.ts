@@ -16,8 +16,7 @@ export class DeleteUserFormComponent extends ClearFormOnInitAndAlertOnDestroyCom
 	explodingHead: HTMLImage = {
 		src: environment.assets + 'head-exploding.gif',
 		alt: 'Exploding head',
-		width: 124,
-		height: 82,
+		width: 124
 	};
 
 

@@ -5,8 +5,6 @@ import { HoverableContainerComponent }
 import { ImageSelectorService as imageSelector }
 	from '@thumbnail-image-container/image-selector.service';
 import { not } from '@writetome51/not';
-import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({
@@ -24,11 +22,6 @@ export class ThumbnailImageContainerComponent {
 
 	// Only works if hovering is enabled.
 	@Input() deleteGlyphiconEnabled = false;
-
-
-	get imageWidth(): number {
-		return thumbnailDisplaySettings.width;
-	}
 
 
 	isHovered(container: HoverableContainerComponent): boolean {

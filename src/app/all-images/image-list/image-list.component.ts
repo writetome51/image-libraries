@@ -16,7 +16,7 @@ export class ImageListComponent {
 	get images(): DBImage[] {
 		// If the currentPage is undefined it triggers error, so we catch it:
 		try {
-			pageImages.data =  this.allImagesPaginator.getCurrentPage();
+			pageImages.data = this.allImagesPaginator.getCurrentPage();
 			return pageImages.data;
 		}
 		catch (e) {
@@ -25,9 +25,10 @@ export class ImageListComponent {
 	}
 
 
-	get fullSizeImageRoute(){
+	get fullSizeImageRoute() {
 		return '/' + appModuleRoutes.FullSizeImageViewerModule;
 	}
+
 
 	constructor(public allImagesPaginator: AllImagesPaginatorService) {
 	}
