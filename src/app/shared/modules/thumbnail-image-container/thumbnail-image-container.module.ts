@@ -5,13 +5,23 @@ import { DeleteImageGlyphiconComponent }
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThumbnailImageContainerComponent } from './thumbnail-image-container.component';
+import { HoverableContainerModule }
+	from '@app/shared/modules/hoverable-container/hoverable-container.module';
+import { ThumbnailImageComponent } from './thumbnail-image/thumbnail-image.component';
+import { AppImageModule } from '@app/shared/modules/app-image/app-image.module';
 
 
 @NgModule({
-	declarations: [ThumbnailImageContainerComponent, DeleteImageGlyphiconComponent],
+	declarations: [
+		ThumbnailImageComponent,
+		ThumbnailImageContainerComponent,
+		DeleteImageGlyphiconComponent
+	],
 	imports: [
 		CommonModule,
 		AppActionMenuModule,
+		HoverableContainerModule,
+		AppImageModule,
 		RouterModule
 	],
 	exports: [ThumbnailImageContainerComponent]

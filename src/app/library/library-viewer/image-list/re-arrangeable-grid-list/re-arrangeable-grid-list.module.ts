@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { ReArrangeableGridListComponent } from './re-arrangeable-grid-list.component';
 import { ReArrangeableGridListItemComponent }
 	from './re-arrangeable-grid-list-item/re-arrangeable-grid-list-item.component';
+import { HoverableContainerModule }
+	from '@app/shared/modules/hoverable-container/hoverable-container.module';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { ReArrangeableGridListItemComponent }
 	imports: [
 		CommonModule,
 		DragAndDropModule,
+		HoverableContainerModule
 	],
 	exports: [
 		ReArrangeableGridListComponent,

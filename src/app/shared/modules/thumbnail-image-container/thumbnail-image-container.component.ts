@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '@interfaces/db-image';
-import { HoverableComponent } from '@abstract-components/hoverable.component';
-import { ImageSelectorService as imageSelector } from './image-selector.service';
+import { HoverableContainerComponent }
+	from '@app/shared/modules/hoverable-container/hoverable-container.component';
+import { ImageSelectorService as imageSelector }
+	from '@thumbnail-image-container/image-selector.service';
 import { not } from '@writetome51/not';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
@@ -12,7 +14,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	templateUrl: './thumbnail-image-container.component.html',
 	styleUrls: ['./thumbnail-image-container.component.css']
 })
-export class ThumbnailImageContainerComponent extends HoverableComponent {
+export class ThumbnailImageContainerComponent {
 
 	@Input() image: DBImage;
 	@Input() imageRouterLink: (string[] | string) = [];
@@ -29,13 +31,8 @@ export class ThumbnailImageContainerComponent extends HoverableComponent {
 	}
 
 
-	hover() {
-		if (not(this.selectEnabled)) super.hover();
-	}
-
-
-	isHovered(): boolean {
-		return (this.selectEnabled ? false : super.isHovered());
+	isHovered(container: HoverableContainerComponent): boolean {
+		return (this.selectEnabled ? false : container.isHovered());
 	}
 
 

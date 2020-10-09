@@ -1,3 +1,4 @@
+import { AppImageModule } from '@app/shared/modules/app-image/app-image.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
@@ -33,6 +34,7 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 		FormsModule,
 		AppValidatingFormInputsModule,
 		SaveChangesButtonModule,
+		AppImageModule,
 		UpdateUserRoutingModule
 	]
 })

@@ -1,25 +1,22 @@
-<div class="image-container"
-	 [class.selected-image-container]="image['selected'] || isHovered()"
-	 (click)="toggleSelect()"
-	 (mouseover)="hover()" (mouseleave)="unHover()"
->
+<hoverable-container #container>
 
-	<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
-							[class.invisible]="!(isHovered())"
+	<div class="image-container"
+		 [class.selected-image-container]="image['selected'] || isHovered(container)"
+		 (click)="toggleSelect()"
 	>
-	</delete-image-glyphicon>
 
-	<a [routerLink]="getRouterLink()">
+		<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
+								[class.invisible]="!(isHovered(container))"
+		>
+		</delete-image-glyphicon>
 
-		<!--  Setting draggable to false on the img prevents a ghost-image from being
-		dragged.   -->
+		<a [routerLink]="getRouterLink()">
+			<thumbnail-image [data]="image"></thumbnail-image>
+		</a>
 
-		<img draggable="false" [src]="image.src" alt="{{image.description}}" [width]="imageWidth"
-			 [title]="image.name"
-		/>
+		<app-action-menu [class.invisible]="!(isHovered(container))" [image]="image">
+		</app-action-menu>
 
-	</a>
+	</div>
 
-	<app-action-menu [class.invisible]="!(isHovered())" [image]="image"></app-action-menu>
-
-</div>
+</hoverable-container>

@@ -1,4 +1,7 @@
-export abstract class HoverableComponent {
+import { Hoverable } from '@interfaces/hoverable';
+
+
+export abstract class HoverableComponent implements Hoverable {
 
 	private __hovered = false;
 

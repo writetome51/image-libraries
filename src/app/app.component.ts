@@ -17,14 +17,6 @@ export class AppComponent {
 	alert = AlertData;
 
 
-	// Adds keyup listener to document.
-	@HostListener('document:keyup', ['$event'])
-	onKeyup(event) {
-		// logging event to console to see its contents:
-		// console.log(event);
-	}
-
-
 	get sessionIDExists(): boolean {
 		return (this.__localSessionID.get().length > 0);
 	}
@@ -34,6 +26,14 @@ export class AppComponent {
 		resetRuntimeStateDataToDefaults.go();
 
 		this.__title.setTitle(appName.data);
+	}
+
+
+	// Adds keyup listener to document.
+	@HostListener('document:keyup', ['$event'])
+	onKeyup(event) {
+		// logging event to console to see its contents:
+		// console.log(event);
 	}
 
 
