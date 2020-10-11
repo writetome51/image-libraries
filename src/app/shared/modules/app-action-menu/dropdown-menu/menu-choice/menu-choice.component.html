@@ -1,23 +1,17 @@
-<li role="presentation" class="menu-choice"
-	[class.dropdown-submenu]="isSubmenu()" [class.hovered]="hovered"
-	(click)="toggleClick($event)" (mouseover)="hover()" (mouseleave)="unHover_and_unClick()"
+<li role="presentation" class="menu-choice" [class.dropdown-submenu]="hasSubmenu()"
+	(click)="toggleClick($event)" (mouseleave)="unHover_and_unClick(container)"
 >
+	<hoverable-container #container>
 
-	<start-data-process-list-item *ngIf="!(isSubmenu())" [context]="this" [processArgs]="[data]">
-		{{ getLabel() }}
-	</start-data-process-list-item>
+		<start-data-process-list-item *ngIf="!(hasSubmenu())" [context]="this" [processArgs]="[data]">
+			<div class="label-container">
+				{{ getLabel() }}
+			</div>
+		</start-data-process-list-item>
 
+		<submenu *ngIf="hasSubmenu()" [label]="getLabel()" [clicked]="clicked" [data]="data">
+		</submenu>
 
-	<ng-container *ngIf="isSubmenu()">
-
-		{{ getLabel() }} <submenu-pointer></submenu-pointer>
-
-		<ul *ngIf="clicked" class="dropdown-menu">
-			<menu-choice *ngFor="let choice of choices"
-					[data]="{choice: choice, parent: getLabel(), image: data.image}"
-			>
-			</menu-choice>
-		</ul>
-	</ng-container>
+	</hoverable-container>
 
 </li>

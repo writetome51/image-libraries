@@ -6,9 +6,11 @@ import { Component, Input } from '@angular/core';
 	selector: 'dropdown-menu',
 	template: `
 		<ul class="dropdown-menu action-menu" [class.action-menu-open]="open"
-			[class.image-mode]="image">
+			[class.image-mode]="image"
+		>
 			<menu-choice *ngFor="let choice of choices"
-						 [data]="{choice: choice, image: image, parent: undefined}">
+						 [data]="{choice: choice, image: image, parent: undefined}"
+			>
 			</menu-choice>
 		</ul>
 	`,

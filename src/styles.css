@@ -3,6 +3,7 @@ a, a:hover {
 	text-decoration: none;
 }
 
+
 button {
 	width: fit-content;
 }
@@ -99,5 +100,18 @@ div.dropdown {
 
 
 div.dropdown button {
-/*	width: 100%; */
+	/*	width: 100%; */
+}
+
+/*
+menu-choice hoverable-container div.hoverable-container {
+	display: inherit;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+*/
+
+menu-choice hoverable-container .hovered {
+	background-color: #ececec;
 }

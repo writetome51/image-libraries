@@ -1,11 +1,16 @@
-<div class="action-menu-container" (mouseover)="hover()" (mouseleave)="unHover_and_close()"
-	 [class.image-mode]="image" [class.action-menu-open]="open"
->
-	<div class="dropdown" [class.hovered]="isHovered()">
+<hoverable-container #container>
 
-		<menu-button [menu]="this" [imageMode]="image"></menu-button>
+	<div class="action-menu-container" [class.image-mode]="image" [class.action-menu-open]="open"
+		 (mouseleave)="unHover_and_close(container)"
+	>
+		<div class="dropdown"><!--   Twitter Bootstrap dropdown button and menu   -->
 
-		<dropdown-menu [image]="image" [open]="open" [choices]="choices"></dropdown-menu>
+			<menu-button [menu]="this" [imageMode]="image"></menu-button>
+
+			<dropdown-menu [image]="image" [open]="open" [choices]="choices"></dropdown-menu>
+
+		</div>
 
 	</div>
-</div>
+
+</hoverable-container>

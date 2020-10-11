@@ -6,11 +6,12 @@ import { Hoverable } from '@interfaces/hoverable';
 	selector: 'hoverable-container',
 	template: `
 		<div class="hoverable-container" (mouseover)="hover()" (mouseleave)="unHover()"
-			[class.hovered]="isHovered()"
+			 [class.hovered]="isHovered()"
 		>
 			<ng-content></ng-content>
 		</div>
-	`
+	`,
+	styleUrls: ['./hoverable-container.component.css']
 })
 export class HoverableContainerComponent implements Hoverable {
 

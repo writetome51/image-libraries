@@ -1,0 +1,12 @@
+<ng-container>
+	<div class="label-container">
+		{{ label }} <submenu-pointer></submenu-pointer>
+	</div>
+
+	<ul *ngIf="clicked" class="dropdown-menu">
+		<menu-choice *ngFor="let choice of choices"
+					 [data]="{choice: choice, parent: label, image: data.image}"
+		>
+		</menu-choice>
+	</ul>
+</ng-container>

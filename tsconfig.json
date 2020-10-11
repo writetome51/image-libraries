@@ -40,6 +40,7 @@
 				"src/environments/*"
 			],
 			"@guards/*": ["src/app/guards/*"],
+			"@hoverable-container/*": ["src/app/shared/modules/hoverable-container/*"],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],

@@ -9,14 +9,3 @@
 .action-menu-container.image-mode.action-menu-open {
 	height: fit-content;
 }
-
-
-.dropdown.image-mode {
-	display: none;
-}
-
-
-.dropdown.image-mode.hovered {
-	display: block;
-	max-height: 90px;
-}

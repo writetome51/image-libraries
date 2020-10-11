@@ -1,6 +1,6 @@
-import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 import { Component, Input } from '@angular/core';
 import { isString } from '@writetome51/is-string-not-string';
+import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { MenuChoiceData } from '@interfaces/menu-choice-data';
 import { MenuChoiceProcessorService } from './menu-choice-processor/menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
@@ -16,12 +16,6 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: MenuChoiceData;
 	clicked = false;
-	hovered = false;
-
-
-	get choices(): AppActionMenuChoice[] {
-		return this.data.choice['choices'];
-	}
 
 
 	constructor(private __menuChoiceProcessor: MenuChoiceProcessorService) {
@@ -34,7 +28,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	isSubmenu(): boolean {
+	hasSubmenu(): boolean {
 		return (this.data.choice['label'] && this.data.choice['choices']);
 	}
 
@@ -46,15 +40,9 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	hover(): void {
-		this.hovered = true;
-	}
-
-
-	unHover_and_unClick(): void {
-		this.hovered = false;
+	unHover_and_unClick(container: HoverableContainerComponent): void {
+		container.unHover();
 		this.clicked = false;
 	}
-
 
 }
