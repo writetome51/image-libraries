@@ -1,7 +1,7 @@
 <li role="presentation" class="menu-choice" [class.dropdown-submenu]="hasSubmenu()"
 	(click)="toggleClick($event)" (mouseleave)="unHover_and_unClick(container)"
 >
-	<hoverable-container #container>
+	<hoverable-container #container class="fill-parent">
 
 		<start-data-process-list-item *ngIf="!(hasSubmenu())" [context]="this" [processArgs]="[data]">
 			<div class="label-container">

@@ -1,0 +1,52 @@
+a, a:hover {
+	text-decoration: none;
+}
+
+
+button {
+	width: fit-content;
+}
+
+
+header {
+	margin-bottom: 30px;
+}
+
+
+img {
+	margin: 10px 5px;
+}
+
+
+input {
+	margin: auto;
+	padding: 5px;
+	text-align: center;
+}
+
+
+li {
+	list-style: none;
+}
+
+
+li div {
+	display: flex;
+	height: 100%;
+}
+
+
+nav {
+	padding: 5px 0;
+	width: auto;
+}
+
+
+nav div {
+	display: inline-flex;
+}
+
+
+ul {
+	padding: 0;
+}

@@ -10,8 +10,7 @@ import { Hoverable } from '@interfaces/hoverable';
 		>
 			<ng-content></ng-content>
 		</div>
-	`,
-	styleUrls: ['./hoverable-container.component.css']
+	`
 })
 export class HoverableContainerComponent implements Hoverable {
 

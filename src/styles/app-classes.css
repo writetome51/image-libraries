@@ -1,0 +1,40 @@
+li.grid-list-item {
+	display: inline-grid;
+	position: relative;
+	padding: 1px;
+	cursor: move;
+	margin: 0;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+
+div.dropdown {
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+
+.nav-link-container {
+	display: inline;
+	margin: auto;
+	padding: 0 3px;
+	width: 100px;
+}
+
+
+.centered-nav-block-container {
+	margin: auto;
+}
+
+
+.fill-parent {
+	display: inherit;
+	width: inherit;
+	height: inherit;
+	margin: inherit;
+}

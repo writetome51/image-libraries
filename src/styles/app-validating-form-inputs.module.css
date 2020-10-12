@@ -1,0 +1,3 @@
+.validating-input-container input[type='text'], .validating-input-container input[type='password'] {
+	width: 300px;
+}

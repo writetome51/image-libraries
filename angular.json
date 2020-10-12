@@ -24,7 +24,11 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles.css"
+							"src/styles/defaults.css",
+							"src/styles/app-classes.css",
+							"src/styles/ids.css",
+							"src/styles/app-action-menu.module.css",
+							"src/styles/app-validating-form-inputs.module.css"
 						],
 						"scripts": []
 					},
@@ -88,7 +92,11 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles.css"
+							"src/styles/defaults.css",
+							"src/styles/app-classes.css",
+							"src/styles/ids.css",
+							"src/styles/app-action-menu.module.css",
+							"src/styles/app-validating-form-inputs.module.css"
 						],
 						"scripts": []
 					}
