@@ -7,7 +7,7 @@ import { UpdateLibraryProcessorService } from './update-library-processor.servic
 @Component({
 	selector: 'save-changes-button',
 	template: `
-		<start-data-process-button [context]="this">Save Changes</start-data-process-button>
+		<start-data-process-button [container]="this">Save Changes</start-data-process-button>
 	`
 })
 export class SaveChangesButtonComponent extends StartDataProcessContainerComponent {

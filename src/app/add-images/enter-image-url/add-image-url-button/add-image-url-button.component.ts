@@ -7,7 +7,7 @@ import { StartDataProcessContainerComponent }
 @Component({
 	selector: 'add-image-url-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [context]="this">
+		<start-data-process-button [type]="'submit'" [container]="this">
 			Add URL
 		</start-data-process-button>
 	`

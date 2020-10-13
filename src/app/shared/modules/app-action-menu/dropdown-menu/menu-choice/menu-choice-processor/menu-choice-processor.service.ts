@@ -3,7 +3,7 @@ import { DeleteSelectedImagesProcessorService }
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { MenuChoiceProcessParams } from '@interfaces/menu-choice-process-params';
-import { MenuChoiceLibraryData as choiceLibrary } from '@app-action-menu/menu-choice-library.data';
+import { MenuChoiceLibraryData as choiceLib } from '@app-action-menu/menu-choice-library.data';
 
 
 @Injectable()
@@ -17,7 +17,7 @@ export class MenuChoiceProcessorService implements DirectProcessor {
 		private __deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService
 	) {
 		this.__choiceProcessors = {};
-		this.__choiceProcessors[choiceLibrary.deleteSelected] =
+		this.__choiceProcessors[choiceLib.deleteSelected] =
 			this.__deleteSelectedImagesProcessor.process;
 	}
 

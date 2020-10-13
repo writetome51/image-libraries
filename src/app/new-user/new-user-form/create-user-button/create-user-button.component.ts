@@ -7,7 +7,7 @@ import { StartDataProcessContainerComponent }
 @Component({
 	selector: 'create-user-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [context]="this">
+		<start-data-process-button [type]="'submit'" [container]="this">
 			Create
 		</start-data-process-button>
 	`

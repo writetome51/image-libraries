@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DBImage } from '@interfaces/db-image';
-import { HoverableContainerComponent }
-	from '@app/shared/modules/hoverable-container/hoverable-container.component';
-import { ImageSelectorService as imageSelector }
-	from '@thumbnail-image-container/image-selector.service';
+import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
+import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
 
 

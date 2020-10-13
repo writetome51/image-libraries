@@ -7,7 +7,7 @@ import { Processor } from '@interfaces/processor';
 @Component({
 	selector: 'save-changes-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [context]="this">
+		<start-data-process-button [type]="'submit'" [container]="this">
 			{{label}}
 		</start-data-process-button>
 	`,

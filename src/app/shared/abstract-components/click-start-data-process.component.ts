@@ -7,9 +7,9 @@ import { StartDataProcessContainerComponent } from './start-data-process-contain
 export abstract class ClickStartDataProcessComponent {
 
 	// required.  Instance of the component this component is used in.
-	@Input() context: StartDataProcessContainerComponent;
+	@Input() container: StartDataProcessContainerComponent;
 
-	// Passed to this.context.start()
+	// Passed to this.container.start()
 	@Input() processArgs: any[] = [];
 
 	clicked = false;
@@ -21,7 +21,7 @@ export abstract class ClickStartDataProcessComponent {
 		event.stopPropagation();
 
 		this.clicked = true;
-		await this.context.start(this.processArgs);
+		await this.container.start(this.processArgs);
 		this.clicked = false;
 	}
 

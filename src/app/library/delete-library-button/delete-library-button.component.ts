@@ -8,7 +8,7 @@ import { StartDataProcessContainerComponent }
 @Component({
 	selector: 'delete-library-button',
 	template: `
-		<start-data-process-button [context]="this">Delete Library</start-data-process-button>
+		<start-data-process-button [container]="this">Delete Library</start-data-process-button>
 	`
 })
 export class DeleteLibraryButtonComponent extends StartDataProcessContainerComponent {

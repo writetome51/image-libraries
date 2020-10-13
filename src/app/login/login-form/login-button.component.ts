@@ -7,7 +7,7 @@ import { StartDataProcessContainerComponent }
 @Component({
 	selector: 'login-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [context]="this">
+		<start-data-process-button [type]="'submit'" [container]="this">
 			Sign In
 		</start-data-process-button>
 	`

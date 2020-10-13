@@ -6,7 +6,8 @@ import { StartDataProcessContainerComponent }
 
 @Component({
 	selector: 'logout-button',
-	template: `<start-data-process-button [context]="this">Sign Out</start-data-process-button>`
+	template: `
+		<start-data-process-button [container]="this">Sign Out</start-data-process-button>`
 })
 export class LogoutButtonComponent extends StartDataProcessContainerComponent {
 
