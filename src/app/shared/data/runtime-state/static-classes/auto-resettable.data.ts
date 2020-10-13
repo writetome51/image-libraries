@@ -7,7 +7,7 @@ import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 
 // All data structures intended to be auto-reset to their default values when
 // the user loads the logged-out home page are defined here.  Each must implement
-// interface ResettableToDefault.
+// ResettableToDefault.
 
 
 export class ActionMenuChoicesData {

@@ -7,7 +7,7 @@ import { ClearFormDataService as clearFormData } from '@services/clear-form-data
 	template: `
 		<div class="form-container">
 			<form>
-				<new-library-form-inputs></new-library-form-inputs>
+				<new-library-form-input></new-library-form-input>
 				<create-library-button></create-library-button>
 			</form>
 		</div>
