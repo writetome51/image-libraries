@@ -3,9 +3,9 @@
 	<div class="action-menu-container" [class.image-mode]="image" [class.action-menu-open]="open"
 		 (mouseleave)="unHover_and_close(container)"
 	>
-		<div class="dropdown"><!--   Twitter Bootstrap dropdown button and menu   -->
+		<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
 
-			<menu-button [menu]="this" [imageMode]="image"></menu-button>
+			<menu-button [menu]="this" [imageMode]="image ? true : false"></menu-button>
 
 			<dropdown-menu [image]="image" [open]="open" [choices]="choices"></dropdown-menu>
 

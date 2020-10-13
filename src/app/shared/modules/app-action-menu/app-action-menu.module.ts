@@ -9,7 +9,7 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
 	declarations: [AppActionMenuComponent],
-	imports: [CommonModule, DropdownMenuModule, MenuButtonModule, HoverableContainerModule],
+	imports: [CommonModule, DropdownMenuModule, HoverableContainerModule, MenuButtonModule],
 	providers: [AppActionMenuChoicesManagerService],
 	exports: [AppActionMenuComponent]
 })
