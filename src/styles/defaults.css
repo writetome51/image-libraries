@@ -8,6 +8,13 @@ button {
 }
 
 
+footer {
+	position: relative;
+	margin-top: 50px;
+	font-size: x-small;
+}
+
+
 header {
 	margin-bottom: 30px;
 }
