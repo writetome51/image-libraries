@@ -1,16 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { AppRestAPIService } from '../app-rest-api.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestAPIService } from '../rest-api.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LibraryRestAPIService extends RestAPIService {
+export class LibraryRestAPIService {
 
 
-	constructor(_http: HttpClient) {
-		super(_http);
+	constructor(private __restApi: AppRestAPIService) {
 	}
 
 
@@ -18,7 +16,7 @@ export class LibraryRestAPIService extends RestAPIService {
 		params: { sessionID: string, name: string }
 	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
 	{
-		return this._post('create-library', params);
+		return this.__restApi.post('create-library', params);
 	}
 
 
@@ -26,7 +24,7 @@ export class LibraryRestAPIService extends RestAPIService {
 		params: { sessionID: string, name: string }
 	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
 	{
-		return this._get('get-library', params);
+		return this.__restApi.get('get-library', params);
 	}
 
 
@@ -34,7 +32,7 @@ export class LibraryRestAPIService extends RestAPIService {
 		params: { sessionID: string }
 	): Observable<string>  // JSON containing: DBLibrary[] | {error: {message: string}}
 	{
-		return this._get('get-libraries', params);
+		return this.__restApi.get('get-libraries', params);
 	}
 
 
@@ -43,7 +41,7 @@ export class LibraryRestAPIService extends RestAPIService {
 		params: { sessionID: string, name: string, changes: any }
 	): Observable<string> // JSON containing: DBLibrary | {error: {message: string}}
 	{
-		return this._patch('update-library', params);
+		return this.__restApi.patch('update-library', params);
 	}
 
 
@@ -51,7 +49,7 @@ export class LibraryRestAPIService extends RestAPIService {
 		params: { sessionID: string, name: string }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._delete('delete-library', params);
+		return this.__restApi.delete('delete-library', params);
 	}
 
 

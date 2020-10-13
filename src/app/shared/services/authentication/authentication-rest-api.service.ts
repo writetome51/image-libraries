@@ -1,16 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { AppRestAPIService } from '../app-rest-api.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestAPIService } from '../rest-api.service';
 import { SecurityQuestion } from '@interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
 
-export class AuthenticationRestAPIService extends RestAPIService {
+export class AuthenticationRestAPIService {
 
-	constructor(_http: HttpClient) {
-		super(_http);
+	constructor(private __restApi: AppRestAPIService) {
 	}
 
 
@@ -18,7 +16,7 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		params: { email: string, password: string }
 	): Observable<string> // JSON containing:  DBUser | {error: {message: string}}
 	{
-		return this._patch('user-login', params);
+		return this.__restApi.patch('user-login', params);
 	}
 
 
@@ -26,7 +24,7 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		params: { email: string, securityQuestion: SecurityQuestion }
 	): Observable<string> // JSON containing:  DBUser | {error: {message: string}}
 	{
-		return this._patch('security-question-login', params);
+		return this.__restApi.patch('security-question-login', params);
 	}
 
 
@@ -34,7 +32,7 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		params: { sessionID: string }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._patch('user-logout', params);
+		return this.__restApi.patch('user-logout', params);
 	}
 
 
@@ -42,7 +40,7 @@ export class AuthenticationRestAPIService extends RestAPIService {
 		params: { email: string }
 	): Observable<string> // JSON containing: SecurityQuestion | {error: {message: string}}
 	{
-		return this._get('get-security-question', params);
+		return this.__restApi.get('get-security-question', params);
 	}
 
 

@@ -1,22 +1,19 @@
+import { AppRestAPIService } from '../app-rest-api.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestAPIService } from '../rest-api.service';
-import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({providedIn: 'root'})
 
-export class UserRestAPIService extends RestAPIService {
+export class UserRestAPIService {
 
-
-	constructor(_http: HttpClient) {
-		super(_http);
+	constructor(private __restApi: AppRestAPIService) {
 	}
 
 
 	exists(params: { email: string }): Observable<string> // JSON containing: {success: boolean}
 	{
-		return this._get('user-exists', params);
+		return this.__restApi.get('user-exists', params);
 	}
 
 
@@ -24,7 +21,7 @@ export class UserRestAPIService extends RestAPIService {
 		params: { sessionID: string }
 	): Observable<string> // JSON containing: DBUser | {error: {message: string}}
 	{
-		return this._get('get-user', params);
+		return this.__restApi.get('get-user', params);
 	}
 
 
@@ -34,7 +31,7 @@ export class UserRestAPIService extends RestAPIService {
 		}
 	): Observable<string> // JSON containing:  DBUser | {error: {message: string}}
 	{
-		return this._post('create-user', params);
+		return this.__restApi.post('create-user', params);
 	}
 
 
@@ -42,7 +39,7 @@ export class UserRestAPIService extends RestAPIService {
 		params: { email: string, password: string, sessionID: string }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._delete('delete-user', params);
+		return this.__restApi.delete('delete-user', params);
 	}
 
 
@@ -50,7 +47,7 @@ export class UserRestAPIService extends RestAPIService {
 		params: { email: string, password: string, newPassword: string, sessionID: string }
 	): Observable<string>  // JSON containing: DBUser | {error: {message: string}}
 	{
-		return this._patch('update-password', params);
+		return this.__restApi.patch('update-password', params);
 	}
 
 
@@ -58,8 +55,7 @@ export class UserRestAPIService extends RestAPIService {
 		params: { email: string, password: string, newEmail: string, sessionID: string }
 	): Observable<string> // JSON containing: DBUser | {error: {message: string}}
 	{
-		return this._patch('update-email', params);
+		return this.__restApi.patch('update-email', params);
 	}
-
 
 }

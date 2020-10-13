@@ -7,10 +7,10 @@ import { CORSProxyData as corsProxy } from '../data/read-only/cors-proxy.data';
 
 /*************************
 
- export abstract class RestAPIService {
+ export abstract class AppRestAPIService {
 
 /******************
-	protected _baseURL = corsProxy.data +
+	protected __baseURL = corsProxy.data +
 		'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 *******************/
@@ -19,7 +19,7 @@ import { CORSProxyData as corsProxy } from '../data/read-only/cors-proxy.data';
 
 	private __corsProxy = 'https://writetome51-cors-proxy.herokuapp.com/';
 
-	protected _baseURL = this.__corsProxy + 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
+	protected __baseURL = this.__corsProxy + 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/' +
 		'serverless-functions-rhfqi/service/rest-api/incoming_webhook/';
 
 	protected _requiredInEveryRequest = {secret: sss, 'api-key':'bca15348-6e88-4852-8915-b4a715af5bd8'};
@@ -29,22 +29,22 @@ import { CORSProxyData as corsProxy } from '../data/read-only/cors-proxy.data';
 	}
 
 
-	protected _get(uniqueRoute, params): Observable<any> {
+	protected get(uniqueRoute, params): Observable<any> {
 		return this.__request('get', uniqueRoute, params);
 	}
 
 
-	protected _delete(uniqueRoute, params): Observable<any> {
+	protected delete(uniqueRoute, params): Observable<any> {
 		return this.__request('delete', uniqueRoute, params);
 	}
 
 
-	protected _patch(uniqueRoute, params): Observable<any> {
+	protected patch(uniqueRoute, params): Observable<any> {
 		return this.__request('patch', uniqueRoute, params);
 	}
 
 
-	protected _post(uniqueRoute, params): Observable<any> {
+	protected post(uniqueRoute, params): Observable<any> {
 		return this.__request('post', uniqueRoute, params);
 	}
 
@@ -57,7 +57,7 @@ import { CORSProxyData as corsProxy } from '../data/read-only/cors-proxy.data';
 
 		// @ts-ignore
 		requestMethod = requestMethod.toLowerCase();
-		let serviceURL = `${this._baseURL}${uniqueRoute}`;
+		let serviceURL = `${this.__baseURL}${uniqueRoute}`;
 		let args;
 		// To work with your own cors-proxy deployed on herokuapp,
 		// set the actual service URL in a header named 'Target-Endpoint':

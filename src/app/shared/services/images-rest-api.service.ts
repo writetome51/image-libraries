@@ -1,17 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { AppRestAPIService } from './app-rest-api.service';
+import { AppImage } from '@interfaces/app-image';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestAPIService } from './rest-api.service';
-import { AppImage } from '@interfaces/app-image';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ImagesRestAPIService extends RestAPIService {
+export class ImagesRestAPIService {
 
-
-	constructor(_http: HttpClient) {
-		super(_http);
+	constructor(private __restApi: AppRestAPIService) {
 	}
 
 
@@ -19,7 +16,7 @@ export class ImagesRestAPIService extends RestAPIService {
 		params: { sessionID: string, batchSize: number, batchNumber: number }
 	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
 	{
-		return this._get('get-user-images-batch', params);
+		return this.__restApi.get('get-user-images-batch', params);
 	}
 
 
@@ -27,7 +24,7 @@ export class ImagesRestAPIService extends RestAPIService {
 		params: { sessionID: string, name: string, batchSize: number, batchNumber: number }
 	): Observable<string> // JSON containing: ImageBatch | {error: {message: string}}
 	{
-		return this._get('get-library-images-batch', params);
+		return this.__restApi.get('get-library-images-batch', params);
 	}
 
 
@@ -35,7 +32,7 @@ export class ImagesRestAPIService extends RestAPIService {
 		params: { sessionID: string, images: AppImage[] }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._post('add-images', params);
+		return this.__restApi.post('add-images', params);
 	}
 
 
@@ -49,7 +46,7 @@ export class ImagesRestAPIService extends RestAPIService {
 		}
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._patch('update-images', params);
+		return this.__restApi.patch('update-images', params);
 	}
 
 
@@ -57,8 +54,7 @@ export class ImagesRestAPIService extends RestAPIService {
 		params: { sessionID: string, imageNames: string[] }
 	): Observable<string> // JSON containing: {success: true} | {error: {message: string}}
 	{
-		return this._patch('delete-images', params);
+		return this.__restApi.patch('delete-images', params);
 	}
-
 
 }
