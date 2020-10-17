@@ -20,4 +20,11 @@ export class SaveChangesButtonComponent extends StartDataProcessContainerCompone
 		this._processor = value;
 	}
 
+
+	// Required to avoid Angular dependency injection error.
+
+	constructor() {
+		super();
+	}
+
 }
