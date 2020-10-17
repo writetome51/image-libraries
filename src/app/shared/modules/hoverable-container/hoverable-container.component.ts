@@ -1,29 +1,43 @@
-import { Component } from '@angular/core';
-import { Hoverable } from '@interfaces/hoverable';
+import { Component, EventEmitter, Output } from '@angular/core';
 
+
+/*********
+To add mouse-hovering functionality to any html elements, put them between this component's
+tags <hoverable-container> ... </hoverable-container> .  To use this component's events
+(hover) and (unhover), example:
+
+<hoverable-container #reference  (hover)="doStuff()" (unhover)="doOtherStuff()">
+	<nested-component [class.hovered]="reference.isHovered()"></nested-component>
+</hoverable-container>
+ *********/
 
 @Component({
 	selector: 'hoverable-container',
 	template: `
 		<div class="hoverable-container" [class.hovered]="isHovered()"
-			 (mouseover)="hover()" (mouseleave)="unHover()"
+			 (mouseover)="hovered()" (mouseleave)="unhovered()"
 		>
 			<ng-content></ng-content>
 		</div>
 	`
 })
-export class HoverableContainerComponent implements Hoverable {
+export class HoverableContainerComponent {
+
+	@Output() hover = new EventEmitter();
+	@Output() unhover = new EventEmitter();
 
 	private __hovered = false;
 
 
-	hover(): void {
+	hovered(): void {
 		this.__hovered = true;
+		this.hover.emit();
 	}
 
 
-	unHover(): void {
+	unhovered(): void {
 		this.__hovered = false;
+		this.unhover.emit();
 	}
 
 

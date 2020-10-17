@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { isString } from '@writetome51/is-string-not-string';
-import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { MenuChoiceData } from '@interfaces/menu-choice-data';
 import { MenuChoiceProcessorService } from './menu-choice-processor/menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
@@ -40,8 +39,7 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	unHover_and_unClick(container: HoverableContainerComponent): void {
-		container.unHover();
+	unclick(): void {
 		this.clicked = false;
 	}
 

@@ -34,8 +34,7 @@ export class AppActionMenuComponent implements OnInit {
 	}
 
 
-	unHover_and_close(container: HoverableContainerComponent): void {
-		container.unHover();
+	close(): void {
 		this.open = false;
 	}
 

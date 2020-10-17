@@ -6,9 +6,9 @@ through them. Kind of like iPhoto in a browser.
 ## Technologies Used
 
 Languages: &nbsp;&nbsp; TypeScript, JavaScript, HTML, CSS  
-Frameworks:  &nbsp;&nbsp; Angular 8.x, Bootstrap  
+Frameworks:  &nbsp;&nbsp; Angular 9.0.x, Twitter Bootstrap  
 Databases: &nbsp;&nbsp;  MongoDB  
-Cloud Services: &nbsp;&nbsp;  MongoDB Stitch
+Cloud Services: &nbsp;&nbsp;  MongoDB Realm (formerly MongoDB Stitch)
 
 # Angular app info
 

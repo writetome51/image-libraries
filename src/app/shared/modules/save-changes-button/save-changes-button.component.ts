@@ -10,8 +10,7 @@ import { Processor } from '@interfaces/processor';
 		<start-data-process-button [type]="'submit'" [container]="this">
 			{{label}}
 		</start-data-process-button>
-	`,
-	styleUrls: ['./save-changes-button.component.css']
+	`
 })
 export class SaveChangesButtonComponent extends StartDataProcessContainerComponent {
 
@@ -19,11 +18,6 @@ export class SaveChangesButtonComponent extends StartDataProcessContainerCompone
 
 	@Input() set processor(value: Processor) {
 		this._processor = value;
-	}
-
-
-	constructor() {
-		super();
 	}
 
 }

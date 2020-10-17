@@ -24,7 +24,7 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles/defaults.css",
+							"src/styles/element-defaults.css",
 							"src/styles/app-classes.css",
 							"src/styles/ids.css",
 							"src/styles/app-action-menu.module.css",
@@ -92,7 +92,7 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles/defaults.css",
+							"src/styles/element-defaults.css",
 							"src/styles/app-classes.css",
 							"src/styles/ids.css",
 							"src/styles/app-action-menu.module.css",

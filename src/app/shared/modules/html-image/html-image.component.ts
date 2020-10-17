@@ -10,7 +10,7 @@ import { HTMLImage } from '@interfaces/html-image';
 			 [title]="data.title"
 		/>
 	`,
-	styles: [`img {box-shadow: -4px -4px 10px 3px lightgray;}`]
+	styles: [`img {box-shadow: -2px -2px 10px 3px #dcdcdc;}`]
 })
 export class HTMLImageComponent {
 

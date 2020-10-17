@@ -1,8 +1,7 @@
-<hoverable-container #container>
+<hoverable-container (unhover)="close()">
 
-	<div class="action-menu-container" [class.image-mode]="image" [class.action-menu-open]="open"
-		 (mouseleave)="unHover_and_close(container)"
-	>
+	<div class="action-menu-container" [class.image-mode]="image" [class.action-menu-open]="open">
+
 		<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
 
 			<menu-button [menu]="this" [imageMode]="image ? true : false"></menu-button>
