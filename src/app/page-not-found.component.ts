@@ -6,7 +6,7 @@ import { environment } from '@environments/environment';
 	selector: 'page-not-found',
 	template: `
 		<h2>Oops. Page not found.</h2>
-		<img [src]="faces.src" [alt]="faces.alt" [width]="faces.width" [height]="faces.height"/>
+		<html-image [data]="faces"></html-image>
 		<p>This could make you happy, or sad. It depends on you.</p>
 	`
 })
