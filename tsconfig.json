@@ -24,6 +24,9 @@
 			"@big-loading-spinner/*": [
 				"src/app/shared/modules/big-loading-spinner/*"
 			],
+			"@clear-form-on-init-and-alert-on-destroy-container/*": [
+				"src/app/shared/modules/clear-form-on-init-and-alert-on-destroy-container/*"
+			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/data-transport-processor/*"
 			],
@@ -39,8 +42,12 @@
 			"@environments/*": [
 				"src/environments/*"
 			],
-			"@guards/*": ["src/app/guards/*"],
-			"@hoverable-container/*": ["src/app/shared/modules/hoverable-container/*"],
+			"@guards/*": [
+				"src/app/guards/*"
+			],
+			"@hoverable-container/*": [
+				"src/app/shared/modules/hoverable-container/*"
+			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],
@@ -68,7 +75,9 @@
 			"@start-data-process-button/*": [
 				"src/app/shared/modules/start-data-process-button/*"
 			],
-			"@start-data-process-list-item/*": ["src/app/shared/modules/start-data-process-list-item/*"],
+			"@start-data-process-list-item/*": [
+				"src/app/shared/modules/start-data-process-list-item/*"
+			],
 			"@tiny-loading-spinner/*": [
 				"src/app/shared/modules/tiny-loading-spinner/*"
 			],

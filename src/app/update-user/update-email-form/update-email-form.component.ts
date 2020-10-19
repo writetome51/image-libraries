@@ -1,5 +1,3 @@
-import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService }
 	from './update-email-processor/update-email-processor.service';
@@ -8,14 +6,15 @@ import { UpdateEmailProcessorService }
 @Component({
 	selector: 'update-email-form',
 	template: `
-		<update-email-form-inputs></update-email-form-inputs>
-		<save-changes-button [processor]="processor"></save-changes-button>
+		<clear-form-on-init-and-alert-on-destroy-container>
+			<update-email-form-inputs></update-email-form-inputs>
+			<save-changes-button [processor]="processor"></save-changes-button>
+		</clear-form-on-init-and-alert-on-destroy-container>
 	`
 })
-export class UpdateEmailFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
+export class UpdateEmailFormComponent {
 
 	constructor(public processor: UpdateEmailProcessorService) {
-		super();
 	}
 
 }

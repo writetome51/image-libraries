@@ -12,6 +12,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
+import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
+	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { StartDataProcessButtonModule }
 		CommonModule,
 		FormsModule,
 		AppValidatingFormInputsModule,
+		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{

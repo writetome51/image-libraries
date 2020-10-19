@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
+import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
+	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { NewLibraryFormModule } from './new-library-form/new-library-form.module
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
+		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		NewLibraryFormModule,
 		ThumbnailImageContainerModule,
 		AppPaginationControlsModule,

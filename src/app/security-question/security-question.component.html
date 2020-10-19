@@ -1,15 +1,20 @@
-<header><h2>{{heading}}</h2></header>
+<clear-form-on-init-and-alert-on-destroy-container>
 
-<p *ngIf="haveReceivedQuestion">{{question}}</p>
+	<header><h2>{{heading}}</h2></header>
 
-<div class="form-container">
+	<p *ngIf="haveReceivedQuestion">{{question}}</p>
 
-	<form>
+	<div class="form-container">
 
-		<get-security-question-form *ngIf="!(haveReceivedQuestion)"></get-security-question-form>
+		<form>
 
-		<answer-security-question-form *ngIf="haveReceivedQuestion"></answer-security-question-form>
+			<get-security-question-form *ngIf="!(haveReceivedQuestion)"></get-security-question-form>
 
-	</form>
+			<answer-security-question-form *ngIf="haveReceivedQuestion">
+			</answer-security-question-form>
 
-</div>
+		</form>
+
+	</div>
+
+</clear-form-on-init-and-alert-on-destroy-container>

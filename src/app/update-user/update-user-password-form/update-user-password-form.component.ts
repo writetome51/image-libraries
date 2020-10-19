@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ClearFormOnInitAndAlertOnDestroyComponent }
-	from '@abstract-components/clear-form-on-init-and-alert-on-destroy.component';
 import { UpdatePasswordProcessorService }
 	from './update-password-processor/update-password-processor.service';
 
@@ -8,14 +6,15 @@ import { UpdatePasswordProcessorService }
 @Component({
 	selector: 'update-user-password-form',
 	template: `
-		<update-user-password-form-inputs></update-user-password-form-inputs>
-		<save-changes-button [processor]="processor"></save-changes-button>
+		<clear-form-on-init-and-alert-on-destroy-container>
+			<update-user-password-form-inputs></update-user-password-form-inputs>
+			<save-changes-button [processor]="processor"></save-changes-button>
+		</clear-form-on-init-and-alert-on-destroy-container>
 	`
 })
-export class UpdateUserPasswordFormComponent extends ClearFormOnInitAndAlertOnDestroyComponent {
+export class UpdateUserPasswordFormComponent {
 
 	constructor(public processor: UpdatePasswordProcessorService) {
-		super();
 	}
 
 }

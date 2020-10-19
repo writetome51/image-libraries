@@ -1,9 +1,13 @@
-<div>
+<clear-alert-on-destroy-container>
 
-	<new-library-button></new-library-button>
+	<div>
 
-	<new-library-form *ngIf="creatingNewLibrary"></new-library-form>
+		<new-library-button></new-library-button>
 
-	<libraries-list></libraries-list>
+		<new-library-form *ngIf="creatingNewLibrary"></new-library-form>
 
-</div>
+		<libraries-list></libraries-list>
+
+	</div>
+
+</clear-alert-on-destroy-container>

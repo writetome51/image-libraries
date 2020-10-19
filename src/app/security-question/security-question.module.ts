@@ -19,6 +19,8 @@ import { StartDataProcessButtonModule }
 import { SecurityQuestionComponent } from './security-question.component';
 import { SubmitAnswerButtonComponent }
 	from './answer-security-question-form/submit-answer-button/submit-answer-button.component';
+import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
+	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { SubmitAnswerButtonComponent }
 	imports: [
 		CommonModule,
 		AppValidatingFormInputsModule,
+		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{

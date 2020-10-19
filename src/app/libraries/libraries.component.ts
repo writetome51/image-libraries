@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ClearAlertOnDestroyComponent } from '@abstract-components/clear-alert-on-destroy.component';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 
 
@@ -7,7 +6,7 @@ import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.da
 	selector: 'app-libraries',
 	templateUrl: './libraries.component.html'
 })
-export class LibrariesComponent extends ClearAlertOnDestroyComponent {
+export class LibrariesComponent {
 
 	get creatingNewLibrary(): boolean {
 		return newLibrary.beingCreated;

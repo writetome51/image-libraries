@@ -17,6 +17,8 @@ import { UpdateUserPasswordFormComponent }
 import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
+import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
+	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 	imports: [
 		CommonModule,
 		FormsModule,
+		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		AppValidatingFormInputsModule,
 		SaveChangesButtonModule,
 		HTMLImageModule,
