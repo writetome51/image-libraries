@@ -15,7 +15,7 @@ tags <hoverable-container> ... </hoverable-container> .  To use this component's
 	selector: 'hoverable-container',
 	template: `
 		<div class="hoverable-container" [class.hovered]="isHovered()"
-			 (mouseover)="hovered()" (mouseleave)="unhovered()"
+			 (mouseover)="set_hovered()" (mouseleave)="unset_hovered()"
 		>
 			<ng-content></ng-content>
 		</div>
@@ -29,13 +29,13 @@ export class HoverableContainerComponent {
 	private __hovered = false;
 
 
-	hovered(): void {
+	set_hovered(): void {
 		this.__hovered = true;
 		this.hover.emit();
 	}
 
 
-	unhovered(): void {
+	unset_hovered(): void {
 		this.__hovered = false;
 		this.unhover.emit();
 	}

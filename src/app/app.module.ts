@@ -8,13 +8,15 @@ import { HTMLImageModule } from '@app/shared/modules/html-image/html-image.modul
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { ImgZoomDirective } from './shared/directives/img-zoom.directive';
 
 
 @NgModule({
 	declarations: [
 		AppAlertComponent,
 		AppComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		ImgZoomDirective
 	],
 	imports: [
 		BrowserModule,
