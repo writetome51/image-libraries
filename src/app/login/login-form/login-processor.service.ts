@@ -8,7 +8,7 @@ import { LoginResultInterpreterService }
 	from '@data-transport-result-interpreter/login-result-interpreter.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 
 export class LoginProcessorService extends FormDataTransportProcessorService {
 

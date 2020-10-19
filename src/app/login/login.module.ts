@@ -7,25 +7,20 @@ import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { LoginComponent } from './login.component';
-import { LoginButtonComponent } from './login-form/login-button.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginFormInputsComponent } from './login-form/login-form-inputs.component';
+import { LoginFormModule } from '@app/login/login-form/login-form.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SiteExplanationComponent } from './site-explanation.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 
 
 @NgModule({
-	declarations: [
-		LoginComponent,
-		LoginButtonComponent,
-		LoginFormComponent,
-		LoginFormInputsComponent
-	],
+	declarations: [LoginComponent, SiteExplanationComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
+		LoginFormModule,
 		AppValidatingFormInputsModule,
 		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		HoverableContainerModule,

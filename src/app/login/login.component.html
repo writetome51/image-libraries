@@ -6,13 +6,6 @@
 		<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">Create Account</a>
 	</p>
 
-	<hoverable-container #container>
-
-		<p id="site-explanation" aria-label="site-explanation">
-			<span *ngIf="!(container.isHovered())" style="color:rgb(51, 122, 183);">Explain Site</span>
-			<span *ngIf="container.isHovered()">{{explanation}}</span>
-		</p>
-
-	</hoverable-container>
+	<site-explanation></site-explanation>
 
 </clear-form-on-init-and-alert-on-destroy-container>

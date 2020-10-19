@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { PasswordInputService } from '@services/validating-input/password/password-input.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 
 export class LoginFormInputsService extends CurrentUserInputsService {
 

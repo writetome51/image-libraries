@@ -1,4 +1,3 @@
-import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
@@ -12,8 +11,6 @@ import { NewLibraryButtonComponent } from './new-library-button.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
-import { ThumbnailImageContainerModule }
-	from '@thumbnail-image-container/thumbnail-image-container.module';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
 import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
 	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
@@ -31,8 +28,6 @@ import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-nex
 		BigLoadingSpinnerModule,
 		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		NewLibraryFormModule,
-		ThumbnailImageContainerModule,
-		AppPaginationControlsModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
