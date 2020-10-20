@@ -7,7 +7,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 
 @Component({
 	selector: 'thumbnail-image',
-	template: `<html-image [data]="img"></html-image>`,
+	template: `<html-image [data]="img" img-zoom></html-image>`,
 	styleUrls: ['./thumbnail-image.component.css']
 })
 export class ThumbnailImageComponent {
