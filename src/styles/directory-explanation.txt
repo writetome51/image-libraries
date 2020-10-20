@@ -1,6 +1,6 @@
 This directory contains styles that are global to the app, as well as styles
-applied to particular modules.
-The stylesheets applied to particular modules have names ending in '.module.css'.
+applied to particular Angular modules.
+The stylesheets applied to particular Angular modules have names ending in '.module.css'.
 The reason those styles are here and not tied to specific components in those
 modules is because these style instructions have module-wide scope.  They won't work in
 component stylesheets.

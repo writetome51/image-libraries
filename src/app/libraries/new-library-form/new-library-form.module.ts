@@ -11,6 +11,8 @@ import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 import { CreateLibraryButtonComponent }
 	from './create-library-button/create-library-button.component';
+import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
+	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { CreateLibraryButtonComponent }
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
+		ClearFormOnInitAndAlertOnDestroyContainerModule,
 		AppPaginationControlsModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,

@@ -20,4 +20,4 @@ The name of any variable or constant referencing a Subscribable (from Rxjs) ends
 
 
 Path aliases: import statements that include a path beginning with '@' are aliases.  They're
-defined in project-root/tsconfig.json.
+defined in {project-root}/tsconfig.json.
