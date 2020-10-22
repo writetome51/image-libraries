@@ -1,14 +1,10 @@
-<clear-form-on-init-and-alert-on-destroy-container>
+<div clearAlertOnDestroy>
+	<html-image [data]="explodingHead"></html-image>
 
-	<div>
-		<html-image [data]="explodingHead"></html-image>
+	<p class="warning-text">You cannot undo this.</p>
+	<p>If you wish to proceed, enter your info and click Delete</p>
+</div>
 
-		<p class="warning-text">You cannot undo this.</p>
-		<p>If you wish to proceed, enter your info and click Delete</p>
-	</div>
+<delete-user-form-inputs clearFormOnInit clearAlertOnDestroy></delete-user-form-inputs>
 
-	<delete-user-form-inputs></delete-user-form-inputs>
-
-	<save-changes-button [label]="'Delete'" [processor]="processor"></save-changes-button>
-
-</clear-form-on-init-and-alert-on-destroy-container>
+<save-changes-button [label]="'Delete'" [processor]="processor"></save-changes-button>

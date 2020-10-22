@@ -1,7 +1,5 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
-	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { SiteExplanationComponent } from './site-explanation.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
+import { ClearFormOnInitAndAlertOnDestroyModule }
+	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { StartDataProcessButtonModule }
 		FormsModule,
 		LoginFormModule,
 		AppValidatingFormInputsModule,
-		ClearFormOnInitAndAlertOnDestroyContainerModule,
+		ClearFormOnInitAndAlertOnDestroyModule,
 		HoverableContainerModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([

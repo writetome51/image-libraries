@@ -20,7 +20,7 @@ import { TestFrameComponent } from './test-frame/test-frame.component';
 
 		// temp (for testing):
 		FrameComponent,
-		TestFrameComponent
+		TestFrameComponent,
 
 	],
 	imports: [

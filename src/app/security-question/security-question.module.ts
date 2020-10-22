@@ -4,8 +4,10 @@ import { AnswerSecurityQuestionFormComponent }
 	from './answer-security-question-form/answer-security-question-form.component';
 import { AnswerSecurityQuestionFormInputComponent }
 	from './answer-security-question-form/answer-security-question-form-input.component';
+import { ClearFormOnInitAndAlertOnDestroyModule }
+	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
-import { DeAuthenticatedGuard } from '../guards/de-authenticated.guard';
+import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { GetQuestionButtonComponent }
 	from './get-security-question-form/get-question-button/get-question-button.component';
 import { GetSecurityQuestionFormComponent }
@@ -19,8 +21,6 @@ import { StartDataProcessButtonModule }
 import { SecurityQuestionComponent } from './security-question.component';
 import { SubmitAnswerButtonComponent }
 	from './answer-security-question-form/submit-answer-button/submit-answer-button.component';
-import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
-	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-nex
 	imports: [
 		CommonModule,
 		AppValidatingFormInputsModule,
-		ClearFormOnInitAndAlertOnDestroyContainerModule,
+		ClearFormOnInitAndAlertOnDestroyModule,
 		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{

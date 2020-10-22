@@ -1,6 +1,8 @@
 import { HTMLImageModule } from '@app/shared/modules/html-image/html-image.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
+import { ClearFormOnInitAndAlertOnDestroyModule }
+	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
@@ -17,8 +19,6 @@ import { UpdateUserPasswordFormComponent }
 import { UpdateUserPasswordFormInputsComponent }
 	from './update-user-password-form/update-user-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
-import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
-	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-nex
 	imports: [
 		CommonModule,
 		FormsModule,
-		ClearFormOnInitAndAlertOnDestroyContainerModule,
+		ClearFormOnInitAndAlertOnDestroyModule,
 		AppValidatingFormInputsModule,
 		SaveChangesButtonModule,
 		HTMLImageModule,

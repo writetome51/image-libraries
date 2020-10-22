@@ -1,11 +1,7 @@
-<clear-form-on-init-and-alert-on-destroy-container>
+<login-form clearFormOnInit clearAlertOnDestroy></login-form>
 
-	<login-form></login-form>
+<p>Don't have an account?
+	<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">Create Account</a>
+</p>
 
-	<p>Don't have an account?
-		<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">Create Account</a>
-	</p>
-
-	<site-explanation></site-explanation>
-
-</clear-form-on-init-and-alert-on-destroy-container>
+<site-explanation></site-explanation>

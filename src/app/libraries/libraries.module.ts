@@ -3,6 +3,8 @@ import { AppValidatingFormInputsModule }
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
+import { ClearFormOnInitAndAlertOnDestroyModule }
+	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
@@ -12,8 +14,6 @@ import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
-import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-next-line:max-line-length
-	from '@clear-form-on-init-and-alert-on-destroy-container/clear-form-on-init-and-alert-on-destroy-container.module';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { ClearFormOnInitAndAlertOnDestroyContainerModule } // tslint:disable-nex
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
-		ClearFormOnInitAndAlertOnDestroyContainerModule,
+		ClearFormOnInitAndAlertOnDestroyModule,
 		NewLibraryFormModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,

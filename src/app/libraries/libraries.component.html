@@ -1,13 +1,10 @@
-<clear-alert-on-destroy-container>
+<div>
 
-	<div>
+	<new-library-button></new-library-button>
 
-		<new-library-button></new-library-button>
+	<new-library-form *ngIf="creatingNewLibrary" clearFormOnInit clearAlertOnDestroy>
+	</new-library-form>
 
-		<new-library-form *ngIf="creatingNewLibrary"></new-library-form>
+	<libraries-list></libraries-list>
 
-		<libraries-list></libraries-list>
-
-	</div>
-
-</clear-alert-on-destroy-container>
+</div>
