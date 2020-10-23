@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AddImagesComponent {
 
+	heading = 'Add Images';
+
 	gettingImagesInstructions = `The images can come from your own device or from somewhere
 	else in the web.`;
 

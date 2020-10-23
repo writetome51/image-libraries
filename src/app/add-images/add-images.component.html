@@ -1,17 +1,15 @@
-<section>
+<header><h2>{{heading}}</h2></header>
 
-	<div>
-		<p>{{gettingImagesInstructions}}</p>
-	</div>
+<div>
+	<p>{{gettingImagesInstructions}}</p>
+</div>
 
-	<div *ngIf="!(savingNewImages)">
+<div *ngIf="!(savingNewImages)">
 
-		<choose-images-from-device></choose-images-from-device>
+	<choose-images-from-device></choose-images-from-device>
 
-		<enter-image-url></enter-image-url>
+	<enter-image-url></enter-image-url>
 
-	</div>
+</div>
 
-	<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
-
-</section>
+<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
