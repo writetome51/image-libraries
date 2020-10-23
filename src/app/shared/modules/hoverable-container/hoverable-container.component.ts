@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Hoverable } from '@interfaces/hoverable';
 
 
 /*********
-To add mouse-hovering functionality to any html elements, put them between this component's
-tags <hoverable-container> ... </hoverable-container> .  To use this component's events
-(hover) and (unhover), example:
+To use this component's events (hover) and (unhover), example:
 
-<hoverable-container #reference  (hover)="doStuff()" (unhover)="doOtherStuff()">
+<hoverable-container #reference  (hover)="doStuff()"  (unhover)="doOtherStuff()">
 	<nested-component [class.hovered]="reference.isHovered()"></nested-component>
 </hoverable-container>
  *********/
@@ -21,7 +20,7 @@ tags <hoverable-container> ... </hoverable-container> .  To use this component's
 		</div>
 	`
 })
-export class HoverableContainerComponent {
+export class HoverableContainerComponent implements Hoverable {
 
 	@Output() hover = new EventEmitter();
 	@Output() unhover = new EventEmitter();

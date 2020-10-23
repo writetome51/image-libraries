@@ -31,9 +31,11 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 
 
 	setItemsPerPage(num: number) {
+		// This may cause itemsPerLoad to adjust so itemsPerLoad / itemsPerPage 
+		// remains evenly divisible:
 		super.setItemsPerPage(num);
 		page.size = this.getItemsPerPage();
-		load.size = this.getItemsPerLoad(); // in case items per load was adjusted.
+		load.size = this.getItemsPerLoad(); // in case itemsPerLoad was adjusted.
 	}
 
 
