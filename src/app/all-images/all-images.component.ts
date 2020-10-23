@@ -14,6 +14,8 @@ import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destr
 })
 export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
+	heading = 'All Images';
+
 	get gettingImages(): boolean {
 		return processingStatus.waiting;
 	}

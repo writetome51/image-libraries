@@ -8,6 +8,8 @@ import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.da
 })
 export class LibrariesComponent {
 
+	heading = 'Your Libraries';
+
 	get creatingNewLibrary(): boolean {
 		return newLibrary.beingCreated;
 	}
