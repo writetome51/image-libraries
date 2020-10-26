@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 	selector: 'dropdown-menu',
 	template: `
 		<ul class="dropdown-menu action-menu" [class.action-menu-open]="open"
-			[class.image-mode]="image"
+			[class.image-mode]="imageMode"
 		>
 			<menu-choice *ngFor="let choice of choices"
 						 [data]="{choice: choice, image: image, parent: undefined}"
@@ -21,5 +21,9 @@ export class DropdownMenuComponent {
 	@Input() choices: AppActionMenuChoice[];
 	@Input() open = false;
 	@Input() image: any;
+
+	get imageMode(): boolean {
+		return (this.image ? true : false);
+	}
 
 }
