@@ -8,8 +8,6 @@ import { HTMLImageModule } from '@app/shared/modules/html-image/html-image.modul
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { FrameComponent } from './test-frame/frame/frame.component';
-import { TestFrameComponent } from './test-frame/test-frame.component';
 
 
 @NgModule({
@@ -17,11 +15,6 @@ import { TestFrameComponent } from './test-frame/test-frame.component';
 		AppAlertComponent,
 		AppComponent,
 		PageNotFoundComponent,
-
-		// temp (for testing):
-		FrameComponent,
-		TestFrameComponent,
-
 	],
 	imports: [
 		BrowserModule,
