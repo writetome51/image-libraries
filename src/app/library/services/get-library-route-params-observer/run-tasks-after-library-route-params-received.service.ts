@@ -28,24 +28,31 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 		requestedLibrary.name = params[paramID.libName];
 
-		if (noValue(loadedLibrary.data) || requestedLibrary.name !== loadedLibrary.libName) {
-			await this.__ifLibraryDoesntExist_redirectToLoggedInHome_else_resetToFirstPage();
+		if (this.__libraryNotLoaded(requestedLibrary.name)) {
+			await this.__ifLibraryDoesntExist_redirectToLoggedInHome_else_setPaginatorToFirstPage(
+				requestedLibrary.name
+			);
 		}
-		await this.__ifNotFirstPage_setCurrentPageNumber(params[paramID.pageNumber]);
+		await this.__setPaginatorToRequestedPage(params[paramID.pageNumber]);
 	}
 
 
-	private async __ifLibraryDoesntExist_redirectToLoggedInHome_else_resetToFirstPage() {
-		let verified = await this.__libraryVerifier.verify(requestedLibrary.name);
+	private __libraryNotLoaded(libName): boolean {
+		return (noValue(loadedLibrary.data) || libName !== loadedLibrary.libName);
+	}
+
+
+	private async __ifLibraryDoesntExist_redirectToLoggedInHome_else_setPaginatorToFirstPage(libName) {
+		let verified = await this.__libraryVerifier.verify(libName);
 		if (not(verified)) return this.__redirectToLoggedInHome.go();
 
 		await this.__paginator.resetToFirstPage();
 	}
 
 
-	private async __ifNotFirstPage_setCurrentPageNumber(num) {
+	private async __setPaginatorToRequestedPage(num) {
 		let page = Number(num);
-		if (page > 1) await this.__paginator.setCurrentPageNumber(page);
+		await this.__paginator.setCurrentPageNumber(page);
 	}
 
 

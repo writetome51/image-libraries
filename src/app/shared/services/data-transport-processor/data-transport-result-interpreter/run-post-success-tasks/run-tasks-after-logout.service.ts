@@ -1,7 +1,7 @@
+import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { RemoveCachedDataService } from '@services/remove-cached-data.service';
 import { Router } from '@angular/router';
-import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})

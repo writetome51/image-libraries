@@ -26,14 +26,24 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 	async go(params): Promise<void> {
 
-		if (noValue(loadedImages.data) || not(imagesLoadedFrom.all)) {
+		if (this.__allImagesNotLoaded()) {
 			await this.__paginator.resetToFirstPage();
 			this.__jumpToPageInput.setMax();
-			imagesLoadedFrom.data = 'all';
-			loadedLibrary.data = undefined;
+			this.__setImagesLoadedStatusTo_all();
 		}
 
 		await this.__routeParamsHandler.handle(params);
+	}
+
+
+	private __allImagesNotLoaded(): boolean {
+		return noValue(loadedImages.data) || not(imagesLoadedFrom.all);
+	}
+
+
+	private __setImagesLoadedStatusTo_all() {
+		imagesLoadedFrom.data = 'all';
+		loadedLibrary.data = undefined;
 	}
 
 
