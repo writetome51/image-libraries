@@ -22,8 +22,6 @@ import { CreateLibraryButtonComponent }
 	imports: [
 		CommonModule,
 		FormsModule,
-		BigLoadingSpinnerModule,
-		AppPaginationControlsModule,
 		AppValidatingFormInputsModule,
 		StartDataProcessButtonModule,
 	],

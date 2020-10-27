@@ -1,5 +1,3 @@
-import { AppValidatingFormInputsModule }
-	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
@@ -10,8 +8,6 @@ import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
 import { NgModule } from '@angular/core';
 import { NewLibraryButtonComponent } from './new-library-button.component';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
 import { RouterModule } from '@angular/router';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
 
@@ -28,8 +24,6 @@ import { NewLibraryFormModule } from './new-library-form/new-library-form.module
 		BigLoadingSpinnerModule,
 		ClearFormOnInitAndAlertOnDestroyModule,
 		NewLibraryFormModule,
-		AppValidatingFormInputsModule,
-		StartDataProcessButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',
