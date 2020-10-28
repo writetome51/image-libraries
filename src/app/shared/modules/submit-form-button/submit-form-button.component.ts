@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
-import { Processor } from '@interfaces/processor';
+import { FormDataTransportProcessorService }
+	from '@data-transport-processor/form-data-transport-processor.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class SubmitFormButtonComponent extends StartDataProcessContainerComponen
 
 	@Input() label = 'Submit';
 
-	@Input() set processor(value: Processor) {
+
+	@Input() set processor(value: FormDataTransportProcessorService) {
 		this._processor = value;
 	}
 
