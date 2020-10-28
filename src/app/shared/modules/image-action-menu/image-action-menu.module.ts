@@ -4,7 +4,10 @@ import { ImageActionMenuComponent } from './image-action-menu.component';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { ActionMenuButtonModule }
 	from '@app/shared/modules/action-menu-button/action-menu-button.module';
-import { ActionMenuChoicesModule } from '@app/shared/modules/action-menu-choices/action-menu-choices.module';
+import { ActionMenuChoicesModule }
+	from '@app/shared/modules/action-menu-choices/action-menu-choices.module';
+import { ImageActionMenuChoicesManagerService }
+	from '@image-action-menu/image-action-menu-choices-manager.service';
 
 
 @NgModule({
@@ -15,6 +18,7 @@ import { ActionMenuChoicesModule } from '@app/shared/modules/action-menu-choices
 		ActionMenuButtonModule,
 		ActionMenuChoicesModule
 	],
+	providers: [ImageActionMenuChoicesManagerService],
 	exports: [ImageActionMenuComponent]
 })
 export class ImageActionMenuModule {

@@ -6,7 +6,7 @@
 
 			<action-menu-button [menu]="this"></action-menu-button>
 
-			<action-menu-choices [open]="open" [data]="choices"></action-menu-choices>
+			<action-menu-choices *ngIf="open" [data]="choices"></action-menu-choices>
 
 		</div>
 

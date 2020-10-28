@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppActionMenuChoiceData } from '@interfaces/app-action-menu-choice-data';
+import { ActionMenuChoiceData } from '@interfaces/action-menu-choice-data';
 import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 
 
@@ -12,7 +12,7 @@ export class SubmenuComponent {
 
 	@Input() clicked = false;
 	@Input() label: string;
-	@Input() data: AppActionMenuChoiceData;
+	@Input() data: ActionMenuChoiceData;
 
 
 	get choices(): ActionMenuChoice[] {

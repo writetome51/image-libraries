@@ -1,4 +1,4 @@
-import { AppActionSubmenu } from './app-action-submenu';
+import { ActionMenuSubmenu } from './action-menu-submenu';
 
 
-export type ActionMenuChoice = string | AppActionSubmenu;
+export type ActionMenuChoice = string | ActionMenuSubmenu;

@@ -1,12 +1,13 @@
 <hoverable-container (unhover)="close()">
 
-	<div class="action-menu-container  image-mode" [class.action-menu-open]="open"
-	>
+	<div class="action-menu-container  image-mode" [class.action-menu-open]="open">
+
 		<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
 
 			<action-menu-button [menu]="this" [imageMode]="true"></action-menu-button>
 
-			<action-menu-choices [image]="image" [open]="open" [data]="choices"></action-menu-choices>
+			<action-menu-choices *ngIf="open" [image]="image" [data]="choices">
+			</action-menu-choices>
 
 		</div>
 

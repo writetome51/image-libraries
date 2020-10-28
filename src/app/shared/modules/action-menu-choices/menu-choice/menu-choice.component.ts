@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { isString } from '@writetome51/is-string-not-string';
-import { AppActionMenuChoiceData } from '@interfaces/app-action-menu-choice-data';
+import { ActionMenuChoiceData } from '@interfaces/action-menu-choice-data';
 import { MenuChoiceProcessorService } from './menu-choice-processor/menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
@@ -13,7 +13,7 @@ import { StartDataProcessContainerComponent }
 })
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
-	@Input() data: AppActionMenuChoiceData;
+	@Input() data: ActionMenuChoiceData;
 	clicked = false;
 	processed = false;
 

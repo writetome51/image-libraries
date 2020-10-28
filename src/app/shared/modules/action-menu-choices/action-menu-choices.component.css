@@ -1,6 +1,9 @@
 .action-menu {
-	display: none;
+	display: block;
 	cursor: pointer;
+	width: max-content;
+	z-index: 1000;
+	background-color: white;
 
 	/* This makes sure there's no gap between the dropdown button and the menu, and
 	prevents accidental un-hovering from happening */
@@ -8,14 +11,6 @@
 }
 
 
-ul.action-menu-open {
-	display: block;
-	width: max-content;
-	z-index: 1000;
-	background-color: white;
-}
-
-
-ul.action-menu-open.image-mode {
+ul.image-mode {
 	top: 30px;
 }

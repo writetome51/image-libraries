@@ -14,7 +14,7 @@ import { ImageActionMenuChoicesManagerService } from './image-action-menu-choice
 export class ImageActionMenuComponent extends ActionMenuComponent implements OnInit {
 
 	@Input() image: AppImage;
-	choices = actionMenuChoices.images[this.image.name];
+	choices = [];
 
 
 	constructor(_choicesManager: ImageActionMenuChoicesManagerService) {
@@ -23,6 +23,7 @@ export class ImageActionMenuComponent extends ActionMenuComponent implements OnI
 
 
 	ngOnInit(): void {
+		this.choices = actionMenuChoices.images[this.image.name];
 		this._choicesManager.manage(this.image);
 	}
 
