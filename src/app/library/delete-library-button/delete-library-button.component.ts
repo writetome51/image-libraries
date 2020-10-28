@@ -13,8 +13,8 @@ import { StartDataProcessContainerComponent }
 })
 export class DeleteLibraryButtonComponent extends StartDataProcessContainerComponent {
 
-	constructor(__deleteLibraryProcessor: DeleteLibraryProcessorService) {
-		super(__deleteLibraryProcessor);
+	constructor(_deleteLibraryProcessor: DeleteLibraryProcessorService) {
+		super(_deleteLibraryProcessor);
 	}
 
 

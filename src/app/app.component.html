@@ -6,7 +6,7 @@
 			<a routerLink="/" routerLinkActive="active" title="home page">{{ siteHeading }}</a>
 		</h1>
 
-		<app-navigator *ngIf="sessionIDExists"></app-navigator>
+		<app-navigator *ngIf="loggedIn"></app-navigator>
 
 	</header>
 

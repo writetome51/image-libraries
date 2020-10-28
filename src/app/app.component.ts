@@ -17,12 +17,15 @@ export class AppComponent {
 	alert = AlertData;
 
 
-	get sessionIDExists(): boolean {
+	get loggedIn(): boolean {
 		return (this.__localSessionID.get().length > 0);
 	}
 
 
-	constructor(private __localSessionID: LocalSessionIDService, private __title: Title) {
+	constructor(
+		private __localSessionID: LocalSessionIDService,
+		private __title: Title
+	) {
 		resetRuntimeStateDataToDefaults.go();
 
 		this.__title.setTitle(appName.data);
