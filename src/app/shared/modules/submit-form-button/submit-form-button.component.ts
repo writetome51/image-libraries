@@ -5,16 +5,16 @@ import { Processor } from '@interfaces/processor';
 
 
 @Component({
-	selector: 'save-changes-button',
+	selector: 'submit-form-button',
 	template: `
 		<start-data-process-button [type]="'submit'" [container]="this">
 			{{label}}
 		</start-data-process-button>
 	`
 })
-export class SaveChangesButtonComponent extends StartDataProcessContainerComponent {
+export class SubmitFormButtonComponent extends StartDataProcessContainerComponent {
 
-	@Input() label = 'Save';
+	@Input() label = 'Submit';
 
 	@Input() set processor(value: Processor) {
 		this._processor = value;

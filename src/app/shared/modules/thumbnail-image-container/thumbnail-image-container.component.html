@@ -11,11 +11,11 @@
 		</delete-image-glyphicon>
 
 		<a [routerLink]="getRouterLink()">
-			<thumbnail-image [data]="image"></thumbnail-image>
+			<thumbnail-image [data]="image" [zoomEnabled]="zoomEnabled.data"></thumbnail-image>
 		</a>
 
-		<app-action-menu [class.invisible]="!(isHovered(container))" [image]="image">
-		</app-action-menu>
+		<image-action-menu [class.invisible]="!(isHovered(container))" [image]="image">
+		</image-action-menu>
 
 	</div>
 

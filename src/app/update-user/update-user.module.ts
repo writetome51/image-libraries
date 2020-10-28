@@ -8,7 +8,7 @@ import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.com
 import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { SaveChangesButtonModule } from '@save-changes-button/save-changes-button.module';
+import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button/submit-form-button.module';
 import { UpdateEmailFormComponent }
 	from './update-email-form/update-email-form.component';
 import { UpdateEmailFormInputsComponent }
@@ -36,7 +36,7 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 		FormsModule,
 		ClearFormOnInitAndAlertOnDestroyModule,
 		AppValidatingFormInputsModule,
-		SaveChangesButtonModule,
+		SubmitFormButtonModule,
 		HTMLImageModule,
 		UpdateUserRoutingModule
 	]

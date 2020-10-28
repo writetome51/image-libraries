@@ -3,7 +3,7 @@ import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames 
 import { AppImage } from '@interfaces/app-image';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
-import { MenuChoiceLibraryData as choiceLib } from '@app-action-menu/menu-choice-library.data';
+import { MenuChoiceLibraryData as choiceLib } from './menu-choice-library.data';
 
 
 @Injectable()

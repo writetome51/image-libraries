@@ -7,12 +7,16 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 
 @Component({
 	selector: 'thumbnail-image',
-	template: `<html-image [data]="img" imgZoomOnScroll></html-image>`,
+	template: `
+		<zoomable-html-image *ngIf="zoomEnabled" [data]="img"></zoomable-html-image>
+		<html-image *ngIf="!(zoomEnabled)" [data]="img"></html-image>
+	`,
 	styleUrls: ['./thumbnail-image.component.css']
 })
 export class ThumbnailImageComponent {
 
 	@Input() data: DBImage;
+	@Input() zoomEnabled = false;
 
 
 	get img(): HTMLImage {

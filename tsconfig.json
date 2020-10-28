@@ -37,7 +37,7 @@
 				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
 			],
 			"@delete-selected-images-processor/*": [
-				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
+				"src/app/shared/modules/action-menu-choices/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
@@ -48,8 +48,14 @@
 			"@hoverable-container/*": [
 				"src/app/shared/modules/hoverable-container/*"
 			],
+			"@html-image/*": [
+				"src/app/shared/modules/html-image/*"
+			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
+			],
+			"@image-action-menu/*": [
+				"src/app/shared/modules/image-action-menu/*"
 			],
 			"@menu-choice/*": [
 				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"
@@ -63,8 +69,8 @@
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
 			],
-			"@save-changes-button/*": [
-				"src/app/shared/modules/save-changes-button/*"
+			"@submit-form-button/*": [
+				"src/app/shared/modules/submit-form-button/*"
 			],
 			"@services/*": [
 				"src/app/shared/services/*"

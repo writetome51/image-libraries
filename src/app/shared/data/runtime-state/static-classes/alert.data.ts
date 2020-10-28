@@ -33,7 +33,8 @@ export class AlertData {
 
 
 	static clear() {
-		this.success = ''; // now success and error messages will be empty.
+		this.__success = '';
+		this.__error = '';
 	}
 
 }

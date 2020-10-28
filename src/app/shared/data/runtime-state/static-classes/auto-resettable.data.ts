@@ -2,7 +2,7 @@ import { AppImage } from '@interfaces/app-image';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
 import { ResettableToDefault } from '@interfaces/resettable-to-default';
-import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
+import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 
 
 // All data structures intended to be auto-reset to their default values when
@@ -12,7 +12,7 @@ import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
 
 export class ActionMenuChoicesData {
 
-	static global: AppActionMenuChoice[];
+	static global: ActionMenuChoice[];
 	static images: object;
 
 
@@ -213,6 +213,19 @@ export class ThumbnailDisplaySettingsData {
 
 	static setDefault() {
 		this.width = 100;
+	}
+
+}
+
+
+
+export class ZoomOnScrollEnabledData {
+
+	static data: boolean;
+
+
+	static setDefault() {
+		this.data = false;
 	}
 
 }

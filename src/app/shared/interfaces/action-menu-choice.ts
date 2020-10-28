@@ -1,4 +1,4 @@
 import { AppActionSubmenu } from './app-action-submenu';
 
 
-export type AppActionMenuChoice = string | AppActionSubmenu;
+export type ActionMenuChoice = string | AppActionSubmenu;

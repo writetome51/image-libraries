@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SaveChangesButtonComponent } from './save-changes-button.component';
+import { SubmitFormButtonComponent } from './submit-form-button.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 
 
 @NgModule({
-	declarations: [SaveChangesButtonComponent],
+	declarations: [SubmitFormButtonComponent],
 	imports: [CommonModule, StartDataProcessButtonModule],
-	exports: [SaveChangesButtonComponent]
+	exports: [SubmitFormButtonComponent]
 })
-export class SaveChangesButtonModule {
+export class SubmitFormButtonModule {
 }

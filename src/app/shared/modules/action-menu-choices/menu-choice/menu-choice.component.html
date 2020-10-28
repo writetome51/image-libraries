@@ -3,7 +3,9 @@
 >
 	<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-		<start-data-process-list-item *ngIf="!(hasSubmenu())" [container]="this" [processArgs]="[data]">
+		<start-data-process-list-item *ngIf="!(hasSubmenu())"
+			[container]="this" [processArgs]="[data]" [processed]="processed"
+		>
 			<div class="label-container">
 				{{ getLabel() }}
 			</div>

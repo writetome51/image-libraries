@@ -1,10 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AppImage } from '@interfaces/app-image';
-import { ImageActionMenuChoicesManagerService }
-	from '@image-action-menu/image-action-menu-choices-manager.service';
-import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { ActionMenuComponent } from '@abstract-components/action-menu.component';
+import { AppImage } from '@interfaces/app-image';
+import { Component, Input, OnInit } from '@angular/core';
+import { ImageActionMenuChoicesManagerService } from './image-action-menu-choices-manager.service';
 
 
 @Component({
@@ -12,28 +11,19 @@ import { ActionMenuChoicesData as actionMenuChoices }
 	templateUrl: './image-action-menu.component.html',
 	styleUrls: ['./image-action-menu.component.css']
 })
-export class ImageActionMenuComponent implements OnInit {
+export class ImageActionMenuComponent extends ActionMenuComponent implements OnInit {
 
 	@Input() image: AppImage;
-	open = false;
+	choices = actionMenuChoices.images[this.image.name];
 
 
-	get choices(): ActionMenuChoice[] {
-		return actionMenuChoices.images[this.image.name];
-	}
-
-
-	constructor(private __choicesManager: ImageActionMenuChoicesManagerService) {
+	constructor(_choicesManager: ImageActionMenuChoicesManagerService) {
+		super(_choicesManager);
 	}
 
 
 	ngOnInit(): void {
-		this.__choicesManager.manage(this.image);
-	}
-
-
-	close(): void {
-		this.open = false;
+		this._choicesManager.manage(this.image);
 	}
 
 }

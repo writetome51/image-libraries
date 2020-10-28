@@ -1,13 +1,12 @@
 <hoverable-container (unhover)="close()">
 
-	<div class="action-menu-container"
-		 [class.image-mode]="imageMode" [class.action-menu-open]="open"
-	>
+	<div class="action-menu-container" [class.action-menu-open]="open">
+
 		<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
 
-			<menu-button [menu]="this" [imageMode]="imageMode"></menu-button>
+			<action-menu-button [menu]="this"></action-menu-button>
 
-			<dropdown-menu [image]="image" [open]="open" [choices]="choices"></dropdown-menu>
+			<action-menu-choices [open]="open" [data]="choices"></action-menu-choices>
 
 		</div>
 

@@ -7,7 +7,7 @@ import { UpdateEmailProcessorService }
 	selector: 'update-email-form',
 	template: `
 		<update-email-form-inputs clearFormOnInit clearAlertOnDestroy></update-email-form-inputs>
-		<save-changes-button [processor]="processor"></save-changes-button>
+		<submit-form-button [processor]="processor"></submit-form-button>
 	`
 })
 export class UpdateEmailFormComponent {

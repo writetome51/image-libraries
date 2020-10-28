@@ -1,7 +1,6 @@
-import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { ClickStartDataProcessComponent }
 	from '@abstract-components/click-start-data-process.component';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -14,12 +13,12 @@ import { Component } from '@angular/core';
 			<!--   When process finished, have spinner replaced by checkmark. That checkmark
 			 stays there as long as the dropdown list stays open.
 			 -->
-			<span *ngIf="alert.success"  class="glyphicon glyphicon-ok"></span>
+			<span *ngIf="processed"  class="glyphicon glyphicon-ok"></span>
 		</div>
 	`
 })
 export class StartDataProcessListItemComponent extends ClickStartDataProcessComponent {
 
-	alert = AlertData;
+	@Input() processed = false;
 
 }

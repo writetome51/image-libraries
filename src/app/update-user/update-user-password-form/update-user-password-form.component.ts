@@ -8,7 +8,7 @@ import { UpdatePasswordProcessorService }
 	template: `
 		<update-user-password-form-inputs clearFormOnInit clearAlertOnDestroy>
 		</update-user-password-form-inputs>
-		<save-changes-button [processor]="processor"></save-changes-button>
+		<submit-form-button [processor]="processor"></submit-form-button>
 	`
 })
 export class UpdateUserPasswordFormComponent {

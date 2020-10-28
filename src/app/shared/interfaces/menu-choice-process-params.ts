@@ -1,6 +1,6 @@
-import { MenuChoiceData } from '@interfaces/menu-choice-data';
+import { AppActionMenuChoiceData } from '@interfaces/app-action-menu-choice-data';
 
 
-export interface MenuChoiceProcessParams extends MenuChoiceData {
+export interface MenuChoiceProcessParams extends AppActionMenuChoiceData {
 	choice: string;
 }

@@ -1,8 +1,8 @@
-import { AppActionMenuChoice } from '@interfaces/app-action-menu-choice';
+import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 
 
 export interface AppActionSubmenu {
-	choices: AppActionMenuChoice[];
+	choices: ActionMenuChoice[];
 	label: string;
 	parentLabel?: string; // Must have this if it's a submenu of a submenu.
 }

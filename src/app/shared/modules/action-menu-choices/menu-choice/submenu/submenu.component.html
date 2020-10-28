@@ -5,7 +5,7 @@
 
 	<ul *ngIf="clicked" class="dropdown-menu">
 		<menu-choice *ngFor="let choice of choices"
-					 [data]="{choice: choice, parent: label, image: data.image}"
+					 [data]="{choice: choice, image: data.image}"
 		>
 		</menu-choice>
 	</ul>

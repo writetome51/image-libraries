@@ -4,6 +4,7 @@ import { Hoverable } from '@interfaces/hoverable';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
+import { ZoomOnScrollEnabledData } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 	@Input() selectEnabled = false;
 
 	@Input() deleteGlyphiconEnabled = false;
+	zoomEnabled = ZoomOnScrollEnabledData;
 
 
 	isHovered(container: HoverableContainerComponent): boolean {
