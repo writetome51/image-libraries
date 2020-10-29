@@ -15,15 +15,24 @@ export class ImgZoomOnScrollDirective {
 
 	@HostListener('wheel', ['$event']) onWheel(event) {
 		event.preventDefault();
-		if (event.deltaY > 0) this.changeSize(5);
-		if (event.deltaY < 0) this.changeSize(-5);
+
+
+		if (event.deltaY > 0) this.changeSize(2);
+		if (event.deltaY < 0) this.changeSize(-2);
 	}
 
 
 	private changeSize(sizeChange) {
-		let width = this.el.nativeElement.offsetWidth;
+		let img = this.__getNestedImg();
+
+		let width = img.width;
 		let newWidth = width + sizeChange;
-		this.renderer.setStyle(this.el.nativeElement, 'width', newWidth + 'px');
+		this.renderer.setStyle(img, 'width', `${newWidth}px`);
+	}
+
+
+	private __getNestedImg(): HTMLImageElement {
+		return this.el.nativeElement.children[0];
 	}
 
 }

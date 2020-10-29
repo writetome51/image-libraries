@@ -4,12 +4,7 @@ import { HTMLImageComponent } from '@html-image/html-image.component';
 
 @Component({
 	selector: 'zoomable-html-image',
-	template: `
-		<!--  Setting draggable to false on img prevents a ghost-image from being dragged.  -->
-		<img draggable="false" imgZoomOnScroll
-			 [src]="data.src" [alt]="data.alt" [width]="data.width" [title]="data.title"
-		/>
-	`
+	template: `<html-image imgZoomOnScroll [data]="data"></html-image>`
 })
 export class ZoomableHTMLImageComponent extends HTMLImageComponent {
 }
