@@ -24,7 +24,13 @@ export class AppActionMenuChoicesManagerService {
 	}
 
 
-	manage(): void {
+	getChoices(){
+		this.__manage();
+		return menuChoices.global;
+	}
+
+
+	private __manage(): void {
 		if (notEmpty(this.__selectedImages)) this.__includeManipulateSelected();
 		else this.__removeManipulateSelected();
 

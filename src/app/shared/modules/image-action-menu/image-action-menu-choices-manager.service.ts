@@ -9,17 +9,20 @@ import { MenuChoiceLibraryData as choiceLib } from './menu-choice-library.data';
 @Injectable()
 export class ImageActionMenuChoicesManagerService {
 
-
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
-	manage(image: AppImage): void {
+	getChoices(image: AppImage) {
+		this.__manage(image);
+		return menuChoices.images[image.name];
+	}
+
+
+	private __manage(image){
 		menuChoices.images[image.name] = [
 			{label: choiceLib.toggleAddRemoveImageToLibrary, choices: libraryNames.data}
 		];
-
 	}
-
 
 }

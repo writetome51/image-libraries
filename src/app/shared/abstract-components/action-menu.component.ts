@@ -5,17 +5,19 @@ import { OnInit } from '@angular/core';
 export abstract class ActionMenuComponent implements OnInit {
 
 	open = false;
-	abstract choices: ActionMenuChoice[];
+	choices: ActionMenuChoice[] = [];
 
 
 	constructor(
-		protected _choicesManager: { manage: (...args) => void }
+		protected _choicesManager: {
+			getChoices: (...args) => ActionMenuChoice[]
+		}
 	) {
 	}
 
 
 	ngOnInit() {
-		this._choicesManager.manage();
+		this.choices = this._choicesManager.getChoices();
 	}
 
 
