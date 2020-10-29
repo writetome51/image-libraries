@@ -1,4 +1,4 @@
-import { ActionMenuComponent } from '@abstract-components/action-menu.component';
+import { ActionMenuComponent } from '@app/shared/modules/action-menu/action-menu.component';
 import { AppImage } from '@interfaces/app-image';
 import { Component, Input, OnInit } from '@angular/core';
 import { ImageActionMenuChoicesManagerService } from './image-action-menu-choices-manager.service';

@@ -3,6 +3,9 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {
+			"@action-menu/*": [
+				"src/app/shared/modules/action-menu/*"
+			],
 			"@abstract-components/*": [
 				"src/app/shared/abstract-components/*"
 			],
@@ -95,6 +98,9 @@
 			],
 			"@validating-inputs/*": [
 				"src/app/shared/services/validating-inputs/*"
+			],
+			"@zoomable-html-image/*": [
+				"src/app/shared/modules/zoomable-html-image/*"
 			]
 		},
 		"outDir": "./dist/out-tsc",

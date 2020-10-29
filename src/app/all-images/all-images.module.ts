@@ -1,7 +1,7 @@
 import { AllImagesComponent } from './all-images.component';
 import { AllImagesModuleRoutesData as moduleRoutes } from './all-images-module-routes.data';
 import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
-import { AppActionMenuModule } from '@app-action-menu/app-action-menu.module';
+import { AppActionMenuModule } from '@app/shared/modules/action-menu/app-action-menu/app-action-menu.module';
 import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';

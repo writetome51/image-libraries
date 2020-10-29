@@ -1,6 +1,6 @@
 import { AppActionMenuChoicesManagerService } from './app-action-menu-choices-manager.service';
 import { Component } from '@angular/core';
-import { ActionMenuComponent } from '@abstract-components/action-menu.component';
+import { ActionMenuComponent } from '../action-menu.component';
 
 
 @Component({

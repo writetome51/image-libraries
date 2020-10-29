@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActionMenuComponent } from '@abstract-components/action-menu.component';
+import { ActionMenuComponent } from '@app/shared/modules/action-menu/action-menu.component';
 
 
 @Component({
