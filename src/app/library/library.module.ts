@@ -1,4 +1,4 @@
-import { GlobalActionMenuModule } from '@action-menu/../shared/modules/global-action-menu/global-action-menu.module';
+import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.module';
 import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';

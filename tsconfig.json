@@ -48,6 +48,9 @@
 			"@guards/*": [
 				"src/app/guards/*"
 			],
+			"@global-action-menu/*": [
+				"src/app/shared/modules/global-action-menu/*"
+			],
 			"@hoverable-container/*": [
 				"src/app/shared/modules/hoverable-container/*"
 			],
