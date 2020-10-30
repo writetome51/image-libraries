@@ -1,14 +1,20 @@
-import { AppActionMenuModule } from './app-action-menu/app-action-menu.module';
-import { AppActionMenuComponent } from './app-action-menu/app-action-menu.component';
+import { ActionMenuButtonModule } from './action-menu-button/action-menu-button.module';
+import { ActionMenuChoicesModule } from './action-menu-choices/action-menu-choices.module';
+import { ActionMenuComponent } from './action-menu.component';
 import { CommonModule } from '@angular/common';
-import { ImageActionMenuComponent } from './image-action-menu/image-action-menu.component';
-import { ImageActionMenuModule } from './image-action-menu/image-action-menu.module';
 import { NgModule } from '@angular/core';
+import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 
 
 @NgModule({
-	imports: [CommonModule, AppActionMenuModule, ImageActionMenuModule],
-	exports: [AppActionMenuComponent, ImageActionMenuComponent]
+	declarations: [ActionMenuComponent],
+	imports: [
+		CommonModule,
+		HoverableContainerModule,
+		ActionMenuButtonModule,
+		ActionMenuChoicesModule
+	],
+	exports: [ActionMenuComponent]
 })
 export class ActionMenuModule {
 }

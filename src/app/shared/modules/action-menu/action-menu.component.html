@@ -1,0 +1,18 @@
+<hoverable-container (unhover)="close()">
+
+	<div
+		class="action-menu-container" [class.image-mode]="!!(image)" [class.action-menu-open]="open"
+	>
+
+		<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
+
+			<action-menu-button [menu]="this" [imageMode]="!!(image)"></action-menu-button>
+
+			<action-menu-choices *ngIf="open" [image]="image" [data]="choices">
+			</action-menu-choices>
+
+		</div>
+
+	</div>
+
+</hoverable-container>

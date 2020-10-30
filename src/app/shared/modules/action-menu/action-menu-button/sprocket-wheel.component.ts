@@ -1,22 +1,18 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
+import { HTMLImage } from '@interfaces/html-image';
 
 
 @Component({
 	selector: 'sprocket-wheel',
-	template: `
-		<img [src]="sprocket.src" [width]="sprocket.width"
-			 [height]="sprocket.height" [alt]="sprocket.alt"
-		/>
-	`
+	template: `<html-image [data]="sprocket"></html-image>`
 })
 export class SprocketWheelComponent {
 
-	readonly sprocket = {
+	readonly sprocket: HTMLImage = {
 		src: environment.assets + 'sprocket-wheel.png',
 		width: 11,
-		height: 11,
-		alt: 'action menu'
+		alt: 'sprocket wheel'
 	};
 
 }

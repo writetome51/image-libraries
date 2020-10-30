@@ -1,23 +1,30 @@
 import { ActionMenuChoice } from '@interfaces/action-menu-choice';
-import { OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AppImage } from '@interfaces/app-image';
 
 
-export abstract class ActionMenuComponent implements OnInit {
+@Component({
+	selector: 'action-menu',
+	templateUrl: './action-menu.component.html',
+	styleUrls: ['./action-menu.component.css']
+})
+
+// This has the option of being used in 'image mode', which is when the menu is being used on a
+// single image. To use image mode, you assign an AppImage to input property `image`.
+
+export class ActionMenuComponent implements OnInit {
 
 	open = false;
 	choices: ActionMenuChoice[] = [];
 
+	@Input() choicesManager: { getChoices: (...args) => ActionMenuChoice[] };
+	@Input() argsForChoicesManager? = [];
 
-	constructor(
-		protected _choicesManager: {
-			getChoices: (...args) => ActionMenuChoice[]
-		}
-	) {
-	}
+	@Input() image?: AppImage; // If in image mode.
 
 
 	ngOnInit() {
-		this.choices = this._choicesManager.getChoices();
+		this.choices = this.choicesManager.getChoices(...this.argsForChoicesManager);
 	}
 
 

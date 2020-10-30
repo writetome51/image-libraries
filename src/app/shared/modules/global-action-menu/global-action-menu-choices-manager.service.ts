@@ -15,7 +15,7 @@ import { SelectedImageNamesData as selectedImageNames }
 
 
 @Injectable()
-export class AppActionMenuChoicesManagerService {
+export class GlobalActionMenuChoicesManagerService {
 
 	private readonly __selectedImages = selectedImageNames.data;
 
