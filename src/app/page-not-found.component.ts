@@ -15,7 +15,6 @@ export class PageNotFoundComponent {
 	faces = {
 		src: environment.assets + 'happy-or-sad.png',
 		alt: 'happy and sad faces',
-		width: 362,
-		height: 175
+		width: 362
 	};
 }
