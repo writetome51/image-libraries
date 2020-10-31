@@ -4,7 +4,7 @@ import { DirectProcessor } from '@interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { MenuChoiceProcessParams } from '@interfaces/menu-choice-process-params';
 import { MenuChoiceLibraryData as choiceLib }
-	from '@app/shared/modules/global-action-menu/menu-choice-library.data';
+	from '@global-action-menu/menu-choice-library.data';
 import { ZoomOnScrollEnabledData } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
