@@ -4,10 +4,11 @@ import { AppImage } from '@interfaces/app-image';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLibraryData as choiceLib } from './menu-choice-library.data';
+import { ActionMenuChoicesManager } from '@interfaces/action-menu-choices-manager';
 
 
 @Injectable()
-export class ImageActionMenuChoicesManagerService {
+export class ImageActionMenuChoicesManagerService implements ActionMenuChoicesManager {
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}

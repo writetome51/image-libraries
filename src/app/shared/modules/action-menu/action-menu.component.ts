@@ -1,6 +1,7 @@
 import { ActionMenuChoice } from '@interfaces/action-menu-choice';
-import { Component, Input, OnInit } from '@angular/core';
 import { AppImage } from '@interfaces/app-image';
+import { ActionMenuChoicesManager } from '@interfaces/action-menu-choices-manager';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ActionMenuComponent implements OnInit {
 	open = false;
 	choices: ActionMenuChoice[] = [];
 
-	@Input() choicesManager: { getChoices: (...args) => ActionMenuChoice[] };
+	@Input() choicesManager: ActionMenuChoicesManager;
 	@Input() argsForChoicesManager? = [];
 
 	@Input() image?: AppImage; // If in image mode.

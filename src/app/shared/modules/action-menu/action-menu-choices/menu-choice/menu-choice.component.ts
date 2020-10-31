@@ -1,6 +1,6 @@
 import { ActionMenuChoiceData } from '@interfaces/action-menu-choice-data';
 import { Component, Input } from '@angular/core';
-import { MenuChoiceProcessorService } from './menu-choice-processor/menu-choice-processor.service';
+import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { isString } from '@writetome51/is-string-not-string';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';

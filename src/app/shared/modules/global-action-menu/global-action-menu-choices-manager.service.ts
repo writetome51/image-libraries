@@ -12,10 +12,11 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
+import { ActionMenuChoicesManager } from '@interfaces/action-menu-choices-manager';
 
 
 @Injectable()
-export class GlobalActionMenuChoicesManagerService {
+export class GlobalActionMenuChoicesManagerService implements ActionMenuChoicesManager {
 
 	private readonly __selectedImages = selectedImageNames.data;
 
