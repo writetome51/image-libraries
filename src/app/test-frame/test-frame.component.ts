@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
 
 
-// This component only exists to test out FrameComponent
+// This component only exists to test FrameComponent
 
 @Component({
 	selector: 'test-frame',

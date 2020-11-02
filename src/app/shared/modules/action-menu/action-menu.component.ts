@@ -1,13 +1,12 @@
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { Component, Input, OnInit } from '@angular/core';
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 
 
 @Component({
 	selector: 'action-menu',
-	templateUrl: './action-menu.component.html',
-	styleUrls: ['./action-menu.component.css']
+	templateUrl: './action-menu.component.html'
 })
 export class ActionMenuComponent implements OnInit {
 

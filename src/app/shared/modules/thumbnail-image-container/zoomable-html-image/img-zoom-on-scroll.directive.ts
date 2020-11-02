@@ -16,7 +16,6 @@ export class ImgZoomOnScrollDirective {
 	@HostListener('wheel', ['$event']) onWheel(event) {
 		event.preventDefault();
 
-
 		if (event.deltaY > 0) this.changeSize(2);
 		if (event.deltaY < 0) this.changeSize(-2);
 	}
@@ -25,8 +24,7 @@ export class ImgZoomOnScrollDirective {
 	private changeSize(sizeChange) {
 		let img = this.__getNestedImg();
 
-		let width = img.width;
-		let newWidth = width + sizeChange;
+		let newWidth = img.width + sizeChange;
 		this.renderer.setStyle(img, 'width', `${newWidth}px`);
 	}
 

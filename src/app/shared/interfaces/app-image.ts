@@ -1,6 +1,6 @@
 export interface AppImage {
 
-	name: string; // indexed.  User cannot have two images with same name.
+	name: string; // User cannot have two images with same name.
 
 	src: string;
 

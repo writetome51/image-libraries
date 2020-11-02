@@ -1,6 +1,7 @@
 // Represents a record in a db 'libraries' collection.
 
 export interface DBLibrary {
+
 	_id: string; // unique, never changes. Primary key
 
 	// unique, never changes.  Foreign key, relating to DBUser._id.
@@ -14,4 +15,5 @@ export interface DBLibrary {
 	// listed in order they appear in library.
 	// Foreign keys, each relating to DBImage._id
 	_image_ids: string[];
+
 }
