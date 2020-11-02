@@ -8,7 +8,8 @@ import { environment } from '@environments/environment';
 		<img [src]="pointer.src" [width]="pointer.width" [height]="pointer.height"
 			 [alt]="pointer.alt"
 		/>
-	`
+	`,
+	styles:[`img {display: inline;}`]
 })
 export class SubmenuPointerComponent {
 

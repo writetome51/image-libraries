@@ -1,6 +1,5 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
@@ -12,11 +11,12 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
-import { ActionMenuChoicesManager } from '@interfaces/action-menu-choices-manager';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
+import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Injectable()
-export class GlobalActionMenuChoicesManagerService implements ActionMenuChoicesManager {
+export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
 	private readonly __selectedImages = selectedImageNames.data;
 
@@ -25,7 +25,7 @@ export class GlobalActionMenuChoicesManagerService implements ActionMenuChoicesM
 	}
 
 
-	getChoices(){
+	getChoices(): MenuChoice[] {
 		this.__manage();
 		return menuChoices.global;
 	}
@@ -47,8 +47,10 @@ export class GlobalActionMenuChoicesManagerService implements ActionMenuChoicesM
 
 
 	private __includeManipulateSelected() {
+		choiceLib.addSelected['submenu'] = libraryNames.data;
+
 		menuChoices.global.push(
-			{label: choiceLib.addSelected, choices: libraryNames.data},
+			choiceLib.addSelected,
 			choiceLib.deleteSelected
 		);
 	}
@@ -65,7 +67,7 @@ export class GlobalActionMenuChoicesManagerService implements ActionMenuChoicesM
 	}
 
 
-	private __includeInGlobal(choice: ActionMenuChoice) {
+	private __includeInGlobal(choice: MenuChoice) {
 		if (not(menuChoices.global.includes(choice))) {
 			prepend(choice, menuChoices.global);
 		}

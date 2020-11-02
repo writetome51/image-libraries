@@ -5,23 +5,19 @@ import { ActionMenuComponent } from '@app/shared/modules/action-menu/action-menu
 @Component({
 	selector: 'action-menu-button',
 	template: `
-		<button type="button" class="btn btn-default" [class.image-mode]="imageMode"
-			(click)="toggleOpenMenu()"
-		>
+		<button type="button" class="btn btn-default" (click)="toggleOpenMenu()">
 			<div>
-				<ng-container *ngIf="!(imageMode)">{{label}}</ng-container>
+				<div class="label-container">{{label}}</div>
 
-				<sprocket-wheel *ngIf="imageMode"></sprocket-wheel>
+				<sprocket-wheel></sprocket-wheel>
 
 				<span class="caret"></span>
 			</div>
 		</button>
-	`,
-	styleUrls: ['./action-menu-button.component.css']
+	`
 })
 export class ActionMenuButtonComponent {
 
-	@Input() imageMode = false;
 	@Input() menu: ActionMenuComponent;
 	readonly label = 'Action';
 

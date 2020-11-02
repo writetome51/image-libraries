@@ -1,9 +1,9 @@
-import { ActionMenuChoiceData } from '@interfaces/action-menu-choice-data';
 import { Component, Input } from '@angular/core';
+import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoiceProcessorService } from './menu-choice-processor.service';
-import { isString } from '@writetome51/is-string-not-string';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
+import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Component({
@@ -13,9 +13,8 @@ import { StartDataProcessContainerComponent }
 })
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
-	@Input() data: ActionMenuChoiceData;
+	@Input() data: MenuChoice;
 	clicked = false;
-	processed = false;
 
 
 	constructor(private __menuChoiceProcessor: MenuChoiceProcessorService) {
@@ -23,13 +22,8 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 	}
 
 
-	getLabel(): string {
-		return (isString(this.data.choice) ? this.data.choice : this.data.choice['label']);
-	}
-
-
 	hasSubmenu(): boolean {
-		return (this.data.choice['label'] && this.data.choice['choices']);
+		return hasValue(this.data['submenu']);
 	}
 
 

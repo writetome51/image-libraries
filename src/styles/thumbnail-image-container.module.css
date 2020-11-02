@@ -1,3 +1,44 @@
 thumbnail-image html-image img {
 	box-shadow: -2px -2px 10px 3px #dcdcdc;
 }
+
+
+image-action-menu action-menu-button button {
+	width: 40px;
+	height: 30px;
+	padding: 0;
+}
+
+
+image-action-menu button div {
+	margin: auto;
+}
+
+
+image-action-menu action-menu-button button div.label-container {
+	display: none;
+}
+
+
+image-action-menu action-menu-button button sprocket-wheel {
+	display: inline;
+}
+
+
+image-action-menu button div span.caret {
+	position: relative;
+	top: 14px;
+	right: 3px;
+}
+
+
+image-action-menu div.action-menu-container {
+	position: relative;
+	z-index: 1000;
+	height: fit-content;
+}
+
+
+image-action-menu ul.action-menu {
+	top: 30px;
+}

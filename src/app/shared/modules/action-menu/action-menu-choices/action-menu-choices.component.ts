@@ -1,22 +1,18 @@
-import { ActionMenuChoice } from '@interfaces/action-menu-choice';
 import { Component, Input } from '@angular/core';
+import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Component({
 	selector: 'action-menu-choices',
 	template: `
-		<ul class="dropdown-menu action-menu" [class.image-mode]="!!(image)">
-
-			<menu-choice *ngFor="let choice of data"  [data]="{choice: choice, image: image}">
-			</menu-choice>
-
+		<ul class="dropdown-menu action-menu">
+			<menu-choice *ngFor="let choice of data"  [data]="choice"></menu-choice>
 		</ul>
 	`,
 	styleUrls: ['./action-menu-choices.component.css']
 })
 export class ActionMenuChoicesComponent {
 
-	@Input() data: ActionMenuChoice[];
-	@Input() image?: any;
+	@Input() data: MenuChoice[];
 
 }

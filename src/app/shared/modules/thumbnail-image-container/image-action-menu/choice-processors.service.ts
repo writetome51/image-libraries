@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { DirectProcessor } from '@interfaces/direct-processor';
 
 
 @Injectable()
-export class ChoiceProcessorsService {
+export class ChoiceProcessorsService implements DirectProcessor {
 
 	private __data = {};
 
@@ -11,7 +12,10 @@ export class ChoiceProcessorsService {
 		// Have each choice processor be injected here
 
 	) {
+	}
 
+
+	process() {
 	}
 
 }

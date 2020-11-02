@@ -1,7 +1,7 @@
-import { ActionMenuChoice } from '@interfaces/action-menu-choice';
-import { AppImage } from '@interfaces/app-image';
-import { ActionMenuChoicesManager } from '@interfaces/action-menu-choices-manager';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { Component, Input, OnInit } from '@angular/core';
+import { DirectProcessor } from '@interfaces/direct-processor';
+import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Component({
@@ -9,23 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
 	templateUrl: './action-menu.component.html',
 	styleUrls: ['./action-menu.component.css']
 })
-
-// This has the option of being used in 'image mode', which is when the menu is being used on a
-// single image. To use image mode, you assign an AppImage to input property `image`.
-
 export class ActionMenuComponent implements OnInit {
 
 	open = false;
-	choices: ActionMenuChoice[] = [];
+	choices: MenuChoice[] = [];
 
-	@Input() choicesManager: ActionMenuChoicesManager;
-	@Input() argsForChoicesManager? = [];
+	@Input() choicesProcessor: DirectProcessor;
+	@Input() choicesManager: MenuChoicesManager;
+	@Input() choicesManagerArgs? = [];
 
-	@Input() image?: AppImage; // If in image mode.
 
 
 	ngOnInit() {
-		this.choices = this.choicesManager.getChoices(...this.argsForChoicesManager);
+		this.choices = this.choicesManager.getChoices(...this.choicesManagerArgs);
 	}
 
 
