@@ -3,7 +3,7 @@ import { DirectProcessor } from '@interfaces/direct-processor';
 
 
 @Injectable()
-export class ChoiceProcessorsService implements DirectProcessor {
+export class ChoicesProcessorService implements DirectProcessor {
 
 	private __data = {};
 

@@ -4,7 +4,7 @@ import { ImageActionMenuComponent } from './image-action-menu.component';
 import { ImageActionMenuChoicesManagerService }
 	from '@thumbnail-image-container/image-action-menu/image-action-menu-choices-manager.service';
 import { ActionMenuModule } from '@action-menu/action-menu.module';
-import { ChoiceProcessorsService } from './choice-processors.service';
+import { ChoicesProcessorService } from './choices-processor.service';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { ChoiceProcessorsService } from './choice-processors.service';
 		CommonModule,
 		ActionMenuModule
 	],
-	providers: [ImageActionMenuChoicesManagerService, ChoiceProcessorsService],
+	providers: [ImageActionMenuChoicesManagerService, ChoicesProcessorService],
 	exports: [ImageActionMenuComponent]
 })
 export class ImageActionMenuModule {

@@ -47,7 +47,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeManipulateSelected() {
-		choiceLib.addSelected['submenu'] = libraryNames.data;
+		// temporarily commented out:
+	//	choiceLib.addSelected['submenu'] = libraryNames.data;
 
 		menuChoices.global.push(
 			choiceLib.addSelected,

@@ -16,6 +16,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
 
 	heading = 'All Images';
 
+
 	get gettingImages(): boolean {
 		return processingStatus.waiting;
 	}

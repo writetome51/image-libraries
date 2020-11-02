@@ -8,7 +8,7 @@ import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Injectable()
-export class ChoiceProcessorsService implements DirectProcessor {
+export class ChoicesProcessorService implements DirectProcessor {
 
 	private __data = {};
 
