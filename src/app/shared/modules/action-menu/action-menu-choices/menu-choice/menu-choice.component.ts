@@ -4,6 +4,7 @@ import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 import { MenuChoice } from '@interfaces/menu-choice';
+import { DirectProcessor } from '@interfaces/direct-processor';
 
 
 @Component({
@@ -14,11 +15,13 @@ import { MenuChoice } from '@interfaces/menu-choice';
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: MenuChoice;
+	@Input() choicesProcessor: DirectProcessor;
+
 	clicked = false;
 
 
-	constructor(private __menuChoiceProcessor: MenuChoiceProcessorService) {
-		super(__menuChoiceProcessor);
+	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
+		super(_menuChoiceProcessor);
 	}
 
 

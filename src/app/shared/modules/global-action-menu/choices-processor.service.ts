@@ -10,17 +10,17 @@ import { MenuChoice } from '@interfaces/menu-choice';
 @Injectable()
 export class ChoicesProcessorService implements DirectProcessor {
 
-	private __data = {};
+	private __functions = {};
 
 
 	constructor(
 		// Have each choice processor be injected here
 		private __deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService
 	) {
-		this.__data[choiceLib.deleteSelected.label] =
+		this.__functions[choiceLib.deleteSelected.label] =
 			this.__deleteSelectedImagesProcessor.process;
 
-		this.__data[choiceLib.enableZoomOnScrolling.label] = () => {
+		this.__functions[choiceLib.enableZoomOnScrolling.label] = () => {
 			ZoomOnScrollEnabledData.data = !(ZoomOnScrollEnabledData.data);
 		};
 	}
@@ -29,7 +29,7 @@ export class ChoicesProcessorService implements DirectProcessor {
 	async process(choice: MenuChoice) {
 		let {label, data} = choice;
 
-		await this.__data[label](data);
+		await this.__functions[label](data);
 	}
 
 }

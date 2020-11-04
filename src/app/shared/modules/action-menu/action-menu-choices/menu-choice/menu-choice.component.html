@@ -4,7 +4,7 @@
 	<hoverable-container class="fill-parent" (unhover)="unclick()">
 
 		<start-data-process-list-item *ngIf="!(hasSubmenu())"
-			[container]="this" [processArgs]="[data.data]"
+			[container]="this" [processArgs]="[{choice: data, choicesProcessor: choicesProcessor}]"
 		>
 			<div class="label-container">{{ data.label }}</div>
 		</start-data-process-list-item>
