@@ -1,3 +1,23 @@
+.centered-nav-block-container {
+	margin: auto;
+}
+
+
+div.dropdown {
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+
+.fill-parent {
+	display: inherit;
+	width: inherit;
+	height: inherit;
+	margin: inherit;
+}
+
+
 li.grid-list-item {
 	display: inline-grid;
 	position: relative;
@@ -12,13 +32,6 @@ li.grid-list-item {
 }
 
 
-div.dropdown {
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
-}
-
-
 .nav-link-container {
 	display: inline;
 	margin: auto;
@@ -26,15 +39,3 @@ div.dropdown {
 	width: 100px;
 }
 
-
-.centered-nav-block-container {
-	margin: auto;
-}
-
-
-.fill-parent {
-	display: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-}

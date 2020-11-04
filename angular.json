@@ -24,11 +24,10 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles/app-action-menu.module.css",
+							"src/styles/action-menu.module.css",
 							"src/styles/app-classes.css",
 							"src/styles/app-validating-form-inputs.module.css",
 							"src/styles/element-defaults.css",
-							"src/styles/global-action-menu.module.css",
 							"src/styles/ids.css",
 							"src/styles/thumbnail-image-container.module.css"
 						],
@@ -94,11 +93,10 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/styles/app-action-menu.module.css",
+							"src/styles/action-menu.module.css",
 							"src/styles/app-classes.css",
 							"src/styles/app-validating-form-inputs.module.css",
 							"src/styles/element-defaults.css",
-							"src/styles/global-action-menu.module.css",
 							"src/styles/ids.css",
 							"src/styles/thumbnail-image-container.module.css"
 						],
