@@ -7,10 +7,7 @@ import { ActionMenuComponent } from '@app/shared/modules/action-menu/action-menu
 	template: `
 		<button type="button" class="btn btn-default" (click)="toggleOpenMenu()">
 			<div>
-				<div class="label-container">{{label}}</div>
-
 				<sprocket-wheel></sprocket-wheel>
-
 				<span class="caret"></span>
 			</div>
 		</button>

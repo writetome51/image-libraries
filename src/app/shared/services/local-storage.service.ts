@@ -19,7 +19,13 @@ export class LocalStorageService {
 
 
 	constructor() {
-		if (noValue(this.__localObject.get())) this.__localObject.set({});
+		// If there is no local storage data, it triggers error.
+		try{
+			let obj = this.__localObject.get();
+		}
+		catch (e) {
+			this.__localObject.set({});
+		}
 	}
 
 

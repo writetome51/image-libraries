@@ -15,11 +15,6 @@ image-action-menu button div {
 }
 
 
-image-action-menu action-menu-button button div.label-container {
-	display: none;
-}
-
-
 image-action-menu action-menu-button button sprocket-wheel {
 	display: inline;
 }
