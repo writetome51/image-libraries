@@ -1,7 +1,7 @@
 import { AppImage } from '@interfaces/app-image';
 import { Component, Input } from '@angular/core';
 import { ImageActionMenuChoicesManagerService } from './image-action-menu-choices-manager.service';
-import { ChoicesProcessorService } from './choices-processor.service';
+import { ImageActionMenuChoicesProcessorService } from './image-action-menu-choices-processor.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class ImageActionMenuComponent {
 
 	constructor(
 		public choicesManager: ImageActionMenuChoicesManagerService,
-		public choicesProcessor: ChoicesProcessorService
+		public choicesProcessor: ImageActionMenuChoicesProcessorService
 	) {
 	}
 

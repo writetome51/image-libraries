@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuComponent } from './global-action-menu.component';
 import { NgModule } from '@angular/core';
-import { ChoicesProcessorService } from '@global-action-menu/choices-processor.service';
+import { GlobalMenuChoicesProcessorService } from '@global-action-menu/global-menu-choices-processor.service';
 import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-processor/delete-selected-images-result-interpreter.service';
 import { DeleteSelectedImagesProcessorService }
@@ -17,7 +17,7 @@ import { RunTasksAfterDeletingImagesService }
 	imports: [CommonModule, ActionMenuModule],
 	providers: [
 		GlobalActionMenuChoicesManagerService,
-		ChoicesProcessorService,
+		GlobalMenuChoicesProcessorService,
 		DeleteSelectedImagesResultInterpreterService,
 		DeleteSelectedImagesProcessorService,
 		RunTasksAfterDeletingImagesService

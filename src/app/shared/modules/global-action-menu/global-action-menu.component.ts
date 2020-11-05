@@ -1,6 +1,6 @@
 import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
 import { Component } from '@angular/core';
-import { ChoicesProcessorService } from './choices-processor.service';
+import { GlobalMenuChoicesProcessorService } from './global-menu-choices-processor.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class GlobalActionMenuComponent {
 
 	constructor(
 		public choicesManager: GlobalActionMenuChoicesManagerService,
-		public choicesProcessor: ChoicesProcessorService
+		public choicesProcessor: GlobalMenuChoicesProcessorService
 	) {
 	}
 

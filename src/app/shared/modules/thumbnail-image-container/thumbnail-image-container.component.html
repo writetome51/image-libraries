@@ -11,7 +11,7 @@
 		</delete-image-glyphicon>
 
 		<a [routerLink]="getRouterLink()">
-			<thumbnail-image [data]="image" [zoomEnabled]="zoomEnabled.data"></thumbnail-image>
+			<thumbnail-image [data]="image" [zoomEnabled]="zoomEnabled.enabled"></thumbnail-image>
 		</a>
 
 		<image-action-menu [class.invisible]="!(isHovered(container))" [image]="image">
