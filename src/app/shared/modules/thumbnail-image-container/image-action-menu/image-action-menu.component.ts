@@ -8,7 +8,7 @@ import { ChoicesProcessorService } from './choices-processor.service';
 	selector: 'image-action-menu',
 	template: `
 		<action-menu [choicesManager]="choicesManager" [choicesManagerArgs]="[image]"
-					 [choicesProcessor]="choicesProcessor"
+				[choicesProcessor]="choicesProcessor"
 		>
 		</action-menu>
 	`

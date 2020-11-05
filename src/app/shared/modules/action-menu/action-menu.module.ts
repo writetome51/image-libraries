@@ -2,17 +2,17 @@ import { ActionMenuButtonModule } from './action-menu-button/action-menu-button.
 import { ActionMenuChoicesModule } from './action-menu-choices/action-menu-choices.module';
 import { ActionMenuComponent } from './action-menu.component';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
+import { NgModule } from '@angular/core';
 
 
 @NgModule({
 	declarations: [ActionMenuComponent],
 	imports: [
+		ActionMenuButtonModule,
+		ActionMenuChoicesModule,
 		CommonModule,
 		HoverableContainerModule,
-		ActionMenuButtonModule,
-		ActionMenuChoicesModule
 	],
 	exports: [ActionMenuComponent]
 })
