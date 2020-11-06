@@ -6,9 +6,6 @@ import { ChoicesProcessorService }
 @Injectable()
 export class ImageActionMenuChoicesProcessorService extends ChoicesProcessorService{
 
-	protected _functions = {};
-
-
 	constructor(
 
 	) {

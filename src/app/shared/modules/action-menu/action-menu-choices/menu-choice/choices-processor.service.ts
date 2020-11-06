@@ -5,23 +5,29 @@ import { Processor } from '@interfaces/processor';
 
 export abstract class ChoicesProcessorService implements DirectProcessor {
 
-	protected _functions = {};
-
-	// Number of _functionLabels must match number of injected processors.
-	// They must be listed in same order as processors they're matched with.
-
-	protected _functionLabels: string[] = [];
+	private __processors: Processor[];
+	private __functions = {};
 
 
 	constructor(...processors: Processor[]) {
-		this._functionLabels.forEach((label, i) => this._functions[label] = processors[i].process);
+		this.__processors = processors;
 	}
 
 
 	async process(choice: MenuChoice): Promise<void> {
 		let {label, data} = choice;
 
-		await this._functions[label](data);
+		await this.__functions[label](data);
+	}
+
+
+	// Number of `labels` must match number of injected processors.
+	// They must be listed in same order as processors they're matched with.
+
+	protected _setupFunctions(labels) {
+		labels.forEach((label, i) => {
+			this.__functions[label] = this.__processors[i].process;
+		});
 	}
 
 }
