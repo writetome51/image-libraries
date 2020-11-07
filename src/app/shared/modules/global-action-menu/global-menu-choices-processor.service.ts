@@ -20,8 +20,8 @@ export class GlobalMenuChoicesProcessorService extends ChoicesProcessorService {
 		);
 
 		this._setupFunctions([
-			choiceLib.deleteSelected.label,
-			choiceLib.enableZoomOnScrolling.label
+			choiceLib.deleteSelected,
+			choiceLib.enableZoomOnScrolling
 		]);
 	}
 

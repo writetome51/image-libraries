@@ -6,8 +6,9 @@ import { ZoomOnScrollData } from '@runtime-state-data/static-classes/auto-resett
 @Injectable()
 export class ToggleZoomOnScrollingProcessorService implements Processor {
 
-	process(zoomOnScroll: typeof ZoomOnScrollData) {
-		zoomOnScroll.enabled = !(zoomOnScroll.enabled);
+	process(data: {zoomOnScroll: typeof ZoomOnScrollData, checked: boolean}) {
+		data.zoomOnScroll.enabled = !(data.zoomOnScroll.enabled);
+		data.checked = data.zoomOnScroll.enabled;
 	};
 
 }

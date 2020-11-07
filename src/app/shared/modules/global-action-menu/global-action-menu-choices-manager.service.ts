@@ -1,8 +1,10 @@
-import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
+import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames, ZoomOnScrollData }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
 import { isObject } from '@writetome51/is-object-not-object';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
+import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLibraryData as choiceLib } from './menu-choice-library.data';
 import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
@@ -11,8 +13,6 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
-import { MenuChoice } from '@interfaces/menu-choice';
 
 
 @Injectable()
@@ -32,28 +32,37 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __manage(): void {
-		if (notEmpty(this.__selectedImages)) this.__includeManipulateSelected();
-		else this.__removeManipulateSelected();
+		menuChoices.global = [];
+		if (notEmpty(this.__selectedImages)) {
+			this.__includeManipulateSelected();
+		}
+		else {
+			this.__removeManipulateSelected();
+		}
 
 		this.__includeEnableZoomOnScroll();
 	}
 
 
 	private __includeEnableZoomOnScroll() {
-		menuChoices.global.push(
-			choiceLib.enableZoomOnScrolling
-		);
+		let zoomOnScrolling = {
+			label: choiceLib.enableZoomOnScrolling,
+			data: {zoomOnScroll: ZoomOnScrollData, checked: ZoomOnScrollData.enabled}
+		};
+		menuChoices.global.push(zoomOnScrolling);
 	}
 
 
 	private __includeManipulateSelected() {
 		// temporarily commented out:
-	//	choiceLib.addSelected['submenu'] = libraryNames.data;
+		//	choiceLib.addSelected['submenu'] = libraryNames.data;
 
+		/*
 		menuChoices.global.push(
-			choiceLib.addSelected,
-			choiceLib.deleteSelected
+				choiceLib.addSelected,
+				choiceLib.deleteSelected
 		);
+		*/
 	}
 
 
@@ -64,7 +73,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		);
 		removeFirstOf(choiceLib.deleteSelected, menuChoices.global);
 
-		this.__includeInGlobal(choiceLib.selectMultiple);
+	//	this.__includeInGlobal(choiceLib.selectMultiple);
 	}
 
 

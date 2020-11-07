@@ -10,19 +10,21 @@ import { not } from '@writetome51/not';
 		<div (click)="runClickHandler($event)">
 			<ng-content></ng-content>
 
-			<tiny-loading-spinner [class.invisible]="hideLoadingSpinner">
-			</tiny-loading-spinner>
+			<tiny-loading-spinner [class.invisible]="hideLoadingSpinner"></tiny-loading-spinner>
 
-			<!--   When process finished, have spinner replaced by checkmark. That checkmark
-			 stays there as long as the dropdown list stays open.
-			 -->
-			<span *ngIf="processed" class="glyphicon glyphicon-ok"></span>
+			<checkmark *ngIf="showCheck"></checkmark>
 		</div>
-	`
+	`,
+	styles: ['checkmark { position: absolute; right: 8px; bottom: 10px;}']
 })
 export class StartDataProcessListItemComponent extends ClickStartDataProcessComponent {
 
-	@Input() processed = false;
+	@Input() checked = false;
+
+
+	get showCheck() {
+		return (this.hideLoadingSpinner && this.checked);
+	}
 
 
 	get hideLoadingSpinner(): boolean {

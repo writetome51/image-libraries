@@ -19,6 +19,13 @@ export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	clicked = false;
 
+	get checked(): boolean {
+		if (hasValue(this.data.data)) {
+			return (hasValue(this.data.data['checked']) ? this.data.data['checked'] : false);
+		}
+		else return false;
+	}
+
 
 	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
 		super(_menuChoiceProcessor);
