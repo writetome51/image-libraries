@@ -1,4 +1,5 @@
 import { ActionMenuChoicesComponent } from './action-menu-choices.component';
+import { CheckmarkComponent } from './menu-choice/checkmark.component';
 import { CommonModule } from '@angular/common';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice/menu-choice.component';
@@ -15,6 +16,7 @@ import { SubmenuComponent } from './menu-choice/submenu/submenu.component';
 	declarations: [
 		ActionMenuChoicesComponent,
 		MenuChoiceComponent,
+		CheckmarkComponent,
 		SubmenuPointerComponent,
 		SubmenuComponent
 	],

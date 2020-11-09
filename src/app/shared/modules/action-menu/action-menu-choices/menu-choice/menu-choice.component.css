@@ -16,3 +16,8 @@ hoverable-container {
 .dropdown-submenu {
 	position: relative;
 }
+
+
+checkmark {
+	position: absolute; right: 8px; bottom: 10px;
+}
