@@ -5,6 +5,7 @@ import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { DirectProcessor } from '@interfaces/direct-processor';
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 
 
 @Component({
@@ -14,26 +15,27 @@ import { DirectProcessor } from '@interfaces/direct-processor';
 })
 export class MenuChoiceComponent extends StartDataProcessContainerComponent {
 
-	@Input() data: MenuChoice;
+	@Input() data: MenuChoice | CheckableMenuChoice;
 	@Input() choicesProcessor: DirectProcessor;
 
 	clicked = false;
 
+
 	get checked(): boolean {
-		if (hasValue(this.data.data)) {
-			return (hasValue(this.data.data['checked']) ? this.data.data['checked'] : false);
+		if (hasValue(this.data.data) && hasValue(this.data.data['checked'])) {
+			return this.data.data['checked'];
 		}
 		else return false;
 	}
 
 
-	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
-		super(_menuChoiceProcessor);
+	get hasSubmenu(): boolean {
+		return hasValue(this.data['submenu']);
 	}
 
 
-	hasSubmenu(): boolean {
-		return hasValue(this.data['submenu']);
+	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
+		super(_menuChoiceProcessor);
 	}
 
 

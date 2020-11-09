@@ -3,7 +3,7 @@ import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames 
 import { AppImage } from '@interfaces/app-image';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
-import { MenuChoiceLibraryData as choiceLib } from './menu-choice-library.data';
+import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { MenuChoice } from '@interfaces/menu-choice';
 
@@ -23,7 +23,7 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 
 	private __manage(image){
 		menuChoices.images[image.name] = [
-			{label: choiceLib.toggleAddRemoveImageToLibrary, choices: libraryNames.data}
+			{label: choiceLabel.addToLibrary, choices: libraryNames.data}
 		];
 	}
 

@@ -1,16 +1,16 @@
-<li role="presentation" class="menu-choice" [class.dropdown-submenu]="hasSubmenu()"
+<li role="presentation" class="menu-choice" [class.dropdown-submenu]="hasSubmenu"
 	(click)="toggleClick($event)"
 >
 	<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-		<start-data-process-list-item *ngIf="!(hasSubmenu())"
+		<start-data-process-list-item *ngIf="!(hasSubmenu)"
 			[container]="this" [processArgs]="[{choice: data, choicesProcessor: choicesProcessor}]"
 			[checked]="checked"
 		>
 			<div class="label-container">{{ data.label }}</div>
 		</start-data-process-list-item>
 
-		<submenu *ngIf="hasSubmenu()" [clicked]="clicked" [data]="data"></submenu>
+		<submenu *ngIf="hasSubmenu" [clicked]="clicked" [data]="data"></submenu>
 
 	</hoverable-container>
 
