@@ -1,7 +1,7 @@
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { ChoicesProcessorService } from './choices-processor.service';
+import { ChoicesProcessorService } from '../../../choices-processor.service';
 
 
 @Injectable()

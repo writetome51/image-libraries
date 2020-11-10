@@ -1,11 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { MenuChoiceProcessorService } from './menu-choice-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { DirectProcessor } from '@interfaces/direct-processor';
 import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
+import { ChoicesProcessorService } from '../../choices-processor.service';
 
 
 @Component({
@@ -13,29 +10,16 @@ import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 	templateUrl: './menu-choice.component.html',
 	styleUrls: ['./menu-choice.component.css']
 })
-export class MenuChoiceComponent extends StartDataProcessContainerComponent {
+export class MenuChoiceComponent {
 
 	@Input() data: MenuChoice | CheckableMenuChoice;
-	@Input() choicesProcessor: DirectProcessor;
+	@Input() choicesProcessor: ChoicesProcessorService;
 
 	clicked = false;
 
 
-	get checked(): boolean {
-		if (hasValue(this.data.data) && hasValue(this.data.data['checked'])) {
-			return this.data.data['checked'];
-		}
-		else return false;
-	}
-
-
 	get hasSubmenu(): boolean {
 		return hasValue(this.data['submenu']);
-	}
-
-
-	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
-		super(_menuChoiceProcessor);
 	}
 
 

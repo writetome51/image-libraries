@@ -3,13 +3,9 @@
 >
 	<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-		<start-data-process-list-item *ngIf="!(hasSubmenu)"
-			[container]="this" [processArgs]="[{choice: data, choicesProcessor: choicesProcessor}]"
-		>
-			<div class="label-container">{{ data.label }}</div>
-			<checkmark *ngIf="checked"></checkmark>
-
-		</start-data-process-list-item>
+		<processable-menu-choice *ngIf="!(hasSubmenu)"
+			[data]="data" [choicesProcessor]="choicesProcessor">
+		</processable-menu-choice>
 
 		<submenu *ngIf="hasSubmenu" [clicked]="clicked" [data]="data"></submenu>
 

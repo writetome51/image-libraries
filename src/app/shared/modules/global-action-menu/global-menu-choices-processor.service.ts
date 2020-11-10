@@ -1,5 +1,5 @@
 import { ChoicesProcessorService }
-	from '@action-menu/action-menu-choices/menu-choice/choices-processor.service';
+	from '@action-menu/choices-processor.service';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor/delete-selected-images-processor.service';
 import { Injectable } from '@angular/core';

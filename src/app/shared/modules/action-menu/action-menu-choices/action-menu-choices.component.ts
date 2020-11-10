@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { DirectProcessor } from '@interfaces/direct-processor';
+import { ChoicesProcessorService } from '../choices-processor.service';
 
 
 @Component({
@@ -18,6 +18,6 @@ import { DirectProcessor } from '@interfaces/direct-processor';
 export class ActionMenuChoicesComponent {
 
 	@Input() data: MenuChoice[];
-	@Input() choicesProcessor: DirectProcessor;
+	@Input() choicesProcessor: ChoicesProcessorService;
 
 }
