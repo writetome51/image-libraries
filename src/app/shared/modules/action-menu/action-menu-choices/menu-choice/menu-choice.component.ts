@@ -12,7 +12,6 @@ import { ChoicesProcessorService } from '../../choices-processor.service';
 export class MenuChoiceComponent {
 
 	@Input() data: MenuChoice;
-	@Input() choicesProcessor: ChoicesProcessorService;
 
 	clicked = false;
 

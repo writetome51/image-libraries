@@ -1,7 +1,7 @@
-<start-data-process-list-item
-	[container]="this" [processArgs]="[{choice: data, choicesProcessor: choicesProcessor}]"
->
+<start-data-process-list-item [container]="this" [processArgs]="[data]">
+
 	<div class="label-container">{{ data.label }}</div>
+
 	<checkmark *ngIf="checked"></checkmark>
 
 </start-data-process-list-item>

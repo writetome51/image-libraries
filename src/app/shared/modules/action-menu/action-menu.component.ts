@@ -1,7 +1,8 @@
+import { ChoicesProcessorService } from './choices-processor.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
-import { ChoicesProcessorService } from './choices-processor.service';
+import { MenuChoiceProcessorService } from '@action-menu/menu-choice-processor.service';
 
 
 @Component({
@@ -18,9 +19,13 @@ export class ActionMenuComponent implements OnInit {
 	@Input() choicesManagerArgs? = [];
 
 
+	constructor(private __menuChoiceProcessor: MenuChoiceProcessorService) {
+	}
+
 
 	ngOnInit() {
 		this.choices = this.choicesManager.getChoices(...this.choicesManagerArgs);
+		this.__menuChoiceProcessor.setup(this.choicesProcessor);
 	}
 
 

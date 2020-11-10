@@ -21,7 +21,7 @@ export abstract class ChoicesProcessorService implements DirectProcessor {
 	}
 
 
-	// Number of `labels` must match number of injected processors.
+	// Number of `labels` must match number of processors injected in constructor.
 	// They must be listed in same order as processors they're matched with.
 
 	protected _setupFunctions(labels) {

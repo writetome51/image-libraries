@@ -1,11 +1,10 @@
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 import { Component, Input } from '@angular/core';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
-import { MenuChoiceProcessorService } from '../../menu-choice-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
-import { ChoicesProcessorService } from '@action-menu/choices-processor.service';
+import { MenuChoiceProcessorService } from '../../../menu-choice-processor.service';
+import { StartDataProcessContainerComponent }
+	from '@abstract-components/start-data-process-container.component';
 
 
 @Component({
@@ -16,7 +15,6 @@ import { ChoicesProcessorService } from '@action-menu/choices-processor.service'
 export class ProcessableMenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: MenuChoice | CheckableMenuChoice;
-	@Input() choicesProcessor: ChoicesProcessorService;
 
 
 	get checked(): boolean {
@@ -30,6 +28,5 @@ export class ProcessableMenuChoiceComponent extends StartDataProcessContainerCom
 	constructor(_menuChoiceProcessor: MenuChoiceProcessorService) {
 		super(_menuChoiceProcessor);
 	}
-
 
 }
