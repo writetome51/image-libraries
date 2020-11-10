@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 import { ChoicesProcessorService } from '../../choices-processor.service';
 
 
@@ -12,7 +11,7 @@ import { ChoicesProcessorService } from '../../choices-processor.service';
 })
 export class MenuChoiceComponent {
 
-	@Input() data: MenuChoice | CheckableMenuChoice;
+	@Input() data: MenuChoice;
 	@Input() choicesProcessor: ChoicesProcessorService;
 
 	clicked = false;
