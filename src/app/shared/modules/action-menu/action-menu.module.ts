@@ -4,7 +4,6 @@ import { ActionMenuComponent } from './action-menu.component';
 import { CommonModule } from '@angular/common';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { NgModule } from '@angular/core';
-import { MenuChoiceProcessorService } from '@action-menu/menu-choice-processor.service';
 
 
 @NgModule({
@@ -15,7 +14,6 @@ import { MenuChoiceProcessorService } from '@action-menu/menu-choice-processor.s
 		CommonModule,
 		HoverableContainerModule,
 	],
-	providers: [MenuChoiceProcessorService],
 	exports: [ActionMenuComponent]
 })
 export class ActionMenuModule {

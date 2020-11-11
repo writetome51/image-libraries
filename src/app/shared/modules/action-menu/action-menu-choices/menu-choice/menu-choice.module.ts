@@ -5,10 +5,10 @@ import { MenuChoiceComponent } from './menu-choice.component';
 import { NgModule } from '@angular/core';
 import { ProcessableMenuChoiceComponent }
 	from './processable-menu-choice/processable-menu-choice.component';
-import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
-import { SubmenuComponent } from './submenu/submenu.component';
 import { StartDataProcessListItemModule }
 	from '@start-data-process-list-item/start-data-process-list-item.module';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
 
 
 @NgModule({
@@ -19,7 +19,11 @@ import { StartDataProcessListItemModule }
 		SubmenuPointerComponent,
 		SubmenuComponent
 	],
-	imports: [CommonModule, HoverableContainerModule, StartDataProcessListItemModule],
+	imports: [
+		CommonModule,
+		HoverableContainerModule,
+		StartDataProcessListItemModule
+	],
 	exports: [MenuChoiceComponent]
 })
 export class MenuChoiceModule {

@@ -7,7 +7,10 @@ import { MenuChoiceProcessorService } from '@action-menu/menu-choice-processor.s
 
 @Component({
 	selector: 'action-menu',
-	templateUrl: './action-menu.component.html'
+	templateUrl: './action-menu.component.html',
+
+	// Creates new instance of service for every instance of this component.
+	providers: [MenuChoiceProcessorService]
 })
 export class ActionMenuComponent implements OnInit {
 
