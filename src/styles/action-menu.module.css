@@ -4,17 +4,17 @@ menu-choice {
 }
 
 
-menu-choice hoverable-container div.label-container {
+menu-choice  hoverable-container  div.label-container {
 	margin: 5px 0 5px 5px;
 }
 
 
-menu-choice hoverable-container .hovered {
+menu-choice  hoverable-container  .hovered {
 	background-color: #ececec;
 }
 
 
-menu-choice .dropdown-submenu .dropdown-menu {
+menu-choice  .dropdown-submenu  .dropdown-menu {
 	display: block;
 	top: 0;
 	left: 100%;
