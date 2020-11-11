@@ -1,4 +1,4 @@
-import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames, ZoomOnScrollData }
+import { ActionMenuChoicesData as menuChoices, ZoomOnScrollData }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
@@ -48,9 +48,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	private __includeEnableZoomOnScroll() {
 		let enableZoomOnScrolling: CheckableMenuChoice = {
 			label: choiceLabel.enableZoomOnScrolling,
-			data: {checked: ZoomOnScrollData.enabled}
+			data: {checked: ZoomOnScrollData.enabled, zoomOnScroll: ZoomOnScrollData}
 		};
-		enableZoomOnScrolling.data['zoomOnScroll'] = ZoomOnScrollData;
 		menuChoices.global.push(enableZoomOnScrolling);
 	}
 
@@ -60,11 +59,11 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		//	choiceLabel.addSelectedToLib['submenu'] = libraryNames.data;
 
 		/*
-		menuChoices.global.push(
-				choiceLabel.addSelectedToLib,
-				choiceLabel.deleteSelected
-		);
-		*/
+		 menuChoices.global.push(
+		 choiceLabel.addSelectedToLib,
+		 choiceLabel.deleteSelected
+		 );
+		 */
 	}
 
 
@@ -75,7 +74,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		);
 		removeFirstOf(choiceLabel.deleteSelected, menuChoices.global);
 
-	//	this.__includeInGlobal(choiceLabel.selectMultiple);
+		//	this.__includeInGlobal(choiceLabel.selectMultiple);
 	}
 
 
