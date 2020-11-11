@@ -1,21 +1,24 @@
 // Contains all routes the AppNavigatorModule is concerned with.
 
 
+import { Link } from '@interfaces/link';
+
+
 export class AppNavigatorChoiceData {
 
-	static readonly UpdateUserModule = {
+	static readonly UpdateUserModule: Link = {
 		path: 'update-account',
-		linkText: 'Update Account'
+		label: 'Update Account'
 	};
 
-	static readonly AddImagesModule = {
+	static readonly AddImagesModule: Link = {
 		path: 'add-images',
-		linkText: 'Add Images'
+		label: 'Add Images'
 	};
 
-	static readonly AllImagesModule = {
+	static readonly AllImagesModule: Link = {
 		path: 'all-images',
-		linkText: 'All Images'
+		label: 'All Images'
 	};
 
 }

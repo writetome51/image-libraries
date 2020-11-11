@@ -8,9 +8,8 @@ import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.com
 import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button/submit-form-button.module';
-import { UpdateEmailFormComponent }
-	from './update-email-form/update-email-form.component';
+import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
 import { UpdateEmailFormInputsComponent }
 	from './update-email-form/update-email-form-inputs.component';
 import { UpdateUserComponent } from './update-user.component';

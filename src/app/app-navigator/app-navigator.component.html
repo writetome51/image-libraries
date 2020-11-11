@@ -5,9 +5,11 @@
 		<logout-button></logout-button>
 
 		<ng-container *ngFor="let choice of choices">
+
 			<div *ngIf="routeInactive(choice.path)" class="input-container nav-link-container">
-				<a [routerLink]="choice.path">{{choice.linkText}}</a>
+				<a [routerLink]="choice.path">{{choice.label}}</a>
 			</div>
+
 		</ng-container>
 
 	</div>
