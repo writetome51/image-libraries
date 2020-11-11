@@ -15,7 +15,7 @@ export class MenuChoiceProcessorService implements DirectProcessor {
 	}
 
 
-	setup(choicesProcessor: ChoicesProcessorService) {
+	set(choicesProcessor: ChoicesProcessorService) {
 		this.__choicesProcessor = choicesProcessor;
 	}
 

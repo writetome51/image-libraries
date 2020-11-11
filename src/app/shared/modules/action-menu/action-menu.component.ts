@@ -25,7 +25,7 @@ export class ActionMenuComponent implements OnInit {
 
 	ngOnInit() {
 		this.choices = this.choicesManager.getChoices(...this.choicesManagerArgs);
-		this.__menuChoiceProcessor.setup(this.choicesProcessor);
+		this.__menuChoiceProcessor.set(this.choicesProcessor);
 	}
 
 

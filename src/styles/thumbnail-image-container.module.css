@@ -20,6 +20,11 @@ image-action-menu action-menu-button button sprocket-wheel {
 }
 
 
+image-action-menu action-menu-button button sprocket-wheel img {
+	width: 11px;
+}
+
+
 image-action-menu button div span.caret {
 	position: relative;
 	top: 14px;

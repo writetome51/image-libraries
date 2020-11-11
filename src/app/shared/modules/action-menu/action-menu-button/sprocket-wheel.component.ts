@@ -10,8 +10,8 @@ import { HTMLImage } from '@interfaces/html-image';
 export class SprocketWheelComponent {
 
 	readonly sprocket: HTMLImage = {
-		src: environment.assets + 'sprocket-wheel.png',
-		width: 11,
+		src: environment.assets + 'sprocket-wheel-big.png',
+		width: 22,
 		alt: 'sprocket wheel'
 	};
 
