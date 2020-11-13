@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { UpdateUserChoiceData } from './update-user-choice.data';
+import { UpdateUserChoicesData } from './update-user-choices.data';
 import { CurrentRouteService } from '@services/current-route.service';
+import { getByIndex } from '@writetome51/array-get-by-index';
+import { getByTest } from '@writetome51/array-get-by-test';
+import { VariableSubcomponent } from '@interfaces/variable-subcomponent';
 
 
 @Component({
@@ -10,24 +13,33 @@ import { CurrentRouteService } from '@services/current-route.service';
 export class UpdateUserComponent {
 
 	heading = 'Update';
-	choicesMap = UpdateUserChoiceData;
-	choices = Object.keys(this.choicesMap);
+	choices = UpdateUserChoicesData;
+	choiceKeys = Object.keys(this.choices);
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
-	getFormHeading(): string {
+	getChoiceLinkRoute(choiceKey) {
+		return this.choices[choiceKey].link.path;
+	}
+
+
+	getChoiceLinkLabel(choiceKey) {
+		return this.choices[choiceKey].link.label;
+	}
+
+
+	getChoiceHeading(): string {
 		let url = this.__currentRoute.data;
+		let path = getByIndex(-1, url.split('/'));
 
-		for (let i = 0; i < this.choices.length; ++i) {
-			let map: { path: string, heading: string } = this.choicesMap[this.choices[i]];
-
-			if (url.endsWith(`/${map.path}`)) {
-				return map.heading;
-			}
-		}
+		let [choice] = getByTest(
+			(choice: VariableSubcomponent) => choice.link.path === path,
+			Object.values(this.choices)
+		);
+		return choice.heading;
 	}
 
 }

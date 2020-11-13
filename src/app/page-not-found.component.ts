@@ -7,7 +7,7 @@ import { environment } from '@environments/environment';
 	template: `
 		<h2>Oops. Page not found.</h2>
 		<html-image [data]="faces"></html-image>
-		<p>This could make you happy, or sad. It depends on you.</p>
+		<p>This could make you happy or sad. It depends on you.</p>
 	`
 })
 export class PageNotFoundComponent {

@@ -10,8 +10,4 @@ export class FullSizeImageComponent {
 
 	@Input() data: DBImage;
 
-
-	constructor() {
-	}
-
 }

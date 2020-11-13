@@ -1,7 +1,7 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdateUserChoiceData as choice } from './update-user-choice.data';
+import { UpdateUserChoicesData as choice } from './update-user-choices.data';
 import { UpdateUserComponent } from './update-user.component';
 
 
@@ -10,7 +10,7 @@ const routes: Routes = [
 	{	// This makes 'email' the default route when this module loads.
 		path: '',
 		pathMatch: 'full',
-		redirectTo: choice.email.path
+		redirectTo: choice.email.link.path
 	},
 
 	{
@@ -19,18 +19,18 @@ const routes: Routes = [
 		canActivate: [AuthenticatedGuard],
 		children: [
 			{
-				path: choice.email.path,
-				component: choice.email.component
+				path: choice.email.link.path,
+				component: choice.email.link.component
 			},
 
 			{
-				path: choice.password.path,
-				component: choice.password.component
+				path: choice.password.link.path,
+				component: choice.password.link.component
 			},
 
 			{
-				path: choice.delete.path,
-				component: choice.delete.component
+				path: choice.delete.link.path,
+				component: choice.delete.link.component
 			},
 		]
 	},
