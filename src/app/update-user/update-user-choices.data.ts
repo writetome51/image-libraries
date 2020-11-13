@@ -7,19 +7,25 @@ import { VariableSubcomponent } from '@interfaces/variable-subcomponent';
 
 export class UpdateUserChoicesData {
 
-	static readonly email: VariableSubcomponent = {
-		link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},
-		heading: 'Email'
-	};
+	static readonly data: VariableSubcomponent[] = [
+		{
+			link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},
+			heading: 'Email'
+		},
 
-	static readonly password: VariableSubcomponent = {
-		link: {label: 'Password', path: 'password', component: UpdateUserPasswordFormComponent},
-		heading: 'Password'
-	};
+		{
+			link: {label: 'Password', path: 'password', component: UpdateUserPasswordFormComponent},
+			heading: 'Password'
+		},
 
-	static readonly delete: VariableSubcomponent = {
-		link: {label: 'Delete Account', path: 'delete-account', component: DeleteUserFormComponent},
-		heading: 'Self Destruct?'
-	};
+		{
+			link: {
+				label: 'Delete Account',
+				path: 'delete-account',
+				component: DeleteUserFormComponent
+			},
+			heading: 'Self Destruct?'
+		}
+	];
 
 }

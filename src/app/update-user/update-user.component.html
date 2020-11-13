@@ -1,11 +1,11 @@
 <header><h2>{{heading}}</h2></header>
 
 <nav>
-	<div *ngFor="let key of choiceKeys; let i = index" class="nav-link-container">
+	<div *ngFor="let choice of choices; let i = index" class="nav-link-container">
 
-		<a [routerLink]="getChoiceLinkRoute(key)">{{getChoiceLinkLabel(key)}}</a>
+		<a [routerLink]="getChoiceLinkRoute(i)">{{getChoiceLinkLabel(i)}}</a>
 
-		<span *ngIf="i < (choiceKeys.length - 1)"> |</span>
+		<span *ngIf="i < (choices.length - 1)"> |</span>
 
 	</div>
 </nav>

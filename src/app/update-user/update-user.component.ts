@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UpdateUserChoicesData } from './update-user-choices.data';
+import { UpdateUserChoicesData as updateChoices} from './update-user-choices.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
@@ -13,21 +13,20 @@ import { VariableSubcomponent } from '@interfaces/variable-subcomponent';
 export class UpdateUserComponent {
 
 	heading = 'Update';
-	choices = UpdateUserChoicesData;
-	choiceKeys = Object.keys(this.choices);
+	choices = updateChoices.data;
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
-	getChoiceLinkRoute(choiceKey) {
-		return this.choices[choiceKey].link.path;
+	getChoiceLinkRoute(index) {
+		return this.choices[index].link.path;
 	}
 
 
-	getChoiceLinkLabel(choiceKey) {
-		return this.choices[choiceKey].link.label;
+	getChoiceLinkLabel(index) {
+		return this.choices[index].link.label;
 	}
 
 
@@ -37,7 +36,7 @@ export class UpdateUserComponent {
 
 		let [choice] = getByTest(
 			(choice: VariableSubcomponent) => choice.link.path === path,
-			Object.values(this.choices)
+			this.choices
 		);
 		return choice.heading;
 	}
