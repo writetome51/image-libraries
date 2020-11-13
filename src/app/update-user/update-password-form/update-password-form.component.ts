@@ -4,14 +4,14 @@ import { UpdatePasswordProcessorService }
 
 
 @Component({
-	selector: 'update-user-password-form',
+	selector: 'update-password-form',
 	template: `
-		<update-user-password-form-inputs clearFormOnInit clearAlertOnDestroy>
-		</update-user-password-form-inputs>
+		<update-password-form-inputs clearFormOnInit clearAlertOnDestroy>
+		</update-password-form-inputs>
 		<submit-form-button [processor]="processor"></submit-form-button>
 	`
 })
-export class UpdateUserPasswordFormComponent {
+export class UpdatePasswordFormComponent {
 
 	constructor(public processor: UpdatePasswordProcessorService) {
 	}

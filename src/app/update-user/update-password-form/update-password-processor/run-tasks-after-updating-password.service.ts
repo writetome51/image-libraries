@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { RunTasksAfterUpdatingEmailOrPasswordService }
-	from '../../run-tasks-after-updating-email-or-password.service';
+import { RunTasksAfterUpdatingUserService }
+	from '../../run-tasks-after-updating-user.service';
 import { SetResultMessage } from '../../set-result-message/set-result-message.decorator';
 
 
 @SetResultMessage('Password updated')
 
 export class __RunTasksAfterUpdatingPasswordService
-	extends RunTasksAfterUpdatingEmailOrPasswordService {
+	extends RunTasksAfterUpdatingUserService {
 }
 
 @Injectable({providedIn: 'root'})

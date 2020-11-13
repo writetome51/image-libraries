@@ -8,7 +8,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksAfterUpdatingEmailOrPasswordService implements IDoThis {
+export class RunTasksAfterUpdatingUserService implements IDoThis {
 
 	resultMessage: string;
 

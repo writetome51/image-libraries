@@ -13,10 +13,10 @@ import { UpdateEmailFormComponent } from './update-email-form/update-email-form.
 import { UpdateEmailFormInputsComponent }
 	from './update-email-form/update-email-form-inputs.component';
 import { UpdateUserComponent } from './update-user.component';
-import { UpdateUserPasswordFormComponent }
-	from './update-user-password-form/update-user-password-form.component';
-import { UpdateUserPasswordFormInputsComponent }
-	from './update-user-password-form/update-user-password-form-inputs.component';
+import { UpdatePasswordFormComponent }
+	from './update-password-form/update-password-form.component';
+import { UpdatePasswordFormInputsComponent }
+	from './update-password-form/update-password-form-inputs.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
 
 
@@ -27,8 +27,8 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 		UpdateUserComponent,
 		UpdateEmailFormComponent,
 		UpdateEmailFormInputsComponent,
-		UpdateUserPasswordFormComponent,
-		UpdateUserPasswordFormInputsComponent,
+		UpdatePasswordFormComponent,
+		UpdatePasswordFormInputsComponent,
 	],
 	imports: [
 		CommonModule,

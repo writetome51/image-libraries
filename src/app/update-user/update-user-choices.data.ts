@@ -1,7 +1,7 @@
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
-import { UpdateUserPasswordFormComponent }
-	from './update-user-password-form/update-user-password-form.component';
+import { UpdatePasswordFormComponent }
+	from './update-password-form/update-password-form.component';
 import { VariableSubcomponent } from '@interfaces/variable-subcomponent';
 
 
@@ -14,7 +14,7 @@ export class UpdateUserChoicesData {
 		},
 
 		{
-			link: {label: 'Password', path: 'password', component: UpdateUserPasswordFormComponent},
+			link: {label: 'Password', path: 'password', component: UpdatePasswordFormComponent},
 			heading: 'Password'
 		},
 
