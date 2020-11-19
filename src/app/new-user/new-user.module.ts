@@ -10,7 +10,7 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button/submit-form-button.module';
+import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
 
 
 @NgModule({

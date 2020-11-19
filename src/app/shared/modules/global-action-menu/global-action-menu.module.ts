@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuComponent } from './global-action-menu.component';
 import { NgModule } from '@angular/core';
-import { GlobalMenuChoicesProcessorService } from './global-menu-choices-processor.service';
+import { GlobalActionMenuChoicesProcessorService } from './global-action-menu-choices-processor.service';
 import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-processor/delete-selected-images-result-interpreter.service';
 import { DeleteSelectedImagesProcessorService }
@@ -18,7 +18,7 @@ import { ToggleZoomOnScrollingProcessorService } from './toggle-zoom-on-scrollin
 	imports: [CommonModule, ActionMenuModule],
 	providers: [
 		GlobalActionMenuChoicesManagerService,
-		GlobalMenuChoicesProcessorService,
+		GlobalActionMenuChoicesProcessorService,
 		DeleteSelectedImagesResultInterpreterService,
 		DeleteSelectedImagesProcessorService,
 		RunTasksAfterDeletingImagesService,

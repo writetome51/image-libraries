@@ -2,12 +2,12 @@ import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.com
 import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
 import { UpdatePasswordFormComponent }
 	from './update-password-form/update-password-form.component';
-import { VariableSubcomponent } from '@interfaces/variable-subcomponent';
+import { LinkedSubcomponent } from '@app/update-user/linked-subcomponent';
 
 
 export class UpdateUserChoicesData {
 
-	static readonly data: VariableSubcomponent[] = [
+	static readonly data: LinkedSubcomponent[] = [
 		{
 			link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},
 			heading: 'Email'

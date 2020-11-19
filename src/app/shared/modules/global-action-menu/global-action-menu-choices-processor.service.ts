@@ -8,7 +8,7 @@ import { ToggleZoomOnScrollingProcessorService } from './toggle-zoom-on-scrollin
 
 
 @Injectable()
-export class GlobalMenuChoicesProcessorService extends ChoicesProcessorService {
+export class GlobalActionMenuChoicesProcessorService extends ChoicesProcessorService {
 
 	constructor(
 		deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService,

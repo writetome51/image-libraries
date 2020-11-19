@@ -1,8 +1,7 @@
-// Contains all routes the AppNavigatorModule is concerned with.
-
-
 import { Link } from '@interfaces/link';
 
+
+// Contains all routes the AppNavigatorModule is concerned with.
 
 export class AppNavigatorChoiceData {
 

@@ -3,7 +3,7 @@
 <nav>
 	<div *ngFor="let choice of choices; let i = index" class="nav-link-container">
 
-		<a [routerLink]="getChoiceLinkRoute(i)">{{getChoiceLinkLabel(i)}}</a>
+		<a [routerLink]="getChoiceLinkRoute(i)">{{ getChoiceLinkLabel(i) }}</a>
 
 		<span *ngIf="i < (choices.length - 1)"> |</span>
 

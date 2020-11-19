@@ -2,7 +2,7 @@ import { ChoicesProcessorService } from './choices-processor.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
-import { MenuChoiceProcessorService } from '@action-menu/menu-choice-processor.service';
+import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 
 
 @Component({

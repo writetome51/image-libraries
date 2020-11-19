@@ -1,7 +1,7 @@
 import { ComponentLink } from '@interfaces/component-link';
 
 
-export interface VariableSubcomponent {
+export interface LinkedSubcomponent {
 
 	link: ComponentLink;
 

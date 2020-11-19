@@ -21,7 +21,7 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 	@Input() selectEnabled = false;
 
 	@Input() deleteGlyphiconEnabled = false;
-	zoomEnabled = ZoomOnScrollData;
+	zoomOnScroll = ZoomOnScrollData;
 
 
 	isHovered(container: HoverableContainerComponent): boolean {
