@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
+import { ClickStartDataProcessDivComponent } from './click-start-data-process-div.component';
 import { NgModule } from '@angular/core';
-import { StartDataProcessListItemComponent } from './start-data-process-list-item.component';
 import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner/tiny-loading-spinner.module';
 
 
 @NgModule({
-	declarations: [StartDataProcessListItemComponent],
+	declarations: [ClickStartDataProcessDivComponent],
 	imports: [CommonModule, TinyLoadingSpinnerModule],
-	exports: [StartDataProcessListItemComponent]
+	exports: [ClickStartDataProcessDivComponent]
 })
-export class StartDataProcessListItemModule {
+export class ClickStartDataProcessDivModule {
 }

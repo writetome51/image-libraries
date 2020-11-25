@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoice } from '@interfaces/menu-choice';
-import { ChoicesProcessorService } from '../../choices-processor.service';
 
 
 @Component({

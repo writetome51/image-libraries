@@ -1,11 +1,11 @@
 import { ClickStartDataProcessComponent }
 	from '@abstract-components/click-start-data-process.component';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { not } from '@writetome51/not';
 
 
 @Component({
-	selector: 'start-data-process-list-item',
+	selector: 'click-start-data-process-div',
 	template: `
 		<div (click)="runClickHandler($event)">
 			<ng-content></ng-content>
@@ -14,7 +14,7 @@ import { not } from '@writetome51/not';
 		</div>
 	`
 })
-export class StartDataProcessListItemComponent extends ClickStartDataProcessComponent {
+export class ClickStartDataProcessDivComponent extends ClickStartDataProcessComponent {
 
 	get hideLoadingSpinner(): boolean {
 		return not(this.clicked && this.processingStatus.waiting);
