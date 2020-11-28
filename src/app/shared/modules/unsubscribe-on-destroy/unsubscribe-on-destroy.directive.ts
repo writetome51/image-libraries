@@ -1,17 +1,15 @@
-import { Directive, Input, OnDestroy } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { Unsubscribable } from 'rxjs';
+import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 
 
 @Directive({
 	selector: '[unsubscribeOnDestroy]'
 })
-export class UnsubscribeOnDestroyDirective implements OnDestroy {
+export class UnsubscribeOnDestroyDirective extends UnsubscribeOnDestroyComponent {
 
-	@Input() subscriptions: Unsubscribable[];
-
-
-	ngOnDestroy() {
-		this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+	@Input() set subscriptions(value: Unsubscribable[]) {
+		this._subscriptions = value;
 	}
 
 }

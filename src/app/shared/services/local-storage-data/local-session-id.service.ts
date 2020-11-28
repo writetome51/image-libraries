@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageDataService } from './local-storage-data.service';
-import { LocalStorageService } from '../local-storage.service';
+import { LocalStorageItemService } from './local-storage-item.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LocalSessionIDService extends LocalStorageDataService {
+export class LocalSessionIDService extends LocalStorageItemService {
 
-	constructor(__localStorage: LocalStorageService) {
-		super(__localStorage);
+	constructor() {
+		super('lsdObj');
 		this._key = 'lsd';
 	}
 

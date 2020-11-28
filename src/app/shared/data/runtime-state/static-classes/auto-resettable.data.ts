@@ -227,15 +227,3 @@ export class ThumbnailDisplaySettingsData {
 	}
 
 }
-
-
-export class ZoomOnScrollData {
-
-	static enabled: boolean;
-
-
-	static setDefault() {
-		this.enabled = false;
-	}
-
-}

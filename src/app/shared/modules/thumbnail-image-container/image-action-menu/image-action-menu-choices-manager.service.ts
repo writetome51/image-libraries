@@ -23,7 +23,7 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 
 	private __manage(image){
 		menuChoices.images[image.name] = [
-			{label: choiceLabel.addToLibrary, choices: libraryNames.data}
+			{label: choiceLabel.addToRemoveFromLibrary, choices: libraryNames.data}
 		];
 	}
 

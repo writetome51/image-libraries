@@ -1,6 +1,5 @@
 export class MenuChoiceLabelData {
 
-	static readonly addToLibrary = 'Add to Library';
-	static readonly removeFromLibrary = 'Remove from Library';
+	static readonly addToRemoveFromLibrary = 'Add To / Remove From Library';
 
 }

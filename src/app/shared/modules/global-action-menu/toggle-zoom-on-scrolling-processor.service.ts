@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import { ZoomOnScrollData } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { DirectProcessor } from '@interfaces/direct-processor';
+import { LocalZoomOnScrollService }
+	from '@services/local-storage-data/local-zoom-on-scroll.service';
 
 
 @Injectable()
 export class ToggleZoomOnScrollingProcessorService implements DirectProcessor {
 
-	process(data: {zoomOnScroll: typeof ZoomOnScrollData, checked: boolean}) {
-		data.zoomOnScroll.enabled = !(data.zoomOnScroll.enabled);
-		data.checked = data.zoomOnScroll.enabled;
+	process(data: { localZoomOnScroll: LocalZoomOnScrollService, checked: boolean }) {
+		let zoomOnScroll: { enabled: boolean } = data.localZoomOnScroll.get();
+
+		zoomOnScroll.enabled = !(zoomOnScroll.enabled);
+		data.checked = zoomOnScroll.enabled;
+
+		data.localZoomOnScroll.set(zoomOnScroll);
 	};
 
 }

@@ -1,4 +1,4 @@
-import { ActionMenuChoicesData as menuChoices, ZoomOnScrollData }
+import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
@@ -14,6 +14,7 @@ import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
 import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
+import { LocalZoomOnScrollService } from '@services/local-storage-data/local-zoom-on-scroll.service';
 
 
 @Injectable()
@@ -22,7 +23,10 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	private readonly __selectedImages = selectedImageNames.data;
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
+	constructor(
+		private __currentRoute: CurrentRouteService,
+		private __localZoomOnScroll: LocalZoomOnScrollService
+	) {
 	}
 
 
@@ -48,7 +52,10 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	private __includeEnableZoomOnScroll() {
 		let enableZoomOnScrolling: CheckableMenuChoice = {
 			label: choiceLabel.enableZoomOnScrolling,
-			data: {checked: ZoomOnScrollData.enabled, zoomOnScroll: ZoomOnScrollData}
+			data: {
+				checked: this.__localZoomOnScroll.get().enabled,
+				localZoomOnScroll: this.__localZoomOnScroll
+			}
 		};
 		menuChoices.global.push(enableZoomOnScrolling);
 	}

@@ -4,7 +4,7 @@ import { Hoverable } from '@interfaces/hoverable';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
-import { ZoomOnScrollData } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LocalZoomOnScrollService } from '@services/local-storage-data/local-zoom-on-scroll.service';
 
 
 @Component({
@@ -21,7 +21,15 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 	@Input() selectEnabled = false;
 
 	@Input() deleteGlyphiconEnabled = false;
-	zoomOnScroll = ZoomOnScrollData;
+
+
+	get zoomOnScroll(): { enabled: boolean } {
+		return this.localZoomOnScroll.get();
+	}
+
+
+	constructor(public localZoomOnScroll: LocalZoomOnScrollService) {
+	}
 
 
 	isHovered(container: HoverableContainerComponent): boolean {
@@ -36,8 +44,12 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 
 
 	getRouterLink(): string[] | string {
-		if (this.selectEnabled) return [];
-		else return this.imageRouterLink;
+		if (this.selectEnabled) {
+			return [];
+		}
+		else {
+			return this.imageRouterLink;
+		}
 	}
 
 }
