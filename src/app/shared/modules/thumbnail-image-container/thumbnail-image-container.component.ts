@@ -4,7 +4,7 @@ import { Hoverable } from '@interfaces/hoverable';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
-import { LocalZoomOnScrollService } from '@services/local-storage-data/local-zoom-on-scroll.service';
+import { LocalZoomOnScrollService } from '@services/local-storage-item/local-zoom-on-scroll.service';
 
 
 @Component({

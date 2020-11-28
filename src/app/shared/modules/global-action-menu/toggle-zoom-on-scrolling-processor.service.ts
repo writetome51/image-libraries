@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { LocalZoomOnScrollService }
-	from '@services/local-storage-data/local-zoom-on-scroll.service';
+	from '@services/local-storage-item/local-zoom-on-scroll.service';
 
 
 @Injectable()

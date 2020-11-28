@@ -7,7 +7,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalLibrariesService } from '@services/local-storage-data/local-libraries.service';
+import { LocalLibrariesService } from '@services/local-storage-item/local-libraries.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '@services/perform-data-process-requiring-waiting.service';
@@ -29,7 +29,9 @@ export class MakeSureLibrariesAreLoadedService implements IDoThis {
 		if (hasValue(libs)) {
 			libraryNames.data = libs.map((library: DBLibrary) => library.name);
 		}
-		else await performDataProcessRequiringWaiting.go(this.__getLibrariesProcessor, processingStatus);
+		else await performDataProcessRequiringWaiting.go(
+			this.__getLibrariesProcessor, processingStatus
+		);
 	}
 
 }

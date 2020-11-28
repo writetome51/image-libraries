@@ -3,8 +3,8 @@ import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '@services/get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
-import { LocalEmailService } from '@services/local-storage-data/local-email.service';
+import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
+import { LocalEmailService } from '@services/local-storage-item/local-email.service';
 import { UserRestAPIService } from '@services/user/user-rest-api.service';
 
 

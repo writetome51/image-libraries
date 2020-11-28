@@ -3,7 +3,7 @@ import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
 
 

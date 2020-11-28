@@ -1,7 +1,7 @@
 import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { AppNameData as appName } from '@read-only-data/app-name.data';
 import { Component, HostListener } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-storage-data/local-session-id.service';
+import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { Title } from '@angular/platform-browser';

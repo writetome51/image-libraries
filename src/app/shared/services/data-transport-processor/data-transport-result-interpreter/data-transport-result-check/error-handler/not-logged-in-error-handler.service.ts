@@ -1,7 +1,7 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { notLoggedIn } from '@string-constants/form-submission-errors';
-import { RemoveCachedDataService } from '@services/remove-cached-data.service';
+import { RemoveCachedDataService as removeCachedData } from '@services/remove-cached-data.service';
 import { Handler } from '@interfaces/handler';
 import { Router } from '@angular/router';
 
@@ -13,16 +13,12 @@ import { Router } from '@angular/router';
 
 export class NotLoggedInErrorHandlerService implements Handler {
 
-
-	constructor(
-		private __removeCachedData: RemoveCachedDataService,
-		private __router: Router
-	) {
+	constructor(private __router: Router) {
 	}
 
 
 	async handle() {
-		this.__removeCachedData.go();
+		removeCachedData.go();
 		await this.__router.navigate(['/']);
 		alert.error = notLoggedIn;
 	}
