@@ -5,14 +5,14 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
 import { MakeSureLibrariesAreLoadedService } from '@services/make-sure-libraries-are-loaded.service';
-import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
+import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
 @Component({
 	selector: 'all-images',
 	templateUrl: './all-images.component.html'
 })
-export class AllImagesComponent extends UnsubscribeOnDestroyComponent {
+export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 	heading = 'All Images';
 

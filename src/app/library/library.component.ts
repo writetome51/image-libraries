@@ -7,14 +7,14 @@ import { GetLibraryRouteParamsObserverService }
 import { ImageTotalData as imageTotal} from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibraryPaginatorService } from './services/library-paginator/library-paginator.service';
 import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
-import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
+import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
 @Component({
 	selector: 'app-library',
 	templateUrl: './library.component.html'
 })
-export class LibraryComponent extends UnsubscribeOnDestroyComponent {
+export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 
 	get name() {
 		return requestedLibrary.name;
