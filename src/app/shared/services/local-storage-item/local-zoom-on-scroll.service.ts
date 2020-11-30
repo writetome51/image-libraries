@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageItemService } from './local-storage-item.service';
+import { ItemInLocalStorageService } from './item-in-local-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LocalZoomOnScrollService extends LocalStorageItemService {
+export class LocalZoomOnScrollService extends ItemInLocalStorageService {
 
 	constructor() {
-		super('zoomOnScrollObj');
-		this._key = 'zoomOnScroll';
+		super('zoomOnScroll');
 	}
 
 
@@ -17,8 +16,10 @@ export class LocalZoomOnScrollService extends LocalStorageItemService {
 			return super.get();
 		}
 		catch (error) {
+			this.set({enabled: false});
 			return {enabled: false};
 		}
 	}
+
 
 }

@@ -49,6 +49,7 @@
 		"@writetome51/is-integer-is-float": ">=2.0.1",
 		"@writetome51/is-object-not-object": ">=2.0.0",
 		"@writetome51/is-string-not-string": ">=2.0.0",
+		"@writetome51/item-in-browser-storage": ">=4.0.0",
 		"@writetome51/modify-object": ">=2.0.0",
 		"@writetome51/not": ">=2.0.0",
 		"@writetome51/object-in-local-storage": ">=1.0.0",

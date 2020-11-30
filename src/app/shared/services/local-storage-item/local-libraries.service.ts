@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageItemService } from './local-storage-item.service';
 import { DBLibrary } from '@interfaces/db-library';
+import { ItemInLocalStorageService } from './item-in-local-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LocalLibrariesService extends LocalStorageItemService {
+export class LocalLibrariesService extends ItemInLocalStorageService {
 
 	constructor() {
-		super('libsObj');
-		this._key = 'libs';
+		super('libs');
 	}
 
 

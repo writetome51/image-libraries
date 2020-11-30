@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageItemService } from './local-storage-item.service';
+import { ItemInLocalStorageService } from '@services/local-storage-item/item-in-local-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class LocalEmailService extends LocalStorageItemService {
+export class LocalEmailService extends ItemInLocalStorageService {
 
 	constructor() {
-		super('emlObj');
-		this._key = 'eml';
+		super('eml');
 	}
 
 }
