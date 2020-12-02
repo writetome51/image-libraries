@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
+import { LocalSessionIDService } from '@services/item-in-local-storage/local-session-id.service';
 import { Handler } from '@interfaces/handler';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { incorrectPassword, noAccountWithThatEmail } from '@string-constants/form-submission-errors';

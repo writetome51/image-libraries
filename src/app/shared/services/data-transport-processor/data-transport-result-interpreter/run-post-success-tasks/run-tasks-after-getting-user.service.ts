@@ -1,8 +1,8 @@
 import { DBUser } from '@interfaces/db-user';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { LocalEmailService } from '@services/local-storage-item/local-email.service';
-import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
+import { LocalEmailService } from '@services/item-in-local-storage/local-email.service';
+import { LocalSessionIDService } from '@services/item-in-local-storage/local-session-id.service';
 
 
 @Injectable({providedIn: 'root'})

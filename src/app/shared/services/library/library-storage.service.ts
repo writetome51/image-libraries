@@ -3,7 +3,7 @@ import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
 import { LibraryRestAPIService } from './library-rest-api.service';
-import { LocalSessionIDService } from '@services/local-storage-item/local-session-id.service';
+import { LocalSessionIDService } from '@services/item-in-local-storage/local-session-id.service';
 
 
 @Injectable({providedIn: 'root'})

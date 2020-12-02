@@ -32,9 +32,7 @@ export abstract class ItemInLocalStorageService extends ItemInBrowserStorage {
 		if (hasValue(value)) {
 			return this.__cryptographer.decrypt(value);
 		}
-		else {
-			throw new Error(`Local Storage item is undefined`);
-		}
+		else return undefined;
 	}
 
 }

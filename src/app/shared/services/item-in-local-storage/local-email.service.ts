@@ -4,20 +4,10 @@ import { ItemInLocalStorageService } from './item-in-local-storage.service';
 
 @Injectable({providedIn: 'root'})
 
-export class LocalSessionIDService extends ItemInLocalStorageService {
+export class LocalEmailService extends ItemInLocalStorageService {
 
 	constructor() {
-		super('lsd');
-	}
-
-
-	get(): string {
-		try {
-			return super.get();
-		}
-		catch (error) {
-			return '';
-		}
+		super('eml');
 	}
 
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ItemInLocalStorageService } from './item-in-local-storage.service';
+import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
@@ -12,12 +13,13 @@ export class LocalZoomOnScrollService extends ItemInLocalStorageService {
 
 
 	get(): { enabled: boolean } {
-		try {
-			return super.get();
-		}
-		catch (error) {
-			this.set({enabled: false});
-			return {enabled: false};
+		let value = super.get();
+		if (hasValue(value)) return value;
+		else {
+			let zoomOnScroll = {enabled: false};
+			this.set(zoomOnScroll);
+
+			return zoomOnScroll;
 		}
 	}
 
