@@ -11,7 +11,7 @@ export class SprocketWheelComponent {
 
 	readonly sprocket: HTMLImage = {
 		src: environment.assets + 'sprocket-wheel-big.png',
-		width: 22,
+		width: 18,
 		alt: 'sprocket wheel'
 	};
 

@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
 @Component({
 	selector: 'action-menu-button',
 	template: `
-		<button type="button" class="btn btn-default" (click)="toggleOpenMenu()">
+		<button type="button" class="btn btn-default action-menu-button" (click)="toggleOpenMenu()">
 			<div>
 				<sprocket-wheel></sprocket-wheel>
 				<span class="caret"></span>
