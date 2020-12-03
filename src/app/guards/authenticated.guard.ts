@@ -1,6 +1,7 @@
 import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/item-in-local-storage/local-session-id.service';
+import { LocalSessionIDService } from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
@@ -21,7 +22,7 @@ export class AuthenticatedGuard implements CanActivate {
 
 	private __ifSessionIDExists_returnTrue_ifNot_redirectToLoginAndReturnFalse(): boolean {
 
-		if (this.__localSessionID.get()) return true;
+		if (hasValue(this.__localSessionID.get())) return true;
 
 		this.__router.navigate(['/']);
 		return false;

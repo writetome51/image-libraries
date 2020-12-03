@@ -7,7 +7,8 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalLibrariesService } from '@services/item-in-local-storage/local-libraries.service';
+import { LocalLibrariesService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '@services/perform-data-process-requiring-waiting.service';
