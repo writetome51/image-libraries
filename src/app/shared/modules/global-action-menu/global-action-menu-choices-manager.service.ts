@@ -14,7 +14,8 @@ import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImageNamesData as selectedImageNames }
 	from '@runtime-state-data/selected-image-names.data';
 import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
-import { LocalZoomOnScrollService } from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
+import { LocalZoomOnScrollService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
 
 
 @Injectable()

@@ -26,9 +26,9 @@ export class MakeSureLibrariesAreLoadedService implements IDoThis {
 
 
 	async go() {
-		let libs: DBLibrary[] = this.__localLibraries.get();
-		if (hasValue(libs)) {
-			libraryNames.data = libs.map((library: DBLibrary) => library.name);
+		let libsMap: object = this.__localLibraries.get();
+		if (hasValue(libsMap)) {
+			libraryNames.data = Object.keys(libsMap);
 		}
 		else await performDataProcessRequiringWaiting.go(
 			this.__getLibrariesProcessor, processingStatus

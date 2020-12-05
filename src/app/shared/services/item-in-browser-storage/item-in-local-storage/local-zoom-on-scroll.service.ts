@@ -5,7 +5,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 
 @Injectable({providedIn: 'root'})
 
-export class LocalZoomOnScrollService extends ItemInLocalStorageService {
+export class LocalZoomOnScrollService extends ItemInLocalStorageService<{enabled: boolean}> {
 
 	constructor() {
 		super('zoomOnScroll');

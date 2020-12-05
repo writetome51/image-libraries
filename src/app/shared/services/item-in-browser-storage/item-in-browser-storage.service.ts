@@ -9,7 +9,7 @@ For storing and retrieving, the value is automatically encrypted and decrypted,
 respectively.
  ********************************/
 
-export abstract class ItemInBrowserStorageService extends ItemInBrowserStorage {
+export abstract class ItemInBrowserStorageService<T> extends ItemInBrowserStorage {
 
 	private __cryptographer = new SimpleCrypto(ecky);
 
@@ -22,15 +22,17 @@ export abstract class ItemInBrowserStorageService extends ItemInBrowserStorage {
 	}
 
 
-	set(value): void {
+	set(value: T): void {
+		// @ts-ignore
 		value = this.__cryptographer.encrypt(value);
 		super.set(value);
 	}
 
 
-	get(): any {
+	get(): T {
 		let value = super.get();
 		if (hasValue(value)) {
+			// @ts-ignore
 			return this.__cryptographer.decrypt(value);
 		}
 		else return undefined;
