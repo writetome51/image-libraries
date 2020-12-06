@@ -1,7 +1,6 @@
 import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { not } from '@writetome51/not';
 
 
 @Component({
@@ -17,8 +16,8 @@ export class AppNavigatorComponent {
 	}
 
 
-	routeInactive(route): boolean {
-		return not(this.__currentRoute.isActive(route));
+	isActive(route): boolean {
+		return this.__currentRoute.isActive(route);
 	}
 
 }

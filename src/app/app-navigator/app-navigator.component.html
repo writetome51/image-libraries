@@ -6,8 +6,14 @@
 
 		<ng-container *ngFor="let choice of choices">
 
-			<div *ngIf="routeInactive(choice.path)" class="input-container nav-link-container">
-				<a [routerLink]="choice.path">{{choice.label}}</a>
+			<div class="nav-link-container">
+
+				<a *ngIf="!(isActive(choice.path))" [routerLink]="choice.path">
+					{{choice.label}}
+				</a>
+
+				<span *ngIf="isActive(choice.path)">{{choice.label}}</span>
+
 			</div>
 
 		</ng-container>
