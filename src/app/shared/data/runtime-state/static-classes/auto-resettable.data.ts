@@ -3,6 +3,7 @@ import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
 import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@interfaces/menu-choice';
+import { setArray } from '@writetome51/set-array';
 
 
 // All data structures intended to be auto-reset to their default values when
@@ -149,11 +150,11 @@ export class LoadData {
 
 export class LoadedImagesData {
 
-	static data: DBImage[];
+	static data: DBImage[] = [];
 
 
 	static setDefault() {
-		this.data = undefined;
+		setArray(this.data, []);
 	}
 }
 
@@ -208,11 +209,11 @@ export class NewImagesData {
 
 export class PageImagesData {
 
-	static data: DBImage[];
+	static data: DBImage[] = [];
 
 
 	static setDefault() {
-		this.data = undefined;
+		setArray(this.data, []);
 	}
 }
 
