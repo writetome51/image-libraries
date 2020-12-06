@@ -19,5 +19,5 @@ of all a user's images, where N is the load size.
 The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.
 
 
-Path aliases: import statements that include a path beginning with '@' are aliases.  They're
+Path aliases: import statements that use a path beginning with '@' are aliases.  They're
 defined in {project-root}/tsconfig.json.

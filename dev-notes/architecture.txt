@@ -1,0 +1,17 @@
+Directives are classes providing UI content behavior.  Each has an assigned selector
+(a custom element or element attribute).
+
+Components are subclasses of Directives.  They represent UI content and/or provide its
+behavior.  Each has an assigned html template.
+
+Services are helpers that are injected into Directives, Components, or other Services
+(though some are static and don't need to be injected).  Each has a specific purpose.
+They are often used as singletons shared among multiple Directives, Components, and/or
+other Services.
+
+Modules contain Components, Directives, Services, and other Modules.
+Directives and Components must be declared in a module's 'declarations' array.  This
+makes them belong to that module.  If you want to use those Directives or Components in
+other modules, you must list them in their module's 'exports' array, and import their
+module into the destination module by listing it in the destination module's 'imports'
+array.

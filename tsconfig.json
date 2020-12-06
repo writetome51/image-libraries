@@ -3,11 +3,11 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {
-			"@action-menu/*": [
-				"src/app/shared/modules/action-menu/*"
-			],
 			"@abstract-components/*": [
 				"src/app/shared/abstract-components/*"
+			],
+			"@action-menu/*": [
+				"src/app/shared/modules/action-menu/*"
 			],
 			"@app/*": [
 				"src/app/*"
@@ -38,9 +38,6 @@
 			],
 			"@data-transport-result-interpreter/*": [
 				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
-			],
-			"@delete-selected-images-processor/*": [
-				"src/app/shared/modules/action-menu-choices/menu-choice/menu-choice-processor/delete-selected-images-processor/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
@@ -75,14 +72,8 @@
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
 			],
-			"@submit-form-button/*": [
-				"src/app/shared/modules/submit-form-button/*"
-			],
 			"@services/*": [
 				"src/app/shared/services/*"
-			],
-			"@string-constants/*": [
-				"src/app/shared/string-constants/*"
 			],
 			"@start-data-process-button/*": [
 				"src/app/shared/modules/start-data-process-button/*"
@@ -90,11 +81,17 @@
 			"@start-data-process-list-item/*": [
 				"src/app/shared/modules/start-data-process-list-item/*"
 			],
-			"@tiny-loading-spinner/*": [
-				"src/app/shared/modules/tiny-loading-spinner/*"
+			"@string-constants/*": [
+				"src/app/shared/string-constants/*"
+			],
+			"@submit-form-button/*": [
+				"src/app/shared/modules/submit-form-button/*"
 			],
 			"@thumbnail-image-container/*": [
 				"src/app/shared/modules/thumbnail-image-container/*"
+			],
+			"@tiny-loading-spinner/*": [
+				"src/app/shared/modules/tiny-loading-spinner/*"
 			],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
