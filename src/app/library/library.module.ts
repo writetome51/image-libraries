@@ -16,7 +16,7 @@ import { NgModule } from '@angular/core';
 import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent }
-	from './library-viewer/save-changes-button/save-changes-button.component';
+	from './library-viewer/save-changes-button.component';
 import { StartDataProcessButtonModule }
 	from '@start-data-process-button/start-data-process-button.module';
 import { ThumbnailImageContainerModule }

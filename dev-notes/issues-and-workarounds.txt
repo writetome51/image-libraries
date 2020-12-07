@@ -7,5 +7,3 @@ used as a convention in the app.
 Any custom typescript decorators created by calling getClassModificationDecorator() have been
 pre-transpiled into javascript files.  This is done to avoid an Angular build error which says
 'Function calls are not supported in decorators...'.
-
-
