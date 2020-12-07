@@ -12,7 +12,6 @@ import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 
 
-
 @Injectable()
 export class ImageActionMenuChoicesManagerService implements MenuChoicesManager {
 
@@ -29,23 +28,26 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 	}
 
 
-	private __manage(image) {
+	private __manage(image: DBImage) {
 		menuChoices.images[image.name] = [
 			{
 				label: choiceLabel.addToRemoveFromLibrary,
-				submenu: this.__getSubmenu(libraryNames.data, image)
+				submenu: this.__getSubmenu(libraryNames.data, image._id)
 			}
 		];
 	}
 
 
-	private __getSubmenu(libNames, image: DBImage): MenuChoice[] {
+	private __getSubmenu(libNames, image_id): MenuChoice[] {
+
 		return getArrFilled(libNames.length, (i) => {
+			let libName = libNames[i];
 			return {
-				label: libNames[i],
+				label: libName,
 				data: {
-					checked: this.__libContainsImage(image._id, libNames[i]),
-					image_id: image._id
+					checked: this.__libContainsImage(image_id, libName),
+					image_id,
+					libName
 				}
 			};
 		});

@@ -7,7 +7,6 @@ import { DataTransportProcessorService }
 import { UpdateLibraryResultInterpreterService }
 	from '@services/library/update-library-processor/update-library-result-interpreter.service';
 
-
 @Injectable({providedIn: 'root'})
 
 export class ToggleAddToRemoveFromLibraryProcessorService extends DataTransportProcessorService {
@@ -23,7 +22,7 @@ export class ToggleAddToRemoveFromLibraryProcessorService extends DataTransportP
 	protected async _getResult(
 		data: { image_id: string, libName: string, checked: boolean }
 	): Promise<any> {
-
+		await this.__libraryStorage.update(data.libName, {});
 
 	}
 

@@ -6,7 +6,7 @@ import { Processor } from '@interfaces/processor';
 export abstract class ChoicesProcessorService implements DirectProcessor {
 
 	private __processors: Processor[];
-	private __functions = {};
+	private __functions = {}; // Each function is a processor process.
 
 
 	constructor(...processors: Processor[]) {
@@ -21,13 +21,14 @@ export abstract class ChoicesProcessorService implements DirectProcessor {
 	}
 
 
-	// Number of `labels` must match number of processors injected in constructor.
+	// `labels` length must match number of processors injected in constructor.
 	// They must be listed in same order as processors they're matched with.
 
-	protected _setupFunctions(labels) {
-		labels.forEach((label, i) => {
+	protected _setupFunctions(labels: string[]) {
+		for (let i = 0, length = labels.length; i < length; ++i) {
+			let label = labels[i];
 			this.__functions[label] = this.__processors[i].process;
-		});
+		}
 	}
 
 }
