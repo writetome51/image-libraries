@@ -1,20 +1,20 @@
 import { DataTransportResultInterpreterService }
 	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { IndirectProcessor } from '@interfaces/indirect-processor';
+import { Processor } from '@interfaces/processor';
 
 
-export abstract class DataTransportProcessorService implements IndirectProcessor {
+export abstract class DataTransportProcessorService implements Processor {
 
 	constructor(private __resultInterpreter: DataTransportResultInterpreterService) {
 	}
 
 
-	async process() {
-		let result = await this._getResult();
+	async process(...args) {
+		let result = await this._getResult(...args);
 		await this.__resultInterpreter.interpret(result);
 	}
 
 
-	protected abstract _getResult(): any;
+	protected abstract _getResult(...args): any;
 
 }
