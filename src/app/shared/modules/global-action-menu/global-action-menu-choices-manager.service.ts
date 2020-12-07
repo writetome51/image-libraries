@@ -2,7 +2,8 @@ import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Injectable } from '@angular/core';
-import { isObject } from '@writetome51/is-object-not-object';
+import { LibraryNamesData as libNames }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
@@ -11,17 +12,16 @@ import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
-import { SelectedImageNamesData as selectedImageNames }
-	from '@runtime-state-data/selected-image-names.data';
+import { SelectedImagesData as selectedImages }
+	from '@runtime-state-data/selected-images.data';
 import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 import { LocalZoomOnScrollService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
+import { getArrFilled } from '@writetome51/get-arr-filled';
 
 
 @Injectable()
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
-
-	private readonly __selectedImages = selectedImageNames.data;
 
 
 	constructor(
@@ -39,7 +39,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	private __manage(): void {
 		menuChoices.global = [];
-		if (notEmpty(this.__selectedImages)) {
+
+		if (notEmpty(selectedImages.data)) {
 			this.__includeManipulateSelected();
 		}
 		else {
@@ -63,26 +64,32 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeManipulateSelected() {
-		// temporarily commented out:
-		//	choiceLabel.addSelectedToLib['submenu'] = libraryNames.data;
+		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
+		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
 
-		/*
-		 menuChoices.global.push(
-		 choiceLabel.addSelectedToLib,
-		 choiceLabel.deleteSelected
-		 );
-		 */
+		choice['submenu'] = getArrFilled(libNames.length, (i) => {
+			let libName = libNames[i];
+			return {
+				label: libName,
+				data: {
+					_image_ids,
+					libName
+				}
+			};
+		});
+		prepend(choice, menuChoices.global);
 	}
 
 
 	private __removeManipulateSelected() {
 		removeByTest(
-			(value) => (isObject(value) && (value.label === choiceLabel.addSelectedToLib)),
+			(value) => (value.label === choiceLabel.addSelectedToLib),
 			menuChoices.global
 		);
 		removeFirstOf(choiceLabel.deleteSelected, menuChoices.global);
 
-		//	this.__includeInGlobal(choiceLabel.selectMultiple);
+		let selectMultiple: MenuChoice = {label: choiceLabel.selectMultiple};
+		prepend(selectMultiple, menuChoices.global);
 	}
 
 

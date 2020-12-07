@@ -8,8 +8,7 @@ import { ImagesRestAPIService } from '@services/images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
-import { SelectedImageNamesData as selectedImageNames }
-	from '@runtime-state-data/selected-image-names.data';
+import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
 
 @Injectable()
@@ -27,7 +26,10 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(
 			this.__imagesRestApi.delete(
-				{sessionID: this.__localSessionID.get(), imageNames: selectedImageNames.data}
+				{
+					sessionID: this.__localSessionID.get(),
+					imageNames: selectedImages.data.map((img: { name: string }) => img.name)
+				}
 			)
 		);
 	}

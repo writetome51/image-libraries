@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 import { Router } from '@angular/router';
-import { SelectedImageNamesData as selectedImageNames }
-	from '@runtime-state-data/selected-image-names.data';
+import { SelectedImagesData as selectedImages }
+	from '@runtime-state-data/selected-images.data';
 
 
 @Injectable()
@@ -21,7 +21,7 @@ export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 
 	async go() {
-		selectedImageNames.data.length = 0;
+		selectedImages.data.length = 0;
 		alert.success = 'Image(s) deleted';
 		this.__runTasksAfterModifyingLoadedImages.go();
 		await this.__router.navigate([this.__currentRoute.data]);
