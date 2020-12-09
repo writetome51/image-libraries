@@ -12,7 +12,7 @@ import { environment } from '@environments/environment';
 })
 export class PageNotFoundComponent {
 
-	faces = {
+	readonly faces = {
 		src: environment.assets + 'happy-or-sad.png',
 		alt: 'happy and sad faces',
 		width: 362

@@ -1,9 +1,13 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 import { CurrentRouteService } from '@services/current-route.service';
+import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LocalZoomOnScrollService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
@@ -13,15 +17,10 @@ import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
-import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
-import { LocalZoomOnScrollService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
-import { getArrFilled } from '@writetome51/get-arr-filled';
 
 
 @Injectable()
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
-
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
