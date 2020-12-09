@@ -16,17 +16,17 @@ export class RunTasksAfterGettingLibrariesService implements IDoThis {
 
 
 	async go(libraries: DBLibrary[]) {
-		libraryNames.data = libraries.map((library: DBLibrary) => library.name);
-		this.__storeLibrariesInBrowser(libraries);
+		this.__storeLibrariesLocally(libraries);
 	}
 
 
-	private __storeLibrariesInBrowser(libraries) {
+	private __storeLibrariesLocally(libraries) {
 		let libsMap = {};
 		for (let i = 0, length = libraries.length; i < length; ++i) {
 			libsMap[libraries[i].name] = libraries[i];
 		}
 		this.__localLibraries.set(libsMap);
+		libraryNames.data = Object.keys(libsMap);
 	}
 
 }

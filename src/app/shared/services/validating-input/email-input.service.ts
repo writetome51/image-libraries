@@ -20,7 +20,7 @@ export class EmailInputService extends ValidatingTextInputService {
 			() => (not(this.data.objectToBind[this.data.propertyToBind].includes(' ')))
 		];
 		this.data.errorMessage = [
-			`The email must be at least ${rules.emailMinLength} characters`,
+			`The email must have ${rules.emailMinLength} or more characters`,
 			`The email must not include spaces`
 		];
 	}

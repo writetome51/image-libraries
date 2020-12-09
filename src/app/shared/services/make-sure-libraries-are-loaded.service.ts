@@ -26,13 +26,21 @@ export class MakeSureLibrariesAreLoadedService implements IDoThis {
 
 
 	async go() {
-		let libsMap: object = this.__localLibraries.get();
-		if (hasValue(libsMap)) {
-			libraryNames.data = Object.keys(libsMap);
-		}
+		if (this.__librariesAreStoredLocally()) return;
+		
 		else await performDataProcessRequiringWaiting.go(
 			this.__getLibrariesProcessor, processingStatus
 		);
+	}
+
+
+	private __librariesAreStoredLocally(): boolean {
+		let libsMap: object = this.__localLibraries.get();
+		if (hasValue(libsMap)) {
+			libraryNames.data = Object.keys(libsMap);
+			return true;
+		}
+		else return false;
 	}
 
 }

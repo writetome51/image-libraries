@@ -11,7 +11,6 @@ import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
-import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
 import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
@@ -83,10 +82,9 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	private __removeManipulateSelected() {
 		removeByTest(
-			(value) => (value.label === choiceLabel.addSelectedToLib),
-			menuChoices.global
+			(choice) => (choice.label === choiceLabel.addSelectedToLib), menuChoices.global
 		);
-		removeFirstOf(choiceLabel.deleteSelected, menuChoices.global);
+		removeByTest((choice) => (choice.label === choiceLabel.deleteSelected), menuChoices.global);
 
 		let selectMultiple: MenuChoice = {label: choiceLabel.selectMultiple};
 		prepend(selectMultiple, menuChoices.global);
