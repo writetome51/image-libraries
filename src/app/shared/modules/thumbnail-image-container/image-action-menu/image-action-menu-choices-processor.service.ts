@@ -1,5 +1,5 @@
-import { ChoicesProcessorService }
-	from '@action-menu/choices-processor.service';
+import { MenuChoicesProcessorService }
+	from '@action-menu/menu-choices-processor.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { ToggleAddToRemoveFromLibraryProcessorService }
@@ -7,7 +7,7 @@ import { ToggleAddToRemoveFromLibraryProcessorService }
 
 
 @Injectable()
-export class ImageActionMenuChoicesProcessorService extends ChoicesProcessorService {
+export class ImageActionMenuChoicesProcessorService extends MenuChoicesProcessorService {
 
 	constructor(
 		toggleAddToRemoveFromLibraryProcessor: ToggleAddToRemoveFromLibraryProcessorService

@@ -1,5 +1,4 @@
-import { ChoicesProcessorService }
-	from '@action-menu/choices-processor.service';
+import { MenuChoicesProcessorService } from '@action-menu/menu-choices-processor.service';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor/delete-selected-images-processor.service';
 import { Injectable } from '@angular/core';
@@ -8,7 +7,7 @@ import { ToggleZoomOnScrollingProcessorService } from './toggle-zoom-on-scrollin
 
 
 @Injectable()
-export class GlobalActionMenuChoicesProcessorService extends ChoicesProcessorService {
+export class GlobalActionMenuChoicesProcessorService extends MenuChoicesProcessorService {
 
 	constructor(
 		deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService,

@@ -1,4 +1,4 @@
-import { ChoicesProcessorService } from './choices-processor.service';
+import { MenuChoicesProcessorService } from './menu-choices-processor.service';
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { Injectable } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
@@ -7,7 +7,7 @@ import { MenuChoice } from '@interfaces/menu-choice';
 @Injectable()
 export class MenuChoiceProcessorService implements DirectProcessor {
 
-	private __choicesProcessor: ChoicesProcessorService;
+	private __choicesProcessor: MenuChoicesProcessorService;
 
 
 	async process(choice: MenuChoice): Promise<void> {
@@ -15,7 +15,7 @@ export class MenuChoiceProcessorService implements DirectProcessor {
 	}
 
 
-	set(choicesProcessor: ChoicesProcessorService) {
+	set(choicesProcessor: MenuChoicesProcessorService) {
 		this.__choicesProcessor = choicesProcessor;
 	}
 

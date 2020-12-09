@@ -3,7 +3,7 @@ import { MenuChoice } from '@interfaces/menu-choice';
 import { Processor } from '@interfaces/processor';
 
 
-export abstract class ChoicesProcessorService implements DirectProcessor {
+export abstract class MenuChoicesProcessorService implements DirectProcessor {
 
 	private __processors: Processor[];
 	private __functions = {}; // Each function is a processor process.

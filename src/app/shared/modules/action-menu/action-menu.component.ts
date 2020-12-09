@@ -1,4 +1,4 @@
-import { ChoicesProcessorService } from './choices-processor.service';
+import { MenuChoicesProcessorService } from './menu-choices-processor.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
@@ -17,7 +17,7 @@ export class ActionMenuComponent implements OnInit {
 	open = false;
 	choices: MenuChoice[] = [];
 
-	@Input() choicesProcessor: ChoicesProcessorService;
+	@Input() choicesProcessor: MenuChoicesProcessorService;
 	@Input() choicesManager: MenuChoicesManager;
 	@Input() choicesManagerArgs? = [];
 
