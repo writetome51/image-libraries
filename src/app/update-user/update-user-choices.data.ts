@@ -2,12 +2,12 @@ import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.com
 import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
 import { UpdatePasswordFormComponent }
 	from './update-password-form/update-password-form.component';
-import { LinkedSubcomponent } from '@app/update-user/linked-subcomponent';
+import { LinkedTemplateWithHeading } from '@app/update-user/linked-template-with-heading';
 
 
 export class UpdateUserChoicesData {
 
-	static readonly data: LinkedSubcomponent[] = [
+	static readonly data: LinkedTemplateWithHeading[] = [
 		{
 			link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},
 			heading: 'Email'

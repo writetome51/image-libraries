@@ -1,9 +1,11 @@
 import { ComponentLink } from '@interfaces/component-link';
 
 
-export interface LinkedSubcomponent {
+export interface LinkedTemplateWithHeading {
 
 	link: ComponentLink;
+
+	heading: string;
 
 	[propName: string]: any;
 

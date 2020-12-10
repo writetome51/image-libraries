@@ -3,7 +3,7 @@ import { UpdateUserChoicesData as updateChoices} from './update-user-choices.dat
 import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { LinkedSubcomponent } from './linked-subcomponent';
+import { LinkedTemplateWithHeading } from './linked-template-with-heading';
 
 
 @Component({
@@ -34,7 +34,7 @@ export class UpdateUserComponent {
 		let path = this.__getPathFromCurrentRoute();
 
 		let [choice] = getByTest(
-			(choice: LinkedSubcomponent) => choice.link.path === path,
+			(choice: LinkedTemplateWithHeading) => choice.link.path === path,
 			this.choices
 		);
 		return choice.heading;
