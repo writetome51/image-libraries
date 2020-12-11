@@ -1,29 +1,38 @@
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '@services/library/library-storage.service';
+import { AddImageToLibraryProcessorService } from './add-image-to-library-processor.service';
+import { RemoveImageFromLibraryProcessorService }
+	from './remove-image-from-library-processor.service';
 import { LocalLibrariesService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
-import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
-import { UpdateLibraryResultInterpreterService }
-	from '@services/library/update-library-processor/update-library-result-interpreter.service';
+import { not } from '@writetome51/not';
+
 
 @Injectable({providedIn: 'root'})
 
-export class ToggleAddToRemoveFromLibraryProcessorService extends DataTransportProcessorService {
+export class ToggleAddToRemoveFromLibraryProcessorService {
 
 	constructor(
-		private __libraryStorage: LibraryStorageService,
-		private __localLibraries: LocalLibrariesService,
-		__updateLibraryResultInterpreter: UpdateLibraryResultInterpreterService
+		private __addImageToLibraryProcessor: AddImageToLibraryProcessorService,
+		private __removeImageFromLibraryProcessor: RemoveImageFromLibraryProcessorService,
+		private __localLibraries: LocalLibrariesService
 	) {
-		super(__updateLibraryResultInterpreter);
 	}
 
-	protected async _getResult(
-		data: { image_id: string, libName: string, checked: boolean }
-	): Promise<any> {
-		await this.__libraryStorage.update(data.libName, {});
 
+	protected async process(
+		data: { image_id: string, libName: string, checked: boolean }
+	): Promise<void> {
+
+		if (data.checked) {
+			await this.__removeImageFromLibraryProcessor.process(data.image_id, data.libName);
+			let lib = this.__localLibraries.get()[data.libName];
+			if (not(lib._image_ids.includes(data.image_id))) data.checked = false;
+		}
+		else {
+			await this.__addImageToLibraryProcessor.process(data.image_id, data.libName);
+			let lib = this.__localLibraries.get()[data.libName];
+			if (lib._image_ids.includes(data.image_id)) data.checked = true;
+		}
 	}
 
 }
