@@ -1,14 +1,16 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { noRecordMatchedCriteria, notLoggedIn } from '@string-constants/rest-api-errors';
-import { NotLoggedInErrorHandlerService } from './error-handler/not-logged-in-error-handler.service';
+import { NotLoggedInErrorHandlerService }
+	from './error-handler/not-logged-in-error-handler.service';
 import { NoRecordMatchErrorHandlerService }
 	from './error-handler/no-record-match-error-handler.service';
+import { ResultCheck } from '@interfaces/result-check';
 
 
 @Injectable({providedIn: 'root'})
 
-export class DataTransportResultCheckService {
+export class DataTransportResultCheckService implements ResultCheck {
 
 	constructor(
 		private __noRecordMatchErrorHandler: NoRecordMatchErrorHandlerService,
