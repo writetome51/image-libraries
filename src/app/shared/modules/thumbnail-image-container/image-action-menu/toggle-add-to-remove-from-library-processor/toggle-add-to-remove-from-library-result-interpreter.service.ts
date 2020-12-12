@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
 import { ToggleAddToRemoveFromLibraryResultCheckService }
-	from '@thumbnail-image-container/image-action-menu/toggle-add-to-remove-from-library-processor/toggle-add-to-remove-from-library-result-check.service';
+	from './toggle-add-to-remove-from-library-result-check.service';
 import { RunTasksNeededAfterToggleAddToRemoveFromLibraryService }
-	from '@thumbnail-image-container/image-action-menu/toggle-add-to-remove-from-library-processor/run-tasks-needed-after-toggle-add-to-remove-from-library.service';
-import { Interpreter } from '@interfaces/interpreter';
-import { hasValue } from '@writetome51/has-value-no-value';
+	from './run-tasks-needed-after-toggle-add-to-remove-from-library.service';
+import { ProcessResultInterpreterService } from '@services/process-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ToggleAddToRemoveFromLibraryResultInterpreterService implements Interpreter {
+export class ToggleAddToRemoveFromLibraryResultInterpreterService
+	extends ProcessResultInterpreterService {
 
 	constructor(
-		private __resultCheck: ToggleAddToRemoveFromLibraryResultCheckService,
-		private __runPostSuccessTasks: RunTasksNeededAfterToggleAddToRemoveFromLibraryService
+		__resultCheck: ToggleAddToRemoveFromLibraryResultCheckService,
+		__runPostSuccessTasks: RunTasksNeededAfterToggleAddToRemoveFromLibraryService
 	) {
-	}
-
-
-	interpret(result): void {
-		result = this.__resultCheck.returnIfNoError(result);
-		if (hasValue(result)) this.__runPostSuccessTasks.go(result);
+		super(__resultCheck, __runPostSuccessTasks);
 	}
 
 }

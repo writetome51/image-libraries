@@ -1,5 +1,5 @@
 export interface ResultCheck {
 
-	returnIfNoError(result): any;
+	returnIfNoError: (result) => any;
 
 }

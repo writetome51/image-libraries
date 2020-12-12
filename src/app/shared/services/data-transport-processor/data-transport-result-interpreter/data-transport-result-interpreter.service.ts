@@ -1,22 +1,16 @@
 import { DataTransportResultCheckService }
 	from '@data-transport-result-check/data-transport-result-check.service';
-import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this';
-import { Interpreter } from '@interfaces/interpreter';
+import { ProcessResultInterpreterService } from '@services/process-result-interpreter.service';
 
 
-export abstract class DataTransportResultInterpreterService implements Interpreter {
+export abstract class DataTransportResultInterpreterService extends ProcessResultInterpreterService {
 
 	constructor(
-		private __dataTransportResultCheck: DataTransportResultCheckService,
-		private __runPostSuccessTasks: IDoThis
+		__dataTransportResultCheck: DataTransportResultCheckService,
+		__runPostSuccessTasks: IDoThis
 	) {
-	}
-
-
-	async interpret(result: object): Promise<void> {
-		result = await this.__dataTransportResultCheck.returnIfNoError(result);
-		if (hasValue(result)) await this.__runPostSuccessTasks.go(result);
+		super(__dataTransportResultCheck, __runPostSuccessTasks);
 	}
 
 }
