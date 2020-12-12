@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ToggleAddToRemoveFromLibraryResultCheckService }
 	from './toggle-add-to-remove-from-library-result-check.service';
-import { RunTasksNeededAfterToggleAddToRemoveFromLibraryService }
-	from './run-tasks-needed-after-toggle-add-to-remove-from-library.service';
+import { RunTasksAfterToggleAddToRemoveFromLibraryService }
+	from './run-tasks-after-toggle-add-to-remove-from-library.service';
 import { ProcessResultInterpreterService } from '@services/process-result-interpreter.service';
 
 
@@ -13,7 +13,7 @@ export class ToggleAddToRemoveFromLibraryResultInterpreterService
 
 	constructor(
 		__resultCheck: ToggleAddToRemoveFromLibraryResultCheckService,
-		__runPostSuccessTasks: RunTasksNeededAfterToggleAddToRemoveFromLibraryService
+		__runPostSuccessTasks: RunTasksAfterToggleAddToRemoveFromLibraryService
 	) {
 		super(__resultCheck, __runPostSuccessTasks);
 	}

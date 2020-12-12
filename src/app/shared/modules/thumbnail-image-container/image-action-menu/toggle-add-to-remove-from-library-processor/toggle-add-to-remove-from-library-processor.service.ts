@@ -4,11 +4,12 @@ import { RemoveImageFromLibraryProcessorService }
 	from './remove-image-from-library-processor.service';
 import { ToggleAddToRemoveFromLibraryResultInterpreterService }
 	from '@thumbnail-image-container/image-action-menu/toggle-add-to-remove-from-library-processor/toggle-add-to-remove-from-library-result-interpreter.service';
+import { Processor } from '@interfaces/processor';
 
 
 @Injectable({providedIn: 'root'})
 
-export class ToggleAddToRemoveFromLibraryProcessorService {
+export class ToggleAddToRemoveFromLibraryProcessorService implements Processor {
 
 	constructor(
 		private __addImageToLibraryProcessor: AddImageToLibraryProcessorService,

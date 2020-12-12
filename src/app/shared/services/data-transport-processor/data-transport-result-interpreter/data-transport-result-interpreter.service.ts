@@ -4,7 +4,8 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { ProcessResultInterpreterService } from '@services/process-result-interpreter.service';
 
 
-export abstract class DataTransportResultInterpreterService extends ProcessResultInterpreterService {
+export abstract class DataTransportResultInterpreterService
+	extends ProcessResultInterpreterService {
 
 	constructor(
 		__dataTransportResultCheck: DataTransportResultCheckService,

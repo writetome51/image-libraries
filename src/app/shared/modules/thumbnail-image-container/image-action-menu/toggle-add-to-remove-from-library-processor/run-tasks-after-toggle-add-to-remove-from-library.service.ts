@@ -4,9 +4,9 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterToggleAddToRemoveFromLibraryService implements IDoThis {
+export class RunTasksAfterToggleAddToRemoveFromLibraryService implements IDoThis {
 
-	go(data: { checked: boolean }): void {
+	go(data: { checked: boolean }) {
 		data.checked = !(data.checked);
 	}
 

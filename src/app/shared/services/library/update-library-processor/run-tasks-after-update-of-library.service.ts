@@ -9,7 +9,7 @@ import { LoadedLibraryData as loadedLibrary }
 
 @Injectable({providedIn: 'root'})
 
-export class RunTasksNeededAfterUpdateOfLibraryService implements IDoThis {
+export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 
 	constructor(private __libraryChanges: LibraryChangesService) {
 	}
