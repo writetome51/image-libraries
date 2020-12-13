@@ -5,6 +5,8 @@ import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceProcessorService } from '../../../menu-choice-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
+import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
+	from '../remove-parent-labels-for-display.service';
 
 
 @Component({
@@ -15,6 +17,11 @@ import { StartDataProcessContainerComponent }
 export class ProcessableMenuChoiceComponent extends StartDataProcessContainerComponent {
 
 	@Input() data: MenuChoice | CheckableMenuChoice;
+
+
+	get label(): string {
+		return removeParentLabelsForDisplay.go(this.data.label);
+	}
 
 
 	get checked(): boolean {

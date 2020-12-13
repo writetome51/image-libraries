@@ -1,5 +1,6 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
 import { CurrentRouteService } from '@services/current-route.service';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
@@ -40,7 +41,7 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 	}
 
 
-	private __getSubmenu(parentLabel, libNames, image_id): MenuChoice[] {
+	private __getSubmenu(parentLabel, libNames, image_id): CheckableMenuChoice[] {
 
 		return getArrFilled(libNames.length, (i) => {
 			let libName = libNames[i];

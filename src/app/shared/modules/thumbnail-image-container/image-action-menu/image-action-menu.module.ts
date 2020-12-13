@@ -15,7 +15,8 @@ import { ImageActionMenuChoicesProcessorService }
 		ActionMenuModule
 	],
 	providers: [
-		ImageActionMenuChoicesManagerService, ImageActionMenuChoicesProcessorService
+		ImageActionMenuChoicesManagerService,
+		ImageActionMenuChoicesProcessorService
 	],
 	exports: [ImageActionMenuComponent]
 })

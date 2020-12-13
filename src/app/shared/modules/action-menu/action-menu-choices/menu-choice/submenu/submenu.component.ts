@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
+import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
+	from '@action-menu/action-menu-choices/menu-choice/remove-parent-labels-for-display.service';
 
 
 @Component({
@@ -7,7 +9,7 @@ import { MenuChoice } from '@interfaces/menu-choice';
 	template: `
 		<ng-container>
 			<div class="label-container">
-				{{ data.label }} <submenu-pointer></submenu-pointer>
+				{{ label }} <submenu-pointer></submenu-pointer>
 			</div>
 
 			<ul *ngIf="clicked" class="dropdown-menu">
@@ -20,5 +22,10 @@ export class SubmenuComponent {
 
 	@Input() clicked = false;
 	@Input() data: MenuChoice;
+
+
+	get label(): string {
+		return removeParentLabelsForDisplay.go(this.data.label);
+	}
 
 }
