@@ -8,7 +8,6 @@ import { RunTasksAfterLogoutService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class LogoutResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

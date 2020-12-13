@@ -5,7 +5,6 @@ import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
 @Injectable({providedIn: 'root'})
-
 export class AllImagesRouteParamsHandlerService implements Handler {
 
 	constructor(private __paginator: AllImagesPaginatorService) {

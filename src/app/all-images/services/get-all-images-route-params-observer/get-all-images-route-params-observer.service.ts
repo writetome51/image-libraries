@@ -5,7 +5,6 @@ import { RunTasksAfterAllImagesRouteParamsReceivedService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetAllImagesRouteParamsObserverService extends GetRouteParamsObserverService {
 
 	constructor(

@@ -6,7 +6,6 @@ import { LogoutResultInterpreterService } from './logout-result-interpreter.serv
 
 
 @Injectable({providedIn: 'root'})
-
 export class LogoutProcessorService extends DataTransportProcessorService {
 
 	constructor(

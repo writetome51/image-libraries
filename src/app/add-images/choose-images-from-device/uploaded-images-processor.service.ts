@@ -13,7 +13,6 @@ import { SaveNewImagesProcessorService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class UploadedImagesProcessorService implements DirectProcessor {
 
 

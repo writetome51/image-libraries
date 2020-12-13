@@ -8,7 +8,6 @@ import { LocalSessionIDService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class NewImagesSaverService {
 
 	constructor(

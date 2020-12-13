@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetAllImagesProcessorService extends GetImagesProcessorService {
 
 	protected async _getResult(): Promise<ImageBatch | { error: { message: string } }> {

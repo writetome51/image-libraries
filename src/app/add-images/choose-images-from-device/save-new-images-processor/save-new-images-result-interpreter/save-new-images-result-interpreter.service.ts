@@ -6,7 +6,6 @@ import { SaveNewImagesResultCheckService } from './save-new-images-result-check.
 
 
 @Injectable({providedIn: 'root'})
-
 export class SaveNewImagesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-
 export class AllImagesPaginatorDataSourceService extends AppPaginatorDataSourceService {
 
 	constructor(

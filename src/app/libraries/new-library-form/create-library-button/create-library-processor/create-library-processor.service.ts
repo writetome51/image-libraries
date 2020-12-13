@@ -8,7 +8,6 @@ import { LibraryNameInputService } from '@app/libraries/new-library-form/library
 
 
 @Injectable({providedIn: 'root'})
-
 export class CreateLibraryProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

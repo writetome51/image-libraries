@@ -14,7 +14,7 @@ export class ImageActionMenuChoicesProcessorService extends MenuChoicesProcessor
 	) {
 		super(toggleAddToRemoveFromLibraryProcessor);
 
-		this._setupFunctions([
+		this._assignLabelsToProcessors([
 			choiceLabel.addToRemoveFromLibrary
 		]);
 	}

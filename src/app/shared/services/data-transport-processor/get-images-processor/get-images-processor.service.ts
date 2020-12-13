@@ -9,7 +9,6 @@ import { Injectable } from '@angular/core';
 // so its subclasses don't have to redeclare the constructor.
 
 @Injectable({providedIn: 'root'})
-
 export abstract class GetImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(

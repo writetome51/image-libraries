@@ -32,18 +32,20 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 		menuChoices.images[image.name] = [
 			{
 				label: choiceLabel.addToRemoveFromLibrary,
-				submenu: this.__getSubmenu(libraryNames.data, image._id)
+				submenu: this.__getSubmenu(
+					choiceLabel.addToRemoveFromLibrary, libraryNames.data, image._id
+				)
 			}
 		];
 	}
 
 
-	private __getSubmenu(libNames, image_id): MenuChoice[] {
+	private __getSubmenu(parentLabel, libNames, image_id): MenuChoice[] {
 
 		return getArrFilled(libNames.length, (i) => {
 			let libName = libNames[i];
 			return {
-				label: libName,
+				label: parentLabel + '.' + libName,
 				data: {
 					checked: this.__libContainsImage(image_id, libName),
 					image_id,

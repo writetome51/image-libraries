@@ -8,7 +8,6 @@ import { LibraryChangesService } from '@services/library/library-changes.service
 
 
 @Injectable({providedIn: 'root'})
-
 export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | FullSizeImageComponent> {
 
 	constructor(private __libraryChanges: LibraryChangesService) {

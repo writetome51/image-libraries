@@ -8,7 +8,6 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-
 export class SaveNewImagesResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {

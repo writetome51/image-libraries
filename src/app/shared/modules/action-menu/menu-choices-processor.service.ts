@@ -5,8 +5,8 @@ import { Processor } from '@interfaces/processor';
 
 export abstract class MenuChoicesProcessorService implements DirectProcessor {
 
-	private __processors: Processor[];
-	private __functions = {}; // Each function is a processor process.
+	private readonly __processors: Processor[];
+	private __processorMap = {};
 
 
 	constructor(...processors: Processor[]) {
@@ -17,17 +17,24 @@ export abstract class MenuChoicesProcessorService implements DirectProcessor {
 	async process(choice: MenuChoice): Promise<void> {
 		let {label, data} = choice;
 
-		await this.__functions[label](data);
+		if (label.includes('.')) {
+			let parts = label.split('.'), length = parts.length;
+			if (length > 1) parts.length = length - 1;
+			label = parts.join('.');
+			console.log(label);
+		}
+
+		await this.__processorMap[label].process(data);
 	}
 
 
 	// `labels` length must match number of processors injected in constructor.
 	// They must be listed in same order as processors they're matched with.
 
-	protected _setupFunctions(labels: string[]) {
+	protected _assignLabelsToProcessors(labels: string[]) {
 		for (let i = 0, length = labels.length; i < length; ++i) {
 			let label = labels[i];
-			this.__functions[label] = this.__processors[i].process;
+			this.__processorMap[label] = this.__processors[i];
 		}
 	}
 

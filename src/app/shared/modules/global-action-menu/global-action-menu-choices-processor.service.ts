@@ -18,7 +18,7 @@ export class GlobalActionMenuChoicesProcessorService extends MenuChoicesProcesso
 			toggleZoomOnScrollingProcessor
 		);
 
-		this._setupFunctions([
+		this._assignLabelsToProcessors([
 			choiceLabel.deleteSelected,
 			choiceLabel.enableZoomOnScrolling
 		]);

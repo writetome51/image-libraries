@@ -1,32 +1,27 @@
+import { AddImageToLibraryProcessorService }
+	from './add-image-to-library-processor/add-image-to-library-processor.service';
 import { Injectable } from '@angular/core';
-import { AddImageToLibraryProcessorService } from './add-image-to-library-processor.service';
+import { ProcessorService } from '@services/processor.service';
 import { RemoveImageFromLibraryProcessorService }
 	from './remove-image-from-library-processor.service';
 import { ToggleAddToRemoveFromLibraryResultInterpreterService }
-	from '@thumbnail-image-container/image-action-menu/toggle-add-to-remove-from-library-processor/toggle-add-to-remove-from-library-result-interpreter.service';
-import { Processor } from '@interfaces/processor';
+	from './toggle-add-to-remove-from-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
-
-export class ToggleAddToRemoveFromLibraryProcessorService implements Processor {
+export class ToggleAddToRemoveFromLibraryProcessorService extends ProcessorService {
 
 	constructor(
 		private __addImageToLibraryProcessor: AddImageToLibraryProcessorService,
 		private __removeImageFromLibraryProcessor: RemoveImageFromLibraryProcessorService,
-		private __resultInterpreter: ToggleAddToRemoveFromLibraryResultInterpreterService
+		__resultInterpreter: ToggleAddToRemoveFromLibraryResultInterpreterService
 	) {
-	}
-
-
-	async process(data: { image_id: string, libName: string, checked: boolean }) {
-		let result = await this._getResult(data);
-		await this.__resultInterpreter.interpret(result);
+		super(__resultInterpreter);
 	}
 
 
 	protected async _getResult(
-		data
+		data: { image_id: string, libName: string, checked: boolean }
 	): Promise<{ image_id: string, libName: string, checked: boolean }> {
 
 		if (data.checked) {

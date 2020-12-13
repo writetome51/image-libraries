@@ -3,7 +3,6 @@ import { AppPaginatorService } from '@services/app-paginator/app-paginator.servi
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
-
 export class AllImagesPaginatorService extends AppPaginatorService {
 
 	constructor(__dataSource: AllImagesPaginatorDataSourceService) {

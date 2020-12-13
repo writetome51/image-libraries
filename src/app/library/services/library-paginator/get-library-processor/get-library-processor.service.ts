@@ -8,7 +8,6 @@ import { GetRequestedLibraryService } from './get-requested-library.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

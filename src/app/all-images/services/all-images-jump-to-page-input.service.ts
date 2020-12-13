@@ -4,7 +4,6 @@ import { JumpToPageInputService } from '@app-pagination-controls/jump-to-page-in
 
 
 @Injectable({providedIn: 'root'})
-
 export class AllImagesJumpToPageInputService extends JumpToPageInputService {
 
 	constructor(_paginator: AllImagesPaginatorService) {

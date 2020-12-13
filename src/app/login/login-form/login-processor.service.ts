@@ -9,7 +9,6 @@ import { LoginResultInterpreterService }
 
 
 @Injectable()
-
 export class LoginProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

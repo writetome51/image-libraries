@@ -7,7 +7,6 @@ import { RunTasksAfterModifyingLoadedImagesService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterSavingNewImagesService implements IDoThis {
 
 	constructor(

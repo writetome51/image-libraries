@@ -8,7 +8,6 @@ import { SaveNewImagesResultInterpreterService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class SaveNewImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(

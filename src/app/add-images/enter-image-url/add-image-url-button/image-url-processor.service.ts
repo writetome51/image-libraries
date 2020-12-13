@@ -12,7 +12,6 @@ import { SaveNewImagesResultInterpreterService } // tslint:disable-next-line:max
 
 
 @Injectable({providedIn: 'root'})
-
 export class ImageURLProcessorService extends FormDataTransportProcessorService {
 
 

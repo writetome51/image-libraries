@@ -1,12 +1,12 @@
+import { AddImageToLibraryResultInterpreterService }
+	from './add-image-to-library-result-interpreter.service';
+import { DataTransportProcessorService }
+	from '@data-transport-processor/data-transport-processor.service';
+import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryStorageService } from '@services/library/library-storage.service';
 import { LocalLibrariesService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
-import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
-import { UpdateLibraryResultInterpreterService }
-	from '@services/library/update-library-processor/update-library-result-interpreter.service';
-import { DBLibrary } from '@interfaces/db-library';
 
 
 @Injectable({providedIn: 'root'})
@@ -16,9 +16,9 @@ export class AddImageToLibraryProcessorService extends DataTransportProcessorSer
 	constructor(
 		private __libraryStorage: LibraryStorageService,
 		private __localLibraries: LocalLibrariesService,
-		__updateLibraryResultInterpreter: UpdateLibraryResultInterpreterService
+		__resultInterpreter: AddImageToLibraryResultInterpreterService
 	) {
-		super(__updateLibraryResultInterpreter);
+		super(__resultInterpreter);
 	}
 
 
