@@ -12,7 +12,7 @@ import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
 @Component({
 	selector: 'processable-menu-choice',
 	templateUrl: './processable-menu-choice.component.html',
-	styles: [`checkmark {position: absolute; right: 8px; bottom: 10px;}`]
+	styles: [`checkmark {position: relative; top: 5px; left: 5px;}`]
 })
 export class ProcessableMenuChoiceComponent extends StartDataProcessContainerComponent {
 
