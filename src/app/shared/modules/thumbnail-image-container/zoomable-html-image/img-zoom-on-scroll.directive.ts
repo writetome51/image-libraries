@@ -16,8 +16,8 @@ export class ImgZoomOnScrollDirective {
 	@HostListener('wheel', ['$event']) onWheel(event) {
 		event.preventDefault();
 
-		if (event.deltaY > 0) this.changeSize(2);
-		if (event.deltaY < 0) this.changeSize(-2);
+		if (event.deltaY > 0) this.changeSize(4);
+		if (event.deltaY < 0) this.changeSize(-4);
 	}
 
 

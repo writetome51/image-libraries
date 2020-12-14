@@ -1,6 +1,6 @@
 <div
 	class="validating-input-container"
-	[class.validating-input-with-error]="data.__error.length"
+	[class.validating-input-with-error]="data.triggeredError.length"
 	[class.required]="data.required"
 >
 	<p *ngIf="data.prompt" class="validating-input-prompt">{{data.prompt}}</p>
@@ -9,17 +9,16 @@
 		{{data.label}}
 	</label>
 
-	<input [type]="data.type"
-		   (keyup)="data.type === 'number' ? validate(): undefined"
-		   (change)="data.type === 'number' ? validate(): undefined"
+	<input [type]="data.__type"
+		   (keyup)="data.__type === 'number' ? validate(): undefined"
+		   (change)="data.__type === 'number' ? validate(): undefined"
 		   (blur)="validate()"
 
 		   id="{{data.id}}"
 		   class="validating-input"
-		   [class.validating-input-with-error]="data.__error.length"
+		   [class.validating-input-with-error]="data.triggeredError.length"
 
 		   [name]="data.id"
-		   [required]="data.required"
 
 		   [placeholder]="data.hidePlaceholder ? '' : data.label"
 		   [(ngModel)]="data.objectToBind[data.propertyToBind]"
@@ -30,6 +29,6 @@
 		   [min]="data.min"
 	/>
 
-	<p *ngIf="data.__error.length" class="validating-input-error">{{data.__error}}</p>
+	<p *ngIf="data.triggeredError.length" class="validating-input-error">{{data.triggeredError}}</p>
 
 </div>

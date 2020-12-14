@@ -16,17 +16,9 @@ export abstract class FormDataTransportProcessorService extends DataTransportPro
 
 
 	async process() {
-		if (
-			(this.__validatingInputs instanceof ValidatingInputsService
-				&& this.__validatingInputs.areValid())
-			|| (this.__validatingInputs instanceof ValidatingInputService
-			&& this.__validatingInputs.isValid())
-		) {
-			await super.process();
-		}
-		else {
-			alert.error = this.__validatingInputs.error;
-		}
+		if (this.__validatingInputs.isValid()) await super.process();
+
+		else alert.error = this.__validatingInputs.error;
 	}
 
 }

@@ -18,7 +18,7 @@ export class AppValidatingFormInputComponent implements OnInit {
 
 
 	ngOnInit(): void {
-		this.data.__error = '';
+		this.data.triggeredError = '';
 	}
 
 
