@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
+import { GlobalActionMenuChoicesManagerService }
+	from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuChoicesProcessorService }
 	from './global-action-menu-choices-processor.service';
 

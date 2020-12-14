@@ -11,7 +11,8 @@ import { GlobalActionMenuComponent } from './global-action-menu.component';
 import { NgModule } from '@angular/core';
 import { RunTasksAfterDeletingImagesService }
 	from './delete-selected-images-processor/run-tasks-after-deleting-images.service';
-import { ToggleZoomOnScrollingProcessorService } from './toggle-zoom-on-scrolling-processor.service';
+import { ToggleEnableMenuChoiceProcessorService }
+	from '@global-action-menu/toggle-enable-menu-choice-processor.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ToggleZoomOnScrollingProcessorService } from './toggle-zoom-on-scrollin
 		DeleteSelectedImagesResultInterpreterService,
 		DeleteSelectedImagesProcessorService,
 		RunTasksAfterDeletingImagesService,
-		ToggleZoomOnScrollingProcessorService
+		ToggleEnableMenuChoiceProcessorService
 	],
 	exports: [GlobalActionMenuComponent]
 })

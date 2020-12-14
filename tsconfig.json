@@ -93,6 +93,9 @@
 			"@tiny-loading-spinner/*": [
 				"src/app/shared/modules/tiny-loading-spinner/*"
 			],
+			"@toggle-setting-in-browser-storage/*": [
+			"src/app/shared/services/item-in-browser-storage/toggle-setting-in-browser-storage/*"
+			],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
 			],

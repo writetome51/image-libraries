@@ -17,6 +17,8 @@ import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
+import { SessionSelectMutipleImagesService }
+	from '@toggle-setting-in-browser-storage/session-select-mutiple-images.service';
 
 
 @Injectable()
@@ -24,7 +26,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __localZoomOnScroll: LocalZoomOnScrollService
+		private __localZoomOnScroll: LocalZoomOnScrollService,
+		private __sessionSelectMultiple: SessionSelectMutipleImagesService
 	) {
 	}
 
@@ -54,7 +57,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 			label: choiceLabel.enableZoomOnScrolling,
 			data: {
 				checked: this.__localZoomOnScroll.get().enabled,
-				localZoomOnScroll: this.__localZoomOnScroll
+				toggleSetting: this.__localZoomOnScroll
 			}
 		};
 		menuChoices.global.push(enableZoomOnScrolling);
@@ -85,7 +88,13 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		);
 		removeByTest((choice) => (choice.label === choiceLabel.deleteSelected), menuChoices.global);
 
-		let selectMultiple: MenuChoice = {label: choiceLabel.selectMultiple};
+		let selectMultiple: CheckableMenuChoice = {
+			label: choiceLabel.selectMultiple,
+			data: {
+				checked: this.__sessionSelectMultiple.get().enabled,
+				toggleSetting: this.__sessionSelectMultiple
+			}
+		};
 		prepend(selectMultiple, menuChoices.global);
 	}
 
