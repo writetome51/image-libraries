@@ -2,8 +2,8 @@ import { AddImageToLibraryResultCheckService } from './add-image-to-library-resu
 import { DataTransportResultInterpreterService }
 	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterAddingImageToLibraryService }
-	from './run-tasks-after-adding-image-to-library.service';
+import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
+	from '../../run-tasks-after-adding-or-removing-image-from-library.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,7 +13,7 @@ export class AddImageToLibraryResultInterpreterService
 
 	constructor(
 		__resultCheck: AddImageToLibraryResultCheckService,
-		__runPostSuccessTasks: RunTasksAfterAddingImageToLibraryService
+		__runPostSuccessTasks: RunTasksAfterAddingOrRemovingImageFromLibraryService
 	) {
 		super(__resultCheck, __runPostSuccessTasks);
 	}

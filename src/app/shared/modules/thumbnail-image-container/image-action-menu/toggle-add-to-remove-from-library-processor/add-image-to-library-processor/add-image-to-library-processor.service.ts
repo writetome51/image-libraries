@@ -1,5 +1,5 @@
 import { AddImageToLibraryResultInterpreterService }
-	from './add-image-to-library-result-interpreter.service';
+	from './add-image-to-library-result-interpreter/add-image-to-library-result-interpreter.service';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { DBLibrary } from '@interfaces/db-library';
@@ -10,7 +10,6 @@ import { LocalLibrariesService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class AddImageToLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

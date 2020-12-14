@@ -5,21 +5,20 @@ import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { LocalLibrariesService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
-import { UpdateLibraryResultInterpreterService }
-	from '@services/library/update-library-processor/update-library-result-interpreter.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
+import { RemoveImageFromLibraryResultInterpreterService }
+	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RemoveImageFromLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
 		private __libraryStorage: LibraryStorageService,
 		private __localLibraries: LocalLibrariesService,
-		__updateLibraryResultInterpreter: UpdateLibraryResultInterpreterService
+		__resultInterpreter: RemoveImageFromLibraryResultInterpreterService
 	) {
-		super(__updateLibraryResultInterpreter);
+		super(__resultInterpreter);
 	}
 
 

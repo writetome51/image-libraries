@@ -6,8 +6,7 @@ import { LocalLibrariesService }
 
 
 @Injectable({providedIn: 'root'})
-
-export class RunTasksAfterAddingImageToLibraryService implements IDoThis {
+export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
 
 	constructor(private __localLibraries: LocalLibrariesService) {
 	}

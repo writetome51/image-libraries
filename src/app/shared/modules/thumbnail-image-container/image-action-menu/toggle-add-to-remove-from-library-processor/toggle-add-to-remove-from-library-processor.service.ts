@@ -3,9 +3,9 @@ import { AddImageToLibraryProcessorService }
 import { Injectable } from '@angular/core';
 import { ProcessorService } from '@services/processor.service';
 import { RemoveImageFromLibraryProcessorService }
-	from './remove-image-from-library-processor.service';
+	from './remove-image-from-library-processor/remove-image-from-library-processor.service';
 import { ToggleAddToRemoveFromLibraryResultInterpreterService }
-	from './toggle-add-to-remove-from-library-result-interpreter.service';
+	from './toggle-add-to-remove-from-library-result-interpreter/toggle-add-to-remove-from-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
