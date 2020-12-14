@@ -9,15 +9,12 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 export class RunTasksAfterDeletingUserService implements IDoThis {
 
-	constructor(
-		private __runTasksAfterLogout: RunTasksAfterLogoutService
-	) {
+	constructor(private __runTasksAfterLogout: RunTasksAfterLogoutService) {
 	}
 
 
 	async go() {
 		await this.__runTasksAfterLogout.go();
-
 		alert.success = 'Account deleted';
 	}
 

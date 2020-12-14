@@ -17,7 +17,7 @@ export class RunTasksAfterUpdatingUserService implements IDoThis {
 	}
 
 
-	async go(result: DBUser) {
+	go(result: DBUser) {
 		this.__runTasksAfterGettingUser.go(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
 		alert.success = this.resultMessage;
