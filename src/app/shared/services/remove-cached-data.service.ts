@@ -8,6 +8,7 @@ export class RemoveCachedDataService { // implements IDoThis
 	static go() {
 		resetRuntimeStateDataToDefaults.go();
 		localStorage.clear();
+		sessionStorage.clear();
 	}
 
 }

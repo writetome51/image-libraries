@@ -5,7 +5,7 @@ import { HoverableContainerComponent } from '@hoverable-container/hoverable-cont
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
 import { LocalZoomOnScrollService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
+	from '@services/item-in-browser-storage/toggle-setting-in-browser-storage/local-zoom-on-scroll.service';
 
 
 @Component({

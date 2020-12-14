@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LocalZoomOnScrollService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-zoom-on-scroll.service';
+	from '@services/item-in-browser-storage/toggle-setting-in-browser-storage/local-zoom-on-scroll.service';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
