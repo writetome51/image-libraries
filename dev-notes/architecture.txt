@@ -15,3 +15,14 @@ makes them belong to that module.  If you want to use those Directives or Compon
 other modules, you must list them in their module's 'exports' array, and import their
 module into the destination module by listing it in the destination module's 'imports'
 array.
+
+
+
+12/15/2020
+
+My Rest Api is built using MongoDB Realm (formerly Stitch).  MongoDB provides a Realm SDK for
+programmatically communicating with your Realm app.  A year ago I tried using the Stitch web SDK and
+ it didn't work (was never sure why), which is why i ended up creating the rest api to communicate
+ with Realm entirely using http webhooks.  But using webhooks hasn't been seamless because i've had
+ to use a CORS proxy, which occasionally slows requests, and sometimes (on Sundays usually) doesn't
+ respond at all.  So today I'm going to try some tests using the Realm SDK from inside this app.

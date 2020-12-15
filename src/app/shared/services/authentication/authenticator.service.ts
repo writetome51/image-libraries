@@ -1,5 +1,6 @@
 import { AuthenticationRestAPIService } from './authentication-rest-api.service';
-import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserData as currentUser }
+	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription }
 	from '../get-object-from-subscription.service';
@@ -24,8 +25,7 @@ export class AuthenticatorService {
 	}
 
 
-	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }>
-	{
+	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.securityQuestionLogin(
 				{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
@@ -34,8 +34,7 @@ export class AuthenticatorService {
 	}
 
 
-	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }>
-	{
+	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }> {
 		return await getObjectFromSubscription.go(
 			this.__authenticationRestApi.getSecurityQuestion({email: currentUser.email})
 		);

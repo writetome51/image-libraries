@@ -17,7 +17,7 @@ export class GlobalActionMenuChoicesProcessorService extends MenuChoicesProcesso
 		super(
 			deleteSelectedImagesProcessor,
 			toggleEnableMenuChoiceProcessor,
-			toggleEnableMenuChoiceProcessor
+			toggleEnableMenuChoiceProcessor // Not a mistake. Used for multiple choices.
 		);
 
 		this._assignLabelsToProcessors([

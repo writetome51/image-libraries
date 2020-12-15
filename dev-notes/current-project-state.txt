@@ -12,3 +12,7 @@ You can delete a library.
 
 You can add images to your account.
 You can view all the images in your account.
+
+You can add an image to a library.
+You can remove an image from a library.
+
