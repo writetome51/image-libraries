@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import * as Realm from 'realm-web';
+import { pswd, usr } from '@app/.special/.realm-usr-pswrd';
 
 
 @Injectable({providedIn: 'root'})
 export class MongoDBRealmService {
 
-	app = new Realm.App({id: 'serverless-functions-rhfqi'});
-	user: Realm.User;
+	private __app = new Realm.App({id: 'serverless-functions-rhfqi'});
+	private __user: Realm.User;
 
 
 	constructor() {
-		this.app.logIn(
-			Realm.Credentials.emailPassword('writetome51', '')
-		).then((user: Realm.User) => this.user = user);
+		if (!(this.__user)) {
+			this.__app.logIn(
+				Realm.Credentials.emailPassword(usr, pswd)
+			).then((user: Realm.User) => this.__user = user);
+		}
 	}
 
 
