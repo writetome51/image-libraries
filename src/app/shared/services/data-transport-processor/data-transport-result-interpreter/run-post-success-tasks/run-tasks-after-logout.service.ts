@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterLogoutService implements IDoThis {
 
 	constructor(private __router: Router) {

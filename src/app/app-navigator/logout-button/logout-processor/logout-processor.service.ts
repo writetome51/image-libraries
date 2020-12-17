@@ -16,8 +16,7 @@ export class LogoutProcessorService extends DataTransportProcessorService {
 	}
 
 
-	protected async _getResult(): Promise<{success: true} | {error: {message: string}}>
-	{
+	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
 		return await this.__deAuthenticator.deAuthenticate();
 	}
 

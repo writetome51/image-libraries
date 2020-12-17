@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as Realm from 'realm-web';
-import { pswd, usr } from '@app/.special/.realm-usr-pswrd';
+import { pswd, email } from '@app/.special/.realm-eml-pswrd';
 
 
 @Injectable({providedIn: 'root'})
@@ -13,10 +13,14 @@ export class MongoDBRealmService {
 	constructor() {
 		if (!(this.__user)) {
 			this.__app.logIn(
-				Realm.Credentials.emailPassword(usr, pswd)
+				Realm.Credentials.emailPassword(email, pswd)
 			).then((user: Realm.User) => this.__user = user);
 		}
 	}
 
+
+	async callFn(name, args = []) {
+		return await this.__user.callFunction(name, ...args);
+	}
 
 }
