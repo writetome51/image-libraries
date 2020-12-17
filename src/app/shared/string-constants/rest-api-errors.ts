@@ -1,7 +1,7 @@
 // Not all of these strings represent an entire error message.  Some of them are fragments.
 
 export const noRecordMatchedCriteria =
-	'Operation not performed.  No record matched the request criteria';
+	'Operation not performed.  No document matched the request criteria';
 
 export const notLoggedIn = 'not logged in';
 

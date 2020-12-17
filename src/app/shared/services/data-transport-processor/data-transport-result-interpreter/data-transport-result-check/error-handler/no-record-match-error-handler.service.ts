@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+import { LocalSessionIDService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
 import { Handler } from '@interfaces/handler';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { incorrectPassword, noAccountWithThatEmail } from '@string-constants/form-submission-errors';
+import { incorrectPassword, noAccountWithThatEmail }
+	from '@string-constants/form-submission-errors';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
 import { UserStorageService } from '@services/user/user-storage.service';
-import { CurrentUserData as currentUser} from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserData as currentUser }
+	from '@runtime-state-data/static-classes/current-user.data';
+import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
@@ -21,12 +25,13 @@ export class NoRecordMatchErrorHandlerService implements Handler {
 
 
 	async handle() {
-		let assumeLoggedIn = (!!this.__localSessionID.get());
+		let assumedLoggedIn = (!!this.__localSessionID.get());
 
-		if (await this.__userExists()) { // user exists in db.
+		if (await this.__userDoesntExist()) alert.error = noAccountWithThatEmail;
 
+		else {
 			// @ts-ignore
-			if (assumeLoggedIn && (await this.__userStorage.get()).error) {
+			if (assumedLoggedIn && (await this.__userStorage.get()).error) {
 				// user isn't logged in. If user was logged in, __userStorage.get() would not
 				// return error.
 				await this.__notLoggedInErrorHandler.handle();
@@ -35,13 +40,12 @@ export class NoRecordMatchErrorHandlerService implements Handler {
 				alert.error = incorrectPassword;
 			}
 		}
-		else alert.error = noAccountWithThatEmail;
 	}
 
 
-	private async __userExists() {
+	private async __userDoesntExist() {
 		let result = await this.__userStorage.exists(currentUser.email);
-		return result.success;
+		return not(result.success);
 	}
 
 }
