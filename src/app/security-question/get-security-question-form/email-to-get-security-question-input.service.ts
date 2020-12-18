@@ -4,7 +4,6 @@ import { CurrentUserData } from '@runtime-state-data/static-classes/current-user
 
 
 @Injectable({providedIn: 'root'})
-
 export class EmailToGetSecurityQuestionInputService extends EmailInputService {
 
 	constructor() {
