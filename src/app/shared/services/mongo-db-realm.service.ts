@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import * as Realm from 'realm-web';
 import { pswd, email } from '@app/.special/.realm-eml-pswrd';
 
+// Connects with cloud service MongoDB Realm and allows us to call serverless functions we've
+// deployed on it.
 
 @Injectable({providedIn: 'root'})
 export class MongoDBRealmService {
@@ -19,8 +21,8 @@ export class MongoDBRealmService {
 	}
 
 
-	async callFn(name, args = []) {
-		return await this.__user.callFunction(name, ...args);
+	async callFn(name: string, params: object) {
+		return await this.__user.callFunction(name, params);
 	}
 
 }

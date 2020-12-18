@@ -16,21 +16,21 @@ export class AuthenticatorService {
 	async authenticate(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn(
 			'loginAndReturnUser',
-			[{email: currentUser.email, password: currentUser.password}]
+			{email: currentUser.email, password: currentUser.password}
 		);
 	}
 
 
 	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn(
-			'loginBySecurityQuestion',
-			[{email: currentUser.email, securityQuestion: currentUser.securityQuestion}]
+			'loginBySecurityQuestionAndReturnUser',
+			{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 		);
 	}
 
 
 	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }> {
-		return await this.__realm.callFn('getSecurityQuestion', [{email: currentUser.email}]);
+		return await this.__realm.callFn('getSecurityQuestion', {email: currentUser.email});
 	}
 
 }
