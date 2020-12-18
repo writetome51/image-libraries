@@ -6,7 +6,6 @@ import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
-
 export class AuthenticatedGuard implements CanActivate {
 
 	constructor(

@@ -21,7 +21,7 @@ export class MongoDBRealmService {
 	}
 
 
-	async callFn(name: string, params: object) {
+	async callFn(name: string, params: object): Promise<any> {
 		return await this.__user.callFunction(name, params);
 	}
 

@@ -3,7 +3,7 @@ import { AppValidatingFormInputsModule }
 import { ClearFormOnInitAndAlertOnDestroyModule }
 	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
-import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
+import { DeAuthenticatedGuard } from '@app/shared/guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
 import { NewUserComponent } from './new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';

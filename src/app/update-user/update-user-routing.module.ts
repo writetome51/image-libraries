@@ -1,4 +1,4 @@
-import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

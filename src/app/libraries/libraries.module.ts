@@ -1,4 +1,4 @@
-import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
 import { ClearFormOnInitAndAlertOnDestroyModule }

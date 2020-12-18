@@ -3,7 +3,7 @@ import { AddImageUrlButtonComponent }
 	from './enter-image-url/add-image-url-button/add-image-url-button.component';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
 import { BigLoadingSpinnerModule }
 	from '@big-loading-spinner/big-loading-spinner.module';
 import { ChooseImagesFromDeviceComponent }

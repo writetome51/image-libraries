@@ -7,7 +7,7 @@ import { AnswerSecurityQuestionFormInputComponent }
 import { ClearFormOnInitAndAlertOnDestroyModule }
 	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
-import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
+import { DeAuthenticatedGuard } from '@app/shared/guards/de-authenticated.guard';
 import { GetQuestionButtonComponent }
 	from './get-security-question-form/get-question-button/get-question-button.component';
 import { GetSecurityQuestionFormComponent }
