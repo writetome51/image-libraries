@@ -3,8 +3,10 @@ import { DBUser } from '@interfaces/db-user';
 import { GetObjectFromSubscriptionService as getObjectFromSubscription}
 	from '../get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService } from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+import { LocalSessionIDService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
 import { UserRestAPIService } from './user-rest-api.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +16,7 @@ export class UserStorageService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
-		private __localSessionID: LocalSessionIDService
+		private __localSessionID: LocalSessionIDService,
 	) {
 	}
 

@@ -6,7 +6,6 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterCreatingNewUserService implements IDoThis {
 
 	constructor(private __runTasksAfterLogin: RunTasksAfterLoginService) {
