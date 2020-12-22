@@ -1,23 +1,18 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '@services/get-object-from-subscription.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
 import { LocalEmailService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-email.service';
-import { UserRestAPIService } from '@services/user/user-rest-api.service';
+import { LocalSessionIDService }
+	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
 @Injectable({providedIn: 'root'})
 export class UserUpdaterService {
 
-
 	constructor(
-		private __userRestApi: UserRestAPIService,
 		private __realm: MongoDBRealmService,
 		private __localSessionID: LocalSessionIDService,
 		private __localEmail: LocalEmailService
@@ -32,33 +27,16 @@ export class UserUpdaterService {
 			newPassword: currentUser.newPassword,
 			sessionID: this.__localSessionID.get()
 		});
-		/*
-		return await getObjectFromSubscription.go(
-			this.__userRestApi.updatePassword(
-				{
-					email: this.__localEmail.get(),
-					password: currentUser.password,
-					newPassword: currentUser.newPassword,
-					sessionID: this.__localSessionID.get()
-				}
-			)
-		);
-		*/
 	}
 
 
 	async updateEmail(): Promise<DBUser | { error: { message: string } }> {
-		return await getObjectFromSubscription.go(
-			this.__userRestApi.updateEmail(
-				{
-					email: currentUser.email,
-					password: currentUser.password,
-					newEmail: currentUser.newEmail,
-					sessionID: this.__localSessionID.get()
-				}
-			)
-		);
+		return await this.__realm.callFn('updateEmail', {
+			email: currentUser.email,
+			password: currentUser.password,
+			newEmail: currentUser.newEmail,
+			sessionID: this.__localSessionID.get()
+		});
 	}
-
 
 }

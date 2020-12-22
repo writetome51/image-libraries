@@ -6,7 +6,7 @@ import { AlertData as alert } from '@runtime-state-data/static-classes/alert.dat
 import { incorrectPassword, noAccountWithThatEmail }
 	from '@string-constants/form-submission-errors';
 import { NotLoggedInErrorHandlerService } from './not-logged-in-error-handler.service';
-import { UserStorageService } from '@services/user/user-storage.service';
+import { UserStorageService } from '@services/user-storage.service';
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { not } from '@writetome51/not';

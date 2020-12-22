@@ -1,10 +1,12 @@
+import { DBUser } from '@interfaces/db-user';
 import { FormDataTransportProcessorService }
 	from '@services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UpdatePasswordInputsService } from '../update-password-inputs/update-password-inputs.service';
-import { UpdatePasswordResultInterpreterService } from './update-password-result-interpreter.service';
+import { UpdatePasswordInputsService }
+	from '../update-password-inputs/update-password-inputs.service';
+import { UpdatePasswordResultInterpreterService }
+	from './update-password-result-interpreter.service';
 import { UserUpdaterService } from '../../user-updater.service';
-import { DBUser } from '@interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
