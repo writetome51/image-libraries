@@ -9,7 +9,6 @@ import { SecurityAnswerLoginInputService } from '../security-answer-login-input.
 
 
 @Injectable({providedIn: 'root'})
-
 export class LoginBySecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

@@ -8,7 +8,6 @@ import { LibraryStorageService } from '@services/library/library-storage.service
 
 
 @Injectable({providedIn: 'root'})
-
 export class DeleteLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

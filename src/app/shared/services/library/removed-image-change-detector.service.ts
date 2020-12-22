@@ -7,7 +7,6 @@ import { LibraryChangesService } from './library-changes.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RemovedImageChangeDetectorService {
 
 	subscription: Unsubscribable;

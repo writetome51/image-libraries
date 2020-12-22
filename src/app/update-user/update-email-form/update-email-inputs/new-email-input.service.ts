@@ -10,6 +10,5 @@ export class __NewEmailInputService extends EmailInputService {
 }
 
 @Injectable({providedIn: 'root'})
-
 export class NewEmailInputService extends __NewEmailInputService {
 }

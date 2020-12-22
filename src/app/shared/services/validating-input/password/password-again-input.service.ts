@@ -3,7 +3,6 @@ import { ValidatingPasswordInputService } from '@writetome51/validating-inputs';
 
 
 @Injectable({providedIn: 'root'})
-
 export class PasswordAgainInputService extends ValidatingPasswordInputService {
 
 	constructor() {

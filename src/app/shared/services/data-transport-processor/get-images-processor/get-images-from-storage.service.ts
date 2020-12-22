@@ -9,7 +9,6 @@ import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/re
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetImagesFromStorageService {
 
 

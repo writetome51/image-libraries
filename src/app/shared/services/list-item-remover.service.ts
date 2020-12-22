@@ -5,7 +5,6 @@ import { ItemBeingRemoved } from '@interfaces/item-being-removed';
 
 
 @Injectable({providedIn: 'root'})
-
 export class ListItemRemoverService {
 
 	private __subject = new Subject();

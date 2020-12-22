@@ -9,7 +9,6 @@ import { SecurityAnswerInputService } from '@services/validating-input/security-
 
 
 @Injectable({providedIn: 'root'})
-
 export class NewUserInputsService extends CurrentUserInputsService {
 
 	constructor(

@@ -8,7 +8,6 @@ import { DBUser } from '@interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

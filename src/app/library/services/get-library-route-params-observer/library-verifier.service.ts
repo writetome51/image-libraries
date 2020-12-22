@@ -8,7 +8,6 @@ import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryVerifierService {
 
 	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {

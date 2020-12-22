@@ -6,7 +6,6 @@ import { PasswordInputService } from '@validating-input/password/password-input.
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdateEmailInputsService extends CurrentUserInputsService {
 
 	constructor(

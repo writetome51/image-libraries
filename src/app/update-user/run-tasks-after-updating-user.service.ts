@@ -1,13 +1,12 @@
+import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { DBUser } from '@interfaces/db-user';
+import { IDoThis } from '@interfaces/i-do-this';
+import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingUserService }
 	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterUpdatingUserService implements IDoThis {
 
 	resultMessage: string;

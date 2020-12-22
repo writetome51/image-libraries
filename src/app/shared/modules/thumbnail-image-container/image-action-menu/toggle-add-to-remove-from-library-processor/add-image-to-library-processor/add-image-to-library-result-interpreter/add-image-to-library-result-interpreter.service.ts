@@ -7,7 +7,6 @@ import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class AddImageToLibraryResultInterpreterService
 	extends DataTransportResultInterpreterService {
 

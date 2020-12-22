@@ -7,7 +7,6 @@ import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-h
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 	constructor(

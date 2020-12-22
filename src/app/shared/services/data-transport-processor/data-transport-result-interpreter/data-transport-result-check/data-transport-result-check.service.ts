@@ -9,7 +9,6 @@ import { ResultCheck } from '@interfaces/result-check';
 
 
 @Injectable({providedIn: 'root'})
-
 export class DataTransportResultCheckService implements ResultCheck {
 
 	constructor(

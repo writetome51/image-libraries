@@ -7,7 +7,6 @@ import { UserDeleterService } from './user-deleter.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class DeleteUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

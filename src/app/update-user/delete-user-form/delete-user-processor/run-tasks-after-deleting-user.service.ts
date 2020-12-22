@@ -6,7 +6,6 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterDeletingUserService implements IDoThis {
 
 	constructor(private __runTasksAfterLogout: RunTasksAfterLogoutService) {

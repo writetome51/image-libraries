@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-
 export class DataTotalForLibraryService extends DataTotalService {
 
 	constructor(__set_dataTotal_Processor: GetLibraryProcessorService) {

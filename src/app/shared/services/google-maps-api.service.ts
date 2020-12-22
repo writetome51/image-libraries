@@ -3,7 +3,6 @@ import { GoogleMapsApiKeyData as apiKey } from '@read-only-data/google-maps-api-
 
 
 @Injectable({providedIn: 'root'})
-
 export class GoogleMapsApiService {
 
 	api = `https://www.google.com/maps/embed/v1/MODE?key=${apiKey.data}&parameters`;

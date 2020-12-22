@@ -6,7 +6,6 @@ import { LibraryStorageService } from '../../library/library-storage.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetLibrariesProcessorService extends DataTransportProcessorService {
 
 	constructor(

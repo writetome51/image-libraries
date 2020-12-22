@@ -5,7 +5,6 @@ import { DataTransportResultCheckService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class AddImageToLibraryResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {

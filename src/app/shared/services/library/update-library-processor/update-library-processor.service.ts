@@ -7,7 +7,6 @@ import { UpdateLibraryResultInterpreterService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdateLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

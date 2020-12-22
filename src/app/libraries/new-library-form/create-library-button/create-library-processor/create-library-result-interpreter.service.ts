@@ -8,7 +8,6 @@ import { UpdateOrNewLibraryResultCheckService }	// tslint:disable-next-line:max-
 
 
 @Injectable({providedIn: 'root'})
-
 export class CreateLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

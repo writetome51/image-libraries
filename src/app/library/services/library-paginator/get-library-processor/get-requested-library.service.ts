@@ -6,7 +6,6 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetRequestedLibraryService implements IDoThis {
 
 	constructor(private __libraryStorage: LibraryStorageService) {

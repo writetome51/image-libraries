@@ -4,7 +4,6 @@ import { UserStorageService } from '@services/user/user-storage.service';
 
 
 @Injectable({providedIn: 'root'})
-
 export class UserDeleterService {
 
 	constructor(private __userStorage: UserStorageService) {

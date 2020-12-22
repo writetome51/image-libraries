@@ -8,7 +8,6 @@ import { DataTransportResultCheckService }	// tslint:disable-next-line:max-line-
 
 
 @Injectable({providedIn: 'root'})
-
 export class DeleteUserResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

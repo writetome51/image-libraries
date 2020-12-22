@@ -7,7 +7,6 @@ import { RunTasksAfterLoginService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class LoginResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

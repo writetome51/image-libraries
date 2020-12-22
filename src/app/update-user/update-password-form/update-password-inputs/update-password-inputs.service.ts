@@ -6,7 +6,6 @@ import { NewPasswordAgainInputService } from './new-password-again-input.service
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdatePasswordInputsService extends CurrentUserInputsService {
 
 	constructor(

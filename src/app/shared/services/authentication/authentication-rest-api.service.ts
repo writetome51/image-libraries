@@ -5,7 +5,6 @@ import { SecurityQuestion } from '@interfaces/security-question';
 
 
 @Injectable({providedIn: 'root'})
-
 export class AuthenticationRestAPIService {
 
 	constructor(private __restApi: AppRestAPIService) {

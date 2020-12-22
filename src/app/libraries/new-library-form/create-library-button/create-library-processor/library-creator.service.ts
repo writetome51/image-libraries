@@ -5,7 +5,6 @@ import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.da
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryCreatorService {
 
 

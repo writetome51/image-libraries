@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterGettingImagesService implements IDoThis {
 
 	async go(result: { dataTotal: number, batch: DBImage[] }) {

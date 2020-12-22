@@ -10,7 +10,6 @@ import { EmailToGetSecurityQuestionInputService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetSecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

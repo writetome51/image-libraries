@@ -4,7 +4,6 @@ import { hasValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryChangesService {
 
 	// Stores all changes.  Properties should be assigned as strings so they can include

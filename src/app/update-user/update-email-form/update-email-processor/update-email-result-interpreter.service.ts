@@ -7,7 +7,6 @@ import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-em
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdateEmailResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

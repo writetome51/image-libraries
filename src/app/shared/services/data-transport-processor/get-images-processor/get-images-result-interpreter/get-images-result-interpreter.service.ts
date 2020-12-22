@@ -7,7 +7,6 @@ import { RunTasksAfterGettingImagesService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetImagesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

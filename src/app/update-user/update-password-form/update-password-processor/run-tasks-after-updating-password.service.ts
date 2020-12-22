@@ -5,11 +5,9 @@ import { SetResultMessage } from '../../set-result-message/set-result-message.de
 
 
 @SetResultMessage('Password updated')
-export class __RunTasksAfterUpdatingPasswordService
-	extends RunTasksAfterUpdatingUserService {
+export class __RunTasksAfterUpdatingPasswordService extends RunTasksAfterUpdatingUserService {
 }
 
 @Injectable({providedIn: 'root'})
-export class RunTasksAfterUpdatingPasswordService
-	extends __RunTasksAfterUpdatingPasswordService {
+export class RunTasksAfterUpdatingPasswordService extends __RunTasksAfterUpdatingPasswordService {
 }

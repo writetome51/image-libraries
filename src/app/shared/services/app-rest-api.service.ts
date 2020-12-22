@@ -8,7 +8,6 @@ import { sss } from '@app/.special/.sss';
 
 
 @Injectable({providedIn: 'root'})
-
 export class AppRestAPIService {
 
 	private __baseURL = corsProxy.data +

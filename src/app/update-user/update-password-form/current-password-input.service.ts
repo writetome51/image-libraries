@@ -10,6 +10,5 @@ export class __CurrentPasswordInputService extends PasswordInputService {
 }
 
 @Injectable({providedIn: 'root'})
-
 export class CurrentPasswordInputService extends __CurrentPasswordInputService {
 }

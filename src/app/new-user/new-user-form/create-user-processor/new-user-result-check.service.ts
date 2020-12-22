@@ -7,9 +7,7 @@ import { accountAlreadyExists } from '@string-constants/form-submission-errors';
 import { duplicate } from '@string-constants/rest-api-errors';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class NewUserResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {

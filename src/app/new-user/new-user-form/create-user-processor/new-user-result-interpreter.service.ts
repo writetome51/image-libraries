@@ -6,9 +6,7 @@ import { RunTasksAfterCreatingNewUserService }
 	from './run-tasks-after-creating-new-user.service';
 
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class NewUserResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

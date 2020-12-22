@@ -8,7 +8,6 @@ import { ResultCheck } from '@interfaces/result-check';
 
 
 @Injectable({providedIn: 'root'})
-
 export class ToggleAddToRemoveFromLibraryResultCheckService implements ResultCheck {
 
 	constructor(private __localLibraries: LocalLibrariesService) {

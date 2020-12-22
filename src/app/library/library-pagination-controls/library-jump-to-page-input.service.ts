@@ -5,7 +5,6 @@ import { LibraryPaginatorService } from '../services/library-paginator/library-p
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryJumpToPageInputService extends JumpToPageInputService {
 
 	constructor(_paginator: LibraryPaginatorService) {

@@ -4,7 +4,6 @@ import { LibraryPaginatorDataSourceService } from './library-paginator-data-sour
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryPaginatorService extends AppPaginatorService {
 
 	constructor(__dataSource: LibraryPaginatorDataSourceService) {

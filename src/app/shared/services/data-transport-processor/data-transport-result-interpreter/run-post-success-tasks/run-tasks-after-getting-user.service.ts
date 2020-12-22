@@ -6,7 +6,6 @@ import { LocalSessionIDService } from '@services/item-in-browser-storage/item-in
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterGettingUserService implements IDoThis {
 
 	constructor(

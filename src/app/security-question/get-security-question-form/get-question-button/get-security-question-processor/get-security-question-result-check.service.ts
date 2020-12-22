@@ -7,7 +7,6 @@ import { noAccountWithThatEmail } from '@string-constants/form-submission-errors
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetSecurityQuestionResultCheckService extends DataTransportResultCheckService {
 
 

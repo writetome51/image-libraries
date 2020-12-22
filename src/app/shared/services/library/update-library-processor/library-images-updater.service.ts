@@ -8,7 +8,6 @@ import { LocalLibrariesService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryImagesUpdaterService {
 
 

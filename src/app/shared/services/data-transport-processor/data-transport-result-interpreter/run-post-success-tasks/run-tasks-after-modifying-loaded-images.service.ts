@@ -5,7 +5,6 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
 
 	go() {

@@ -5,7 +5,6 @@ import { Subscription, Unsubscribable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
-
 export class ReArrangedImagesChangeDetectorService {
 
 	subscription: Unsubscribable;

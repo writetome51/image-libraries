@@ -4,7 +4,6 @@ import { Subscribable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
-
 export class CurrentRouteService {
 
 

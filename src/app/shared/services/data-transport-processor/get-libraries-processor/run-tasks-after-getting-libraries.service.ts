@@ -8,7 +8,6 @@ import { LibraryNamesData as libraryNames }
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterGettingLibrariesService implements IDoThis {
 
 	constructor(private __localLibraries: LocalLibrariesService) {

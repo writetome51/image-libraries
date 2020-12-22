@@ -7,7 +7,6 @@ import { RunTasksAfterGettingLibrariesService } from './run-tasks-after-getting-
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetLibrariesResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

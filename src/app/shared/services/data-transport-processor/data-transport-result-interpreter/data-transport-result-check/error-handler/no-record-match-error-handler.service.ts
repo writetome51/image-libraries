@@ -13,7 +13,6 @@ import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
-
 export class NoRecordMatchErrorHandlerService implements Handler {
 
 	constructor(

@@ -7,7 +7,6 @@ import { RunTasksAfterUpdatingPasswordService } from './run-tasks-after-updating
 
 
 @Injectable({providedIn: 'root'})
-
 export class UpdatePasswordResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

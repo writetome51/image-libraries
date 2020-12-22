@@ -7,7 +7,6 @@ import { Subject, Subscribable } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
-
 export class ListItemMoverService extends PublicArrayContainer {
 
 	private __subject = new Subject();

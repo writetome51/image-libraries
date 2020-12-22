@@ -8,7 +8,6 @@ import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterCreatingNewLibraryService implements IDoThis {
 
 	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {

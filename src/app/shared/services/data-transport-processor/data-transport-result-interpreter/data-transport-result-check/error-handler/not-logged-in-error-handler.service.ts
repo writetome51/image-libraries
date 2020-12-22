@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
-
 // Use this handler when we've received an api error saying we're not
 // logged in, but the browser is still storing session info.
 

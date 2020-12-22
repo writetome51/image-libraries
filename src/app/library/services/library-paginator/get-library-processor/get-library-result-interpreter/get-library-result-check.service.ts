@@ -8,7 +8,6 @@ import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
-
 export class GetLibraryResultCheckService extends DataTransportResultCheckService {
 
 	protected async _errorHandler(errMessage) {

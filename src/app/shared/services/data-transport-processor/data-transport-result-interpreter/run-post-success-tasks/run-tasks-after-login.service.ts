@@ -9,7 +9,6 @@ import { SecurityQuestionStatusData as questionStatus }
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterLoginService implements IDoThis {
 
 	constructor(

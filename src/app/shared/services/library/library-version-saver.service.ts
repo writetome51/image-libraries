@@ -8,7 +8,6 @@ import { LoadedLibraryData as loadedLibrary }
 
 
 @Injectable({providedIn: 'root'})
-
 export class LibraryVersionSaverService {
 
 	private __extension = '.json';

@@ -11,7 +11,6 @@ export class __NewPasswordAgainInputService extends PasswordAgainInputService {
 }
 
 @Injectable({providedIn: 'root'})
-
 export class NewPasswordAgainInputService extends __NewPasswordAgainInputService {
 
 	constructor() {

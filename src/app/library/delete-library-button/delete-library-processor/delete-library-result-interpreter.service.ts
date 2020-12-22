@@ -7,7 +7,6 @@ import { RunTasksAfterDeletionOfLibraryService } from './run-tasks-after-deletio
 
 
 @Injectable({providedIn: 'root'})
-
 export class DeleteLibraryResultInterpreterService extends DataTransportResultInterpreterService {
 
 	constructor(

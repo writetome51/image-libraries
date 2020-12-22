@@ -5,7 +5,6 @@ import { LocalEmailService }
 
 
 @Injectable({providedIn: 'root'})
-
 export class LoggedInEmailVerificationInputService extends EmailInputService {
 
 	constructor(private  __localEmail: LocalEmailService) {

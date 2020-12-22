@@ -10,6 +10,5 @@ export class __NewPasswordInputService extends PasswordInputService {
 }
 
 @Injectable({providedIn: 'root'})
-
 export class NewPasswordInputService extends __NewPasswordInputService {
 }

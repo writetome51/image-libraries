@@ -9,7 +9,6 @@ import {
 
 
 @Injectable({providedIn: 'root'})
-
 export class RunTasksAfterGettingLibraryService implements IDoThis {
 
 	constructor(private __getLibraryImagesProcessor: GetLibraryImagesProcessorService) {
