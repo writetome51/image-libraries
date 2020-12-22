@@ -1,7 +1,7 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { LibraryUpdaterService } from './library-updater.service';
+import { LoadedLibraryUpdaterService } from './loaded-library-updater.service';
 import { UpdateLibraryResultInterpreterService }
 	from '@services/library/update-library-processor/update-library-result-interpreter.service';
 
@@ -10,7 +10,7 @@ import { UpdateLibraryResultInterpreterService }
 export class UpdateLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryUpdater: LibraryUpdaterService,
+		private __libraryUpdater: LoadedLibraryUpdaterService,
 		__updateLibraryResultInterpreter: UpdateLibraryResultInterpreterService
 	) {
 		super(__updateLibraryResultInterpreter);

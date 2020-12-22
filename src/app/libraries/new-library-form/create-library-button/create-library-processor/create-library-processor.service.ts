@@ -4,7 +4,8 @@ import { FormDataTransportProcessorService }
 	from '@services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LibraryCreatorService } from './library-creator.service';
-import { LibraryNameInputService } from '@app/libraries/new-library-form/library-name-input.service';
+import { LibraryNameInputService }
+	from '@app/libraries/new-library-form/library-name-input.service';
 
 
 @Injectable({providedIn: 'root'})
