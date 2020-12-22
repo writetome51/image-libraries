@@ -9,6 +9,7 @@ import { LocalSessionIDService }
 import { LocalEmailService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-email.service';
 import { UserRestAPIService } from '@services/user/user-rest-api.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,6 +18,7 @@ export class UserUpdaterService {
 
 	constructor(
 		private __userRestApi: UserRestAPIService,
+		private __realm: MongoDBRealmService,
 		private __localSessionID: LocalSessionIDService,
 		private __localEmail: LocalEmailService
 	) {
@@ -24,6 +26,13 @@ export class UserUpdaterService {
 
 
 	async updatePassword(): Promise<DBUser | { error: { message: string } }> {
+		return await this.__realm.callFn('updatePassword', {
+			email: this.__localEmail.get(),
+			password: currentUser.password,
+			newPassword: currentUser.newPassword,
+			sessionID: this.__localSessionID.get()
+		});
+		/*
 		return await getObjectFromSubscription.go(
 			this.__userRestApi.updatePassword(
 				{
@@ -34,6 +43,7 @@ export class UserUpdaterService {
 				}
 			)
 		);
+		*/
 	}
 
 
