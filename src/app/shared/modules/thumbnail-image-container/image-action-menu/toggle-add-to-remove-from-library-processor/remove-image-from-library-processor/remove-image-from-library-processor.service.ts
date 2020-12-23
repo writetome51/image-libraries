@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '@services/library/library-storage.service';
 import { DBLibrary } from '@interfaces/db-library';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
@@ -8,13 +7,14 @@ import { LocalLibrariesService }
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { RemoveImageFromLibraryResultInterpreterService }
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
+import { LibraryUpdaterService } from '@services/library-updater.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RemoveImageFromLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryStorage: LibraryStorageService,
+		private __libraryUpdater: LibraryUpdaterService,
 		private __localLibraries: LocalLibrariesService,
 		__resultInterpreter: RemoveImageFromLibraryResultInterpreterService
 	) {
@@ -29,7 +29,7 @@ export class RemoveImageFromLibraryProcessorService extends DataTransportProcess
 		let lib = this.__localLibraries.get()[libName];
 		removeFirstOf(image_id, lib._image_ids);
 
-		return await this.__libraryStorage.update(libName, {_image_ids: lib._image_ids});
+		return await this.__libraryUpdater.update(libName, {_image_ids: lib._image_ids});
 	}
 
 }

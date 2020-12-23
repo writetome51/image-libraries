@@ -16,11 +16,11 @@ export class LibraryUpdaterService {
 
 
 	async update(
-		libraryName: string,
+		libName: string,
 		changes: object // The keys in `changes` can contain dot-notation.
 	): Promise<DBLibrary | { error: { message: string } }> {
 		return await this.__realm.callFn('updateAndReturnLibrary', {
-			name: libraryName,
+			name: libName,
 			changes,
 			sessionID: this.__localSessionID.get()
 		});
