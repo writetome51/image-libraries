@@ -17,7 +17,7 @@ export class UserDeleterService {
 
 
 	async delete(): Promise<{ success: true } | { error: { message: string } }> {
-		return await this.__realm.callFn('deleteUser', {
+		return await this.__realm.callFn('pub_deleteUser', {
 			email: currentUser.email,
 			password: currentUser.password,
 			sessionID: this.__localSessionID.get()

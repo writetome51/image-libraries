@@ -15,7 +15,7 @@ export class AuthenticatorService {
 
 	async authenticate(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn(
-			'loginAndReturnUser',
+			'pub_loginAndReturnUser',
 			{email: currentUser.email, password: currentUser.password}
 		);
 	}
@@ -23,14 +23,14 @@ export class AuthenticatorService {
 
 	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn(
-			'loginBySecurityQuestionAndReturnUser',
+			'pub_loginBySecurityQuestionAndReturnUser',
 			{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 		);
 	}
 
 
 	async getSecurityQuestion(): Promise<SecurityQuestion | { error: { message: string } }> {
-		return await this.__realm.callFn('getSecurityQuestion', {email: currentUser.email});
+		return await this.__realm.callFn('pub_getSecurityQuestion', {email: currentUser.email});
 	}
 
 }

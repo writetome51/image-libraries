@@ -14,7 +14,7 @@ export class UserCreatorService {
 
 	async create(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn(
-			'createAndReturnUser',
+			'pub_createAndReturnUser',
 			// We don't want to pass entire `currentUser`, but only these 3 properties.
 			{
 				email: currentUser.email,

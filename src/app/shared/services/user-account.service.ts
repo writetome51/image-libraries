@@ -18,12 +18,12 @@ export class UserAccountService {
 
 
 	async exists(): Promise<{ success: boolean }> {
-		return await this.__realm.callFn('userExists', {email: currentUser.email});
+		return await this.__realm.callFn('pub_userExists', {email: currentUser.email});
 	}
 
 
 	async get(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn('getUser', {sessionID: this.__localSessionID.get()});
+		return await this.__realm.callFn('pub_getUser', {sessionID: this.__localSessionID.get()});
 	}
 
 }

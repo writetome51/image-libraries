@@ -17,7 +17,7 @@ export class LibraryDeleterService {
 
 
 	async delete(): Promise<{ success: true } | { error: { message: string } }> {
-		return await this.__realm.callFn('deleteLibrary', {
+		return await this.__realm.callFn('pub_deleteLibrary', {
 			name: loadedLibrary.libName,
 			sessionID: this.__localSessionID.get()
 		});

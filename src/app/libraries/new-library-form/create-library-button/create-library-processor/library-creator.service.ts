@@ -17,7 +17,7 @@ export class LibraryCreatorService {
 
 
 	async create(): Promise<DBLibrary | { error: { message: string } }> {
-		return await this.__realm.callFn('createAndReturnLibrary', {
+		return await this.__realm.callFn('pub_createAndReturnLibrary', {
 			name: newLibrary.name,
 			sessionID: this.__localSessionID.get()
 		});

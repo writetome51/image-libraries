@@ -16,7 +16,7 @@ export class LibraryStorageService {
 
 
 	async get(libName: string): Promise<DBLibrary | { error: { message: string } }> {
-		return await this.__realm.callFn('getLibrary', {
+		return await this.__realm.callFn('pub_getLibrary', {
 			name: libName,
 			sessionID: this.__localSessionID.get()
 		});
@@ -24,7 +24,7 @@ export class LibraryStorageService {
 
 
 	async getAll(): Promise<DBLibrary[] | { error: { message: string } }> {
-		return await this.__realm.callFn('getLibraries', {sessionID: this.__localSessionID.get()});
+		return await this.__realm.callFn('pub_getLibraries', {sessionID: this.__localSessionID.get()});
 	}
 
 }
