@@ -21,7 +21,7 @@ export class UserUpdaterService {
 
 
 	async updatePassword(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_updatePassword', {
+		return await this.__realm.callFn('pub_updatePasswordAndReturnUser', {
 			email: this.__localEmail.get(),
 			password: currentUser.password,
 			newPassword: currentUser.newPassword,
@@ -31,7 +31,7 @@ export class UserUpdaterService {
 
 
 	async updateEmail(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_updateEmail', {
+		return await this.__realm.callFn('pub_updateEmailAndReturnUser', {
 			email: currentUser.email,
 			password: currentUser.password,
 			newEmail: currentUser.newEmail,
