@@ -9,23 +9,23 @@ import * as Realm from 'realm-web';
 @Injectable({providedIn: 'root'})
 export class MongoDBRealmService {
 
-	private ____user; // super-private
-	private __realmAppID =  'serverless-functions-rhfqi';
-
-	private get __user(): Realm.User {
-		if (!(this.____user)) {
-			let app = new Realm.App({id: this.__realmAppID});
-
-			app.logIn(
-				Realm.Credentials.emailPassword(email, pswd)
-			).then((user: Realm.User) => this.____user = user);
-		}
-		return this.____user;
-	}
+	private readonly __realmAppID = 'serverless-functions-rhfqi';
+	private __app = new Realm.App({id: this.__realmAppID});
+	private __user: Realm.User;
 
 
 	async callFn(name: string, params: object): Promise<any> {
+		if (!(this.__user)) {
+			await this.__set__user();
+		}
 		return await this.__user.callFunction(name, params);
+	}
+
+
+	private async __set__user() {
+		this.__user = await this.__app.logIn(
+			Realm.Credentials.emailPassword(email, pswd)
+		);
 	}
 
 }
