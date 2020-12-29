@@ -1,4 +1,4 @@
-import { AuthenticatorService } from '@services/authentication/authenticator.service';
+import { AuthenticatorService } from '@services/authenticator.service';
 import { FormDataTransportProcessorService }
 	from '@services/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';

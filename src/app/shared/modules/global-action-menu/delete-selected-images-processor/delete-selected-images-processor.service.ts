@@ -2,12 +2,10 @@ import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-result-interpreter.service';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '@services/get-object-from-subscription.service';
-import { ImagesRestAPIService } from '@services/images-rest-api.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
 
@@ -15,7 +13,7 @@ import { SelectedImagesData as selectedImages } from '@runtime-state-data/select
 export class DeleteSelectedImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __imagesRestApi: ImagesRestAPIService,
+		private __realm: MongoDBRealmService,
 		private __localSessionID: LocalSessionIDService,
 		__deleteSelectedImagesResultInterpreter: DeleteSelectedImagesResultInterpreterService
 	) {
@@ -24,14 +22,10 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 
 
 	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
-		return await getObjectFromSubscription.go(
-			this.__imagesRestApi.delete(
-				{
-					sessionID: this.__localSessionID.get(),
-					imageNames: selectedImages.data.map((img: { name: string }) => img.name)
-				}
-			)
-		);
+		return this.__realm.callFn('delete-images', {
+			sessionID: this.__localSessionID.get(),
+			imageNames: selectedImages.data.map((img: { name: string }) => img.name)
+		});
 	}
 
 }
