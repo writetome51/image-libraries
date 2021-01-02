@@ -6,11 +6,6 @@ import { ItemInBrowserStorageService }
 export abstract class ToggleSettingInBrowserStorageService
 	extends ItemInBrowserStorageService<{ enabled: boolean }> {
 
-	constructor(__storage, __key) {
-		super(__storage, __key);
-	}
-
-
 	get(): { enabled: boolean } {
 		let value = super.get();
 		if (hasValue(value)) {
@@ -23,6 +18,5 @@ export abstract class ToggleSettingInBrowserStorageService
 			return data;
 		}
 	}
-
 
 }

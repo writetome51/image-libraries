@@ -7,7 +7,8 @@ import { RunTasksAfterLibraryRouteParamsReceivedService }
 @Injectable({providedIn: 'root'})
 export class GetLibraryRouteParamsObserverService extends GetRouteParamsObserverService {
 
-	constructor(__runTasksAfterRouteParamsReceived: RunTasksAfterLibraryRouteParamsReceivedService) {
+	constructor(__runTasksAfterRouteParamsReceived:
+					RunTasksAfterLibraryRouteParamsReceivedService) {
 		super(__runTasksAfterRouteParamsReceived);
 	}
 

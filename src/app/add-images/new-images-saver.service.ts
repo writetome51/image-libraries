@@ -16,8 +16,7 @@ export class NewImagesSaverService {
 
 
 	async save(newImages: AppImage[]): Promise<{ success: true } | { error: { message: string } }> {
-		return this.__realm.callFn(
-			'add-images',
+		return this.__realm.callFn('pub_addImages',
 			{sessionID: this.__localSessionID.get(), images: newImages}
 		);
 	}

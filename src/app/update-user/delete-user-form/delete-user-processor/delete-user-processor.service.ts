@@ -18,8 +18,7 @@ export class DeleteUserProcessorService extends FormDataTransportProcessorServic
 	}
 
 
-	protected async _getResult(): Promise<{success: true} | {error: {message: string}}>
-	{
+	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
 		return await this.__userDeleter.delete();
 	}
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageURLProcessorService } from './image-url-processor.service';
+import { AddImageURLProcessorService } from './add-image-url-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 
@@ -14,8 +14,8 @@ import { StartDataProcessContainerComponent }
 })
 export class AddImageUrlButtonComponent extends StartDataProcessContainerComponent {
 
-	constructor(__imageURLProcessor: ImageURLProcessorService) {
-		super(__imageURLProcessor);
+	constructor(__processor: AddImageURLProcessorService) {
+		super(__processor);
 	}
 
 }

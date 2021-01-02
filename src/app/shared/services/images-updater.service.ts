@@ -20,7 +20,7 @@ export class ImagesUpdaterService {
 		images: { name: string, changes: object }[]
 
 	): Promise<{ success: true } | { error: { message: string } }> {
-		return this.__realm.callFn('update-images', {
+		return this.__realm.callFn('pub_updateImages', {
 			sessionID: this.__localSessionID.get(),
 			images
 		});

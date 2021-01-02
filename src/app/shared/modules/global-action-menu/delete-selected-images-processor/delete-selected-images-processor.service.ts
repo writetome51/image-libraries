@@ -22,7 +22,7 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 
 
 	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
-		return this.__realm.callFn('delete-images', {
+		return this.__realm.callFn('pub_deleteImages', {
 			sessionID: this.__localSessionID.get(),
 			imageNames: selectedImages.data.map((img: { name: string }) => img.name)
 		});

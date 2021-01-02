@@ -6,7 +6,8 @@ import { environment } from '@environments/environment';
 	selector: 'tiny-loading-spinner',
 	template: `
 		<div class="loading-spinner-container">
-			<img [src]="littleSpinner.src" [width]="littleSpinner.width" [height]="littleSpinner.height"
+			<img [src]="littleSpinner.src" [width]="littleSpinner.width"
+				 [height]="littleSpinner.height"
 				 alt="Waiting for response"
 			/>
 		</div>

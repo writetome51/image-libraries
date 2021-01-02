@@ -3,10 +3,10 @@ import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceProcessorService } from '../../../menu-choice-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
 import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
 	from '../remove-parent-labels-for-display.service';
+import { StartDataProcessContainerComponent }
+	from '@abstract-components/start-data-process-container.component';
 
 
 @Component({

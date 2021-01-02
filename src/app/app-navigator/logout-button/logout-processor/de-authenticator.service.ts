@@ -15,7 +15,9 @@ export class DeAuthenticatorService {
 
 
 	async deAuthenticate(): Promise<{ success: true } | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_logoutUser', {sessionID: this.__localSessionID.get()});
+		return await this.__realm.callFn('pub_logoutUser',
+			{sessionID: this.__localSessionID.get()}
+		);
 	}
 
 }

@@ -1,4 +1,5 @@
-import { ImageTotalData as imageTotal } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { ImageTotalData as imageTotal }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 

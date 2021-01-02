@@ -5,14 +5,15 @@ import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { ImageURLData as enteredImageURL } from '@runtime-state-data/image-url.data';
 import { ImageURLInputService } from '../image-url-input.service';
 import { Injectable } from '@angular/core';
-import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { NewImagesData as newImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { NewImagesSaverService } from '../../new-images-saver.service';
-import { SaveNewImagesResultInterpreterService } // tslint:disable-next-line:max-line-length
-	from '../../choose-images-from-device/save-new-images-processor/save-new-images-result-interpreter/save-new-images-result-interpreter.service';
+import { SaveNewImagesResultInterpreterService }
+	from '../../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
-export class ImageURLProcessorService extends FormDataTransportProcessorService {
+export class AddImageURLProcessorService extends FormDataTransportProcessorService {
 
 
 	constructor(
