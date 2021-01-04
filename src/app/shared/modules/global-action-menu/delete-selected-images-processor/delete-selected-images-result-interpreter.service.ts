@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { DataTransportResultCheckService }
-	from '@data-transport-result-check/data-transport-result-check.service';
+import { DataTransportProcessResultInterpreterService }
+	from '../../../services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { HandleDataTransportProcessErrorService }
+	from 'handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
 
 
 @Injectable()
 export class DeleteSelectedImagesResultInterpreterService
-	extends DataTransportResultInterpreterService {
+	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheckService: DataTransportResultCheckService,
+		__dataTransportResultCheckService: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterDeletingImagesService
 	) {
 		super(__dataTransportResultCheckService, __runPostSuccessTasks);

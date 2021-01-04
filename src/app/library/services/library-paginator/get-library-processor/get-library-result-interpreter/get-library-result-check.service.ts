@@ -1,5 +1,5 @@
-import { DataTransportResultCheckService }
-	from '@data-transport-result-check/data-transport-result-check.service';
+import { HandleDataTransportProcessErrorService }
+	from 'handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
 import { libraryNotFound } from '@string-constants/rest-api-errors';
 import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
@@ -8,14 +8,14 @@ import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
-export class GetLibraryResultCheckService extends DataTransportResultCheckService {
+export class GetLibraryResultCheckService extends HandleDataTransportProcessErrorService {
 
-	protected async _errorHandler(errMessage) {
+	async go(errMessage) {
 		// If library retrieval unsuccessful, library data must be undefined.
 		loadedLibrary.data = undefined;
 		loadedImages.data = undefined;
 
-		if (not(errMessage.includes(libraryNotFound))) await super._errorHandler(errMessage);
+		if (not(errMessage.includes(libraryNotFound))) await super.go(errMessage);
 	}
 
 }

@@ -1,17 +1,17 @@
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { DataTransportProcessResultInterpreterService }
+	from '../../data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdateOfLibraryService }
 	from './run-tasks-after-update-of-library.service';
-import { UpdateOrNewLibraryResultCheckService }
-	from '@data-transport-result-check/update-or-new-library-result-check.service';
+import { HandleUpdateOrNewLibraryErrorService }
+	from 'handle-data-transport-process-error/handle-update-or-new-library-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class UpdateLibraryResultInterpreterService extends DataTransportResultInterpreterService {
+export class UpdateLibraryResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__updateLibraryResultCheck: UpdateOrNewLibraryResultCheckService,
+		__updateLibraryResultCheck: HandleUpdateOrNewLibraryErrorService,
 		__runPostSuccessTasks: RunTasksAfterUpdateOfLibraryService,
 	) {
 		super(__updateLibraryResultCheck, __runPostSuccessTasks);

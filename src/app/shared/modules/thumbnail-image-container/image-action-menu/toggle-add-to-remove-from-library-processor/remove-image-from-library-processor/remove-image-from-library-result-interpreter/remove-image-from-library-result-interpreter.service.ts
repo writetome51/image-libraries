@@ -1,5 +1,5 @@
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { DataTransportProcessResultInterpreterService }
+	from '../../../../../../services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { RemoveImageFromLibraryResultCheckService }
 	from './remove-image-from-library-result-check.service';
@@ -9,7 +9,7 @@ import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 
 @Injectable({providedIn: 'root'})
 export class RemoveImageFromLibraryResultInterpreterService
-	extends DataTransportResultInterpreterService {
+	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
 		__resultCheck: RemoveImageFromLibraryResultCheckService,

@@ -5,7 +5,7 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { LoginFormInputsService } from './login-form-inputs.service';
 import { LoginResultInterpreterService }
-	from '@data-transport-result-interpreter/login-result-interpreter.service';
+	from 'data-transport-process-result-interpreter/login-result-interpreter.service';
 
 
 @Injectable()

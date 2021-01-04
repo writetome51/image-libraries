@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { DataTransportResultInterpreterService }
-	from './data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { DataTransportProcessResultInterpreterService }
+	from './data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 
@@ -9,7 +9,7 @@ export abstract class FormDataTransportProcessorService extends DataTransportPro
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,
-		__resultInterpreter: DataTransportResultInterpreterService
+		__resultInterpreter: DataTransportProcessResultInterpreterService
 	) {
 		super(__resultInterpreter);
 	}

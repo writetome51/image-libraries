@@ -2,7 +2,7 @@ import { Processor } from '@interfaces/processor';
 import { Interpreter } from '@interfaces/interpreter';
 
 
-export abstract class ProcessorService implements Processor {
+export abstract class DataProcessorService implements Processor {
 
 	constructor(private __resultInterpreter: Interpreter) {
 	}

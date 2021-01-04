@@ -6,7 +6,6 @@ import { Subscribable } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class CurrentRouteService {
 
-
 	get data(): string {
 		return this.__router.routerState.snapshot.url;
 	}
@@ -34,6 +33,5 @@ export class CurrentRouteService {
 	isActive(route): boolean {
 		return (this.data.endsWith(route) || this.data.includes(`/${route}/`));
 	}
-
 
 }

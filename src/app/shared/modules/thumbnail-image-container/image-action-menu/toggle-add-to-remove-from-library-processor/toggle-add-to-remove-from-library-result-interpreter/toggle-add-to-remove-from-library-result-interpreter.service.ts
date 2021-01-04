@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProcessResultInterpreterService } from '@services/process-result-interpreter.service';
+import { DataProcessResultInterpreterService } from '@services/data-process-result-interpreter.service';
 import { RunTasksAfterToggleAddToRemoveFromLibraryService }
 	from './run-tasks-after-toggle-add-to-remove-from-library.service';
 import { ToggleAddToRemoveFromLibraryResultCheckService }
@@ -8,7 +8,7 @@ import { ToggleAddToRemoveFromLibraryResultCheckService }
 
 @Injectable({providedIn: 'root'})
 export class ToggleAddToRemoveFromLibraryResultInterpreterService
-	extends ProcessResultInterpreterService {
+	extends DataProcessResultInterpreterService {
 
 	constructor(
 		__resultCheck: ToggleAddToRemoveFromLibraryResultCheckService,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
+import { DataTransportProcessResultInterpreterService }
+	from '../../../../shared/services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { GetSecurityQuestionResultCheckService }
 	from './get-security-question-result-check.service';
 import { RunTasksAfterGettingSecurityQuestionService }
@@ -9,7 +9,7 @@ import { RunTasksAfterGettingSecurityQuestionService }
 
 @Injectable({providedIn: 'root'})
 export class GetSecurityQuestionResultInterpreterService
-	extends DataTransportResultInterpreterService {
+	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
 		__getSecurityQuestionResultCheck: GetSecurityQuestionResultCheckService,

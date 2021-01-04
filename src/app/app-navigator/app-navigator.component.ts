@@ -1,6 +1,7 @@
 import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
+import { Link } from '@interfaces/link';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { CurrentRouteService } from '@services/current-route.service';
 })
 export class AppNavigatorComponent {
 
-	choices = Object.values(AppNavigatorChoiceData);
+	choices: Link[] = Object.values(AppNavigatorChoiceData);
 
 
 	constructor(private __currentRoute: CurrentRouteService) {

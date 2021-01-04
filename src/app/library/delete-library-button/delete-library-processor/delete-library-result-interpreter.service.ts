@@ -1,16 +1,16 @@
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { DataTransportResultCheckService }
-	from '@data-transport-result-check/data-transport-result-check.service';
+import { DataTransportProcessResultInterpreterService }
+	from '../../../shared/services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { HandleDataTransportProcessErrorService }
+	from 'handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterDeletionOfLibraryService } from './run-tasks-after-deletion-of-library.service';
 
 
 @Injectable({providedIn: 'root'})
-export class DeleteLibraryResultInterpreterService extends DataTransportResultInterpreterService {
+export class DeleteLibraryResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheck: DataTransportResultCheckService,
+		__dataTransportResultCheck: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterDeletionOfLibraryService
 	) {
 		super(__dataTransportResultCheck, __runPostSuccessTasks);

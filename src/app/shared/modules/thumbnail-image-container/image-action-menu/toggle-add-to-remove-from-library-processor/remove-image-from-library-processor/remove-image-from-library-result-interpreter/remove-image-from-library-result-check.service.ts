@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { DataTransportResultCheckService }
-	from '@data-transport-result-check/data-transport-result-check.service';
+import { HandleDataTransportProcessErrorService }
+	from 'handle-data-transport-process-error/handle-data-transport-process-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class RemoveImageFromLibraryResultCheckService extends DataTransportResultCheckService {
+export class RemoveImageFromLibraryResultCheckService extends HandleDataTransportProcessErrorService {
 
-	protected async _errorHandler(errMessage) {
+	async go(errMessage) {
 		console.error(errMessage);
 
 		// if (errMessage.includes()) alert.error = 'Library update unsuccessful';
-		// else await super._errorHandler(errMessage);
+		// else await super.go(errMessage);
 	}
 
 }

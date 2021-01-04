@@ -1,11 +1,11 @@
-import { DataTransportResultInterpreterService }
-	from '@data-transport-result-interpreter/data-transport-result-interpreter.service';
-import { ProcessorService } from '@services/processor.service';
+import { DataTransportProcessResultInterpreterService }
+	from './data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { DataProcessorService } from '@services/data-processor.service';
 
 
-export abstract class DataTransportProcessorService extends ProcessorService {
+export abstract class DataTransportProcessorService extends DataProcessorService {
 
-	constructor(__resultInterpreter: DataTransportResultInterpreterService) {
+	constructor(__resultInterpreter: DataTransportProcessResultInterpreterService) {
 		super(__resultInterpreter);
 	}
 

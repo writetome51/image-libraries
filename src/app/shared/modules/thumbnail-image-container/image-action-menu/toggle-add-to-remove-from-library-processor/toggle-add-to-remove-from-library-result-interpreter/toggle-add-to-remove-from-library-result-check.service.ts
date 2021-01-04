@@ -14,7 +14,7 @@ export class ToggleAddToRemoveFromLibraryResultCheckService implements ResultChe
 	}
 
 
-	returnIfNoError(
+	handleError(
 		data: { image_id: string, libName: string, checked: boolean }
 	): { image_id: string, libName: string, checked: boolean } | void
 	{
