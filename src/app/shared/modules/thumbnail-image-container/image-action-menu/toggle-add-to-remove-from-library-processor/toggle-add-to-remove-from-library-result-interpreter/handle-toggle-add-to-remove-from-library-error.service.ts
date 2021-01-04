@@ -4,17 +4,17 @@ import { not } from '@writetome51/not';
 import { DBLibrary } from '@interfaces/db-library';
 import { LocalLibrariesService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
-import { ResultCheck } from '@interfaces/result-check';
+import { IDoThis } from '@interfaces/i-do-this';
 
 
 @Injectable({providedIn: 'root'})
-export class ToggleAddToRemoveFromLibraryResultCheckService implements ResultCheck {
+export class HandleToggleAddToRemoveFromLibraryErrorService implements IDoThis {
 
 	constructor(private __localLibraries: LocalLibrariesService) {
 	}
 
 
-	handleError(
+	go(
 		data: { image_id: string, libName: string, checked: boolean }
 	): { image_id: string, libName: string, checked: boolean } | void
 	{

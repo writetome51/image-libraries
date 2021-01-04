@@ -11,10 +11,10 @@ import { HandleUpdateOrNewLibraryErrorService }
 export class UpdateLibraryResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__updateLibraryResultCheck: HandleUpdateOrNewLibraryErrorService,
+		__handleError: HandleUpdateOrNewLibraryErrorService,
 		__runPostSuccessTasks: RunTasksAfterUpdateOfLibraryService,
 	) {
-		super(__updateLibraryResultCheck, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

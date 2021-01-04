@@ -33,11 +33,11 @@
 			"@data-transport-processor/*": [
 				"src/app/shared/services/data-transport-processor/*"
 			],
-			"@data-transport-result-check/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/data-transport-result-check/*"
+			"@handle-data-transport-process-error/*": [
+				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
 			],
-			"@data-transport-result-interpreter/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/*"
+			"@data-transport-process-result-interpreter/*": [
+				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
@@ -67,7 +67,7 @@
 				"src/app/shared/data/read-only/*"
 			],
 			"@run-post-success-tasks/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-result-interpreter/run-post-success-tasks/*"
+				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/*"
 			],
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"

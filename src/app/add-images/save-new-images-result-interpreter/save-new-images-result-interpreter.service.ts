@@ -1,18 +1,19 @@
 import { DataTransportProcessResultInterpreterService }
-	from '../../shared/services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterSavingNewImagesService } from './run-tasks-after-saving-new-images.service';
-import { SaveNewImagesResultCheckService } from './save-new-images-result-check.service';
+import { HandleSaveNewImagesErrorService } from './handle-save-new-images-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class SaveNewImagesResultInterpreterService extends DataTransportProcessResultInterpreterService {
+export class SaveNewImagesResultInterpreterService
+	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__saveNewImagesResultCheck: SaveNewImagesResultCheckService,
+		__handleError: HandleSaveNewImagesErrorService,
 		__runPostSuccessTasks: RunTasksAfterSavingNewImagesService
 	) {
-		super(__saveNewImagesResultCheck, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

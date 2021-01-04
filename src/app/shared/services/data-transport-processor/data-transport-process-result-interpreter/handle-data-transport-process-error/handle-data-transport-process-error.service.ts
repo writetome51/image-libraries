@@ -20,7 +20,7 @@ export class HandleDataTransportProcessErrorService implements IDoThis {
 
 	// Default error handler.  Intended to be extended by subclasses.
 
-	async go(error) {
+	async go(error: { message: string }) {
 		// We expect `error` to have 'message':
 		if (error.message) {
 			if (error.message.includes(noRecordMatchedCriteria)) {

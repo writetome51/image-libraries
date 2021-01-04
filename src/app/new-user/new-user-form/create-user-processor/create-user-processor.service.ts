@@ -1,10 +1,11 @@
+import { DBUser } from '@interfaces/db-user';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
-import { NewUserResultInterpreterService } from './new-user-result-interpreter.service';
+import { NewUserResultInterpreterService }
+	from './new-user-result-interpreter/new-user-result-interpreter.service';
 import { UserCreatorService } from './user-creator.service';
-import { DBUser } from '@interfaces/db-user';
 
 
 @Injectable({providedIn: 'root'})

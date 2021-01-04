@@ -10,10 +10,10 @@ import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-em
 export class UpdateEmailResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheck: HandleDataTransportProcessErrorService,
+		__handleError: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterUpdatingEmailService
 	) {
-		super(__dataTransportResultCheck, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

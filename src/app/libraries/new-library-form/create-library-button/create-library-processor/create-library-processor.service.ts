@@ -14,9 +14,9 @@ export class CreateLibraryProcessorService extends FormDataTransportProcessorSer
 	constructor(
 		private __libraryCreator: LibraryCreatorService,
 		__libraryNameInput: LibraryNameInputService,
-		__createLibraryResultInterpreter: CreateLibraryResultInterpreterService
+		__resultInterpreter: CreateLibraryResultInterpreterService
 	) {
-		super(__libraryNameInput, __createLibraryResultInterpreter);
+		super(__libraryNameInput, __resultInterpreter);
 	}
 
 

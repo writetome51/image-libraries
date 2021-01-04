@@ -11,10 +11,10 @@ export class DeleteSelectedImagesResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheckService: HandleDataTransportProcessErrorService,
+		__handleError: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterDeletingImagesService
 	) {
-		super(__dataTransportResultCheckService, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

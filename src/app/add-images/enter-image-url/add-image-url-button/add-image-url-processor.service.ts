@@ -1,4 +1,3 @@
-import { CORSProxyData as corsProxy } from '@read-only-data/cors-proxy.data';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { GetAppImageService as getAppImage } from '../../get-app-image.service';
@@ -10,6 +9,7 @@ import { NewImagesData as newImages }
 import { NewImagesSaverService } from '../../new-images-saver.service';
 import { SaveNewImagesResultInterpreterService }
 	from '../../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
+import { CORSProxyData as corsProxy } from '@read-only-data/cors-proxy.data';
 
 
 @Injectable({providedIn: 'root'})

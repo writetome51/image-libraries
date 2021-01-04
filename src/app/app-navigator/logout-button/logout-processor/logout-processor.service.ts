@@ -10,9 +10,9 @@ export class LogoutProcessorService extends DataTransportProcessorService {
 
 	constructor(
 		private __deAuthenticator: DeAuthenticatorService,
-		__logoutResultInterpreter: LogoutResultInterpreterService
+		__resultInterpreter: LogoutResultInterpreterService
 	) {
-		super(__logoutResultInterpreter);
+		super(__resultInterpreter);
 	}
 
 

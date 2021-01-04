@@ -10,10 +10,10 @@ import { RunTasksAfterUpdatingPasswordService } from './run-tasks-after-updating
 export class UpdatePasswordResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheck: HandleDataTransportProcessErrorService,
+		__handleError: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterUpdatingPasswordService
 	) {
-		super(__dataTransportResultCheck, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

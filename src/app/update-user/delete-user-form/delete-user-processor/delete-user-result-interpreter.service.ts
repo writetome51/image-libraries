@@ -11,10 +11,10 @@ import { HandleDataTransportProcessErrorService }	// tslint:disable-next-line:ma
 export class DeleteUserResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		__dataTransportResultCheckService: HandleDataTransportProcessErrorService,
+		__handleErrorService: HandleDataTransportProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterDeletingUserService
 	) {
-		super(__dataTransportResultCheckService, __runPostSuccessTasks);
+		super(__handleErrorService, __runPostSuccessTasks);
 	}
 
 }
