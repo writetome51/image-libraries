@@ -1,7 +1,7 @@
 import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+	from '@services/item-in-browser-storage/local-session-id.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 
 

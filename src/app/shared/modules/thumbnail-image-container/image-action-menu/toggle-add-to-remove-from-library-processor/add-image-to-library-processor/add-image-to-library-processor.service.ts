@@ -4,9 +4,9 @@ import { DataTransportProcessorService }
 	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
 import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LibraryUpdaterService } from '@services/mongo-db-realm/library-updater.service';
+import { LibraryUpdaterService } from '@services/library-updater.service';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
 
 
 @Injectable({providedIn: 'root'})

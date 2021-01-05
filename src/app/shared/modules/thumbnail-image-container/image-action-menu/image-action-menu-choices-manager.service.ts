@@ -7,7 +7,7 @@ import { DBLibrary } from '@interfaces/db-library';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this';
 import { DBLibrary } from '@interfaces/db-library';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
 
 
 @Injectable({providedIn: 'root'})

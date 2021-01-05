@@ -1,4 +1,4 @@
-import { AuthenticatorService } from '@services/mongo-db-realm/authenticator.service';
+import { AuthenticatorService } from '@services/authenticator.service';
 import { DBUser } from '@interfaces/db-user';
 import { FormDataTransportProcessorService }
 	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';

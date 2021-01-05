@@ -1,14 +1,14 @@
 import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
 import { GetLibrariesProcessorService }
-	from '@services/data-processor/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '@services/perform-data-process-requiring-waiting.service';
 

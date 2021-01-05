@@ -8,13 +8,10 @@ export abstract class ToggleSettingInBrowserStorageService
 
 	get(): { enabled: boolean } {
 		let value = super.get();
-		if (hasValue(value)) {
-			return value;
-		}
+		if (hasValue(value)) return value;
 		else {
 			let data = {enabled: false};
 			this.set(data);
-
 			return data;
 		}
 	}

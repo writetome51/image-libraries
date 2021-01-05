@@ -2,7 +2,7 @@ import { DBLibrary } from '@interfaces/db-library';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 

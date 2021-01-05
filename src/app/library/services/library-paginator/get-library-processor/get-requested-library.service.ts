@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '@services/mongo-db-realm/library-storage.service';
+import { LibraryStorageService } from '@services/library-storage.service';
 import { DBLibrary } from '@interfaces/db-library';
 import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
 import { IDoThis } from '@interfaces/i-do-this';

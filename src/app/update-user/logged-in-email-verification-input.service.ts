@@ -1,7 +1,7 @@
 import { EmailInputService } from '@services/validating-input/email-input.service';
 import { Injectable } from '@angular/core';
 import { LocalEmailService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-email.service';
+	from '@services/item-in-browser-storage/local-email.service';
 
 
 @Injectable({providedIn: 'root'})

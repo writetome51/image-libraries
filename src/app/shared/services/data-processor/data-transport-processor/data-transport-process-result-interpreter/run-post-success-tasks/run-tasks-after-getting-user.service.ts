@@ -2,9 +2,9 @@ import { DBUser } from '@interfaces/db-user';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LocalEmailService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-email.service';
+	from '@services/item-in-browser-storage/local-email.service';
 import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
+	from '@services/item-in-browser-storage/local-session-id.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -4,7 +4,7 @@ import * as Realm from 'realm-web';
 
 
 // Connects with cloud service MongoDB Realm and allows us to call serverless functions we've
-// deployed on it.
+// deployed on it.  All public functions we can call begin with prefix 'pub_' .
 
 @Injectable({providedIn: 'root'})
 export class MongoDBRealmService {

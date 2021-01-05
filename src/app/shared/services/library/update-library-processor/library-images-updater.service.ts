@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/item-in-local-storage/local-libraries.service';
-import { LibraryUpdaterService } from '@services/mongo-db-realm/library-updater.service';
+	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibraryUpdaterService } from '@services/library-updater.service';
 
 
 @Injectable({providedIn: 'root'})

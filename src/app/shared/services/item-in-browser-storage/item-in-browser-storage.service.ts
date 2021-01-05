@@ -1,5 +1,5 @@
 import { ItemInBrowserStorage } from '@writetome51/item-in-browser-storage';
-import { ecky } from '../../../.special/.ecky';
+import { ecky } from '@app/.special/.ecky';
 import { SimpleCrypto } from 'simple-crypto-js';
 import { hasValue } from '@writetome51/has-value-no-value';
 
