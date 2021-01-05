@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.service';
 import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { ImageURLData as enteredImageURL } from '@runtime-state-data/image-url.data';
 import { ImageURLInputService } from '../image-url-input.service';

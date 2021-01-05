@@ -30,14 +30,17 @@
 			"@clear-form-on-init-and-alert-on-destroy/*": [
 				"src/app/shared/modules/clear-form-on-init-and-alert-on-destroy/*"
 			],
+			"@data-processor/*": [
+				"src/app/shared/services/data-processor/*"
+			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/data-processor/data-transport-processor/*"
 			],
 			"@handle-data-transport-process-error/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
+				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
 			],
 			"@data-transport-process-result-interpreter/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/*"
+				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/*"
 			],
 			"@environments/*": [
 				"src/environments/*"

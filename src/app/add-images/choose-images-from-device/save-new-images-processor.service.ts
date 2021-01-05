@@ -1,5 +1,5 @@
 import { DataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { NewImagesSaverService } from '../new-images-saver.service';
