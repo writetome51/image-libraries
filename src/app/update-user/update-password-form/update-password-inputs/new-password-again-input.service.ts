@@ -6,7 +6,6 @@ import { PrefixLabel_to_ValidatingInputService } // tslint:disable-next-line:max
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new'})
-
 export class __NewPasswordAgainInputService extends PasswordAgainInputService {
 }
 

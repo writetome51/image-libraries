@@ -14,8 +14,7 @@ export abstract class MenuChoicesProcessorService implements DirectProcessor {
 	}
 
 
-	async process(choice: MenuChoice): Promise<void> {
-		let {label, data} = choice;
+	async process({label, data}: MenuChoice): Promise<void> {
 
 		if (label.includes('.')) {
 			let parts = label.split('.'), length = parts.length;

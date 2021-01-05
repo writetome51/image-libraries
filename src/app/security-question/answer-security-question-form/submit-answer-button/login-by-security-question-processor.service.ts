@@ -1,10 +1,10 @@
-import { AuthenticatorService } from '@services/authenticator.service';
+import { AuthenticatorService } from '@services/mongo-db-realm/authenticator.service';
 import { DBUser } from '@interfaces/db-user';
 import { FormDataTransportProcessorService }
-	from '@services/data-transport-processor/form-data-transport-processor.service';
+	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService } // tslint:disable-next-line:max-line-length
-	from '@services/data-transport-processor/data-transport-process-result-interpreter/login-result-interpreter.service';
+	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/login-result-interpreter.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
 
 

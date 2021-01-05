@@ -2,7 +2,7 @@ import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
 import { DBImage } from '@interfaces/db-image';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }

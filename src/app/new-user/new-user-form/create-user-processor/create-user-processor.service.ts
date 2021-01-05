@@ -1,6 +1,6 @@
 import { DBUser } from '@interfaces/db-user';
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
 import { NewUserResultInterpreterService }

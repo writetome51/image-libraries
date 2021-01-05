@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LocalSessionIDService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm/mongo-db-realm.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 

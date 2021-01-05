@@ -1,6 +1,6 @@
 import { DataTransportProcessResultInterpreterService }
-	from './data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
-import { DataProcessorService } from '@services/data-processor.service';
+	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { DataProcessorService } from '@services/data-processor/data-processor.service';
 
 
 export abstract class DataTransportProcessorService extends DataProcessorService {

@@ -1,5 +1,5 @@
 import { GetLibrariesProcessorService }
-	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '@services/data-processor/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LibraryNamesData as libraryNames }

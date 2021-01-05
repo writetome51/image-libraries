@@ -1,7 +1,7 @@
 import { BackgroundProcessingStatusData as processingStatus }
 	from '@runtime-state-data/background-processing-status.data';
 import { GetLibrariesProcessorService }
-	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '@services/data-processor/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';

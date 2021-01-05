@@ -3,7 +3,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { RunTasksAfterGettingUserService }
-	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
+	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/run-tasks-after-getting-user.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 

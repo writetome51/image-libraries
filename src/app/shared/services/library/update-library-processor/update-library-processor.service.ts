@@ -1,5 +1,5 @@
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryUpdaterService } from './loaded-library-updater.service';
 import { UpdateLibraryResultInterpreterService }

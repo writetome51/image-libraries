@@ -1,11 +1,11 @@
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
 import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { LocalSessionIDService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm/mongo-db-realm.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
 

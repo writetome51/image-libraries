@@ -1,8 +1,8 @@
 import { HandleDataTransportProcessErrorService }
-	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
+	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { IDoThis } from '@interfaces/i-do-this';
 import { DataProcessResultInterpreterService }
-	from '@services/data-process-result-interpreter.service';
+	from '@services/data-processor/data-process-result-interpreter.service';
 
 
 export abstract class DataTransportProcessResultInterpreterService

@@ -1,7 +1,7 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { GetLibrariesProcessorService }
-	from '@services/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '@services/data-processor/data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { IDoThis } from '@interfaces/i-do-this';
 

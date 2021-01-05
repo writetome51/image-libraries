@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataTransportProcessResultInterpreterService } // tslint:disable-next-line:max-line-length
-	from '../../../shared/services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+	from '../../../shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { RunTasksAfterDeletingUserService }
 	from './run-tasks-after-deleting-user.service';
 import { HandleDataTransportProcessErrorService }	// tslint:disable-next-line:max-line-length

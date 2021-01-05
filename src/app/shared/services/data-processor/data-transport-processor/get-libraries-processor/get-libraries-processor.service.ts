@@ -2,7 +2,7 @@ import { DataTransportProcessorService } from '../data-transport-processor.servi
 import { DBLibrary } from '@interfaces/db-library';
 import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '../../library/library-storage.service';
+import { LibraryStorageService } from '../../../mongo-db-realm/library-storage.service';
 
 
 @Injectable({providedIn: 'root'})

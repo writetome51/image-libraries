@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataProcessResultInterpreterService } from '@services/data-process-result-interpreter.service';
+import { DataProcessResultInterpreterService }
+	from '@services/data-processor/data-process-result-interpreter.service';
 import { RunTasksAfterToggleAddToRemoveFromLibraryService }
 	from './run-tasks-after-toggle-add-to-remove-from-library.service';
 import { HandleToggleAddToRemoveFromLibraryErrorService }
@@ -11,10 +12,10 @@ export class ToggleAddToRemoveFromLibraryResultInterpreterService
 	extends DataProcessResultInterpreterService {
 
 	constructor(
-		____handleError: HandleToggleAddToRemoveFromLibraryErrorService,
+		__handleError: HandleToggleAddToRemoveFromLibraryErrorService,
 		__runPostSuccessTasks: RunTasksAfterToggleAddToRemoveFromLibraryService
 	) {
-		super(____handleError, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }

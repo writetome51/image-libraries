@@ -1,5 +1,5 @@
 import { DataTransportProcessResultInterpreterService }
-	from '../../../../../shared/services/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+	from '../../../../../shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { HandleGetLibraryErrorService } from './handle-get-library-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibraryService }

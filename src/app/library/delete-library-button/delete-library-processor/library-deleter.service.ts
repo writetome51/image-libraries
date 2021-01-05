@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm/mongo-db-realm.service';
 import { LocalSessionIDService }
 	from '@services/item-in-browser-storage/item-in-local-storage/local-session-id.service';
 import { LoadedLibraryData as loadedLibrary }

@@ -1,10 +1,11 @@
 import { Processor } from '@interfaces/processor';
-import { Interpreter } from '@interfaces/interpreter';
+import { DataProcessResultInterpreterService }
+	from '@services/data-processor/data-process-result-interpreter.service';
 
 
 export abstract class DataProcessorService implements Processor {
 
-	constructor(private __resultInterpreter: Interpreter) {
+	constructor(private __resultInterpreter: DataProcessResultInterpreterService) {
 	}
 
 

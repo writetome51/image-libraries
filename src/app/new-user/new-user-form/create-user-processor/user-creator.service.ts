@@ -2,7 +2,7 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
 import { DBUser } from '@interfaces/db-user';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmService } from '@services/mongo-db-realm/mongo-db-realm.service';
 
 
 @Injectable({providedIn: 'root'})
