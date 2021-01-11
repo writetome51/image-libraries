@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
-import { MakeSureLibrariesAreLoadedService } from '@services/make-sure-libraries-are-loaded.service';
+import { MakeSureLibrariesAreLoadedService }
+	from '@services/make-sure-libraries-are-loaded.service';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 

@@ -36,9 +36,6 @@
 			"@data-transport-processor/*": [
 				"src/app/shared/services/data-processor/data-transport-processor/*"
 			],
-			"@handle-data-transport-process-error/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
-			],
 			"@data-transport-process-result-interpreter/*": [
 				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/*"
 			],
@@ -50,6 +47,9 @@
 			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"
+			],
+			"@handle-data-transport-process-error/*": [
+				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
 			],
 			"@hoverable-container/*": [
 				"src/app/shared/modules/hoverable-container/*"
@@ -70,7 +70,7 @@
 				"src/app/shared/data/read-only/*"
 			],
 			"@run-post-success-tasks/*": [
-				"src/app/shared/services/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/*"
+				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/*"
 			],
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"

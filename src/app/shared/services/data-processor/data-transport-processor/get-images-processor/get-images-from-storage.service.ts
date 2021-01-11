@@ -19,7 +19,7 @@ export class GetImagesFromStorageService {
 
 
 	async all(): Promise<ImageBatch | { error: { message: string } }> {
-		return this.__realm.callFn('get-user-images-batch', {
+		return this.__realm.callFn('pub_getUserImagesBatch', {
 			sessionID: this.__localSessionID.get(),
 			batchSize: load.size,
 			batchNumber: load.number
@@ -28,7 +28,7 @@ export class GetImagesFromStorageService {
 
 
 	async inLibrary(): Promise<ImageBatch | { error: { message: string } }> {
-		return this.__realm.callFn('get-library-images-batch', {
+		return this.__realm.callFn('pub_getLibraryImagesBatch', {
 			sessionID: this.__localSessionID.get(),
 			name: requestedLibrary.name,
 			batchSize: load.size,

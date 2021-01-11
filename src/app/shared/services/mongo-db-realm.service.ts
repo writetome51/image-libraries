@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import * as Realm from 'realm-web';
 
 
-// Connects with cloud service MongoDB Realm and allows us to call serverless functions we've
-// deployed on it.  All public functions we can call begin with prefix 'pub_' .
+// Allows us to call serverless functions we've deployed on cloud service MongoDB Realm.  All
+// public functions we can call begin with prefix 'pub_' .
 
 @Injectable({providedIn: 'root'})
 export class MongoDBRealmService {

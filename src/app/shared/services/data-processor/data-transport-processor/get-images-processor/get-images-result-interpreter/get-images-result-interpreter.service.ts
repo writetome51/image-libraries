@@ -1,5 +1,5 @@
 import { DataTransportProcessResultInterpreterService }
-	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { HandleGetImagesErrorService } from './handle-get-images-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingImagesService } from './run-tasks-after-getting-images.service';

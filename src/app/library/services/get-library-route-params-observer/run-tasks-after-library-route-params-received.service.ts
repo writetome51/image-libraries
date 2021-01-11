@@ -7,7 +7,8 @@ import { LoadedLibraryData as loadedLibrary }
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
-import { RequestedLibraryData as requestedLibrary } from '@runtime-state-data/requested-library.data';
+import { RequestedLibraryData as requestedLibrary }
+	from '@runtime-state-data/requested-library.data';
 import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
@@ -28,7 +29,7 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 		requestedLibrary.name = params[paramID.libName];
 
 		if (this.__libraryNotLoaded(requestedLibrary.name)) {
-			await this.__ifLibraryDoesntExist_redirectToLoggedInHome_else_setPaginatorToFirstPage(
+			await this.__ifLibraryDoesntExist_redirect_else_setPaginatorToFirstPage(
 				requestedLibrary.name
 			);
 		}
@@ -41,7 +42,7 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 	}
 
 
-	private async __ifLibraryDoesntExist_redirectToLoggedInHome_else_setPaginatorToFirstPage(libName) {
+	private async __ifLibraryDoesntExist_redirect_else_setPaginatorToFirstPage(libName) {
 		let verified = await this.__libraryVerifier.verify(libName);
 		if (not(verified)) return this.__redirectToLoggedInHome.go();
 
