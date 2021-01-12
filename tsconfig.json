@@ -42,8 +42,14 @@
 			"@environments/*": [
 				"src/environments/*"
 			],
+			"@get-images-processor/*": [
+				"src/app/shared/services/data-processor/data-transport-processor/get-images-processor/*"
+			],
+			"@get-image-total-processor/*": [
+				"src/app/shared/services/data-processor/data-transport-processor/get-image-total-processor/*"
+			],
 			"@guards/*": [
-				"src/app/guards/*"
+				"src/app/shared/guards/*"
 			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"

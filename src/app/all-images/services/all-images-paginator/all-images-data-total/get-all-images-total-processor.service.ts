@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
-import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
-import { GetImageTotalService }
-	from '@data-transport-processor/get-images-processor/get-image-total.service';
+import { GetImageTotalProcessorService }
+	from '@get-image-total-processor/get-image-total-processor.service';
 
 
 @Injectable({providedIn: 'root'})
-export class GetAllImagesTotalProcessorService extends DataTransportProcessorService {
-
-	constructor(
-		private __getImageTotal: GetImageTotalService,
-		__resultInterpreter
-	) {
-		super(__resultInterpreter);
-	}
+export class GetAllImagesTotalProcessorService extends GetImageTotalProcessorService {
 
 	protected async _getResult(): Promise<{ dataTotal: number } | { error: { message: string } }> {
-		return await this.__getImageTotal.all();
+		return await this._getImageTotal.all();
 	}
 
 }
