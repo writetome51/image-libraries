@@ -6,7 +6,7 @@ import { LocalSessionIDService } from '@services/item-in-browser-storage/local-s
 
 
 @Injectable({providedIn: 'root'})
-export class GetImageTotalService {
+export class GetImagesTotalService {
 
 	constructor(
 		private __localSessionID: LocalSessionIDService,

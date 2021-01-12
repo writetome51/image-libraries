@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { DataTransportProcessResultInterpreterService }
-	from '@services/data-processor/data-transport-processor/data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 

@@ -1,12 +1,13 @@
 import { DataTotalService } from '@services/app-paginator/data-total.service';
-import { GetLibraryProcessorService } from './get-library-processor/get-library-processor.service';
 import { Injectable } from '@angular/core';
+import { GetLibraryImagesTotalProcessorService }
+	from './get-library-images-total-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 export class LibraryImagesDataTotalService extends DataTotalService {
 
-	constructor(__set_dataTotal_Processor: GetLibraryProcessorService) {
+	constructor(__set_dataTotal_Processor: GetLibraryImagesTotalProcessorService) {
 		super(__set_dataTotal_Processor);
 	}
 

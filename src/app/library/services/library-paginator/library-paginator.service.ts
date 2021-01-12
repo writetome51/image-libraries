@@ -1,6 +1,7 @@
 import { AppPaginatorService } from '@services/app-paginator/app-paginator.service';
 import { Injectable } from '@angular/core';
-import { LibraryPaginatorDataSourceService } from './library-paginator-data-source.service';
+import { LibraryPaginatorDataSourceService }
+	from './library-paginator-data-source/library-paginator-data-source.service';
 
 
 @Injectable({providedIn: 'root'})
