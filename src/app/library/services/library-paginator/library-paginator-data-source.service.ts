@@ -1,6 +1,6 @@
 import { AppPaginatorDataSourceService }
 	from '@services/app-paginator/app-paginator-data-source.service';
-import { DataTotalForLibraryService } from './data-total-for-library.service';
+import { LibraryImagesDataTotalService } from './library-images-data-total.service';
 import { GetLibraryProcessorService } from './get-library-processor/get-library-processor.service';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +10,7 @@ export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceSer
 
 	constructor(
 		__getLibraryProcessor: GetLibraryProcessorService,
-		__dataTotal: DataTotalForLibraryService
+		__dataTotal: LibraryImagesDataTotalService
 	) {
 		super(__getLibraryProcessor, __dataTotal);
 	}

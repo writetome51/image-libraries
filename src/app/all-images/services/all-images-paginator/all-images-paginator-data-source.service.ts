@@ -1,6 +1,6 @@
 import { AppPaginatorDataSourceService }
 	from '@services/app-paginator/app-paginator-data-source.service';
-import { DataTotalForAllImagesService } from './data-total-for-all-images.service';
+import { AllImagesDataTotalService } from './all-images-data-total/all-images-data-total.service';
 import { GetAllImagesProcessorService } from './get-all-images-processor.service';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +10,7 @@ export class AllImagesPaginatorDataSourceService extends AppPaginatorDataSourceS
 
 	constructor(
 		__getAllImagesProcessor: GetAllImagesProcessorService,
-		__dataTotal: DataTotalForAllImagesService
+		__dataTotal: AllImagesDataTotalService
 	) {
 		super(__getAllImagesProcessor, __dataTotal);
 	}

@@ -1,6 +1,6 @@
 12/15/2020
 
-My Rest Api is built using MongoDB Realm (formerly Stitch).  MongoDB provides a Realm Web SDK for
+My Rest API is built using MongoDB Realm (formerly Stitch).  MongoDB provides a Realm Web SDK for
 programmatically communicating with your Realm app.  A year ago I tried using the Stitch web SDK and
  it didn't work (was never sure why), which is why i ended up creating the Rest API to communicate
  with Realm entirely using http webhooks.  But using webhooks hasn't been seamless because i've had
@@ -11,5 +11,3 @@ programmatically communicating with your Realm app.  A year ago I tried using th
 12/19/2020
 
 Realm Web SDK works well.  Switching to that.  Not using Rest API any more.
-
-

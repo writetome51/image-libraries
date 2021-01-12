@@ -3,16 +3,21 @@ Each instance of a Service class is referred to without the word 'service' at th
 Each class/object used as a data structure is named with 'Data' at the end, and their filenames end
 with '.data.ts'.
 
-'data processing' is any data manipulation that requires the user to wait for a result.
+The word 'process' is used in this project to refer to an entire cycle of these steps:
+1. Getting an initial result from some code execution.
+2. Checking that result for errors and, if any, executing tasks based on those errors.
+3. If no errors, executing tasks based on the successful result.
+
+'data processing' is any processing of some input data.
 
 Any UI button Component that initiates data processing is a subclass of
 StartDataProcessContainerComponent.
 
-'data transport processing' refers to any data processing that involves sending the data to an
-external resource that returns a result.  All processing of this kind is handled by subclasses of
+'data transport processing' refers to any data processing that involves data being sent to or from
+an external resource.  All processing of this kind is handled by subclasses of
 DataTransportProcessorService.
 
-Any use of the word 'Load' is referring to the total number of images the app is configured to
+Any use of the word 'load' is referring to the total number of images the app is configured to
 have stored in the browser at once.  For example, ImagesRestAPIService.getAllLoad() retrieves N
 of all a user's images, where N is the load size.
 
