@@ -8,7 +8,7 @@ import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetLibraryErrorService extends HandleDataTransportProcessErrorService {
+export class HandleGetLibraryImagesErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {
 		// If library retrieval unsuccessful, library data must be undefined.

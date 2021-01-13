@@ -18,6 +18,9 @@
 			"@app-navigator/*": [
 				"src/app/app-navigator/*"
 			],
+			"@app-paginator/*": [
+				"src/app/shared/services/app-paginator/*"
+			],
 			"@app-pagination-controls/*": [
 				"src/app/shared/modules/app-pagination-controls/*"
 			],
@@ -48,11 +51,11 @@
 			"@get-images-total-processor/*": [
 				"src/app/shared/services/data-processor/data-transport-processor/get-images-total-processor/*"
 			],
-			"@guards/*": [
-				"src/app/shared/guards/*"
-			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"
+			],
+			"@guards/*": [
+				"src/app/shared/guards/*"
 			],
 			"@handle-data-transport-process-error/*": [
 				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
@@ -63,11 +66,11 @@
 			"@html-image/*": [
 				"src/app/shared/modules/html-image/*"
 			],
-			"@interfaces/*": [
-				"src/app/shared/interfaces/*"
-			],
 			"@image-action-menu/*": [
 				"src/app/shared/modules/image-action-menu/*"
+			],
+			"@interfaces/*": [
+				"src/app/shared/interfaces/*"
 			],
 			"@item-in-browser-storage/*": [
 				"src/app/shared/services/item-in-browser-storage/*"

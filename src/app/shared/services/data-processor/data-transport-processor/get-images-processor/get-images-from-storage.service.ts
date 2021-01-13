@@ -1,11 +1,11 @@
 import { ImageBatch } from '@interfaces/image-batch';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { SessionIDInBrowserStorageService }
-	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
