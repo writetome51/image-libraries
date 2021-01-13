@@ -5,6 +5,6 @@ export interface ImageBatch {
 
 	batch: DBImage[];
 
-	// Not the total images in batch, but total in the dataset the batch came from.
-	dataTotal: number;
+	from: 'library' | 'all'; // They're either images from a library, or all a user's images.
+
 }
