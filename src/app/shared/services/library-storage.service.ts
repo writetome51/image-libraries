@@ -1,7 +1,7 @@
 import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
@@ -9,7 +9,7 @@ import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 export class LibraryStorageService {
 
 	constructor(
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realm: MongoDBRealmService
 	) {
 	}
@@ -18,14 +18,14 @@ export class LibraryStorageService {
 	async get(libName: string): Promise<DBLibrary | { error: { message: string } }> {
 		return await this.__realm.callFn('pub_getLibrary', {
 			name: libName,
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 
 
 	async getAll(): Promise<DBLibrary[] | { error: { message: string } }> {
 		return await this.__realm.callFn('pub_getLibraries', {
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 

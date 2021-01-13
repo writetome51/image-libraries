@@ -7,18 +7,18 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
 	from '@services/perform-data-process-requiring-waiting.service';
 
 
 @Injectable({providedIn: 'root'})
-export class MakeSureLibrariesAreLoadedService implements IDoThis {
+export class AssureLibrariesAreLoadedService implements IDoThis {
 
 	constructor(
 		private __getLibrariesProcessor: GetLibrariesProcessorService,
-		private __localLibraries: LocalLibrariesService
+		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {
 	}
 
@@ -33,7 +33,7 @@ export class MakeSureLibrariesAreLoadedService implements IDoThis {
 
 
 	private __librariesAreStoredLocally(): boolean {
-		let libsMap: object = this.__localLibraries.get();
+		let libsMap: object = this.__librariesInBrowser.get();
 		if (hasValue(libsMap)) {
 			libraryNames.data = Object.keys(libsMap);
 			return true;

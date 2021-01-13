@@ -1,8 +1,8 @@
 import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,7 +10,7 @@ export class LibraryUpdaterService {
 
 	constructor(
 		private __realm: MongoDBRealmService,
-		private __localSessionID: LocalSessionIDService
+		private __localSessionID: SessionIDInBrowserStorageService
 	) {
 	}
 

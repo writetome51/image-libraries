@@ -22,8 +22,7 @@ export class AuthenticatorService {
 
 
 	async authenticateBySecurityQuestion(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn(
-			'pub_loginBySecurityQuestionAndReturnUser',
+		return await this.__realm.callFn('pub_loginBySecurityQuestionAndReturnUser',
 			{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
 		);
 	}
