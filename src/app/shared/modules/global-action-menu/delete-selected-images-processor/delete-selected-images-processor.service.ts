@@ -3,8 +3,8 @@ import { DataTransportProcessorService }
 import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
@@ -14,7 +14,7 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 
 	constructor(
 		private __realm: MongoDBRealmService,
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		__deleteSelectedImagesResultInterpreter: DeleteSelectedImagesResultInterpreterService
 	) {
 		super(__deleteSelectedImagesResultInterpreter);
@@ -23,7 +23,7 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 
 	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
 		return this.__realm.callFn('pub_deleteImages', {
-			sessionID: this.__localSessionID.get(),
+			sessionID: this.__sessionIDInBrowser.get(),
 			imageNames: selectedImages.data.map((img: { name: string }) => img.name)
 		});
 	}

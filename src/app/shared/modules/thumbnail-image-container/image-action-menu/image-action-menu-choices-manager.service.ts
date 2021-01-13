@@ -6,8 +6,8 @@ import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
@@ -18,7 +18,7 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __localLibraries: LocalLibrariesService
+		private __localLibraries: LibrariesInBrowserStorageService
 	) {
 	}
 

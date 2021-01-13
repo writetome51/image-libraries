@@ -1,7 +1,7 @@
 import { AppImage } from '@interfaces/app-image';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
@@ -9,7 +9,7 @@ import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 export class NewImagesSaverService {
 
 	constructor(
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realm: MongoDBRealmService
 	) {
 	}
@@ -17,7 +17,7 @@ export class NewImagesSaverService {
 
 	async save(newImages: AppImage[]): Promise<{ success: true } | { error: { message: string } }> {
 		return this.__realm.callFn('pub_addImages',
-			{sessionID: this.__localSessionID.get(), images: newImages}
+			{sessionID: this.__sessionIDInBrowser.get(), images: newImages}
 		);
 	}
 

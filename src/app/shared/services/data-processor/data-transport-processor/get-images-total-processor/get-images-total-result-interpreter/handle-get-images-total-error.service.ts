@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class HandleGetImagesTotalErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {
-		imageTotal.data = 0;
+		imageTotal.setDefault();
 		await super.go(error);
 	}
 

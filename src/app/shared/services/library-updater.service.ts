@@ -10,7 +10,7 @@ export class LibraryUpdaterService {
 
 	constructor(
 		private __realm: MongoDBRealmService,
-		private __localSessionID: SessionIDInBrowserStorageService
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService
 	) {
 	}
 
@@ -22,7 +22,7 @@ export class LibraryUpdaterService {
 		return await this.__realm.callFn('pub_updateAndReturnLibrary', {
 			name: libName,
 			changes,
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 

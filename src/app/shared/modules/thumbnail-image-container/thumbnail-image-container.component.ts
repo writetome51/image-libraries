@@ -4,8 +4,8 @@ import { Hoverable } from '@interfaces/hoverable';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
-import { LocalZoomOnScrollService }
-	from '@services/item-in-browser-storage/toggle-setting-in-browser-storage/local-zoom-on-scroll.service';
+import { ZoomOnScrollSettingService }
+	from '@toggle-setting-in-browser-storage/zoom-on-scroll-setting.service';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 	}
 
 
-	constructor(public localZoomOnScroll: LocalZoomOnScrollService) {
+	constructor(public localZoomOnScroll: ZoomOnScrollSettingService) {
 	}
 
 

@@ -12,8 +12,8 @@ export class HandleGetImagesErrorService extends HandleDataTransportProcessError
 
 	async go(error) {
 		loadedImages.data = [];
-		imageTotal.data = 0;
-
+		imageTotal.setDefault();
+		console.log('error: ', error);
 		if (not(error.message.includes(batchDoesntExist))) await super.go(error);
 	}
 

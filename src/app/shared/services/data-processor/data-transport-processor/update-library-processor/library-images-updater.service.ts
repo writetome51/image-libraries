@@ -2,8 +2,8 @@ import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { LibraryUpdaterService } from '@services/library-updater.service';
 
 
@@ -12,7 +12,7 @@ export class LibraryImagesUpdaterService {
 
 	constructor(
 		private __libraryUpdater: LibraryUpdaterService,
-		private __localLibraries: LocalLibrariesService
+		private __localLibraries: LibrariesInBrowserStorageService
 	) {
 	}
 

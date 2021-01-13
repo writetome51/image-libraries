@@ -2,10 +2,10 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user';
 import { Injectable } from '@angular/core';
-import { LocalEmailService }
-	from '@services/item-in-browser-storage/local-email.service';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { EmailInBrowserStorageService }
+	from '@item-in-browser-storage/email-in-browser-storage.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
@@ -14,18 +14,18 @@ export class UserUpdaterService {
 
 	constructor(
 		private __realm: MongoDBRealmService,
-		private __localSessionID: LocalSessionIDService,
-		private __localEmail: LocalEmailService
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
+		private __emailInBrowser: EmailInBrowserStorageService
 	) {
 	}
 
 
 	async updatePassword(): Promise<DBUser | { error: { message: string } }> {
 		return await this.__realm.callFn('pub_updatePasswordAndReturnUser', {
-			email: this.__localEmail.get(),
+			email: this.__emailInBrowser.get(),
 			password: currentUser.password,
 			newPassword: currentUser.newPassword,
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 
@@ -35,7 +35,7 @@ export class UserUpdaterService {
 			email: currentUser.email,
 			password: currentUser.password,
 			newEmail: currentUser.newEmail,
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 

@@ -69,6 +69,9 @@
 			"@image-action-menu/*": [
 				"src/app/shared/modules/image-action-menu/*"
 			],
+			"@item-in-browser-storage/*": [
+				"src/app/shared/services/item-in-browser-storage/*"
+			],
 			"@menu-choice/*": [
 				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"
 			],

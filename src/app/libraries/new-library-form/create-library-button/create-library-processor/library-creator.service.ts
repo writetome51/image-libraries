@@ -1,7 +1,7 @@
 import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 
@@ -11,7 +11,7 @@ export class LibraryCreatorService {
 
 	constructor(
 		private __realm: MongoDBRealmService,
-		private __localSessionID: LocalSessionIDService
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService
 	) {
 	}
 
@@ -19,7 +19,7 @@ export class LibraryCreatorService {
 	async create(): Promise<DBLibrary | { error: { message: string } }> {
 		return await this.__realm.callFn('pub_createAndReturnLibrary', {
 			name: newLibrary.name,
-			sessionID: this.__localSessionID.get()
+			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 

@@ -2,8 +2,8 @@ import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { AppNameData as appName } from '@read-only-data/app-name.data';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { Title } from '@angular/platform-browser';
@@ -20,12 +20,12 @@ export class AppComponent {
 
 
 	get loggedIn(): boolean {
-		return (hasValue(this.__localSessionID.get()));
+		return (hasValue(this.__sessionIDInBrowser.get()));
 	}
 
 
 	constructor(
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __title: Title
 	) {
 		resetRuntimeStateDataToDefaults.go();

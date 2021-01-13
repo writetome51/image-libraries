@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { DBLibrary } from '@interfaces/db-library';
 import { DataTransportProcessorService }
 	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { RemoveImageFromLibraryResultInterpreterService }
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
@@ -15,7 +15,7 @@ export class RemoveImageFromLibraryProcessorService extends DataTransportProcess
 
 	constructor(
 		private __libraryUpdater: LibraryUpdaterService,
-		private __localLibraries: LocalLibrariesService,
+		private __localLibraries: LibrariesInBrowserStorageService,
 		__resultInterpreter: RemoveImageFromLibraryResultInterpreterService
 	) {
 		super(__resultInterpreter);

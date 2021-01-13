@@ -1,8 +1,8 @@
 import { DBLibrary } from '@interfaces/db-library';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
@@ -10,7 +10,7 @@ import { LibraryNamesData as libraryNames }
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingLibrariesService implements IDoThis {
 
-	constructor(private __localLibraries: LocalLibrariesService) {
+	constructor(private __localLibraries: LibrariesInBrowserStorageService) {
 	}
 
 

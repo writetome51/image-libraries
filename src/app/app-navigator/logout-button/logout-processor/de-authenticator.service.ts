@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 
 
@@ -8,7 +8,7 @@ import { MongoDBRealmService } from '@services/mongo-db-realm.service';
 export class DeAuthenticatorService {
 
 	constructor(
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realm: MongoDBRealmService
 	) {
 	}
@@ -16,7 +16,7 @@ export class DeAuthenticatorService {
 
 	async deAuthenticate(): Promise<{ success: true } | { error: { message: string } }> {
 		return await this.__realm.callFn('pub_logoutUser',
-			{sessionID: this.__localSessionID.get()}
+			{sessionID: this.__sessionIDInBrowser.get()}
 		);
 	}
 

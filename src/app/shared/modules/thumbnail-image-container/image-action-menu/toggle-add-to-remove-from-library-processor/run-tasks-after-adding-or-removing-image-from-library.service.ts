@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this';
 import { DBLibrary } from '@interfaces/db-library';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
 
-	constructor(private __localLibraries: LocalLibrariesService) {
+	constructor(private __localLibraries: LibrariesInBrowserStorageService) {
 	}
 
 

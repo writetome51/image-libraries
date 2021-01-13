@@ -15,7 +15,7 @@ import { PageImagesData as pageImages }
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return pageImages.data;
+		return this.__libraryPaginator.getCurrentPage();
 	}
 
 
@@ -24,7 +24,6 @@ export class ImageListComponent {
 		private __libraryPaginator: LibraryPaginatorService,
 		private __listItemRemover: ListItemRemoverService
 	) {
-		pageImages.data = this.__libraryPaginator.getCurrentPage();
 	}
 
 }

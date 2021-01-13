@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
-import { MakeSureLibrariesAreLoadedService }
-	from '@services/make-sure-libraries-are-loaded.service';
+import { AssureLibrariesAreLoadedService }
+	from '@services/assure-libraries-are-loaded.service';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
@@ -24,7 +24,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 
 	constructor(
-		private __makeSureLibrariesAreLoaded: MakeSureLibrariesAreLoadedService,
+		private __assureLibrariesAreLoaded: AssureLibrariesAreLoadedService,
 		private __currentRoute: CurrentRouteService,
 		private __getRouteParamsObserver: GetAllImagesRouteParamsObserverService
 	) {
@@ -32,7 +32,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 		processingStatus.waiting = true;
 
-		this.__makeSureLibrariesAreLoaded.go().then(
+		this.__assureLibrariesAreLoaded.go().then(
 			() => {
 				let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 					this.__getRouteParamsObserver.go()

@@ -1,7 +1,7 @@
 import { CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { LocalSessionIDService }
-	from '@services/item-in-browser-storage/local-session-id.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 
@@ -10,7 +10,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 export class DeAuthenticatedGuard implements CanActivate {
 
 	constructor(
-		private __localSessionID: LocalSessionIDService,
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
 	) {
 	}
@@ -19,7 +19,7 @@ export class DeAuthenticatedGuard implements CanActivate {
 	// Returns true if logged out.
 
 	canActivate(): boolean {
-		if (hasValue(this.__localSessionID.get())) {
+		if (hasValue(this.__sessionIDInBrowser.get())) {
 			this.__redirectToLoggedInHome.go();
 			return false;
 		}

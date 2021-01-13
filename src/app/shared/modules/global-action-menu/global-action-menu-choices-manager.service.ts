@@ -6,8 +6,8 @@ import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LocalZoomOnScrollService }
-	from '@services/item-in-browser-storage/toggle-setting-in-browser-storage/local-zoom-on-scroll.service';
+import { ZoomOnScrollSettingService }
+	from '@toggle-setting-in-browser-storage/zoom-on-scroll-setting.service';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
@@ -17,8 +17,8 @@ import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
-import { SessionSelectMutipleImagesService }
-	from '@toggle-setting-in-browser-storage/session-select-mutiple-images.service';
+import { SelectMutipleImagesSettingService }
+	from '@toggle-setting-in-browser-storage/select-mutiple-images-setting.service';
 
 
 @Injectable()
@@ -26,8 +26,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __localZoomOnScroll: LocalZoomOnScrollService,
-		private __sessionSelectMultiple: SessionSelectMutipleImagesService
+		private __localZoomOnScroll: ZoomOnScrollSettingService,
+		private __sessionSelectMultiple: SelectMutipleImagesSettingService
 	) {
 	}
 

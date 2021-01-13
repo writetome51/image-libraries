@@ -5,8 +5,8 @@ import { DataTransportProcessorService }
 import { DBLibrary } from '@interfaces/db-library';
 import { Injectable } from '@angular/core';
 import { LibraryUpdaterService } from '@services/library-updater.service';
-import { LocalLibrariesService }
-	from '@services/item-in-browser-storage/local-libraries.service';
+import { LibrariesInBrowserStorageService }
+	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +14,7 @@ export class AddImageToLibraryProcessorService extends DataTransportProcessorSer
 
 	constructor(
 		private __libraryUpdater: LibraryUpdaterService,
-		private __localLibraries: LocalLibrariesService,
+		private __localLibraries: LibrariesInBrowserStorageService,
 		__resultInterpreter: AddImageToLibraryResultInterpreterService
 	) {
 		super(__resultInterpreter);

@@ -2,7 +2,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorService } from '../library-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';
-import { LoadedLibraryData as loadedLibrary }
+import { ImagesLoadedFromData as imagesLoadedFrom, LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
@@ -25,10 +25,11 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 
 	async go(params): Promise<void> {
-
 		requestedLibrary.name = params[paramID.libName];
 
 		if (this.__libraryNotLoaded(requestedLibrary.name)) {
+			console.log(requestedLibrary.name);
+
 			await this.__ifLibraryDoesntExist_redirect_else_setPaginatorToFirstPage(
 				requestedLibrary.name
 			);
@@ -54,6 +55,5 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 		let page = Number(num);
 		await this.__paginator.setCurrentPageNumber(page);
 	}
-
 
 }
