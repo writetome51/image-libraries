@@ -3,7 +3,7 @@ import { ToggleSettingInBrowserStorageService } from './toggle-setting-in-browse
 
 
 @Injectable({providedIn: 'root'})
-export class SessionSelectMutipleImagesService extends ToggleSettingInBrowserStorageService {
+export class SelectMutipleImagesSettingService extends ToggleSettingInBrowserStorageService {
 
 	constructor() {
 		super(sessionStorage, 'select-multiple');

@@ -3,7 +3,7 @@ import { ToggleSettingInBrowserStorageService } from './toggle-setting-in-browse
 
 
 @Injectable({providedIn: 'root'})
-export class LocalZoomOnScrollService extends ToggleSettingInBrowserStorageService {
+export class ZoomOnScrollSettingService extends ToggleSettingInBrowserStorageService {
 
 	constructor() {
 		super(localStorage, 'zoomOnScroll');

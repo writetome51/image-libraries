@@ -4,10 +4,10 @@ import { ItemInBrowserStorageService }
 
 
 @Injectable({providedIn: 'root'})
-export class LocalLibrariesService extends ItemInBrowserStorageService<object> {
+export class EmailInBrowserStorageService extends ItemInBrowserStorageService<string> {
 
 	constructor() {
-		super(localStorage, 'libs');
+		super(localStorage, 'eml');
 	}
 
 }

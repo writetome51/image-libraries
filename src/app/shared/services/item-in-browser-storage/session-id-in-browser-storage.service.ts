@@ -4,7 +4,7 @@ import { ItemInBrowserStorageService }
 
 
 @Injectable({providedIn: 'root'})
-export class LocalSessionIDService extends ItemInBrowserStorageService<string> {
+export class SessionIDInBrowserStorageService extends ItemInBrowserStorageService<string> {
 
 	constructor() {
 		super(localStorage, 'lsd');
