@@ -1,28 +1,46 @@
+Service classes
+
 Each instance of a Service class is referred to without the word 'service' at the end.
+
+
+Data Structures
 
 Each class/object used as a data structure is named with 'Data' at the end, and their filenames end
 with '.data.ts'.
 
-The word 'process' is used in this project to refer to an entire cycle of these steps:
+
+Process and Processor
+
+The word 'process' refers to an entire cycle of these steps:
 1. Getting an initial result from some code execution.
 2. Checking that result for errors and, if any, executing tasks based on those errors.
 3. If no errors, executing tasks based on the successful result.
 
-'data processing' is any processing of some input data.
+The word 'processor' refers to a class that runs a process.
 
-Any UI button Component that initiates data processing is a subclass of
+Any UI button Component that initiates a process is a subclass of
 StartDataProcessContainerComponent.
 
-'data transport processing' refers to any data processing that involves data being sent to or from
+'data transport process' refers to any process that involves data being sent to or from
 an external resource.  All processing of this kind is handled by subclasses of
 DataTransportProcessorService.
 
-Any use of the word 'load' is referring to the total number of images the app is configured to
-have stored in the browser at once.  For example, ImagesRestAPIService.getAllLoad() retrieves N
-of all a user's images, where N is the load size.
+
+Load
+
+Any use of the word 'load' is referring to the total pieces of data (each 'piece' most likely being
+an object) the app is allowed to have stored in the browser at once.  For example,
+ImagesRestAPIService.getAllLoad() retrieves N of all a user's images, where N is the load size.
+
+
+Subscribables (Observables)
 
 The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.
 
 
-Path aliases: import statements that use a path beginning with '@' are aliases.  They're
-defined in {project-root}/tsconfig.json.
+Path Aliases
+
+Import statements that use a path beginning with '@' are aliases.  They're defined in
+{project-root}/tsconfig.json.
+
+

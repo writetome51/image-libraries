@@ -1,7 +1,7 @@
 import { GetRouteParamsObserverService } from '@services/get-route-params-observer.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLibraryRouteParamsReceivedService }
-	from './run-tasks-after-library-route-params-received.service';
+	from './run-tasks-after-library-route-params-received/run-tasks-after-library-route-params-received.service';
 
 
 @Injectable({providedIn: 'root'})

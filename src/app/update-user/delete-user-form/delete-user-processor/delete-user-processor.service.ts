@@ -1,7 +1,7 @@
 import { DeleteUserResultInterpreterService } from './delete-user-result-interpreter.service';
 import { DeleteUserInputsService } from '../delete-user-inputs.service';
 import { FormDataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
+	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UserDeleterService } from './user-deleter.service';
 

@@ -7,14 +7,14 @@ import * as Realm from 'realm-web';
 // public functions we can call begin with prefix 'pub_' .
 
 @Injectable({providedIn: 'root'})
-export class MongoDBRealmService {
+export class MongoDBRealmFunctionService {
 
 	private readonly __realmAppID = 'serverless-functions-rhfqi';
 	private __app = new Realm.App({id: this.__realmAppID});
 	private __user: Realm.User;
 
 
-	async callFn(name: string, params: object): Promise<any> {
+	async call(name: string, params: object): Promise<any> {
 		if (!(this.__user)) {
 			await this.__set__user();
 		}

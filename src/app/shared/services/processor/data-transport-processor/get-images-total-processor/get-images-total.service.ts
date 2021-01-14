@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { SessionIDInBrowserStorageService }
@@ -14,13 +14,13 @@ export class GetImagesTotalService {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService,
-		private __realm: MongoDBRealmService
+		private __realmFn: MongoDBRealmFunctionService
 	) {
 	}
 
 
 	async all(): Promise<{ dataTotal: number } | { error: { message: string } }> {
-		return this.__realm.callFn('pub_getUserImagesTotal', {
+		return this.__realmFn.call('pub_getUserImagesTotal', {
 			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}

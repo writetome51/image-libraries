@@ -1,7 +1,7 @@
 import { ImageBatch } from '@interfaces/image-batch';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { SessionIDInBrowserStorageService }
@@ -13,13 +13,13 @@ export class GetImagesFromStorageService {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
-		private __realm: MongoDBRealmService
+		private __realmFn: MongoDBRealmFunctionService
 	) {
 	}
 
 
 	async all(): Promise<ImageBatch | { error: { message: string } }> {
-		let batch = await this.__realm.callFn('pub_getUserImagesBatch', {
+		let batch = await this.__realmFn.call('pub_getUserImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			batchSize: load.size,
 			batchNumber: load.number
@@ -30,7 +30,7 @@ export class GetImagesFromStorageService {
 
 
 	async inLibrary(): Promise<ImageBatch | { error: { message: string } }> {
-		let batch = await this.__realm.callFn('pub_getLibraryImagesBatch', {
+		let batch = await this.__realmFn.call('pub_getLibraryImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			name: requestedLibrary.name,
 			batchSize: load.size,

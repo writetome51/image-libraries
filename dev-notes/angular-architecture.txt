@@ -16,5 +16,6 @@ other modules, you must list them in their module's 'exports' array, and import 
 module into the destination module by listing it in the destination module's 'imports'
 array.
 
-
+Most modules in this project are instantiated via lazy-loading, which in Angular happens via
+accessing the module's route in the url.
 

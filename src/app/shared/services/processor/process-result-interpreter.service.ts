@@ -2,7 +2,7 @@ import { IDoThis } from '@interfaces/i-do-this';
 import { Interpreter } from '@interfaces/interpreter';
 
 
-export abstract class DataProcessResultInterpreterService implements Interpreter {
+export abstract class ProcessResultInterpreterService implements Interpreter {
 
 	constructor(
 		private __handleError: IDoThis,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { LoadedLibraryData as loadedLibrary }
@@ -10,14 +10,14 @@ import { LoadedLibraryData as loadedLibrary }
 export class LibraryDeleterService {
 
 	constructor(
-		private __realm: MongoDBRealmService,
+		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService
 	) {
 	}
 
 
 	async delete(): Promise<{ success: true } | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_deleteLibrary', {
+		return await this.__realmFn.call('pub_deleteLibrary', {
 			name: loadedLibrary.libName,
 			sessionID: this.__sessionIDInBrowser.get()
 		});

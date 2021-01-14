@@ -1,6 +1,5 @@
 import { AllImagesPaginatorService } from '../all-images-paginator/all-images-paginator.service';
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
-import { AllImagesRouteParamsHandlerService } from './all-images-route-params-handler.service';
 import { IDoThis } from '@interfaces/i-do-this';
 import {
 	ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages,
@@ -9,6 +8,7 @@ import {
 import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
+import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,8 +17,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 	constructor(
 		private __paginator: AllImagesPaginatorService,
-		private __jumpToPageInput: AllImagesJumpToPageInputService,
-		private __routeParamsHandler: AllImagesRouteParamsHandlerService
+		private __jumpToPageInput: AllImagesJumpToPageInputService
 	) {
 	}
 
@@ -30,8 +29,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 			this.__jumpToPageInput.setMax();
 			this.__setImagesLoadedStatusTo_all();
 		}
-
-		await this.__routeParamsHandler.handle(params);
+		await this.__handleRouteParams(params);
 	}
 
 
@@ -43,6 +41,12 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 	private __setImagesLoadedStatusTo_all() {
 		imagesLoadedFrom.data = 'all';
 		loadedLibrary.data = undefined;
+	}
+
+
+	private async __handleRouteParams(params) {
+		let page = Number(params[paramID.pageNumber]);
+		await this.__paginator.setCurrentPageNumber(page);
 	}
 
 

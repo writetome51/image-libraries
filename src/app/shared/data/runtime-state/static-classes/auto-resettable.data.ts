@@ -1,7 +1,7 @@
 import { AppImage } from '@interfaces/app-image';
 import { DBImage } from '@interfaces/db-image';
 import { DBLibrary } from '@interfaces/db-library';
-import { ResettableToDefault } from '@interfaces/resettable-to-default';
+// import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { setArray } from '@writetome51/set-array';
 

@@ -15,7 +15,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
-		private __notLoggedInErrorHandler: HandleNotLoggedInErrorService,
+		private __handleNotLoggedInError: HandleNotLoggedInErrorService,
 		private __userAccount: UserAccountService
 	) {
 	}
@@ -30,7 +30,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 			if (assumedLoggedIn && (await this.__userAccount.get()).error) {
 				// user isn't logged in. If user was logged in, __userAccount.get() would not
 				// return error.
-				await this.__notLoggedInErrorHandler.go();
+				await this.__handleNotLoggedInError.go();
 			}
 			else { // Else whether or not user is logged in, the submitted password must be wrong.
 				alert.error = incorrectPassword;

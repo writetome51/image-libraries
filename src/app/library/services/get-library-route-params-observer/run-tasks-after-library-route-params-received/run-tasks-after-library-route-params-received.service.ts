@@ -1,8 +1,8 @@
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
-import { LibraryPaginatorService } from '../library-paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../../library-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';
-import { ImagesLoadedFromData as imagesLoadedFrom, LoadedLibraryData as loadedLibrary }
+import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
@@ -28,11 +28,11 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 		requestedLibrary.name = params[paramID.libName];
 
 		if (this.__libraryNotLoaded(requestedLibrary.name)) {
-			console.log(requestedLibrary.name);
 
-			await this.__ifLibraryDoesntExist_redirect_else_setPaginatorToFirstPage(
-				requestedLibrary.name
-			);
+			if (await this.__libraryDoesntExist(requestedLibrary.name)) {
+				return this.__redirectToLoggedInHome.go();
+			}
+			else await this.__paginator.resetToFirstPage();
 		}
 		await this.__setPaginatorToRequestedPage(params[paramID.pageNumber]);
 	}
@@ -43,11 +43,9 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 	}
 
 
-	private async __ifLibraryDoesntExist_redirect_else_setPaginatorToFirstPage(libName) {
+	private async __libraryDoesntExist(libName) {
 		let verified = await this.__libraryVerifier.verify(libName);
-		if (not(verified)) return this.__redirectToLoggedInHome.go();
-
-		await this.__paginator.resetToFirstPage();
+		return not(verified);
 	}
 
 

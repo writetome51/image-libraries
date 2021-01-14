@@ -1,6 +1,6 @@
 import { AuthenticatorService } from '@services/authenticator.service';
 import { FormDataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
+	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { GetSecurityQuestionResultInterpreterService }
 	from './get-security-question-result-interpreter.service';

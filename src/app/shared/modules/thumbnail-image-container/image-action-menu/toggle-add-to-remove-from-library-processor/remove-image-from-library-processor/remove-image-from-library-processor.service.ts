@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DBLibrary } from '@interfaces/db-library';
 import { DataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/data-transport-processor.service';
+	from '@services/processor/data-transport-processor/data-transport-processor.service';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';

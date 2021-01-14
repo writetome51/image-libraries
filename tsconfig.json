@@ -33,23 +33,23 @@
 			"@clear-form-on-init-and-alert-on-destroy/*": [
 				"src/app/shared/modules/clear-form-on-init-and-alert-on-destroy/*"
 			],
-			"@data-processor/*": [
-				"src/app/shared/services/data-processor/*"
+			"@processor/*": [
+				"src/app/shared/services/processor/*"
 			],
 			"@data-transport-processor/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/*"
+				"src/app/shared/services/processor/data-transport-processor/*"
 			],
 			"@data-transport-process-result-interpreter/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/*"
+				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
 			],
 			"@get-images-processor/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/get-images-processor/*"
+				"src/app/shared/services/processor/data-transport-processor/get-images-processor/*"
 			],
 			"@get-images-total-processor/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/get-images-total-processor/*"
+				"src/app/shared/services/processor/data-transport-processor/get-images-total-processor/*"
 			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"
@@ -58,7 +58,7 @@
 				"src/app/shared/guards/*"
 			],
 			"@handle-data-transport-process-error/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
+				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
 			],
 			"@hoverable-container/*": [
 				"src/app/shared/modules/hoverable-container/*"
@@ -82,7 +82,7 @@
 				"src/app/shared/data/read-only/*"
 			],
 			"@run-post-success-tasks/*": [
-				"src/app/shared/services/data-processor/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/*"
+				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/*"
 			],
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"

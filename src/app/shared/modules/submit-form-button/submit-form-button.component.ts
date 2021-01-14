@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormDataTransportProcessorService }
-	from '@services/data-processor/data-transport-processor/form-data-transport-processor.service';
+	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
 import { StartDataProcessContainerComponent }
 	from '@abstract-components/start-data-process-container.component';
 

@@ -6,14 +6,14 @@ import { EmailInBrowserStorageService }
 	from '@item-in-browser-storage/email-in-browser-storage.service';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';
-import { MongoDBRealmService } from '@services/mongo-db-realm.service';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 
 
 @Injectable({providedIn: 'root'})
 export class UserUpdaterService {
 
 	constructor(
-		private __realm: MongoDBRealmService,
+		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __emailInBrowser: EmailInBrowserStorageService
 	) {
@@ -21,7 +21,7 @@ export class UserUpdaterService {
 
 
 	async updatePassword(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_updatePasswordAndReturnUser', {
+		return await this.__realmFn.call('pub_updatePasswordAndReturnUser', {
 			email: this.__emailInBrowser.get(),
 			password: currentUser.password,
 			newPassword: currentUser.newPassword,
@@ -31,7 +31,7 @@ export class UserUpdaterService {
 
 
 	async updateEmail(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__realm.callFn('pub_updateEmailAndReturnUser', {
+		return await this.__realmFn.call('pub_updateEmailAndReturnUser', {
 			email: currentUser.email,
 			password: currentUser.password,
 			newEmail: currentUser.newEmail,
