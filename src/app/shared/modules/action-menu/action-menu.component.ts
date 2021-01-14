@@ -1,8 +1,8 @@
-import { MenuChoicesProcessorService } from './menu-choices-processor.service';
+import { SpecificChoicesExecutorService } from './specific-choices-executor.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice';
 import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
-import { MenuChoiceProcessorService } from './menu-choice-processor.service';
+import { MenuChoiceExecutorService } from './menu-choice-executor.service';
 
 
 @Component({
@@ -10,25 +10,25 @@ import { MenuChoiceProcessorService } from './menu-choice-processor.service';
 	templateUrl: './action-menu.component.html',
 
 	// Creates new instance of service for every instance of this component.
-	providers: [MenuChoiceProcessorService]
+	providers: [MenuChoiceExecutorService]
 })
 export class ActionMenuComponent implements OnInit {
 
 	open = false;
 	choices: MenuChoice[] = [];
 
-	@Input() choicesProcessor: MenuChoicesProcessorService;
+	@Input() specificChoicesExecutor: SpecificChoicesExecutorService;
 	@Input() choicesManager: MenuChoicesManager;
 	@Input() choicesManagerArgs? = [];
 
 
-	constructor(private __menuChoiceProcessor: MenuChoiceProcessorService) {
+	constructor(private __menuChoiceExecutor: MenuChoiceExecutorService) {
 	}
 
 
 	ngOnInit() {
 		this.choices = this.choicesManager.getChoices(...this.choicesManagerArgs);
-		this.__menuChoiceProcessor.set(this.choicesProcessor);
+		this.__menuChoiceExecutor.set(this.specificChoicesExecutor);
 	}
 
 
