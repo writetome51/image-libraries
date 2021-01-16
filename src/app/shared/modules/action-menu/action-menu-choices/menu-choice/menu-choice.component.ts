@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 
 
 @Component({

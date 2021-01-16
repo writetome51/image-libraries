@@ -1,6 +1,8 @@
-import { AppImage } from '@interfaces/app-image';
+import { AppImage } from '@interfaces/app-image/app-image';
 import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { getRandomInteger } from '@writetome51/get-random-integer-s';
+// import { IDoThis } from '@interfaces/i-do-this';
+
 
 // Supplies default values for any properties not included in `properties`
 

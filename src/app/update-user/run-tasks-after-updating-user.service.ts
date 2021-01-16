@@ -1,5 +1,5 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { DBUser } from '@interfaces/db-user';
+import { DBUser } from '@interfaces/app-user/db-user';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingUserService }

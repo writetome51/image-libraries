@@ -12,8 +12,8 @@ import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.m
 import { ImageListComponent } from './image-list/image-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from 'start-function-execution-button/start-function-execution-button.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
 
@@ -29,7 +29,7 @@ import { ThumbnailImageContainerModule }
 		GlobalActionMenuModule,
 		AppPaginationControlsModule,
 		BigLoadingSpinnerModule,
-		StartDataProcessButtonModule,
+		StartFunctionExecutionButtonModule,
 		ThumbnailImageContainerModule,
 		AppValidatingFormInputsModule,
 		RouterModule.forChild([

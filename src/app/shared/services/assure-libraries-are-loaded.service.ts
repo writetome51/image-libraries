@@ -1,5 +1,5 @@
-import { BackgroundProcessingStatusData as processingStatus }
-	from '@runtime-state-data/background-processing-status.data';
+import { BackgroundExecutionStatusData as processingStatus }
+	from '@runtime-state-data/background-execution-status.data';
 import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
@@ -9,8 +9,8 @@ import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '@services/perform-data-process-requiring-waiting.service';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -26,8 +26,8 @@ export class AssureLibrariesAreLoadedService implements IDoThis {
 	async go() {
 		if (this.__librariesAreStoredLocally()) return;
 
-		else await performDataProcessRequiringWaiting.go(
-			this.__getLibrariesProcessor, processingStatus
+		else await executeFunctionRequiringWaiting.go(
+			() => this.__getLibrariesProcessor.process(), processingStatus
 		);
 	}
 

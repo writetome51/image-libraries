@@ -1,6 +1,6 @@
 Service classes
 
-Each instance of a Service class is referred to without the word 'service' at the end.
+Each instance of a Service class is referred to without 'service' at the end.
 
 
 Data Structures
@@ -19,7 +19,7 @@ The word 'process' refers to an entire cycle of these steps:
 The word 'processor' refers to a class that runs a process.
 
 Any UI button Component that initiates a process is a subclass of
-StartDataProcessContainerComponent.
+ExecuteFunctionContainerComponent.
 
 'data transport process' refers to any process that involves data being sent to or from
 an external resource.  All processing of this kind is handled by subclasses of

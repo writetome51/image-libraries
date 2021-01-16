@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { AssureLibrariesAreLoadedService }
-	from '@services/assure-libraries-are-loaded.service';
+import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
 
 
 @Component({

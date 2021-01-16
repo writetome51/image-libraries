@@ -90,8 +90,8 @@
 			"@services/*": [
 				"src/app/shared/services/*"
 			],
-			"@start-data-process-button/*": [
-				"src/app/shared/modules/start-data-process-button/*"
+			"@start-function-execution-button/*": [
+				"src/app/shared/modules/start-function-execution-button/*"
 			],
 			"@start-data-process-list-item/*": [
 				"src/app/shared/modules/start-data-process-list-item/*"

@@ -2,14 +2,14 @@ import { DataTransportProcessorService } from '../data-transport-processor.servi
 import { DBLibrary } from '@interfaces/db-library';
 import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { LibraryStorageService } from '../../../library-storage.service';
+import { GetUsersLibrariesService } from '../../../get-users-libraries.service';
 
 
 @Injectable({providedIn: 'root'})
 export class GetLibrariesProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryStorage: LibraryStorageService,
+		private __getUsersLibraries: GetUsersLibrariesService,
 		__getLibrariesResultInterpreter: GetLibrariesResultInterpreterService
 	) {
 		super(__getLibrariesResultInterpreter);
@@ -17,7 +17,7 @@ export class GetLibrariesProcessorService extends DataTransportProcessorService 
 
 
 	protected async _getResult(): Promise<DBLibrary[] | {error: {message: string}}> {
-		return await this.__libraryStorage.getAll();
+		return await this.__getUsersLibraries.go();
 	}
 
 }

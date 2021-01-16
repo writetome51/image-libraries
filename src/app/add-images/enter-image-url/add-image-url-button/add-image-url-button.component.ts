@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { AddImageURLProcessorService } from './add-image-url-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
+import { ExecuteFunctionContainerComponent }
+	from '@abstract-components/execute-function-container.component';
 
 
 @Component({
 	selector: 'add-image-url-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [container]="this">
+		<start-function-execution-button [type]="'submit'" [container]="this">
 			Add URL
-		</start-data-process-button>
+		</start-function-execution-button>
 	`
 })
-export class AddImageUrlButtonComponent extends StartDataProcessContainerComponent {
+export class AddImageUrlButtonComponent extends ExecuteFunctionContainerComponent {
 
 	constructor(__processor: AddImageURLProcessorService) {
 		super(__processor);

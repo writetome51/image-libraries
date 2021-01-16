@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
 import { DeleteLibraryProcessorService }
 	from './delete-library-processor/delete-library-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
+import { ExecuteFunctionContainerComponent }
+	from '@abstract-components/execute-function-container.component';
 
 
 @Component({
 	selector: 'delete-library-button',
 	template: `
-		<start-data-process-button [container]="this">Delete Library</start-data-process-button>
+		<start-function-execution-button
+			[container]="this">Delete Library</start-function-execution-button>
 	`
 })
-export class DeleteLibraryButtonComponent extends StartDataProcessContainerComponent {
+export class DeleteLibraryButtonComponent extends ExecuteFunctionContainerComponent {
 
 	constructor(_deleteLibraryProcessor: DeleteLibraryProcessorService) {
 		super(_deleteLibraryProcessor);
 	}
 
 
-	async start(): Promise<void> {
+	async execute(): Promise<void> {
 		let confirmed = window.confirm('Are you sure you want to delete the library?');
 
-		if (confirmed) await super.start();
+		if (confirmed) await super.execute();
 	}
 
 }

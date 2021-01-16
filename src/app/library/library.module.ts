@@ -17,8 +17,8 @@ import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent }
 	from './library-viewer/save-changes-button.component';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from 'start-function-execution-button/start-function-execution-button.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
@@ -40,7 +40,7 @@ import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button
 		FormsModule,
 		BigLoadingSpinnerModule,
 		GlobalActionMenuModule,
-		StartDataProcessButtonModule,
+		StartFunctionExecutionButtonModule,
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,

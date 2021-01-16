@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import * as Realm from 'realm-web';
 
 
-// Allows us to call serverless functions we've deployed on cloud service MongoDB Realm.  All
+// Allows us to call functions we've deployed on cloud service MongoDB Realm.  All
 // public functions we can call begin with prefix 'pub_' .
 
 @Injectable({providedIn: 'root'})

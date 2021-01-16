@@ -1,7 +1,7 @@
 import { SpecificChoicesExecutorService } from './specific-choices-executor.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuChoice } from '@interfaces/menu-choice';
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
+import { MenuChoice } from './menu-choice.interface';
+import { MenuChoicesManager } from '@action-menu/menu-choices-manager.interface';
 import { MenuChoiceExecutorService } from './menu-choice-executor.service';
 
 

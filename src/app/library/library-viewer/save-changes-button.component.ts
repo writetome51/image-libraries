@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
+import { ExecuteFunctionContainerComponent }
+	from '@abstract-components/execute-function-container.component';
 import { UpdateLibraryProcessorService }
 	from '@data-transport-processor/update-library-processor/update-library-processor.service';
 
@@ -8,10 +8,11 @@ import { UpdateLibraryProcessorService }
 @Component({
 	selector: 'save-changes-button',
 	template: `
-		<start-data-process-button [container]="this">Save Changes</start-data-process-button>
+		<start-function-execution-button
+				[container]="this">Save Changes</start-function-execution-button>
 	`
 })
-export class SaveChangesButtonComponent extends StartDataProcessContainerComponent {
+export class SaveChangesButtonComponent extends ExecuteFunctionContainerComponent {
 
 	constructor(__updateLibraryProcessor: UpdateLibraryProcessorService) {
 		super(__updateLibraryProcessor);

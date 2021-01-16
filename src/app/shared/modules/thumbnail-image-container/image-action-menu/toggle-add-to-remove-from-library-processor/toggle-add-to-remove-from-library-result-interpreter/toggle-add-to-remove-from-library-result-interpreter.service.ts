@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProcessResultInterpreterService }
-	from 'processor/process-result-interpreter.service';
+	from '@processor/process-result-interpreter.service';
 import { RunTasksAfterToggleAddToRemoveFromLibraryService }
 	from './run-tasks-after-toggle-add-to-remove-from-library.service';
 import { HandleToggleAddToRemoveFromLibraryErrorService }

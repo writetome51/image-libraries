@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormDataTransportProcessorService }
 	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
-import { StartFunctionExecutionContainerComponent }
-	from '@abstract-components/start-function-execution-container.component';
-import { StartProcessContainerComponent } from '@abstract-components/start-process-container.component';
+import { StartProcessContainerComponent }
+	from '@abstract-components/start-process-container.component';
 
 
 @Component({

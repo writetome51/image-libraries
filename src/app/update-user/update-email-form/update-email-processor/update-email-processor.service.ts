@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { UpdateEmailInputsService } from '../update-email-inputs/update-email-inputs.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
 import { UserUpdaterService } from '../../user-updater.service';
-import { DBUser } from '@interfaces/db-user';
+import { DBUser } from '@interfaces/app-user/db-user';
 
 
 @Injectable({providedIn: 'root'})

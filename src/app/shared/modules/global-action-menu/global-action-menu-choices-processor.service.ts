@@ -1,18 +1,18 @@
-import { MenuChoicesProcessorService } from '@action-menu/menu-choices-processor.service';
+import { SpecificChoicesExecutorService } from '@action-menu/specific-choices-executor.service';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor/delete-selected-images-processor.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { ToggleEnableMenuChoiceProcessorService }
-	from '@global-action-menu/toggle-enable-menu-choice-processor.service';
+import { ToggleEnableMenuChoiceService }
+	from '@global-action-menu/toggle-enable-menu-choice.service';
 
 
 @Injectable()
-export class GlobalActionMenuChoicesProcessorService extends MenuChoicesProcessorService {
+export class GlobalActionMenuChoicesProcessorService extends SpecificChoicesExecutorService {
 
 	constructor(
 		deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService,
-		toggleEnableMenuChoiceProcessor: ToggleEnableMenuChoiceProcessorService
+		toggleEnableMenuChoiceProcessor: ToggleEnableMenuChoiceService
 	) {
 		super(
 			deleteSelectedImagesProcessor,
@@ -20,7 +20,7 @@ export class GlobalActionMenuChoicesProcessorService extends MenuChoicesProcesso
 			toggleEnableMenuChoiceProcessor // Not a mistake. Used for multiple choices.
 		);
 
-		this._assignLabelsToProcessors([
+		this._assignLabelsToExecutors([
 			choiceLabel.deleteSelected,
 			choiceLabel.enableZoomOnScrolling,
 			choiceLabel.selectMultiple

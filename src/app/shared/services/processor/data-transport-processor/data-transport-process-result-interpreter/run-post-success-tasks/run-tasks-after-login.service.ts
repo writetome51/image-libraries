@@ -1,9 +1,9 @@
-import { DBUser } from '@interfaces/db-user';
+import { DBUser } from '@interfaces/app-user/db-user';
 import { IDoThis } from '@interfaces/i-do-this';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { RunTasksAfterGettingUserService }
-	from '@services/processor/data-transport-processor/data-transport-process-result-interpreter/run-post-success-tasks/run-tasks-after-getting-user.service';
+	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 

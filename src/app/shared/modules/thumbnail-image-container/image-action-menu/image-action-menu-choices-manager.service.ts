@@ -1,16 +1,16 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
+import { CheckableMenuChoice } from '@action-menu/action-menu-choices/menu-choice/processable-menu-choice/checkable-menu-choice';
 import { CurrentRouteService } from '@services/current-route.service';
-import { DBImage } from '@interfaces/db-image';
+import { DBImage } from '@interfaces/app-image/db-image';
 import { DBLibrary } from '@interfaces/db-library';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
+import { MenuChoicesManager } from '@action-menu/menu-choices-manager.interface';
 
 
 @Injectable()

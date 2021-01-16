@@ -1,5 +1,5 @@
-import { BackgroundProcessingStatusData as processingStatus }
-	from '@runtime-state-data/background-processing-status.data';
+import { BackgroundExecutionStatusData as processingStatus }
+	from '@runtime-state-data/background-execution-status.data';
 import { IDoThis } from '@interfaces/i-do-this';
 
 

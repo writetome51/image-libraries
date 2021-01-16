@@ -1,4 +1,4 @@
-import { DBUser } from '@interfaces/db-user';
+import { DBUser } from '@interfaces/app-user/db-user';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLoginService } from '@run-post-success-tasks/run-tasks-after-login.service';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';

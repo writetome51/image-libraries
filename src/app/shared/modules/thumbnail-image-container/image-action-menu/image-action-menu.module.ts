@@ -4,8 +4,8 @@ import { ImageActionMenuComponent } from './image-action-menu.component';
 import { ImageActionMenuChoicesManagerService }
 	from '@thumbnail-image-container/image-action-menu/image-action-menu-choices-manager.service';
 import { ActionMenuModule } from '@action-menu/action-menu.module';
-import { ImageActionMenuChoicesProcessorService }
-	from './image-action-menu-choices-processor.service';
+import { ImageActionMenuChoicesExecutorService }
+	from './image-action-menu-choices-executor.service';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { ImageActionMenuChoicesProcessorService }
 	],
 	providers: [
 		ImageActionMenuChoicesManagerService,
-		ImageActionMenuChoicesProcessorService
+		ImageActionMenuChoicesExecutorService
 	],
 	exports: [ImageActionMenuComponent]
 })

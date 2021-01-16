@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/db-image';
+import { DBImage } from '@interfaces/app-image/db-image';
 import { HTMLImage } from '@interfaces/html-image';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

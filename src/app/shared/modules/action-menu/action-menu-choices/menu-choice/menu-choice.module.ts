@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice.component';
 import { NgModule } from '@angular/core';
-import { ProcessableMenuChoiceComponent }
-	from './processable-menu-choice/processable-menu-choice.component';
+import { ExecutableMenuChoiceComponent }
+	from './processable-menu-choice/executable-menu-choice.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
 
@@ -15,7 +15,7 @@ import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
 	declarations: [
 		MenuChoiceComponent,
 		CheckmarkComponent,
-		ProcessableMenuChoiceComponent,
+		ExecutableMenuChoiceComponent,
 		SubmenuPointerComponent,
 		SubmenuComponent
 	],

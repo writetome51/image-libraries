@@ -8,7 +8,7 @@ import { GlobalActionMenuChoicesProcessorService }
 @Component({
 	selector: 'global-action-menu',
 	template: `
-		<action-menu [choicesManager]="choicesManager" [choicesProcessor]="choicesProcessor">
+		<action-menu [choicesManager]="choicesManager" [specificChoicesExecutor]="choicesProcessor">
 		</action-menu>
 	`
 })

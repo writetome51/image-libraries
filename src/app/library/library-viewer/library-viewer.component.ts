@@ -1,5 +1,5 @@
-import { BackgroundProcessingStatusData as processingStatus }
-	from '@runtime-state-data/background-processing-status.data';
+import { BackgroundExecutionStatusData as processingStatus }
+	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { ImageTotalData as imageTotal }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

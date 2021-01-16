@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/db-image';
+import { DBImage } from '@interfaces/app-image/db-image';
 import { Hoverable } from '@interfaces/hoverable';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';

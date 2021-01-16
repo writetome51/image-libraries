@@ -1,6 +1,6 @@
 import { SpecificChoicesExecutorService } from './specific-choices-executor.service';
 import { Injectable } from '@angular/core';
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { Link } from '@interfaces/link';
+import { Link } from '@interfaces/link/link';
 
 
 // Contains all routes the AppNavigatorModule is concerned with.

@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from '@start-function-execution-button/start-function-execution-button.module';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { StartDataProcessButtonModule }
 	imports: [
 		CommonModule,
 		BrowserModule,
-		StartDataProcessButtonModule,
+		StartFunctionExecutionButtonModule,
 		RouterModule.forRoot([
 			{
 				path: choice.UpdateUserModule.path,

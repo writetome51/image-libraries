@@ -7,8 +7,8 @@ import { LoginFormInputsService } from './login-form-inputs.service';
 import { LoginProcessorService } from './login-processor.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from 'start-function-execution-button/start-function-execution-button.module';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
 
 
@@ -18,7 +18,7 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		CommonModule,
 		RouterModule,
 		AppValidatingFormInputsModule,
-		StartDataProcessButtonModule,
+		StartFunctionExecutionButtonModule,
 		SubmitFormButtonModule
 	],
 	providers: [LoginFormInputsService, LoginProcessorService],

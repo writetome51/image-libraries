@@ -1,10 +1,10 @@
-import { StartFunctionExecutionContainerComponent }
-	from '@abstract-components/start-function-execution-container.component';
+import { ExecuteFunctionContainerComponent }
+	from '@abstract-components/execute-function-container.component';
 import { Processor } from '@interfaces/processor';
 
 
 export abstract class StartProcessContainerComponent
-	extends StartFunctionExecutionContainerComponent {
+	extends ExecuteFunctionContainerComponent {
 
 	constructor(protected _processor?: Processor) {
 		super();

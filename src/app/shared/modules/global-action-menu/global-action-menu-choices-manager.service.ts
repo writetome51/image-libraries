@@ -1,6 +1,6 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice';
+import { CheckableMenuChoice } from '@action-menu/action-menu-choices/menu-choice/processable-menu-choice/checkable-menu-choice';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
@@ -8,8 +8,8 @@ import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ZoomOnScrollSettingService }
 	from '@toggle-setting-in-browser-storage/zoom-on-scroll-setting.service';
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager';
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoicesManager } from '@action-menu/menu-choices-manager.interface';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';

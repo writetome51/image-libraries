@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CreateLibraryProcessorService }
+	from './create-library-processor/create-library-processor.service';
 
 
 @Component({
@@ -7,10 +9,14 @@ import { Component } from '@angular/core';
 		<div class="form-container">
 			<form>
 				<new-library-form-input></new-library-form-input>
-				<create-library-button></create-library-button>
+				<submit-form-button [label]="'Create'" [processor]="processor"></submit-form-button>
 			</form>
 		</div>
 	`
 })
 export class NewLibraryFormComponent {
+
+	constructor(public processor: CreateLibraryProcessorService) {
+	}
+
 }

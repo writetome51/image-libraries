@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './logout-processor/logout-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
+import { StartProcessContainerComponent }
+	from '@abstract-components/start-process-container.component';
 
 
 @Component({
 	selector: 'logout-button',
-	template: `<start-data-process-button [container]="this">Sign Out</start-data-process-button>`
+	template: `
+		<start-function-execution-button [container]="this">
+			Sign Out
+		</start-function-execution-button>
+	`
 })
-export class LogoutButtonComponent extends StartDataProcessContainerComponent {
+export class LogoutButtonComponent extends StartProcessContainerComponent {
 
-	constructor(__logoutProcessor: LogoutProcessorService) {
-		super(__logoutProcessor);
+	constructor(_processor: LogoutProcessorService) {
+		super(_processor);
 	}
 
 }

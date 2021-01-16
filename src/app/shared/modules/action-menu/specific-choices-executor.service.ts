@@ -1,5 +1,6 @@
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { IDoThis } from '@interfaces/i-do-this';
+import { removeTail } from '@writetome51/array-remove-head-tail';
 
 
 export abstract class SpecificChoicesExecutorService {
@@ -38,8 +39,8 @@ export abstract class SpecificChoicesExecutorService {
 
 
 	private __getParent(label) {
-		let parts = label.split('.'), length = parts.length;
-		if (length > 1) parts.length = length - 1;
+		let parts = label.split('.');
+		removeTail(1, parts);
 		return parts.join('.');
 	}
 

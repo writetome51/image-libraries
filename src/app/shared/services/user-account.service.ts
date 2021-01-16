@@ -1,6 +1,6 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
-import { DBUser } from '@interfaces/db-user';
+import { DBUser } from '@interfaces/app-user/db-user';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';

@@ -1,15 +1,15 @@
-import { AppImage } from '@interfaces/app-image';
-import { BackgroundProcessingStatusData as processingStatus }
-	from '@runtime-state-data/background-processing-status.data';
+import { AppImage } from '@interfaces/app-image/app-image';
+import { BackgroundExecutionStatusData as processingStatus }
+	from '@runtime-state-data/background-execution-status.data';
 import { DirectProcessor } from '@interfaces/direct-processor';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { PerformDataProcessRequiringWaitingService as performDataProcessRequiringWaiting }
-	from '@services/perform-data-process-requiring-waiting.service';
 import { SaveNewImagesProcessorService }
 	from './save-new-images-processor.service';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -25,10 +25,9 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 		for (let i = 0, length = files.length; i < length; ++i) {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
-		await performDataProcessRequiringWaiting.go(
-			this.__saveNewImagesProcessor, processingStatus
+		await executeFunctionRequiringWaiting.go(
+			() => this.__saveNewImagesProcessor.process(), processingStatus
 		);
-
 		newImages.data = [];
 	}
 

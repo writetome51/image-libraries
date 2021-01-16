@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuChoice } from '@interfaces/menu-choice';
+import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
 	from '../remove-parent-labels-for-display.service';
 

@@ -17,8 +17,8 @@ import { ImageURLFormInputComponent }
 	from './enter-image-url/image-url-form-input.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from 'start-function-execution-button/start-function-execution-button.module';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { StartDataProcessButtonModule }
 		BigLoadingSpinnerModule,
 		AppValidatingFormInputsModule,
 		ClearFormOnInitAndAlertOnDestroyModule,
-		StartDataProcessButtonModule,
+		StartFunctionExecutionButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',
