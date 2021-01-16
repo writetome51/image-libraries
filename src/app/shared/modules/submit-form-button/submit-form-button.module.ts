@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubmitFormButtonComponent } from './submit-form-button.component';
-import { StartDataProcessButtonModule }
-	from '@start-data-process-button/start-data-process-button.module';
+import { StartFunctionExecutionButtonModule }
+	from '@start-function-execution-button/start-function-execution-button.module';
 
 
 @NgModule({
 	declarations: [SubmitFormButtonComponent],
-	imports: [CommonModule, StartDataProcessButtonModule],
+	imports: [CommonModule, StartFunctionExecutionButtonModule],
 	exports: [SubmitFormButtonComponent]
 })
 export class SubmitFormButtonModule {

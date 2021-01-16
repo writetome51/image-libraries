@@ -1,19 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { FormDataTransportProcessorService }
 	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
-import { StartDataProcessContainerComponent }
-	from '@abstract-components/start-data-process-container.component';
+import { StartFunctionExecutionContainerComponent }
+	from '@abstract-components/start-function-execution-container.component';
+import { StartProcessContainerComponent } from '@abstract-components/start-process-container.component';
 
 
 @Component({
 	selector: 'submit-form-button',
 	template: `
-		<start-data-process-button [type]="'submit'" [container]="this">
+		<start-function-execution-button [type]="'submit'" [container]="this">
 			{{label}}
-		</start-data-process-button>
+		</start-function-execution-button>
 	`
 })
-export class SubmitFormButtonComponent extends StartDataProcessContainerComponent {
+export class SubmitFormButtonComponent extends StartProcessContainerComponent {
 
 	@Input() label = 'Submit';
 
