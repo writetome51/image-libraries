@@ -1,4 +1,4 @@
-import { Processor } from './processor';
+import { Processor } from './processor.interface';
 
 
 export interface DirectProcessor extends Processor {

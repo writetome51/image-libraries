@@ -1,4 +1,4 @@
-import { AppUser } from './app-user';
+import { AppUser } from './app-user.interface';
 
 // Represents a record in a db 'users' collection.
 

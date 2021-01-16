@@ -1,4 +1,4 @@
-import { AppImage } from './app-image';
+import { AppImage } from './app-image.interface';
 
 
 // Represents a record in a db 'images' collection.

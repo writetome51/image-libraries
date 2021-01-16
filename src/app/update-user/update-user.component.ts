@@ -3,7 +3,7 @@ import { UpdateUserChoicesData as updateChoices} from './update-user-choices.dat
 import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { LinkedTemplateWithHeading } from './linked-template-with-heading';
+import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 
 
 @Component({

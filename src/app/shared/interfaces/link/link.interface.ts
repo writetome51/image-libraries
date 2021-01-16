@@ -1,4 +1,4 @@
-import { HasLabel } from '@interfaces/has-label';
+import { HasLabel } from '@interfaces/has-label.interface';
 
 
 export interface Link extends HasLabel {

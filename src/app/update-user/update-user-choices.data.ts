@@ -2,7 +2,7 @@ import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.com
 import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
 import { UpdatePasswordFormComponent }
 	from './update-password-form/update-password-form.component';
-import { LinkedTemplateWithHeading } from './linked-template-with-heading';
+import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 
 
 export class UpdateUserChoicesData {

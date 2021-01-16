@@ -1,4 +1,4 @@
-import { ComponentLink } from '@interfaces/link/component-link';
+import { ComponentLink } from '@interfaces/link/component-link.interface';
 
 
 export interface LinkedTemplateWithHeading {

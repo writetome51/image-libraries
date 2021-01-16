@@ -1,4 +1,4 @@
-import { SecurityQuestion } from '../security-question';
+import { SecurityQuestion } from '../security-question.interface';
 
 
 export interface AppUser {
