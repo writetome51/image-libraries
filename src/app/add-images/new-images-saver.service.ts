@@ -1,4 +1,4 @@
-import { AppImage } from '@interfaces/app-image/app-image';
+import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';

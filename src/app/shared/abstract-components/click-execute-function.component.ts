@@ -1,14 +1,14 @@
 import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
 import { Input } from '@angular/core';
-import { ExecuteFunctionContainerComponent }
-	from './execute-function-container.component';
+import { ClickExecuteFunctionContainerComponent }
+	from './click-execute-function-container.component';
 
 
 export abstract class ClickExecuteFunctionComponent {
 
 	// required.  Instance of the component this component is used in.
-	@Input() container: ExecuteFunctionContainerComponent;
+	@Input() container: ClickExecuteFunctionContainerComponent;
 
 	// Passed to this.container.execute()
 	@Input() funcArgs: any[] = [];

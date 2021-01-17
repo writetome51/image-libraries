@@ -1,6 +1,6 @@
 import { CheckmarkComponent } from './processable-menu-choice/checkmark.component';
-import { ClickStartDataProcessDivModule }
-	from '@app/shared/modules/click-start-data-process-div/click-start-data-process-div.module';
+import { ClickExecuteFunctionDivModule }
+	from '@app/shared/modules/click-execute-function-div/click-execute-function-div.module';
 import { CommonModule } from '@angular/common';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice.component';
@@ -22,7 +22,7 @@ import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
 	imports: [
 		CommonModule,
 		HoverableContainerModule,
-		ClickStartDataProcessDivModule
+		ClickExecuteFunctionDivModule
 	],
 	exports: [MenuChoiceComponent]
 })

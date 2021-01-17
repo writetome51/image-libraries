@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

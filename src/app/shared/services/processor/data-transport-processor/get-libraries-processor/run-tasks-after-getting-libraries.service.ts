@@ -1,5 +1,5 @@
-import { DBLibrary } from '@interfaces/db-library';
-import { IDoThis } from '@interfaces/i-do-this';
+import { DBLibrary } from '@interfaces/db-library.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { notLoggedIn } from '@string-constants/form-submission-errors';
 import { RemoveCachedDataService as removeCachedData } from '@services/remove-cached-data.service';
 import { Router } from '@angular/router';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

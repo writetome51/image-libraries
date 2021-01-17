@@ -1,4 +1,4 @@
-import { ExecutionStatus } from '@interfaces/execution-status';
+import { ExecutionStatus } from '@interfaces/execution-status.interface';
 
 
 export const ClickStartedExecutionStatusData: ExecutionStatus = {

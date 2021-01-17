@@ -1,4 +1,4 @@
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorService } from '../../library-paginator/library-paginator.service';
 import { LibraryVerifierService } from './library-verifier.service';

@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ClickExecuteProcessDivComponent } from './click-execute-process-div.component';
+import { ClickExecuteFunctionDivComponent } from './click-execute-function-div.component';
 import { NgModule } from '@angular/core';
 import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner/tiny-loading-spinner.module';
 
 
 @NgModule({
-	declarations: [ClickExecuteProcessDivComponent],
+	declarations: [ClickExecuteFunctionDivComponent],
 	imports: [CommonModule, TinyLoadingSpinnerModule],
-	exports: [ClickExecuteProcessDivComponent]
+	exports: [ClickExecuteFunctionDivComponent]
 })
-export class ClickStartDataProcessDivModule {
+export class ClickExecuteFunctionDivModule {
 }

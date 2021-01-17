@@ -1,7 +1,7 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { Injectable } from '@angular/core';
-import { DBUser } from '@interfaces/app-user/db-user';
+import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 
 

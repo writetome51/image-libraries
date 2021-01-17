@@ -1,4 +1,4 @@
-// import { IDoThis } from '@interfaces/i-do-this';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
 	from './reset-runtime-state-data-to-default-settings.service';
 

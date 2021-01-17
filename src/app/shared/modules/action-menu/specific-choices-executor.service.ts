@@ -1,5 +1,5 @@
 import { MenuChoice } from '@action-menu/menu-choice.interface';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { removeTail } from '@writetome51/array-remove-head-tail';
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { DBImage } from '@interfaces/app-image/db-image';
+import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

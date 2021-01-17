@@ -5,11 +5,11 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChi
 
 
 @Component({
-	selector: 'start-function-execution-button',
-	templateUrl: './start-function-execution-button.component.html',
-	styleUrls: ['./start-function-execution-button.component.css']
+	selector: 'execute-function-button',
+	templateUrl: './execute-function-button.component.html',
+	styleUrls: ['./execute-function-button.component.css']
 })
-export class StartFunctionExecutionButtonComponent extends ClickExecuteFunctionComponent
+export class ExecuteFunctionButtonComponent extends ClickExecuteFunctionComponent
 	implements AfterViewInit {
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form

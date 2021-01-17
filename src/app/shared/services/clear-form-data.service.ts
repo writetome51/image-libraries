@@ -1,7 +1,8 @@
-import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserData as currentUser }
+	from '@runtime-state-data/static-classes/current-user.data';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
-// import { IDoThis } from '@interfaces/i-do-this';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 export class ClearFormDataService { // implements IDoThis

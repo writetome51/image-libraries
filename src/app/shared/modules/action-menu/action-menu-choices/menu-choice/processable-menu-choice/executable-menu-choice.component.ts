@@ -1,12 +1,12 @@
-import { CheckableMenuChoice } from './checkable-menu-choice';
+import { CheckableMenuChoice } from './checkable-menu-choice.interface';
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceExecutorService } from '../../../menu-choice-executor.service';
 import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
 	from '../remove-parent-labels-for-display.service';
-import { ExecuteFunctionContainerComponent }
-	from '@abstract-components/execute-function-container.component';
+import { ClickExecuteFunctionContainerComponent }
+	from '@abstract-components/click-execute-function-container.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { ExecuteFunctionContainerComponent }
 	templateUrl: './executable-menu-choice.component.html',
 	styles: [`checkmark {position: relative; top: 5px; left: 5px;}`]
 })
-export class ExecutableMenuChoiceComponent extends ExecuteFunctionContainerComponent {
+export class ExecutableMenuChoiceComponent extends ClickExecuteFunctionContainerComponent {
 
 	@Input() data: MenuChoice | CheckableMenuChoice;
 
@@ -32,8 +32,13 @@ export class ExecutableMenuChoiceComponent extends ExecuteFunctionContainerCompo
 	}
 
 
-	constructor(_menuChoiceProcessor: MenuChoiceExecutorService) {
-		super(_menuChoiceProcessor);
+	constructor(protected _menuChoiceExecutor: MenuChoiceExecutorService) {
+		super();
+	}
+
+
+	protected async _func(choice: MenuChoice) {
+		await this._menuChoiceExecutor.execute(choice);
 	}
 
 }

@@ -1,5 +1,5 @@
 import { AppModuleRoutesData } from '@app/app-module-routes.data';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 

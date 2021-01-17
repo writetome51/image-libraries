@@ -1,7 +1,7 @@
 import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { Link } from '@interfaces/link/link';
+import { Link } from '@interfaces/link/link.interface';
 
 
 @Component({

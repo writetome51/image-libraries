@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { CurrentRouteService } from '@services/current-route.service';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';

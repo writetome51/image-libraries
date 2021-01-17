@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { DataTransportProcessorService }
 	from '@services/processor/data-transport-processor/data-transport-processor.service';
 import { LibrariesInBrowserStorageService }

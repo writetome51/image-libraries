@@ -1,4 +1,4 @@
-// import { IDoThis } from '@interfaces/i-do-this';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 export class ExecuteFunctionRequiringWaitingService { // implements IDoThis

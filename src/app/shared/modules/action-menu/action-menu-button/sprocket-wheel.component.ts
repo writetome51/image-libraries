@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
-import { HTMLImage } from '@interfaces/html-image';
+import { HTMLImage } from '@interfaces/html-image.interface';
 
 
 @Component({

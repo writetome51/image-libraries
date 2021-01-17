@@ -1,7 +1,7 @@
-import { AppImage } from '@interfaces/app-image/app-image';
+import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { BackgroundExecutionStatusData as processingStatus }
 	from '@runtime-state-data/background-execution-status.data';
-import { DirectProcessor } from '@interfaces/direct-processor';
+import { DirectProcessor } from '@interfaces/direct-processor.interface';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';

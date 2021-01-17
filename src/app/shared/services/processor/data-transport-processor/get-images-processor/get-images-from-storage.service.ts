@@ -1,4 +1,4 @@
-import { ImageBatch } from '@interfaces/image-batch';
+import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';

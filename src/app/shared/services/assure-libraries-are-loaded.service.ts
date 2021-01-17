@@ -1,16 +1,16 @@
 import { BackgroundExecutionStatusData as processingStatus }
 	from '@runtime-state-data/background-execution-status.data';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
 
 
 @Injectable({providedIn: 'root'})

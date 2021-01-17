@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RunTasksAfterLogoutService }
 	from '@run-post-success-tasks/run-tasks-after-logout.service';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

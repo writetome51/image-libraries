@@ -1,6 +1,6 @@
 import { errorIfNotInteger } from 'error-if-not-integer';
 import { Injectable } from '@angular/core';
-import { ItemBeingMoved } from '@interfaces/item-being-moved';
+import { ItemBeingMoved } from '@interfaces/item-being-moved.interface';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { Subject, Subscribable } from 'rxjs';

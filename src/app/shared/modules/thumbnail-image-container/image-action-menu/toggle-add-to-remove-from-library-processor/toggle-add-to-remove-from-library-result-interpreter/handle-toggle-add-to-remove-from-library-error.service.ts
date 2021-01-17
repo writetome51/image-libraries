@@ -1,10 +1,10 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { LibrariesInBrowserStorageService }
 	from '@item-in-browser-storage/libraries-in-browser-storage.service';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

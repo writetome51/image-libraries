@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { DBLibrary } from '@interfaces/db-library';
-import { IDoThis } from '@interfaces/i-do-this';
+import { DBLibrary } from '@interfaces/db-library.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }

@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { AddImageURLProcessorService } from './add-image-url-processor.service';
-import { ExecuteFunctionContainerComponent }
-	from '@abstract-components/execute-function-container.component';
+import { ClickExecuteFunctionContainerComponent }
+	from '@abstract-components/click-execute-function-container.component';
 
 
 @Component({
 	selector: 'add-image-url-button',
 	template: `
-		<start-function-execution-button [type]="'submit'" [container]="this">
+		<execute-function-button [type]="'submit'" [container]="this">
 			Add URL
-		</start-function-execution-button>
+		</execute-function-button>
 	`
 })
-export class AddImageUrlButtonComponent extends ExecuteFunctionContainerComponent {
+export class AddImageUrlButtonComponent extends ClickExecuteFunctionContainerComponent {
 
 	constructor(__processor: AddImageURLProcessorService) {
 		super(__processor);

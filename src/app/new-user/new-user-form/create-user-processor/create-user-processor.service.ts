@@ -1,4 +1,4 @@
-import { DBUser } from '@interfaces/app-user/db-user';
+import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';

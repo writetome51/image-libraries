@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { isEmpty } from '@writetome51/is-empty-not-empty';
 import { LoadedLibraryData as loadedLibrary }

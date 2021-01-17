@@ -1,5 +1,5 @@
 import { GetImagesProcessorService } from '@get-images-processor/get-images-processor.service';
-import { ImageBatch } from '@interfaces/image-batch';
+import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 
 

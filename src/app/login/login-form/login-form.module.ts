@@ -8,7 +8,7 @@ import { LoginProcessorService } from './login-processor.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StartFunctionExecutionButtonModule }
-	from 'start-function-execution-button/start-function-execution-button.module';
+	from 'execute-function-button/execute-function-button.module';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
 
 

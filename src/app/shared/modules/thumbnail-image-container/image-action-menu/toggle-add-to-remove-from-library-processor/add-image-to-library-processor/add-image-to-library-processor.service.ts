@@ -2,7 +2,7 @@ import { AddImageToLibraryResultInterpreterService }
 	from './add-image-to-library-result-interpreter/add-image-to-library-result-interpreter.service';
 import { DataTransportProcessorService }
 	from '@services/processor/data-transport-processor/data-transport-processor.service';
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { LibraryUpdaterService } from '@services/library-updater.service';
 import { LibrariesInBrowserStorageService }

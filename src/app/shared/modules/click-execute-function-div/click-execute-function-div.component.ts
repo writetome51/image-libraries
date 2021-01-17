@@ -5,7 +5,7 @@ import { not } from '@writetome51/not';
 
 
 @Component({
-	selector: 'click-start-data-process-div',
+	selector: 'click-execute-function-div',
 	template: `
 		<div (click)="runClickHandler($event)">
 			<ng-content></ng-content>
@@ -14,7 +14,7 @@ import { not } from '@writetome51/not';
 		</div>
 	`
 })
-export class ClickExecuteProcessDivComponent extends ClickExecuteFunctionComponent {
+export class ClickExecuteFunctionDivComponent extends ClickExecuteFunctionComponent {
 
 	get hideLoadingSpinner(): boolean {
 		return not(this.clicked && this.executionStatus.waiting);

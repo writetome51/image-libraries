@@ -1,6 +1,7 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CheckableMenuChoice } from '@action-menu/action-menu-choices/menu-choice/processable-menu-choice/checkable-menu-choice';
+import { CheckableMenuChoice }
+	from '@action-menu/action-menu-choices/menu-choice/processable-menu-choice/checkable-menu-choice.interface';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
@@ -26,8 +27,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __localZoomOnScroll: ZoomOnScrollSettingService,
-		private __sessionSelectMultiple: SelectMutipleImagesSettingService
+		private __zoomOnScrollSetting: ZoomOnScrollSettingService,
+		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService
 	) {
 	}
 
@@ -56,8 +57,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		let enableZoomOnScrolling: CheckableMenuChoice = {
 			label: choiceLabel.enableZoomOnScrolling,
 			data: {
-				checked: this.__localZoomOnScroll.get().enabled,
-				toggleSetting: this.__localZoomOnScroll
+				checked: this.__zoomOnScrollSetting.get().enabled,
+				toggleSetting: this.__zoomOnScrollSetting
 			}
 		};
 		menuChoices.global.push(enableZoomOnScrolling);
@@ -91,8 +92,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		let selectMultiple: CheckableMenuChoice = {
 			label: choiceLabel.selectMultiple,
 			data: {
-				checked: this.__sessionSelectMultiple.get().enabled,
-				toggleSetting: this.__sessionSelectMultiple
+				checked: this.__selectMultipleImagesSetting.get().enabled,
+				toggleSetting: this.__selectMultipleImagesSetting
 			}
 		};
 		prepend(selectMultiple, menuChoices.global);

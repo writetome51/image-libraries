@@ -5,7 +5,7 @@ import { HandleNotLoggedInErrorService }
 	from './error-handler/handle-not-logged-in-error.service';
 import { HandleNoRecordMatchErrorService }
 	from './error-handler/handle-no-record-match-error.service';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,9 +1,9 @@
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

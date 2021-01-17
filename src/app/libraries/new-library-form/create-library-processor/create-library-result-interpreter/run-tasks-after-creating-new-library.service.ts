@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

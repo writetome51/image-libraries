@@ -1,5 +1,5 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { GetUsersLibrariesService } from '../../../get-users-libraries.service';

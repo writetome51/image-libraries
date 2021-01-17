@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library';
+import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

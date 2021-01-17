@@ -1,7 +1,7 @@
-import { IDoThis } from '@interfaces/i-do-this';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ImageBatch } from '@interfaces/image-batch';
+import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 
 

@@ -1,4 +1,4 @@
-// import { IDoThis } from '@interfaces/i-do-this';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
 import * as data from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ResettableToDefault } from '@interfaces/resettable-to-default';
 

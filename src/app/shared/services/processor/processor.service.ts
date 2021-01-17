@@ -1,4 +1,4 @@
-import { Processor } from '@interfaces/processor';
+import { Processor } from '@interfaces/processor.interface';
 import { ProcessResultInterpreterService } from './process-result-interpreter.service';
 
 

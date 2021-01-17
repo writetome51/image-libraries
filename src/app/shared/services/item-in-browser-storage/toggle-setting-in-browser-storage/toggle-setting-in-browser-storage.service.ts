@@ -1,6 +1,5 @@
 import { hasValue } from '@writetome51/has-value-no-value';
-import { ItemInBrowserStorageService }
-	from '@services/item-in-browser-storage/item-in-browser-storage.service';
+import { ItemInBrowserStorageService } from '../item-in-browser-storage.service';
 
 
 export abstract class ToggleSettingInBrowserStorageService
