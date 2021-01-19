@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/app-image/db-image';
-import { Hoverable } from '@interfaces/hoverable';
+import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { Hoverable } from '@interfaces/hoverable.interface';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
-import { ZoomOnScrollSettingService }
-	from '@toggle-setting-in-browser-storage/zoom-on-scroll-setting.service';
 
 
 @Component({
@@ -22,15 +20,6 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 	@Input() selectEnabled = false;
 
 	@Input() deleteGlyphiconEnabled = false;
-
-
-	get zoomOnScroll(): { enabled: boolean } {
-		return this.localZoomOnScroll.get();
-	}
-
-
-	constructor(public localZoomOnScroll: ZoomOnScrollSettingService) {
-	}
 
 
 	isHovered(container: HoverableContainerComponent): boolean {

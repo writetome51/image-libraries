@@ -18,7 +18,7 @@ export class ExecuteFunctionButtonComponent extends ClickExecuteFunctionComponen
 	@ViewChild('button') button: ElementRef;
 
 
-	get width() {
+	get width(): string {
 		return this.__getFixedWidthThatDoesntChangeWhenClicked();
 	}
 

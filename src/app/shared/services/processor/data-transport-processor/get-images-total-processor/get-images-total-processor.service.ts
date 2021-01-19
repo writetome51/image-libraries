@@ -13,9 +13,9 @@ export abstract class GetImagesTotalProcessorService extends DataTransportProces
 
 	constructor(
 		protected _getImagesTotal: GetImagesTotalService,
-		__getImagesResultInterpreter: GetImagesTotalResultInterpreterService
+		__resultInterpreter: GetImagesTotalResultInterpreterService
 	) {
-		super(__getImagesResultInterpreter);
+		super(__resultInterpreter);
 	}
 
 }

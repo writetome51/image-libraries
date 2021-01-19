@@ -8,7 +8,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThumbnailImageContainerComponent } from './thumbnail-image-container.component';
 import { ThumbnailImageComponent } from './thumbnail-image.component';
-import { ZoomableHTMLImageModule } from './zoomable-html-image/zoomable-html-image.module';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { ZoomableHTMLImageModule } from './zoomable-html-image/zoomable-html-ima
 		ImageActionMenuModule,
 		HoverableContainerModule,
 		HTMLImageModule,
-		ZoomableHTMLImageModule,
 		RouterModule,
 	],
 	exports: [ThumbnailImageContainerComponent]

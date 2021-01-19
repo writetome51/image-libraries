@@ -5,35 +5,32 @@ import { HandleNotLoggedInErrorService }
 	from './error-handler/handle-not-logged-in-error.service';
 import { HandleNoRecordMatchErrorService }
 	from './error-handler/handle-no-record-match-error.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HandleProcessErrorService }
+	from '@processor/handle-process-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleDataTransportProcessErrorService implements IDoThis {
+export class HandleDataTransportProcessErrorService extends HandleProcessErrorService {
 
 	constructor(
 		private __handleNoRecordMatchError: HandleNoRecordMatchErrorService,
 		protected _handleNotLoggedInError: HandleNotLoggedInErrorService,
 	) {
+		super();
 	}
 
 
-	// Default error handler.  Intended to be extended by subclasses.
-
 	async go(error: { message: string }) {
-		// We expect `error` to have 'message':
 		if (error.message) {
 			if (error.message.includes(noRecordMatchedCriteria)) {
-				await this.__handleNoRecordMatchError.go();
+				return await this.__handleNoRecordMatchError.go();
 			}
-			else if (error.message.includes(notLoggedIn)) {
-				await this._handleNotLoggedInError.go();
+			if (error.message.includes(notLoggedIn)) {
+				return await this._handleNotLoggedInError.go();
 			}
-			else alert.error = error.message;
 		}
-		else {  // This is for displaying unexpected errors.
-			alert.error = error.toString();
-		}
+
+		super.go(error);
 	}
 
 }

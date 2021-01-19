@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HTMLImage } from '@interfaces/html-image';
+import { HTMLImage } from '@interfaces/html-image.interface';
 
 
 @Component({
