@@ -16,5 +16,5 @@ Realm Web SDK works well.  Switching to that.  Not using Rest API any more.
 1/13/2021
 
 By far the hardest thing about this whole process is deciding where to put a piece of code.  I
-suppose that's what system architecture is:  specifically defining what class/module/whatever should
+suppose that's what system architecture is: specifically defining what class/module/whatever should
  be in charge of what code and making it easy to find things.

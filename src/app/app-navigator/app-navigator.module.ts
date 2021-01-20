@@ -6,7 +6,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ExecuteFunctionButtonModule }
-	from 'execute-function-button/execute-function-button.module';
+	from '@execute-function-button/execute-function-button.module';
 
 
 @NgModule({

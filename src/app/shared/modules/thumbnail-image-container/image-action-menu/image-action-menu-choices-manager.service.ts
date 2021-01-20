@@ -33,9 +33,9 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 	private __manage(image: DBImage) {
 		menuChoices.images[image.name] = [
 			{
-				label: choiceLabel.addToRemoveFromLibrary,
+				label: choiceLabel.toggleAddImageToLibrary,
 				submenu: this.__getSubmenu(
-					choiceLabel.addToRemoveFromLibrary, libraryNames.data, image._id
+					choiceLabel.toggleAddImageToLibrary, libraryNames.data, image._id
 				)
 			}
 		];

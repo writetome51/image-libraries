@@ -12,10 +12,8 @@ export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecut
 	constructor(
 		toggleAddImageToLibrary: ToggleAddImageToLibraryService
 	) {
-		super(toggleAddImageToLibrary);
-
-		this._assignLabelsToExecutors([
-			choiceLabel.addToRemoveFromLibrary
+		super([
+			{executor: toggleAddImageToLibrary, label: choiceLabel.toggleAddImageToLibrary}
 		]);
 	}
 

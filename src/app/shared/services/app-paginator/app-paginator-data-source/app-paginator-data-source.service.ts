@@ -3,12 +3,12 @@ import { BackgroundExecutionStatusData as processingStatus }
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
-import { DBImage } from '@interfaces/app-image/db-image';
+import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
 
 
 export abstract class AppPaginatorDataSourceService {

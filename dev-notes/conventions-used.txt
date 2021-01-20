@@ -1,46 +1,45 @@
-Service classes
+Services
 
-Each instance of a Service class is referred to without 'service' at the end.
+Each instance of a Service is referred to without 'service' at the end.
 
 
 Data Structures
 
-Each class/object used as a data structure is named with 'Data' at the end, and their filenames end
-with '.data.ts'.
+Each class/object used as a data structure is named with 'Data' at the end, and their
+filenames end with '.data.ts'.
+Any reference to one of these data structures is named without 'data' at the end.
 
 
-Process and Processor
+Usage of the words 'Process' and 'Processor'
 
-The word 'process' refers to an entire cycle of these steps:
+'Process' refers to an entire cycle of these steps:
 1. Getting an initial result from some code execution.
 2. Checking that result for errors and, if any, executing tasks based on those errors.
 3. If no errors, executing tasks based on the successful result.
 
-The word 'processor' refers to a class that runs a process.
+'Processor' refers to a Service that runs a process.
 
-Any UI button Component that initiates a process is a subclass of
-ClickExecuteFunctionContainerComponent.
-
-'data transport process' refers to any process that involves data being sent to or from
-an external resource.  All processing of this kind is handled by subclasses of
+Example:  'data transport process' is any process that involves data being sent to or
+from an external resource.  All processing of this kind is handled by subclasses of
 DataTransportProcessorService.
 
 
 Load
 
-Any use of the word 'load' is referring to the total pieces of data (each 'piece' most likely being
-an object) the app is allowed to have stored in the browser at once.  For example,
-ImagesRestAPIService.getAllLoad() retrieves N of all a user's images, where N is the load size.
+Any use of the word 'load' is referring to the total pieces of data (each 'piece'
+most likely being an object) the app is allowed to have stored in the browser at once.
+For example, ImagesRestAPIService.getAllLoad() retrieves N of all a user's images,
+where N is the load size.
 
 
 Subscribables (Observables)
 
-The name of any variable or constant referencing a Subscribable (from Rxjs) ends with a '$'.
+The name of any variable or constant referencing a Subscribable (from Rxjs) ends with
+'$'.
 
 
 Path Aliases
 
 Import statements that use a path beginning with '@' are aliases.  They're defined in
 {project-root}/tsconfig.json.
-
 

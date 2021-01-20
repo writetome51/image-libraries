@@ -13,16 +13,9 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 		deleteSelectedImages: DeleteSelectedImagesService,
 		toggleEnableMenuChoice: ToggleEnableMenuChoiceService
 	) {
-		super(
-			deleteSelectedImages,
-			toggleEnableMenuChoice,
-			toggleEnableMenuChoice // Not a mistake. Used for multiple choices.
-		);
-
-		this._assignLabelsToExecutors([
-			choiceLabel.deleteSelected,
-			choiceLabel.enableZoomOnScrolling,
-			choiceLabel.selectMultiple
+		super([
+			{executor: deleteSelectedImages, label: choiceLabel.deleteSelectedImages},
+			{executor: toggleEnableMenuChoice, label: choiceLabel.selectMultipleImages}
 		]);
 	}
 

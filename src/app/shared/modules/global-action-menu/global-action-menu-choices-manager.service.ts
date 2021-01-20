@@ -7,8 +7,6 @@ import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ZoomOnScrollSettingService }
-	from '@toggle-setting-in-browser-storage/zoom-on-scroll-setting.service';
 import { MenuChoicesManager } from '@action-menu/menu-choices-manager.interface';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
@@ -27,7 +25,6 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __zoomOnScrollSetting: ZoomOnScrollSettingService,
 		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService
 	) {
 	}
@@ -49,19 +46,6 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 			this.__removeManipulateSelected();
 		}
 
-		this.__includeEnableZoomOnScroll();
-	}
-
-
-	private __includeEnableZoomOnScroll() {
-		let enableZoomOnScrolling: CheckableMenuChoice = {
-			label: choiceLabel.enableZoomOnScrolling,
-			data: {
-				checked: this.__zoomOnScrollSetting.get().enabled,
-				toggleSetting: this.__zoomOnScrollSetting
-			}
-		};
-		menuChoices.global.push(enableZoomOnScrolling);
 	}
 
 
@@ -85,12 +69,16 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	private __removeManipulateSelected() {
 		removeByTest(
-			(choice) => (choice.label === choiceLabel.addSelectedToLib), menuChoices.global
+			(choice) => (choice.label === choiceLabel.addSelectedToLib),
+			menuChoices.global
 		);
-		removeByTest((choice) => (choice.label === choiceLabel.deleteSelected), menuChoices.global);
+		removeByTest(
+			(choice) => (choice.label === choiceLabel.deleteSelectedImages),
+			menuChoices.global
+		);
 
 		let selectMultiple: CheckableMenuChoice = {
-			label: choiceLabel.selectMultiple,
+			label: choiceLabel.selectMultipleImages,
 			data: {
 				checked: this.__selectMultipleImagesSetting.get().enabled,
 				toggleSetting: this.__selectMultipleImagesSetting

@@ -4,19 +4,15 @@
 
 		<logout-button></logout-button>
 
-		<ng-container *ngFor="let choice of choices">
+		<div *ngFor="let choice of choices" class="nav-link-container">
 
-			<div class="nav-link-container">
-
-				<a *ngIf="!(isActive(choice.path))" [routerLink]="choice.path">
+			<a *ngIf="!(isActive(choice.path))" [routerLink]="choice.path">
 					{{choice.label}}
-				</a>
+			</a>
 
-				<span *ngIf="isActive(choice.path)">{{choice.label}}</span>
+			<span *ngIf="isActive(choice.path)">{{choice.label}}</span>
 
-			</div>
-
-		</ng-container>
+		</div>
 
 	</div>
 

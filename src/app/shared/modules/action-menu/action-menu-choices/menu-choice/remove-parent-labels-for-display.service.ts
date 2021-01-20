@@ -1,7 +1,8 @@
 import { getByIndex } from '@writetome51/array-get-by-index';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export class RemoveParentLabelsForDisplayService {
+export class RemoveParentLabelsForDisplayService { // implements IDoThis
 
 	static go(label: string) {
 		// If this menu choice is in a submenu, its label will have dot-notation.
