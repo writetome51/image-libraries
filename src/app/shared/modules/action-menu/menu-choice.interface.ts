@@ -1,4 +1,4 @@
-import { HasLabel } from '@interfaces/has-label.interface';
+import { HasLabel } from '@interfaces/has-label/has-label.interface';
 
 
 export interface MenuChoice extends HasLabel {

@@ -1,6 +1,6 @@
 // import { IDoThis } from '@interfaces/i-do-this.interface';
 import * as data from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ResettableToDefault } from '@interfaces/resettable-to-default';
+import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 
 
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis

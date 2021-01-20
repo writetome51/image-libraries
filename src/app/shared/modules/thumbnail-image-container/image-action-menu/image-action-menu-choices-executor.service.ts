@@ -10,9 +10,9 @@ import { ToggleAddImageToLibraryService }
 export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
 
 	constructor(
-		toggleAddImageToOrRemoveFromLibrary: ToggleAddImageToLibraryService
+		toggleAddImageToLibrary: ToggleAddImageToLibraryService
 	) {
-		super(toggleAddImageToOrRemoveFromLibrary);
+		super(toggleAddImageToLibrary);
 
 		this._assignLabelsToExecutors([
 			choiceLabel.addToRemoveFromLibrary

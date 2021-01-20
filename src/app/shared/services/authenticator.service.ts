@@ -1,9 +1,9 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
-import { DBUser } from '@interfaces/app-user/db-user';
+import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
-import { SecurityQuestion } from '@interfaces/security-question';
+import { SecurityQuestion } from '@interfaces/security-question.interface';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CheckableMenuChoice }
-	from '@action-menu/action-menu-choices/menu-choice/processable-menu-choice/checkable-menu-choice.interface';
+	from '@action-menu/action-menu-choices/menu-choice/executable-menu-choice/checkable-menu-choice.interface';
 import { CurrentRouteService } from '@services/current-route.service';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';

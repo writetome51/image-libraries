@@ -45,6 +45,9 @@
 			"@environments/*": [
 				"src/environments/*"
 			],
+			"@execute-function-button/*": [
+				"src/app/shared/modules/execute-function-button/*"
+			],
 			"@get-images-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/get-images-processor/*"
 			],
@@ -90,9 +93,7 @@
 			"@services/*": [
 				"src/app/shared/services/*"
 			],
-			"@start-function-execution-button/*": [
-				"src/app/shared/modules/start-function-execution-button/*"
-			],
+
 			"@start-data-process-list-item/*": [
 				"src/app/shared/modules/start-data-process-list-item/*"
 			],

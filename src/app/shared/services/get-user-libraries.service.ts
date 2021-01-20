@@ -7,7 +7,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class GetUsersLibrariesService implements IDoThis {
+export class GetUserLibrariesService implements IDoThis {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,

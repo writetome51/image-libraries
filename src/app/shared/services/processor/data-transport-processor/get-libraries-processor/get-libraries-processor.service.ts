@@ -2,14 +2,14 @@ import { DataTransportProcessorService } from '../data-transport-processor.servi
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { GetUsersLibrariesService } from '../../../get-users-libraries.service';
+import { GetUserLibrariesService } from '../../../get-user-libraries.service';
 
 
 @Injectable({providedIn: 'root'})
 export class GetLibrariesProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __getUsersLibraries: GetUsersLibrariesService,
+		private __getUsersLibraries: GetUserLibrariesService,
 		__getLibrariesResultInterpreter: GetLibrariesResultInterpreterService
 	) {
 		super(__getLibrariesResultInterpreter);
