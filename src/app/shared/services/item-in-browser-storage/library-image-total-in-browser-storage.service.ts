@@ -3,7 +3,7 @@ import { ItemInBrowserStorageService } from './item-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
-export class LibraryImagesTotalInBrowserStorageService extends ItemInBrowserStorageService<number> {
+export class LibraryImageTotalInBrowserStorageService extends ItemInBrowserStorageService<number> {
 
 	constructor() {
 		super(localStorage, 'lib-img-total');

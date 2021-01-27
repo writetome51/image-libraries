@@ -5,17 +5,17 @@ import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiti
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { UserImagesTotalInBrowserStorageService }
-	from '@item-in-browser-storage/user-images-total-in-browser-storage.service';
+import { UserImageTotalInBrowserStorageService }
+	from '@item-in-browser-storage/user-image-total-in-browser-storage.service';
 import { GetUserImageTotalProcessorService }
-	from '@get-images-total-processor/get-user-image-total-processor.service';
+	from 'get-image-total-processor/get-user-image-total-processor.service';
 
 
 @Injectable({providedIn: 'root'})
 export class AssureUserImagesTotalIsStoredLocallyService implements IDoThis {
 
 	constructor(
-		private __userImagesTotalInBrowser: UserImagesTotalInBrowserStorageService,
+		private __userImagesTotalInBrowser: UserImageTotalInBrowserStorageService,
 		private __getUserImagesTotalProcessor: GetUserImageTotalProcessorService
 	) {
 	}
