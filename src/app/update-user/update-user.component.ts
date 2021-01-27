@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { UpdateUserChoicesData as updateChoices} from './update-user-choices.data';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
+import { UpdateUserChoicesData as updateChoices} from './update-user-choices.data';
 
 
 @Component({

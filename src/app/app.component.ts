@@ -2,10 +2,10 @@ import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { AppNameData as appName } from '@read-only-data/app-name.data';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { SessionIDInBrowserStorageService }
-	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
+import { SessionIDInBrowserStorageService }
+	from '@item-in-browser-storage/session-id-in-browser-storage.service';
 import { Title } from '@angular/platform-browser';
 
 

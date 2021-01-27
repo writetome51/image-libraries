@@ -1,8 +1,8 @@
 import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
-import { Input } from '@angular/core';
 import { ClickExecuteFunctionContainerComponent }
 	from './click-execute-function-container.component';
+import { Input } from '@angular/core';
 
 
 export abstract class ClickExecuteFunctionComponent {
@@ -25,6 +25,5 @@ export abstract class ClickExecuteFunctionComponent {
 		await this.container.execute(this.funcArgs);
 		this.clicked = false;
 	}
-
 
 }

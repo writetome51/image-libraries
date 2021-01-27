@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DeleteUserProcessorService } from './delete-user-processor/delete-user-processor.service';
 import { environment } from '@environments/environment';
-import { HTMLImage } from '@interfaces/html-image';
+import { HTMLImage } from '@interfaces/html-image.interface';
 
 
 @Component({

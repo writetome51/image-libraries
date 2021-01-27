@@ -1,7 +1,7 @@
 import { EmailInputService } from '@services/validating-input/email-input.service';
-import { Injectable } from '@angular/core';
 import { EmailInBrowserStorageService }
 	from '@item-in-browser-storage/email-in-browser-storage.service';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UpdatePasswordInputsService } from './update-password-inputs/update-password-inputs.service';
+import { UpdatePasswordInputsService }
+	from './update-password-inputs/update-password-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 

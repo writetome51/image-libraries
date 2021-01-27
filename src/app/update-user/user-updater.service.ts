@@ -1,12 +1,12 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/app-user/db-user.interface';
-import { Injectable } from '@angular/core';
 import { EmailInBrowserStorageService }
 	from '@item-in-browser-storage/email-in-browser-storage.service';
+import { Injectable } from '@angular/core';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 
 
 @Injectable({providedIn: 'root'})

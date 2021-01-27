@@ -1,6 +1,6 @@
-import { DBUser } from '@interfaces/app-user/db-user';
+import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { FormDataTransportProcessorService }
-	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { UpdatePasswordInputsService }
 	from '../update-password-inputs/update-password-inputs.service';
