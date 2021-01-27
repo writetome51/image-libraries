@@ -1,0 +1,4 @@
+Most modules in this project are instantiated via lazy-loading, which in Angular happens via
+accessing the module's route in the url.
+
+
