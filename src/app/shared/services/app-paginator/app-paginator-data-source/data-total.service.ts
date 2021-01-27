@@ -1,12 +1,13 @@
-import { ImageTotalData as imageTotal }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 
 
 export abstract class DataTotalService {
 
-	constructor(private __set_dataTotal_Processor: DataTransportProcessorService) {
+	constructor(
+		private __set_dataTotal_Processor: DataTransportProcessorService,
+		private __storedTotal: { get: () => number }
+	) {
 	}
 
 
@@ -16,7 +17,7 @@ export abstract class DataTotalService {
 
 
 	get(): number {
-		return imageTotal.data;
+		return this.__storedTotal.get();
 	}
 
 }

@@ -1,6 +1,4 @@
 import { AddImagesComponent } from './add-images.component';
-import { AddImageUrlButtonComponent }
-	from './enter-image-url/add-image-url-button/add-image-url-button.component';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
@@ -17,14 +15,12 @@ import { ImageURLFormInputComponent }
 	from './enter-image-url/image-url-form-input.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartFunctionExecutionButtonModule }
-	from 'execute-function-button/execute-function-button.module';
+import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
 
 
 @NgModule({
 	declarations: [
 		AddImagesComponent,
-		AddImageUrlButtonComponent,
 		ChooseImagesFromDeviceComponent,
 		EnterImageURLComponent,
 		ImageURLFormInputComponent
@@ -35,7 +31,7 @@ import { StartFunctionExecutionButtonModule }
 		BigLoadingSpinnerModule,
 		AppValidatingFormInputsModule,
 		ClearFormOnInitAndAlertOnDestroyModule,
-		StartFunctionExecutionButtonModule,
+		SubmitFormButtonModule,
 		RouterModule.forChild([
 			{
 				path: '',

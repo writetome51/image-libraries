@@ -2,14 +2,14 @@ import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { DirectProcessor } from '@interfaces/direct-processor.interface';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
-import { NewImagesData as newImages } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { SaveNewImagesProcessorService }
-	from './save-new-images-processor.service';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
+import { NewImagesData as newImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { SaveNewImagesProcessorService } from './save-new-images-processor.service';
 
 
 @Injectable({providedIn: 'root'})

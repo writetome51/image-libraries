@@ -4,7 +4,7 @@ import { GetLibraryImagesProcessorService }
 	from './get-library-images-processor/get-library-images-processor.service';
 import { Injectable } from '@angular/core';
 import { LibraryImagesDataTotalService }
-	from './library-images-data-total/library-images-data-total.service';
+	from './library-images-data-total.service';
 
 
 @Injectable({providedIn: 'root'})

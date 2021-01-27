@@ -8,12 +8,12 @@ import { AppValidatingFormInputsModule }
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
+import { ExecuteFunctionButtonModule }
+	from '@execute-function-button/execute-function-button.module';
 import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.module';
 import { ImageListComponent } from './image-list/image-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StartFunctionExecutionButtonModule }
-	from 'execute-function-button/execute-function-button.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
 
@@ -29,7 +29,7 @@ import { ThumbnailImageContainerModule }
 		GlobalActionMenuModule,
 		AppPaginationControlsModule,
 		BigLoadingSpinnerModule,
-		StartFunctionExecutionButtonModule,
+		ExecuteFunctionButtonModule,
 		ThumbnailImageContainerModule,
 		AppValidatingFormInputsModule,
 		RouterModule.forChild([

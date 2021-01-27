@@ -33,9 +33,7 @@
 			"@clear-form-on-init-and-alert-on-destroy/*": [
 				"src/app/shared/modules/clear-form-on-init-and-alert-on-destroy/*"
 			],
-			"@processor/*": [
-				"src/app/shared/services/processor/*"
-			],
+
 			"@data-transport-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/*"
 			],
@@ -51,8 +49,8 @@
 			"@get-images-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/get-images-processor/*"
 			],
-			"@get-images-total-processor/*": [
-				"src/app/shared/services/processor/data-transport-processor/get-images-total-processor/*"
+			"@get-image-total-processor/*": [
+				"src/app/shared/services/processor/data-transport-processor/get-image-total-processor/*"
 			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"
@@ -80,6 +78,9 @@
 			],
 			"@menu-choice/*": [
 				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"
+			],
+			"@processor/*": [
+				"src/app/shared/services/processor/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"
