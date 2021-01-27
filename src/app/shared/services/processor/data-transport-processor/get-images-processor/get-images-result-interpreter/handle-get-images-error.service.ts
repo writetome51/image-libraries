@@ -1,4 +1,4 @@
-import { batchDoesntExist } from '@string-constants/rest-api-errors';
+import { batchDoesntExist } from '@string-constants/mongo-db-realm-function-errors';
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { ImageTotalData as imageTotal, LoadedImagesData as loadedImages }

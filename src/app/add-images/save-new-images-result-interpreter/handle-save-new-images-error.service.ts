@@ -1,7 +1,7 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
-import { duplicate, sizeRequirement } from '@string-constants/rest-api-errors';
+import { duplicate, sizeRequirement } from '@string-constants/mongo-db-realm-function-errors';
 import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 	from '@string-constants/form-submission-errors';
 import { Injectable } from '@angular/core';

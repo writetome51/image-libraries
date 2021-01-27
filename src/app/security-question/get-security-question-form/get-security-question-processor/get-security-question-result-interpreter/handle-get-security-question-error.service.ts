@@ -2,7 +2,7 @@ import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { userDoesntExist } from '@string-constants/rest-api-errors';
+import { userDoesntExist } from '@string-constants/mongo-db-realm-function-errors';
 import { noAccountWithThatEmail } from '@string-constants/form-submission-errors';
 
 

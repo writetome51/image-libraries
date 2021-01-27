@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
-import { noRecordMatchedCriteria, notLoggedIn } from '@string-constants/rest-api-errors';
+import { noRecordMatchedCriteria, notLoggedIn } from '@string-constants/mongo-db-realm-function-errors';
 import { HandleNotLoggedInErrorService }
 	from './error-handler/handle-not-logged-in-error.service';
 import { HandleNoRecordMatchErrorService }
