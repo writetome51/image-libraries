@@ -1,8 +1,10 @@
 import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.module';
-import { AppPaginationControlsModule } from '@app-pagination-controls/app-pagination-controls.module';
+import { AppPaginationControlsModule }
+	from '@app-pagination-controls/app-pagination-controls.module';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { DeleteLibraryButtonComponent } from './delete-library-button/delete-library-button.component';
+import { DeleteLibraryButtonComponent }
+	from './delete-library-button/delete-library-button.component';
 import { FormsModule } from '@angular/forms';
 import { ImageListComponent } from './library-viewer/image-list/image-list.component';
 import { ImageSizeSliderComponent }
@@ -17,11 +19,11 @@ import { ReArrangeableGridListModule }
 	from './library-viewer/image-list/re-arrangeable-grid-list/re-arrangeable-grid-list.module';
 import { SaveChangesButtonComponent }
 	from './library-viewer/save-changes-button.component';
-import { StartFunctionExecutionButtonModule }
-	from 'execute-function-button/execute-function-button.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
 import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button.component';
+import { ExecuteFunctionButtonModule }
+	from '@execute-function-button/execute-function-button.module';
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import { UndoChangesButtonComponent } from './library-viewer/undo-changes-button
 		FormsModule,
 		BigLoadingSpinnerModule,
 		GlobalActionMenuModule,
-		StartFunctionExecutionButtonModule,
+		ExecuteFunctionButtonModule,
 		AppPaginationControlsModule,
 		ReArrangeableGridListModule,
 		LibraryRoutingModule,
