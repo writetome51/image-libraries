@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{
-		path: moduleRoutes.NewUserModule, // can only access when logged out
+		path: moduleRoutes.NewUserModule,
 		// example of lazy-loading a module:
 		loadChildren: () => import('./new-user/new-user.module').then(mod => mod.NewUserModule)
 	},
@@ -40,7 +40,7 @@ const routes: Routes = [
 		loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
 	},
 
-	// This path must come last, meaning if none of the above paths apply, do this.
+	// Wildcard path must come last, meaning if none of the above paths apply, do this.
 	{path: '**', component: PageNotFoundComponent}
 ];
 

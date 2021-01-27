@@ -1,4 +1,4 @@
-Most modules in this project are instantiated via lazy-loading, which in Angular happens via
-accessing the module's route in the url.
+Most Modules in this project are instantiated via lazy-loading, which in Angular happens via
+accessing the Module's route in the url.
 
-
+Any class used in more than one place is found in  src/app/shared.

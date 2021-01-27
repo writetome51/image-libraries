@@ -26,10 +26,10 @@ DataTransportProcessorService.
 
 Load
 
-Any use of the word 'load' is referring to the total pieces of data (each 'piece'
+Any use of the word 'load' is referring to the total number pieces of data (each 'piece'
 most likely being an object) the app is allowed to have stored in the browser at once.
-For example, ImagesRestAPIService.getAllLoad() retrieves N of all a user's images,
-where N is the load size.
+For example, ImagesStorage.getAllLoad() retrieves N of all a user's images, where N is
+the load size.
 
 
 Subscribables (Observables)
@@ -40,6 +40,6 @@ The name of any variable or constant referencing a Subscribable (from Rxjs) ends
 
 Path Aliases
 
-Import statements that use a path beginning with '@' are aliases.  They're defined in
-{project-root}/tsconfig.json.
+Import statements that use a path beginning with '@' are aliases.  Aliases are defined
+in {project-root}/tsconfig.json.
 
