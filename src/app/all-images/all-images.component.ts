@@ -1,11 +1,10 @@
-import { BackgroundExecutionStatusData as processingStatus }
+import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
-import { AssureLibrariesAreLoadedService }
-	from '@services/assure-libraries-are-loaded.service';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
@@ -19,7 +18,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 
 	get gettingImages(): boolean {
-		return processingStatus.waiting;
+		return executionStatus.waiting;
 	}
 
 
@@ -30,7 +29,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 	) {
 		super();
 
-		processingStatus.waiting = true;
+		executionStatus.waiting = true;
 
 		this.__assureLibrariesAreLoaded.go().then(
 			() => {

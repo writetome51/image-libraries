@@ -1,5 +1,5 @@
-import { AppImage } from '@interfaces/app-image/app-image';
-import { DBImage } from '@interfaces/app-image/db-image';
+import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 // import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
