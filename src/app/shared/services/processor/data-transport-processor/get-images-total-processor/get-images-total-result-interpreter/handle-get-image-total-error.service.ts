@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImagesTotalErrorService extends HandleDataTransportProcessErrorService {
+export class HandleGetImageTotalErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {
 		imageTotal.setDefault();

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-export class RunTasksAfterGettingImagesTotalService implements IDoThis {
+export class RunTasksAfterGettingImageTotalService implements IDoThis {
 
 	async go(result: { dataTotal: number }) {
 		imageTotal.data = result.dataTotal;
