@@ -3,7 +3,7 @@ import { AllImagesPaginatorService }
 import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';
 import { Component } from '@angular/core';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
-import { GetPageDataService as getPageData } from '@services/get-page-data.service';
+import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { GetPageDataService as getPageData } from '@services/get-page-data.servi
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return getPageData.go(this.allImagesPaginator);
+		return getPageImages.go(this.allImagesPaginator);
 	}
 
 

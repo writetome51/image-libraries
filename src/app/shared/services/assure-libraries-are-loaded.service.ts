@@ -1,4 +1,4 @@
-import { BackgroundExecutionStatusData as processingStatus }
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
 	from '@services/execute-function-requiring-waiting.service';
@@ -27,7 +27,7 @@ export class AssureLibrariesAreLoadedService implements IDoThis {
 		if (this.__librariesAreStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
-			() => this.__getLibrariesProcessor.process(), processingStatus
+			() => this.__getLibrariesProcessor.process(), executionStatus
 		);
 	}
 

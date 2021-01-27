@@ -4,7 +4,7 @@ import { PageImagesData as pageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
-export class GetPageDataService { // implements IDoThis
+export class GetPageImagesService { // implements IDoThis
 
 	static go(
 		paginator: { getCurrentPage: () => DBImage[] }

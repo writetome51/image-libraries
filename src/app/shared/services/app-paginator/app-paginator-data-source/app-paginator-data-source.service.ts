@@ -1,4 +1,4 @@
-import { BackgroundExecutionStatusData as processingStatus }
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { DataTotalService } from './data-total.service';
 import { DataTransportProcessorService }
@@ -36,7 +36,7 @@ export abstract class AppPaginatorDataSourceService {
 
 		load.number = loadNum;
 		await executeFunctionRequiringWaiting.go(
-			() => this.__set_loadedImages_processor.process(), processingStatus
+			() => this.__set_loadedImages_processor.process(), executionStatus
 		);
 
 		if (hasValue(loadedImages.data)) return loadedImages.data;

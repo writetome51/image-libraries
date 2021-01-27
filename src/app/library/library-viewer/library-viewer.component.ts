@@ -1,4 +1,4 @@
-import { BackgroundExecutionStatusData as processingStatus }
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { ImageTotalData as imageTotal }
@@ -29,7 +29,7 @@ export class LibraryViewerComponent {
 
 
 	get verifyingLibrary(): boolean {
-		return processingStatus.waiting;
+		return executionStatus.waiting;
 	}
 
 

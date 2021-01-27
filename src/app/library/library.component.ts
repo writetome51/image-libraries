@@ -1,4 +1,4 @@
-import { BackgroundExecutionStatusData as processingStatus }
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
@@ -24,7 +24,7 @@ export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 
 
 	get gettingImages(): boolean {
-		return processingStatus.waiting;
+		return executionStatus.waiting;
 	}
 
 

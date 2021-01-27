@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { GetImagesTotalProcessorService }
-	from '@get-images-total-processor/get-images-total-processor.service';
+import { GetImageTotalProcessorService }
+	from '@get-images-total-processor/get-image-total-processor.service';
 
 
 @Injectable({providedIn: 'root'})
-export class GetLibraryImagesTotalProcessorService extends GetImagesTotalProcessorService {
+export class GetLibraryImagesTotalProcessorService extends GetImageTotalProcessorService {
 
 	protected async _getResult(): Promise<{ dataTotal: number } | { error: { message: string } }> {
-		return await this._getImagesTotal.inLibrary();
+		return await this._getImagesTotal.go();
 	}
 
 }

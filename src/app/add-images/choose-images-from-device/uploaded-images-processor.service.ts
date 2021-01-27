@@ -1,5 +1,5 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
-import { BackgroundExecutionStatusData as processingStatus }
+import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { DirectProcessor } from '@interfaces/direct-processor.interface';
 import { GetAppImageService as getAppImage } from '../get-app-image.service';
@@ -26,7 +26,7 @@ export class UploadedImagesProcessorService implements DirectProcessor {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
 		await executeFunctionRequiringWaiting.go(
-			() => this.__saveNewImagesProcessor.process(), processingStatus
+			() => this.__saveNewImagesProcessor.process(), executionStatus
 		);
 		newImages.data = [];
 	}

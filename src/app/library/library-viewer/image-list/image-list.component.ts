@@ -4,7 +4,7 @@ import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { LibraryPaginatorService }
 	from '../../services/library-paginator/library-paginator.service';
 import { ListItemRemoverService } from '@services/list-item-remover.service';
-import { GetPageDataService as getPageData } from '@services/get-page-data.service';
+import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { GetPageDataService as getPageData } from '@services/get-page-data.servi
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return getPageData.go(this.__libraryPaginator);
+		return getPageImages.go(this.__libraryPaginator);
 	}
 
 
