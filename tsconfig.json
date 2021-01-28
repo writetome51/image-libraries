@@ -30,10 +30,12 @@
 			"@big-loading-spinner/*": [
 				"src/app/shared/modules/big-loading-spinner/*"
 			],
-			"@clear-form-on-init-and-alert-on-destroy/*": [
-				"src/app/shared/modules/clear-form-on-init-and-alert-on-destroy/*"
+			"@clear-form-on-init/*": [
+				"src/app/shared/modules/clear-form-on-init/*"
 			],
-
+			"@clear-alert-on-destroy/*": [
+				"src/app/shared/modules/clear-alert-on-destroy/*"
+			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/*"
 			],

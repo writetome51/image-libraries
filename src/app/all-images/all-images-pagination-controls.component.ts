@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
 
 
 @Component({
-	selector: 'pagination-controls',
+	selector: 'all-images-pagination-controls',
 	template: `
 		<app-pagination-controls
 			[routeBeforePageNumber]="routeBeforePageNumber"
-			[paginator]="paginator" [jumpToPageInput]="jumpToPageInput"
+			[paginator]="paginator"
+			[jumpToPageInput]="jumpToPageInput"
 		>
 		</app-pagination-controls>
 	`

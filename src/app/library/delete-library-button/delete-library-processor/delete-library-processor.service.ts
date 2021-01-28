@@ -3,14 +3,14 @@ import { DataTransportProcessorService }
 import { DeleteLibraryResultInterpreterService }
 	from './delete-library-result-interpreter/delete-library-result-interpreter.service';
 import { Injectable } from '@angular/core';
-import { LibraryDeleterService } from './library-deleter.service';
+import { DeleteLibraryService } from './delete-library.service';
 
 
 @Injectable({providedIn: 'root'})
 export class DeleteLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryDeleter: LibraryDeleterService,
+		private __deleteLibrary: DeleteLibraryService,
 		__resultInterpreter: DeleteLibraryResultInterpreterService
 	) {
 		super(__resultInterpreter);
@@ -19,7 +19,7 @@ export class DeleteLibraryProcessorService extends DataTransportProcessorService
 
 	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }>
 	{
-		return await this.__libraryDeleter.delete();
+		return await this.__deleteLibrary.go();
 	}
 
 }

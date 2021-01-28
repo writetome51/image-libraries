@@ -7,7 +7,7 @@ import { BigLoadingSpinnerModule }
 import { ChooseImagesFromDeviceComponent }
 	from './choose-images-from-device/choose-images-from-device.component';
 import { ClearFormOnInitAndAlertOnDestroyModule }
-	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
+	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';

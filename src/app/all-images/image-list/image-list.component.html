@@ -2,7 +2,7 @@
 
 <ul *ngIf="images && images.length > 0">
 
-	<li class="grid-list-item" *ngFor="let img of images; let i = index;">
+	<li class="grid-list-item" *ngFor="let img of images">
 
 		<thumbnail-image-container [image]="img" [imageRouterLink]="[fullSizeImageRoute, img._id]">
 		</thumbnail-image-container>

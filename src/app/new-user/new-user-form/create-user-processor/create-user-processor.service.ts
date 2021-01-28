@@ -4,8 +4,8 @@ import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
-import { NewUserResultInterpreterService }
-	from './new-user-result-interpreter/new-user-result-interpreter.service';
+import { CreateUserResultInterpreterService }
+	from './create-user-result-interpreter/create-user-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,9 +14,9 @@ export class CreateUserProcessorService extends FormDataTransportProcessorServic
 	constructor(
 		private __createUser: CreateUserService,
 		__newUserInputs: NewUserInputsService,
-		__newUserResultInterpreter: NewUserResultInterpreterService
+		__resultInterpreter: CreateUserResultInterpreterService
 	) {
-		super(__newUserInputs, __newUserResultInterpreter);
+		super(__newUserInputs, __resultInterpreter);
 	}
 
 

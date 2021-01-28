@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { DeleteLibraryProcessorService }
 	from './delete-library-processor/delete-library-processor.service';
-import { ClickExecuteFunctionContainerComponent }
-	from '@abstract-components/click-execute-function-container.component';
+import { ClickExecuteProcessContainerComponent }
+	from '@abstract-components/click-execute-process-container.component';
 
 
 @Component({
 	selector: 'delete-library-button',
 	template: `
-		<execute-function-button
-			[container]="this">Delete Library</execute-function-button>
+		<execute-function-button [container]="this">Delete Library</execute-function-button>
 	`
 })
-export class DeleteLibraryButtonComponent extends ClickExecuteFunctionContainerComponent {
+export class DeleteLibraryButtonComponent extends ClickExecuteProcessContainerComponent {
 
 	constructor(_deleteLibraryProcessor: DeleteLibraryProcessorService) {
 		super(_deleteLibraryProcessor);

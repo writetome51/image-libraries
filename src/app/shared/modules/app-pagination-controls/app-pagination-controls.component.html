@@ -2,20 +2,20 @@
 
 	<div>
 
-		<a *ngIf="(getTotalPages() > 0) && (getCurrentPage() > 1)"
+		<a *ngIf="(getTotalPages() > 0) && (getCurrentPageNumber() > 1)"
 		   [routerLink]="['/' + routeBeforePageNumber, getPreviousPage()]"
 		>
 			previous
 		</a>
 
-		<a *ngIf="getCurrentPage() < getTotalPages()"
+		<a *ngIf="getCurrentPageNumber() < getTotalPages()"
 		   [routerLink]="['/' + routeBeforePageNumber, getNextPage()]"
 		>
 			next
 		</a>
 
 		<p *ngIf="getTotalPages() > 0">
-			Page {{getCurrentPage()}} of {{getTotalPages()}}
+			Page {{getCurrentPageNumber()}} of {{getTotalPages()}}
 		</p>
 
 		<jump-to-page *ngIf="jumpToPageInput && (getTotalPages() > 1)"

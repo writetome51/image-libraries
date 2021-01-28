@@ -14,7 +14,7 @@ export class RunTasksAfterCreatingNewUserService implements IDoThis {
 
 	async go(result: DBUser) {
 		await this.__runTasksAfterLogin.go(result);
-		if (result.sessionID) alert.success = 'User created';
+		alert.success = 'Account created.  You\'re signed in.';
 	}
 
 }

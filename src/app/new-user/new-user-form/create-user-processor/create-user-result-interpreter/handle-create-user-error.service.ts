@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleNewUserErrorService extends HandleDataTransportProcessErrorService {
+export class HandleCreateUserErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {
 		if (error.message.includes(duplicate)) alert.error = accountAlreadyExists;

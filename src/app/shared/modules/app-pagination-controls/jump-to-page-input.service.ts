@@ -37,13 +37,13 @@ export abstract class JumpToPageInputService extends ValidatingNumberInputServic
 	}
 
 
-	setMax(): void {
+	setMaxValue(): void {
 		try {
 			this.data.max = this._paginator.getTotalPages();
 		}
 		catch (e) {
 			throw new Error(
-				`The paginator's "totalPages" is still undefined.  You can't call setMax() yet`
+				`The paginator's "totalPages" is still undefined.  You can't call setMaxValue() yet`
 			);
 		}
 	}

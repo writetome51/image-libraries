@@ -1,7 +1,7 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { ClearFormOnInitAndAlertOnDestroyModule }
-	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
+	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';

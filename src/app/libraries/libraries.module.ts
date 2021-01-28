@@ -1,8 +1,8 @@
 import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from '@clear-form-on-init-and-alert-on-destroy/clear-form-on-init-and-alert-on-destroy.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
 import { LibrariesListComponent } from './libraries-list/libraries-list.component';
@@ -22,7 +22,8 @@ import { NewLibraryFormModule } from './new-library-form/new-library-form.module
 		CommonModule,
 		FormsModule,
 		BigLoadingSpinnerModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		NewLibraryFormModule,
 		RouterModule.forChild([
 			{

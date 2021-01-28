@@ -17,9 +17,14 @@ export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 
 	async go() {
-		await this.__getLibrariesProcessor.process();
+		await this.__updateLoadedLibraries();
 		await this.__redirectToLoggedInHome.go();
 		alert.success = 'Library deleted';
+	}
+
+
+	private async __updateLoadedLibraries() {
+		await this.__getLibrariesProcessor.process();
 	}
 
 }

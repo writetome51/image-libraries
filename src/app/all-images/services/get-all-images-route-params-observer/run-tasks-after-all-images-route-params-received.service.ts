@@ -26,7 +26,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 		if (this.__allImagesNotLoaded()) {
 			await this.__paginator.resetToFirstPage();
-			this.__jumpToPageInput.setMax();
+			this.__jumpToPageInput.setMaxValue();
 			this.__setImagesLoadedStatusTo_all();
 		}
 		await this.__handleRouteParams(params);
