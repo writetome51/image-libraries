@@ -1,5 +1,5 @@
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@app/shared/guards/de-authenticated.guard';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
@@ -14,7 +14,8 @@ import { SiteExplanationComponent } from './site-explanation.component';
 	declarations: [LoginComponent, SiteExplanationComponent],
 	imports: [
 		CommonModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		HoverableContainerModule,
 		LoginFormModule,
 		RouterModule.forChild([

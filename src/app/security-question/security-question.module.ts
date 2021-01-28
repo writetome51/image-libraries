@@ -1,7 +1,7 @@
 import { AnswerSecurityQuestionFormModule }
 	from './answer-security-question-form/answer-security-question-form.module';
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { GetSecurityQuestionFormModule }
@@ -17,7 +17,8 @@ import { SecurityQuestionComponent } from './security-question.component';
 		CommonModule,
 		GetSecurityQuestionFormModule,
 		AnswerSecurityQuestionFormModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		RouterModule.forChild([
 			{
 				path: '',

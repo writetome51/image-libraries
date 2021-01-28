@@ -6,8 +6,8 @@ import { BigLoadingSpinnerModule }
 	from '@big-loading-spinner/big-loading-spinner.module';
 import { ChooseImagesFromDeviceComponent }
 	from './choose-images-from-device/choose-images-from-device.component';
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { EnterImageURLComponent } from './enter-image-url/enter-image-url.component';
 import { FormsModule } from '@angular/forms';
@@ -30,7 +30,8 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		FormsModule,
 		BigLoadingSpinnerModule,
 		AppValidatingFormInputsModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		SubmitFormButtonModule,
 		RouterModule.forChild([
 			{

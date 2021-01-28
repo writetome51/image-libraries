@@ -1,7 +1,5 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@app/shared/guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +9,8 @@ import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		CommonModule,
 		FormsModule,
 		AppValidatingFormInputsModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		SubmitFormButtonModule,
 		RouterModule.forChild([
 			{

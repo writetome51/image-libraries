@@ -1,10 +1,11 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { ClearFormOnInitAndAlertOnDestroyModule }
-	from 'clear-form-on-init/clear-form-on-init-and-alert-on-destroy.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
-import { DeleteUserFormInputsComponent } from './delete-user-form/delete-user-form-inputs.component';
+import { DeleteUserFormInputsComponent }
+	from './delete-user-form/delete-user-form-inputs.component';
 import { FormsModule } from '@angular/forms';
 import { HTMLImageModule } from '@app/shared/modules/html-image/html-image.module';
 import { NgModule } from '@angular/core';
@@ -33,7 +34,8 @@ import { UpdateUserRoutingModule } from './update-user-routing.module';
 	imports: [
 		CommonModule,
 		FormsModule,
-		ClearFormOnInitAndAlertOnDestroyModule,
+		ClearFormOnInitModule,
+		ClearAlertOnDestroyModule,
 		AppValidatingFormInputsModule,
 		SubmitFormButtonModule,
 		HTMLImageModule,
