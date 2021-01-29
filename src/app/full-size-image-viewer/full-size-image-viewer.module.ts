@@ -14,6 +14,7 @@ import { LocationMapComponent } from './location-map/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { URLParamIDData as paramID} from '@read-only-data/url-param-id.data';
+import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { URLParamIDData as paramID} from '@read-only-data/url-param-id.data';
 		ImageTagsComponent,
 		ImageDateComponent,
 		ImageLocationComponent,
-		LocationMapComponent
+		LocationMapComponent,
+		BelongsToLibrariesComponent
 	],
 	imports: [
 		CommonModule,
