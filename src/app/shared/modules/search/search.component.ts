@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SearchProcessorService } from './search-processor/search-processor.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
@@ -11,17 +11,14 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 		<submit-form-button [processor]="processor"></submit-form-button>
 	`
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-	@Input() searcher: IDoThis;
-
-
-	constructor(public processor: SearchProcessorService) {
+	@Input() set searcher(value: IDoThis) {
+		this.processor.setSearcher(value);
 	}
 
 
-	ngOnInit() {
-		this.processor.setSearcher(this.searcher);
+	constructor(public processor: SearchProcessorService) {
 	}
 
 }
