@@ -94,7 +94,7 @@
 				"src/app/shared/data/runtime-state/*"
 			],
 			"@search/*": [
-				"src/app/search/*"
+				"src/app/shared/modules/search/*"
 			],
 			"@services/*": [
 				"src/app/shared/services/*"

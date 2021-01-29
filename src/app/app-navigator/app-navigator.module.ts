@@ -37,7 +37,7 @@ import { ExecuteFunctionButtonModule }
 
 			{
 				path: choice.SearchModule.path,
-				loadChildren: () => import('../search/search.module')
+				loadChildren: () => import('../shared/modules/search/search.module')
 					.then(mod => mod.SearchModule)
 			},
 		])
