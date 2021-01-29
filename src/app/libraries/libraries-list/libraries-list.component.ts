@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
-import { LibrarySearchService } from './library-search.service';
+import { SearchLibrariesService } from './search-libraries.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class LibrariesListComponent {
 
 	constructor(
 		private __assureLibrariesAreLoaded: AssureLibrariesAreLoadedService,
-		public search: LibrarySearchService
+		public searchLibraries: SearchLibrariesService
 	) {
 		this.__assureLibrariesAreLoaded.go();
 	}

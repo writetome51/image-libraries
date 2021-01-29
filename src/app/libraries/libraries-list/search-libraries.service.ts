@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { SearchData as search } from '@runtime-state-data/search.data';
+import { SearchService } from '@search/search-processor/search.service';
 import { SessionIDInBrowserStorageService }
 	from '@item-in-browser-storage/session-id-in-browser-storage.service';
-import { SearchData as search } from '@runtime-state-data/search.data';
 
 
 @Injectable({providedIn: 'root'})
-export class LibrarySearchService {
+export class SearchLibrariesService implements SearchService {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
