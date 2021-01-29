@@ -20,4 +20,9 @@ export class AppNavigatorChoiceData {
 		label: 'All Images'
 	};
 
+	static readonly SearchModule: Link = {
+		path: 'search',
+		label: 'Search'
+	};
+
 }

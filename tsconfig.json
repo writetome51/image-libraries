@@ -93,6 +93,9 @@
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
 			],
+			"@search/*": [
+				"src/app/search/*"
+			],
 			"@services/*": [
 				"src/app/shared/services/*"
 			],

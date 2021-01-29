@@ -8,15 +8,15 @@ import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
 	from '@item-in-browser-storage/user-image-total-in-browser-storage.service';
 import { GetUserImageTotalProcessorService }
-	from 'get-image-total-processor/get-user-image-total-processor.service';
+	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 
 
 @Injectable({providedIn: 'root'})
-export class AssureUserImagesTotalIsStoredLocallyService implements IDoThis {
+export class AssureUserImageTotalIsLoadedService implements IDoThis {
 
 	constructor(
-		private __userImagesTotalInBrowser: UserImageTotalInBrowserStorageService,
-		private __getUserImagesTotalProcessor: GetUserImageTotalProcessorService
+		private __userImageTotalInBrowser: UserImageTotalInBrowserStorageService,
+		private __getUserImageTotalProcessor: GetUserImageTotalProcessorService
 	) {
 	}
 
@@ -25,13 +25,13 @@ export class AssureUserImagesTotalIsStoredLocallyService implements IDoThis {
 		if (this.__userImagesTotalIsStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
-			() => this.__getUserImagesTotalProcessor.process(), executionStatus
+			() => this.__getUserImageTotalProcessor.process(), executionStatus
 		);
 	}
 
 
 	private __userImagesTotalIsStoredLocally(): boolean {
-		let total = this.__userImagesTotalInBrowser.get();
+		let total = this.__userImageTotalInBrowser.get();
 		return hasValue(total);
 	}
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { AssureUserImagesTotalIsStoredLocallyService }
-	from '@services/assure-user-images-total-is-stored-locally.service';
+import { AssureUserImageTotalIsLoadedService }
+	from '@services/assure-user-image-total-is-loaded.service';
 
 
 @Component({
@@ -18,10 +18,8 @@ export class LibrariesComponent {
 	}
 
 
-	constructor(
-		private __assureUserImagesTotalIsStoredLocally: AssureUserImagesTotalIsStoredLocallyService
-	) {
-		this.__assureUserImagesTotalIsStoredLocally.go();
+	constructor(private __assureUserImageTotalIsLoaded: AssureUserImageTotalIsLoadedService) {
+		this.__assureUserImageTotalIsLoaded.go();
 	}
 
 

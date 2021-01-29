@@ -34,6 +34,12 @@ import { ExecuteFunctionButtonModule }
 				loadChildren: () => import('../all-images/all-images.module')
 					.then(mod => mod.AllImagesModule)
 			},
+
+			{
+				path: choice.SearchModule.path,
+				loadChildren: () => import('../search/search.module')
+					.then(mod => mod.SearchModule)
+			},
 		])
 	],
 
