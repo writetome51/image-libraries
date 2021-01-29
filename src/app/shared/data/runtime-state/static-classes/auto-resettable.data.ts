@@ -228,3 +228,14 @@ export class ThumbnailDisplaySettingsData {
 	}
 
 }
+
+
+export class SearchResultsData {
+
+	static data: any[] = [];
+
+
+	static setDefault() {
+		setArray(this.data, []);
+	}
+}

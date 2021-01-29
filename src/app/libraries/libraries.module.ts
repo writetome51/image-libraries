@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { NewLibraryButtonComponent } from './new-library-button.component';
 import { RouterModule } from '@angular/router';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
+import { SearchModule } from '@search/search.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NewLibraryFormModule } from './new-library-form/new-library-form.module
 	imports: [
 		CommonModule,
 		FormsModule,
+		SearchModule,
 		BigLoadingSpinnerModule,
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
