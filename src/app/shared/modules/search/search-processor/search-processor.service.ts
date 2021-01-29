@@ -10,8 +10,10 @@ import { SearchService } from '@search/search-processor/search.service';
 @Injectable({providedIn: 'root'})
 export class SearchProcessorService extends FormDataTransportProcessorService {
 
+	private __search: SearchService;
+
+
 	constructor(
-		private __search: SearchService,
 		__validatingInput: SearchInputService,
 		__resultInterpreter: DataTransportProcessResultInterpreterService
 	) {
@@ -19,7 +21,12 @@ export class SearchProcessorService extends FormDataTransportProcessorService {
 	}
 
 
-	protected async _getResult(): Promise<object[] | { error: { message: string } }> {
+	setSearcher(value: SearchService) {
+		this.__search = value;
+	}
+
+
+	protected async _getResult(): Promise<any[] | { error: { message: string } }> {
 		return await this.__search.go();
 	}
 
