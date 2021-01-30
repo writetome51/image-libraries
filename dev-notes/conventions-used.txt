@@ -24,6 +24,15 @@ from an external resource.  All processing of this kind is handled by subclasses
 DataTransportProcessorService.
 
 
+Usage of the words 'Execute' and 'Executor'
+
+These words are used simply to differentiate an ExecutorService and its method execute()
+from a ProcessorService and its method process().
+'Execute' refers to running ANY code.  It could be a process, or something much simpler.
+'Executor' refers to a Service that runs an execution.  This would be any Service whose
+name ends with 'ExecutorService'.
+
+
 Load
 
 Any use of the word 'load' is referring to the total number pieces of data (each 'piece'
@@ -40,6 +49,7 @@ The name of any variable or constant referencing a Subscribable (from Rxjs) ends
 
 Path Aliases
 
-Import statements that use a path beginning with '@' are aliases.  Aliases are defined
-in {project-root}/tsconfig.json.
+Import statements that use a path beginning with '@' are aliases.  Many of those aliases
+refer to files in {project-root}/node_modules.
+Aliases to files not found there are defined in {project-root}/tsconfig.json.
 
