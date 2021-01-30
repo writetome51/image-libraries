@@ -3,7 +3,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SearchData as search } from '@runtime-state-data/search.data';
 import { SearchService } from '@search/search-processor/search.service';
 import { SessionIDInBrowserStorageService }
-	from '@item-in-browser-storage/session-id-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,9 +1,9 @@
 import { hasValue } from '@writetome51/has-value-no-value';
-import { ItemInBrowserStorageService } from '../item-in-browser-storage.service';
+import { EncryptedItemInBrowserStorageService } from '../encrypted-item-in-browser-storage.service';
 
 
 export abstract class ToggleSettingInBrowserStorageService
-	extends ItemInBrowserStorageService<{ enabled: boolean }> {
+	extends EncryptedItemInBrowserStorageService<{ enabled: boolean }> {
 
 	get(): { enabled: boolean } {
 		let value = super.get();

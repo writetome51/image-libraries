@@ -16,3 +16,6 @@ You can view all the images in your account.
 You can add an image to a library.
 You can remove an image from a library.
 
+You cannot yet do bulk adding to or removing from a library.
+You cannot yet reorder the images in a library.
+You cannot yet search images.

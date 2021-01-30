@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { LibrariesInBrowserStorageService }
-	from '@item-in-browser-storage/libraries-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -14,6 +14,6 @@ export abstract class ProcessorService implements Processor {
 	}
 
 
-	protected abstract _getResult(...args): any;
+	protected abstract _getResult(...args): any | { error: { message: string } };
 
 }

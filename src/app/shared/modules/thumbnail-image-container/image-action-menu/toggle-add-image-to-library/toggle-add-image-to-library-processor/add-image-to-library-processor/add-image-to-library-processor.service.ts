@@ -6,7 +6,7 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { LibraryUpdaterService } from '@services/library-updater.service';
 import { LibrariesInBrowserStorageService }
-	from '@item-in-browser-storage/libraries-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

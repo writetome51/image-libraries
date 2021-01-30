@@ -4,7 +4,7 @@ import { ProcessResultInterpreterService }
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
-	from '@item-in-browser-storage/libraries-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { HandleProcessErrorService } from '@processor/handle-process-error.service';

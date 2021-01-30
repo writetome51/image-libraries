@@ -75,8 +75,8 @@
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],
-			"@item-in-browser-storage/*": [
-				"src/app/shared/services/item-in-browser-storage/*"
+			"@encrypted-item-in-browser-storage/*": [
+				"src/app/shared/services/encrypted-item-in-browser-storage/*"
 			],
 			"@menu-choice/*": [
 				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"

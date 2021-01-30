@@ -4,7 +4,7 @@ import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
-	from '@item-in-browser-storage/session-id-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 

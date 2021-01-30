@@ -5,7 +5,7 @@ import { ImageBatch } from '@interfaces/image-batch.interface';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { LibrariesInBrowserStorageService }
-	from '@item-in-browser-storage/libraries-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { RunTasksAfterGettingImagesService }
 	from '@get-images-processor/get-images-result-interpreter/run-tasks-after-getting-images.service';
 

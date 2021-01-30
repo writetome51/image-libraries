@@ -1,18 +1,19 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
+import { DataContainer } from '@interfaces/data-container.interface';
 
 
-export abstract class DataTotalService {
+export abstract class DataTotalService implements DataContainer<number> {
 
 	constructor(
-		private __set_dataTotal_Processor: DataTransportProcessorService,
+		private __storeTotal_processor: DataTransportProcessorService,
 		private __storedTotal: { get: () => number }
 	) {
 	}
 
 
 	async set() {
-		await this.__set_dataTotal_Processor.process();
+		await this.__storeTotal_processor.process();
 	}
 
 

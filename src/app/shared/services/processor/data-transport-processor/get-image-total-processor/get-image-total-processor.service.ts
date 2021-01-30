@@ -7,6 +7,8 @@ import { GetUserImageTotalService }
 	from './get-user-image-total-processor/get-user-image-total.service';
 
 
+// Getting the total number of images is required by AppPaginatorDataSource
+
 export abstract class GetImageTotalProcessorService extends DataTransportProcessorService {
 
 	constructor(

@@ -6,8 +6,8 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
-	from '@item-in-browser-storage/user-image-total-in-browser-storage.service';
-import { GetUserImageTotalProcessorService }
+	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
+import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-line-length
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 
 
@@ -22,7 +22,7 @@ export class AssureUserImageTotalIsLoadedService implements IDoThis {
 
 
 	async go() {
-		if (this.__userImagesTotalIsStoredLocally()) return;
+		if (this.__userImageTotalIsStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
 			() => this.__getUserImageTotalProcessor.process(), executionStatus
@@ -30,7 +30,7 @@ export class AssureUserImageTotalIsLoadedService implements IDoThis {
 	}
 
 
-	private __userImagesTotalIsStoredLocally(): boolean {
+	private __userImageTotalIsStoredLocally(): boolean {
 		let total = this.__userImageTotalInBrowser.get();
 		return hasValue(total);
 	}

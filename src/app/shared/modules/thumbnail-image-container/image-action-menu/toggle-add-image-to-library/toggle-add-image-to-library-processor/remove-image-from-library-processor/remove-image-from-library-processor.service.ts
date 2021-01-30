@@ -3,7 +3,7 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { LibrariesInBrowserStorageService }
-	from '@item-in-browser-storage/libraries-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { RemoveImageFromLibraryResultInterpreterService }
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';

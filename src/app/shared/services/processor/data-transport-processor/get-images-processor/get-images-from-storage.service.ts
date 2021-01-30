@@ -5,7 +5,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { SessionIDInBrowserStorageService }
-	from '@item-in-browser-storage/session-id-in-browser-storage.service';
+	from 'encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

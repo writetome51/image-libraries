@@ -19,3 +19,7 @@ array.  If a Service is only used in one Module, you list it in that Module's
 {providedIn: 'root'} to its @Injectable decorator, like so:
 @Injectable({providedIn: 'root'})
 
+Guards are classes that, like Services, are injected, but are used in the app's route
+configurations to control a user's access to app features.  They can be used for security,
+or to improve the quality of the user experience, such as blocking a user from navigating
+away from a page where they haven't yet saved their work.

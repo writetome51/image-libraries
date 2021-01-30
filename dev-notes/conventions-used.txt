@@ -1,13 +1,18 @@
 Services
 
-Each instance of a Service is referred to without 'service' at the end.
+Each instance of a Service is referred to without 'Service' at the end.
 
 
 Data Structures
 
 Each class/object used as a data structure is named with 'Data' at the end, and their
 filenames end with '.data.ts'.
-Any reference to one of these data structures is named without 'data' at the end.
+Any reference to one of these data structures is named without 'Data' at the end.
+
+
+Interfaces
+
+The names of all files that define interfaces end with '.interface.ts'.
 
 
 Usage of the words 'Process' and 'Processor'
@@ -26,16 +31,13 @@ DataTransportProcessorService.
 
 Usage of the words 'Execute' and 'Executor'
 
-These words are used simply to differentiate an ExecutorService and its method execute()
-from a ProcessorService and its method process().
 'Execute' refers to running ANY code.  It could be a process, or something much simpler.
-'Executor' refers to a Service that runs an execution.  This would be any Service whose
-name ends with 'ExecutorService'.
+'Executor' refers to a Service that runs an execution.
 
 
 Load
 
-Any use of the word 'load' is referring to the total number pieces of data (each 'piece'
+Any use of the word 'load' is referring to the total pieces of data (each 'piece'
 most likely being an object) the app is allowed to have stored in the browser at once.
 For example, ImagesStorage.getAllLoad() retrieves N of all a user's images, where N is
 the load size.
