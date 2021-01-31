@@ -12,7 +12,6 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 export class ThumbnailImageComponent {
 
 	@Input() data: DBImage;
-	@Input() zoomEnabled = false;
 
 
 	get img(): HTMLImage {

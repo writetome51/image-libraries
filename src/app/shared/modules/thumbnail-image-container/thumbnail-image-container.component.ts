@@ -4,6 +4,8 @@ import { Hoverable } from '@interfaces/hoverable.interface';
 import { HoverableContainerComponent } from '@hoverable-container/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
+import { SelectMutipleImagesSettingService } // tslint:disable-next-line:max-line-length
+	from '@encrypted-item-in-browser-storage/toggle-setting-in-browser-storage/select-mutiple-images-setting.service';
 
 
 @Component({
@@ -15,31 +17,36 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 
 	@Input() image: DBImage;
 	@Input() imageRouterLink: (string[] | string) = [];
-
-	// if selectEnabled is true, hovering is disabled and the image has no routerLink.
-	@Input() selectEnabled = false;
-
 	@Input() deleteGlyphiconEnabled = false;
 
 
+	get multiSelectEnabled(): boolean {
+		let setting = this.__selectMultipleImagesSetting.get();
+		return setting.enabled;
+	}
+
+
+	constructor(
+		// if selectMultiple is enabled, hovering is disabled and the image has no routerLink.
+		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService) {
+	}
+
+
 	isHovered(container: HoverableContainerComponent): boolean {
-		return (this.selectEnabled ? false : container.isHovered());
+		let setting = this.__selectMultipleImagesSetting.get();
+		return (setting.enabled ? false : container.isHovered());
 	}
 
 
 	toggleSelect(): void {
-		if (not(this.selectEnabled)) return;
+		if (not(this.multiSelectEnabled)) return;
 		imageSelector.toggleSelect(this.image);
 	}
 
 
 	getRouterLink(): string[] | string {
-		if (this.selectEnabled) {
-			return [];
-		}
-		else {
-			return this.imageRouterLink;
-		}
+		if (this.multiSelectEnabled) return [];
+		else return this.imageRouterLink;
 	}
 
 }
