@@ -1,9 +1,9 @@
 import { DataTotalService } from '@app-paginator/app-paginator-data-source/data-total.service';
 import { Injectable } from '@angular/core';
-import { GetUserImageTotalProcessorService }
+import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-line-length
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 import { UserImageTotalInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

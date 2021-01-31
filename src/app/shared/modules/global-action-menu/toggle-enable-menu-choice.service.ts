@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { TogglableMenuChoiceStoredInBrowserData }
-	from '@interfaces/togglable-menu-choice-stored-in-browser-data.interface';
+import { TogglableMenuChoiceData }
+	from '@interfaces/togglable-menu-choice-data.interface';
 
 
 @Injectable()
 export class ToggleEnableMenuChoiceService implements IDoThis {
 
-	go(data: TogglableMenuChoiceStoredInBrowserData) {
+	go(data: TogglableMenuChoiceData) {
 
 		let setting: { enabled: boolean } = data.toggleSetting.get();
 

@@ -1,10 +1,10 @@
-import { DBUser } from '@interfaces/app-user/db-user';
+import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { EmailInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/email-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/email-in-browser-storage.service';
 import { SessionIDInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
