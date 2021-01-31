@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { SearchInputService } from '@search/search-input.service';
-import { DataTransportProcessResultInterpreterService }
-	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { SearchService } from '@search/search-processor/search.service';
+import { SearchResultInterpreterService } from './search-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -15,7 +14,7 @@ export class SearchProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
 		__validatingInput: SearchInputService,
-		__resultInterpreter: DataTransportProcessResultInterpreterService
+		__resultInterpreter: SearchResultInterpreterService
 	) {
 		super(__validatingInput, __resultInterpreter);
 	}

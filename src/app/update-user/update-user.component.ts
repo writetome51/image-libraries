@@ -42,7 +42,7 @@ export class UpdateUserComponent {
 
 
 	private __getPathFromCurrentRoute() {
-		let url = this.__currentRoute.data;
+		let url = this.__currentRoute.get();
 		return getByIndex(-1, url.split('/'));
 	}
 

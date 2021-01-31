@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Hoverable } from '@interfaces/hoverable';
+import { Hoverable } from '@interfaces/hoverable.interface';
 
 
 /*********

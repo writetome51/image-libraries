@@ -1,7 +1,8 @@
 Most Modules in this project are instantiated via lazy-loading, which in Angular happens via
 accessing the Module's route in the url.
 
-Any class used in more than one Module is found in  src/app/shared.
+Any entity (class, interface, constant, etc.) used in more than one Module is found in
+src/app/shared.
 
 
 Any form <input> that self-validates during its 'blur' event is an instance of

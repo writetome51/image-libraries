@@ -8,7 +8,7 @@ import { ImageActionMenuChoicesExecutorService }
 @Component({
 	selector: 'image-action-menu',
 	template: `
-		<action-menu [choicesManager]="choicesManager"
+		<action-menu [getChoices]="choicesManager"
 					 [choicesManagerArgs]="[image]"
 					 [specificChoicesExecutor]="specificChoicesExecutor"
 		>
