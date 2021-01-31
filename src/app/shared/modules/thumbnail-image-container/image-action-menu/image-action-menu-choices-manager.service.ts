@@ -2,7 +2,6 @@ import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames 
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CheckableMenuChoice } // tslint:disable-next-line:max-line-length
 	from '@action-menu/action-menu-choices/menu-choice/executable-menu-choice/checkable-menu-choice.interface';
-import { CurrentRouteService } from '@services/current-route.service';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
@@ -18,8 +17,7 @@ import { MenuChoicesManager } from '@action-menu/menu-choices-manager.interface'
 export class ImageActionMenuChoicesManagerService implements MenuChoicesManager {
 
 	constructor(
-		private __currentRoute: CurrentRouteService,
-		private __localLibraries: LibrariesInBrowserStorageService
+		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {
 	}
 
@@ -59,7 +57,7 @@ export class ImageActionMenuChoicesManagerService implements MenuChoicesManager 
 
 
 	private __libContainsImage(image_id, libName): boolean {
-		let lib: DBLibrary = this.__localLibraries.get()[libName];
+		let lib: DBLibrary = this.__librariesInBrowser.get()[libName];
 
 		return lib._image_ids.includes(image_id);
 	}

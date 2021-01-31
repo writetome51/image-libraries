@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { UpdateLibraryService } from '@services/update-library.service';
 
 

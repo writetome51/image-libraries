@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 
 

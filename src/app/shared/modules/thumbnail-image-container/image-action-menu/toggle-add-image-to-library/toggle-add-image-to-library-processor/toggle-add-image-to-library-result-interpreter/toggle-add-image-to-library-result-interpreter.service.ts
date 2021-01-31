@@ -4,7 +4,7 @@ import { ProcessResultInterpreterService }
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { HandleProcessErrorService } from '@processor/handle-process-error.service';
@@ -17,7 +17,7 @@ export class ToggleAddImageToLibraryResultInterpreterService
 	constructor(
 		__handleError: HandleProcessErrorService,
 		__runPostSuccessTasks: RunTasksAfterToggleAddImageToLibraryService,
-		private __localLibraries: LibrariesInBrowserStorageService
+		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {
 		super(__handleError, __runPostSuccessTasks);
 	}
@@ -26,7 +26,7 @@ export class ToggleAddImageToLibraryResultInterpreterService
 	async interpret(
 		result: { image_id: string, libName: string, checked: boolean }
 	): Promise<void> {
-		let lib: DBLibrary = this.__localLibraries.get()[result.libName];
+		let lib: DBLibrary = this.__librariesInBrowser.get()[result.libName];
 		if (not(this.__image_ids_properlyModified(lib._image_ids, result))) {
 			// @ts-ignore
 			result = {error: {message: 'Library change unsuccessful'}};

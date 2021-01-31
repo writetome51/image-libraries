@@ -8,7 +8,7 @@ import { LibrariesInBrowserStorageService }
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
 
-	constructor(private __localLibraries: LibrariesInBrowserStorageService) {
+	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
 	}
 
 
@@ -18,9 +18,9 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 
 
 	private __updateLocalLibraries(lib) {
-		let libraries = this.__localLibraries.get();
+		let libraries = this.__librariesInBrowser.get();
 		libraries[lib.name] = lib;
-		this.__localLibraries.set(libraries);
+		this.__librariesInBrowser.set(libraries);
 	}
 
 }

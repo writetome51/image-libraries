@@ -5,6 +5,7 @@ import { ProcessorService } from '@processor/processor.service';
 import { RemoveImageFromLibraryProcessorService }
 	from './remove-image-from-library-processor/remove-image-from-library-processor.service';
 import { ToggleAddImageToLibraryResultInterpreterService }
+	// tslint:disable-next-line:max-line-length
 	from './toggle-add-image-to-library-result-interpreter/toggle-add-image-to-library-result-interpreter.service';
 
 
