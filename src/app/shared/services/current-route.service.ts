@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscribable } from 'rxjs';
+import { DataContainer } from '@interfaces/data-container.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class CurrentRouteService {
-
-	get data(): string {
-		return this.__router.routerState.snapshot.url;
-	}
-
+export class CurrentRouteService implements DataContainer<string> {
 
 	get params(): object {
 		return this.__activatedRoute.snapshot.children[0].children[0].params;
@@ -28,10 +24,16 @@ export class CurrentRouteService {
 	}
 
 
-	// `route` should not include any slashes
+	get(): string {
+		return this.__router.routerState.snapshot.url;
+	}
 
-	isActive(route): boolean {
-		return (this.data.endsWith(route) || this.data.includes(`/${route}/`));
+
+	// `path` should not include any slashes
+
+	hasPath(path): boolean {
+		let url = this.get();
+		return (url.endsWith(path) || url.includes(`/${path}/`));
 	}
 
 }

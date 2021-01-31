@@ -4,7 +4,7 @@ import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
-import { LibraryUpdaterService } from '@services/library-updater.service';
+import { UpdateLibraryService } from '@services/update-library.service';
 import { LibrariesInBrowserStorageService }
 	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 
@@ -13,7 +13,7 @@ import { LibrariesInBrowserStorageService }
 export class AddImageToLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryUpdater: LibraryUpdaterService,
+		private __libraryUpdater: UpdateLibraryService,
 		private __localLibraries: LibrariesInBrowserStorageService,
 		__resultInterpreter: AddImageToLibraryResultInterpreterService
 	) {
@@ -29,7 +29,7 @@ export class AddImageToLibraryProcessorService extends DataTransportProcessorSer
 		let changes = {}, index = lib._image_ids.length;
 		changes[`_image_ids.${index}`] = image_id;
 
-		return await this.__libraryUpdater.update(libName, changes);
+		return await this.__libraryUpdater.go(libName, changes);
 	}
 
 }

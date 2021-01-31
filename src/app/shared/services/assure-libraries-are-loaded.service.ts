@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
-	from 'encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

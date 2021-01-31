@@ -17,8 +17,8 @@ export class AppNavigatorComponent {
 	}
 
 
-	isActive(route): boolean {
-		return this.__currentRoute.isActive(route);
+	isCurrentPath(path): boolean {
+		return this.__currentRoute.hasPath(path);
 	}
 
 }

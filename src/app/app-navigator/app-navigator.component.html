@@ -6,11 +6,11 @@
 
 		<div *ngFor="let choice of choices" class="nav-link-container">
 
-			<a *ngIf="!(isActive(choice.path))" [routerLink]="choice.path">
+			<a *ngIf="!(isCurrentPath(choice.path))" [routerLink]="choice.path">
 					{{choice.label}}
 			</a>
 
-			<span *ngIf="isActive(choice.path)">{{choice.label}}</span>
+			<span *ngIf="isCurrentPath(choice.path)">{{choice.label}}</span>
 
 		</div>
 

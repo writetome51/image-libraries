@@ -7,14 +7,14 @@ import { LibrariesInBrowserStorageService }
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { RemoveImageFromLibraryResultInterpreterService }
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
-import { LibraryUpdaterService } from '@services/library-updater.service';
+import { UpdateLibraryService } from '@services/update-library.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RemoveImageFromLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryUpdater: LibraryUpdaterService,
+		private __libraryUpdater: UpdateLibraryService,
 		private __localLibraries: LibrariesInBrowserStorageService,
 		__resultInterpreter: RemoveImageFromLibraryResultInterpreterService
 	) {
@@ -29,7 +29,7 @@ export class RemoveImageFromLibraryProcessorService extends DataTransportProcess
 		let lib = this.__localLibraries.get()[libName];
 		removeFirstOf(image_id, lib._image_ids);
 
-		return await this.__libraryUpdater.update(libName, {_image_ids: lib._image_ids});
+		return await this.__libraryUpdater.go(libName, {_image_ids: lib._image_ids});
 	}
 
 }
