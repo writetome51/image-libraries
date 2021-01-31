@@ -8,9 +8,8 @@ export abstract class ClickExecuteFunctionContainerComponent {
 
 	async execute(funcArgs = []) {
 		await executeFunctionRequiringWaiting.go(
-			this._func,
-			executionStatus,
-			funcArgs
+			() => this._func(...funcArgs),
+			executionStatus
 		);
 	}
 
