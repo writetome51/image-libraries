@@ -9,10 +9,12 @@ import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor.service';
 import { GlobalActionMenuComponent } from './global-action-menu.component';
 import { NgModule } from '@angular/core';
-import { RunTasksAfterDeletingImagesService }
+import { RunTasksAfterDeletingImagesService } // tslint:disable-next-line:max-line-length
 	from './delete-selected-images/delete-selected-images-processor/run-tasks-after-deleting-images.service';
 import { ToggleEnableMenuChoiceService }
 	from '@global-action-menu/toggle-enable-menu-choice.service';
+import { DeleteSelectedImagesService }
+	from '@global-action-menu/delete-selected-images/delete-selected-images.service';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { ToggleEnableMenuChoiceService }
 	providers: [
 		GetGlobalActionMenuChoicesService,
 		GlobalActionMenuChoicesExecutorService,
+		DeleteSelectedImagesService,
 		DeleteSelectedImagesResultInterpreterService,
 		DeleteSelectedImagesProcessorService,
 		RunTasksAfterDeletingImagesService,
