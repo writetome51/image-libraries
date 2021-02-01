@@ -1,4 +1,5 @@
 execute-function-button  tiny-loading-spinner  img {
-	display: block;
 	margin: 0;
+	position: relative;
+	bottom: 2px;
 }
