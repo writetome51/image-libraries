@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CheckableMenuChoice }
-	from '@action-menu/action-menu-choices/menu-choice/executable-menu-choice/checkable-menu-choice.interface';
+	from '@menu-choice/executable-menu-choice/checkable-menu-choice.interface';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';

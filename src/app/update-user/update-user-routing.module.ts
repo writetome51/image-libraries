@@ -18,6 +18,8 @@ const routes: Routes = [
 		path: '',
 		component: UpdateUserComponent,
 		canActivate: [AuthenticatedGuard],
+
+		// change this section to loadChildren
 		children: choices.data.map((choice: LinkedTemplateWithHeading) => {
 			return {
 				path: choice.link.path,

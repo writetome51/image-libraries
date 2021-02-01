@@ -12,9 +12,6 @@
 			"@app/*": [
 				"src/app/*"
 			],
-			"@app-action-menu/*": [
-				"src/app/shared/modules/app-action-menu/*"
-			],
 			"@app-navigator/*": [
 				"src/app/app-navigator/*"
 			],
@@ -30,17 +27,20 @@
 			"@big-loading-spinner/*": [
 				"src/app/shared/modules/big-loading-spinner/*"
 			],
-			"@clear-form-on-init/*": [
-				"src/app/shared/modules/clear-form-on-init/*"
-			],
 			"@clear-alert-on-destroy/*": [
 				"src/app/shared/modules/clear-alert-on-destroy/*"
+			],
+			"@clear-form-on-init/*": [
+				"src/app/shared/modules/clear-form-on-init/*"
 			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/*"
 			],
 			"@data-transport-process-result-interpreter/*": [
 				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/*"
+			],
+			"@encrypted-item-in-browser-storage/*": [
+				"src/app/shared/services/encrypted-item-in-browser-storage/*"
 			],
 			"@environments/*": [
 				"src/environments/*"
@@ -69,17 +69,11 @@
 			"@html-image/*": [
 				"src/app/shared/modules/html-image/*"
 			],
-			"@image-action-menu/*": [
-				"src/app/shared/modules/image-action-menu/*"
-			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],
-			"@encrypted-item-in-browser-storage/*": [
-				"src/app/shared/services/encrypted-item-in-browser-storage/*"
-			],
 			"@menu-choice/*": [
-				"src/app/shared/modules/app-action-menu/dropdown-menu/menu-choice/*"
+				"src/app/shared/modules/action-menu/action-menu-choices/menu-choice/*"
 			],
 			"@processor/*": [
 				"src/app/shared/services/processor/*"

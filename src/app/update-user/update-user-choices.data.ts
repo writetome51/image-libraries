@@ -1,20 +1,19 @@
-import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
+import { DeleteUserFormModule } from './delete-user-form/delete-user-form.module';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
-import { UpdateEmailFormComponent } from './update-email-form/update-email-form.component';
-import { UpdatePasswordFormComponent }
-	from './update-password-form/update-password-form.component';
+import { UpdateEmailFormModule } from './update-email-form/update-email-form.module';
+import { UpdatePasswordFormModule } from './update-password-form/update-password-form.module';
 
 
 export class UpdateUserChoicesData {
 
 	static readonly data: LinkedTemplateWithHeading[] = [
 		{
-			link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},
+			link: {label: 'Email', path: 'email', module: UpdateEmailFormModule},
 			heading: 'Email'
 		},
 
 		{
-			link: {label: 'Password', path: 'password', component: UpdatePasswordFormComponent},
+			link: {label: 'Password', path: 'password', module: UpdatePasswordFormModule},
 			heading: 'Password'
 		},
 
@@ -22,7 +21,7 @@ export class UpdateUserChoicesData {
 			link: {
 				label: 'Delete Account',
 				path: 'delete-account',
-				component: DeleteUserFormComponent
+				module: DeleteUserFormModule
 			},
 			heading: 'Self Destruct?'
 		}
