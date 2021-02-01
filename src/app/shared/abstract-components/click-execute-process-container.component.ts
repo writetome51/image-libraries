@@ -11,8 +11,8 @@ export abstract class ClickExecuteProcessContainerComponent
 	}
 
 
-	protected _func(...args) {
-		this._processor.process(...args);
+	protected async _func(...args) {
+		await this._processor.process(...args);
 	}
 
 }
