@@ -1,25 +1,25 @@
-action-menu-button  button.action-menu-button {
+action-menu  action-menu-button  button.action-menu-button {
 	padding: 0 10px;
 }
 
 
-menu-choice {
+action-menu  menu-choice {
 	width: 100%;
 	height: fit-content;
 }
 
 
-menu-choice  hoverable-container  div.label-container {
+action-menu  menu-choice  hoverable-container  div.label-container {
 	margin: 5px 0 5px 5px;
 }
 
 
-menu-choice  hoverable-container  .hovered {
+action-menu  menu-choice  hoverable-container  .hovered {
 	background-color: #ececec;
 }
 
 
-menu-choice  .dropdown-submenu  .dropdown-menu {
+action-menu  menu-choice  .dropdown-submenu  .dropdown-menu {
 	display: block;
 	top: 0;
 	left: 100%;

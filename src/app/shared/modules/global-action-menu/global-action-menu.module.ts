@@ -4,7 +4,7 @@ import { DeleteSelectedImagesResultInterpreterService }
 	from './delete-selected-images/delete-selected-images-processor/delete-selected-images-result-interpreter.service';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images/delete-selected-images-processor/delete-selected-images-processor.service';
-import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
+import { GetGlobalActionMenuChoicesService } from './get-global-action-menu-choices.service';
 import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor.service';
 import { GlobalActionMenuComponent } from './global-action-menu.component';
@@ -19,7 +19,7 @@ import { ToggleEnableMenuChoiceService }
 	declarations: [GlobalActionMenuComponent],
 	imports: [CommonModule, ActionMenuModule],
 	providers: [
-		GlobalActionMenuChoicesManagerService,
+		GetGlobalActionMenuChoicesService,
 		GlobalActionMenuChoicesExecutorService,
 		DeleteSelectedImagesResultInterpreterService,
 		DeleteSelectedImagesProcessorService,

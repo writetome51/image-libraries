@@ -1,6 +1,6 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { Component, Input } from '@angular/core';
-import { ImageActionMenuChoicesManagerService } from './image-action-menu-choices-manager.service';
+import { GetImageActionMenuChoicesService } from './get-image-action-menu-choices.service';
 import { ImageActionMenuChoicesExecutorService }
 	from './image-action-menu-choices-executor.service';
 
@@ -8,8 +8,8 @@ import { ImageActionMenuChoicesExecutorService }
 @Component({
 	selector: 'image-action-menu',
 	template: `
-		<action-menu [getChoices]="choicesManager"
-					 [choicesManagerArgs]="[image]"
+		<action-menu [getChoices]="getChoices"
+					 [getChoicesArgs]="[image]"
 					 [specificChoicesExecutor]="specificChoicesExecutor"
 		>
 		</action-menu>
@@ -21,7 +21,7 @@ export class ImageActionMenuComponent {
 
 
 	constructor(
-		public choicesManager: ImageActionMenuChoicesManagerService,
+		public getChoices: GetImageActionMenuChoicesService,
 		public specificChoicesExecutor: ImageActionMenuChoicesExecutorService
 	) {
 	}

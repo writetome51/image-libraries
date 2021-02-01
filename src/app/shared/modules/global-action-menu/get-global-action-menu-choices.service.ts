@@ -7,7 +7,7 @@ import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { GetChoicesService } from '@action-menu/get-choices-service.interface';
+import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { not } from '@writetome51/not';
@@ -21,7 +21,7 @@ import { SelectMutipleImagesSettingService }
 
 
 @Injectable()
-export class GlobalActionMenuChoicesManagerService implements GetChoicesService {
+export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,

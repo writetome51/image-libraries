@@ -10,11 +10,11 @@ import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { GetChoicesService } from '@action-menu/get-choices-service.interface';
+import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
 
 
 @Injectable()
-export class ImageActionMenuChoicesManagerService implements GetChoicesService {
+export class GetImageActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService

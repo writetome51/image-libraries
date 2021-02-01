@@ -1,9 +1,9 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
-import { DataContainer } from '@interfaces/data-container.interface';
+import { ReadWriteDataContainer } from '@interfaces/data-container/read-write-data-container.interface';
 
 
-export abstract class DataTotalService implements DataContainer<number> {
+export abstract class DataTotalService implements ReadWriteDataContainer<number> {
 
 	constructor(
 		private __storeTotal_processor: DataTransportProcessorService,
