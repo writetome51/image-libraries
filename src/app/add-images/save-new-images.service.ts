@@ -1,12 +1,13 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 
 
 @Injectable({providedIn: 'root'})
-export class NewImagesSaverService {
+export class SaveNewImagesService implements IDoThis {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
@@ -15,7 +16,7 @@ export class NewImagesSaverService {
 	}
 
 
-	async save(
+	async go(
 		newImages: AppImage[]
 	): Promise<{ success: true } | { error: { message: string } }> {
 		return this.__realmFn.call('pub_addImages',

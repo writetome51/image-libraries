@@ -7,7 +7,7 @@ import { ImageURLInputService } from './image-url-input.service';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { NewImagesSaverService } from '../new-images-saver.service';
+import { SaveNewImagesService } from '../save-new-images.service';
 import { SaveNewImagesResultInterpreterService }
 	from '../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
 
@@ -17,7 +17,7 @@ export class AddImageURLProcessorService extends FormDataTransportProcessorServi
 
 
 	constructor(
-		private __newImagesSaver: NewImagesSaverService,
+		private __saveNewImages: SaveNewImagesService,
 		__imageURLInput: ImageURLInputService,
 		__saveNewImagesResultInterpreter: SaveNewImagesResultInterpreterService
 	) {
@@ -30,7 +30,7 @@ export class AddImageURLProcessorService extends FormDataTransportProcessorServi
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
 			);
-			return await this.__newImagesSaver.save(newImages.data);
+			return await this.__saveNewImages.go(newImages.data);
 		}
 		else {
 			return { error: { message: 'The URL you entered is either not connected to a' +
