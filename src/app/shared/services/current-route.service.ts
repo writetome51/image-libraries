@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscribable } from 'rxjs';
-import { GettableDataContainer }
-	from '@interfaces/data-container/gettable-data-container.interface';
+import { Gettable }
+	from '@interfaces/gettable.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class CurrentRouteService implements GettableDataContainer<string> {
+export class CurrentRouteService implements Gettable<string> {
 
 	get params(): object {
 		return this.__activatedRoute.snapshot.children[0].children[0].params;

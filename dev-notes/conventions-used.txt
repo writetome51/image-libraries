@@ -52,6 +52,6 @@ The name of any variable or constant referencing a Subscribable (from Rxjs) ends
 Path Aliases
 
 Import statements that use a path beginning with '@' are aliases.  Many of those aliases
-refer to files in {project-root}/node_modules.
-Aliases to files not found there are defined in {project-root}/tsconfig.json.
+refer to files in  /node_modules.
+Aliases to files not found there are defined in  /tsconfig.json.
 

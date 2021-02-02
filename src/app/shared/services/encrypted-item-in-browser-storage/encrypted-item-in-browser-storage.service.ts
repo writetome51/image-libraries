@@ -2,11 +2,11 @@ import { ItemInBrowserStorage } from '@writetome51/item-in-browser-storage';
 import { ecky } from '@app/.special/.ecky';
 import { SimpleCrypto } from 'simple-crypto-js';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { ReadWriteDataContainer } from '@interfaces/data-container/read-write-data-container.interface';
+import { DataContainer } from '@interfaces/data-container.interface';
 
 
 export abstract class EncryptedItemInBrowserStorageService<T> extends ItemInBrowserStorage
-	implements ReadWriteDataContainer<T> {
+	implements DataContainer<T> {
 
 	private __cryptographer = new SimpleCrypto(ecky);
 
