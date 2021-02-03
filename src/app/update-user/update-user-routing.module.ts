@@ -1,17 +1,17 @@
 import { AuthenticatedGuard } from '@app/shared/guards/authenticated.guard';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { UpdateUserChoicesData as choices } from './update-user-choices.data';
+import { RouterModule, Routes } from '@angular/router';
+import { UpdateUserChoicesData as updateUserChoices } from './update-user-choices.data';
 import { UpdateUserComponent } from './update-user.component';
 
 
 const routes: Routes = [
 
-	{	// This makes the first choice the default route when this module loads.
+	{	// This makes UpdateEmailFormModule the default route when this module loads.
 		path: '',
 		pathMatch: 'full',
-		redirectTo: choices.data[0].link.path
+		redirectTo: updateUserChoices.UpdateEmailFormModule.link.path
 	},
 
 	{
@@ -19,14 +19,15 @@ const routes: Routes = [
 		component: UpdateUserComponent,
 		canActivate: [AuthenticatedGuard],
 
-		// change this section to loadChildren
-		children: choices.data.map((choice: LinkedTemplateWithHeading) => {
-			return {
-				path: choice.link.path,
-				component: choice.link.component
-			};
-		})
-	},
+		children: Object.values(updateUserChoices).map(
+			(choice: LinkedTemplateWithHeading) => {
+				return {
+					path: choice.link.path,
+					component: choice.link.component
+				};
+			}
+		)
+	}
 
 ];
 

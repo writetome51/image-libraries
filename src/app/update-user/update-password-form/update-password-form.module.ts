@@ -7,6 +7,7 @@ import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.mo
 import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,16 @@ import { AppValidatingFormInputsModule }
 		SubmitFormButtonModule,
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
-		AppValidatingFormInputsModule
+		AppValidatingFormInputsModule,
+		/*
+		RouterModule.forChild([
+			{
+				path: '',
+				pathMatch: 'full',
+				component: UpdatePasswordFormComponent
+			}
+		])
+		 */
 	],
 	exports: [UpdatePasswordFormComponent]
 })

@@ -3,7 +3,7 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
-import { UpdateUserChoicesData as updateChoices} from './update-user-choices.data';
+import { UpdateUserChoicesData as updateUserChoices } from './update-user-choices.data';
 
 
 @Component({
@@ -13,35 +13,25 @@ import { UpdateUserChoicesData as updateChoices} from './update-user-choices.dat
 export class UpdateUserComponent {
 
 	heading = 'Update';
-	choices = updateChoices.data;
+	choices: LinkedTemplateWithHeading[] = Object.values(updateUserChoices);
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
 	}
 
 
-	getChoiceLinkRoute(index) {
-		return this.choices[index].link.path;
-	}
-
-
-	getChoiceLinkLabel(index) {
-		return this.choices[index].link.label;
-	}
-
-
 	getChoiceHeading(): string {
-		let path = this.__getPathFromCurrentRoute();
+		let currentPath = this.__getCurrentChoicePath();
 
 		let [choice] = getByTest(
-			(choice: LinkedTemplateWithHeading) => choice.link.path === path,
+			(choice: LinkedTemplateWithHeading) => choice.link.path === currentPath,
 			this.choices
 		);
 		return choice.heading;
 	}
 
 
-	private __getPathFromCurrentRoute() {
+	private __getCurrentChoicePath() {
 		let url = this.__currentRoute.get();
 		return getByIndex(-1, url.split('/'));
 	}

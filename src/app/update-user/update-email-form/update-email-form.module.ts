@@ -5,7 +5,8 @@ import { UpdateEmailFormInputsComponent } from './update-email-form-inputs.compo
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
 import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
 import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
-import { AppValidatingFormInputsModule } from '@app-validating-form-inputs/app-validating-form-inputs.module';
+import { AppValidatingFormInputsModule }
+	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 
 
 @NgModule({

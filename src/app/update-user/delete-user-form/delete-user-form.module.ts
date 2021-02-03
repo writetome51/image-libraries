@@ -21,7 +21,7 @@ import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-o
 		HTMLImageModule,
 		SubmitFormButtonModule,
 		ClearFormOnInitModule,
-		ClearAlertOnDestroyModule,
+		ClearAlertOnDestroyModule
 	],
 	exports: [DeleteUserFormComponent]
 })
