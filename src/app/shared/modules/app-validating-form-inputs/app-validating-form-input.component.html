@@ -27,6 +27,8 @@
 		   [minLength]="data.minLength"
 		   [max]="data.max"
 		   [min]="data.min"
+
+		   autocomplete="on"
 	/>
 
 	<p *ngIf="data.triggeredError.length" class="validating-input-error">{{data.triggeredError}}</p>
