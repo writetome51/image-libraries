@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.component';
+import { HasLabel } from '@interfaces/has-label/has-label.interface';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.c
 		</ng-container>
 	`
 })
-export class SubmenuComponent extends AbstractMenuChoiceComponent {
+export class SubmenuComponent extends AbstractMenuChoiceComponent implements HasLabel {
 
 	@Input() clicked = false;
 
