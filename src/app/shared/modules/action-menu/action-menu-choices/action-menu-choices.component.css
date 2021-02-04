@@ -5,7 +5,7 @@
 	z-index: 1000;
 	background-color: white;
 
-	/* This makes sure there's no gap between the dropdown button and the menu, and
-	prevents accidental un-hovering from happening */
+	/*  This makes sure there's no gap between the dropdown button and the menu, and
+	prevents accidental un-hovering  */
 	margin: 0;
 }

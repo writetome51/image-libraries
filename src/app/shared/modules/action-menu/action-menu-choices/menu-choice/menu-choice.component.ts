@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { MenuChoice } from '@action-menu/menu-choice.interface';
+import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.component';
 
 
 @Component({
@@ -8,9 +8,7 @@ import { MenuChoice } from '@action-menu/menu-choice.interface';
 	templateUrl: './menu-choice.component.html',
 	styleUrls: ['./menu-choice.component.css']
 })
-export class MenuChoiceComponent {
-
-	@Input() data: MenuChoice;
+export class MenuChoiceComponent extends AbstractMenuChoiceComponent {
 
 	clicked = false;
 
