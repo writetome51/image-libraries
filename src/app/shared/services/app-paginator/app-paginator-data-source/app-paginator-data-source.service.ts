@@ -5,9 +5,10 @@ import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
 
 
-export abstract class AppPaginatorDataSourceService {
+export abstract class AppPaginatorDataSourceService implements BigDatasetPaginatorDataSource {
 
 	get dataTotal(): number {
 		return this.__dataTotal.get();
