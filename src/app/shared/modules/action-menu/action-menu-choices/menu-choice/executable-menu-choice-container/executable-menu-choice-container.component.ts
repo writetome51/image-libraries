@@ -17,13 +17,13 @@ export class ExecutableMenuChoiceContainerComponent extends ClickExecuteFunction
 	@Input() choice: MenuChoice | CheckableMenuChoice;
 
 
-	constructor(protected _menuChoiceExecutor: MenuChoiceExecutorService) {
+	constructor(private __menuChoiceExecutor: MenuChoiceExecutorService) {
 		super();
 	}
 
 
 	protected async _func(choice: MenuChoice) {
-		await this._menuChoiceExecutor.execute(choice);
+		await this.__menuChoiceExecutor.execute(choice);
 	}
 
 }

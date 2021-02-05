@@ -15,12 +15,12 @@ import { ExecutableMenuChoiceContainerComponent }
 
 @NgModule({
 	declarations: [
-		MenuChoiceComponent,
 		CheckmarkComponent,
 		ExecutableMenuChoiceComponent,
 		ExecutableMenuChoiceContainerComponent,
-		SubmenuPointerComponent,
-		SubmenuComponent
+		MenuChoiceComponent,
+		SubmenuComponent,
+		SubmenuPointerComponent
 	],
 	imports: [
 		CommonModule,

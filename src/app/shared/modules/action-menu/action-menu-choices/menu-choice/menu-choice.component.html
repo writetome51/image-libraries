@@ -3,7 +3,7 @@
 >
 	<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-		<executable-menu-choice-container *ngIf="!(hasSubmenu)" [data]="data">
+		<executable-menu-choice-container *ngIf="!(hasSubmenu)" [choice]="data">
 		</executable-menu-choice-container>
 
 		<submenu *ngIf="hasSubmenu" [clicked]="clicked" [data]="data"></submenu>
