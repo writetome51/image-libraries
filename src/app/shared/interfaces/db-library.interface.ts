@@ -1,12 +1,11 @@
+import { HasIDKey } from '@interfaces/has-id-key.interface';
+import { HasUserIDKey } from '@interfaces/has-user-id-key.interface';
+// import { DBImage } from './app-image/db-image.interface';
+
+
 // Represents a record in a db 'libraries' collection.
 
-export interface DBLibrary {
-
-	_id: string; // unique, never changes. Primary key
-
-	// unique, never changes.  Foreign key, relating to DBUser._id.
-	// Compound index, combined with 'name'.
-	_user_id: string;
+export interface DBLibrary extends HasIDKey, HasUserIDKey {
 
 	// Compound index, combined with '_user_id'.
 	// User cannot have two libraries with same name.
