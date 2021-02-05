@@ -1,8 +1,8 @@
+import { AssureLibrariesAreStoredLocallyService }
+	from '@services/assure-libraries-are-stored-locally.service';
 import { Component } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { AssureLibrariesAreStoredLocallyService }
-	from '@services/assure-libraries-are-stored-locally.service';
 import { SearchLibrariesProcessorService }
 	from './search-libraries-processor/search-libraries-processor.service';
 
@@ -22,10 +22,10 @@ export class LibrariesListComponent {
 
 
 	constructor(
-		private __assureLibrariesAreLoaded: AssureLibrariesAreStoredLocallyService,
+		private __assureLibrariesAreStoredLocally: AssureLibrariesAreStoredLocallyService,
 		public searchLibrariesProcessor: SearchLibrariesProcessorService
 	) {
-		this.__assureLibrariesAreLoaded.go();
+		this.__assureLibrariesAreStoredLocally.go();
 	}
 
 }
