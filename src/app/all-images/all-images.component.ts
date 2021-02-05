@@ -1,4 +1,4 @@
-import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
+import { AssureLibrariesAreStoredLocallyService } from '@services/assure-libraries-are-stored-locally.service';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
@@ -23,7 +23,7 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 
 	constructor(
-		private __assureLibrariesAreLoaded: AssureLibrariesAreLoadedService,
+		private __assureLibrariesAreLoaded: AssureLibrariesAreStoredLocallyService,
 		private __currentRoute: CurrentRouteService,
 		private __getRouteParamsObserver: GetAllImagesRouteParamsObserverService
 	) {

@@ -9,7 +9,8 @@ import { ImageTotalData as imageTotal }
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
-import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
+import { AssureLibrariesAreStoredLocallyService }
+	from '@services/assure-libraries-are-stored-locally.service';
 
 
 @Component({
@@ -28,19 +29,19 @@ export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 	}
 
 
-	get totalImages() {
+	get imageTotal() {
 		return imageTotal.data;
 	}
 
 
 	constructor(
-		private __assureLibrariesAreLoaded: AssureLibrariesAreLoadedService,
+		private __assureLibrariesAreStoredLocally: AssureLibrariesAreStoredLocallyService,
 		private __currentRoute: CurrentRouteService,
 		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService
 	) {
 		super();
 
-		this.__assureLibrariesAreLoaded.go().then(
+		this.__assureLibrariesAreStoredLocally.go().then(
 			() => {
 				let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 					this.__getRouteParamsObserver.go()
@@ -50,6 +51,5 @@ export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 		);
 
 	}
-
 
 }

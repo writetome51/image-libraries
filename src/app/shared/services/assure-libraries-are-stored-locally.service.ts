@@ -14,7 +14,7 @@ import { LibrariesInBrowserStorageService }
 
 
 @Injectable({providedIn: 'root'})
-export class AssureLibrariesAreLoadedService implements IDoThis {
+export class AssureLibrariesAreStoredLocallyService implements IDoThis {
 
 	constructor(
 		private __getLibrariesProcessor: GetLibrariesProcessorService,

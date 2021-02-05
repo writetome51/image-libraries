@@ -12,7 +12,7 @@ import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-lin
 
 
 @Injectable({providedIn: 'root'})
-export class AssureUserImageTotalIsLoadedService implements IDoThis {
+export class AssureUserImageTotalIsStoredLocallyService implements IDoThis {
 
 	constructor(
 		private __userImageTotalInBrowser: UserImageTotalInBrowserStorageService,

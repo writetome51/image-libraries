@@ -1,13 +1,13 @@
-import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
 import { DataContainer } from '@interfaces/data-container.interface';
+import { Gettable } from '@interfaces/gettable.interface';
+import { ProcessorService } from '@processor/processor.service';
 
 
 export abstract class DataTotalService implements DataContainer<number> {
 
 	constructor(
-		private __storeTotal_processor: DataTransportProcessorService,
-		private __storedTotal: { get: () => number }
+		private __storeTotal_processor: ProcessorService,
+		private __storedTotal: Gettable<number>
 	) {
 	}
 

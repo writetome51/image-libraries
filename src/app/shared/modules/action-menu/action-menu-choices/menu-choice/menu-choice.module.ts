@@ -17,8 +17,8 @@ import { ExecutableMenuChoiceContainerComponent }
 	declarations: [
 		MenuChoiceComponent,
 		CheckmarkComponent,
-		ExecutableMenuChoiceContainerComponent,
 		ExecutableMenuChoiceComponent,
+		ExecutableMenuChoiceContainerComponent,
 		SubmenuPointerComponent,
 		SubmenuComponent
 	],

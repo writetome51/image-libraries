@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { AssureLibrariesAreLoadedService } from '@services/assure-libraries-are-loaded.service';
+import { AssureLibrariesAreStoredLocallyService }
+	from '@services/assure-libraries-are-stored-locally.service';
 import { SearchLibrariesProcessorService }
-	from './search-libraries-processor/library-search-processor.service';
+	from './search-libraries-processor/search-libraries-processor.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LibrariesListComponent {
 
 
 	constructor(
-		private __assureLibrariesAreLoaded: AssureLibrariesAreLoadedService,
+		private __assureLibrariesAreLoaded: AssureLibrariesAreStoredLocallyService,
 		public searchLibrariesProcessor: SearchLibrariesProcessorService
 	) {
 		this.__assureLibrariesAreLoaded.go();

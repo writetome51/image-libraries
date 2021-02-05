@@ -1,6 +1,6 @@
 import { RemoveParentLabelsForDisplayService as removeParentLabelsForDisplay }
-	from '@menu-choice/remove-parent-labels-for-display.service';
-import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.component';
+	from './remove-parent-labels-for-display.service';
+import { AbstractMenuChoiceComponent } from './abstract-menu-choice.component';
 
 
 export abstract class LabelledMenuChoiceComponent extends AbstractMenuChoiceComponent {

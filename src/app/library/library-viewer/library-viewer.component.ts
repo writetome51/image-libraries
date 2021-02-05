@@ -5,6 +5,7 @@ import { ImageTotalData as imageTotal }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
+import { LibraryImageTotalInBrowserStorageService } from '@encrypted-item-in-browser-storage/library-image-total-in-browser-storage.service';
 
 
 @Component({
@@ -13,8 +14,8 @@ import { LibraryPaginatorService } from '../services/library-paginator/library-p
 })
 export class LibraryViewerComponent {
 
-	get imageTotal() {
-		return imageTotal.data;
+	get imageTotal(): number {
+		return this.__imageTotalInBrowser.get();
 	}
 
 
@@ -35,7 +36,8 @@ export class LibraryViewerComponent {
 
 	constructor(
 		private __paginator: LibraryPaginatorService,
-		private __libraryChanges: LibraryChangesService
+		private __libraryChanges: LibraryChangesService,
+		private __imageTotalInBrowser: LibraryImageTotalInBrowserStorageService
 	) {
 	}
 

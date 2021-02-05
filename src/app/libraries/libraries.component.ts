@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { AssureUserImageTotalIsLoadedService }
-	from '@services/assure-user-image-total-is-loaded.service';
+import { AssureUserImageTotalIsStoredLocallyService }
+	from '@services/assure-user-image-total-is-stored-locally.service';
 
 
 @Component({
@@ -18,9 +18,11 @@ export class LibrariesComponent {
 	}
 
 
-	constructor(private __assureUserImageTotalIsLoaded: AssureUserImageTotalIsLoadedService) {
-		this.__assureUserImageTotalIsLoaded.go();
+	constructor(
+		private __assureUserImageTotalIsStoredLocally: AssureUserImageTotalIsStoredLocallyService
+	) {
+		// As long as this component loads when user logs in, this should execute here:
+		this.__assureUserImageTotalIsStoredLocally.go();
 	}
-
 
 }
