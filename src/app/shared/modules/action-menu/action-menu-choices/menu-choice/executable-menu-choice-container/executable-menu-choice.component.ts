@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.component';
+import { LabelledMenuChoiceComponent } from '@menu-choice/labelled-menu-choice.component';
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.component';
-import { HasLabel } from '@interfaces/has-label/has-label.interface';
 
 
 @Component({
@@ -16,7 +15,7 @@ import { HasLabel } from '@interfaces/has-label/has-label.interface';
 	`,
 	styles: [`checkmark {position: relative;  top: 5px;  left: 5px;}`]
 })
-export class ExecutableMenuChoiceComponent extends AbstractMenuChoiceComponent implements HasLabel {
+export class ExecutableMenuChoiceComponent extends LabelledMenuChoiceComponent {
 
 	@Input() container: ClickExecuteFunctionContainerComponent;
 
