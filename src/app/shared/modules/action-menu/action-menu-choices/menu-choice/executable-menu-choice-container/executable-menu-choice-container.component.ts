@@ -9,13 +9,12 @@ import { ClickExecuteFunctionContainerComponent }
 @Component({
 	selector: 'executable-menu-choice-container',
 	template: `
-		<executable-menu-choice [container]="this" [data]="data"></executable-menu-choice>
-	`,
-	styles: [`checkmark {position: relative;  top: 5px;  left: 5px;}`]
+		<executable-menu-choice [container]="this" [data]="choice"></executable-menu-choice>
+	`
 })
 export class ExecutableMenuChoiceContainerComponent extends ClickExecuteFunctionContainerComponent {
 
-	@Input() data: MenuChoice | CheckableMenuChoice;
+	@Input() choice: MenuChoice | CheckableMenuChoice;
 
 
 	constructor(protected _menuChoiceExecutor: MenuChoiceExecutorService) {
