@@ -1,5 +1,7 @@
-export const SearchData = {
+export class SearchData {
 
-	text: ''
+	static by: 'name' | 'tag' | 'rating' | '' = '';
 
-};
+	static text = '';
+
+}
