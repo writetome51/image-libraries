@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
+import { LibraryPaginatorService }
+	from '../../services/library-paginator/library-paginator.service';
 import { LibraryJumpToPageInputService } from './library-jump-to-page-input.service';
 import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 

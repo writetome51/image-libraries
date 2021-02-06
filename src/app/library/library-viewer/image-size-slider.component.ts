@@ -5,10 +5,20 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 
 @Component({
 	selector: 'image-size-slider',
-	templateUrl: './image-size-slider.component.html'
+	template: `
+		<div id="input-container">
+
+			<!--  size slider    -->
+			<label for="image-size-control" hidden>Image Size Control</label>
+			Change size:
+			<input type="range" id="image-size-control" min="0" max="400" [(ngModel)]="imageWidth">
+			<!-- / size slider   -->
+
+			Current image width: {{imageWidth}}px
+		</div>
+	`
 })
 export class ImageSizeSliderComponent {
-
 
 	set imageWidth(value) {
 		thumbnailDisplaySettings.width = value;
@@ -18,6 +28,5 @@ export class ImageSizeSliderComponent {
 	get imageWidth() {
 		return thumbnailDisplaySettings.width;
 	}
-
 
 }
