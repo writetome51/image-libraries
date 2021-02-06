@@ -33,13 +33,7 @@ import { ExecuteFunctionButtonModule }
 				path: choice.AllImagesModule.path,
 				loadChildren: () => import('../all-images/all-images.module')
 					.then(mod => mod.AllImagesModule)
-			},
-
-			{
-				path: choice.SearchModule.path,
-				loadChildren: () => import('../shared/modules/search/search.module')
-					.then(mod => mod.SearchModule)
-			},
+			}
 		])
 	],
 
