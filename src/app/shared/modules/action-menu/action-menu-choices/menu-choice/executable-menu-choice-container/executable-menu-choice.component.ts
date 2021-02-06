@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LabelledMenuChoiceComponent } from '@menu-choice/labelled-menu-choice.component';
+import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.component';
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.component';
 

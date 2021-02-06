@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LabelledMenuChoiceComponent } from '@menu-choice/labelled-menu-choice.component';
+import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.component';
 
 
 @Component({
