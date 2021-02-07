@@ -6,14 +6,14 @@ import { UpdatePasswordInputsService }
 	from '../update-password-inputs/update-password-inputs.service';
 import { UpdatePasswordResultInterpreterService }
 	from './update-password-result-interpreter.service';
-import { UserUpdaterService } from '../../user-updater.service';
+import { UpdatePasswordService } from './update-password.service';
 
 
 @Injectable({providedIn: 'root'})
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userUpdater: UserUpdaterService,
+		private __updatePassword: UpdatePasswordService,
 		__updatePasswordFormInputs: UpdatePasswordInputsService,
 		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
 	) {
@@ -22,7 +22,7 @@ export class UpdatePasswordProcessorService extends FormDataTransportProcessorSe
 
 
 	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__userUpdater.updatePassword();
+		return await this.__updatePassword.go();
 	}
 
 }

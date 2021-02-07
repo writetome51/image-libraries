@@ -4,14 +4,14 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { UpdateEmailInputsService } from '../update-email-inputs/update-email-inputs.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
-import { UserUpdaterService } from '../../user-updater.service';
+import { UpdateEmailService } from './update-email.service';
 
 
 @Injectable({providedIn: 'root'})
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __userUpdater: UserUpdaterService,
+		private __updateEmail: UpdateEmailService,
 		__updateEmailInputs: UpdateEmailInputsService,
 		__updateEmailResultInterpreter: UpdateEmailResultInterpreterService
 	) {
@@ -20,7 +20,7 @@ export class UpdateEmailProcessorService extends FormDataTransportProcessorServi
 
 
 	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__userUpdater.updateEmail();
+		return await this.__updateEmail.go();
 	}
 
 }
