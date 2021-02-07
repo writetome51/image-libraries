@@ -1,16 +1,16 @@
-import { AppNavigatorComponent } from './app-navigator.component';
-import { AppNavigatorChoiceData as choice } from './app-navigator-choice.data';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { LogoutButtonComponent } from './logout-button/logout-button.component';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { ExecuteFunctionButtonModule }
 	from '@execute-function-button/execute-function-button.module';
+import { LoggedInAppNavigatorComponent } from './logged-in-app-navigator.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
+import { NavigatorChoiceData as choice } from './navigator-choice.data';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-	declarations: [AppNavigatorComponent, LogoutButtonComponent],
+	declarations: [LoggedInAppNavigatorComponent, LogoutButtonComponent],
 
 	imports: [
 		CommonModule,
@@ -37,8 +37,7 @@ import { ExecuteFunctionButtonModule }
 		])
 	],
 
-	exports: [AppNavigatorComponent]
+	exports: [LoggedInAppNavigatorComponent]
 })
-
-export class AppNavigatorModule {
+export class LoggedInAppNavigatorModule {
 }

@@ -1,17 +1,17 @@
 import { AssureUserDataLoadedService } from './assure-user-data-loaded.service';
-import { AppNavigatorChoiceData } from './app-navigator-choice.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Link } from '@interfaces/has-label/link/link.interface';
+import { NavigatorChoiceData } from './navigator-choice.data';
 
 
 @Component({
-	selector: 'app-navigator',
-	templateUrl: './app-navigator.component.html'
+	selector: 'logged-in-app-navigator',
+	templateUrl: './logged-in-app-navigator.component.html'
 })
-export class AppNavigatorComponent {
+export class LoggedInAppNavigatorComponent {
 
-	choices: Link[] = Object.values(AppNavigatorChoiceData);
+	choices: Link[] = Object.values(NavigatorChoiceData);
 
 
 	constructor(
