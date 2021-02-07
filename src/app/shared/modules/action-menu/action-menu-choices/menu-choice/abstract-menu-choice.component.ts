@@ -1,8 +1,12 @@
-import { Input } from '@angular/core';
-import { MenuChoice } from '@action-menu/menu-choice.interface';
+import { Component, Input } from '@angular/core';
+import { MenuChoice } from '../../menu-choice.interface';
 
 
-export abstract class AbstractMenuChoiceComponent {
+// Intended to be abstract Component class, but angular compiler was not allowing inheritance
+// to work.  So this is a work-around.
+
+@Component({selector: '', template: ``})
+export class AbstractMenuChoiceComponent {
 
 	@Input() data: MenuChoice;
 

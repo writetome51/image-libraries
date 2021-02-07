@@ -11,10 +11,14 @@ import { SubmenuComponent } from './submenu/submenu.component';
 import { SubmenuPointerComponent } from './submenu/submenu-pointer.component';
 import { ExecutableMenuChoiceContainerComponent }
 	from './executable-menu-choice-container/executable-menu-choice-container.component';
+import { AbstractMenuChoiceComponent } from '@menu-choice/abstract-menu-choice.component';
+import { LabelledMenuChoiceComponent } from '@menu-choice/labelled-menu-choice.component';
 
 
 @NgModule({
 	declarations: [
+		AbstractMenuChoiceComponent,
+		LabelledMenuChoiceComponent,
 		CheckmarkComponent,
 		ExecutableMenuChoiceComponent,
 		ExecutableMenuChoiceContainerComponent,
