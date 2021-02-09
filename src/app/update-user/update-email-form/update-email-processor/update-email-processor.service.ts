@@ -1,4 +1,3 @@
-import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { FormDataTransportProcessorService }
 	from '@services/processor/data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
@@ -11,16 +10,11 @@ import { UpdateEmailService } from './update-email.service';
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __updateEmail: UpdateEmailService,
 		__updateEmailInputs: UpdateEmailInputsService,
-		__updateEmailResultInterpreter: UpdateEmailResultInterpreterService
+		__updateEmail: UpdateEmailService,
+		__resultInterpreter: UpdateEmailResultInterpreterService
 	) {
-		super(__updateEmailInputs, __updateEmailResultInterpreter);
-	}
-
-
-	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__updateEmail.go();
+		super(__updateEmailInputs, __updateEmail, __resultInterpreter);
 	}
 
 }

@@ -3,6 +3,7 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
 import { Injectable } from '@angular/core';
 import { GetUserLibrariesService } from '../../../get-user-libraries.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -16,7 +17,7 @@ export class GetLibrariesProcessorService extends DataTransportProcessorService 
 	}
 
 
-	protected async _getResult(): Promise<DBLibrary[] | {error: {message: string}}> {
+	protected async _getResult(): Promise<DBLibrary[] | HasError> {
 		return await this.__getUsersLibraries.go();
 	}
 

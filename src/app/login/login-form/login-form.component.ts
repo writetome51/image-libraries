@@ -1,6 +1,6 @@
 import { AppModuleRoutesData } from '@app/app-module-routes.data';
 import { Component } from '@angular/core';
-import { LoginProcessorService } from './login-processor.service';
+import { LoginProcessorService } from './login-processor/login-processor.service';
 
 
 @Component({

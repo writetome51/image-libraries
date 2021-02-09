@@ -5,6 +5,7 @@ import { SessionIDInBrowserStorageService }
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,7 +18,7 @@ export class DeleteLibraryService implements IDoThis {
 	}
 
 
-	async go(): Promise<{ success: true } | { error: { message: string } }> {
+	async go(): Promise<{ success: true } | HasError> {
 		return await this.__realmFn.call('pub_deleteLibrary', {
 			name: loadedLibrary.libName,
 			sessionID: this.__sessionIDInBrowser.get()

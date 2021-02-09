@@ -9,16 +9,11 @@ import { SearchService } from '@search/search-processor/search.service';
 export abstract class SearchProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __search: SearchService,
 		__validatingInput: SearchInputService,
+		__search: SearchService,
 		__resultInterpreter: DataTransportProcessResultInterpreterService
 	) {
-		super(__validatingInput, __resultInterpreter);
-	}
-
-
-	protected async _getResult(): Promise<any[] | { error: { message: string } }> {
-		return await this.__search.go();
+		super(__validatingInput, __search, __resultInterpreter);
 	}
 
 }

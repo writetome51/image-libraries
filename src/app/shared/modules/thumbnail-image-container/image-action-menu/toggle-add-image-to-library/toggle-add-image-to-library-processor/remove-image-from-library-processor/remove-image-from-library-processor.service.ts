@@ -9,6 +9,7 @@ import { RemoveImageFromLibraryResultInterpreterService }
 	// tslint:disable-next-line:max-line-length
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
 import { UpdateLibraryService } from '@services/update-library.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -25,7 +26,7 @@ export class RemoveImageFromLibraryProcessorService extends DataTransportProcess
 
 	protected async _getResult(
 		image_id, libName
-	): Promise<DBLibrary | { error: { message: string } }> {
+	): Promise<DBLibrary | HasError> {
 
 		let lib = this.__librariesInBrowser.get()[libName];
 		removeFirstOf(image_id, lib._image_ids);

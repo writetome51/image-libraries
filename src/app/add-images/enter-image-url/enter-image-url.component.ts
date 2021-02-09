@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddImageURLProcessorService } from './add-image-url-processor.service';
+import { AddImageURLProcessorService } from './add-image-url-processor/add-image-url-processor.service';
 
 
 @Component({

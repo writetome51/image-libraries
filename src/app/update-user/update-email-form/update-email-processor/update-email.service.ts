@@ -6,6 +6,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +19,7 @@ export class UpdateEmailService implements IDoThis {
 	}
 
 
-	async go(): Promise<DBUser | { error: { message: string } }> {
+	async go(): Promise<DBUser | HasError> {
 		return await this.__realmFn.call('pub_updateEmailAndReturnUser', {
 			email: currentUser.email,
 			password: currentUser.password,

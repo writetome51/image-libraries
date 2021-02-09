@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { UpdateLibraryService } from '@services/update-library.service';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -23,7 +24,7 @@ export class AddImageToLibraryProcessorService extends DataTransportProcessorSer
 
 	protected async _getResult(
 		image_id, libName
-	): Promise<DBLibrary | { error: { message: string } }> {
+	): Promise<DBLibrary | HasError> {
 
 		let lib = this.__localLibraries.get()[libName];
 		let changes = {}, index = lib._image_ids.length;

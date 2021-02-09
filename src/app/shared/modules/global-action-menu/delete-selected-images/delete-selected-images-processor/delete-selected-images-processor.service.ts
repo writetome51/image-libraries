@@ -7,6 +7,7 @@ import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable()
@@ -21,7 +22,7 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 	}
 
 
-	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
+	protected async _getResult(): Promise<{ success: true } | HasError> {
 		return this.__realmFn.call('pub_deleteImages', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			imageNames: selectedImages.data.map((img: { name: string }) => img.name)

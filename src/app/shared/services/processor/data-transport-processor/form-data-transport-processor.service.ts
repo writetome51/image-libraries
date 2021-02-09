@@ -3,15 +3,17 @@ import { DataTransportProcessResultInterpreterService }
 	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 export abstract class FormDataTransportProcessorService extends DataTransportProcessorService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,
+		__getResult: IDoThis,
 		__resultInterpreter: DataTransportProcessResultInterpreterService
 	) {
-		super(__resultInterpreter);
+		super(__getResult, __resultInterpreter);
 	}
 
 

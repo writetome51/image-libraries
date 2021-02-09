@@ -1,4 +1,5 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
@@ -16,9 +17,7 @@ export class SaveNewImagesService implements IDoThis {
 	}
 
 
-	async go(
-		newImages: AppImage[]
-	): Promise<{ success: true } | { error: { message: string } }> {
+	async go(newImages: AppImage[]): Promise<{ success: true } | HasError> {
 		return this.__realmFn.call('pub_addImages',
 			{sessionID: this.__sessionIDInBrowser.get(), images: newImages}
 		);

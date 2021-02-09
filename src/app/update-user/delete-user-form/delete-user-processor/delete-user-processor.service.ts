@@ -11,16 +11,11 @@ import { Injectable } from '@angular/core';
 export class DeleteUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __deleteUser: DeleteUserService,
 		__deleteUserInputs: DeleteUserInputsService,
+		__deleteUser: DeleteUserService,
 		__deleteUserResultInterpreter: DeleteUserResultInterpreterService
 	) {
-		super(__deleteUserInputs, __deleteUserResultInterpreter);
-	}
-
-
-	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
-		return await this.__deleteUser.go();
+		super(__deleteUserInputs, __deleteUser, __deleteUserResultInterpreter);
 	}
 
 }

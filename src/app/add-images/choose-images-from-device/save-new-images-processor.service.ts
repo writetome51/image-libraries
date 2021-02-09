@@ -6,6 +6,7 @@ import { NewImagesData as newImages }
 import { SaveNewImagesService } from '../save-new-images.service';
 import { SaveNewImagesResultInterpreterService }
 	from '../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,7 +20,7 @@ export class SaveNewImagesProcessorService extends DataTransportProcessorService
 	}
 
 
-	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
+	protected async _getResult(): Promise<{ success: true } | HasError> {
 		return await this.__saveNewImages.go(newImages.data);
 	}
 

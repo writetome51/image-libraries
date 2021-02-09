@@ -1,4 +1,3 @@
-import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
@@ -13,16 +12,11 @@ import { UpdatePasswordService } from './update-password.service';
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		private __updatePassword: UpdatePasswordService,
 		__updatePasswordFormInputs: UpdatePasswordInputsService,
-		__updatePasswordResultInterpreter: UpdatePasswordResultInterpreterService
+		__updatePassword: UpdatePasswordService,
+		__resultInterpreter: UpdatePasswordResultInterpreterService
 	) {
-		super(__updatePasswordFormInputs, __updatePasswordResultInterpreter);
-	}
-
-
-	protected async _getResult(): Promise<DBUser | { error: { message: string } }> {
-		return await this.__updatePassword.go();
+		super(__updatePasswordFormInputs, __updatePassword, __resultInterpreter);
 	}
 
 }

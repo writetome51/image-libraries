@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -22,7 +23,7 @@ export class UserAccountService {
 	}
 
 
-	async get(): Promise<DBUser | { error: { message: string } }> {
+	async get(): Promise<DBUser | HasError> {
 		return await this.__realmFn.call('pub_getUser',
 			{sessionID: this.__sessionIDInBrowser.get()}
 		);

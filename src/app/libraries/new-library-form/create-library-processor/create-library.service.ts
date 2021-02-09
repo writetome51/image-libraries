@@ -5,6 +5,7 @@ import { SessionIDInBrowserStorageService }
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,7 +18,7 @@ export class CreateLibraryService implements IDoThis {
 	}
 
 
-	async go(): Promise<DBLibrary | { error: { message: string } }> {
+	async go(): Promise<DBLibrary | HasError> {
 		return await this.__realmFn.call('pub_createAndReturnLibrary', {
 			name: newLibrary.name,
 			sessionID: this.__sessionIDInBrowser.get()

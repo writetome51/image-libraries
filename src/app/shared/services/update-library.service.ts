@@ -4,6 +4,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,7 +20,7 @@ export class UpdateLibraryService implements IDoThis {
 	async go(
 		libName: string,
 		changes: object // The keys in `changes` can contain dot-notation.
-	): Promise<DBLibrary | { error: { message: string } }> {
+	): Promise<DBLibrary | HasError> {
 		return await this.__realmFn.call('pub_updateAndReturnLibrary', {
 			name: libName,
 			changes,

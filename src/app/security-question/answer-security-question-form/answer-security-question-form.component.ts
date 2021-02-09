@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginBySecurityQuestionProcessorService }
-	from './login-by-security-question-processor.service';
+	from './login-by-security-question-processor/login-by-security-question-processor.service';
 
 
 @Component({

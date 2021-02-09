@@ -12,9 +12,6 @@
 			"@app/*": [
 				"src/app/*"
 			],
-			"@app-navigator/*": [
-				"src/app/app-navigator/*"
-			],
 			"@app-paginator/*": [
 				"src/app/shared/services/app-paginator/*"
 			],
@@ -71,6 +68,9 @@
 			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
+			],
+			"@logged-in-app-navigator/*": [
+				"src/app/logged-in-app-navigator/*"
 			],
 			"@menu-choice/*": [
 				"src/app/shared/modules/action-menu/action-menu-choices/menu-choice/*"

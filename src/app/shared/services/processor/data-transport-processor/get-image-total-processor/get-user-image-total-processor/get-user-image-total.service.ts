@@ -3,6 +3,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -15,7 +16,7 @@ export class GetUserImageTotalService implements IDoThis {
 	}
 
 
-	async go(): Promise<{ dataTotal: number } | { error: { message: string } }> {
+	async go(): Promise<{ dataTotal: number } | HasError> {
 		return this.__realmFn.call('pub_getUserImagesTotal', {
 			sessionID: this.__sessionIDInBrowser.get()
 		});

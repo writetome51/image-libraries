@@ -10,12 +10,11 @@ import { SearchLibrariesService } from './search-libraries.service';
 export class SearchLibrariesProcessorService extends SearchProcessorService {
 
 	constructor(
-		__search: SearchLibrariesService,
 		__validatingInput: SearchInputService,
+		__search: SearchLibrariesService,
 		__resultInterpreter: DataTransportProcessResultInterpreterService
 	) {
-		super(__search, __validatingInput, __resultInterpreter);
+		super(__validatingInput, __search, __resultInterpreter);
 	}
-
 
 }

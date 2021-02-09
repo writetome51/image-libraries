@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class DeAuthenticatorService {
+export class LogoutService implements IDoThis {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
@@ -14,7 +16,7 @@ export class DeAuthenticatorService {
 	}
 
 
-	async deAuthenticate(): Promise<{ success: true } | { error: { message: string } }> {
+	async go(): Promise<{ success: true } | HasError> {
 		return await this.__realmFn.call('pub_logoutUser',
 			{sessionID: this.__sessionIDInBrowser.get()}
 		);

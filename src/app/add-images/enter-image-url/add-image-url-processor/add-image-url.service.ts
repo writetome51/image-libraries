@@ -1,31 +1,22 @@
 import { CORSProxyData as corsProxy } from '@read-only-data/cors-proxy.data';
-import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
-import { GetAppImageService as getAppImage } from '../get-app-image.service';
+import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { ImageURLData as enteredImageURL } from '@runtime-state-data/image-url.data';
-import { ImageURLInputService } from './image-url-input.service';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { SaveNewImagesService } from '../save-new-images.service';
-import { SaveNewImagesResultInterpreterService }
-	from '../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
+import { SaveNewImagesService } from '../../save-new-images.service';
+import { HasError } from '@interfaces/has-error.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class AddImageURLProcessorService extends FormDataTransportProcessorService {
+export class AddImageURLService implements IDoThis {
 
-
-	constructor(
-		private __saveNewImages: SaveNewImagesService,
-		__imageURLInput: ImageURLInputService,
-		__saveNewImagesResultInterpreter: SaveNewImagesResultInterpreterService
-	) {
-		super(__imageURLInput, __saveNewImagesResultInterpreter);
+	constructor(private __saveNewImages: SaveNewImagesService) {
 	}
 
 
-	protected async _getResult(): Promise<{ success: true } | { error: { message: string } }> {
+	async go(): Promise<{ success: true } | HasError> {
 		if (await this.__resourceFound(enteredImageURL.data)) {
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
@@ -37,7 +28,6 @@ export class AddImageURLProcessorService extends FormDataTransportProcessorServi
 						' resource, or access is denied.'
 			}};
 		}
-
 	}
 
 
@@ -57,6 +47,5 @@ export class AddImageURLProcessorService extends FormDataTransportProcessorServi
 		});
 
 	}
-
 
 }

@@ -6,6 +6,7 @@ import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +19,7 @@ export class GetImagesFromStorageService {
 	}
 
 
-	async all(): Promise<ImageBatch | { error: { message: string } }> {
+	async all(): Promise<ImageBatch | HasError> {
 		let batch = await this.__realmFn.call('pub_getUserImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			batchSize: load.size,
@@ -29,7 +30,7 @@ export class GetImagesFromStorageService {
 	}
 
 
-	async inLibrary(): Promise<ImageBatch | { error: { message: string } }> {
+	async inLibrary(): Promise<ImageBatch | HasError> {
 		let batch = await this.__realmFn.call('pub_getLibraryImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			name: requestedLibrary.name,
