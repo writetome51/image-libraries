@@ -12,11 +12,11 @@ import { GetSecurityQuestionService } from './get-security-question.service';
 export class GetSecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__getSecurityQuestionInput: EmailToGetSecurityQuestionInputService,
+		__validatingInput: EmailToGetSecurityQuestionInputService,
 		__getResult: GetSecurityQuestionService,
 		__resultInterpreter: GetSecurityQuestionResultInterpreterService
 	) {
-		super(__getSecurityQuestionInput, __getResult, __resultInterpreter);
+		super(__validatingInput, __getResult, __resultInterpreter);
 	}
 
 }

@@ -11,11 +11,11 @@ import { Injectable } from '@angular/core';
 export class DeleteUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__deleteUserInputs: DeleteUserInputsService,
-		__deleteUser: DeleteUserService,
-		__deleteUserResultInterpreter: DeleteUserResultInterpreterService
+		__validatingInputs: DeleteUserInputsService,
+		__getResult: DeleteUserService,
+		__resultInterpreter: DeleteUserResultInterpreterService
 	) {
-		super(__deleteUserInputs, __deleteUser, __deleteUserResultInterpreter);
+		super(__validatingInputs, __getResult, __resultInterpreter);
 	}
 
 }

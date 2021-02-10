@@ -9,10 +9,10 @@ import { GetImageTotalProcessorService } from '../get-image-total-processor.serv
 export class GetUserImageTotalProcessorService extends GetImageTotalProcessorService {
 
 	constructor(
-		__getImageTotal: GetUserImageTotalService,
+		__getResult: GetUserImageTotalService,
 		__resultInterpreter: GetUserImageTotalResultInterpreterService
 	) {
-		super(__getImageTotal, __resultInterpreter);
+		super(__getResult, __resultInterpreter);
 	}
 
 }

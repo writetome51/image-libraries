@@ -11,11 +11,11 @@ import { CreateUserResultInterpreterService }
 export class CreateUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__newUserInputs: NewUserInputsService,
-		__createUser: CreateUserService,
+		__validatingInputs: NewUserInputsService,
+		__getResult: CreateUserService,
 		__resultInterpreter: CreateUserResultInterpreterService
 	) {
-		super(__newUserInputs, __createUser, __resultInterpreter);
+		super(__validatingInputs, __getResult, __resultInterpreter);
 	}
 
 }

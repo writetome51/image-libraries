@@ -11,11 +11,11 @@ import { LoginBySecurityQuestionService } from './login-by-security-question.ser
 export class LoginBySecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__securityAnswerLoginInput: SecurityAnswerLoginInputService,
+		__validatingInput: SecurityAnswerLoginInputService,
 		__getResult: LoginBySecurityQuestionService,
 		__resultInterpreter: LoginResultInterpreterService
 	) {
-		super(__securityAnswerLoginInput, __getResult, __resultInterpreter);
+		super(__validatingInput, __getResult, __resultInterpreter);
 	}
 
 }

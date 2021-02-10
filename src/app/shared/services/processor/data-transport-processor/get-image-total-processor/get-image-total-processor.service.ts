@@ -5,7 +5,6 @@ import { GetImageTotalResultInterpreterService }
 	from './get-image-total-result-interpreter/get-image-total-result-interpreter.service';
 import { GetUserImageTotalService }
 	from './get-user-image-total-processor/get-user-image-total.service';
-import { HasError } from '@interfaces/has-error.interface';
 
 
 // Getting the total number of images is required by AppPaginatorDataSource
@@ -13,15 +12,10 @@ import { HasError } from '@interfaces/has-error.interface';
 export abstract class GetImageTotalProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __getImageTotal: GetLibraryImageTotalService | GetUserImageTotalService,
+		__getResult: GetLibraryImageTotalService | GetUserImageTotalService,
 		__resultInterpreter: GetImageTotalResultInterpreterService
 	) {
-		super(__resultInterpreter);
-	}
-
-
-	protected _getResult(): Promise<{ dataTotal: number } | HasError> {
-		return this.__getImageTotal.go();
+		super(__getResult, __resultInterpreter);
 	}
 
 }
