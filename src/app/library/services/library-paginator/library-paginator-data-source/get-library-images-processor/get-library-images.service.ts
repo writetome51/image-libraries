@@ -7,10 +7,11 @@ import { RequestedLibraryData as requestedLibrary }
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class GetImagesFromStorageService {
+export class GetLibraryImagesService implements IDoThis {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
@@ -19,18 +20,7 @@ export class GetImagesFromStorageService {
 	}
 
 
-	async all(): Promise<ImageBatch | HasError> {
-		let batch = await this.__realmFn.call('pub_getUserImagesBatch', {
-			sessionID: this.__sessionIDInBrowser.get(),
-			batchSize: load.size,
-			batchNumber: load.number
-		});
-		batch['from'] = 'all';
-		return batch;
-	}
-
-
-	async inLibrary(): Promise<ImageBatch | HasError> {
+	async go(): Promise<ImageBatch | HasError> {
 		let batch = await this.__realmFn.call('pub_getLibraryImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			name: requestedLibrary.name,
