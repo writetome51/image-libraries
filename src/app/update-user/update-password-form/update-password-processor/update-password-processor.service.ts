@@ -12,11 +12,11 @@ import { UpdatePasswordService } from './update-password.service';
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__updatePasswordFormInputs: UpdatePasswordInputsService,
-		__updatePassword: UpdatePasswordService,
+		__validatingInputs: UpdatePasswordInputsService,
+		__getResult: UpdatePasswordService,
 		__resultInterpreter: UpdatePasswordResultInterpreterService
 	) {
-		super(__updatePasswordFormInputs, __updatePassword, __resultInterpreter);
+		super(__validatingInputs, __getResult, __resultInterpreter);
 	}
 
 }

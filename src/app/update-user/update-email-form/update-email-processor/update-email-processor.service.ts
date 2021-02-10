@@ -10,11 +10,11 @@ import { UpdateEmailService } from './update-email.service';
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
-		__updateEmailInputs: UpdateEmailInputsService,
-		__updateEmail: UpdateEmailService,
+		__validatingInputs: UpdateEmailInputsService,
+		__getResult: UpdateEmailService,
 		__resultInterpreter: UpdateEmailResultInterpreterService
 	) {
-		super(__updateEmailInputs, __updateEmail, __resultInterpreter);
+		super(__validatingInputs, __getResult, __resultInterpreter);
 	}
 
 }

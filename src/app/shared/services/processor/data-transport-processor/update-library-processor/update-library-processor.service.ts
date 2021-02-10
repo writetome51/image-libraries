@@ -1,23 +1,19 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { LoadedLibraryUpdaterService } from './loaded-library-updater.service';
-import { UpdateLibraryResultInterpreterService } from './update-library-result-interpreter.service';
+import { UpdateLoadedLibraryService } from './update-loaded-library.service';
+import { UpdateLibraryResultInterpreterService }
+	from './update-library-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
 export class UpdateLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(
-		private __libraryUpdater: LoadedLibraryUpdaterService,
-		__updateLibraryResultInterpreter: UpdateLibraryResultInterpreterService
+		__getResult: UpdateLoadedLibraryService,
+		__resultInterpreter: UpdateLibraryResultInterpreterService
 	) {
-		super(__updateLibraryResultInterpreter);
-	}
-
-
-	protected async _getResult(): Promise<any> {
-		return await this.__libraryUpdater.update();
+		super(__getResult, __resultInterpreter);
 	}
 
 }
