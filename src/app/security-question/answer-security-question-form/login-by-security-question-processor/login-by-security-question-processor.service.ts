@@ -3,8 +3,8 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { LoginResultInterpreterService }
 	from '@data-transport-process-result-interpreter/login-result-interpreter.service';
-import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
+import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
 
 
 @Injectable({providedIn: 'root'})

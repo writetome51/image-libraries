@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { SearchService } from '@search/search-processor/search.service';
 import { SearchData as search } from '@runtime-state-data/search.data';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
@@ -8,7 +7,7 @@ import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class SearchLibrariesService implements SearchService {
+export class SearchLibrariesService {
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
 	}

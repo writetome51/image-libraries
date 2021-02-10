@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SearchProcessorService } from '@search/search-processor/search-processor.service';
+import { ProcessorService } from '@processor/processor.service';
 
 
 @Component({
@@ -11,6 +11,6 @@ import { SearchProcessorService } from '@search/search-processor/search-processo
 })
 export class SearchComponent {
 
-	@Input() processor: SearchProcessorService;
+	@Input() processor: ProcessorService;
 
 }

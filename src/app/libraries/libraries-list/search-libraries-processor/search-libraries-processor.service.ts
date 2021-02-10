@@ -1,20 +1,17 @@
-import { DataTransportProcessResultInterpreterService }
-	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
-import { SearchInputService } from '@search/search-input.service';
-import { SearchProcessorService } from '@search/search-processor/search-processor.service';
 import { Injectable } from '@angular/core';
 import { SearchLibrariesService } from './search-libraries.service';
+import { ProcessorService } from '@processor/processor.service';
+import { ProcessResultInterpreterService } from '@processor/process-result-interpreter.service';
 
 
 @Injectable({providedIn: 'root'})
-export class SearchLibrariesProcessorService extends SearchProcessorService {
+export class SearchLibrariesProcessorService extends ProcessorService {
 
 	constructor(
-		__validatingInput: SearchInputService,
-		__search: SearchLibrariesService,
-		__resultInterpreter: DataTransportProcessResultInterpreterService
+		__getResult: SearchLibrariesService,
+		__resultInterpreter: ProcessResultInterpreterService
 	) {
-		super(__validatingInput, __search, __resultInterpreter);
+		super(__getResult, __resultInterpreter);
 	}
 
 }

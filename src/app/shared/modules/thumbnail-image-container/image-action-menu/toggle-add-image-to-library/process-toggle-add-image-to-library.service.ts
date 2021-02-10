@@ -5,7 +5,7 @@ import { ToggleAddImageToLibraryProcessorService }
 
 
 @Injectable({providedIn: 'root'})
-export class ToggleAddImageToLibraryService implements IDoThis {
+export class ProcessToggleAddImageToLibraryService implements IDoThis {
 
 	constructor(
 		private __toggleAddImageToLibraryProcessor: ToggleAddImageToLibraryProcessorService

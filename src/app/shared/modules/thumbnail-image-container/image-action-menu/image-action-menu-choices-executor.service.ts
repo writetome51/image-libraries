@@ -2,18 +2,18 @@ import { SpecificChoicesExecutorService }
 	from '@action-menu/specific-choices-executor.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { ToggleAddImageToLibraryService }
-	from './toggle-add-image-to-library/toggle-add-image-to-library.service';
+import { ProcessToggleAddImageToLibraryService }
+	from './toggle-add-image-to-library/process-toggle-add-image-to-library.service';
 
 
 @Injectable()
 export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
 
 	constructor(
-		toggleAddImageToLibrary: ToggleAddImageToLibraryService
+		processToggleAddImageToLibrary: ProcessToggleAddImageToLibraryService
 	) {
 		super([
-			{executor: toggleAddImageToLibrary, label: choiceLabel.toggleAddImageToLibrary}
+			{executor: processToggleAddImageToLibrary, label: choiceLabel.toggleAddImageToLibrary}
 		]);
 	}
 
