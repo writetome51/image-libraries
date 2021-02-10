@@ -16,10 +16,4 @@ export class LibrariesListComponent {
 		return libraryNames.data;
 	}
 
-
-	constructor(
-		// public searchLibrariesProcessor: SearchLibrariesProcessorService
-	) {
-	}
-
 }

@@ -16,11 +16,9 @@ export class SearchLibrariesService implements IDoThis {
 
 
 	go(): void {
-		let libsMap: object = this.__librariesInBrowser.get();
-
 		libraryNames.data = getByTest(
 			(libName: string) => libName.includes(search.text.toLowerCase()),
-			Object.keys(libsMap)
+			Object.keys(this.__librariesInBrowser.get())
 		);
 	}
 
