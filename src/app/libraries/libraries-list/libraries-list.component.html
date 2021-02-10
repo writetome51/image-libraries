@@ -1,21 +1,23 @@
 <div>
 
-<!--
-<app-search [processor]="searchLibrariesProcessor"></app-search>
--->
-
 	<big-loading-spinner *ngIf="!(names)"></big-loading-spinner>
 
 	<p *ngIf="names && names.length === 0">{{noLibrariesMessage}}</p>
 
-	<ul *ngIf="names && names.length > 0">
+	<ng-container *ngIf="names && names.length > 0">
 
-		<li *ngFor="let name of names">
-			<a [routerLink]="['/library', name, 'page', 1]">
-				{{name}}
-			</a>
-		</li>
+		<app-search [processor]="searchLibrariesProcessor"></app-search>
 
-	</ul>
+		<ul>
+
+			<li *ngFor="let name of names">
+				<a [routerLink]="['/library', name, 'page', 1]">
+					{{name}}
+				</a>
+			</li>
+
+		</ul>
+
+	</ng-container>
 
 </div>

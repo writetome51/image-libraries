@@ -19,9 +19,7 @@ export class LibrariesListComponent {
 	}
 
 
-	constructor(
-	//	public searchLibrariesProcessor: SearchLibrariesProcessorService
-	) {
+	constructor(public searchLibrariesProcessor: SearchLibrariesProcessorService) {
 	}
 
 }
