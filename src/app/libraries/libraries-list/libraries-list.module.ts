@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LibrariesListComponent } from '@app/libraries/libraries-list/libraries-list.component';
-import { SearchModule } from '@search/search.module';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { RouterModule } from '@angular/router';
+import { SearchLibraryNamesComponent } from './search-library-names/search-library-names.component';
 
 
 @NgModule({
-	declarations: [LibrariesListComponent],
+	declarations: [LibrariesListComponent, SearchLibraryNamesComponent],
 	imports: [
 		CommonModule,
-		SearchModule,
 		BigLoadingSpinnerModule,
 		RouterModule
 	],
