@@ -15,6 +15,10 @@ ij_css_space_after_colon = true
 ij_css_space_before_opening_brace = true
 
 
+[*.txt]
+max_line_length = 90
+
+
 [*.md]
 trim_trailing_whitespace = false
 max_line_length = 90

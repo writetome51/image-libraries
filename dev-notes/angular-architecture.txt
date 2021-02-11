@@ -15,7 +15,7 @@ makes them belong to that module.  If you want to use those Directives or Compon
 other modules, you must list them in their module's 'exports' array, and import their
 module into the destination module by listing it in the destination module's 'imports'
 array.  If a Service is only used in one Module, you list it in that Module's
-'providers' array.  If a Service is shared among multiple Modules, pass
+'providers' array.  To share a Service instance among multiple Modules, pass
 {providedIn: 'root'} to its @Injectable decorator, like so:
 @Injectable({providedIn: 'root'})
 

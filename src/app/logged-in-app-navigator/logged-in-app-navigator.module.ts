@@ -19,19 +19,19 @@ import { RouterModule } from '@angular/router';
 		RouterModule.forRoot([
 			{
 				path: link.UpdateUserModule.path,
-				loadChildren: () => import('../update-user/update-user.module')
+				loadChildren: () => import('../routed-modules/update-user/update-user.module')
 					.then(mod => mod.UpdateUserModule)
 			},
 
 			{
 				path: link.AddImagesModule.path,
-				loadChildren: () => import('../add-images/add-images.module')
+				loadChildren: () => import('../routed-modules/add-images/add-images.module')
 					.then(mod => mod.AddImagesModule)
 			},
 
 			{
 				path: link.AllImagesModule.path,
-				loadChildren: () => import('../all-images/all-images.module')
+				loadChildren: () => import('../routed-modules/all-images/all-images.module')
 					.then(mod => mod.AllImagesModule)
 			}
 		])

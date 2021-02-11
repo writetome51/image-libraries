@@ -1,9 +1,9 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FullSizeImageComponent }
-	from '@app/full-size-image-viewer/full-size-image/full-size-image.component';
+	from '@app/routed-modules/full-size-image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
-import { LibraryComponent } from '@app/library/library.component';
+import { LibraryComponent } from '@app/routed-modules/library/library.component';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 
 
