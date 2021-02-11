@@ -2,7 +2,7 @@ import { AssureUserDataLoadedService } from './assure-user-data-loaded.service';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Link } from '@interfaces/has-label/link/link.interface';
-import { NavigatorChoiceData } from './navigator-choice.data';
+import { NavigatorLinkData } from './navigator-link.data';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { NavigatorChoiceData } from './navigator-choice.data';
 })
 export class LoggedInAppNavigatorComponent {
 
-	choices: Link[] = Object.values(NavigatorChoiceData);
+	choices: Link[] = Object.values(NavigatorLinkData);
 
 
 	constructor(
