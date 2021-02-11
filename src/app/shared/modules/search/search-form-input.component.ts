@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputComponent, } from '@writetome51/validating-inputs';
-import { SearchInputService } from './search-input.service';
+import { SearchInputService } from '@validating-input/search-input.service';
 
 
 @Component({

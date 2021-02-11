@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -11,5 +13,10 @@ import { Component } from '@angular/core';
 export class NewUserComponent {
 
 	heading = 'Create Account';
+
+
+	constructor(private __title: Title) {
+		this.__title.setTitle(moduleTitle.data);
+	}
 
 }

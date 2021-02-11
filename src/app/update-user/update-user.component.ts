@@ -4,6 +4,8 @@ import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 import { UpdateUserChoicesData as updateUserChoices } from './update-user-choices.data';
+import { Title } from '@angular/platform-browser';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
 
 
 @Component({
@@ -16,7 +18,11 @@ export class UpdateUserComponent {
 	choices: LinkedTemplateWithHeading[] = Object.values(updateUserChoices);
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
+	constructor(
+		private __currentRoute: CurrentRouteService,
+		private __title: Title
+	) {
+		this.__title.setTitle(moduleTitle.data);
 	}
 
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HandleGetImageTotalErrorService } from '../../get-image-total-result-interpreter/handle-get-image-total-error.service';
+import { HandleGetImageTotalErrorService }
+	from '../../get-image-total-result-interpreter/handle-get-image-total-error.service';
 import { RunTasksAfterGettingUserImageTotalService }
 	from './run-tasks-after-getting-user-image-total.service';
 import { GetImageTotalResultInterpreterService }

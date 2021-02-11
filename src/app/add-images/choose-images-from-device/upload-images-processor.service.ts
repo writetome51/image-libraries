@@ -21,7 +21,7 @@ export class UploadImagesProcessorService implements DirectProcessor {
 		for (let i = 0, length = files.length; i < length; ++i) {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
-		await this.__saveNewImagesProcessor.process();
+		await this.__saveNewImagesProcessor.process(newImages.data);
 
 		newImages.data = [];
 	}

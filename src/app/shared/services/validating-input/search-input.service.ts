@@ -13,7 +13,6 @@ export class SearchInputService extends ValidatingTextInputService {
 		this.data.objectToBind = SearchData;
 		this.data.propertyToBind = 'text';
 		this.data.label = 'Search';
-		this.data.isValid = () => true;
 	}
 
 }

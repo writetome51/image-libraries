@@ -1,6 +1,8 @@
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
 
 
 @Component({
@@ -18,5 +20,11 @@ export class AddImagesComponent {
 	get savingNewImages() {
 		return executionStatus.waiting;
 	}
+
+
+	constructor(private __title: Title) {
+		this.__title.setTitle(moduleTitle.data);
+	}
+
 
 }

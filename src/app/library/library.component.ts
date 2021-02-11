@@ -7,6 +7,8 @@ import { GetLibraryRouteParamsObserverService }
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -27,9 +29,11 @@ export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService
+		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService,
+		private __title: Title
 	) {
 		super();
+		this.__title.setTitle(moduleTitle.data);
 
 		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
 			this.__getRouteParamsObserver.go()

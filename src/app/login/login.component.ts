@@ -1,5 +1,7 @@
 import { AppModuleRoutesData } from '../app-module-routes.data';
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
 
 
 @Component({
@@ -19,5 +21,11 @@ import { Component } from '@angular/core';
 export class LoginComponent {
 
 	moduleRoutes = AppModuleRoutesData;
+
+
+	constructor(private __title: Title) {
+		this.__title.setTitle(moduleTitle.data);
+	}
+
 
 }

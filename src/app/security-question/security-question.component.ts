@@ -3,6 +3,8 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -21,6 +23,10 @@ export class SecurityQuestionComponent {
 
 	get haveReceivedQuestion() {
 		return questionStatus.received;
+	}
+
+	constructor(private __title: Title) {
+		this.__title.setTitle(moduleTitle.data);
 	}
 
 }

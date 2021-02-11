@@ -5,6 +5,8 @@ import { getByTest } from '@writetome51/array-get-by-test';
 import { LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
+import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -13,7 +15,9 @@ import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 })
 export class FullSizeImageViewerComponent {
 
-	constructor(private __currentRoute: CurrentRouteService) {
+	constructor(private __currentRoute: CurrentRouteService,
+				private __title: Title) {
+		this.__title.setTitle(moduleTitle.data);
 	}
 
 
