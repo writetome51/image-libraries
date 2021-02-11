@@ -1,14 +1,6 @@
 <header><h2>{{heading}}</h2></header>
 
-<nav>
-	<div *ngFor="let choice of choices; let i = index" class="nav-link-container">
-
-		<a [routerLink]="choice.link.path">{{ choice.link.label }}</a>
-
-		<span *ngIf="i < (choices.length - 1)"> |</span>
-
-	</div>
-</nav>
+<update-user-choices [data]="choices"></update-user-choices>
 
 <div class="form-container">
 

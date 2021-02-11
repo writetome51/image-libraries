@@ -6,7 +6,7 @@ import { UpdatePasswordFormComponent }
 import { DeleteUserFormComponent } from './delete-user-form/delete-user-form.component';
 
 
-export class UpdateUserChoicesData {
+export class UpdateUserChoiceData {
 
 	static readonly UpdateEmailFormModule: LinkedTemplateWithHeading = {
 		link: {label: 'Email', path: 'email', component: UpdateEmailFormComponent},

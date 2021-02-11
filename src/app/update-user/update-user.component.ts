@@ -3,7 +3,7 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
-import { UpdateUserChoicesData as updateUserChoices } from './update-user-choices.data';
+import { UpdateUserChoiceData } from './update-user-choice.data';
 import { Title } from '@angular/platform-browser';
 import { ModuleTitleData as moduleTitle } from './module-title.data';
 
@@ -15,7 +15,7 @@ import { ModuleTitleData as moduleTitle } from './module-title.data';
 export class UpdateUserComponent {
 
 	heading = 'Update';
-	choices: LinkedTemplateWithHeading[] = Object.values(updateUserChoices);
+	choices: LinkedTemplateWithHeading[] = Object.values(UpdateUserChoiceData);
 
 
 	constructor(

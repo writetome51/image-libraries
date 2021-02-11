@@ -7,10 +7,11 @@ import { DeleteUserFormModule } from '@app/update-user/delete-user-form/delete-u
 import { UpdateEmailFormModule } from './update-email-form/update-email-form.module';
 import { UpdatePasswordFormModule }
 	from './update-password-form/update-password-form.module';
+import { UpdateUserChoicesComponent } from './update-user-choices.component';
 
 
 @NgModule({
-	declarations: [UpdateUserComponent],
+	declarations: [UpdateUserComponent, UpdateUserChoicesComponent],
 	imports: [
 		CommonModule,
 		FormsModule,

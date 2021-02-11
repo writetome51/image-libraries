@@ -7,6 +7,4 @@ export interface LinkedTemplateWithHeading {
 
 	heading: string;
 
-	[propName: string]: any;
-
 }
