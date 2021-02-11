@@ -1,4 +1,4 @@
-import { AppModuleRoutesData } from '@app/app-module-routes.data';
+import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { LoginProcessorService } from './login-processor/login-processor.service';
 
@@ -9,7 +9,7 @@ import { LoginProcessorService } from './login-processor/login-processor.service
 })
 export class LoginFormComponent {
 
-	moduleRoutes = AppModuleRoutesData;
+	moduleRoutes = AppModulePathData;
 
 
 	constructor(public processor: LoginProcessorService) {

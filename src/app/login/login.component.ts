@@ -1,4 +1,4 @@
-import { AppModuleRoutesData } from '../app-module-routes.data';
+import { AppModulePathData } from '../app-module-path.data';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ModuleTitleData as moduleTitle } from './module-title.data';
@@ -20,7 +20,7 @@ import { ModuleTitleData as moduleTitle } from './module-title.data';
 })
 export class LoginComponent {
 
-	moduleRoutes = AppModuleRoutesData;
+	moduleRoutes = AppModulePathData;
 
 
 	constructor(private __title: Title) {

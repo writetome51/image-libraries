@@ -1,6 +1,6 @@
 import { AllImagesPaginatorService }
 	from '../services/all-images-paginator/all-images-paginator.service';
-import { AppModuleRoutesData as appModuleRoutes } from '../../app-module-routes.data';
+import { AppModulePathData as appModuleRoutes } from '../../app-module-path.data';
 import { Component } from '@angular/core';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';

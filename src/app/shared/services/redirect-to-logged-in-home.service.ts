@@ -1,4 +1,4 @@
-import { AppModuleRoutesData } from '@app/app-module-routes.data';
+import { AppModulePathData } from '@app/app-module-path.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ export class RedirectToLoggedInHomeService implements IDoThis {
 
 
 	async go() {
-		await this.__router.navigate([`/${AppModuleRoutesData.LibrariesModule}`]);
+		await this.__router.navigate([`/${AppModulePathData.LibrariesModule}`]);
 	}
 
 }
