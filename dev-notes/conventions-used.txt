@@ -53,5 +53,5 @@ Path Aliases
 
 Import statements that use a path beginning with '@' are aliases.  Many of those aliases
 refer to files in  /node_modules.
-Aliases to files not found there are defined in  /tsconfig.json.
+Aliases to files created in this project are defined in  /tsconfig.json.
 
