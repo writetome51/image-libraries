@@ -10,5 +10,8 @@ export class AppModulePathData {
 	static readonly LoginModule = '';
 	static readonly NewUserModule = 'create-account';
 	static readonly SecurityQuestionModule = 'security-question';
+	static readonly UpdateUserModule = 'update-account';
+	static readonly AddImagesModule = 'add-images';
+	static readonly AllImagesModule = 'all-images';
 
 }
