@@ -1,5 +1,5 @@
-Many Angular Modules in this project are instantiated via lazy-loading, which in
-Angular happens by including the Module's route in the url.  These Modules are found in
+Many Angular Modules in this project are instantiated via lazy-loading, which happens by
+including the Module's route in the url.  These Modules are found in
 /src/app/routed-modules.
 
 Any entity (class, interface, constant, etc.) used in more than one Module is found in

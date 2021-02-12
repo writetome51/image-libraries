@@ -4,7 +4,8 @@ import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-o
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
-import { LibrariesListModule } from '@app/routed-modules/libraries/libraries-list/libraries-list.module';
+import { LibrariesListModule }
+	from '@app/routed-modules/libraries/libraries-list/libraries-list.module';
 import { NewLibraryButtonComponent } from './new-library-button.component';
 import { NewLibraryFormModule } from './new-library-form/new-library-form.module';
 import { NgModule } from '@angular/core';

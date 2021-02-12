@@ -1,7 +1,7 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { LibraryComponent } from './library.component';
-import { LibraryModuleRoutesData as moduleRoutes } from './library-module-routes.data';
+import { LibraryModulePathData as modulePath } from './library-module-path.data';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -9,13 +9,13 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
 	{	// lazy-loaded module
-		path: moduleRoutes.FullSizeImageViewerModule,
+		path: modulePath.FullSizeImageViewerModule,
 		loadChildren: () => import('../full-size-image-viewer/full-size-image-viewer.module')
 			.then(mod => mod.FullSizeImageViewerModule)
 	},
 
 	{
-		path: moduleRoutes.LibraryComponent,
+		path: modulePath.LibraryComponent,
 		component: LibraryComponent,
 		canActivate: [AuthenticatedGuard],
 		// 'canDeactivate' means the guard decides if the component can be destroyed.

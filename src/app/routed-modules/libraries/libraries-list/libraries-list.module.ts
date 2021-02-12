@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LibrariesListComponent } from '@app/routed-modules/libraries/libraries-list/libraries-list.component';
+import { LibrariesListComponent } from './libraries-list.component';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { RouterModule } from '@angular/router';
-import { SearchLibraryNamesComponent } from './search-library-names/search-library-names.component';
+import { SearchLibraryNamesComponent }
+	from './search-library-names/search-library-names.component';
 import { FormsModule } from '@angular/forms';
 
 

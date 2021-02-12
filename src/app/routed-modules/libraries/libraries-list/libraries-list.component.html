@@ -9,13 +9,11 @@
 		<search-library-names></search-library-names>
 
 		<ul>
-
 			<li *ngFor="let name of names">
 				<a [routerLink]="['/library', name, 'page', 1]">
 					{{name}}
 				</a>
 			</li>
-
 		</ul>
 
 	</ng-container>

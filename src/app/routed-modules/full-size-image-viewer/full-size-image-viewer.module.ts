@@ -9,7 +9,7 @@ import { ImageDescriptionComponent } from './image-description/image-description
 import { ImageTagsComponent } from './image-tags/image-tags.component';
 import { ImageDateComponent } from './image-date/image-date.component';
 import { ImageLocationComponent } from './image-location/image-location.component';
-import { LibraryModuleRoutesData } from '../library/library-module-routes.data';
+import { LibraryModulePathData } from '../library/library-module-path.data';
 import { LocationMapComponent } from './location-map/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -43,7 +43,7 @@ import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: '/library/' + LibraryModuleRoutesData.LibraryComponent
+				redirectTo: '/library/' + LibraryModulePathData.LibraryComponent
 			}
 		])
 

@@ -5,8 +5,8 @@ question), and log out.
 You can delete your account.
 You can update your email and password.
 
-At the /libraries route, you're shown a list of all your libraries.  You can open a library
-by clicking on one.
+At the /libraries route, you're shown a list of all your libraries.  You can open a
+library by clicking on one.
 You can create a new library.
 You can delete a library.
 

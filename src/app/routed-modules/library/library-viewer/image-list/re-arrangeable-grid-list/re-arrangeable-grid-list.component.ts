@@ -17,5 +17,4 @@ export class ReArrangeableGridListComponent {
 		this.__listItemMover.data = value;
 	}
 
-
 }

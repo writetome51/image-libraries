@@ -1,8 +1,8 @@
 import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
 import { AllImagesPaginatorService }
 	from './services/all-images-paginator/all-images-paginator.service';
-import { NavigatorLinkData as navigatorLink }
-	from '@logged-in-app-navigator/navigator-link.data';
+import { LoggedInNavigatorLinkData as navigatorLink }
+	from '@app/logged-in-navigator/logged-in-navigator-link.data';
 import { Component } from '@angular/core';
 
 

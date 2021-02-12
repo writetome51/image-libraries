@@ -1,4 +1,4 @@
-import { LinkedTemplateWithHeading } from '@app/routed-modules/update-user/linked-template-with-heading.interface';
+import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 import { UpdateEmailFormComponent }
 	from './update-email-form/update-email-form.component';
 import { UpdatePasswordFormComponent }

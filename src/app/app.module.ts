@@ -1,7 +1,7 @@
 import { AppAlertComponent } from './app-alert/app-alert.component';
 import { AppComponent } from './app.component';
-import { LoggedInAppNavigatorModule }
-	from '@logged-in-app-navigator/logged-in-app-navigator.module';
+import { LoggedInNavigatorModule }
+	from '@app/logged-in-navigator/logged-in-navigator.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		FormsModule,
 		HttpClientModule,
 		HTMLImageModule,
-		LoggedInAppNavigatorModule,
+		LoggedInNavigatorModule,
 		AppRoutingModule
 	],
 	providers: [Title], // for setting <title>

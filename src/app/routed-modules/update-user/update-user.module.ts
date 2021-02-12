@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
-import { DeleteUserFormModule } from '@app/routed-modules/update-user/delete-user-form/delete-user-form.module';
+import { DeleteUserFormModule } from './delete-user-form/delete-user-form.module';
 import { UpdateEmailFormModule } from './update-email-form/update-email-form.module';
 import { UpdatePasswordFormModule }
 	from './update-password-form/update-password-form.module';
