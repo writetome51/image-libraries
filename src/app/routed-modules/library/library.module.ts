@@ -4,7 +4,7 @@ import { DeleteLibraryButtonModule } from './delete-library-button/delete-librar
 import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.module';
 import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
-import { LibraryViewerModule } from '@app/routed-modules/library/library-viewer/library-viewer.module';
+import { LibraryViewerModule } from './library-viewer/library-viewer.module';
 import { NgModule } from '@angular/core';
 
 

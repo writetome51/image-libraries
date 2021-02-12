@@ -7,7 +7,7 @@ import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class DeleteSelectedImagesService implements IDoThis {
 
 	constructor(

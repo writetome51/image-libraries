@@ -6,7 +6,7 @@ import { ProcessToggleAddImageToLibraryService }
 	from './toggle-add-image-to-library/process-toggle-add-image-to-library.service';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
 
 	constructor(

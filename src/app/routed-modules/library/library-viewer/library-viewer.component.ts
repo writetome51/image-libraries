@@ -1,5 +1,3 @@
-import { BackgroundExecutionStatusData as executionStatus }
-	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
@@ -25,11 +23,6 @@ export class LibraryViewerComponent {
 
 	get changesExist(): boolean {
 		return this.__libraryChanges.exist;
-	}
-
-
-	get verifyingLibrary(): boolean {
-		return executionStatus.waiting;
 	}
 
 

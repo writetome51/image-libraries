@@ -4,7 +4,7 @@ import { TogglableMenuChoiceData }
 	from '@interfaces/togglable-menu-choice-data.interface';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ToggleEnableMenuChoiceService implements IDoThis {
 
 	go(data: TogglableMenuChoiceData) {

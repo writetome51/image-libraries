@@ -6,7 +6,7 @@ import { HandleDataTransportProcessErrorService }
 import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class DeleteSelectedImagesResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

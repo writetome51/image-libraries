@@ -9,7 +9,7 @@ import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	constructor(

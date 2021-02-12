@@ -13,7 +13,7 @@ import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class GetImageActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(

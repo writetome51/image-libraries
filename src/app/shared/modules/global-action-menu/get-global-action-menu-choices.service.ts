@@ -20,7 +20,7 @@ import { SelectMutipleImagesSettingService }
 	from '@toggle-setting-in-browser-storage/select-mutiple-images-setting.service';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(

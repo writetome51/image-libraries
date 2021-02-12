@@ -4,8 +4,8 @@ import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor/delete-selected-images-processor.service';
 
 
-@Injectable()
-export class DeleteSelectedImagesService implements IDoThis {
+@Injectable({providedIn: 'root'})
+export class ProcessDeleteSelectedImagesService implements IDoThis {
 
 	constructor(
 		private __deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService

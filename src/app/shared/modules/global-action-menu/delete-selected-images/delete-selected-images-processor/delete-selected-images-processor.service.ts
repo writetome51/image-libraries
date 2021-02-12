@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { DeleteSelectedImagesService } from './delete-selected-images.service';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class DeleteSelectedImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(
