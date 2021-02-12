@@ -55,3 +55,7 @@ Import statements that use a path beginning with '@' are aliases.  Many of those
 refer to files in  /node_modules.
 Aliases to files created in this project are defined in  /tsconfig.json.
 
+
+Label
+
+The word 'label' is the preferred way of specifying a display name.

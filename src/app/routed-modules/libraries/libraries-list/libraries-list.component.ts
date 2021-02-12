@@ -12,7 +12,7 @@ export class LibrariesListComponent {
 	noLibrariesMessage = 'You have no libraries right now';
 
 
-	get names(): string[] {
+	get labels(): string[] {
 		return libraryNames.data;
 	}
 

@@ -1,17 +1,17 @@
 <div>
 
-	<big-loading-spinner *ngIf="!(names)"></big-loading-spinner>
+	<big-loading-spinner *ngIf="!(labels)"></big-loading-spinner>
 
-	<p *ngIf="names && names.length === 0">{{noLibrariesMessage}}</p>
+	<p *ngIf="labels && labels.length === 0">{{noLibrariesMessage}}</p>
 
-	<ng-container *ngIf="names && names.length > 0">
+	<ng-container *ngIf="labels && labels.length > 0">
 
 		<search-library-names></search-library-names>
 
 		<ul>
-			<li *ngFor="let name of names">
-				<a [routerLink]="['/library', name, 'page', 1]">
-					{{name}}
+			<li *ngFor="let label of labels">
+				<a [routerLink]="['/library', label, 'page', 1]">
+					{{ label }}
 				</a>
 			</li>
 		</ul>
