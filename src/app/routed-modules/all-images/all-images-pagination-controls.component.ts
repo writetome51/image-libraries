@@ -1,9 +1,8 @@
 import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
 import { AllImagesPaginatorService }
 	from './services/all-images-paginator/all-images-paginator.service';
-import { LoggedInNavigatorLinkData as navigatorLink }
-	from '@app/logged-in-navigator/logged-in-navigator-link.data';
 import { Component } from '@angular/core';
+import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 
 
 @Component({
@@ -19,7 +18,7 @@ import { Component } from '@angular/core';
 })
 export class AllImagesPaginationControlsComponent {
 
-	modulePath = navigatorLink.AllImagesModule.path;
+	modulePath = appModulePath.AllImagesModule;
 	routeBeforePageNumber = `${this.modulePath}/page`;
 
 

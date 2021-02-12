@@ -39,6 +39,24 @@ const routes: Routes = [
 	},
 
 	{
+		path: modulePath.UpdateUserModule,
+		loadChildren: () => import('./routed-modules/update-user/update-user.module')
+			.then(mod => mod.UpdateUserModule)
+	},
+
+	{
+		path: modulePath.AddImagesModule,
+		loadChildren: () => import('./routed-modules/add-images/add-images.module')
+			.then(mod => mod.AddImagesModule)
+	},
+
+	{
+		path: modulePath.AllImagesModule,
+		loadChildren: () => import('./routed-modules/all-images/all-images.module')
+			.then(mod => mod.AllImagesModule)
+	},
+
+	{
 		path: modulePath.LoginModule,
 		pathMatch: 'full',
 		loadChildren: () => import('./routed-modules/login/login.module')
