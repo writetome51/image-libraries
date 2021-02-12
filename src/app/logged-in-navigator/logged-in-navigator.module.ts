@@ -2,15 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { ExecuteFunctionButtonModule }
 	from '@execute-function-button/execute-function-button.module';
-import { LoggedInAppNavigatorComponent } from './logged-in-app-navigator.component';
+import { LoggedInNavigatorComponent } from './logged-in-navigator.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
-import { NavigatorLinkData as link } from './navigator-link.data';
+import { LoggedInNavigatorLinkData as link } from './logged-in-navigator-link.data';
+import { NavigatorLinksComponent } from './navigator-links.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-	declarations: [LoggedInAppNavigatorComponent, LogoutButtonComponent],
+	declarations: [
+		LoggedInNavigatorComponent,
+		LogoutButtonComponent,
+		NavigatorLinksComponent
+	],
 
 	imports: [
 		CommonModule,
@@ -37,7 +42,7 @@ import { RouterModule } from '@angular/router';
 		])
 	],
 
-	exports: [LoggedInAppNavigatorComponent]
+	exports: [LoggedInNavigatorComponent]
 })
-export class LoggedInAppNavigatorModule {
+export class LoggedInNavigatorModule {
 }
