@@ -1,4 +1,4 @@
-import { AssureUserDataLoadedService } from './assure-user-data-loaded.service';
+import { AssureUserDataLoadedService } from './assure-user-data-loaded/assure-user-data-loaded.service';
 import { Component } from '@angular/core';
 
 

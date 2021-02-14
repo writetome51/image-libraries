@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
 import { AssureUserImageTotalIsStoredLocallyService }
-	from '@services/assure-user-image-total-is-stored-locally.service';
+	from './assure-user-image-total-is-stored-locally.service';
 import { AssureLibrariesAreStoredLocallyService }
-	from '@services/assure-libraries-are-stored-locally.service';
+	from './assure-libraries-are-stored-locally.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { Injectable } from '@angular/core';
+import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LoggedInNavigatorServicesModule})
 export class AssureUserDataLoadedService implements IDoThis {
 
 	constructor(

@@ -5,9 +5,11 @@ import { DataTransportProcessResultInterpreterService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLogoutService }
 	from '@run-post-success-tasks/run-tasks-after-logout.service';
+import { LoggedInNavigatorServicesModule }
+	from '@app/logged-in-navigator/logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn:  LoggedInNavigatorServicesModule})
 export class LogoutResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(

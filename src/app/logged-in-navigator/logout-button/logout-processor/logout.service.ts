@@ -4,9 +4,10 @@ import { SessionIDInBrowserStorageService }
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
+import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LoggedInNavigatorServicesModule})
 export class LogoutService implements IDoThis {
 
 	constructor(

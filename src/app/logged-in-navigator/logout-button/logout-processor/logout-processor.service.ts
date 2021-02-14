@@ -3,9 +3,11 @@ import { DataTransportProcessorService }
 import { LogoutService } from './logout.service';
 import { Injectable } from '@angular/core';
 import { LogoutResultInterpreterService } from './logout-result-interpreter.service';
+import { LoggedInNavigatorServicesModule }
+	from '@app/logged-in-navigator/logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn:  LoggedInNavigatorServicesModule})
 export class LogoutProcessorService extends DataTransportProcessorService {
 
 	constructor(
