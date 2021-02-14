@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { TogglableMenuChoiceData }
 	from '@interfaces/togglable-menu-choice-data.interface';
+import { GlobalActionMenuServicesModule }
+	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: GlobalActionMenuServicesModule})
 export class ToggleEnableMenuChoiceService implements IDoThis {
 
 	go(data: TogglableMenuChoiceData) {

@@ -7,9 +7,11 @@ import { RunTasksAfterModifyingLoadedImagesService }
 import { Router } from '@angular/router';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
+import { GlobalActionMenuServicesModule }
+	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: GlobalActionMenuServicesModule})
 export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	constructor(

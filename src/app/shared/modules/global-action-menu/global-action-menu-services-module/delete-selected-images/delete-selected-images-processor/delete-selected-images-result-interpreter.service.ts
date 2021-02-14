@@ -4,9 +4,10 @@ import { DataTransportProcessResultInterpreterService }
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
+import { GlobalActionMenuServicesModule } from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: GlobalActionMenuServicesModule})
 export class DeleteSelectedImagesResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

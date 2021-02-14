@@ -4,9 +4,11 @@ import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { ToggleEnableMenuChoiceService } from './toggle-enable-menu-choice.service';
 import { ProcessDeleteSelectedImagesService }
 	from './delete-selected-images/process-delete-selected-images.service';
+import { GlobalActionMenuServicesModule }
+	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
 
 	constructor(

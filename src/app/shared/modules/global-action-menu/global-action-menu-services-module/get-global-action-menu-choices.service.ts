@@ -4,10 +4,11 @@ import { CheckableMenuChoice }
 	from '@menu-choice/executable-menu-choice-container/checkable-menu-choice.interface';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
+import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
+import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { not } from '@writetome51/not';
@@ -20,7 +21,7 @@ import { SelectMutipleImagesSettingService }
 	from '@toggle-setting-in-browser-storage/select-mutiple-images-setting.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(
