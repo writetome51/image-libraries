@@ -1,3 +1,4 @@
+import { AddImagesServicesModule } from './add-images-services.module';
 import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -7,7 +8,7 @@ import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class SaveNewImagesService implements IDoThis {
 
 	constructor(

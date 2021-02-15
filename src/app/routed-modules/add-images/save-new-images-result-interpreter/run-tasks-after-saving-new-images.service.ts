@@ -5,9 +5,10 @@ import { NewImagesData as newImages }
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class RunTasksAfterSavingNewImagesService implements IDoThis {
 
 	constructor(

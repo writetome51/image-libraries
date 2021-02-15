@@ -6,9 +6,10 @@ import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { SaveNewImagesProcessorService } from './save-new-images-processor.service';
+import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class UploadImagesProcessorService implements DirectProcessor {
 
 

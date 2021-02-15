@@ -1,4 +1,5 @@
 import { AddImagesComponent } from './add-images.component';
+import { AddImagesServicesModule } from './add-images-services.module';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
@@ -30,6 +31,7 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		FormsModule,
 		BigLoadingSpinnerModule,
 		AppValidatingFormInputsModule,
+		AddImagesServicesModule,
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
 		SubmitFormButtonModule,

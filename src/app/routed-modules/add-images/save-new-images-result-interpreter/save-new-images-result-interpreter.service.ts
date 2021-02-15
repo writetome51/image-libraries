@@ -3,9 +3,10 @@ import { DataTransportProcessResultInterpreterService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterSavingNewImagesService } from './run-tasks-after-saving-new-images.service';
 import { HandleSaveNewImagesErrorService } from './handle-save-new-images-error.service';
+import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class SaveNewImagesResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

@@ -2,9 +2,10 @@ import { ImageURLData } from '@runtime-state-data/image-url.data';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
+import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class ImageURLInputService extends ValidatingTextInputService {
 
 	constructor() {

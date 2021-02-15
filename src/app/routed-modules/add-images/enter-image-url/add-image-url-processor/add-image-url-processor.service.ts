@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
 import { SaveNewImagesResultInterpreterService }
 	from '../../save-new-images-result-interpreter/save-new-images-result-interpreter.service';
 import { AddImageURLService } from './add-image-url.service';
+import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AddImagesServicesModule})
 export class AddImageURLProcessorService extends FormDataTransportProcessorService {
 
 	constructor(
