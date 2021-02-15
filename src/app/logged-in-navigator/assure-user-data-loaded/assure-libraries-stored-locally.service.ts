@@ -15,7 +15,7 @@ import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
-export class AssureLibrariesAreStoredLocallyService implements IDoThis {
+export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(
 		private __getLibrariesProcessor: GetLibrariesProcessorService,

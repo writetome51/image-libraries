@@ -13,7 +13,7 @@ import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
-export class AssureUserImageTotalIsStoredLocallyService implements IDoThis {
+export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(
 		private __userImageTotalInBrowser: UserImageTotalInBrowserStorageService,

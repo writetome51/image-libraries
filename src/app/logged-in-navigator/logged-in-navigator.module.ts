@@ -5,7 +5,7 @@ import { ExecuteFunctionButtonModule }
 import { LoggedInNavigatorComponent } from './logged-in-navigator.component';
 import { LoggedInNavigatorServicesModule } from './logged-in-navigator-services.module';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
-import { NavigatorLinksComponent } from './navigator-links.component';
+import { NavigationLinksModule } from '@navigation-links/navigation-links.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -13,18 +13,16 @@ import { RouterModule } from '@angular/router';
 @NgModule({
 	declarations: [
 		LoggedInNavigatorComponent,
-		LogoutButtonComponent,
-		NavigatorLinksComponent
+		LogoutButtonComponent
 	],
-
 	imports: [
 		CommonModule,
 		BrowserModule,
 		LoggedInNavigatorServicesModule,
 		ExecuteFunctionButtonModule,
+		NavigationLinksModule,
 		RouterModule
 	],
-
 	exports: [LoggedInNavigatorComponent]
 })
 export class LoggedInNavigatorModule {

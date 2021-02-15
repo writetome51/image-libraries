@@ -1,7 +1,6 @@
-import { AssureUserImageTotalIsStoredLocallyService }
-	from './assure-user-image-total-is-stored-locally.service';
-import { AssureLibrariesAreStoredLocallyService }
-	from './assure-libraries-are-stored-locally.service';
+import { AssureUserImageTotalStoredLocallyService }
+	from './assure-user-image-total-stored-locally.service';
+import { AssureLibrariesStoredLocallyService } from './assure-libraries-stored-locally.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
@@ -11,15 +10,15 @@ import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services
 export class AssureUserDataLoadedService implements IDoThis {
 
 	constructor(
-		private __assureUserImageTotalIsStoredLocally: AssureUserImageTotalIsStoredLocallyService,
-		private __assureLibrariesAreStoredLocally: AssureLibrariesAreStoredLocallyService
+		private __assureUserImageTotalStoredLocally: AssureUserImageTotalStoredLocallyService,
+		private __assureLibrariesStoredLocally: AssureLibrariesStoredLocallyService
 		) {
 	}
 
 
 	async go() {
-		await this.__assureUserImageTotalIsStoredLocally.go();
-		await this.__assureLibrariesAreStoredLocally.go();
+		await this.__assureUserImageTotalStoredLocally.go();
+		await this.__assureLibrariesStoredLocally.go();
 	}
 
 }
