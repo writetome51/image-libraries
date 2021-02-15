@@ -4,9 +4,10 @@ import { GetLibrariesProcessorService }
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 	constructor(

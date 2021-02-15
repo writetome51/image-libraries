@@ -5,9 +5,10 @@ import { HandleDataTransportProcessErrorService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterDeletionOfLibraryService }
 	from './run-tasks-after-deletion-of-library.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class DeleteLibraryResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

@@ -5,9 +5,10 @@ import { libraryNotFound } from '@string-constants/mongo-db-realm-function-error
 import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class HandleGetLibraryImagesErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {

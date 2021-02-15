@@ -5,9 +5,10 @@ import { GetLibraryImagesProcessorService }
 import { Injectable } from '@angular/core';
 import { LibraryImagesDataTotalService }
 	from './library-images-data-total.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceService {
 
 	constructor(

@@ -4,9 +4,10 @@ import { DataTransportProcessorService }
 import { GetLibraryImagesService } from './get-library-images.service';
 import { GetLibraryImagesResultInterpreterService }
 	from './get-library-images-result-interpreter/get-library-images-result-interpreter.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class GetLibraryImagesProcessorService extends DataTransportProcessorService {
 
 	constructor(

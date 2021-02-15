@@ -8,9 +8,10 @@ import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { RunTasksAfterGettingImagesService }
 	from '@get-images-processor/get-images-result-interpreter/run-tasks-after-getting-images.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class RunTasksAfterGettingLibraryImagesService extends RunTasksAfterGettingImagesService {
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {

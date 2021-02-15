@@ -6,6 +6,7 @@ import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { LibraryViewerModule } from './library-viewer/library-viewer.module';
 import { NgModule } from '@angular/core';
+import { LibraryServicesModule } from './library-services.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { NgModule } from '@angular/core';
 		GlobalActionMenuModule,
 		LibraryViewerModule,
 		DeleteLibraryButtonModule,
+		LibraryServicesModule,
 		LibraryRoutingModule,
 	]
 })

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
-import { LibraryPaginatorService } from '../services/library-paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../library-paginator/library-paginator.service';
 import { LibraryImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/library-image-total-in-browser-storage.service';
 

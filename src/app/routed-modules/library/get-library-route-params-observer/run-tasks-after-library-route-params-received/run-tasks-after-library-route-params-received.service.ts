@@ -1,14 +1,15 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
+import { LoadLibraryService } from './load-library.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
+import { ModuleTitleData as moduleTitle } from '@app/routed-modules/library/module-title.data';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
-import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
-import { ModuleTitleData as moduleTitle } from '@app/routed-modules/library/module-title.data';
 import { Title } from '@angular/platform-browser';
-import { LoadLibraryService } from './load-library.service';
+import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 	constructor(

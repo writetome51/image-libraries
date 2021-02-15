@@ -4,9 +4,10 @@ import { HandleGetLibraryImagesErrorService } from './handle-get-library-images-
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibraryImagesService }
 	from './run-tasks-after-getting-library-images.service';
+import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryServicesModule})
 export class GetLibraryImagesResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

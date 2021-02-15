@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { DeleteLibraryButtonComponent }
-	from './delete-library-button.component';
+import { DeleteLibraryButtonComponent } from './delete-library-button.component';
 import { NgModule } from '@angular/core';
 import { ExecuteFunctionButtonModule }
 	from '@execute-function-button/execute-function-button.module';
 
 
 @NgModule({
-	declarations: [DeleteLibraryButtonComponent,],
+	declarations: [DeleteLibraryButtonComponent],
 	imports: [
 		CommonModule,
 		ExecuteFunctionButtonModule,
