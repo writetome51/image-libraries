@@ -3,9 +3,10 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {

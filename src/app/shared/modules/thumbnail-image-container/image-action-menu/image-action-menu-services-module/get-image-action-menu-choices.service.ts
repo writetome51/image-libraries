@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CheckableMenuChoice } // tslint:disable-next-line:max-line-length
-	from '@action-menu/action-menu-choices/menu-choice/executable-menu-choice-container/checkable-menu-choice.interface';
+	from '@menu-choice/executable-menu-choice-container/checkable-menu-choice.interface';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
@@ -11,9 +11,10 @@ import { LibrariesInBrowserStorageService }
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
+import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class GetImageActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(

@@ -4,9 +4,10 @@ import { DataTransportProcessorService }
 import { RemoveImageFromLibraryResultInterpreterService }
 	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
+import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class RemoveImageFromLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

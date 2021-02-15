@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { ProcessToggleAddImageToLibraryService }
 	from './toggle-add-image-to-library/process-toggle-add-image-to-library.service';
+import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
 
 	constructor(

@@ -1,16 +1,13 @@
 import { AddImageToLibraryProcessorService }
 	from './add-image-to-library-processor/add-image-to-library-processor.service';
 import { Injectable } from '@angular/core';
-import { ProcessorService } from '@processor/processor.service';
 import { RemoveImageFromLibraryProcessorService }
 	from './remove-image-from-library-processor/remove-image-from-library-processor.service';
-import { ToggleAddImageToLibraryResultInterpreterService }
-	// tslint:disable-next-line:max-line-length
-	from './toggle-add-image-to-library-result-interpreter/toggle-add-image-to-library-result-interpreter.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class ToggleAddImageToLibraryService implements IDoThis {
 
 	constructor(

@@ -4,9 +4,10 @@ import { AddImageToLibraryService } from './add-image-to-library.service';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { Injectable } from '@angular/core';
+import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class AddImageToLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

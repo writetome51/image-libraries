@@ -8,9 +8,10 @@ import { LibrariesInBrowserStorageService }
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { HandleProcessErrorService } from '@processor/handle-process-error.service';
+import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: ImageActionMenuServicesModule})
 export class ToggleAddImageToLibraryResultInterpreterService
 	extends ProcessResultInterpreterService {
 

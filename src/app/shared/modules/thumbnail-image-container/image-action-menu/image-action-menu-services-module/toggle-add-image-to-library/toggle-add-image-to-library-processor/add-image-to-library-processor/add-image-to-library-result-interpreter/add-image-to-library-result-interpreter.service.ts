@@ -1,21 +1,22 @@
 import { DataTransportProcessResultInterpreterService }
 	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { HandleAddImageToLibraryErrorService }
+	from './handle-add-image-to-library-error.service';
+import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
 import { Injectable } from '@angular/core';
-import { HandleRemoveImageFromLibraryErrorService }
-	from './handle-remove-image-from-library-error.service';
 import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 	from '../../run-tasks-after-adding-or-removing-image-from-library.service';
 
 
-@Injectable({providedIn: 'root'})
-export class RemoveImageFromLibraryResultInterpreterService
+@Injectable({providedIn: ImageActionMenuServicesModule})
+export class AddImageToLibraryResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 
 	constructor(
-		____handleError: HandleRemoveImageFromLibraryErrorService,
+		__handleError: HandleAddImageToLibraryErrorService,
 		__runPostSuccessTasks: RunTasksAfterAddingOrRemovingImageFromLibraryService
 	) {
-		super(____handleError, __runPostSuccessTasks);
+		super(__handleError, __runPostSuccessTasks);
 	}
 
 }
