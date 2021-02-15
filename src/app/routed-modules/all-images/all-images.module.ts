@@ -12,6 +12,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container/thumbnail-image-container.module';
+import { AllImagesServicesModule } from './all-images-services-module/all-images-services.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ThumbnailImageContainerModule }
 		AppPaginationControlsModule,
 		BigLoadingSpinnerModule,
 		ThumbnailImageContainerModule,
+		AllImagesServicesModule,
 		RouterModule.forChild([
 			{
 				path: modulePath.AllImagesComponent,

@@ -6,9 +6,10 @@ import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { AllImagesServicesModule } from '@app/routed-modules/all-images/all-images-services-module/all-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AllImagesServicesModule})
 export class GetAllImagesService implements IDoThis {
 
 	constructor(

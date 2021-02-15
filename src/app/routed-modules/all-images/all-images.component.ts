@@ -3,7 +3,7 @@ import { BackgroundExecutionStatusData as executionStatus }
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
-	from './services/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
+	from './all-images-services-module/get-all-images-route-params-observer/get-all-images-route-params-observer.service';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 import { ModuleTitleData as moduleTitle } from './module-title.data';
 import { Title } from '@angular/platform-browser';

@@ -1,6 +1,7 @@
-import { AllImagesJumpToPageInputService } from './services/all-images-jump-to-page-input.service';
+import { AllImagesJumpToPageInputService }
+	from './all-images-services-module/all-images-jump-to-page-input.service';
 import { AllImagesPaginatorService }
-	from './services/all-images-paginator/all-images-paginator.service';
+	from './all-images-services-module/all-images-paginator/all-images-paginator.service';
 import { Component } from '@angular/core';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 

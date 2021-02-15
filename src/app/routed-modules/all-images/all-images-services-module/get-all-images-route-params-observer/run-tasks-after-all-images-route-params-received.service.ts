@@ -9,9 +9,10 @@ import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
+import { AllImagesServicesModule } from '@app/routed-modules/all-images/all-images-services-module/all-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AllImagesServicesModule})
 export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis {
 
 

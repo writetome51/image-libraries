@@ -4,9 +4,11 @@ import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-lin
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 import { UserImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
+import { AllImagesServicesModule }
+	from '@app/routed-modules/all-images/all-images-services-module/all-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AllImagesServicesModule})
 export class AllImagesDataTotalService extends DataTotalService {
 
 	constructor(

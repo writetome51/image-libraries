@@ -2,9 +2,10 @@ import { GetRouteParamsObserverService } from '@services/get-route-params-observ
 import { Injectable } from '@angular/core';
 import { RunTasksAfterAllImagesRouteParamsReceivedService }
 	from './run-tasks-after-all-images-route-params-received.service';
+import { AllImagesServicesModule } from '@app/routed-modules/all-images/all-images-services-module/all-images-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AllImagesServicesModule})
 export class GetAllImagesRouteParamsObserverService extends GetRouteParamsObserverService {
 
 	constructor(
