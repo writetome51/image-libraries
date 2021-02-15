@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Link } from '@interfaces/has-label/link/link.interface';
-import { LoggedInNavigatorLinkData } from './logged-in-navigator-link.data';
 
 
 @Component({
-	selector: 'navigator-links',
+	selector: 'navigation-links',
 	template: `
-		<div *ngFor="let link of data" class="nav-link-container">
+		<div *ngFor="let link of data; let i = index" class="nav-link-container">
 
 			<a *ngIf="!(isCurrentPath(link.path))" [routerLink]="link.path">
 				{{link.label}}
@@ -15,12 +14,14 @@ import { LoggedInNavigatorLinkData } from './logged-in-navigator-link.data';
 
 			<span *ngIf="isCurrentPath(link.path)">{{link.label}}</span>
 
+			<span *ngIf="i < (data.length - 1)">&nbsp;|&nbsp;</span>
+
 		</div>
 	`
 })
-export class NavigatorLinksComponent {
+export class NavigationLinksComponent {
 
-	data: Link[] = Object.values(LoggedInNavigatorLinkData);
+	@Input() data: Link[];
 
 
 	constructor(private __currentRoute: CurrentRouteService) {
