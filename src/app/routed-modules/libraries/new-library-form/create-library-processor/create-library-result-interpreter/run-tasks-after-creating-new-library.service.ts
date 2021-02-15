@@ -4,9 +4,10 @@ import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { LibrariesServicesModule } from '@app/routed-modules/libraries/libraries-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibrariesServicesModule})
 export class RunTasksAfterCreatingNewLibraryService implements IDoThis {
 
 	constructor(private __getLibrariesProcessor: GetLibrariesProcessorService) {

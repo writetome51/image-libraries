@@ -5,9 +5,10 @@ import { HandleUpdateOrNewLibraryErrorService }
 	from '@handle-data-transport-process-error/handle-update-or-new-library-error.service';
 import { RunTasksAfterCreatingNewLibraryService }
 	from './run-tasks-after-creating-new-library.service';
+import { LibrariesServicesModule } from '../../../libraries-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibrariesServicesModule})
 export class CreateLibraryResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

@@ -5,9 +5,10 @@ import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LibraryNameInputService } from '../library-name-input.service';
+import { LibrariesServicesModule } from '@app/routed-modules/libraries/libraries-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibrariesServicesModule})
 export class CreateLibraryProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

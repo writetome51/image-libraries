@@ -6,9 +6,10 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
+import { LibrariesServicesModule } from '@app/routed-modules/libraries/libraries-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibrariesServicesModule})
 export class CreateLibraryService implements IDoThis {
 
 	constructor(
