@@ -5,9 +5,10 @@ import { DeleteUserResultInterpreterService }
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class DeleteUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

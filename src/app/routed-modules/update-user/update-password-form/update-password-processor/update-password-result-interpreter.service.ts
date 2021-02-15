@@ -5,9 +5,10 @@ import { HandleDataTransportProcessErrorService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdatingPasswordService }
 	from './run-tasks-after-updating-password.service';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class UpdatePasswordResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

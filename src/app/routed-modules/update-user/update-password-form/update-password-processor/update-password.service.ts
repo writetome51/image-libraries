@@ -9,9 +9,10 @@ import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class UpdatePasswordService implements IDoThis {
 
 	constructor(

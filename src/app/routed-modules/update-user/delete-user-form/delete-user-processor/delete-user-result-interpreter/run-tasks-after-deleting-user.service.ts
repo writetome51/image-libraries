@@ -3,9 +3,10 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLogoutService }
 	from '@run-post-success-tasks/run-tasks-after-logout.service';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class RunTasksAfterDeletingUserService implements IDoThis {
 
 	constructor(private __runTasksAfterLogout: RunTasksAfterLogoutService) {

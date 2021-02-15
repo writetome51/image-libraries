@@ -2,9 +2,10 @@ import { EmailInputService } from '@validating-input/email-input.service';
 import { EmailInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
+import { UpdateUserServicesModule } from './update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class LoggedInEmailVerificationInputService extends EmailInputService {
 
 	constructor(private  __emailInBrowser: EmailInBrowserStorageService) {

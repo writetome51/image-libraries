@@ -3,9 +3,10 @@ import { CurrentUserInputsService } from '@validating-inputs/current-user-inputs
 import { Injectable } from '@angular/core';
 import { NewEmailInputService } from './new-email-input.service';
 import { PasswordInputService } from '@validating-input/password/password-input.service';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class UpdateEmailInputsService extends CurrentUserInputsService {
 
 	constructor(

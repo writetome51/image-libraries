@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
 import { UpdateEmailInputsService } from '../update-email-inputs/update-email-inputs.service';
 import { UpdateEmailResultInterpreterService } from './update-email-result-interpreter.service';
 import { UpdateEmailService } from './update-email.service';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class UpdateEmailProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

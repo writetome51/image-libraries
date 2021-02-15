@@ -4,9 +4,10 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingUserService }
 	from '@run-post-success-tasks/run-tasks-after-getting-user.service';
+import { UpdateUserServicesModule } from './update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class RunTasksAfterUpdatingUserService implements IDoThis {
 
 	resultMessage: string;

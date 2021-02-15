@@ -6,9 +6,11 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
+import { UpdateUserServicesModule }
+	from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class DeleteUserService implements IDoThis {
 
 	constructor(

@@ -4,9 +4,11 @@ import { HandleDataTransportProcessErrorService }	// tslint:disable-next-line:ma
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterDeletingUserService } from './run-tasks-after-deleting-user.service';
+import { UpdateUserServicesModule }
+	from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class DeleteUserResultInterpreterService extends DataTransportProcessResultInterpreterService {
 
 	constructor(

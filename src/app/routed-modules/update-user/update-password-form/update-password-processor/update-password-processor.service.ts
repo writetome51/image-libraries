@@ -6,9 +6,10 @@ import { UpdatePasswordInputsService }
 import { UpdatePasswordResultInterpreterService }
 	from './update-password-result-interpreter.service';
 import { UpdatePasswordService } from './update-password.service';
+import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: UpdateUserServicesModule})
 export class UpdatePasswordProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

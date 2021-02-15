@@ -9,6 +9,8 @@ import { UpdateEmailFormModule } from './update-email-form/update-email-form.mod
 import { UpdatePasswordFormModule }
 	from './update-password-form/update-password-form.module';
 import { UpdateUserChoicesComponent } from './update-user-choices.component';
+import { UpdateUserServicesModule }
+	from '@app/routed-modules/update-user/update-user-services.module';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { UpdateUserChoicesComponent } from './update-user-choices.component';
 		UpdateEmailFormModule,
 		UpdatePasswordFormModule,
 		UpdateUserRoutingModule,
-		NavigationLinksModule
+		NavigationLinksModule,
+		UpdateUserServicesModule
 	]
 })
 export class UpdateUserModule {
