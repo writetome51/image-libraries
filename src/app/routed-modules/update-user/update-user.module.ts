@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NavigationLinksModule } from '@navigation-links/navigation-links.module';
 import { NgModule } from '@angular/core';
 import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
@@ -18,7 +19,8 @@ import { UpdateUserChoicesComponent } from './update-user-choices.component';
 		DeleteUserFormModule,
 		UpdateEmailFormModule,
 		UpdatePasswordFormModule,
-		UpdateUserRoutingModule
+		UpdateUserRoutingModule,
+		NavigationLinksModule
 	]
 })
 export class UpdateUserModule {
