@@ -1,3 +1,14 @@
+Filenames follow the naming convention Angular recommends for Modules, Components,
+Directives, and Services (the different Angular entities).
+
+
+Directory names
+
+A directory that contains an entity and all the assets used only in that entity will be
+named after that entity, matching its filename except underscores are used instead of
+periods.
+
+
 Services
 
 Each instance of a Service is referred to without 'Service' at the end.

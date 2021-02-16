@@ -1,5 +1,5 @@
-Many Angular Modules in this project are instantiated via lazy-loading, which happens by
-including the Module's route in the url.  These Modules are found in
+Many Angular Modules in this project are instantiated via lazy-loading (which happens by
+including the Module's route in the requested url).  These Modules are found in
 /src/app/routed-modules.
 
 Any entity (class, interface, constant, etc.) used in more than one Module is found in
@@ -10,4 +10,4 @@ AppValidatingFormInputComponent.  AppValidatingFormInputComponent depends on the
 interface ValidatingInput (npm package @writetome51/validating-inputs).
 ValidatingInput only represents an input of type 'text', 'password', or 'number'.
 
-Any custom class decorator I've created is an experiment.
+Any class decorator I've created is an experiment.

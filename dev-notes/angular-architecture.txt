@@ -1,25 +1,43 @@
-Directives are classes providing UI content behavior.  Each has an assigned selector
+Directives
+are classes providing UI content behavior.  Each has an assigned selector
 (a custom element or element attribute).
 
-Components are subclasses of Directives.  They represent UI content and/or provide its
+
+Components
+are subclasses of Directives.  They represent UI content and/or provide its
 behavior.  Each has an assigned html template.
 
-Services are helpers that are injected into Directives, Components, or other Services
-(though some only have static features and don't need to be injected).  Each has a
-specific purpose.  They are often used as singletons shared among multiple Directives,
-Components, and/or other Services.
 
-Modules contain Components, Directives, Services, and other Modules.
+Services
+are helpers that are injected into Directives, Components, Guards, or other Services
+(though some only have static features and don't need to be injected).  Each has a
+specific purpose.  They are often used as singletons shared among multiple classes.
+
+
+Modules
+can contain Components, Directives, Services, and other Modules.
 Directives and Components must be declared in a module's 'declarations' array.  This
 makes them belong to that module.  If you want to use those Directives or Components in
 other modules, you must list them in their module's 'exports' array, and import their
 module into the destination module by listing it in the destination module's 'imports'
-array.  If a Service is only used in one Module, you list it in that Module's
-'providers' array.  To share a Service instance among multiple Modules, pass
-{providedIn: 'root'} to its @Injectable decorator, like so:
-@Injectable({providedIn: 'root'})
+array.
+To share a Service as a singleton among multiple Modules, pass {providedIn: 'root'} to its
+@Injectable() decorator.  This makes the Service available as a singleton in every Module
+in the project.  To use a Service in only one Module (let's call it ModuleA), you
+should create a new Module (let's call it ModuleB), pass {providedIn: ModuleB} to the
+service's @Injectable() decorator, and import ModuleB into ModuleA. (The older method for
+making a Service available to a Module is listing it in the Module's 'providers' array.)
 
-Guards are classes that, like Services, are injected, but are used in the app's route
+
+Guards
+are classes that, like Services, are injected, but are used in the app's route
 configurations to control a user's access to app features.  They can be used for security,
 or to improve the quality of the user experience, such as blocking a user from navigating
 away from a page where they haven't yet saved their work.
+
+
+<router-outlet>
+is an html tag you'll see in some Component templates.  This is used by Angular as a
+placeholder for a Component template it will insert when that Component is requested via
+the url (which happens because that Component has been included in the RouterModule
+configuration).
