@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { LoginComponent } from './login.component';
-import { LoginFormModule } from '@app/routed-modules/login/login-form/login-form.module';
+import { LoginFormModule } from '@app/routed-modules/login/login-form_module/login-form.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SiteExplanationComponent } from './site-explanation.component';
