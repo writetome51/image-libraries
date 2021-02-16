@@ -7,9 +7,10 @@ import { SecurityQuestionInputService } from './security-question-input.service'
 import { CurrentUserInputsService } from '@validating-inputs/current-user-inputs.service';
 import { SecurityAnswerInputService }
 	from '@validating-input/security-answer-input.service';
+import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: NewUserServicesModule})
 export class NewUserInputsService extends CurrentUserInputsService {
 
 	constructor(

@@ -1,7 +1,8 @@
-Each class/object in this directory is intended to be used as a singleton without requiring
-instantiation, which is why they're declared as either constants or static classes.
-Each instance, in use, is referred to without the 'data' at the end, i.e. 'NewLibraryData' is
-referred to as 'newLibrary'.
+Each class/object in this directory is intended to be used as a singleton without
+requiring instantiation, which is why they're declared as either constants or static
+classes.
+Each instance, in use, is referred to without the 'data' at the end, i.e. 'NewLibraryData'
+is referred to as 'newLibrary'.
 
 For any class/object which has a 'data' property: 'data' is exactly what the class/object
 represents.  For example, ImageURLData's 'data' property, when referred to, will look like

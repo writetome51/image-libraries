@@ -4,9 +4,11 @@ import { CurrentUserData as currentUser }
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { SecurityQuestionServicesModule }
+	from '@app/routed-modules/security-question/security-question-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: SecurityQuestionServicesModule})
 export class RunTasksAfterGettingSecurityQuestionService implements IDoThis {
 
 	async go(result: { question: string, answer: string }) {

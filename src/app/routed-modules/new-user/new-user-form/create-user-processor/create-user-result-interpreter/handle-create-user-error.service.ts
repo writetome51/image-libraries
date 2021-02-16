@@ -4,9 +4,10 @@ import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
+import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: NewUserServicesModule})
 export class HandleCreateUserErrorService extends HandleDataTransportProcessErrorService {
 
 	async go(error) {

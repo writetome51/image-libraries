@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
 import { CreateUserResultInterpreterService }
 	from './create-user-result-interpreter/create-user-result-interpreter.service';
+import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: NewUserServicesModule})
 export class CreateUserProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

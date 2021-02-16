@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { UserValidationRulesData as rules } from '@read-only-data/user-validation-rules.data';
+import { UserValidationRuleData as rules } from '@read-only-data/user-validation-rule.data';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
+import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: NewUserServicesModule})
 export class SecurityQuestionInputService extends ValidatingTextInputService {
 
 	constructor() {

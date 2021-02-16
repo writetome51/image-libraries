@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
+import { LoginServicesModule } from '@app/routed-modules/login/login-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LoginServicesModule})
 export class LoginByPasswordService implements IDoThis {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {

@@ -6,9 +6,11 @@ import { GetSecurityQuestionResultInterpreterService }
 import { EmailToGetSecurityQuestionInputService }
 	from '../email-to-get-security-question-input.service';
 import { GetSecurityQuestionService } from './get-security-question.service';
+import { SecurityQuestionServicesModule }
+	from '@app/routed-modules/security-question/security-question-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: SecurityQuestionServicesModule})
 export class GetSecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

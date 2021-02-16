@@ -5,9 +5,11 @@ import { LoginResultInterpreterService }
 	from '@data-transport-process-result-interpreter/login-result-interpreter.service';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
+import { SecurityQuestionServicesModule }
+	from '@app/routed-modules/security-question/security-question-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: SecurityQuestionServicesModule})
 export class LoginBySecurityQuestionProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

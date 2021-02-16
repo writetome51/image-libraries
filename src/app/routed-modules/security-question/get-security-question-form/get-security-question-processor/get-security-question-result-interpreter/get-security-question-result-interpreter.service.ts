@@ -5,9 +5,11 @@ import { HandleGetSecurityQuestionErrorService }
 	from './handle-get-security-question-error.service';
 import { RunTasksAfterGettingSecurityQuestionService }
 	from './run-tasks-after-getting-security-question.service';
+import { SecurityQuestionServicesModule }
+	from '@app/routed-modules/security-question/security-question-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: SecurityQuestionServicesModule})
 export class GetSecurityQuestionResultInterpreterService
 	extends DataTransportProcessResultInterpreterService {
 

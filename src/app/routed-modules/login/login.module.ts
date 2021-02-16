@@ -8,6 +8,7 @@ import { LoginFormModule } from '@app/routed-modules/login/login-form/login-form
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SiteExplanationComponent } from './site-explanation.component';
+import { LoginServicesModule } from './login-services.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SiteExplanationComponent } from './site-explanation.component';
 		ClearAlertOnDestroyModule,
 		HoverableContainerModule,
 		LoginFormModule,
+		LoginServicesModule,
 		RouterModule.forChild([
 			{
 				path: '', // the logged-out homepage

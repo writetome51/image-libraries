@@ -9,6 +9,7 @@ import { GetSecurityQuestionFormModule }
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SecurityQuestionComponent } from './security-question.component';
+import { SecurityQuestionServicesModule } from './security-question-services.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SecurityQuestionComponent } from './security-question.component';
 		AnswerSecurityQuestionFormModule,
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
+		SecurityQuestionServicesModule,
 		RouterModule.forChild([
 			{
 				path: '',

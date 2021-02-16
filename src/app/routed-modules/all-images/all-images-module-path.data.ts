@@ -1,4 +1,4 @@
-import { URLParamIDData as paramID } from '@read-only-data/url-param-id.data';
+import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
 
 
 export class AllImagesModulePathData {

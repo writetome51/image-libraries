@@ -5,9 +5,10 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { HasError } from '@interfaces/has-error.interface';
+import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: NewUserServicesModule})
 export class CreateUserService implements IDoThis {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {

@@ -9,12 +9,13 @@ import { ImageDescriptionComponent } from './image-description/image-description
 import { ImageTagsComponent } from './image-tags/image-tags.component';
 import { ImageDateComponent } from './image-date/image-date.component';
 import { ImageLocationComponent } from './image-location/image-location.component';
-import { LibraryModulePathData } from '../library/library-module-path.data';
+import { LibraryModulePathData as libModulePath } from '../library/library-module-path.data';
 import { LocationMapComponent } from './location-map/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { URLParamIDData as paramID} from '@read-only-data/url-param-id.data';
+import { RouteParamIDData as paramID} from '@read-only-data/route-param-id.data';
 import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
+import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 
 
 @NgModule({
@@ -32,7 +33,6 @@ import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 	imports: [
 		CommonModule,
 		GoogleMapsModule,
-
 		RouterModule.forChild([
 			{
 				path: `:${paramID.imageID}`,
@@ -43,10 +43,9 @@ import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: '/library/' + LibraryModulePathData.LibraryComponent
+				redirectTo: `/${appModulePath.LibraryModule}/` + libModulePath.LibraryComponent
 			}
 		])
-
 	],
 
 	exports: [FullSizeImageViewerComponent]

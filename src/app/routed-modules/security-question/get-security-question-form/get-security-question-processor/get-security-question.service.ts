@@ -5,9 +5,10 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SecurityQuestion } from '@interfaces/security-question.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
+import { SecurityQuestionServicesModule } from '../../security-question-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: SecurityQuestionServicesModule})
 export class GetSecurityQuestionService implements IDoThis {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {

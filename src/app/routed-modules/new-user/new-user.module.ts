@@ -11,6 +11,7 @@ import { NewUserFormInputsComponent } from './new-user-form/new-user-form-inputs
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { NewUserServicesModule } from './new-user-services.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
 		SubmitFormButtonModule,
+		NewUserServicesModule,
 		RouterModule.forChild([
 			{
 				path: '',
