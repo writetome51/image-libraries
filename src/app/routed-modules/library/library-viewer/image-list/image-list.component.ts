@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { LibraryPaginatorService }
-	from '../../library-paginator/library-paginator.service';
+	from '../../library-paginator_service/library-paginator.service';
 import { ListItemRemoverService } from '@services/list-item-remover.service';
 import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 

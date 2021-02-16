@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DeleteLibraryProcessorService }
-	from './delete-library-processor/delete-library-processor.service';
+	from './delete-library-processor_service/delete-library-processor.service';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.component';
 

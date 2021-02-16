@@ -3,7 +3,7 @@ import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { GetLibraryImagesService } from './get-library-images.service';
 import { GetLibraryImagesResultInterpreterService }
-	from './get-library-images-result-interpreter/get-library-images-result-interpreter.service';
+	from './get-library-images-result-interpreter_service/get-library-images-result-interpreter.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 

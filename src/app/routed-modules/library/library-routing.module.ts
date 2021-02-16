@@ -1,6 +1,6 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
-import { LibraryComponent } from './library.component';
+import { LibraryComponent } from './library_component/library.component';
 import { LibraryModulePathData as modulePath } from './library-module-path.data';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

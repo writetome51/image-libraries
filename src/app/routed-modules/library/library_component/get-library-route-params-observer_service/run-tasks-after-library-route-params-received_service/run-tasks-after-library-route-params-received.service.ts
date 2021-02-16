@@ -1,8 +1,8 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoadLibraryService } from './load-library.service';
-import { LibraryServicesModule } from '../../library-services.module';
-import { ModuleTitleData as moduleTitle } from '../../module-title.data';
+import { LibraryServicesModule } from '../../../library-services.module';
+import { ModuleTitleData as moduleTitle } from '../../../module-title.data';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { Title } from '@angular/platform-browser';

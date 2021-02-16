@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CreateLibraryProcessorService }
-	from './create-library-processor/create-library-processor.service';
+	from './create-library-processor_service/create-library-processor.service';
 
 
 @Component({

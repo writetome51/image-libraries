@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } fr
 import { FullSizeImageComponent }
 	from '@app/routed-modules/full-size-image-viewer/full-size-image/full-size-image.component';
 import { Injectable } from '@angular/core';
-import { LibraryComponent } from '@app/routed-modules/library/library.component';
+import { LibraryComponent } from '@app/routed-modules/library/library_component/library.component';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 
 

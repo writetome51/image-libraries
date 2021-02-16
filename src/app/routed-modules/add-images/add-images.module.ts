@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
-import { EnterImageURLModule } from '@app/routed-modules/add-images/enter-image-url_module/enter-image-url.module';
+import { EnterImageURLModule } from './enter-image-url_module/enter-image-url.module';
 
 
 @NgModule({

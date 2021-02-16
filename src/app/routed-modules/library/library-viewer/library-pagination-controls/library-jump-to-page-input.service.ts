@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JumpToPageInputService }
 	from '@app-pagination-controls/jump-to-page-input.service';
-import { LibraryPaginatorService } from '../../library-paginator/library-paginator.service';
+import { LibraryPaginatorService } from '../../library-paginator_service/library-paginator.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 

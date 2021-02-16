@@ -1,7 +1,7 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.service';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorDataSourceService }
-	from './library-paginator-data-source/library-paginator-data-source.service';
+	from './library-paginator-data-source_service/library-paginator-data-source.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 

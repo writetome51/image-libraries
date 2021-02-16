@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { ModuleTitleData as moduleTitle } from '../module-title.data';
 import { Title } from '@angular/platform-browser';
 
 

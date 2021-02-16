@@ -3,7 +3,7 @@ import { BackgroundExecutionStatusData as executionStatus }
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetLibraryRouteParamsObserverService }
-	from './get-library-route-params-observer-service/get-library-route-params-observer.service';
+	from './get-library-route-params-observer_service/get-library-route-params-observer.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';

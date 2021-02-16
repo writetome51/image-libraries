@@ -1,5 +1,5 @@
 import { CreateLibraryResultInterpreterService }
-	from './create-library-result-interpreter/create-library-result-interpreter.service';
+	from './create-library-result-interpreter_service/create-library-result-interpreter.service';
 import { CreateLibraryService } from './create-library.service';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
