@@ -1,9 +1,39 @@
-Custom TypeScript Decorators
-
-If you combine your own custom decorator(s) with @Injectable() decorator, Angular's
-dependency injector won't work.  The solution is detailed in
-src/app/injectable-decorator-workaround.ts  and is used in the app.
-
-Any custom typescript decorators created by calling getClassModificationDecorator()
+Any custom Typescript decorators created by calling getClassModificationDecorator()
 have been pre-transpiled into javascript files.  This is done to avoid an Angular
 build error: 'Function calls are not supported in decorators...'.
+
+
+Combining your own TypeScript Decorators with @Injectable()
+
+Problem:  Typescript class decorators you make probably won't work when combined with
+@Injectable() (and possibly won't work with other Angular decorators) like so:
+
+@Injectable()
+@Your_Own_Decorator()
+export class ExampleClass { ... }
+
+Solution:
+Decorate the class with your own decorator (do not decorate this class
+with @Injectable()).  Begin the class' name with two underscores (it's private).
+Underneath that class, in the same file, create a subclass.  Give it the
+same name without the beginning underscores, indicating it's the public version.
+Decorate the subclass with @Injectable() (It's unnecessary to declare the
+constructor in the subclass).  The subclass is now injectable and will receive
+dependencies in its constructor.
+Example:
+
+@Your_Own_Decorator()
+export class __TheClass {
+
+	constructor(public obj: ExampleService) {
+	}
+
+}
+
+@Injectable()
+export class TheClass extends __TheClass {
+}
+
+// TheClass is now injectable.
+
+
