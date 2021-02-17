@@ -4,7 +4,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleProcessErrorService implements IDoThis {
+export class HandleErrorResultService implements IDoThis {
 
 	// Default error handler.  Intended to be extended by subclasses.
 

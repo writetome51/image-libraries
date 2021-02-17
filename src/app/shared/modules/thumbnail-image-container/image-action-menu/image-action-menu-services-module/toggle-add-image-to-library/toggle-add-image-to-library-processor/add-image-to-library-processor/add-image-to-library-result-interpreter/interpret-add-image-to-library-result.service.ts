@@ -1,5 +1,5 @@
-import { DataTransportProcessResultInterpreterService }
-	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { InterpretDataTransportResultService }
+	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleAddImageToLibraryErrorService }
 	from './handle-add-image-to-library-error.service';
 import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
@@ -10,7 +10,7 @@ import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
 export class AddImageToLibraryResultInterpreterService
-	extends DataTransportProcessResultInterpreterService {
+	extends InterpretDataTransportResultService {
 
 	constructor(
 		__handleError: HandleAddImageToLibraryErrorService,

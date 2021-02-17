@@ -1,5 +1,5 @@
-import { DataTransportProcessResultInterpreterService }
-	from './data-transport-process-result-interpreter.service';
+import { InterpretDataTransportResultService }
+	from './interpret-data-transport-result.service';
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { Injectable } from '@angular/core';
@@ -8,7 +8,7 @@ import { RunTasksAfterLoginService }
 
 
 @Injectable({providedIn: 'root'})
-export class LoginResultInterpreterService extends DataTransportProcessResultInterpreterService {
+export class LoginResultInterpreterService extends InterpretDataTransportResultService {
 
 	constructor(
 		__handleError: HandleDataTransportProcessErrorService,

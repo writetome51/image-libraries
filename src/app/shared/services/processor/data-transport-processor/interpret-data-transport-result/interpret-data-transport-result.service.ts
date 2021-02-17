@@ -1,11 +1,11 @@
 import { HandleDataTransportProcessErrorService }
 	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ProcessResultInterpreterService } from '@processor/process-result-interpreter.service';
+import { InterpretResultService } from '@processor/interpret-result.service';
 
 
 export abstract class DataTransportProcessResultInterpreterService
-	extends ProcessResultInterpreterService {
+	extends InterpretResultService {
 
 	constructor(
 		__handleError: HandleDataTransportProcessErrorService,
