@@ -1,4 +1,5 @@
-import { AppPaginationControlsComponent } from './app-pagination-controls.component';
+import { AppPaginationControlsComponent }
+	from './app-pagination-controls_component/app-pagination-controls.component';
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';

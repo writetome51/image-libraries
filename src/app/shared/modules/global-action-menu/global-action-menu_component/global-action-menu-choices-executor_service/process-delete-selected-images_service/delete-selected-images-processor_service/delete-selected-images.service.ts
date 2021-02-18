@@ -6,7 +6,7 @@ import { SelectedImagesData as selectedImages } from '@runtime-state-data/select
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { GlobalActionMenuServicesModule }
-	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
+	from '@global-action-menu/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

@@ -2,13 +2,12 @@ import { AlertData as alert } from '@runtime-state-data/static-classes/alert.dat
 import { CurrentRouteService } from '@services/current-route.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterModifyingLoadedImagesService }
-	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 import { Router } from '@angular/router';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
 import { GlobalActionMenuServicesModule }
-	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
+	from '@global-action-menu/global-action-menu-services.module';
+import { RunTasksAfterModifyingLoadedImagesService } from '@data-transport-processor/interpret-data-transport-result/run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

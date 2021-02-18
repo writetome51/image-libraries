@@ -1,4 +1,4 @@
-import { ActionMenuComponent } from '../action-menu.component';
+import { ActionMenuComponent } from '../action-menu_component/action-menu.component';
 import { Component, Input } from '@angular/core';
 
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { GetGlobalActionMenuChoicesService }
-	from './global-action-menu-services-module/get-global-action-menu-choices.service';
+	from './get-global-action-menu-choices.service';
 import { GlobalActionMenuChoicesExecutorService }
-	from './global-action-menu-services-module/global-action-menu-choices-executor.service';
+	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
 
 
 @Component({

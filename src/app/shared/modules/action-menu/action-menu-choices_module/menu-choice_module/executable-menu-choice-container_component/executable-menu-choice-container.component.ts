@@ -1,4 +1,4 @@
-import { CheckableMenuChoice } from './checkable-menu-choice.interface';
+import { CheckableMenuChoice } from '../../../checkable-menu-choice.interface';
 import { Component, Input } from '@angular/core';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceExecutorService } from '../../../menu-choice-executor.service';

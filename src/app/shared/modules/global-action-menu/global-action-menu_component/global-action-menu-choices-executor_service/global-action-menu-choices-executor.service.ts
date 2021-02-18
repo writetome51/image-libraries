@@ -1,11 +1,11 @@
 import { SpecificChoicesExecutorService } from '@action-menu/specific-choices-executor.service';
 import { Injectable } from '@angular/core';
-import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
+import { MenuChoiceLabelData as choiceLabel } from '../../menu-choice-label.data';
 import { ToggleEnableMenuChoiceService } from './toggle-enable-menu-choice.service';
 import { ProcessDeleteSelectedImagesService }
-	from './delete-selected-images/process-delete-selected-images.service';
+	from './process-delete-selected-images_service/process-delete-selected-images.service';
 import { GlobalActionMenuServicesModule }
-	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
+	from '@global-action-menu/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

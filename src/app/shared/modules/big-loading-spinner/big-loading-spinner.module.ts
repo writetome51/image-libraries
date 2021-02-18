@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BigLoadingSpinnerComponent } from './big-loading-spinner.component';
+import { BigLoadingSpinnerComponent } from './big-loading-spinner_component/big-loading-spinner.component';
 
 
 @NgModule({

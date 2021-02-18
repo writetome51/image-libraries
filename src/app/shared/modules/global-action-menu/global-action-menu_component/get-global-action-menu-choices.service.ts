@@ -1,16 +1,14 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CheckableMenuChoice }
-	from '@menu-choice/executable-menu-choice-container/checkable-menu-choice.interface';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
-import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
+import { GlobalActionMenuServicesModule } from '../global-action-menu-services.module';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
-import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
+import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { not } from '@writetome51/not';
 import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { prepend } from '@writetome51/array-append-prepend';
@@ -19,6 +17,7 @@ import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
 import { SelectMutipleImagesSettingService }
 	from '@toggle-setting-in-browser-storage/select-mutiple-images-setting.service';
+import { CheckableMenuChoice } from '@action-menu/checkable-menu-choice.interface';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

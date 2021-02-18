@@ -3,7 +3,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { TogglableMenuChoiceData }
 	from '@interfaces/togglable-menu-choice-data.interface';
 import { GlobalActionMenuServicesModule }
-	from '@global-action-menu/global-action-menu-services-module/global-action-menu-services.module';
+	from '@global-action-menu/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

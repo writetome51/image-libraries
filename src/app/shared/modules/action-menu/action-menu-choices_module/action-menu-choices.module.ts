@@ -1,6 +1,6 @@
 import { ActionMenuChoicesComponent } from './action-menu-choices.component';
 import { CommonModule } from '@angular/common';
-import { MenuChoiceModule } from './menu-choice/menu-choice.module';
+import { MenuChoiceModule } from './menu-choice_module/menu-choice.module';
 import { NgModule } from '@angular/core';
 
 
