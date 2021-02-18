@@ -8,7 +8,7 @@ import { LibrariesInBrowserStorageService }
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { HandleErrorService } from '@processor/handle-error.service';
-import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

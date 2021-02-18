@@ -1,7 +1,5 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CheckableMenuChoice } // tslint:disable-next-line:max-line-length
-	from '@menu-choice/executable-menu-choice-container_component/checkable-menu-choice.interface';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
@@ -9,9 +7,10 @@ import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
-import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
+import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
-import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../image-action-menu-services.module';
+import { CheckableMenuChoice } from '@action-menu/checkable-menu-choice.interface';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

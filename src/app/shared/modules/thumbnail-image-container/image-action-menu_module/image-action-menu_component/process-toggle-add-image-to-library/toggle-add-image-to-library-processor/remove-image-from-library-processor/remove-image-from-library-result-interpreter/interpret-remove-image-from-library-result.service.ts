@@ -6,7 +6,7 @@ import { HandleRemoveImageFromLibraryErrorService }
 import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 	from '../../run-tasks-after-adding-or-removing-image-from-library.service';
 import { ImageActionMenuServicesModule }
-	from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
+	from '@thumbnail-image-container/image-action-menu_module/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

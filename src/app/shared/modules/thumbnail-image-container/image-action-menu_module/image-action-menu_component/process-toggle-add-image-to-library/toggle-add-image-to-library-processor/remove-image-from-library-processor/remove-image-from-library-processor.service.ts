@@ -4,7 +4,7 @@ import { DataTransportProcessorService }
 import { InterpretRemoveImageFromLibraryResultService }
 	from './remove-image-from-library-result-interpreter/interpret-remove-image-from-library-result.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
-import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu_module/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

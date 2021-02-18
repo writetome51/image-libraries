@@ -2,7 +2,7 @@ import { InterpretDataTransportResultService }
 	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleAddImageToLibraryErrorService }
 	from './handle-add-image-to-library-error.service';
-import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../../../image-action-menu-services.module';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 	from '../../run-tasks-after-adding-or-removing-image-from-library.service';

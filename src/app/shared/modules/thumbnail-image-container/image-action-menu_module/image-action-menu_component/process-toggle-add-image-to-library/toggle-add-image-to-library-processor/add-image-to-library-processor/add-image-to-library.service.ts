@@ -5,7 +5,7 @@ import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

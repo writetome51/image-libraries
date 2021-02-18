@@ -1,9 +1,9 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { Component, Input } from '@angular/core';
 import { GetImageActionMenuChoicesService }
-	from './image-action-menu-services-module/get-image-action-menu-choices.service';
+	from './get-image-action-menu-choices.service';
 import { ImageActionMenuChoicesExecutorService }
-	from './image-action-menu-services-module/image-action-menu-choices-executor.service';
+	from './image-action-menu-choices-executor.service';
 
 
 @Component({

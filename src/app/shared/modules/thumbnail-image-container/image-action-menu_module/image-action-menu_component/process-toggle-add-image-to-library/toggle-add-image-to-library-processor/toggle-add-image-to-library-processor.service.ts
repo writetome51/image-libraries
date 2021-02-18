@@ -4,7 +4,7 @@ import { InterpretToggleAddImageToLibraryResultService }
 	// tslint:disable-next-line:max-line-length
 	from './toggle-add-image-to-library-result-interpreter/interpret-toggle-add-image-to-library-result.service';
 import { ToggleAddImageToLibraryService } from './toggle-add-image-to-library.service';
-import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

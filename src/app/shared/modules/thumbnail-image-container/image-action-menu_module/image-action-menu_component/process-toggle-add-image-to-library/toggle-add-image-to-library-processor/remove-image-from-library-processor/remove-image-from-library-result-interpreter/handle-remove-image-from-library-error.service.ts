@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu_module/image-action-menu-services.module';
 import { HandleDataTransportErrorService } from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
 
 

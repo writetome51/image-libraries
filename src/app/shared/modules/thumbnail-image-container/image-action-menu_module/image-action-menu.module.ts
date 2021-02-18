@@ -1,9 +1,9 @@
 import { ActionMenuModule } from '@action-menu/action-menu.module';
 import { CommonModule } from '@angular/common';
-import { ImageActionMenuComponent } from './image-action-menu.component';
+import { ImageActionMenuComponent } from './image-action-menu_component/image-action-menu.component';
 import { NgModule } from '@angular/core';
 import { ImageActionMenuServicesModule }
-	from './image-action-menu-services-module/image-action-menu-services.module';
+	from './image-action-menu-services.module';
 
 
 @NgModule({
