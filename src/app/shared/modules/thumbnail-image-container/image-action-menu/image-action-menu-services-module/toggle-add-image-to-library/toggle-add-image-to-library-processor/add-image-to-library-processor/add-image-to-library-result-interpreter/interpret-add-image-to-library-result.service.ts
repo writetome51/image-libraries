@@ -9,7 +9,7 @@ import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
-export class AddImageToLibraryResultInterpreterService
+export class InterpretAddImageToLibraryResultService
 	extends InterpretDataTransportResultService {
 
 	constructor(

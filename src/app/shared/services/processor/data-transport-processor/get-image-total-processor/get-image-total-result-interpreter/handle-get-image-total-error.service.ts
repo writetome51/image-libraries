@@ -1,12 +1,12 @@
-import { HandleDataTransportProcessErrorService }
-	from '@handle-data-transport-process-error/handle-data-transport-process-error.service';
 import { ImageTotalData as imageTotal }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Injectable } from '@angular/core';
+import { HandleDataTransportErrorService }
+	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImageTotalErrorService extends HandleDataTransportProcessErrorService {
+export class HandleGetImageTotalErrorService extends HandleDataTransportErrorService {
 
 	async go(error) {
 		imageTotal.setDefault();

@@ -3,8 +3,8 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { UpdatePasswordInputsService }
 	from '../update-password-inputs_service/update-password-inputs.service';
-import { UpdatePasswordResultInterpreterService }
-	from './update-password-result-interpreter.service';
+import { InterpretUpdatePasswordResultService }
+	from './interpret-update-password-result.service';
 import { UpdatePasswordService } from './update-password.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
@@ -15,9 +15,9 @@ export class UpdatePasswordProcessorService extends FormDataTransportProcessorSe
 	constructor(
 		__validatingInputs: UpdatePasswordInputsService,
 		__getResult: UpdatePasswordService,
-		__resultInterpreter: UpdatePasswordResultInterpreterService
+		__interpretResult: InterpretUpdatePasswordResultService
 	) {
-		super(__validatingInputs, __getResult, __resultInterpreter);
+		super(__validatingInputs, __getResult, __interpretResult);
 	}
 
 }

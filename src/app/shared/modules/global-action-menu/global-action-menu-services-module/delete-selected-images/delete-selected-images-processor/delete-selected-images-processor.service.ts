@@ -1,7 +1,7 @@
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
-import { DeleteSelectedImagesResultInterpreterService }
-	from './delete-selected-images-result-interpreter.service';
+import { InterpretDeleteSelectedImagesResultService }
+	from './interpret-delete-selected-images-result.service';
 import { Injectable } from '@angular/core';
 import { DeleteSelectedImagesService } from './delete-selected-images.service';
 import { GlobalActionMenuServicesModule }
@@ -13,9 +13,9 @@ export class DeleteSelectedImagesProcessorService extends DataTransportProcessor
 
 	constructor(
 		__getResult: DeleteSelectedImagesService,
-		__resultInterpreter: DeleteSelectedImagesResultInterpreterService
+		__interpretResult: InterpretDeleteSelectedImagesResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

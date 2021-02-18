@@ -1,7 +1,7 @@
 import { DeleteUserService } from './delete-user.service';
 import { DeleteUserInputsService } from '../delete-user-inputs.service';
-import { DeleteUserResultInterpreterService }
-	from './delete-user-result-interpreter_service/delete-user-result-interpreter.service';
+import { InterpretDeleteUserResultService }
+	from './delete-user-result-interpreter_service/interpret-delete-user-result.service';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
@@ -14,9 +14,9 @@ export class DeleteUserProcessorService extends FormDataTransportProcessorServic
 	constructor(
 		__validatingInputs: DeleteUserInputsService,
 		__getResult: DeleteUserService,
-		__resultInterpreter: DeleteUserResultInterpreterService
+		__interpretResult: InterpretDeleteUserResultService
 	) {
-		super(__validatingInputs, __getResult, __resultInterpreter);
+		super(__validatingInputs, __getResult, __interpretResult);
 	}
 
 }

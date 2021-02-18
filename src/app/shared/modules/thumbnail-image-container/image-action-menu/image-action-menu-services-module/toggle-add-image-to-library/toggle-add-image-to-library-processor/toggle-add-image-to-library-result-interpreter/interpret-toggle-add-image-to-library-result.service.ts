@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ProcessResultInterpreterService }
-	from '@processor/process-result-interpreter.service';
+import { InterpretResultService }
+	from '@processor/interpret-result.service';
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
-import { HandleProcessErrorService } from '@processor/handle-process-error.service';
-import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
+import { HandleErrorService } from '@processor/handle-error.service';
+import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
-export class ToggleAddImageToLibraryResultInterpreterService
-	extends ProcessResultInterpreterService {
+export class InterpretToggleAddImageToLibraryResultService extends InterpretResultService {
 
 	constructor(
-		__handleError: HandleProcessErrorService,
+		__handleError: HandleErrorService,
 		__runPostSuccessTasks: RunTasksAfterToggleAddImageToLibraryService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {
@@ -24,7 +23,7 @@ export class ToggleAddImageToLibraryResultInterpreterService
 	}
 
 
-	async interpret(
+	async go(
 		result: { image_id: string, libName: string, checked: boolean }
 	): Promise<void> {
 		let lib: DBLibrary = this.__librariesInBrowser.get()[result.libName];
@@ -32,7 +31,7 @@ export class ToggleAddImageToLibraryResultInterpreterService
 			// @ts-ignore
 			result = {error: {message: 'Library change unsuccessful'}};
 		}
-		return super.interpret(result);
+		return super.go(result);
 	}
 
 

@@ -1,5 +1,5 @@
 import { Processor } from '@interfaces/processor.interface';
-import { ProcessResultInterpreterService } from './process-result-interpreter.service';
+import { InterpretResultService } from './interpret-result.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
@@ -7,14 +7,14 @@ export abstract class ProcessorService implements Processor {
 
 	constructor(
 		private __getResult: IDoThis,
-		private __resultInterpreter: ProcessResultInterpreterService
+		private __interpretResult: InterpretResultService
 	) {
 	}
 
 
 	async process(...args): Promise<void> {
 		let result = await this.__getResult.go(...args);
-		await this.__resultInterpreter.interpret(result);
+		await this.__interpretResult.go(result);
 	}
 
 }

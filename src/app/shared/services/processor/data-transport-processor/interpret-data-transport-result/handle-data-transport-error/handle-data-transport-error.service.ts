@@ -9,7 +9,7 @@ import { HandleErrorService }
 
 
 @Injectable({providedIn: 'root'})
-export class HandleDataTransportErrorResultService extends HandleErrorService {
+export class HandleDataTransportErrorService extends HandleErrorService {
 
 	constructor(
 		private __handleNoRecordMatchError: HandleNoRecordMatchErrorService,

@@ -1,8 +1,8 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
 import { GetLibraryImageTotalService }
 	from './get-library-image-total-processor/get-library-image-total.service';
-import { GetImageTotalResultInterpreterService }
-	from './get-image-total-result-interpreter/get-image-total-result-interpreter.service';
+import { InterpretGetImageTotalResultService }
+	from './get-image-total-result-interpreter/interpret-get-image-total-result.service';
 import { GetUserImageTotalService }
 	from './get-user-image-total-processor/get-user-image-total.service';
 
@@ -13,9 +13,9 @@ export abstract class GetImageTotalProcessorService extends DataTransportProcess
 
 	constructor(
 		__getResult: GetLibraryImageTotalService | GetUserImageTotalService,
-		__resultInterpreter: GetImageTotalResultInterpreterService
+		__interpretResult: InterpretGetImageTotalResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

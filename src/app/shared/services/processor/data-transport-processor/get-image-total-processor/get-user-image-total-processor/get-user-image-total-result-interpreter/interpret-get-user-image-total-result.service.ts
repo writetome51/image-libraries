@@ -3,13 +3,12 @@ import { HandleGetImageTotalErrorService }
 	from '../../get-image-total-result-interpreter/handle-get-image-total-error.service';
 import { RunTasksAfterGettingUserImageTotalService }
 	from './run-tasks-after-getting-user-image-total.service';
-import { GetImageTotalResultInterpreterService }
-	from '../../get-image-total-result-interpreter/get-image-total-result-interpreter.service';
+import { InterpretGetImageTotalResultService }
+	from '../../get-image-total-result-interpreter/interpret-get-image-total-result.service';
 
 
 @Injectable({providedIn: 'root'})
-export class GetUserImageTotalResultInterpreterService
-	extends GetImageTotalResultInterpreterService {
+export class InterpretGetUserImageTotalResultService extends InterpretGetImageTotalResultService {
 
 	constructor(
 		__handleError: HandleGetImageTotalErrorService,

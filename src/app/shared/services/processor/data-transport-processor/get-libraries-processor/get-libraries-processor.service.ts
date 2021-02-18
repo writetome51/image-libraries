@@ -1,5 +1,5 @@
 import { DataTransportProcessorService } from '../data-transport-processor.service';
-import { GetLibrariesResultInterpreterService } from './get-libraries-result-interpreter.service';
+import { InterpretGetLibrariesResultService } from './interpret-get-libraries-result.service';
 import { Injectable } from '@angular/core';
 import { GetUserLibrariesService } from '../../../get-user-libraries.service';
 
@@ -9,9 +9,9 @@ export class GetLibrariesProcessorService extends DataTransportProcessorService 
 
 	constructor(
 		__getResult: GetUserLibrariesService,
-		__resultInterpreter: GetLibrariesResultInterpreterService
+		__interpretResult: InterpretGetLibrariesResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

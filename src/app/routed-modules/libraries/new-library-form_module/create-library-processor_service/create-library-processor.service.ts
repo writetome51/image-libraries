@@ -1,5 +1,5 @@
-import { CreateLibraryResultInterpreterService }
-	from './create-library-result-interpreter_service/create-library-result-interpreter.service';
+import { InterpretCreateLibraryResultService }
+	from './create-library-result-interpreter_service/interpret-create-library-result.service';
 import { CreateLibraryService } from './create-library.service';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
@@ -14,9 +14,9 @@ export class CreateLibraryProcessorService extends FormDataTransportProcessorSer
 	constructor(
 		__validatingInput: LibraryNameInputService,
 		__getResult: CreateLibraryService,
-		__resultInterpreter: CreateLibraryResultInterpreterService
+		__interpretResult: InterpretCreateLibraryResultService
 	) {
-		super(__validatingInput, __getResult, __resultInterpreter);
+		super(__validatingInput, __getResult, __interpretResult);
 	}
 
 }

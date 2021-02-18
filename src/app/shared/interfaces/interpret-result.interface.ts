@@ -1,5 +1,9 @@
-export interface Interpreter {
+import { IDoThis } from '@interfaces/i-do-this.interface';
+import { HasError } from '@interfaces/has-error.interface';
 
-	interpret: (arg) => void;
+
+export interface InterpretResult extends IDoThis {
+
+	go: (result: any | HasError) => void;
 
 }

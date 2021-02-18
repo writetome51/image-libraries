@@ -1,5 +1,5 @@
-import { DataTransportProcessResultInterpreterService }
-	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { InterpretDataTransportResultService }
+	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleGetLibraryImagesErrorService } from './handle-get-library-images-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibraryImagesService }
@@ -8,8 +8,7 @@ import { LibraryServicesModule } from '@app/routed-modules/library/library-servi
 
 
 @Injectable({providedIn: LibraryServicesModule})
-export class GetLibraryImagesResultInterpreterService
-	extends DataTransportProcessResultInterpreterService {
+export class InterpretGetLibraryImagesResultService extends InterpretDataTransportResultService {
 
 	constructor(
 		__handleError: HandleGetLibraryImagesErrorService,

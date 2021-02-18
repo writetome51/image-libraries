@@ -6,7 +6,7 @@ import { RunTasksAfterGettingImageTotalService }
 	from './run-tasks-after-getting-image-total.service';
 
 
-export abstract class GetImageTotalResultInterpreterService
+export abstract class InterpretGetImageTotalResultService
 	extends InterpretDataTransportResultService {
 
 	constructor(

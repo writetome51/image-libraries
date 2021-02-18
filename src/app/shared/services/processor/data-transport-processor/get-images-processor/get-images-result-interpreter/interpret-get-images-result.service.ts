@@ -1,13 +1,12 @@
-import { DataTransportProcessResultInterpreterService }
-	from '@data-transport-process-result-interpreter/data-transport-process-result-interpreter.service';
+import { InterpretDataTransportResultService }
+	from '../../interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleGetImagesErrorService } from './handle-get-images-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingImagesService } from './run-tasks-after-getting-images.service';
 
 
 @Injectable({providedIn: 'root'})
-export class GetImagesResultInterpreterService
-	extends DataTransportProcessResultInterpreterService {
+export class InterpretGetImagesResultService extends InterpretDataTransportResultService {
 
 	constructor(
 		__handleError: HandleGetImagesErrorService,

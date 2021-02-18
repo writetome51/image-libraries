@@ -1,5 +1,5 @@
-import { AddImageToLibraryResultInterpreterService }
-	from './add-image-to-library-result-interpreter/add-image-to-library-result-interpreter.service';
+import { InterpretAddImageToLibraryResultService }
+	from './add-image-to-library-result-interpreter/interpret-add-image-to-library-result.service';
 import { AddImageToLibraryService } from './add-image-to-library.service';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
@@ -12,9 +12,9 @@ export class AddImageToLibraryProcessorService extends DataTransportProcessorSer
 
 	constructor(
 		__getResult: AddImageToLibraryService,
-		__resultInterpreter: AddImageToLibraryResultInterpreterService
+		__interpretResult: InterpretAddImageToLibraryResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

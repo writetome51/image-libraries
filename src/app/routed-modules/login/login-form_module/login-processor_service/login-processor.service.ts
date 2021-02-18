@@ -3,8 +3,8 @@ import { FormDataTransportProcessorService }
 import { Injectable } from '@angular/core';
 import { LoginByPasswordService } from './login-by-password.service';
 import { LoginFormInputsService } from '../login-form-inputs.service';
-import { LoginResultInterpreterService }
-	from '@data-transport-process-result-interpreter/login-result-interpreter.service';
+import { InterpretLoginResultService }
+	from '@data-transport-processor/interpret-data-transport-result/interpret-login-result.service';
 import { LoginServicesModule } from '@app/routed-modules/login/login-services.module';
 
 
@@ -14,9 +14,9 @@ export class LoginProcessorService extends FormDataTransportProcessorService {
 	constructor(
 		__validatingInputs: LoginFormInputsService,
 		__getResult: LoginByPasswordService,
-		__resultInterpreter: LoginResultInterpreterService
+		__interpretResult: InterpretLoginResultService
 	) {
-		super(__validatingInputs, __getResult, __resultInterpreter);
+		super(__validatingInputs, __getResult, __interpretResult);
 	}
 
 }

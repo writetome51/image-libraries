@@ -1,8 +1,8 @@
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { LoginResultInterpreterService }
-	from '@data-transport-process-result-interpreter/login-result-interpreter.service';
+import { InterpretLoginResultService }
+	from '@data-transport-processor/interpret-data-transport-result/interpret-login-result.service';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
 import { SecurityQuestionServicesModule }
@@ -15,9 +15,9 @@ export class LoginBySecurityQuestionProcessorService extends FormDataTransportPr
 	constructor(
 		__validatingInput: SecurityAnswerLoginInputService,
 		__getResult: LoginBySecurityQuestionService,
-		__resultInterpreter: LoginResultInterpreterService
+		__interpretResult: InterpretLoginResultService
 	) {
-		super(__validatingInput, __getResult, __resultInterpreter);
+		super(__validatingInput, __getResult, __interpretResult);
 	}
 
 }

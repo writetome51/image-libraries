@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
 import { GetLibraryImagesService } from './get-library-images.service';
-import { GetLibraryImagesResultInterpreterService }
-	from './get-library-images-result-interpreter_service/get-library-images-result-interpreter.service';
+import { InterpretGetLibraryImagesResultService }
+	from './get-library-images-result-interpreter_service/interpret-get-library-images-result.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 
@@ -12,9 +12,9 @@ export class GetLibraryImagesProcessorService extends DataTransportProcessorServ
 
 	constructor(
 		__getResult: GetLibraryImagesService,
-		__resultInterpreter: GetLibraryImagesResultInterpreterService
+		__interpretResult: InterpretGetLibraryImagesResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

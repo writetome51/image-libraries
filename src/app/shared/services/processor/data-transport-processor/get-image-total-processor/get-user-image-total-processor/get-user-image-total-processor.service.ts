@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GetUserImageTotalService } from './get-user-image-total.service';
-import { GetUserImageTotalResultInterpreterService }
-	from './get-user-image-total-result-interpreter/get-user-image-total-result-interpreter.service';
+import { InterpretGetUserImageTotalResultService }
+	from './get-user-image-total-result-interpreter/interpret-get-user-image-total-result.service';
 import { GetImageTotalProcessorService } from '../get-image-total-processor.service';
 
 
@@ -10,9 +10,9 @@ export class GetUserImageTotalProcessorService extends GetImageTotalProcessorSer
 
 	constructor(
 		__getResult: GetUserImageTotalService,
-		__resultInterpreter: GetUserImageTotalResultInterpreterService
+		__interpretResult: InterpretGetUserImageTotalResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }

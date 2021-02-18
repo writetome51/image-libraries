@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.service';
-import { RemoveImageFromLibraryResultInterpreterService }
-	from './remove-image-from-library-result-interpreter/remove-image-from-library-result-interpreter.service';
+import { InterpretRemoveImageFromLibraryResultService }
+	from './remove-image-from-library-result-interpreter/interpret-remove-image-from-library-result.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
 import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu/image-action-menu-services-module/image-action-menu-services.module';
 
@@ -12,9 +12,9 @@ export class RemoveImageFromLibraryProcessorService extends DataTransportProcess
 
 	constructor(
 		__getResult: RemoveImageFromLibraryService,
-		__resultInterpreter: RemoveImageFromLibraryResultInterpreterService
+		__interpretResult: InterpretRemoveImageFromLibraryResultService
 	) {
-		super(__getResult, __resultInterpreter);
+		super(__getResult, __interpretResult);
 	}
 
 }
