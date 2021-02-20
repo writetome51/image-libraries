@@ -17,7 +17,7 @@ export abstract class ClickExecuteFunctionComponent {
 	executionStatus = ClickStartedExecutionStatusData;
 
 
-	async runClickHandler(event) {
+	async execute(event) {
 		event.preventDefault();
 		event.stopPropagation();
 
