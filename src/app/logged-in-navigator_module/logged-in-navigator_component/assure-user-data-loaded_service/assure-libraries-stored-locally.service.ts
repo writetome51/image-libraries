@@ -11,7 +11,7 @@ import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
-import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
+import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})

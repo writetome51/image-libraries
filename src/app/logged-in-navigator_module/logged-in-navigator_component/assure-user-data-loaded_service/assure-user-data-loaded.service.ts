@@ -3,7 +3,7 @@ import { AssureUserImageTotalStoredLocallyService }
 import { AssureLibrariesStoredLocallyService } from './assure-libraries-stored-locally.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
+import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
