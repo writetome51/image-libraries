@@ -1,5 +1,5 @@
 import { AppAlertComponent } from './app-alert_component/app-alert.component';
-import { AppComponent } from './app_component/app.component';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
