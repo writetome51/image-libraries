@@ -1,7 +1,7 @@
 import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { LoginModuleTitleData as moduleTitle } from './login-module-title.data';
 
 
 @Component({

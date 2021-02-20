@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { NewUserModuleTitleData as moduleTitle } from './new-user-module-title.data';
 import { Title } from '@angular/platform-browser';
 
 

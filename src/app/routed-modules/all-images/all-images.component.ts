@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './get-all-images-route-params-observer_service/get-all-images-route-params-observer.service';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { AllImagesModuleTitleData as moduleTitle } from './all-images-module-title.data';
 import { Title } from '@angular/platform-browser';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 

@@ -3,7 +3,8 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { SecurityQuestionModuleTitleData as moduleTitle }
+	from './security-question-module-title.data';
 import { Title } from '@angular/platform-browser';
 
 

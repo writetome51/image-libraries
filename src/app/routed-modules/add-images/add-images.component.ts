@@ -2,7 +2,7 @@ import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ModuleTitleData as moduleTitle } from './module-title.data';
+import { AddImagesModuleTitleData as moduleTitle } from './add-images-module-title.data';
 
 
 @Component({
