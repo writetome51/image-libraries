@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { UploadImagesProcessorService } from './upload-images-processor.service';
+import { UploadImagesProcessorService }
+	from './upload-images-processor_service/upload-images-processor.service';
 
 
 @Component({
-	selector: 'choose-images-from-device',
-	templateUrl: './choose-images-from-device.component.html',
+	selector: 'upload-images-from-device',
+	templateUrl: './upload-images-from-device.component.html',
 	styles: [
 		`div.input-group { margin: auto; }`
 	]
 })
-export class ChooseImagesFromDeviceComponent {
+export class UploadImagesFromDeviceComponent {
 
 	constructor(private __uploadImagesProcessor: UploadImagesProcessorService) {
 	}

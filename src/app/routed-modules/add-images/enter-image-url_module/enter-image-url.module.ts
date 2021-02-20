@@ -8,6 +8,7 @@ import { ImageURLFormInputComponent }
 	from './image-url-form-input.component';
 import { NgModule } from '@angular/core';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { EnterImageURLServicesModule } from './enter-image-url-services.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
 		SubmitFormButtonModule,
+		EnterImageURLServicesModule
 	],
 	exports: [EnterImageURLComponent]
 })

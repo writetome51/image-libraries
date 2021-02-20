@@ -3,12 +3,12 @@ import { FormDataTransportProcessorService }
 import { ImageURLInputService } from '../image-url-input.service';
 import { Injectable } from '@angular/core';
 import { InterpretSaveNewImagesResultService }
-	from '../../save-new-images-result-interpreter_service/interpret-save-new-images-result.service';
+	from '../../interpret-save-new-images-result_service/interpret-save-new-images-result.service';
 import { AddImageURLService } from './add-image-url.service';
-import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
+import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
 
 
-@Injectable({providedIn: AddImagesServicesModule})
+@Injectable({providedIn: EnterImageURLServicesModule})
 export class AddImageURLProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

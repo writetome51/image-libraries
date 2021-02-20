@@ -7,10 +7,10 @@ import { NewImagesData as newImages }
 import { SaveNewImagesService } from '../../save-new-images.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
+import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
 
 
-@Injectable({providedIn: AddImagesServicesModule})
+@Injectable({providedIn: EnterImageURLServicesModule})
 export class AddImageURLService implements IDoThis {
 
 	constructor(private __saveNewImages: SaveNewImagesService) {

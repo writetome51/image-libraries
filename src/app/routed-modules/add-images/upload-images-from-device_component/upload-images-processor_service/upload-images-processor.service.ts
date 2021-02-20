@@ -1,12 +1,12 @@
 import { AppImage } from '@interfaces/app-image/app-image.interface';
 import { DirectProcessor } from '@interfaces/direct-processor.interface';
-import { GetAppImageService as getAppImage } from '../get-app-image.service';
+import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { SaveNewImagesProcessorService } from './save-new-images-processor.service';
-import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
+import { AddImagesServicesModule } from '../../add-images-services.module';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
