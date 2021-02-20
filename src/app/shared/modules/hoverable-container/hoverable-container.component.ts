@@ -14,7 +14,7 @@ To use this component's events (hover) and (unhover), example:
 	selector: 'hoverable-container',
 	template: `
 		<div class="hoverable-container" [class.hovered]="isHovered()"
-			 (mouseover)="set_hovered()" (mouseleave)="unset_hovered()"
+			 (mouseenter)="set_hovered()" (mouseleave)="unset_hovered()"
 		>
 			<ng-content></ng-content>
 		</div>
