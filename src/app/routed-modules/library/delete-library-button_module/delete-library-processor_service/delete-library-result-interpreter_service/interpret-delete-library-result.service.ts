@@ -3,12 +3,12 @@ import { HandleDataTransportErrorService }
 import { InterpretDataTransportResultService }
 	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { Injectable } from '@angular/core';
-import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 import { RunTasksAfterDeletionOfLibraryService }
 	from './run-tasks-after-deletion-of-library.service';
+import { DeleteLibraryButtonServicesModule } from '../../delete-library-button-services.module';
 
 
-@Injectable({providedIn: LibraryServicesModule})
+@Injectable({providedIn: DeleteLibraryButtonServicesModule})
 export class InterpretDeleteLibraryResultService extends InterpretDataTransportResultService {
 
 	constructor(

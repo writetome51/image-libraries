@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { NewLibraryData } from '@runtime-state-data/new-library.data';
 import { not } from '@writetome51/not';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
-import { LibrariesServicesModule } from '@app/routed-modules/libraries/libraries-services.module';
+import { NewLibraryFormServicesModule } from './new-library-form-services.module';
 
 
-@Injectable({providedIn: LibrariesServicesModule})
+@Injectable({providedIn: NewLibraryFormServicesModule})
 export class LibraryNameInputService extends ValidatingTextInputService {
 
 	constructor() {

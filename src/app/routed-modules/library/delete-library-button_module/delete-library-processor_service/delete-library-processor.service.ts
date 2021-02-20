@@ -4,10 +4,10 @@ import { InterpretDeleteLibraryResultService }
 	from './delete-library-result-interpreter_service/interpret-delete-library-result.service';
 import { Injectable } from '@angular/core';
 import { DeleteLibraryService } from './delete-library.service';
-import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
+import { DeleteLibraryButtonServicesModule } from '../delete-library-button-services.module';
 
 
-@Injectable({providedIn: LibraryServicesModule})
+@Injectable({providedIn: DeleteLibraryButtonServicesModule})
 export class DeleteLibraryProcessorService extends DataTransportProcessorService {
 
 	constructor(

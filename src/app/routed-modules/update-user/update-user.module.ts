@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
+import { DeleteUserFormModule } from './delete-user-form_module/delete-user-form.module';
 import { FormsModule } from '@angular/forms';
 import { NavigationLinksModule } from '@navigation-links/navigation-links.module';
 import { NgModule } from '@angular/core';
-import { UpdateUserComponent } from './update-user_component/update-user.component';
+import { UpdateUserComponent } from './update-user.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
-import { DeleteUserFormModule } from './delete-user-form_module/delete-user-form.module';
 import { UpdateEmailFormModule } from './update-email-form_module/update-email-form.module';
 import { UpdatePasswordFormModule }
 	from './update-password-form_module/update-password-form.module';

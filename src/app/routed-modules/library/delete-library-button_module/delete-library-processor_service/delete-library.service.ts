@@ -6,10 +6,10 @@ import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
-import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
+import { DeleteLibraryButtonServicesModule } from '../delete-library-button-services.module';
 
 
-@Injectable({providedIn: LibraryServicesModule})
+@Injectable({providedIn: DeleteLibraryButtonServicesModule})
 export class DeleteLibraryService implements IDoThis {
 
 	constructor(

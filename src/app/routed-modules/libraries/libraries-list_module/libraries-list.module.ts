@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LibrariesListComponent } from './libraries-list_component/libraries-list.component';
+import { LibrariesListComponent } from './libraries-list.component';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { RouterModule } from '@angular/router';
 import { SearchLibraryNamesComponent }
 	from './search-library-names_component/search-library-names.component';
 import { FormsModule } from '@angular/forms';
+import { LibrariesListServicesModule } from './libraries-list-services.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 		FormsModule,
 		CommonModule,
 		BigLoadingSpinnerModule,
+		LibrariesListServicesModule,
 		RouterModule
 	],
 	exports: [LibrariesListComponent]

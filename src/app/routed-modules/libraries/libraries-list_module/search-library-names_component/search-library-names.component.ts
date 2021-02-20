@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchLibrariesInputService }
-	from './search-libraries-input.service';
+import { SearchLibrariesInputService } from './search-libraries-input.service';
 import { SearchLibrariesService } from './search-libraries.service';
 
 

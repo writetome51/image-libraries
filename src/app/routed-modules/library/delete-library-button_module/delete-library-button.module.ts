@@ -3,6 +3,7 @@ import { DeleteLibraryButtonComponent } from './delete-library-button.component'
 import { NgModule } from '@angular/core';
 import { ExecuteFunctionButtonModule }
 	from '@execute-function-button/execute-function-button.module';
+import { DeleteLibraryButtonServicesModule } from './delete-library-button-services.module';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { ExecuteFunctionButtonModule }
 	imports: [
 		CommonModule,
 		ExecuteFunctionButtonModule,
+		DeleteLibraryButtonServicesModule
 	],
 	exports: [DeleteLibraryButtonComponent]
 })

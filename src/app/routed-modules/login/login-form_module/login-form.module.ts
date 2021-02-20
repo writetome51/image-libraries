@@ -3,8 +3,9 @@ import { AppValidatingFormInputsModule }
 import { CommonModule } from '@angular/common';
 import { ExecuteFunctionButtonModule }
 	from '@execute-function-button/execute-function-button.module';
-import { LoginFormComponent } from './login-form_component/login-form.component';
+import { LoginFormComponent } from './login-form.component';
 import { LoginFormInputsComponent } from './login-form-inputs.component';
+import { LoginFormServicesModule } from './login-form-services.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
@@ -15,6 +16,7 @@ import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.m
 	imports: [
 		CommonModule,
 		RouterModule,
+		LoginFormServicesModule,
 		AppValidatingFormInputsModule,
 		ExecuteFunctionButtonModule,
 		SubmitFormButtonModule

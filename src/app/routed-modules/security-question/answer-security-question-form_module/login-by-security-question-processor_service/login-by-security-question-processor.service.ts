@@ -5,8 +5,7 @@ import { InterpretLoginResultService }
 	from '@data-transport-processor/interpret-data-transport-result/interpret-login-result.service';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
-import { SecurityQuestionServicesModule }
-	from '@app/routed-modules/security-question/security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../security-question-services.module';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

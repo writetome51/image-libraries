@@ -5,10 +5,10 @@ import { LoginByPasswordService } from './login-by-password.service';
 import { LoginFormInputsService } from '../login-form-inputs.service';
 import { InterpretLoginResultService }
 	from '@data-transport-processor/interpret-data-transport-result/interpret-login-result.service';
-import { LoginServicesModule } from '@app/routed-modules/login/login-services.module';
+import { LoginFormServicesModule } from '../login-form-services.module';
 
 
-@Injectable({providedIn: LoginServicesModule})
+@Injectable({providedIn: LoginFormServicesModule})
 export class LoginProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

@@ -3,7 +3,7 @@ import { UpdateEmailFormComponent }
 	from './update-email-form_module/update-email-form.component';
 import { UpdatePasswordFormComponent }
 	from './update-password-form_module/update-password-form.component';
-import { DeleteUserFormComponent } from './delete-user-form_module/delete-user-form_component/delete-user-form.component';
+import { DeleteUserFormComponent } from './delete-user-form_module/delete-user-form.component';
 
 
 export class UpdateUserChoiceData {

@@ -3,7 +3,7 @@ import { LinkedTemplateWithHeading } from './linked-template-with-heading.interf
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateUserChoiceData as updateUserChoice } from './update-user-choice.data';
-import { UpdateUserComponent } from './update-user_component/update-user.component';
+import { UpdateUserComponent } from './update-user.component';
 
 
 const routes: Routes = [
@@ -33,12 +33,7 @@ const routes: Routes = [
 
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(
-			routes,
-			//	{enableTracing: true} // <-- debugging purposes only
-		)
-	],
+	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule]
 })
 export class UpdateUserRoutingModule {

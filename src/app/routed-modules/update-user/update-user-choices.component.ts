@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
 import { Link } from '@interfaces/has-label/link/link.interface';
 
@@ -11,10 +11,15 @@ import { Link } from '@interfaces/has-label/link/link.interface';
 		</nav>
 	`
 })
-export class UpdateUserChoicesComponent {
+export class UpdateUserChoicesComponent implements OnInit {
 
 	@Input() data: LinkedTemplateWithHeading[];
 
-	links: Link[] = this.data.map((template: LinkedTemplateWithHeading) => template.link);
+	links: Link[];
+
+
+	ngOnInit() {
+		this.links = this.data.map((template: LinkedTemplateWithHeading) => template.link);
+	}
 
 }

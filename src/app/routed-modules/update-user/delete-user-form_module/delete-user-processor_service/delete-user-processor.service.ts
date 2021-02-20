@@ -1,11 +1,11 @@
 import { DeleteUserService } from './delete-user.service';
 import { DeleteUserInputsService } from '../delete-user-inputs.service';
 import { InterpretDeleteUserResultService }
-	from './delete-user-result-interpreter_service/interpret-delete-user-result.service';
+	from './interpret-delete-user-result_service/interpret-delete-user-result.service';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
-import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
+import { UpdateUserServicesModule } from '../../update-user-services.module';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

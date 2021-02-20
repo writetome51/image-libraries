@@ -1,14 +1,14 @@
 import { InterpretCreateLibraryResultService }
-	from './create-library-result-interpreter_service/interpret-create-library-result.service';
+	from './interpret-create-library-result_service/interpret-create-library-result.service';
 import { CreateLibraryService } from './create-library.service';
 import { FormDataTransportProcessorService }
 	from '@data-transport-processor/form-data-transport-processor.service';
 import { Injectable } from '@angular/core';
 import { LibraryNameInputService } from '../library-name-input.service';
-import { LibrariesServicesModule } from '@app/routed-modules/libraries/libraries-services.module';
+import { NewLibraryFormServicesModule } from '../new-library-form-services.module';
 
 
-@Injectable({providedIn: LibrariesServicesModule})
+@Injectable({providedIn: NewLibraryFormServicesModule})
 export class CreateLibraryProcessorService extends FormDataTransportProcessorService {
 
 	constructor(

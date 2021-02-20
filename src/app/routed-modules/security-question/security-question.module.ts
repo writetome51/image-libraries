@@ -8,7 +8,7 @@ import { GetSecurityQuestionFormModule }
 	from './get-security-question-form_module/get-security-question-form.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SecurityQuestionComponent } from './security-question_component/security-question.component';
+import { SecurityQuestionComponent } from './security-question.component';
 import { SecurityQuestionServicesModule } from './security-question-services.module';
 
 
