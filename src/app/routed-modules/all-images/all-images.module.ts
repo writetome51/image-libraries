@@ -1,33 +1,22 @@
 import { AllImagesComponent } from './all-images_component/all-images.component';
 import { AllImagesModulePathData as modulePath } from './all-images-module-path.data';
-import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
-import { AppPaginationControlsModule }
-	from '@app-pagination-controls/app-pagination-controls.module';
+import { AllImagesServicesModule } from './all-images-services.module';
+import { AllImagesViewerModule }
+	from '@app/routed-modules/all-images/all-images-viewer_module/all-images-viewer.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
-import { GlobalActionMenuModule } from '@global-action-menu/global-action-menu.module';
-import { ImageListComponent } from './image-list_component/image-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ThumbnailImageContainerModule }
-	from '@thumbnail-image-container/thumbnail-image-container.module';
-import { AllImagesServicesModule } from './all-images-services.module';
 
 
 @NgModule({
-	declarations: [
-		AllImagesComponent,
-		AllImagesPaginationControlsComponent,
-		ImageListComponent
-	],
+	declarations: [AllImagesComponent],
 	imports: [
 		CommonModule,
-		GlobalActionMenuModule,
-		AppPaginationControlsModule,
 		BigLoadingSpinnerModule,
-		ThumbnailImageContainerModule,
 		AllImagesServicesModule,
+		AllImagesViewerModule,
 		RouterModule.forChild([
 			{
 				path: modulePath.AllImagesComponent,

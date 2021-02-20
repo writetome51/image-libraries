@@ -2,12 +2,4 @@
 
 <big-loading-spinner *ngIf="gettingImages"></big-loading-spinner>
 
-<ng-container *ngIf="!(gettingImages)">
-
-	<global-action-menu></global-action-menu>
-
-	<image-list></image-list>
-
-	<all-images-pagination-controls></all-images-pagination-controls>
-
-</ng-container>
+<all-images-viewer *ngIf="!(gettingImages)"></all-images-viewer>

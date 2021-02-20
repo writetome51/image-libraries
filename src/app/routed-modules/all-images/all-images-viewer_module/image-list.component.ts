@@ -8,12 +8,25 @@ import { GetPageImagesService as getPageImages } from '@services/get-page-images
 
 @Component({
 	selector: 'image-list',
-	templateUrl: './image-list.component.html'
+	template: `
+		<p *ngIf="images && images.length === 0">You have no images in your account.</p>
+
+		<ul *ngIf="images && images.length > 0">
+
+			<li class="grid-list-item" *ngFor="let img of images">
+				<thumbnail-image-container [image]="img"
+					[imageRouterLink]="[fullSizeImageRoute, img._id]"
+				>
+				</thumbnail-image-container>
+			</li>
+
+		</ul>
+	`
 })
 export class ImageListComponent {
 
 	get images(): DBImage[] {
-		return getPageImages.go(this.allImagesPaginator);
+		return getPageImages.go(this.__paginator);
 	}
 
 
@@ -22,7 +35,7 @@ export class ImageListComponent {
 	}
 
 
-	constructor(public allImagesPaginator: AllImagesPaginatorService) {
+	constructor(private __paginator: AllImagesPaginatorService) {
 	}
 
 }
