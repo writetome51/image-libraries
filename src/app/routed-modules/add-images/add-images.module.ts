@@ -1,4 +1,4 @@
-import { AddImagesComponent } from './add-images_component/add-images.component';
+import { AddImagesComponent } from './add-images.component';
 import { AddImagesServicesModule } from './add-images-services.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { BigLoadingSpinnerModule }
