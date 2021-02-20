@@ -17,12 +17,12 @@ import { UpdateUserServicesModule } from './update-user-services.module';
 	imports: [
 		CommonModule,
 		FormsModule,
-		DeleteUserFormModule,
-		NavigationLinksModule,
 		UpdateEmailFormModule,
 		UpdatePasswordFormModule,
+		DeleteUserFormModule,
+		UpdateUserRoutingModule,
+		NavigationLinksModule,
 		UpdateUserServicesModule,
-		UpdateUserRoutingModule
 	]
 })
 export class UpdateUserModule {

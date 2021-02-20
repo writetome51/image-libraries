@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { DeleteUserFormModuleTitleData as thisModuleTitle }
+	from './delete-user-form-module-title.data';
 import { DeleteUserProcessorService }
 	from './delete-user-processor_service/delete-user-processor.service';
 import { environment } from '@environments/environment';
 import { HTMLImage } from '@interfaces/html-image.interface';
-import { ModuleTitleData as moduleTitle } from '../module-title.data';
+import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 import { Title } from '@angular/platform-browser';
-import { UpdateUserChoiceData as updateUserChoice } from '../update-user-choice.data';
 
 
 @Component({
@@ -26,9 +27,7 @@ export class DeleteUserFormComponent {
 		public processor: DeleteUserProcessorService,
 		private __title: Title
 	) {
-		this.__title.setTitle(
-			moduleTitle.data + ' | ' + updateUserChoice.DeleteUserFormModule.link.label
-		);
+		this.__title.setTitle(parentModuleTitle.data + thisModuleTitle.data);
 	}
 
 }

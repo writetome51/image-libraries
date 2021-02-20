@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { UpdateEmailProcessorService }
 	from './update-email-processor/update-email-processor.service';
-import { ModuleTitleData as moduleTitle } from '../module-title.data';
-import { UpdateUserChoiceData as updateUserChoice } from '../update-user-choice.data';
+import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 import { Title } from '@angular/platform-browser';
+import { UpdateEmailFormModuleTitleData as thisModuleTitle }
+	from './update-email-form-module-title.data';
 
 
 @Component({
@@ -19,9 +20,7 @@ export class UpdateEmailFormComponent {
 		public processor: UpdateEmailProcessorService,
 		private __title: Title
 	) {
-		this.__title.setTitle(
-			moduleTitle.data + ' | ' + updateUserChoice.UpdateEmailFormModule.link.label
-		);
+		this.__title.setTitle(parentModuleTitle.data + thisModuleTitle.data);
 	}
 
 }
