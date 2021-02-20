@@ -6,7 +6,6 @@ import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataT
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
-import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -24,13 +23,8 @@ export class AppComponent {
 	}
 
 
-	constructor(
-		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
-		private __title: Title
-	) {
+	constructor(private __sessionIDInBrowser: SessionIDInBrowserStorageService) {
 		resetRuntimeStateDataToDefaults.go();
-
-		this.__title.setTitle(appName.data);
 	}
 
 
