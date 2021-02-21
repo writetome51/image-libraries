@@ -1,4 +1,3 @@
-import { AppServicesModule } from '../app-services.module';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
@@ -12,9 +11,10 @@ import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: AppServicesModule})
+@Injectable({providedIn: LoggedInNavigatorServicesModule})
 export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(

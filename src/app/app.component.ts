@@ -1,7 +1,5 @@
 import { AlertData } from '@runtime-state-data/static-classes/alert.data';
 import { AppNameData as appName } from '@read-only-data/app-name.data';
-import { AssureUserDataLoadedService }
-	from './assure-user-data-loaded_service/assure-user-data-loaded.service';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
@@ -25,12 +23,8 @@ export class AppComponent {
 	}
 
 
-	constructor(
-		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
-		private __assureUserDataLoaded: AssureUserDataLoadedService
-	) {
+	constructor(private __sessionIDInBrowser: SessionIDInBrowserStorageService) {
 		resetRuntimeStateDataToDefaults.go();
-		if (this.loggedIn) this.__assureUserDataLoaded.go();
 	}
 
 
@@ -40,6 +34,5 @@ export class AppComponent {
 		// logging event to console to see its contents:
 		// console.log(event);
 	}
-
 
 }

@@ -1,4 +1,3 @@
-import { AppServicesModule } from '../app-services.module';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
@@ -10,9 +9,10 @@ import { UserImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
 import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-line-length
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
+import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: AppServicesModule})
+@Injectable({providedIn: LoggedInNavigatorServicesModule})
 export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(
