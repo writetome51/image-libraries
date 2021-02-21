@@ -1,5 +1,6 @@
 import { AppAlertComponent } from './app-alert_component/app-alert.component';
 import { AppComponent } from './app.component';
+import { AppServicesModule } from './app-services.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		HttpClientModule,
 		HTMLImageModule,
 		LoggedInNavigatorModule,
+		AppServicesModule,
 		AppRoutingModule
 	],
 	providers: [Title], // for setting html <title>.  Available app-wide.

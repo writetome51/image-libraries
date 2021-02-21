@@ -7,7 +7,7 @@ export abstract class JumpToPageInputService extends ValidatingNumberInputServic
 
 
 	constructor(
-		protected _paginator: { getTotalPages: () => number, setCurrentPageNumber: (value) => void }
+		protected _paginator: { getTotalPages: () => number }
 	) {
 		super();
 

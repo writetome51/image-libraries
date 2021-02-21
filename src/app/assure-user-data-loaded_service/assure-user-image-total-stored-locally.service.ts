@@ -1,3 +1,4 @@
+import { AppServicesModule } from '../app-services.module';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
@@ -11,7 +12,7 @@ import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-lin
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AppServicesModule})
 export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(
@@ -22,7 +23,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 
 	async go() {
-		if (this.__userImageTotalIsStoredLocally()) return;
+		if (this.__userImageTotalStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
 			() => this.__getUserImageTotalProcessor.process(), executionStatus
@@ -30,7 +31,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 	}
 
 
-	private __userImageTotalIsStoredLocally(): boolean {
+	private __userImageTotalStoredLocally(): boolean {
 		let total = this.__userImageTotalInBrowser.get();
 		return hasValue(total);
 	}

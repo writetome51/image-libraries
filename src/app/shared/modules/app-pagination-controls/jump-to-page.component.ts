@@ -6,13 +6,13 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 	selector: 'jump-to-page',
 	template: `
 		<app-validating-form-input [data]="pageNumberInput"></app-validating-form-input>
-		<a [routerLink]="['/' + routeBeforePageNumber, pageNumber]">Go</a>
+		<a [routerLink]="['/' + routeBeforePage, pageNumber]">Go</a>
 	`
 })
 export class JumpToPageComponent {
 
 	@Input() pageNumberInput: ValidatingInput;
-	@Input() routeBeforePageNumber: string;
+	@Input() routeBeforePage: string;
 
 
 	get pageNumber() {

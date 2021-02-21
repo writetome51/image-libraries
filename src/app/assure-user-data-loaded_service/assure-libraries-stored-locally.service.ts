@@ -1,3 +1,4 @@
+import { AppServicesModule } from '../app-services.module';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
@@ -13,7 +14,7 @@ import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: AppServicesModule})
 export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(

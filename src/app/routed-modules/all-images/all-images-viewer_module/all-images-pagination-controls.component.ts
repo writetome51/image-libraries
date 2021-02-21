@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 	selector: 'all-images-pagination-controls',
 	template: `
 		<app-pagination-controls
-			[routeBeforePageNumber]="routeBeforePageNumber"
+			[routeBeforePage]="routeBeforePageNumber"
 			[paginator]="paginator"
 			[jumpToPageInput]="jumpToPageInput"
 		>
