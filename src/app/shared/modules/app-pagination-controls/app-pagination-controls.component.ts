@@ -11,11 +11,13 @@ import { JumpToPageInputService } from './jump-to-page-input.service';
 			<div>
 				<page-link *ngIf="currentPage > 1"
 					[pageNumber]="currentPage - 1" [routeBeforePage]="routeBeforePage"
-				> previous </page-link>
+				> previous
+				</page-link>
 
 				<page-link *ngIf="currentPage < totalPages"
 					[pageNumber]="currentPage + 1" [routeBeforePage]="routeBeforePage"
-				> next </page-link>
+				> next
+				</page-link>
 
 				<jump-to-page *ngIf="jumpToPageInput"
 					[pageNumberInput]="jumpToPageInput.data" [routeBeforePage]="routeBeforePage"
