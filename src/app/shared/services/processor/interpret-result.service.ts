@@ -1,5 +1,5 @@
-import { IDoThis } from '@interfaces/i-do-this.interface';
-import { InterpretResult } from '@interfaces/interpret-result.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { InterpretResult } from '@interfaces/i-do-this/interpret-result.interface';
 import { HandleErrorService } from './handle-error.service';
 import { HasError } from '@interfaces/has-error.interface';
 

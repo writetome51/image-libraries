@@ -1,5 +1,5 @@
 // import { AppImage } from '@interfaces/app-image.interface';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';

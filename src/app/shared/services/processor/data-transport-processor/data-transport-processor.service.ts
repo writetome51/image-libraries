@@ -1,7 +1,7 @@
 import { InterpretDataTransportResultService }
 	from './interpret-data-transport-result/interpret-data-transport-result.service';
 import { ProcessorService } from '@processor/processor.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 export abstract class DataTransportProcessorService extends ProcessorService {

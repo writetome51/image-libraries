@@ -1,4 +1,4 @@
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 
 

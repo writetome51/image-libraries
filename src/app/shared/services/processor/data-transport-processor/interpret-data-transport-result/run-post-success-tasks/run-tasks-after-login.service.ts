@@ -1,5 +1,5 @@
 import { DBUser } from '@interfaces/app-user/db-user.interface';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { RunTasksAfterGettingUserService }

@@ -3,7 +3,7 @@ import { CurrentUserData as currentUser }
 import { DBUser } from '@interfaces/app-user/db-user.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { LoginFormServicesModule } from '../login-form-services.module';
 

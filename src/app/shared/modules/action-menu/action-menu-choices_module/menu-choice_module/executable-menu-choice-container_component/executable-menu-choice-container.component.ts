@@ -1,7 +1,7 @@
 import { CheckableMenuChoice } from '../../../checkable-menu-choice.interface';
 import { Component, Input } from '@angular/core';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
-import { MenuChoiceExecutorService } from '../../../menu-choice-executor.service';
+import { ActionMenuChoiceExecutorService } from '../../../action-menu-choice-executor.service';
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.component';
 
@@ -17,7 +17,7 @@ export class ExecutableMenuChoiceContainerComponent extends ClickExecuteFunction
 	@Input() choice: MenuChoice | CheckableMenuChoice;
 
 
-	constructor(private __menuChoiceExecutor: MenuChoiceExecutorService) {
+	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {
 		super();
 	}
 

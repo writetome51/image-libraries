@@ -3,7 +3,7 @@ import { InterpretDataTransportResultService }
 	from './interpret-data-transport-result/interpret-data-transport-result.service';
 import { DataTransportProcessorService } from './data-transport-processor.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 export abstract class FormDataTransportProcessorService extends DataTransportProcessorService {

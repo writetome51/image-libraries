@@ -6,7 +6,7 @@ import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { SaveNewImagesService } from '../../save-new-images.service';
 import { HasError } from '@interfaces/has-error.interface';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
 
 

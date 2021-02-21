@@ -6,7 +6,7 @@ import { LoadedLibraryData as loadedLibrary }
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { UpdateLibraryService } from '@services/update-library.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

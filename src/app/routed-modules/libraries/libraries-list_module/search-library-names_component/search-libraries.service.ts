@@ -5,7 +5,7 @@ import { LibrariesInBrowserStorageService }
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { LibrariesListServicesModule } from '../libraries-list-services.module';
 
 

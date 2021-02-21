@@ -1,6 +1,6 @@
 import { Processor } from '@interfaces/processor.interface';
 import { InterpretResultService } from './interpret-result.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 export abstract class ProcessorService implements Processor {

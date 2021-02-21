@@ -1,4 +1,4 @@
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ImageBatch } from '@interfaces/image-batch.interface';

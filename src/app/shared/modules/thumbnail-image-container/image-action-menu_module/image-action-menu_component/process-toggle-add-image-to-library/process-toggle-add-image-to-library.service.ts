@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { ToggleAddImageToLibraryProcessorService }
 	from './toggle-add-image-to-library-processor/toggle-add-image-to-library-processor.service';
 import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';

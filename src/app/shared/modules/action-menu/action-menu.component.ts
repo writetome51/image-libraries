@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
 import { MenuChoice } from './menu-choice.interface';
-import { MenuChoiceExecutorService } from './menu-choice-executor.service';
+import { ActionMenuChoiceExecutorService } from './action-menu-choice-executor.service';
 import { SpecificChoicesExecutorService } from './specific-choices-executor.service';
 
 
@@ -10,7 +10,7 @@ import { SpecificChoicesExecutorService } from './specific-choices-executor.serv
 	templateUrl: './action-menu.component.html',
 
 	// Creates new instance of service for every instance of this component.
-	// providers: [MenuChoiceExecutorService]
+	providers: [ActionMenuChoiceExecutorService]
 })
 export class ActionMenuComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class ActionMenuComponent implements OnInit {
 	@Input() getChoicesArgs? = [];
 
 
-	constructor(private __menuChoiceExecutor: MenuChoiceExecutorService) {
+	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {
 	}
 
 

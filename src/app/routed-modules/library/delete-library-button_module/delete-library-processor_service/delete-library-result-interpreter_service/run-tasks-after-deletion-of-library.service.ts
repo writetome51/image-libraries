@@ -1,7 +1,7 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { DeleteLibraryButtonServicesModule } from '../../delete-library-button-services.module';

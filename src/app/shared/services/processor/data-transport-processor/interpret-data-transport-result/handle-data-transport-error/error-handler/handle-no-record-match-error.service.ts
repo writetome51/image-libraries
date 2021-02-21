@@ -7,7 +7,7 @@ import { SessionIDInBrowserStorageService }
 import { not } from '@writetome51/not';
 import { HandleNotLoggedInErrorService } from './handle-not-logged-in-error.service';
 import { UserAccountService } from '@services/user-account.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

@@ -5,7 +5,7 @@ import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiti
 import { GetLibrariesProcessorService }
 	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

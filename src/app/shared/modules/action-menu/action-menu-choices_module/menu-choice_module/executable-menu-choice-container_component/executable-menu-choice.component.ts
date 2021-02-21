@@ -2,7 +2,8 @@ import { Component, Input } from '@angular/core';
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.component';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.component';
+import { LabelledMenuChoiceComponent }
+	from '../abstract-menu-choice_component/labelled-menu-choice.component';
 
 
 @Component({
@@ -21,8 +22,8 @@ export class ExecutableMenuChoiceComponent extends LabelledMenuChoiceComponent {
 
 
 	get checked(): boolean {
-		if (hasValue(this.data.data) && hasValue(this.data.data['checked'])) {
-			return this.data.data['checked'];
+		if (hasValue(this.data.data) && hasValue(this.data.data.checked)) {
+			return this.data.data.checked;
 		}
 		else return false;
 	}

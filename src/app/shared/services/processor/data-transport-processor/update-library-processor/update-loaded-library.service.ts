@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GetUserLibrariesService } from '@services/get-user-libraries.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})

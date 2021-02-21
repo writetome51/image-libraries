@@ -3,7 +3,7 @@ import { AddImageToLibraryProcessorService }
 import { Injectable } from '@angular/core';
 import { RemoveImageFromLibraryProcessorService }
 	from './remove-image-from-library-processor/remove-image-from-library-processor.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 
 

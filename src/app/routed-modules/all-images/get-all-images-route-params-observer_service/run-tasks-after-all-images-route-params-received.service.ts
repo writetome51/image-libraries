@@ -1,6 +1,6 @@
 import { AllImagesPaginatorService } from '../all-images-paginator_service/all-images-paginator.service';
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import {
 	ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages,
 	LoadedLibraryData as loadedLibrary

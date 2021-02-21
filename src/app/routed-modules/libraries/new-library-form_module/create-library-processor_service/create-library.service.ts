@@ -4,7 +4,7 @@ import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { NewLibraryFormServicesModule } from '../new-library-form-services.module';
 

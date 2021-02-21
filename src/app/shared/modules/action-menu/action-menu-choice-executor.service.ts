@@ -4,7 +4,7 @@ import { SpecificChoicesExecutorService } from './specific-choices-executor.serv
 
 
 @Injectable()
-export class MenuChoiceExecutorService {
+export class ActionMenuChoiceExecutorService {
 
 	private __specificExecutor: SpecificChoicesExecutorService;
 
