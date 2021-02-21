@@ -7,7 +7,7 @@ import { not } from '@writetome51/not';
 @Component({
 	selector: 'click-execute-function-div',
 	template: `
-		<div (click)="runClickHandler($event)">
+		<div (click)="execute($event)">
 			<ng-content></ng-content>
 
 			<tiny-loading-spinner [class.invisible]="hideLoadingSpinner"></tiny-loading-spinner>

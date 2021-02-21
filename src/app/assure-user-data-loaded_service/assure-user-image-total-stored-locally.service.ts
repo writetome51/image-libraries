@@ -9,10 +9,9 @@ import { UserImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
 import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-line-length
 	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
-import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 
 
-@Injectable({providedIn: LoggedInNavigatorServicesModule})
+@Injectable({providedIn: 'root'})
 export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(

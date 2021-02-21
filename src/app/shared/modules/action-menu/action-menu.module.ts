@@ -3,6 +3,7 @@ import { ActionMenuChoicesModule } from './action-menu-choices_module/action-men
 import { ActionMenuComponent } from './action-menu.component';
 import { CommonModule } from '@angular/common';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
+import { MenuChoiceExecutorService } from './menu-choice-executor.service';
 import { NgModule } from '@angular/core';
 
 
@@ -14,6 +15,7 @@ import { NgModule } from '@angular/core';
 		ActionMenuChoicesModule,
 		HoverableContainerModule,
 	],
+	providers: [MenuChoiceExecutorService],
 	exports: [ActionMenuComponent]
 })
 export class ActionMenuModule {
