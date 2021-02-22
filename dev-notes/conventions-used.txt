@@ -29,6 +29,13 @@ Interfaces
 The names of all files that define interfaces end with '.interface.ts'.
 
 
+Abstract Class file names
+
+Any abstract Angular entities have 'abstract' in their file names like so:
+'example.abstract.component.ts'
+'example.abstract.service.ts'
+
+
 Usage of the words 'Process' and 'Processor'
 
 'Process' refers to an entire cycle of these steps:
@@ -88,12 +95,5 @@ export interface DBLibrary {
 	_image_ids: string[];
 
 }
-
-
-Abstract Class file names
-
-Any abstract Angular entities have 'abstract' in their file names like so:
-'example.abstract.component.ts'
-'example.abstract.service.ts'
 
 
