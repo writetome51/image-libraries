@@ -1,5 +1,5 @@
 Filenames follow the naming convention Angular recommends for Modules, Components,
-Directives, and Services (the different Angular entities).
+Directives, Services, and etc. (the different Angular entities).
 
 
 Directory names
@@ -73,3 +73,27 @@ Aliases to files created in this project are defined in  /tsconfig.json.
 Label
 
 The word 'label' is the preferred way of specifying a display name.
+
+
+Commented-out Import Statements
+
+Some files have some imports commented out.  This is because that entity being
+imported is not actually used, but is referred to in a comment somewhere.  Example:
+
+// import { DBImage } from './app-image/db-image.interface';
+
+export interface DBLibrary {
+
+	// Foreign keys, each relating to `DBImage._id`
+	_image_ids: string[];
+
+}
+
+
+Abstract Class file names
+
+Any abstract Angular entities have 'abstract' in their file names like so:
+'example.abstract.component.ts'
+'example.abstract.service.ts'
+
+

@@ -1,5 +1,5 @@
 import { ClickExecuteFunctionContainerComponent }
-	from '@abstract-components/click-execute-function-container.component';
+	from '@abstract-components/click-execute-function-container.abstract.component';
 import { Processor } from '@interfaces/processor.interface';
 
 

@@ -1,4 +1,4 @@
-import { DataTotalService } from '@app-paginator/app-paginator-data-source/data-total.service';
+import { DataTotalService } from '@app-paginator/app-paginator-data-source/data-total.abstract.service';
 import { Injectable } from '@angular/core';
 import { LibraryImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/library-image-total-in-browser-storage.service';

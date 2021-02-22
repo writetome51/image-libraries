@@ -1,7 +1,7 @@
 import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
 import { ClickExecuteFunctionContainerComponent }
-	from './click-execute-function-container.component';
+	from './click-execute-function-container.abstract.component';
 import { Input } from '@angular/core';
 
 

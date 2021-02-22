@@ -1,5 +1,5 @@
 import { AppPaginatorDataSourceService }
-	from './app-paginator-data-source/app-paginator-data-source.service';
+	from './app-paginator-data-source/app-paginator-data-source.abstract.service';
 import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
 import { LoadData as load, PageData as page }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

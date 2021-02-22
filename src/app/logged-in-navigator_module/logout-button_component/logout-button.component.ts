@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LogoutProcessorService } from './logout-processor_service/logout-processor.service';
 import { ClickExecuteProcessContainerComponent }
-	from '@abstract-components/click-execute-process-container.component';
+	from '@abstract-components/click-execute-process-container.abstract.component';
 
 
 @Component({
