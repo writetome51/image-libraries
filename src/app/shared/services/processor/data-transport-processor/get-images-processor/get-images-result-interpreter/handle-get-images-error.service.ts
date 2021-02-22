@@ -4,7 +4,7 @@ import { ImageTotalData as imageTotal, LoadedImagesData as loadedImages }
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 import { HandleDataTransportErrorService }
-	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+	from '@data-transport-processor/../../../handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: 'root'})

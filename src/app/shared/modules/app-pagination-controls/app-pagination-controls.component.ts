@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { JumpToPageInputService } from './jump-to-page-input.service';
+import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 
 
 @Component({

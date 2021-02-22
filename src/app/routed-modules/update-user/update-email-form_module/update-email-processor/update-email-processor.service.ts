@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { UpdateEmailInputsService } from '../update-email-inputs/update-email-inputs.service';
 import { InterpretUpdateEmailResultService } from './interpret-update-email-result.service';

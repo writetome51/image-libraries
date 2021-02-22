@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 
 
 @Component({

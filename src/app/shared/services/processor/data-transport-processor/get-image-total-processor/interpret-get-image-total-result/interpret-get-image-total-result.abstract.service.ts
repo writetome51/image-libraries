@@ -1,5 +1,5 @@
 import { InterpretDataTransportResultService }
-	from '../../interpret-data-transport-result/interpret-data-transport-result.service';
+	from '../../../interpret-result/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleGetImageTotalErrorService }
 	from './handle-get-image-total-error.service';
 import { RunTasksAfterGettingImageTotalService }

@@ -1,9 +1,9 @@
 import { InterpretDataTransportResultService }
-	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@data-transport-processor/../../../../shared/services/processor/interpret-result/interpret-data-transport-result/interpret-data-transport-result.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-email.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
-import { HandleDataTransportErrorService } from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDataTransportErrorService } from '@data-transport-processor/../../../../shared/services/processor/handle-error/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

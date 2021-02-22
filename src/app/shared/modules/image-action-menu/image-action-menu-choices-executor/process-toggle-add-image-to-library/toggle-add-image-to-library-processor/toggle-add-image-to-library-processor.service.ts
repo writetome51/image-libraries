@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ProcessorService } from '@processor/processor.service';
+import { ProcessorService } from '@processor/processor.abstract.service';
 import { InterpretToggleAddImageToLibraryResultService }
 	// tslint:disable-next-line:max-line-length
-	from './toggle-add-image-to-library-result-interpreter/interpret-toggle-add-image-to-library-result.service';
+	from './interpret-toggle-add-image-to-library-result/interpret-toggle-add-image-to-library-result.service';
 import { ToggleAddImageToLibraryService } from './toggle-add-image-to-library.service';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 

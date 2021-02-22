@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.abstract.service';
 import { InterpretRemoveImageFromLibraryResultService }
-	from './remove-image-from-library-result-interpreter/interpret-remove-image-from-library-result.service';
+	from './interpret-remove-image-from-library-result/interpret-remove-image-from-library-result.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
 import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
 

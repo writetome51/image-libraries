@@ -4,7 +4,7 @@ import { userDoesntExist } from '@string-constants/mongo-db-realm-function-error
 import { noAccountWithThatEmail } from '@string-constants/form-submission-errors';
 import { SecurityQuestionServicesModule }
 	from '@app/routed-modules/security-question/security-question-services.module';
-import { HandleDataTransportErrorService } from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDataTransportErrorService } from '@data-transport-processor/../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

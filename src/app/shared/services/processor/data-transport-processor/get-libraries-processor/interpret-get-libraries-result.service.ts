@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { InterpretDataTransportResultService }
-	from '../interpret-data-transport-result/interpret-data-transport-result.service';
+	from '../../interpret-result/interpret-data-transport-result/interpret-data-transport-result.service';
 import { RunTasksAfterGettingLibrariesService } from './run-tasks-after-getting-libraries.service';
-import { HandleDataTransportErrorService } from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDataTransportErrorService } from '@data-transport-processor/../../handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: 'root'})

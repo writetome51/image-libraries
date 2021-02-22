@@ -1,7 +1,7 @@
 import { HandleDataTransportErrorService }
-	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
 import { InterpretDataTransportResultService }
-	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterDeletionOfLibraryService }
 	from './run-tasks-after-deletion-of-library.service';

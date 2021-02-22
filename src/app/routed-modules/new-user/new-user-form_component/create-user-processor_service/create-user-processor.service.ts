@@ -1,6 +1,6 @@
 import { CreateUserService } from './create-user.service';
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
 import { InterpretCreateUserResultService }

@@ -2,7 +2,7 @@ import { ImageTotalData as imageTotal }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Injectable } from '@angular/core';
 import { HandleDataTransportErrorService }
-	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+	from '@data-transport-processor/../../../handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: 'root'})

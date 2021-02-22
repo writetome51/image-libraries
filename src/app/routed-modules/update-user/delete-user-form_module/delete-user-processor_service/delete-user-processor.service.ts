@@ -3,7 +3,7 @@ import { DeleteUserInputsService } from '../delete-user-inputs.service';
 import { InterpretDeleteUserResultService }
 	from './interpret-delete-user-result_service/interpret-delete-user-result.service';
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../update-user-services.module';
 

@@ -1,11 +1,11 @@
 import { InterpretDataTransportResultService } // tslint:disable-next-line:max-line-length
-	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterDeletingUserService } from './run-tasks-after-deleting-user.service';
 import { UpdateUserServicesModule }
 	from '@app/routed-modules/update-user/update-user-services.module';
 import { HandleDataTransportErrorService }
-	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

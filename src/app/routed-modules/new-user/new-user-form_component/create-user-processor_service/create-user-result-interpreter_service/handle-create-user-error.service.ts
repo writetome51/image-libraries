@@ -4,7 +4,7 @@ import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
 import { HandleDataTransportErrorService }
-	from '@data-transport-processor/interpret-data-transport-result/handle-data-transport-error/handle-data-transport-error.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})

@@ -1,5 +1,5 @@
 import { Processor } from '@interfaces/processor.interface';
-import { InterpretResultService } from './interpret-result.abstract.service';
+import { InterpretResultService } from './interpret-result/interpret-result.abstract.service';
 import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 

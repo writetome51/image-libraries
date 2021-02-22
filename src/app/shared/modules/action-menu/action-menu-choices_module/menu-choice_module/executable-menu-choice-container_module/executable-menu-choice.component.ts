@@ -3,7 +3,7 @@ import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.abstract.component';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LabelledMenuChoiceComponent }
-	from '../abstract-menu-choice_component/labelled-menu-choice.component';
+	from '../labelled-menu-choice.abstract.component';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { LabelledMenuChoiceComponent }
 			<div class="label-container">{{ label }}</div>
 
 			<!--  Should <checkmark> be removed and placed in modules that use <action-menu> ? -->
-			<!--  It may be better if <action-menu> is more generic, like an empty container. -->
+			<!--  It may be better if this component is more generic, like an empty container. -->
 			<checkmark [class.invisible]="!(checked)"></checkmark>
 
 		</click-execute-function-div>

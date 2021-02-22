@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { AbstractMenuChoiceComponent }
-	from './abstract-menu-choice_component/abstract-menu-choice.component';
+	from './abstract-menu-choice.abstract.component';
 
 
 @Component({

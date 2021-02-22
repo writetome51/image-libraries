@@ -1,4 +1,4 @@
-import { DataTotalService } from './data-total.abstract.service';
+import { DataTotalService } from '../data-total.abstract.service';
 import { DataTransportProcessorService }
 	from '@data-transport-processor/data-transport-processor.abstract.service';
 import { DBImage } from '@interfaces/app-image/db-image.interface';

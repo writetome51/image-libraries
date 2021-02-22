@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TinyLoadingSpinnerComponent } from './tiny-loading-spinner_component/tiny-loading-spinner.component';
+import { TinyLoadingSpinnerComponent } from './tiny-loading-spinner.component';
 
 
 @NgModule({

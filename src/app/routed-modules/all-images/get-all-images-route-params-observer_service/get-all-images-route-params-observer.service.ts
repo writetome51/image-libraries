@@ -1,4 +1,4 @@
-import { GetRouteParamsObserverService } from '@services/get-route-params-observer.service';
+import { GetRouteParamsObserverService } from '@services/get-route-params-observer.abstract.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterAllImagesRouteParamsReceivedService }
 	from './run-tasks-after-all-images-route-params-received.service';

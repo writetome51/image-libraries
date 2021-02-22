@@ -1,5 +1,5 @@
 import { SpecificChoicesExecutorService }
-	from '@action-menu/specific-choices-executor.service';
+	from '@action-menu/specific-choices-executor.abstract.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { ProcessToggleAddImageToLibraryService }

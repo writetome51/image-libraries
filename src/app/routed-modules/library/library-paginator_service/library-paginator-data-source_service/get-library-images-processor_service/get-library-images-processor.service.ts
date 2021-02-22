@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.abstract.service';
 import { GetLibraryImagesService } from './get-library-images.service';
 import { InterpretGetLibraryImagesResultService }
 	from './get-library-images-result-interpreter_service/interpret-get-library-images-result.service';

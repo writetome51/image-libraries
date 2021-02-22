@@ -1,8 +1,8 @@
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretLoginResultService }
-	from '@data-transport-processor/interpret-data-transport-result/interpret-login-result.service';
+	from '@data-transport-processor/../../../../shared/services/processor/interpret-result/interpret-data-transport-result/interpret-login-result.service';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
 import { SecurityQuestionServicesModule } from '../../security-question-services.module';

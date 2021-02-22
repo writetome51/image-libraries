@@ -2,7 +2,7 @@ import { InterpretCreateLibraryResultService }
 	from './interpret-create-library-result_service/interpret-create-library-result.service';
 import { CreateLibraryService } from './create-library.service';
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.service';
+	from '@data-transport-processor/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { LibraryNameInputService } from '../library-name-input.service';
 import { NewLibraryFormServicesModule } from '../new-library-form-services.module';

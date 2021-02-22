@@ -1,5 +1,5 @@
 import { InterpretDataTransportResultService }	// tslint:disable-next-line:max-line-length
-	from '@data-transport-processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@data-transport-processor/../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleCreateUserErrorService } from './handle-create-user-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterCreatingNewUserService } from './run-tasks-after-creating-new-user.service';
