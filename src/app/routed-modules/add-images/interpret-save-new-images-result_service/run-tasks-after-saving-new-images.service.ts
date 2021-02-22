@@ -5,7 +5,7 @@ import { NewImagesData as newImages }
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AddImagesServicesModule } from '@app/routed-modules/add-images/add-images-services.module';
 import { RunTasksAfterModifyingLoadedImagesService }
-	from '@services/processor-related/../../../shared/services/processor/interpret-data-transport-result/run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+	from '@services/processor-related/run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})

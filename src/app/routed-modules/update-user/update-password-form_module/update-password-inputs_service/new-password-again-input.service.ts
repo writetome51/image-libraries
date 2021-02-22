@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { PasswordAgainInputService }
-	from '@validating-input/password/password-again-input.service';
+	from '@validating-input/password-related/password-again-input.service';
 import { PrefixLabel_to_ValidatingInputService } // tslint:disable-next-line:max-line-length
-	from '@validating-input/prefix-label-to-validating-input-service_decorator/prefix-label-to-validating-input-service.decorator';
+	from '@validating-input/../../../../shared/decorators/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 

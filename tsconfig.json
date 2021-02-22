@@ -12,8 +12,8 @@
 			"@app/*": [
 				"src/app/*"
 			],
-			"@app-paginator/*": [
-				"src/app/shared/services/app-paginator/*"
+			"@app-paginator-related/*": [
+				"src/app/shared/services/app-paginator-related/*"
 			],
 			"@app-pagination-controls/*": [
 				"src/app/shared/modules/app-pagination-controls/*"
@@ -81,8 +81,8 @@
 			"@navigation-links/*": [
 				"src/app/shared/modules/navigation-links/*"
 			],
-			"@processor/*": [
-				"src/app/shared/services/processor/*"
+			"@processor-related/*": [
+				"src/app/shared/services/processor-related/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"
@@ -120,8 +120,8 @@
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
 			],
-			"@validating-inputs/*": [
-				"src/app/shared/services/validating-inputs/*"
+			"@current-user-inputs/*": [
+				"src/app/shared/services/current-user-inputs/*"
 			]
 		},
 		"outDir": "./dist/out-tsc",
