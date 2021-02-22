@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { GetImageActionMenuChoicesService }
 	from './get-image-action-menu-choices.service';
 import { ImageActionMenuChoicesExecutorService }
-	from './image-action-menu-choices-executor.service';
+	from './image-action-menu-choices-executor/image-action-menu-choices-executor.service';
 
 
 @Component({

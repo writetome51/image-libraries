@@ -1,5 +1,5 @@
 import { ClickExecuteFunctionComponent }
-	from '@abstract-components/click-execute-function.component';
+	from '@abstract-components/click-execute-function.abstract.component';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild }
 	from '@angular/core';
 

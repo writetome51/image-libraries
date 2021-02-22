@@ -6,7 +6,7 @@ import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
 import { UpdateLibraryService } from '@services/update-library.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
-import { ImageActionMenuServicesModule } from '@thumbnail-image-container/image-action-menu_module/image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

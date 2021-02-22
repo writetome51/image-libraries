@@ -7,7 +7,21 @@ import { SpecificChoicesExecutorService } from './specific-choices-executor.serv
 
 @Component({
 	selector: 'action-menu',
-	templateUrl: './action-menu.component.html',
+	template: `
+		<hoverable-container (unhover)="close()">
+			<div class="action-menu-container">
+
+				<div class="dropdown  twitter-bootstrap-dropdown-button-and-menu">
+
+					<action-menu-button [menu]="this"></action-menu-button>
+
+					<action-menu-choices *ngIf="open" [data]="choices"></action-menu-choices>
+
+				</div>
+
+			</div>
+		</hoverable-container>
+	`,
 
 	// Creates new instance of service for every instance of this component.
 	providers: [ActionMenuChoiceExecutorService]

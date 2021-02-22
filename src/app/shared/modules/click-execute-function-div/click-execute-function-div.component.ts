@@ -1,5 +1,5 @@
 import { ClickExecuteFunctionComponent }
-	from '@abstract-components/click-execute-function.component';
+	from '@abstract-components/click-execute-function.abstract.component';
 import { Component } from '@angular/core';
 import { not } from '@writetome51/not';
 

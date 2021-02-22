@@ -1,24 +1,15 @@
-import { CheckmarkComponent }
-	from './executable-menu-choice-container_component/checkmark.component';
-import { ClickExecuteFunctionDivModule }
-	from '@app/shared/modules/click-execute-function-div/click-execute-function-div.module';
 import { CommonModule } from '@angular/common';
+import { ExecutableMenuChoiceContainerModule }
+	from './executable-menu-choice-container_module/executable-menu-choice-container.module';
 import { HoverableContainerModule } from '@hoverable-container/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice.component';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ExecutableMenuChoiceComponent }
-	from './executable-menu-choice-container_component/executable-menu-choice.component';
 import { SubmenuComponent } from './submenu_component/submenu.component';
 import { SubmenuPointerComponent } from './submenu_component/submenu-pointer.component';
-import { ExecutableMenuChoiceContainerComponent }
-	from './executable-menu-choice-container_component/executable-menu-choice-container.component';
 
 
 @NgModule({
 	declarations: [
-		CheckmarkComponent,
-		ExecutableMenuChoiceComponent,
-		ExecutableMenuChoiceContainerComponent,
 		MenuChoiceComponent,
 		SubmenuComponent,
 		SubmenuPointerComponent
@@ -26,7 +17,7 @@ import { ExecutableMenuChoiceContainerComponent }
 	imports: [
 		CommonModule,
 		HoverableContainerModule,
-		ClickExecuteFunctionDivModule
+		ExecutableMenuChoiceContainerModule
 	],
 	exports: [MenuChoiceComponent],
 

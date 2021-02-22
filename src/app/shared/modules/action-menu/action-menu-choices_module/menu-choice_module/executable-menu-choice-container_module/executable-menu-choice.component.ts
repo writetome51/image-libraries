@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ClickExecuteFunctionContainerComponent }
-	from '@abstract-components/click-execute-function-container.component';
+	from '@abstract-components/click-execute-function-container.abstract.component';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LabelledMenuChoiceComponent }
 	from '../abstract-menu-choice_component/labelled-menu-choice.component';
@@ -11,7 +11,11 @@ import { LabelledMenuChoiceComponent }
 	template: `
 		<click-execute-function-div [container]="container" [funcArgs]="[data]">
 			<div class="label-container">{{ label }}</div>
+
+			<!--  Should <checkmark> be removed and placed in modules that use <action-menu> ? -->
+			<!--  It may be better if <action-menu> is more generic, like an empty container. -->
 			<checkmark [class.invisible]="!(checked)"></checkmark>
+
 		</click-execute-function-div>
 	`,
 	styles: [`checkmark {position: relative;  top: 5px;  left: 5px;}`]

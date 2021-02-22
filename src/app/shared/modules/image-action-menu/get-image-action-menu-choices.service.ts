@@ -7,9 +7,9 @@ import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
-import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
+import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';
-import { ImageActionMenuServicesModule } from '../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
 import { CheckableMenuChoice } from '@action-menu/checkable-menu-choice.interface';
 
 
