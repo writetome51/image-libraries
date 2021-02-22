@@ -1,5 +1,6 @@
 import { hasValue } from '@writetome51/has-value-no-value';
-import { EncryptedItemInBrowserStorageService } from '../encrypted-item-in-browser-storage.service';
+import { EncryptedItemInBrowserStorageService }
+	from '../encrypted-item-in-browser-storage.abstract.service';
 
 
 export abstract class ToggleSettingInBrowserStorageService

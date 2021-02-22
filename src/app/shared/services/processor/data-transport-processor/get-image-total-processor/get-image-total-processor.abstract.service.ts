@@ -1,8 +1,8 @@
-import { DataTransportProcessorService } from '../data-transport-processor.service';
+import { DataTransportProcessorService } from '../data-transport-processor.abstract.service';
 import { GetLibraryImageTotalService }
 	from './get-library-image-total-processor/get-library-image-total.service';
 import { InterpretGetImageTotalResultService }
-	from './get-image-total-result-interpreter/interpret-get-image-total-result.service';
+	from './interpret-get-image-total-result/interpret-get-image-total-result.abstract.service';
 import { GetUserImageTotalService }
 	from './get-user-image-total-processor/get-user-image-total.service';
 

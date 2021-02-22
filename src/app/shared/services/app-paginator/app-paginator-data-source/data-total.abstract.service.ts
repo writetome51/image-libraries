@@ -1,6 +1,6 @@
 import { DataContainer } from '@interfaces/data-container.interface';
 import { Gettable } from '@interfaces/gettable.interface';
-import { ProcessorService } from '@processor/processor.service';
+import { ProcessorService } from '@processor/processor.abstract.service';
 
 
 export abstract class DataTotalService implements DataContainer<number> {

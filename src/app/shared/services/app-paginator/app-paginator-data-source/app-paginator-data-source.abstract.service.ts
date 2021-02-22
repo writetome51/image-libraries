@@ -1,6 +1,6 @@
 import { DataTotalService } from './data-total.abstract.service';
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.service';
+	from '@data-transport-processor/data-transport-processor.abstract.service';
 import { DBImage } from '@interfaces/app-image/db-image.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }

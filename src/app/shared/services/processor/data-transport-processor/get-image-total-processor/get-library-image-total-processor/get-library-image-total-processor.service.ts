@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { GetLibraryImageTotalService } from './get-library-image-total.service';
-import { GetImageTotalProcessorService } from '../get-image-total-processor.service';
+import { GetImageTotalProcessorService } from '../get-image-total-processor.abstract.service';
 import { InterpretGetLibraryImageTotalResultService }
-	from './get-library-image-total-result-interpreter/interpret-get-library-image-total-result.service';
+	from './interpret-get-library-image-total-result/interpret-get-library-image-total-result.service';
 
 
 @Injectable({providedIn: 'root'})

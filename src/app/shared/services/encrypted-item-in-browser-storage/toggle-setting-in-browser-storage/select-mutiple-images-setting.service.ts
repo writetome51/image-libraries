@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ToggleSettingInBrowserStorageService } from './toggle-setting-in-browser-storage.service';
+import { ToggleSettingInBrowserStorageService } from './toggle-setting-in-browser-storage.abstract.service';
 
 
 @Injectable({providedIn: 'root'})

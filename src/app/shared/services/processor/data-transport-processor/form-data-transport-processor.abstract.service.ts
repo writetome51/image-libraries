@@ -1,7 +1,7 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { InterpretDataTransportResultService }
 	from './interpret-data-transport-result/interpret-data-transport-result.service';
-import { DataTransportProcessorService } from './data-transport-processor.service';
+import { DataTransportProcessorService } from './data-transport-processor.abstract.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 

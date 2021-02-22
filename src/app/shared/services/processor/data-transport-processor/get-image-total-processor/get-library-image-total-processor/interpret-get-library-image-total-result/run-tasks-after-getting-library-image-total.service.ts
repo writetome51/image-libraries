@@ -1,7 +1,7 @@
 import { LibraryImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/library-image-total-in-browser-storage.service';
 import { RunTasksAfterGettingImageTotalService }
-	from '../../get-image-total-result-interpreter/run-tasks-after-getting-image-total.service';
+	from '../../interpret-get-image-total-result/run-tasks-after-getting-image-total.abstract.service';
 import { Injectable } from '@angular/core';
 
 

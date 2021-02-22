@@ -1,4 +1,4 @@
-import { DataTransportProcessorService } from '../data-transport-processor.service';
+import { DataTransportProcessorService } from '../data-transport-processor.abstract.service';
 import { InterpretGetLibrariesResultService } from './interpret-get-libraries-result.service';
 import { Injectable } from '@angular/core';
 import { GetUserLibrariesService } from '../../../get-user-libraries.service';

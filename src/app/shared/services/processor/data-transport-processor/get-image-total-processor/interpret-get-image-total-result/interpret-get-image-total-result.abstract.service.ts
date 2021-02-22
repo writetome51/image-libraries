@@ -3,7 +3,7 @@ import { InterpretDataTransportResultService }
 import { HandleGetImageTotalErrorService }
 	from './handle-get-image-total-error.service';
 import { RunTasksAfterGettingImageTotalService }
-	from './run-tasks-after-getting-image-total.service';
+	from './run-tasks-after-getting-image-total.abstract.service';
 
 
 export abstract class InterpretGetImageTotalResultService

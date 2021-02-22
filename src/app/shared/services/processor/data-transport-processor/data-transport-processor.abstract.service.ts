@@ -1,6 +1,6 @@
 import { InterpretDataTransportResultService }
 	from './interpret-data-transport-result/interpret-data-transport-result.service';
-import { ProcessorService } from '@processor/processor.service';
+import { ProcessorService } from '@processor/processor.abstract.service';
 import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
 
 
