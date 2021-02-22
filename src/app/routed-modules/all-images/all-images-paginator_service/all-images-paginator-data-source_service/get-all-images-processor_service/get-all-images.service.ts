@@ -5,7 +5,7 @@ import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.s
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AllImagesServicesModule } from '@app/routed-modules/all-images/all-images-services.module';
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { DBImage } from '@interfaces/db-image.interface';
 import { FullSizeImageViewerModuleTitleData as moduleTitle }
 	from './full-size-image-viewer-module-title.data';
 import { getByTest } from '@writetome51/array-get-by-test';

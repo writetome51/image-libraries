@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProcessorService } from '@processor/processor.abstract.service';
+import { ProcessorService } from '@services/processor-related/processor.abstract.service';
 
 
 @Component({

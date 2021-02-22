@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
-import { Link } from '@interfaces/has-label/link/link.interface';
+import { LinkedTemplateWithHeading } from './linked-template-with-heading_interface/linked-template-with-heading.interface';
+import { Link } from '@interfaces/link.interface';
 
 
 @Component({

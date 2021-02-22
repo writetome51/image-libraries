@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { InterpretResultService }
-	from '@processor/interpret-result/interpret-result.abstract.service';
+	from '@processor/../../../../../../services/interpret-result/interpret-result.abstract.service';
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
-import { HandleErrorService } from '@processor/handle-error/handle-error.service';
+import { HandleErrorService } from '@processor/../../../../../../services/handle-error/handle-error.service';
 import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
 
 

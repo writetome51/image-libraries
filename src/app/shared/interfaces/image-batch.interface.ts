@@ -1,4 +1,4 @@
-import { DBImage } from './app-image/db-image.interface';
+import { DBImage } from './db-image.interface';
 
 
 export interface ImageBatch {

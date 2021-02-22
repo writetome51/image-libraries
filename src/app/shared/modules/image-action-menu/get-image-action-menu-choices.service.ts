@@ -1,6 +1,6 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { DBImage } from '@interfaces/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';

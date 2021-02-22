@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
 
 

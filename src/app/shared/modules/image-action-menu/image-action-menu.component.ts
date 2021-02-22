@@ -1,4 +1,4 @@
-import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { AppImage } from '@interfaces/app-image.interface';
 import { Component, Input } from '@angular/core';
 import { GetImageActionMenuChoicesService }
 	from './get-image-action-menu-choices.service';

@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.abstract.service';
+	from '@services/processor-related/form-data-transport-processor.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretGetSecurityQuestionResultService }
 	from './get-security-question-result-interpreter_service/interpret-get-security-question-result.service';

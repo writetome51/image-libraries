@@ -1,4 +1,4 @@
-import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { AppImage } from '@interfaces/app-image.interface';
 import { getDateTimeID } from '@writetome51/get-date-time-id';
 import { getRandomInteger } from '@writetome51/get-random-integer-s';
 // import { IDoThis } from '@interfaces/i-do-this.interface';

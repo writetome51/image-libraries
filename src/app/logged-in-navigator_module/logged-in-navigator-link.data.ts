@@ -1,4 +1,4 @@
-import { Link } from '@interfaces/has-label/link/link.interface';
+import { Link } from '@interfaces/link.interface';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 
 

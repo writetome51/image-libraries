@@ -1,5 +1,5 @@
-import { HasLabel } from '@interfaces/has-label/has-label.interface';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { HasLabel } from '@interfaces/has-label.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 export interface ExecutorConfiguration extends HasLabel {

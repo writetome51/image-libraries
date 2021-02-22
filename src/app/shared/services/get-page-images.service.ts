@@ -1,5 +1,5 @@
 // import { IDoThis } from '@interfaces/i-do-this.interface';
-import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { DBImage } from '@interfaces/db-image.interface';
 import { PageImagesData as pageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 

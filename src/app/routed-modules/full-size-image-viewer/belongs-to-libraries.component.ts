@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
-import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { DBImage } from '@interfaces/db-image.interface';
 import { getByTest } from '@writetome51/array-get-by-test';
 
 

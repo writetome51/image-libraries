@@ -1,4 +1,4 @@
-import { AppImage } from '@interfaces/app-image/app-image.interface';
+import { AppImage } from '@interfaces/app-image.interface';
 import { DirectProcessor } from '@interfaces/direct-processor.interface';
 import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { getDataURL } from '@writetome51/get-data-url';

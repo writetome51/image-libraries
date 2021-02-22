@@ -1,4 +1,4 @@
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoadLibraryService } from './load-library.service';
 import { LibraryServicesModule } from '../../library-services.module';

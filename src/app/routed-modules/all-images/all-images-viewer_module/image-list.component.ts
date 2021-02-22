@@ -2,7 +2,7 @@ import { AllImagesPaginatorService }
 	from '../all-images-paginator_service/all-images-paginator.service';
 import { AppModulePathData as appModuleRoutes } from '../../../app-module-path.data';
 import { Component } from '@angular/core';
-import { DBImage } from '@interfaces/app-image/db-image.interface';
+import { DBImage } from '@interfaces/db-image.interface';
 import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 
 

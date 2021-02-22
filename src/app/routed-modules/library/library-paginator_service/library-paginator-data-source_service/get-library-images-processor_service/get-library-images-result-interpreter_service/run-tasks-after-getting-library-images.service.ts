@@ -7,7 +7,7 @@ import { RequestedLibraryData as requestedLibrary }
 import { LibrariesInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
 import { RunTasksAfterGettingImagesService }
-	from '@get-images-processor/get-images-result-interpreter/run-tasks-after-getting-images.service';
+	from '@get-images-processor/interpret-get-images-result/run-tasks-after-getting-images.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 

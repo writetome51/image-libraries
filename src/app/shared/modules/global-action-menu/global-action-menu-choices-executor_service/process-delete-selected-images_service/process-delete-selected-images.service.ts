@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { DeleteSelectedImagesProcessorService }
 	from './delete-selected-images-processor_service/delete-selected-images-processor.service';
 import { GlobalActionMenuServicesModule }

@@ -4,7 +4,7 @@ import { SessionIDInBrowserStorageService }
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { HasError } from '@interfaces/has-error.interface';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { GlobalActionMenuServicesModule }
 	from '@global-action-menu/global-action-menu-services.module';
 

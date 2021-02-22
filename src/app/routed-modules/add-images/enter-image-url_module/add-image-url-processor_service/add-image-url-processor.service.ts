@@ -1,5 +1,5 @@
 import { FormDataTransportProcessorService }
-	from '@data-transport-processor/form-data-transport-processor.abstract.service';
+	from '@services/processor-related/form-data-transport-processor.abstract.service';
 import { ImageURLInputService } from '../image-url-input.service';
 import { Injectable } from '@angular/core';
 import { InterpretSaveNewImagesResultService }

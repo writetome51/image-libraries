@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { CurrentRouteService } from '@services/current-route.service';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectedImagesData as selectedImages }

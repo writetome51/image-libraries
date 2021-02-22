@@ -1,5 +1,5 @@
 import { InterpretDataTransportResultService }
-	from '@data-transport-processor/../../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@services/processor-related/../../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleGetLibraryImagesErrorService } from './handle-get-library-images-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibraryImagesService }

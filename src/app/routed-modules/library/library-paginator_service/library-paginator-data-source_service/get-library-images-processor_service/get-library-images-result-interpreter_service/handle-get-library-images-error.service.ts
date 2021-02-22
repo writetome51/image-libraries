@@ -4,7 +4,7 @@ import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
-import { HandleDataTransportErrorService } from '@data-transport-processor/../../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDataTransportErrorService } from '@services/processor-related/../../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})

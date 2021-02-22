@@ -1,4 +1,5 @@
-import { LinkedTemplateWithHeading } from './linked-template-with-heading.interface';
+import { LinkedTemplateWithHeading }
+	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
 import { UpdateEmailFormComponent }
 	from './update-email-form_module/update-email-form.component';
 import { UpdatePasswordFormComponent }

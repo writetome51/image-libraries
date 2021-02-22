@@ -1,5 +1,5 @@
 import { DataTransportProcessorService }
-	from '@data-transport-processor/data-transport-processor.abstract.service';
+	from '@services/processor-related/data-transport-processor.abstract.service';
 import { InterpretDeleteSelectedImagesResultService }
 	from './interpret-delete-selected-images-result_service/interpret-delete-selected-images-result.service';
 import { Injectable } from '@angular/core';

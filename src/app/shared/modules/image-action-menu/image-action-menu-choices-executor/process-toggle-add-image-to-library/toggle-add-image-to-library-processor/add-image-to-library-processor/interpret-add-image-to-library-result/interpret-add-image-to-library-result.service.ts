@@ -1,5 +1,5 @@
 import { InterpretDataTransportResultService }
-	from '@data-transport-processor/../../../../../../../services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
+	from '@services/processor-related/../../../../../../../services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { HandleAddImageToLibraryErrorService }
 	from './handle-add-image-to-library-error.service';
 import { ImageActionMenuServicesModule } from '../../../../../image-action-menu-services.module';

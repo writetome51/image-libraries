@@ -1,5 +1,5 @@
 import { HasError } from '@interfaces/has-error.interface';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';

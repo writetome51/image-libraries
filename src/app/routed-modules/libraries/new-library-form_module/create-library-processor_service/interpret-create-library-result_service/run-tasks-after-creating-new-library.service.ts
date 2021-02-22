@@ -1,9 +1,9 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { Injectable } from '@angular/core';
 import { GetLibrariesProcessorService }
-	from '@data-transport-processor/get-libraries-processor/get-libraries-processor.service';
+	from '@services/processor-related/get-libraries-processor/get-libraries-processor.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { NewLibraryFormServicesModule } from '../../new-library-form-services.module';
 
 

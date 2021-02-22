@@ -3,7 +3,7 @@ import { CurrentUserData as currentUser }
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SecurityQuestion } from '@interfaces/security-question.interface';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { SecurityQuestionServicesModule } from '../../security-question-services.module';
 

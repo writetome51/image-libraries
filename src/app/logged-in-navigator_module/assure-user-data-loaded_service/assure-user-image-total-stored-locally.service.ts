@@ -3,7 +3,7 @@ import { BackgroundExecutionStatusData as executionStatus }
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
 	from '@services/execute-function-requiring-waiting.service';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { IDoThis } from '@interfaces/i-do-this/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
