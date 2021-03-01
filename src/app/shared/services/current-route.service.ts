@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Gettable }from '@interfaces/gettable.interface';
+import { Injectable } from '@angular/core';
 import { Subscribable } from 'rxjs';
-import { Gettable }
-	from '@interfaces/gettable.interface';
 
 
 @Injectable({providedIn: 'root'})

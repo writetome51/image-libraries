@@ -5,7 +5,7 @@ import { HandleNotLoggedInErrorService }
 import { HandleNoRecordMatchErrorService }
 	from './error-handler/handle-no-record-match-error.service';
 import { HandleErrorService }
-	from '@services/processor-related/handle-error/handle-error.service';
+	from '@processor-related/handle-error.service';
 
 
 @Injectable({providedIn: 'root'})

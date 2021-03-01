@@ -1,7 +1,7 @@
 import { InterpretDataTransportResultService }
 	from './interpret-data-transport-result.service';
 import { HandleDataTransportErrorService }
-	from './handle-error/handle-data-transport-error/handle-data-transport-error.service';
+	from './handle-data-transport-error/handle-data-transport-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLoginService }
 	from './run-post-success-tasks/run-tasks-after-login.service';

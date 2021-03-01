@@ -1,5 +1,5 @@
 import { HandleDataTransportErrorService }
-	from './handle-error/handle-data-transport-error/handle-data-transport-error.service';
+	from './handle-data-transport-error/handle-data-transport-error.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResultService } from '@services/processor-related/interpret-result/interpret-result.abstract.service';
 

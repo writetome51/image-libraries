@@ -1,11 +1,11 @@
 import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user.interface';
+import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
+import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
-import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
