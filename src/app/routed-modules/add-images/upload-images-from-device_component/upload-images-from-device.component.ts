@@ -12,12 +12,12 @@ import { ProcessUploadImagesService }
 })
 export class UploadImagesFromDeviceComponent {
 
-	constructor(private __uploadImagesProcessor: ProcessUploadImagesService) {
+	constructor(private __processUploadImages: ProcessUploadImagesService) {
 	}
 
 
 	async upload(images: FileList | File[]): Promise<void> {
-		await this.__uploadImagesProcessor.go(images);
+		await this.__processUploadImages.go(images);
 	}
 
 }

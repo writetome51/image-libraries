@@ -3,7 +3,7 @@ import { ProcessDataTransportService }
 	from '@services/process-related/process-data-transport.abstract.service';
 import { GetLibraryImagesService } from './get-library-images.service';
 import { InterpretGetLibraryImagesResultService }
-	from './get-library-images-result-interpreter_service/interpret-get-library-images-result.service';
+	from './interpret-get-library-images-result_service/interpret-get-library-images-result.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 
 

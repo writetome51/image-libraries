@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { InterpretDataTransportResultService }
-	from '@services/process-related/../../../../../shared/services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { RunTasksAfterCreatingNewLibraryService }
 	from './run-tasks-after-creating-new-library.service';
-import { HandleUpdateOrNewLibraryErrorService }
-	from '@services/process-related/../../../../../shared/services/processor/handle-data-transport-error/handle-update-or-new-library-error.service';
 import { NewLibraryFormServicesModule } from '../../new-library-form-services.module';
+import { HandleUpdateOrNewLibraryErrorService }
+	from '@handle-data-transport-error/handle-update-or-new-library-error.service';
+import { InterpretDataTransportResultService }
+	from '@process-related/interpret-data-transport-result.service';
 
 
 @Injectable({providedIn: NewLibraryFormServicesModule})
-export class InterpretCreateLibraryResultService
-	extends InterpretDataTransportResultService {
+export class InterpretCreateLibraryResultService extends InterpretDataTransportResultService {
 
 	constructor(
 		__handleError: HandleUpdateOrNewLibraryErrorService,

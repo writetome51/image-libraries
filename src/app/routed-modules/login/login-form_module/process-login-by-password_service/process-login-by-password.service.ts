@@ -9,7 +9,7 @@ import { InterpretLoginResultService }
 
 
 @Injectable({providedIn: LoginFormServicesModule})
-export class ProcessLoginService extends ProcessFormDataTransportService {
+export class ProcessLoginByPasswordService extends ProcessFormDataTransportService {
 
 	constructor(
 		__validatingInputs: LoginFormInputsService,

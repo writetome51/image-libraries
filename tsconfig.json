@@ -33,6 +33,9 @@
 			"@data-transport-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/*"
 			],
+			"@decorators/*": [
+				"src/app/shared/decorators/*"
+			],
 			"@data-transport-process-result-interpreter/*": [
 				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/*"
 			],
@@ -88,7 +91,7 @@
 				"src/app/shared/data/read-only/*"
 			],
 			"@run-post-success-tasks/*": [
-				"src/app/shared/services/processor/data-transport-processor/interpret-data-transport-result/run-post-success-tasks/*"
+				"src/app/shared/services/process-related/run-post-success-tasks/*"
 			],
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"

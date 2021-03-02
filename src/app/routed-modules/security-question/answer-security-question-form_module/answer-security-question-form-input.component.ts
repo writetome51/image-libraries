@@ -9,8 +9,8 @@ import { SecurityAnswerLoginInputService } from './security-answer-login-input.s
 })
 export class AnswerSecurityQuestionFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__securityAnswerLoginInput: SecurityAnswerLoginInputService) {
-		super(__securityAnswerLoginInput);
+	constructor(__validatingInput: SecurityAnswerLoginInputService) {
+		super(__validatingInput);
 	}
 
 }

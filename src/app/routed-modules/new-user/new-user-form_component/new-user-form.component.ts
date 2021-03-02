@@ -8,14 +8,14 @@ import { ProcessCreateUserService } from './process-create-user_service/process-
 		<div class="form-container">
 			<form>
 				<new-user-form-inputs></new-user-form-inputs>
-				<submit-form-button [label]="'Create'" [process]="processor"></submit-form-button>
+				<submit-form-button [label]="'Create'" [process]="process"></submit-form-button>
 			</form>
 		</div>
 	`
 })
 export class NewUserFormComponent {
 
-	constructor(public processor: ProcessCreateUserService) {
+	constructor(public process: ProcessCreateUserService) {
 	}
 
 }

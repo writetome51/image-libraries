@@ -10,8 +10,8 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class UpdatePasswordFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__updatePasswordFormInputs: UpdatePasswordInputsService) {
-		super(__updatePasswordFormInputs);
+	constructor(__validatingInputs: UpdatePasswordInputsService) {
+		super(__validatingInputs);
 	}
 
 }

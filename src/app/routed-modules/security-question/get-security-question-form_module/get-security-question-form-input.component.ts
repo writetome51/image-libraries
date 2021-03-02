@@ -10,8 +10,8 @@ import { EmailToGetSecurityQuestionInputService }
 })
 export class GetSecurityQuestionFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__getSecurityQuestionInput: EmailToGetSecurityQuestionInputService) {
-		super(__getSecurityQuestionInput);
+	constructor(__validatingInput: EmailToGetSecurityQuestionInputService) {
+		super(__validatingInput);
 	}
 
 }

@@ -2,19 +2,19 @@ import { DataTotalService } from '@services/app-paginator-related/data-total.abs
 import { Injectable } from '@angular/core';
 import { LibraryImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/library-image-total-in-browser-storage.service';
-import { GetLibraryImageTotalProcessorService } // tslint:disable-next-line:max-line-length
-	from '@get-image-total-processor/process-get-library-image-total/process-get-library-image-total.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
+import { ProcessGetLibraryImageTotalService }
+	from '@process-related/process-get-image-total/process-get-library-image-total/process-get-library-image-total.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
 export class LibraryImagesDataTotalService extends DataTotalService {
 
 	constructor(
-		__storeTotal_Processor: GetLibraryImageTotalProcessorService,
+		__process_storeTotal: ProcessGetLibraryImageTotalService,
 		__storedTotal: LibraryImageTotalInBrowserStorageService
 	) {
-		super(__storeTotal_Processor, __storedTotal);
+		super(__process_storeTotal, __storedTotal);
 	}
 
 }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { UpdatePasswordInputsService }
 	from '../update-password-inputs_service/update-password-inputs.service';
 import { InterpretUpdatePasswordResultService }
-	from './interpret-update-password-result.service';
+	from './interpret-update-password-result_service/interpret-update-password-result.service';
 import { UpdatePasswordService } from './update-password.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 

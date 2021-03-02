@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { getByIndex } from '@writetome51/array-get-by-index';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { LinkedTemplateWithHeading } from './linked-template-with-heading_interface/linked-template-with-heading.interface';
+import { LinkedTemplateWithHeading }
+	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
 import { UpdateUserChoiceData } from './update-user-choice.data';
 
 

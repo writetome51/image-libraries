@@ -9,14 +9,14 @@ import { ProcessCreateLibraryService }
 		<div class="form-container">
 			<form>
 				<new-library-form-input></new-library-form-input>
-				<submit-form-button [label]="'Create'" [process]="processor"></submit-form-button>
+				<submit-form-button [label]="'Create'" [process]="process"></submit-form-button>
 			</form>
 		</div>
 	`
 })
 export class NewLibraryFormComponent {
 
-	constructor(public processor: ProcessCreateLibraryService) {
+	constructor(public process: ProcessCreateLibraryService) {
 	}
 
 }

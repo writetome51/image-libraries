@@ -1,7 +1,7 @@
 import { ProcessDataTransportService }
 	from '@services/process-related/process-data-transport.abstract.service';
 import { InterpretDeleteLibraryResultService }
-	from './delete-library-result-interpreter_service/interpret-delete-library-result.service';
+	from './interpret-delete-library-result_service/interpret-delete-library-result.service';
 import { Injectable } from '@angular/core';
 import { DeleteLibraryService } from './delete-library.service';
 import { DeleteLibraryButtonServicesModule } from '../delete-library-button-services.module';
