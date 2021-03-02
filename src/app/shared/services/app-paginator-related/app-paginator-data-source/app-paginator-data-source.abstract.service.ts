@@ -16,7 +16,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	constructor(
-		private __set_loadedImages_processor: ProcessDataTransportService,
+		private __process_set_loadedImages: ProcessDataTransportService,
 		private __dataTotal: DataTotalService
 	) {
 	}
@@ -32,7 +32,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 	): Promise<DBImage[]> {
 
 		load.number = loadNum;
-		await this.__set_loadedImages_processor.go();
+		await this.__process_set_loadedImages.go();
 
 		if (hasValue(loadedImages.data)) return loadedImages.data;
 		else return [];

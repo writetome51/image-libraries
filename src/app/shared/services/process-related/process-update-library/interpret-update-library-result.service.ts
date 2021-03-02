@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdateOfLibraryService }
 	from './run-tasks-after-update-of-library.service';
 import { InterpretDataTransportResultService }
-	from '@processor/../../interpret-result/interpret-data-transport-result/interpret-data-transport-result.service';
-import { HandleUpdateOrNewLibraryErrorService } from '@services/process-related/../../handle-data-transport-error/handle-update-or-new-library-error.service';
+	from '@process-related/interpret-data-transport-result.service';
+import { HandleUpdateOrNewLibraryErrorService }
+	from '@handle-data-transport-error/handle-update-or-new-library-error.service';
 
 
 @Injectable({providedIn: 'root'})

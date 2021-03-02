@@ -6,14 +6,14 @@ import { ProcessService } from '@services/process-related/process.abstract.servi
 export abstract class DataTotalService implements DataContainer<number> {
 
 	constructor(
-		private __storeTotal_processor: ProcessService,
+		private __processStoreTotal: ProcessService,
 		private __storedTotal: Gettable<number>
 	) {
 	}
 
 
-	async set() {
-		await this.__storeTotal_processor.go();
+	async set(): Promise<void> {
+		await this.__processStoreTotal.go();
 	}
 
 

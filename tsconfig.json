@@ -57,8 +57,8 @@
 			"@guards/*": [
 				"src/app/shared/guards/*"
 			],
-			"@handle-data-transport-process-error/*": [
-				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/handle-data-transport-process-error/*"
+			"@handle-data-transport-error/*": [
+				"src/app/shared/services/process-related/handle-data-transport-error/*"
 			],
 			"@hoverable-container/*": [
 				"src/app/shared/modules/hoverable-container/*"
@@ -81,8 +81,8 @@
 			"@navigation-links/*": [
 				"src/app/shared/modules/navigation-links/*"
 			],
-			"@processor-related/*": [
-				"src/app/shared/services/processor-related/*"
+			"@process-related/*": [
+				"src/app/shared/services/process-related/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"
