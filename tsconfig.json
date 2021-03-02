@@ -52,7 +52,7 @@
 				"src/app/shared/services/processor/data-transport-processor/get-images-processor/*"
 			],
 			"@get-image-total-processor/*": [
-				"src/app/shared/services/processor/data-transport-processor/get-image-total-processor/*"
+				"src/app/shared/services/process-related/process-data-transport/process-get-image-total/*"
 			],
 			"@global-action-menu/*": [
 				"src/app/shared/modules/global-action-menu/*"

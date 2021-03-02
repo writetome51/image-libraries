@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { InterpretDataTransportResultService }
-	from '@services/process-related/../../../../../../services/processor/interpret-data-transport-result/interpret-data-transport-result.service';
 import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
-import { GlobalActionMenuServicesModule } from '../../../../global-action-menu-services.module';
+import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
+import { InterpretDataTransportResultService }
+	from '@process-related/interpret-data-transport-result.service';
 import { HandleDataTransportErrorService }
-	from '@services/process-related/../../../../../../services/processor/handle-data-transport-error/handle-data-transport-error.service';
+	from '@handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

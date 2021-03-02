@@ -9,8 +9,8 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class DeleteUserFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__deleteUserInputs: DeleteUserInputsService) {
-		super(__deleteUserInputs);
+	constructor(__validatingInputs: DeleteUserInputsService) {
+		super(__validatingInputs);
 	}
 
 }

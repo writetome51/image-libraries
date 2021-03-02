@@ -1,22 +1,21 @@
+import { ProcessDataTransportService }
+	from '@process-related/process-data-transport.abstract.service';
+import { InterpretDeleteSelectedImagesResultService }
+	from './interpret-delete-selected-images-result_service/interpret-delete-selected-images-result.service';
 import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ProcessDeleteSelectedImagesService }
-	from './delete-selected-images-processor_service/process-delete-selected-images.service';
+import { DeleteSelectedImagesService } from './delete-selected-images.service';
 import { GlobalActionMenuServicesModule }
 	from '@global-action-menu/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class ProcessDeleteSelectedImagesService implements IDoThis {
+export class ProcessDeleteSelectedImagesService extends ProcessDataTransportService {
 
 	constructor(
-		private __deleteSelectedImagesProcessor: ProcessDeleteSelectedImagesService
+		__getResult: DeleteSelectedImagesService,
+		__interpretResult: InterpretDeleteSelectedImagesResultService
 	) {
-	}
-
-
-	async go() {
-		await this.__deleteSelectedImagesProcessor.go();
+		super(__getResult, __interpretResult);
 	}
 
 }

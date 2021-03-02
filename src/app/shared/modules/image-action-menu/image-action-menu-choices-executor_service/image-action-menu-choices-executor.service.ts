@@ -3,7 +3,7 @@ import { SpecificChoicesExecutorService }
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { ProcessToggleAddImageToLibraryService }
-	from './process-toggle-add-image-to-library/process-toggle-add-image-to-library.service';
+	from './process-toggle-add-image-to-library_service/process-toggle-add-image-to-library.service';
 import { ImageActionMenuServicesModule } from '../image-action-menu-services.module';
 
 

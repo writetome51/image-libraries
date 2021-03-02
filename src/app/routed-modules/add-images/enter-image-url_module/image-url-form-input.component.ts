@@ -9,8 +9,8 @@ import { ValidatingFormInputComponent } from '@writetome51/validating-inputs';
 })
 export class ImageURLFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__imageURLInput: ImageURLInputService) {
-		super(__imageURLInput);
+	constructor(__validatingInput: ImageURLInputService) {
+		super(__validatingInput);
 	}
 
 }

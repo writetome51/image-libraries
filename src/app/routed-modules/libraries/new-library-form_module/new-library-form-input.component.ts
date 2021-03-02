@@ -9,8 +9,8 @@ import { LibraryNameInputService } from './library-name-input.service';
 })
 export class NewLibraryFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__libraryNameInput: LibraryNameInputService) {
-		super(__libraryNameInput);
+	constructor(__validatingInput: LibraryNameInputService) {
+		super(__validatingInput);
 	}
 
 }

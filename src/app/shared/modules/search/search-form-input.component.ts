@@ -9,8 +9,8 @@ import { SearchInputService } from '@validating-input/search-input.service';
 })
 export class SearchFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__searchInput: SearchInputService) {
-		super(__searchInput);
+	constructor(__validatingInput: SearchInputService) {
+		super(__validatingInput);
 	}
 
 }

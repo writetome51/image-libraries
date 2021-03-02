@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ProcessDataTransportService }
-	from '@services/process-related/process-data-transport.abstract.service';
+	from '@process-related/process-data-transport.abstract.service';
 import { InterpretRemoveImageFromLibraryResultService }
-	from './interpret-remove-image-from-library-result/interpret-remove-image-from-library-result.service';
+	from './interpret-remove-image-from-library-result_service/interpret-remove-image-from-library-result.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
-import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
+import { ImageActionMenuServicesModule }
+	from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

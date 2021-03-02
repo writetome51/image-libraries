@@ -9,8 +9,8 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class NewUserFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__newUserInputs: NewUserInputsService) {
-		super(__newUserInputs);
+	constructor(__validatingInputs: NewUserInputsService) {
+		super(__validatingInputs);
 	}
 
 }
