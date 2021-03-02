@@ -1,4 +1,5 @@
 // import { IDoThis } from '@interfaces/i-do-this.interface';
+import { ExecutionStatus } from '@interfaces/execution-status.interface';
 
 
 // To help let user know the app is working on their request.
@@ -8,7 +9,7 @@ export class ExecuteFunctionRequiringWaitingService { // implements IDoThis
 
 	static async go(
 		func: (...args) => any,
-		executionStatus: { waiting: boolean },
+		executionStatus: ExecutionStatus,
 		funcArgs = []
 	): Promise<any> {
 
