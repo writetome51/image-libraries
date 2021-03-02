@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UploadImagesProcessorService }
-	from './upload-images-processor_service/upload-images-processor.service';
+import { ProcessUploadImagesService }
+	from './process-upload-images_service/process-upload-images.service';
 
 
 @Component({
@@ -12,12 +12,12 @@ import { UploadImagesProcessorService }
 })
 export class UploadImagesFromDeviceComponent {
 
-	constructor(private __uploadImagesProcessor: UploadImagesProcessorService) {
+	constructor(private __uploadImagesProcessor: ProcessUploadImagesService) {
 	}
 
 
 	async upload(images: FileList | File[]): Promise<void> {
-		await this.__uploadImagesProcessor.process(images);
+		await this.__uploadImagesProcessor.go(images);
 	}
 
 }

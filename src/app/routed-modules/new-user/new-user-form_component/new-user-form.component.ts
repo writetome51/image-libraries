@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CreateUserProcessorService } from './create-user-processor_service/create-user-processor.service';
+import { ProcessCreateUserService } from './process-create-user_service/process-create-user.service';
 
 
 @Component({
@@ -8,14 +8,14 @@ import { CreateUserProcessorService } from './create-user-processor_service/crea
 		<div class="form-container">
 			<form>
 				<new-user-form-inputs></new-user-form-inputs>
-				<submit-form-button [label]="'Create'" [processor]="processor"></submit-form-button>
+				<submit-form-button [label]="'Create'" [process]="processor"></submit-form-button>
 			</form>
 		</div>
 	`
 })
 export class NewUserFormComponent {
 
-	constructor(public processor: CreateUserProcessorService) {
+	constructor(public processor: ProcessCreateUserService) {
 	}
 
 }

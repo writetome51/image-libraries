@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ToggleAddImageToLibraryProcessorService }
-	from './toggle-add-image-to-library-processor/toggle-add-image-to-library-processor.service';
+import { ProcessToggleAddImageToLibraryService }
+	from './toggle-add-image-to-library-processor/process-toggle-add-image-to-library.service';
 import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
 
 
@@ -9,13 +9,13 @@ import { ImageActionMenuServicesModule } from '../../image-action-menu-services.
 export class ProcessToggleAddImageToLibraryService implements IDoThis {
 
 	constructor(
-		private __toggleAddImageToLibraryProcessor: ToggleAddImageToLibraryProcessorService
+		private __toggleAddImageToLibraryProcessor: ProcessToggleAddImageToLibraryService
 	) {
 	}
 
 
 	async go(data: { image_id: string, libName: string, checked: boolean }) {
-		await this.__toggleAddImageToLibraryProcessor.process(data);
+		await this.__toggleAddImageToLibraryProcessor.go(data);
 	}
 
 }

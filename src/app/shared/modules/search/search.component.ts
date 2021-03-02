@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { ProcessorService } from '@services/processor-related/processor.abstract.service';
+import { ProcessService } from '@services/process-related/process.abstract.service';
 
 
 @Component({
 	selector: 'app-search',
 	template: `
 		<search-form-input></search-form-input>
-		<submit-form-button [processor]="processor"></submit-form-button>
+		<submit-form-button [process]="processor"></submit-form-button>
 	`
 })
 export class SearchComponent {
 
-	@Input() processor: ProcessorService;
+	@Input() processor: ProcessService;
 
 }

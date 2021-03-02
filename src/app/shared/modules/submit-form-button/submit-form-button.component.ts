@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
-import { FormDataTransportProcessorService }
-	from '@services/processor-related/form-data-transport-processor.abstract.service';
+import { ProcessFormDataTransportService }
+	from '@services/process-related/process-form-data-transport.abstract.service';
 
 
 @Component({
@@ -15,8 +15,8 @@ import { FormDataTransportProcessorService }
 })
 export class SubmitFormButtonComponent extends ClickExecuteProcessContainerComponent {
 
-	@Input() set processor(value: FormDataTransportProcessorService) {
-		this._processor = value;
+	@Input() set process(value: ProcessFormDataTransportService) {
+		this._process = value;
 	}
 
 	@Input() label = 'Submit';

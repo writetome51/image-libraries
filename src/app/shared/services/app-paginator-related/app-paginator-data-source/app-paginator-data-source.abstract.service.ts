@@ -1,6 +1,6 @@
 import { DataTotalService } from '../data-total.abstract.service';
-import { DataTransportProcessorService }
-	from '@services/processor-related/data-transport-processor.abstract.service';
+import { ProcessDataTransportService }
+	from '@services/process-related/process-data-transport.abstract.service';
 import { DBImage } from '@interfaces/db-image.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }
@@ -16,7 +16,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	constructor(
-		private __set_loadedImages_processor: DataTransportProcessorService,
+		private __set_loadedImages_processor: ProcessDataTransportService,
 		private __dataTotal: DataTotalService
 	) {
 	}
@@ -32,7 +32,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 	): Promise<DBImage[]> {
 
 		load.number = loadNum;
-		await this.__set_loadedImages_processor.process();
+		await this.__set_loadedImages_processor.go();
 
 		if (hasValue(loadedImages.data)) return loadedImages.data;
 		else return [];

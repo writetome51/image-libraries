@@ -1,8 +1,8 @@
-import { AddImageToLibraryProcessorService }
-	from './add-image-to-library-processor/add-image-to-library-processor.service';
+import { ProcessAddImageToLibraryService }
+	from './add-image-to-library-processor/process-add-image-to-library.service';
 import { Injectable } from '@angular/core';
-import { RemoveImageFromLibraryProcessorService }
-	from './remove-image-from-library-processor/remove-image-from-library-processor.service';
+import { ProcessRemoveImageFromLibraryService }
+	from './remove-image-from-library-processor/process-remove-image-from-library.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
 
@@ -11,8 +11,8 @@ import { ImageActionMenuServicesModule } from '../../../image-action-menu-servic
 export class ToggleAddImageToLibraryService implements IDoThis {
 
 	constructor(
-		private __addImageToLibraryProcessor: AddImageToLibraryProcessorService,
-		private __removeImageFromLibraryProcessor: RemoveImageFromLibraryProcessorService
+		private __addImageToLibraryProcessor: ProcessAddImageToLibraryService,
+		private __removeImageFromLibraryProcessor: ProcessRemoveImageFromLibraryService
 	) {
 	}
 
@@ -22,9 +22,9 @@ export class ToggleAddImageToLibraryService implements IDoThis {
 	): Promise<{ image_id: string, libName: string, checked: boolean }> {
 
 		if (data.checked) { // Means user wants to remove image from library...
-			await this.__removeImageFromLibraryProcessor.process(data.image_id, data.libName);
+			await this.__removeImageFromLibraryProcessor.go(data.image_id, data.libName);
 		}
-		else await this.__addImageToLibraryProcessor.process(data.image_id, data.libName);
+		else await this.__addImageToLibraryProcessor.go(data.image_id, data.libName);
 
 		return data;
 	}

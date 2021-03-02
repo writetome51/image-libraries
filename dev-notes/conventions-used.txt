@@ -47,7 +47,7 @@ Usage of the words 'Process' and 'Processor'
 
 Example:  'data transport process' is any process that involves data being sent to or
 from an external resource.  All processing of this kind is handled by subclasses of
-DataTransportProcessorService.
+ProcessDataTransportService.
 
 
 Usage of the words 'Execute' and 'Executor'

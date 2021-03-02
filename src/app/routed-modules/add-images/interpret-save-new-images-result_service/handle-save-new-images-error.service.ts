@@ -4,7 +4,8 @@ import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 	from '@string-constants/form-submission-errors';
 import { Injectable } from '@angular/core';
 import { AddImagesServicesModule } from '../add-images-services.module';
-import { HandleDataTransportErrorService } from '@services/processor-related/../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDataTransportErrorService }
+	from '@services/process-related/handle-data-transport-error/handle-data-transport-error.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UpdateLibraryProcessorService }
-	from '@services/processor-related/update-library-processor/update-library-processor.service';
+import { ProcessUpdateLibraryService }
+	from '@services/process-related/process-update-library/process-update-library.service';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 
@@ -13,8 +13,8 @@ import { ClickExecuteProcessContainerComponent }
 })
 export class SaveChangesButtonComponent extends ClickExecuteProcessContainerComponent {
 
-	constructor(__processor: UpdateLibraryProcessorService) {
-		super(__processor);
+	constructor(_process: ProcessUpdateLibraryService) {
+		super(_process);
 	}
 
 }

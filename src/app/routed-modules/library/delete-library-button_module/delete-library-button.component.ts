@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DeleteLibraryProcessorService }
-	from './delete-library-processor_service/delete-library-processor.service';
+import { ProcessDeleteLibraryService }
+	from './delete-library-processor_service/process-delete-library.service';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 
@@ -13,8 +13,8 @@ import { ClickExecuteProcessContainerComponent }
 })
 export class DeleteLibraryButtonComponent extends ClickExecuteProcessContainerComponent {
 
-	constructor(_deleteLibraryProcessor: DeleteLibraryProcessorService) {
-		super(_deleteLibraryProcessor);
+	constructor(_process: ProcessDeleteLibraryService) {
+		super(_process);
 	}
 
 

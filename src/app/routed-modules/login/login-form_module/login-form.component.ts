@@ -1,6 +1,6 @@
 import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { LoginProcessorService } from './login-processor_service/login-processor.service';
+import { ProcessLoginService } from './login-processor_service/process-login.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { LoginProcessorService } from './login-processor_service/login-processor
 			<form>
 				<login-form-inputs></login-form-inputs>
 
-				<submit-form-button [label]="'Sign In'" [processor]="processor">
+				<submit-form-button [label]="'Sign In'" [process]="processor">
 				</submit-form-button>
 
 				<a [routerLink]="moduleRoutes.SecurityQuestionModule" routerLinkActive="active">
@@ -25,7 +25,7 @@ export class LoginFormComponent {
 	moduleRoutes = AppModulePathData;
 
 
-	constructor(public processor: LoginProcessorService) {
+	constructor(public processor: ProcessLoginService) {
 	}
 
 }

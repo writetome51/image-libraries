@@ -7,9 +7,9 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
 	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
-import { GetUserImageTotalProcessorService } // tslint:disable-next-line:max-line-length
-	from '@get-image-total-processor/get-user-image-total-processor/get-user-image-total-processor.service';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
+import { ProcessGetUserImageTotalService }
+	from '@services/process-related/process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
@@ -17,7 +17,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(
 		private __userImageTotalInBrowser: UserImageTotalInBrowserStorageService,
-		private __getUserImageTotalProcessor: GetUserImageTotalProcessorService
+		private __processGetUserImageTotal: ProcessGetUserImageTotalService
 	) {
 	}
 
@@ -26,7 +26,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 		if (this.__userImageTotalStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
-			() => this.__getUserImageTotalProcessor.process(), executionStatus
+			() => this.__processGetUserImageTotal.go(), executionStatus
 		);
 	}
 

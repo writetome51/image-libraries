@@ -4,7 +4,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from './update-user-services.module';
 import { RunTasksAfterGettingUserService }
-	from '@services/processor-related/../../shared/services/processor/interpret-data-transport-result/run-post-success-tasks/run-tasks-after-getting-user.service';
+	from '@services/process-related/../../shared/services/processor/interpret-data-transport-result/run-post-success-tasks/run-tasks-after-getting-user.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

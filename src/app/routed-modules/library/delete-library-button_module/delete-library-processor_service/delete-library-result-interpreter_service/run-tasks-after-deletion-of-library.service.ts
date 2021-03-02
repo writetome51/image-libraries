@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { GetLibrariesProcessorService }
-	from '@services/processor-related/get-libraries-processor/get-libraries-processor.service';
+import { ProcessGetLibrariesService }
+	from '@services/process-related/process-get-libraries/process-get-libraries.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
@@ -12,7 +12,7 @@ export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
-		private __getLibrariesProcessor: GetLibrariesProcessorService
+		private __getLibrariesProcessor: ProcessGetLibrariesService
 	) {
 	}
 
@@ -25,7 +25,7 @@ export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 
 
 	private async __updateLoadedLibraries() {
-		await this.__getLibrariesProcessor.process();
+		await this.__getLibrariesProcessor.go();
 	}
 
 }

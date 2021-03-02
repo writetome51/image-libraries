@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogoutProcessorService } from './logout-processor_service/logout-processor.service';
+import { ProcessLogoutService } from './process-logout_service/process-logout.service';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 
@@ -12,8 +12,8 @@ import { ClickExecuteProcessContainerComponent }
 })
 export class LogoutButtonComponent extends ClickExecuteProcessContainerComponent {
 
-	constructor(_processor: LogoutProcessorService) {
-		super(_processor);
+	constructor(_process: ProcessLogoutService) {
+		super(_process);
 	}
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UpdatePasswordProcessorService }
-	from './update-password-processor_service/update-password-processor.service';
+import { ProcessUpdatePasswordService }
+	from './update-password-processor_service/process-update-password.service';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 import { Title } from '@angular/platform-browser';
 import { UpdatePasswordFormModuleTitleData as thisModuleTitle }
@@ -12,13 +12,13 @@ import { UpdatePasswordFormModuleTitleData as thisModuleTitle }
 	template: `
 		<update-password-form-inputs clearFormOnInit clearAlertOnDestroy>
 		</update-password-form-inputs>
-		<submit-form-button [processor]="processor"></submit-form-button>
+		<submit-form-button [process]="processor"></submit-form-button>
 	`
 })
 export class UpdatePasswordFormComponent {
 
 	constructor(
-		public processor: UpdatePasswordProcessorService,
+		public processor: ProcessUpdatePasswordService,
 		private __title: Title
 	) {
 		this.__title.setTitle(parentModuleTitle.data + thisModuleTitle.data);

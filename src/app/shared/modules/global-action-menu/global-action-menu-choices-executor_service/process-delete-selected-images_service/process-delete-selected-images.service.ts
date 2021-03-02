@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { DeleteSelectedImagesProcessorService }
-	from './delete-selected-images-processor_service/delete-selected-images-processor.service';
+import { ProcessDeleteSelectedImagesService }
+	from './delete-selected-images-processor_service/process-delete-selected-images.service';
 import { GlobalActionMenuServicesModule }
 	from '@global-action-menu/global-action-menu-services.module';
 
@@ -10,13 +10,13 @@ import { GlobalActionMenuServicesModule }
 export class ProcessDeleteSelectedImagesService implements IDoThis {
 
 	constructor(
-		private __deleteSelectedImagesProcessor: DeleteSelectedImagesProcessorService
+		private __deleteSelectedImagesProcessor: ProcessDeleteSelectedImagesService
 	) {
 	}
 
 
 	async go() {
-		await this.__deleteSelectedImagesProcessor.process();
+		await this.__deleteSelectedImagesProcessor.go();
 	}
 
 }

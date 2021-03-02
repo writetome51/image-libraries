@@ -2,8 +2,8 @@ import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
 	from '@services/execute-function-requiring-waiting.service';
-import { GetLibrariesProcessorService }
-	from '@processor-related/get-libraries-processor/get-libraries-processor.service';
+import { ProcessGetLibrariesService }
+	from '@services/process-related/process-get-libraries/process-get-libraries.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -18,7 +18,7 @@ import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services
 export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(
-		private __getLibrariesProcessor: GetLibrariesProcessorService,
+		private __getLibrariesProcessor: ProcessGetLibrariesService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {
 	}
@@ -28,7 +28,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 		if (this.__librariesAreStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
-			() => this.__getLibrariesProcessor.process(), executionStatus
+			() => this.__getLibrariesProcessor.go(), executionStatus
 		);
 	}
 
