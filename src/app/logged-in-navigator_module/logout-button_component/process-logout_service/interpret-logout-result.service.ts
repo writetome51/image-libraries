@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { RunTasksAfterLogoutService }
 	from '@services/process-related/run-post-success-tasks/run-tasks-after-logout.service';
 import { InterpretDataTransportResultService }

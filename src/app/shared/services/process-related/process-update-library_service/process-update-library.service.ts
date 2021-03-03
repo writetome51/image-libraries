@@ -3,7 +3,7 @@ import { ProcessDbOperationService }
 import { Injectable } from '@angular/core';
 import { UpdateLoadedLibraryService } from './update-loaded-library.service';
 import { InterpretUpdateLibraryResultService }
-	from './interpret-update-library-result.service';
+	from './interpret-update-library-result_service/interpret-update-library-result.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibrariesService } from './run-tasks-after-getting-libraries.service';
 import { HandleDbOperationErrorService }
-	from '../handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '../../handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
 

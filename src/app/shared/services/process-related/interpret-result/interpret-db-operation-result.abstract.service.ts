@@ -1,5 +1,5 @@
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResultService } from './interpret-result.abstract.service';
 

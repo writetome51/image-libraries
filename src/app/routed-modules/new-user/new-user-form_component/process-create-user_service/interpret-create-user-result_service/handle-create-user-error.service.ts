@@ -3,7 +3,7 @@ import { accountAlreadyExists } from '@string-constants/form-submission-errors';
 import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
-import { HandleDbOperationErrorService } from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+import { HandleDbOperationErrorService } from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})

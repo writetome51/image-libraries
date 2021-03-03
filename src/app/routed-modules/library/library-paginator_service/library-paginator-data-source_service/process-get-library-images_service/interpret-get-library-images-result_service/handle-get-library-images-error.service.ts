@@ -5,7 +5,7 @@ import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
 import { not } from '@writetome51/not';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})

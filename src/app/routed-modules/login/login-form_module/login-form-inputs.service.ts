@@ -1,5 +1,5 @@
 import { CurrentUserInputsService }
-	from '@current-user-inputs/current-user-inputs.abstract.service';
+	from '@services/current-user-inputs_service/current-user-inputs.abstract.service';
 import { EmailInputService } from '@services/validating-input-related/email-input.service';
 import { Injectable } from '@angular/core';
 import { PasswordInputService } from '@services/validating-input-related/password-input.service';

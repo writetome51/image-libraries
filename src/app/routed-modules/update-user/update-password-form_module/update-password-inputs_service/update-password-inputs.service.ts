@@ -1,5 +1,5 @@
 import { CurrentPasswordInputService } from './current-password-input.service';
-import { CurrentUserInputsService } from '@services/current-user-inputs/current-user-inputs.abstract.service';
+import { CurrentUserInputsService } from '@services/current-user-inputs_service/current-user-inputs.abstract.service';
 import { Injectable } from '@angular/core';
 import { NewPasswordAgainInputService } from './new-password-again-input.service';
 import { NewPasswordInputService } from './new-password-input.service';

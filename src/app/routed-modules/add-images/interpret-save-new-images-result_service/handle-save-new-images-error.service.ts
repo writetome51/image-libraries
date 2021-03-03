@@ -5,7 +5,7 @@ import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 import { Injectable } from '@angular/core';
 import { AddImagesServicesModule } from '../add-images-services.module';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})

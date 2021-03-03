@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GetUserLibrariesService } from '@process-related/process-get-libraries/get-user-libraries.service';
+import { GetUserLibrariesService } from '@services/db-related/get-user-libraries.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 

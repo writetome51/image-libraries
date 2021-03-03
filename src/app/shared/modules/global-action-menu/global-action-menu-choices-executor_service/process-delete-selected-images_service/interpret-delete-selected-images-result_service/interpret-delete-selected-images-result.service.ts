@@ -4,7 +4,7 @@ import { GlobalActionMenuServicesModule } from '../../../global-action-menu-serv
 import { InterpretDataTransportResultService }
 	from '@process-related/interpret-data-transport-result.service';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

@@ -5,12 +5,12 @@ import { RunTasksAfterGettingSecurityQuestionService }
 	from './run-tasks-after-getting-security-question.service';
 import { SecurityQuestionServicesModule }
 	from '@app/routed-modules/security-question/security-question-services.module';
-import { InterpretDataTransportResultService }
-	from '@process-related/interpret-data-transport-result.service';
+import { InterpretDbOperationResultService }
+	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class InterpretGetSecurityQuestionResultService extends InterpretDataTransportResultService {
+export class InterpretGetSecurityQuestionResultService extends InterpretDbOperationResultService {
 
 	constructor(
 		__handleError: HandleGetSecurityQuestionErrorService,

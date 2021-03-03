@@ -1,5 +1,5 @@
 import { HandleDbOperationErrorService }
-	from '../handle-error/handle-db-operation-error/handle-db-operation-error.service';
+	from '../handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLoginService }
 	from '@run-post-success-tasks/run-tasks-after-login.service';

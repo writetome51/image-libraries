@@ -4,7 +4,7 @@ import { PasswordInputService } from '@services/validating-input-related/passwor
 import { PasswordAgainInputService }
 	from '@services/validating-input-related/password-again-input.service';
 import { SecurityQuestionInputService } from './security-question-input.service';
-import { CurrentUserInputsService } from '@services/current-user-inputs/current-user-inputs.abstract.service';
+import { CurrentUserInputsService } from '@services/current-user-inputs_service/current-user-inputs.abstract.service';
 import { SecurityAnswerInputService }
 	from '@services/validating-input-related/security-answer-input.service';
 import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';

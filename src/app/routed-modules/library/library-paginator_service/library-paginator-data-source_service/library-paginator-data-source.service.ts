@@ -1,5 +1,5 @@
 import { AppPaginatorDataSourceService }
-	from '@services/app-paginator-related/app-paginator-data-source/app-paginator-data-source.abstract.service';
+	from '@services/app-paginator-related/app-paginator-data-source_service/app-paginator-data-source.abstract.service';
 import { ProcessGetLibraryImagesService }
 	from './process-get-library-images_service/process-get-library-images.service';
 import { Injectable } from '@angular/core';

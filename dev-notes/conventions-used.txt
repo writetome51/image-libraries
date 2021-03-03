@@ -46,8 +46,8 @@ Usage of the word 'Process'
 'Process' is used in the names of Services that run a process.
 Those Services follow this naming convention: `Process{Action}Service`
 Examples:
-ProcessDbOperationService runs a process that involves data being transported to or from
- an external resource, and its {Action} is 'DataTransport'.
+ProcessDbOperationService runs a process that involves interaction with a database, and
+its {Action} is 'DbOperation'.
 ProcessLoginByPasswordService has the {Action} 'LoginByPassword'.
 
 

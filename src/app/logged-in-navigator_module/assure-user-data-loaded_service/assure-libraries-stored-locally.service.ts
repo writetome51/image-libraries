@@ -3,7 +3,7 @@ import { BackgroundExecutionStatusData as executionStatus }
 import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
 	from '@services/execute-function-requiring-waiting.service';
 import { ProcessGetLibrariesService }
-	from '@services/process-related/process-get-libraries/process-get-libraries.service';
+	from '@services/process-related/process-get-libraries_service/process-get-libraries.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';

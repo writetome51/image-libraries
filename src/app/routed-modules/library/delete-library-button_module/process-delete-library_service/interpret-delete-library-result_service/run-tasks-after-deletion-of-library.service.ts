@@ -1,6 +1,6 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
 import { ProcessGetLibrariesService }
-	from '@services/process-related/process-get-libraries/process-get-libraries.service';
+	from '@services/process-related/process-get-libraries_service/process-get-libraries.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
