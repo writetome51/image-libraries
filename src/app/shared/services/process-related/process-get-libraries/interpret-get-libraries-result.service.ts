@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibrariesService } from './run-tasks-after-getting-libraries.service';
-import { HandleDataTransportErrorService }
-	from '@services/process-related/handle-data-transport-error/handle-data-transport-error.service';
-import { InterpretDataTransportResultService }
-	from '@services/process-related/interpret-data-transport-result.service';
+import { HandleDbOperationErrorService }
+	from '../handle-error/handle-db-operation-error/handle-db-operation-error.service';
+import { InterpretDbOperationResultService }
+	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretGetLibrariesResultService extends InterpretDataTransportResultService {
+export class InterpretGetLibrariesResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleError: HandleDataTransportErrorService,
+		__handleError: HandleDbOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterGettingLibrariesService
 	) {
 		super(__handleError, __runPostSuccessTasks);

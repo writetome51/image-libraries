@@ -1,5 +1,5 @@
-import { ProcessDataTransportService }
-	from '@process-related/process-data-transport.abstract.service';
+import { ProcessDbOperationService }
+	from '@process-related/process-db-operation.abstract.service';
 import { InterpretDeleteSelectedImagesResultService }
 	from './interpret-delete-selected-images-result_service/interpret-delete-selected-images-result.service';
 import { Injectable } from '@angular/core';
@@ -9,7 +9,7 @@ import { GlobalActionMenuServicesModule }
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class ProcessDeleteSelectedImagesService extends ProcessDataTransportService {
+export class ProcessDeleteSelectedImagesService extends ProcessDbOperationService {
 
 	constructor(
 		__getResult: DeleteSelectedImagesService,

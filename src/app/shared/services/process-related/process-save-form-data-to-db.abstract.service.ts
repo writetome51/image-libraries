@@ -1,17 +1,17 @@
 import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
-import { ProcessDataTransportService } from './process-data-transport.abstract.service';
+import { ProcessDbOperationService } from './process-db-operation.abstract.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { InterpretDataTransportResultService }
-	from './interpret-data-transport-result.service';
+import { InterpretDbOperationResultService }
+	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
 
-export abstract class ProcessFormDataTransportService extends ProcessDataTransportService {
+export abstract class ProcessSaveFormDataToDbService extends ProcessDbOperationService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,
 		__getResult: IDoThis,
-		__interpretResult: InterpretDataTransportResultService
+		__interpretResult: InterpretDbOperationResultService
 	) {
 		super(__getResult, __interpretResult);
 	}

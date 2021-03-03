@@ -4,12 +4,12 @@ import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
-import { HandleDataTransportErrorService }
-	from '@handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDbOperationErrorService }
+	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
-export class HandleGetLibraryImagesErrorService extends HandleDataTransportErrorService {
+export class HandleGetLibraryImagesErrorService extends HandleDbOperationErrorService {
 
 	async go(error) {
 		// If library retrieval unsuccessful, library data must be undefined.

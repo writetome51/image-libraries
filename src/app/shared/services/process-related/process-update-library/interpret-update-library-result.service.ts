@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { RunTasksAfterUpdateOfLibraryService }
-	from './run-tasks-after-update-of-library.service';
-import { InterpretDataTransportResultService }
-	from '@process-related/interpret-data-transport-result.service';
+import { RunTasksAfterUpdateOfLibraryService } from './run-tasks-after-update-of-library.service';
 import { HandleUpdateOrNewLibraryErrorService }
-	from '@handle-data-transport-error/handle-update-or-new-library-error.service';
+	from '@process-related/handle-error/handle-update-or-new-library-error.service';
+import { InterpretDbOperationResultService }
+	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretUpdateLibraryResultService extends InterpretDataTransportResultService {
+export class InterpretUpdateLibraryResultService extends InterpretDbOperationResultService {
 
 	constructor(
 		__handleError: HandleUpdateOrNewLibraryErrorService,

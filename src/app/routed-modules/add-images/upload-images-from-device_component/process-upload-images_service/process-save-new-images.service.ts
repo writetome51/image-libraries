@@ -1,5 +1,5 @@
-import { ProcessDataTransportService }
-	from '@services/process-related/process-data-transport.abstract.service';
+import { ProcessDbOperationService }
+	from '@process-related/process-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { SaveNewImagesService } from '../../save-new-images.service';
 import { InterpretSaveNewImagesResultService }
@@ -8,7 +8,7 @@ import { AddImagesServicesModule } from '../../add-images-services.module';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class ProcessSaveNewImagesService extends ProcessDataTransportService {
+export class ProcessSaveNewImagesService extends ProcessDbOperationService {
 
 	constructor(
 		__getResult: SaveNewImagesService,

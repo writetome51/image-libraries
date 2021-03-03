@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
-import { HandleDataTransportErrorService }
-	from '@services/process-related/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDbOperationErrorService }
+	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
 import { RunTasksAfterLogoutService }
 	from '@services/process-related/run-post-success-tasks/run-tasks-after-logout.service';
 import { InterpretDataTransportResultService }
@@ -12,7 +12,7 @@ import { InterpretDataTransportResultService }
 export class InterpretLogoutResultService extends InterpretDataTransportResultService {
 
 	constructor(
-		__handleError: HandleDataTransportErrorService,
+		__handleError: HandleDbOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterLogoutService
 	) {
 		super(__handleError, __runPostSuccessTasks);

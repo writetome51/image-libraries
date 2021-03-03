@@ -5,7 +5,8 @@ import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
 	from '../../run-tasks-after-adding-or-removing-image-from-library.service';
 import { ImageActionMenuServicesModule }
 	from '@app/shared/modules/image-action-menu/image-action-menu-services.module';
-import { InterpretDataTransportResultService } from '@process-related/interpret-data-transport-result.service';
+import { InterpretDataTransportResultService } 
+	from '@process-related/interpret-data-transport-result.service';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

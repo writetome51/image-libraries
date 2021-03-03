@@ -1,6 +1,6 @@
 import { DataTotalService } from '../data-total.abstract.service';
-import { ProcessDataTransportService }
-	from '@services/process-related/process-data-transport.abstract.service';
+import { ProcessDbOperationService }
+	from '@process-related/process-db-operation.abstract.service';
 import { DBImage } from '@interfaces/db-image.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }
@@ -16,7 +16,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	constructor(
-		private __process_set_loadedImages: ProcessDataTransportService,
+		private __process_set_loadedImages: ProcessDbOperationService,
 		private __dataTotal: DataTotalService
 	) {
 	}

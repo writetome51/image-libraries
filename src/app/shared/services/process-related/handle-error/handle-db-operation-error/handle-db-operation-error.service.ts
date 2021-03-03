@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { noRecordMatchedCriteria, notLoggedIn } from '@string-constants/mongo-db-realm-function-errors';
-import { HandleNotLoggedInErrorService }
-	from './error-handler/handle-not-logged-in-error.service';
-import { HandleNoRecordMatchErrorService }
-	from './error-handler/handle-no-record-match-error.service';
-import { HandleErrorService }
-	from '@services/process-related/handle-error.service';
+import { noRecordMatchedCriteria, notLoggedIn }
+	from '@string-constants/mongo-db-realm-function-errors';
+import { HandleNotLoggedInErrorService } from './handle-not-logged-in-error.service';
+import { HandleNoRecordMatchErrorService } from './handle-no-record-match-error.service';
+import { HandleErrorService } from '../handle-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleDataTransportErrorService extends HandleErrorService {
+export class HandleDbOperationErrorService extends HandleErrorService {
 
 	constructor(
 		private __handleNoRecordMatchError: HandleNoRecordMatchErrorService,

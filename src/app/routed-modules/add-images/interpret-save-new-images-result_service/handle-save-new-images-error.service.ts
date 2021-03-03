@@ -4,12 +4,12 @@ import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 	from '@string-constants/form-submission-errors';
 import { Injectable } from '@angular/core';
 import { AddImagesServicesModule } from '../add-images-services.module';
-import { HandleDataTransportErrorService }
-	from '@services/process-related/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDbOperationErrorService }
+	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class HandleSaveNewImagesErrorService extends HandleDataTransportErrorService {
+export class HandleSaveNewImagesErrorService extends HandleDbOperationErrorService {
 
 	async go(errMessage) {
 		if (errMessage.includes(duplicate)) alert.error = imageWithSameNameAlreadyExists;

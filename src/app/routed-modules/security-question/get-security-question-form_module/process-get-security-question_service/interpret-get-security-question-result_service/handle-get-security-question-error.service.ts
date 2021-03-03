@@ -4,12 +4,12 @@ import { userDoesntExist } from '@string-constants/mongo-db-realm-function-error
 import { noAccountWithThatEmail } from '@string-constants/form-submission-errors';
 import { SecurityQuestionServicesModule }
 	from '@app/routed-modules/security-question/security-question-services.module';
-import { HandleDataTransportErrorService }
-	from '@handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDbOperationErrorService }
+	from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class HandleGetSecurityQuestionErrorService extends HandleDataTransportErrorService {
+export class HandleGetSecurityQuestionErrorService extends HandleDbOperationErrorService {
 
 	async go(error) {
 		if (error.message.includes(userDoesntExist)) {

@@ -1,15 +1,15 @@
-import { ProcessFormDataTransportService }
-	from '@services/process-related/process-form-data-transport.abstract.service';
+import { ProcessSaveFormDataToDbService }
+	from '@process-related/process-save-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { LoginByPasswordService } from './login-by-password.service';
 import { LoginFormInputsService } from '../login-form-inputs.service';
 import { LoginFormServicesModule } from '../login-form-services.module';
 import { InterpretLoginResultService }
-	from '@services/process-related/interpret-login-result.service';
+	from '@interpret-result/interpret-login-result.service';
 
 
 @Injectable({providedIn: LoginFormServicesModule})
-export class ProcessLoginByPasswordService extends ProcessFormDataTransportService {
+export class ProcessLoginByPasswordService extends ProcessSaveFormDataToDbService {
 
 	constructor(
 		__validatingInputs: LoginFormInputsService,

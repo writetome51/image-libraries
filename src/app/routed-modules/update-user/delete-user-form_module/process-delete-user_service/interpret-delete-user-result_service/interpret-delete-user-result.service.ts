@@ -5,7 +5,7 @@ import { RunTasksAfterDeletingUserService } from './run-tasks-after-deleting-use
 import { UpdateUserServicesModule }
 	from '@app/routed-modules/update-user/update-user-services.module';
 import { HandleDataTransportErrorService }
-	from '@services/process-related/../../../../../shared/services/processor/handle-data-transport-error/handle-data-transport-error.service';
+	from '@services/process-related/../../../../../shared/services/processor/handle-error/handle-error.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

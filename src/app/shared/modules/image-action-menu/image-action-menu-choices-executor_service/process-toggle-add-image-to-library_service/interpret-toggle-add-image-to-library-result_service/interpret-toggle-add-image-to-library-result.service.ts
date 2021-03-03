@@ -6,7 +6,7 @@ import { LibrariesInBrowserStorageService }
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
-import { HandleErrorService } from '@process-related/handle-error.service';
+import { HandleErrorService } from '@process-related/handle-error/handle-error.service';
 import { InterpretResultService }
 	from '@process-related/interpret-result/interpret-result.abstract.service';
 

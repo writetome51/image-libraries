@@ -3,11 +3,11 @@ import { ImageTotalData as imageTotal, LoadedImagesData as loadedImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
-import { HandleDataTransportErrorService } from '@services/process-related/handle-data-transport-error/handle-data-transport-error.service';
+import { HandleDbOperationErrorService } from '@process-related/handle-error/handle-db-operation-error/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImagesErrorService extends HandleDataTransportErrorService {
+export class HandleGetImagesErrorService extends HandleDbOperationErrorService {
 
 	async go(error) {
 		loadedImages.data = [];

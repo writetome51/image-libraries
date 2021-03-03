@@ -1,5 +1,5 @@
-import { ProcessFormDataTransportService }
-	from '@process-related/process-form-data-transport.abstract.service';
+import { ProcessSaveFormDataToDbService }
+	from '@process-related/process-save-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretGetSecurityQuestionResultService }
 	from './interpret-get-security-question-result_service/interpret-get-security-question-result.service';
@@ -11,7 +11,7 @@ import { SecurityQuestionServicesModule }
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class ProcessGetSecurityQuestionService extends ProcessFormDataTransportService {
+export class ProcessGetSecurityQuestionService extends ProcessSaveFormDataToDbService {
 
 	constructor(
 		__validatingInput: EmailToGetSecurityQuestionInputService,

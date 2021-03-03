@@ -1,5 +1,5 @@
-import { ProcessDataTransportService }
-	from '@services/process-related/process-data-transport.abstract.service';
+import { ProcessDbOperationService }
+	from '@process-related/process-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { UpdateLoadedLibraryService } from './update-loaded-library.service';
 import { InterpretUpdateLibraryResultService }
@@ -7,7 +7,7 @@ import { InterpretUpdateLibraryResultService }
 
 
 @Injectable({providedIn: 'root'})
-export class ProcessUpdateLibraryService extends ProcessDataTransportService {
+export class ProcessUpdateLibraryService extends ProcessDbOperationService {
 
 	constructor(
 		__getResult: UpdateLoadedLibraryService,

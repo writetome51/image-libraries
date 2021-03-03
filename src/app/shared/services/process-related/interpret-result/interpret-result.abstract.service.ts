@@ -1,6 +1,6 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResult } from './interpret-result.interface';
-import { HandleErrorService } from '../handle-error.service';
+import { HandleErrorService } from '../handle-error/handle-error.service';
 import { HasError } from '@interfaces/has-error.interface';
 
 

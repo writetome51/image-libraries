@@ -1,7 +1,7 @@
-import { ExecutionStatus } from '@interfaces/execution-status.interface';
+import { Waiter } from '@interfaces/waiter.interface';
 
 
-export const ClickStartedExecutionStatusData: ExecutionStatus = {
+export const ClickStartedExecutionStatusData: Waiter = {
 
 	waiting: false
 

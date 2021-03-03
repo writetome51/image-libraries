@@ -1,5 +1,5 @@
-import { ProcessDataTransportService }
-	from '@services/process-related/process-data-transport.abstract.service';
+import { ProcessDbOperationService }
+	from '@process-related/process-db-operation.abstract.service';
 import { InterpretDeleteLibraryResultService }
 	from './interpret-delete-library-result_service/interpret-delete-library-result.service';
 import { Injectable } from '@angular/core';
@@ -8,7 +8,7 @@ import { DeleteLibraryButtonServicesModule } from '../delete-library-button-serv
 
 
 @Injectable({providedIn: DeleteLibraryButtonServicesModule})
-export class ProcessDeleteLibraryService extends ProcessDataTransportService {
+export class ProcessDeleteLibraryService extends ProcessDbOperationService {
 
 	constructor(
 		__getResult: DeleteLibraryService,

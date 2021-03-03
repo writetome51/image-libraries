@@ -30,14 +30,17 @@
 			"@clear-form-on-init/*": [
 				"src/app/shared/modules/clear-form-on-init/*"
 			],
+			"@current-user-inputs/*": [
+				"src/app/shared/services/current-user-inputs/*"
+			],
 			"@data-transport-processor/*": [
 				"src/app/shared/services/processor/data-transport-processor/*"
 			],
 			"@decorators/*": [
 				"src/app/shared/decorators/*"
 			],
-			"@data-transport-process-result-interpreter/*": [
-				"src/app/shared/services/processor/data-transport-processor/data-transport-process-result-interpreter/*"
+			"@interpret-result/*": [
+				"src/app/shared/services/process-related/interpret-result/*"
 			],
 			"@encrypted-item-in-browser-storage/*": [
 				"src/app/shared/services/encrypted-item-in-browser-storage/*"
@@ -123,9 +126,7 @@
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
 			],
-			"@current-user-inputs/*": [
-				"src/app/shared/services/current-user-inputs/*"
-			]
+
 		},
 		"outDir": "./dist/out-tsc",
 		"sourceMap": true,
