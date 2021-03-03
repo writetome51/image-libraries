@@ -2,11 +2,11 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { EmailInBrowserStorageService }
-	from '@services/browser-storage-related/email-in-browser-storage.service';
+	from '@services/browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';

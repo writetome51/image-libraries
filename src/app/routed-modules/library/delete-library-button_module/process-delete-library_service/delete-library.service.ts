@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';

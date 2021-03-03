@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PasswordAgainInputService }
-	from '@services/validating-input-related/password-again-input.service';
+	from '@services/validating-input/password-again-input.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 import { PrefixLabel_to_ValidatingInputService }
 	from '@decorators/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';

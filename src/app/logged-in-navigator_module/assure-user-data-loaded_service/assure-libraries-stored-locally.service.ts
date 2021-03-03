@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage-related/libraries-in-browser-storage.service';
+	from '@services/browser-storage/libraries-in-browser-storage.service';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 
 

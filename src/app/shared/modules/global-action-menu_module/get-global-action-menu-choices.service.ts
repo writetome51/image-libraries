@@ -16,7 +16,7 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages }
 	from '@runtime-state-data/selected-images.data';
 import { SelectMutipleImagesSettingService }
-	from '@services/browser-storage-related/select-mutiple-images-setting.service';
+	from '@services/browser-storage/select-mutiple-images-setting.service';
 import { CheckableMenuChoice } from '@app/shared/modules/action-menu_module/checkable-menu-choice.interface';
 
 

@@ -1,14 +1,14 @@
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
+import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
-import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class GetUserLibrariesService implements IDoThis {
+export class UpdateLibraryService implements IDoThis {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
@@ -17,8 +17,13 @@ export class GetUserLibrariesService implements IDoThis {
 	}
 
 
-	async go(): Promise<DBLibrary[] | HasError> {
-		return await this.__realmFn.call('pub_getLibraries', {
+	async go(
+		libName: string,
+		changes: object // The keys in `changes` can contain dot-notation.
+	): Promise<DBLibrary | HasError> {
+		return await this.__realmFn.call('pub_updateAndReturnLibrary', {
+			name: libName,
+			changes,
 			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}

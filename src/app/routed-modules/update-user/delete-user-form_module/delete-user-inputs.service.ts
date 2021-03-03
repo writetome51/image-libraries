@@ -3,7 +3,7 @@ import { CurrentUserInputsService }
 import { Injectable } from '@angular/core';
 import { LoggedInEmailVerificationInputService }
 	from '../logged-in-email-verification-input.service';
-import { PasswordInputService } from '@services/validating-input-related/password-input.service';
+import { PasswordInputService } from '@services/validating-input/password-input.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 
 

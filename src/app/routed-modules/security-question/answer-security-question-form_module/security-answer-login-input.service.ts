@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SecurityAnswerInputService }
-	from '@services/validating-input-related/security-answer-input.service';
+	from '@services/validating-input/security-answer-input.service';
 import { CurrentUserData } from '@runtime-state-data/static-classes/current-user.data';
 import { SecurityQuestionServicesModule }
 	from '@app/routed-modules/security-question/security-question-services.module';

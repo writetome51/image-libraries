@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage-related/libraries-in-browser-storage.service';
+	from '@services/browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';

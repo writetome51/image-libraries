@@ -4,7 +4,7 @@ import { FullSizeImageComponent }
 	from '@app/routed-modules/full-size-image-viewer/full-size-image.component';
 import { Injectable } from '@angular/core';
 import { LibraryComponent } from '@app/routed-modules/library/library.component';
-import { LibraryChangesService } from '@services/library-related/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 
 
 @Injectable({providedIn: 'root'})

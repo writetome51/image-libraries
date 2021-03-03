@@ -1,8 +1,8 @@
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
-import { UpdateLibraryService } from '@services/db-related/update-library.service';
+import { UpdateLibraryService } from '@services/db/update-library.service';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage-related/libraries-in-browser-storage.service';
+	from '@services/browser-storage/libraries-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';

@@ -2,7 +2,7 @@ import { CanActivate, Router } from '@angular/router';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,11 +1,11 @@
 import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';

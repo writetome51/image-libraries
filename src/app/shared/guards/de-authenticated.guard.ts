@@ -3,7 +3,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+	from '@services/browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

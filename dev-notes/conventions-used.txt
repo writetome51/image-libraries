@@ -8,8 +8,6 @@ Inside /src/app/, a directory that contains an entity and all the assets used on
 that entity will be named after that entity, matching its filename, except underscores are
 used instead of periods and the extension name is omitted.  Example: a directory
 containing  add-images.component.ts  and its assets is named 'add-images_component'.
-There are a few exceptions to this, such as directories in /src/app/routed-modules/,
-whose names don't end with '_module' because it's already clear they contain modules.
 
 
 Services

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { LibraryChangesService } from '@services/library-related/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LibraryPaginatorService } from '../library-paginator_service/library-paginator.service';
 import { LibraryImageTotalInBrowserStorageService }
-	from '@services/browser-storage-related/library-image-total-in-browser-storage.service';
+	from '@services/browser-storage/library-image-total-in-browser-storage.service';
 
 
 @Component({

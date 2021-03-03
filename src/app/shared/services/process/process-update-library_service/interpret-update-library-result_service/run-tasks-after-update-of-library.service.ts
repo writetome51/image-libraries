@@ -2,7 +2,7 @@ import { AlertData as alert } from '@runtime-state-data/static-classes/alert.dat
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { LibraryChangesService } from '@services/library-related/library-changes.service';
+import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LoadedLibraryData as loadedLibrary }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
