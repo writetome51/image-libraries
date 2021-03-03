@@ -6,41 +6,38 @@
 			"@abstract-components/*": [
 				"src/app/shared/abstract-components/*"
 			],
-			"@action-menu/*": [
-				"src/app/shared/modules/action-menu/*"
+			"@action-menu_module/*": [
+				"src/app/shared/modules/action-menu_module/*"
 			],
 			"@app/*": [
 				"src/app/*"
 			],
-			"@app-paginator-related/*": [
-				"src/app/shared/services/app-paginator-related/*"
+			"@app-paginator/*": [
+				"src/app/shared/services/app-paginator/*"
 			],
-			"@app-pagination-controls/*": [
-				"src/app/shared/modules/app-pagination-controls/*"
+			"@app-pagination-controls_module/*": [
+				"src/app/shared/modules/app-pagination-controls_module/*"
 			],
-			"@app-validating-form-inputs/*": [
-				"src/app/shared/modules/app-validating-form-inputs/*"
+			"@app-validating-form-inputs_module/*": [
+				"src/app/shared/modules/app-validating-form-inputs_module/*"
 			],
-			"@big-loading-spinner/*": [
-				"src/app/shared/modules/big-loading-spinner/*"
+			"@big-loading-spinner_module/*": [
+				"src/app/shared/modules/big-loading-spinner_module/*"
 			],
-			"@clear-alert-on-destroy/*": [
-				"src/app/shared/modules/clear-alert-on-destroy/*"
+			"@clear-alert-on-destroy_module/*": [
+				"src/app/shared/modules/clear-alert-on-destroy_module/*"
 			],
-			"@clear-form-on-init/*": [
-				"src/app/shared/modules/clear-form-on-init/*"
+			"@clear-form-on-init_module/*": [
+				"src/app/shared/modules/clear-form-on-init_module/*"
 			],
-			"@current-user-inputs/*": [
-				"src/app/shared/services/current-user-inputs/*"
-			],
-			"@data-transport-processor/*": [
-				"src/app/shared/services/processor/data-transport-processor/*"
+			"@current-user-inputs_service/*": [
+				"src/app/shared/services/current-user-inputs_service/*"
 			],
 			"@decorators/*": [
 				"src/app/shared/decorators/*"
 			],
 			"@interpret-result/*": [
-				"src/app/shared/services/process-related/interpret-result/*"
+				"src/app/shared/services/process/interpret-result/*"
 			],
 			"@encrypted-item-in-browser-storage/*": [
 				"src/app/shared/services/encrypted-item-in-browser-storage/*"
@@ -48,53 +45,50 @@
 			"@environments/*": [
 				"src/environments/*"
 			],
-			"@execute-function-button/*": [
-				"src/app/shared/modules/execute-function-button/*"
+			"@execute-function-button_module/*": [
+				"src/app/shared/modules/execute-function-button_module/*"
 			],
-			"@get-images-processor/*": [
-				"src/app/shared/services/processor/data-transport-processor/get-images-processor/*"
+			"@process-get-image-total/*": [
+				"src/app/shared/services/process/process-get-image-total/*"
 			],
-			"@get-image-total-processor/*": [
-				"src/app/shared/services/process-related/process-data-transport/process-get-image-total/*"
-			],
-			"@global-action-menu/*": [
-				"src/app/shared/modules/global-action-menu/*"
+			"@global-action-menu_module/*": [
+				"src/app/shared/modules/global-action-menu_module/*"
 			],
 			"@guards/*": [
 				"src/app/shared/guards/*"
 			],
-			"@handle-data-transport-error/*": [
-				"src/app/shared/services/process-related/handle-data-transport-error/*"
+			"@handle-db-operation-error_service/*": [
+				"src/app/shared/services/process/handle-error/handle-db-operation-error_service/*"
 			],
-			"@hoverable-container/*": [
-				"src/app/shared/modules/hoverable-container/*"
+			"@hoverable-container_module/*": [
+				"src/app/shared/modules/hoverable-container_module/*"
 			],
-			"@html-image/*": [
-				"src/app/shared/modules/html-image/*"
+			"@html-image_module/*": [
+				"src/app/shared/modules/html-image_module/*"
 			],
-			"@image-size-slider/*": [
-				"src/app/shared/modules/image-size-slider/*"
+			"@image-size-slider_module/*": [
+				"src/app/shared/modules/image-size-slider_module/*"
 			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],
-			"@logged-in-app-navigator/*": [
-				"src/app/logged-in-app-navigator/*"
+			"@logged-in-app-navigator_module/*": [
+				"src/app/logged-in-app-navigator_module/*"
 			],
-			"@menu-choice/*": [
-				"src/app/shared/modules/action-menu/action-menu-choices/menu-choice/*"
+			"@menu-choice_module/*": [
+				"src/app/shared/modules/action-menu_module/action-menu-choices_module/menu-choice_module/*"
 			],
-			"@navigation-links/*": [
-				"src/app/shared/modules/navigation-links/*"
+			"@navigation-links_module/*": [
+				"src/app/shared/modules/navigation-links_module/*"
 			],
-			"@process-related/*": [
-				"src/app/shared/services/process-related/*"
+			"@process/*": [
+				"src/app/shared/services/process/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"
 			],
 			"@run-post-success-tasks/*": [
-				"src/app/shared/services/process-related/run-post-success-tasks/*"
+				"src/app/shared/services/process/run-post-success-tasks/*"
 			],
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
@@ -105,23 +99,20 @@
 			"@services/*": [
 				"src/app/shared/services/*"
 			],
-			"@start-data-process-list-item/*": [
-				"src/app/shared/modules/start-data-process-list-item/*"
-			],
 			"@string-constants/*": [
 				"src/app/shared/string-constants/*"
 			],
-			"@submit-form-button/*": [
-				"src/app/shared/modules/submit-form-button/*"
+			"@submit-form-button_module/*": [
+				"src/app/shared/modules/submit-form-button_module/*"
 			],
-			"@thumbnail-image-container/*": [
-				"src/app/shared/modules/thumbnail-image-container/*"
+			"@thumbnail-image-container_module/*": [
+				"src/app/shared/modules/thumbnail-image-container_module/*"
 			],
-			"@tiny-loading-spinner/*": [
-				"src/app/shared/modules/tiny-loading-spinner/*"
+			"@tiny-loading-spinner_module/*": [
+				"src/app/shared/modules/tiny-loading-spinner_module/*"
 			],
-			"@toggle-setting-in-browser-storage/*": [
-				"src/app/shared/services/encrypted-item-in-browser-storage/toggle-setting-in-browser-storage/*"
+			"@browser-storage/*": [
+				"src/app/shared/services/browser-storage/*"
 			],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"

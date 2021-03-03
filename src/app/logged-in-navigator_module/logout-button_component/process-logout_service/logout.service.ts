@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage/session-id-in-browser-storage.service';
+	from '@browser-storage/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})

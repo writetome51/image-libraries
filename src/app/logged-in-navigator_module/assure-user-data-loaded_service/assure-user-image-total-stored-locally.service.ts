@@ -6,10 +6,10 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
-	from '@services/browser-storage/user-image-total-in-browser-storage.service';
+	from '@browser-storage/user-image-total-in-browser-storage.service';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetUserImageTotalService }
-	from '@services/process/process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
+	from '@process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
