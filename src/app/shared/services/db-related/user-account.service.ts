@@ -3,9 +3,9 @@ import { CurrentUserData as currentUser }
 import { DBUser } from '@interfaces/db-user.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+	from '@services/browser-storage-related/session-id-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

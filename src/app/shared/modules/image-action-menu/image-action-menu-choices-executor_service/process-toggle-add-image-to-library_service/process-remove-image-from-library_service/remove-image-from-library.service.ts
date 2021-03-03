@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { LibrariesInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@services/browser-storage-related/libraries-in-browser-storage.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
-import { UpdateLibraryService } from '@services/update-library.service';
+import { UpdateLibraryService } from '@services/db-related/update-library.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu/image-action-menu-services.module';

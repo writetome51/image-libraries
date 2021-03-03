@@ -5,7 +5,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { SessionIDInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+	from '@services/browser-storage-related/session-id-in-browser-storage.service';
 
 
 @Component({

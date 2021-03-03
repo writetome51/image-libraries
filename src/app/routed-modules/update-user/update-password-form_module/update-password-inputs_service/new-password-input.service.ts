@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PasswordInputService } from '@validating-input/password-related/password-input.service';
+import { PasswordInputService } from '@services/validating-input-related/password-input.service';
 import { UpdateUserServicesModule } from '@app/routed-modules/update-user/update-user-services.module';
 import { PrefixLabel_to_ValidatingInputService }
 	from '@decorators/prefix-label-to-validating-input-service/prefix-label-to-validating-input-service.decorator';

@@ -1,9 +1,9 @@
 import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
+	from '@services/browser-storage-related/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AllImagesServicesModule } from '@app/routed-modules/all-images/all-images-services.module';

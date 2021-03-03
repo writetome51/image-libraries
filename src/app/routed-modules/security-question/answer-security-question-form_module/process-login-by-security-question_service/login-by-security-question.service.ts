@@ -2,7 +2,7 @@ import { CurrentUserData as currentUser }
 	from '@runtime-state-data/static-classes/current-user.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { SecurityQuestionServicesModule }

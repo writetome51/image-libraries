@@ -1,7 +1,7 @@
 import { DataTotalService } from '@services/app-paginator-related/data-total.abstract.service';
 import { Injectable } from '@angular/core';
 import { UserImageTotalInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/user-image-total-in-browser-storage.service';
+	from '@services/browser-storage-related/user-image-total-in-browser-storage.service';
 import { AllImagesServicesModule }
 	from '@app/routed-modules/all-images/all-images-services.module';
 import { ProcessGetUserImageTotalService }

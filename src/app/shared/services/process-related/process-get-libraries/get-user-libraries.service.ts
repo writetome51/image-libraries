@@ -1,8 +1,8 @@
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/session-id-in-browser-storage.service';
-import { MongoDBRealmFunctionService } from '@services/mongo-db-realm-function.service';
+	from '@services/browser-storage-related/session-id-in-browser-storage.service';
+import { MongoDBRealmFunctionService } from '@services/db-related/mongo-db-realm-function.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 

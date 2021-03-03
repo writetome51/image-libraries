@@ -6,7 +6,11 @@ import { ResettableToDefault } from '@interfaces/resettable-to-default.interface
 export class ResetRuntimeStateDataToDefaultSettingsService { // implements IDoThis
 
 	static go(): void {
-		Object.values(data).forEach((obj: ResettableToDefault) => obj.setDefault());
+		let resettables: ResettableToDefault[] = Object.values(data);
+
+		for (let i = 0, length = resettables.length; i < length; ++i) {
+			resettables[i].setDefault();
+		}
 	}
 
 }

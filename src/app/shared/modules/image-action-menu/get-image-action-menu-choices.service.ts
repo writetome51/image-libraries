@@ -5,7 +5,7 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@services/browser-storage-related/libraries-in-browser-storage.service';
 import { MenuChoice } from '@action-menu/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { GetMenuChoices } from '@action-menu/get-menu-choices.interface';

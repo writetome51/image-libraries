@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SearchData as search } from '@runtime-state-data/search.data';
 import { LibrariesInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/libraries-in-browser-storage.service';
+	from '@services/browser-storage-related/libraries-in-browser-storage.service';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';

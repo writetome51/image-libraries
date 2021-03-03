@@ -15,7 +15,8 @@ export class PasswordInputService extends ValidatingPasswordInputService {
 		this.data.isValid = () => (
 			this.data.objectToBind[this.data.propertyToBind].length >= rules.passwordMinLength
 		);
-		this.data.errorMessage = `The password must be at least ${rules.passwordMinLength} characters`;
+		this.data.errorMessage =
+			`The password must be at least ${rules.passwordMinLength} characters`;
 	}
 
 }

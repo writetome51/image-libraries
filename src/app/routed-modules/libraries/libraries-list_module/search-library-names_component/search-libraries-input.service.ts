@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SearchInputService } from '@validating-input/search-input.service';
+import { SearchInputService } from '@services/validating-input-related/search-input.service';
 import { LibrariesListServicesModule } from '../libraries-list-services.module';
 
 

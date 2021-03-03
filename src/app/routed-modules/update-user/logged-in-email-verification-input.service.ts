@@ -1,6 +1,6 @@
-import { EmailInputService } from '@validating-input/email-input.service';
+import { EmailInputService } from '@services/validating-input-related/email-input.service';
 import { EmailInBrowserStorageService }
-	from '@encrypted-item-in-browser-storage/email-in-browser-storage.service';
+	from '@services/browser-storage-related/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from './update-user-services.module';
 

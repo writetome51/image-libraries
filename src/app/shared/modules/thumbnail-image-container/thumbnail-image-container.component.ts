@@ -5,7 +5,7 @@ import { HoverableContainerComponent } from '@hoverable-container/hoverable-cont
 import { ImageSelectorService as imageSelector } from './image-selector.service';
 import { not } from '@writetome51/not';
 import { SelectMutipleImagesSettingService } // tslint:disable-next-line:max-line-length
-	from '@encrypted-item-in-browser-storage/select-mutiple-images-setting.service';
+	from '@services/browser-storage-related/select-mutiple-images-setting.service';
 
 
 @Component({
