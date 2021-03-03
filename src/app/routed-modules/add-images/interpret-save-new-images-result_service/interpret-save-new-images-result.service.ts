@@ -3,7 +3,7 @@ import { HandleSaveNewImagesErrorService } from './handle-save-new-images-error.
 import { Injectable } from '@angular/core';
 import { RunTasksAfterSavingNewImagesService } from './run-tasks-after-saving-new-images.service';
 import { InterpretDataTransportResultService }
-	from '@services/process-related/interpret-data-transport-result.service';
+	from '@services/process/interpret-data-transport-result.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})

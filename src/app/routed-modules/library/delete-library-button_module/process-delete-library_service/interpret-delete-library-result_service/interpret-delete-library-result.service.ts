@@ -3,7 +3,7 @@ import { RunTasksAfterDeletionOfLibraryService }
 	from './run-tasks-after-deletion-of-library.service';
 import { DeleteLibraryButtonServicesModule } from '../../delete-library-button-services.module';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
+	from '@services/process/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
 

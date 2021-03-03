@@ -1,14 +1,14 @@
 import { AppValidatingFormInputsModule }
-	from '@app-validating-form-inputs/app-validating-form-inputs.module';
+	from '@app/shared/modules/app-validating-form-inputs_module/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
 import { ExecuteFunctionButtonModule }
-	from '@execute-function-button/execute-function-button.module';
+	from '@app/shared/modules/execute-function-button_module/execute-function-button.module';
 import { LoginFormComponent } from './login-form.component';
 import { LoginFormInputsComponent } from './login-form-inputs.component';
 import { LoginFormServicesModule } from './login-form-services.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button_module/submit-form-button.module';
 
 
 @NgModule({

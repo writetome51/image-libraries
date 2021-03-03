@@ -1,7 +1,7 @@
 import { AppValidatingFormInputsModule }
-	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { ClearFormOnInitModule } from '@clear-form-on-init/clear-form-on-init.module';
-import { ClearAlertOnDestroyModule } from '@clear-alert-on-destroy/clear-alert-on-destroy.module';
+	from '@app/shared/modules/app-validating-form-inputs_module/app-validating-form-inputs.module';
+import { ClearFormOnInitModule } from '@app/shared/modules/clear-form-on-init_module/clear-form-on-init.module';
+import { ClearAlertOnDestroyModule } from '@app/shared/modules/clear-alert-on-destroy_module/clear-alert-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { NewUserFormComponent } from './new-user-form_component/new-user-form.co
 import { NewUserFormInputsComponent } from './new-user-form_component/new-user-form-inputs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button_module/submit-form-button.module';
 import { NewUserServicesModule } from './new-user-services.module';
 
 

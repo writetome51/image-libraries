@@ -2,7 +2,7 @@ import { AppImage } from '@interfaces/app-image.interface';
 import { DBImage } from '@interfaces/db-image.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 // import { ResettableToDefault } from '@interfaces/resettable-to-default';
-import { MenuChoice } from '@action-menu/menu-choice.interface';
+import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
 import { setArray } from '@writetome51/set-array';
 
 

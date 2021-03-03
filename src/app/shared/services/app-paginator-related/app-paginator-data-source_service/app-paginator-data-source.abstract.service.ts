@@ -1,6 +1,6 @@
 import { DataTotalService } from '../data-total.abstract.service';
 import { ProcessDbOperationService }
-	from '@process-related/process-db-operation.abstract.service';
+	from '@services/process/process-db-operation.abstract.service';
 import { DBImage } from '@interfaces/db-image.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LoadData as load, LoadedImagesData as loadedImages }

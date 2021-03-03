@@ -5,7 +5,7 @@ import { noAccountWithThatEmail } from '@string-constants/form-submission-errors
 import { SecurityQuestionServicesModule }
 	from '@app/routed-modules/security-question/security-question-services.module';
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
+	from '@services/process/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

@@ -2,8 +2,8 @@ import { AnswerSecurityQuestionFormComponent } from './answer-security-question-
 import { AnswerSecurityQuestionFormInputComponent }
 	from './answer-security-question-form-input.component';
 import { AppValidatingFormInputsModule }
-	from '@app-validating-form-inputs/app-validating-form-inputs.module';
-import { SubmitFormButtonModule } from '@submit-form-button/submit-form-button.module';
+	from '@app/shared/modules/app-validating-form-inputs_module/app-validating-form-inputs.module';
+import { SubmitFormButtonModule } from '@app/shared/modules/submit-form-button_module/submit-form-button.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 

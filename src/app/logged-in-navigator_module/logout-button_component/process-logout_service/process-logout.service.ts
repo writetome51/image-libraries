@@ -1,5 +1,5 @@
 import { ProcessDbOperationService }
-	from '@process-related/process-db-operation.abstract.service';
+	from '@services/process/process-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretLogoutResultService } from './interpret-logout-result.service';
 import { LogoutService } from './logout.service';

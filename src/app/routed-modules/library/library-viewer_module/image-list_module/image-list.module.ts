@@ -4,7 +4,7 @@ import { ImageListComponent } from '@app/routed-modules/library/library-viewer_m
 import { ReArrangeableGridListModule }
 	from './re-arrangeable-grid-list_module/re-arrangeable-grid-list.module';
 import { ThumbnailImageContainerModule }
-	from '@thumbnail-image-container/thumbnail-image-container.module';
+	from '@app/shared/modules/thumbnail-image-container_module/thumbnail-image-container.module';
 
 
 @NgModule({

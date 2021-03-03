@@ -3,7 +3,7 @@ import { AllImagesModulePathData as modulePath } from './all-images-module-path.
 import { AllImagesServicesModule } from './all-images-services.module';
 import { AllImagesViewerModule } from './all-images-viewer_module/all-images-viewer.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
-import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
+import { BigLoadingSpinnerModule } from '@app/shared/modules/big-loading-spinner_module/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';

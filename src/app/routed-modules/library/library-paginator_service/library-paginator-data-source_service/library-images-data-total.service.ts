@@ -4,7 +4,7 @@ import { LibraryImageTotalInBrowserStorageService }
 	from '@services/browser-storage-related/library-image-total-in-browser-storage.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 import { ProcessGetLibraryImageTotalService }
-	from '@process-related/process-get-image-total/process-get-library-image-total/process-get-library-image-total.service';
+	from '@services/process/process-get-image-total/process-get-library-image-total/process-get-library-image-total.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})

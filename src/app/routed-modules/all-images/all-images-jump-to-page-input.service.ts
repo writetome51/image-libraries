@@ -3,7 +3,7 @@ import { AllImagesPaginatorService }
 import { AllImagesServicesModule } from './all-images-services.module';
 import { Injectable } from '@angular/core';
 import { JumpToPageInputService }
-	from '@app-pagination-controls/jump-to-page-input.abstract.service';
+	from '@app/shared/modules/app-pagination-controls_module/jump-to-page-input.abstract.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})

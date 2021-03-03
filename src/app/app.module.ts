@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HTMLImageModule } from '@html-image/html-image.module';
+import { HTMLImageModule } from '@app/shared/modules/html-image_module/html-image.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggedInNavigatorModule } from './logged-in-navigator_module/logged-in-navigator.module';
 import { NgModule } from '@angular/core';

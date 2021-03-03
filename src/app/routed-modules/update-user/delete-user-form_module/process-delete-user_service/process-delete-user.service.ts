@@ -3,7 +3,7 @@ import { DeleteUserInputsService } from '../delete-user-inputs.service';
 import { InterpretDeleteUserResultService }
 	from './interpret-delete-user-result_service/interpret-delete-user-result.service';
 import { ProcessSaveFormDataToDbService }
-	from '@process-related/process-save-form-data-to-db.abstract.service';
+	from '@services/process/process-save-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../update-user-services.module';
 

@@ -5,7 +5,7 @@ import { UserImageTotalInBrowserStorageService }
 import { AllImagesServicesModule }
 	from '@app/routed-modules/all-images/all-images-services.module';
 import { ProcessGetUserImageTotalService }
-	from '@process-related/process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
+	from '@services/process/process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})

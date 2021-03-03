@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LibrariesListComponent } from './libraries-list.component';
-import { BigLoadingSpinnerModule } from '@big-loading-spinner/big-loading-spinner.module';
+import { BigLoadingSpinnerModule } from '@app/shared/modules/big-loading-spinner_module/big-loading-spinner.module';
 import { RouterModule } from '@angular/router';
 import { SearchLibraryNamesComponent }
 	from './search-library-names_component/search-library-names.component';

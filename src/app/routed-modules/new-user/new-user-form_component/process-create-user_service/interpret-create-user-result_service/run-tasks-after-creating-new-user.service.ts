@@ -3,7 +3,7 @@ import { DBUser } from '@interfaces/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '@app/routed-modules/new-user/new-user-services.module';
-import { RunTasksAfterLoginService } from '@services/process-related/run-post-success-tasks/run-tasks-after-login.service';
+import { RunTasksAfterLoginService } from '@services/process/run-post-success-tasks/run-tasks-after-login.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})

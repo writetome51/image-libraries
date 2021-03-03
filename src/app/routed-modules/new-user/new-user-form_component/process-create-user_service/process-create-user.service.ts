@@ -1,6 +1,6 @@
 import { CreateUserService } from './create-user.service';
 import { ProcessSaveFormDataToDbService }
-	from '@process-related/process-save-form-data-to-db.abstract.service';
+	from '@services/process/process-save-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs.service';
 import { InterpretCreateUserResultService }

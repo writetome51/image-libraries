@@ -1,5 +1,5 @@
 import { ProcessDbOperationService }
-	from '@process-related/process-db-operation.abstract.service';
+	from '@services/process/process-db-operation.abstract.service';
 import { InterpretDeleteLibraryResultService }
 	from './interpret-delete-library-result_service/interpret-delete-library-result.service';
 import { Injectable } from '@angular/core';

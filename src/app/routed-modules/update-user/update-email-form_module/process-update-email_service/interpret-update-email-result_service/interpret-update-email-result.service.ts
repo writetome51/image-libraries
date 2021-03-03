@@ -1,7 +1,7 @@
 import { HandleDbOperationErrorService }
-	from '@process-related/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
+	from '@services/process/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
 import { InterpretDataTransportResultService }
-	from '@process-related/interpret-data-transport-result.service';
+	from '@services/process/interpret-data-transport-result.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-email.service';
 import { UpdateUserServicesModule }

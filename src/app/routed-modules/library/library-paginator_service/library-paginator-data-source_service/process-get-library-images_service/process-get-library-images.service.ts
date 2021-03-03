@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProcessDbOperationService }
-	from '@process-related/process-db-operation.abstract.service';
+	from '@services/process/process-db-operation.abstract.service';
 import { GetLibraryImagesService } from './get-library-images.service';
 import { InterpretGetLibraryImagesResultService }
 	from './interpret-get-library-images-result_service/interpret-get-library-images-result.service';

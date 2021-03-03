@@ -4,7 +4,7 @@ import { RunTasksAfterGettingLibraryImagesService }
 	from './run-tasks-after-getting-library-images.service';
 import { LibraryServicesModule } from '@app/routed-modules/library/library-services.module';
 import { InterpretDataTransportResultService }
-	from '@process-related/interpret-data-transport-result.service';
+	from '@services/process/interpret-data-transport-result.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})

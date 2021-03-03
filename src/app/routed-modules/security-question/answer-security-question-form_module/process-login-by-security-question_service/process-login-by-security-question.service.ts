@@ -1,5 +1,5 @@
 import { ProcessSaveFormDataToDbService }
-	from '@process-related/process-save-form-data-to-db.abstract.service';
+	from '@services/process/process-save-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';

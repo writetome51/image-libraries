@@ -5,7 +5,7 @@ import { ReArrangeableGridListComponent } from './re-arrangeable-grid-list.compo
 import { ReArrangeableGridListItemComponent }
 	from './re-arrangeable-grid-list-item_component/re-arrangeable-grid-list-item.component';
 import { HoverableContainerModule }
-	from '@hoverable-container/hoverable-container.module';
+	from '@app/shared/modules/hoverable-container_module/hoverable-container.module';
 
 
 @NgModule({

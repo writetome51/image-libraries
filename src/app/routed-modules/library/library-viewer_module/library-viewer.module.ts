@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { LibraryViewerComponent } from '@app/routed-modules/library/library-viewer_module/library-viewer.component';
 import { LibraryPaginationControlsComponent }
 	from './library-pagination-controls_component/library-pagination-controls.component';
-import { ImageSizeSliderModule } from '@app/shared/modules/image-size-slider/image-size-slider.module';
+import { ImageSizeSliderModule } from '@app/shared/modules/image-size-slider_module/image-size-slider.module';
 import { SaveChangesButtonComponent } from './save-changes-button.component';
 import { UndoChangesButtonComponent } from './undo-changes-button.component';
 import { AppPaginationControlsModule }
-	from '@app-pagination-controls/app-pagination-controls.module';
+	from '@app/shared/modules/app-pagination-controls_module/app-pagination-controls.module';
 import { FormsModule } from '@angular/forms';
 import { ImageListModule } from '@app/routed-modules/library/library-viewer_module/image-list_module/image-list.module';
 import { ExecuteFunctionButtonModule }
-	from '@execute-function-button/execute-function-button.module';
+	from '@app/shared/modules/execute-function-button_module/execute-function-button.module';
 import { LibraryViewerServicesModule } from './library-viewer-services.module';
 
 

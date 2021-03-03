@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProcessUpdateLibraryService }
-	from '@services/process-related/process-update-library_service/process-update-library.service';
+	from '@services/process/process-update-library_service/process-update-library.service';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 
