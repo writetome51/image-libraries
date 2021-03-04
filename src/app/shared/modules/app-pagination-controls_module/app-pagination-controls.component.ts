@@ -9,6 +9,7 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 
 		<nav *ngIf="totalPages > 1">
 			<div>
+
 				<page-link *ngIf="currentPage > 1"
 					[pageNumber]="currentPage - 1" [routeBeforePage]="routeBeforePage"
 				> previous
@@ -22,6 +23,7 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 				<jump-to-page *ngIf="jumpToPageInput"
 					[pageNumberInput]="jumpToPageInput.data" [routeBeforePage]="routeBeforePage"
 				></jump-to-page>
+
 			</div>
 		</nav>
 	`

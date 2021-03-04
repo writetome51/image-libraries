@@ -1,16 +1,31 @@
 import { Component } from '@angular/core';
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
-import { SecurityQuestionModuleTitleData as moduleTitle }
-	from './security-question-module-title.data';
+import { SecurityQuestionModuleTitleData as moduleTitle } from './security-question-module-title.data';
 import { Title } from '@angular/platform-browser';
 
 
 @Component({
 	selector: 'security-question',
-	templateUrl: './security-question.component.html'
+	template: `
+		<header><h2>{{heading}}</h2></header>
+
+		<p *ngIf="haveReceivedQuestion">{{question}}</p>
+
+		<div class="form-container">
+
+			<form clearFormOnInit clearAlertOnDestroy>
+
+				<get-security-question-form *ngIf="!(haveReceivedQuestion)"></get-security-question-form>
+
+				<answer-security-question-form *ngIf="haveReceivedQuestion">
+				</answer-security-question-form>
+
+			</form>
+
+		</div>
+	`
 })
 export class SecurityQuestionComponent {
 

@@ -7,15 +7,14 @@ import { ProcessGetLibraryImageTotalService }
 	from './process-get-library-image-total_service/process-get-library-image-total.service';
 
 
-
 @Injectable({providedIn: LibraryServicesModule})
 export class LibraryImagesDataTotalService extends DataTotalService {
 
 	constructor(
-		__process_storeTotal: ProcessGetLibraryImageTotalService,
+		__processStoreTotal: ProcessGetLibraryImageTotalService,
 		__storedTotal: LibraryImageTotalInBrowserStorageService
 	) {
-		super(__process_storeTotal, __storedTotal);
+		super(__processStoreTotal, __storedTotal);
 	}
 
 }

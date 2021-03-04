@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ProcessDbOperationService }
-	from '@services/process/process-db-operation.abstract.service';
+import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
 import { GetAllImagesService } from './get-all-images.service';
-import { AllImagesServicesModule } from '@app/routed-modules/all-images_module/all-images-services.module';
-import { InterpretGetImagesResultService }
-	from '@services/process/interpret-result/interpret-get-images-result_service/interpret-get-images-result.service';
+import { AllImagesServicesModule } from '../../../all-images-services.module';
+import { InterpretGetImagesResultService } from
+'@interpret-result/interpret-get-images-result_service/interpret-get-images-result.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})

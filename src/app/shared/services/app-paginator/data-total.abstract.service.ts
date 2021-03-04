@@ -1,19 +1,21 @@
 import { DataContainer } from '@interfaces/data-container.interface';
 import { Gettable } from '@interfaces/gettable.interface';
-import { ProcessService } from '@services/process/process.abstract.service';
+import { noValue } from '@writetome51/has-value-no-value';
+import { ProcessGetImageTotalService }
+	from '@process-get-image-total/process-get-image-total.abstract.service';
 
 
 export abstract class DataTotalService implements DataContainer<number> {
 
 	constructor(
-		private __processStoreTotal: ProcessService,
+		private __processStoreTotal: ProcessGetImageTotalService,
 		private __storedTotal: Gettable<number>
 	) {
 	}
 
 
 	async set(): Promise<void> {
-		await this.__processStoreTotal.go();
+		if (noValue(this.get())) await this.__processStoreTotal.go();
 	}
 
 

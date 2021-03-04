@@ -36,13 +36,14 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 	) {
 		super();
 		this.__title.setTitle(moduleTitle.data);
-
 		executionStatus.waiting = true;
 
-		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsObserver.go()
-		);
-		this._subscriptions.push(routeParamsSubscription);
+		this._subscriptions.push(this.__getRouteParamsSubscription());
+	}
+
+
+	private __getRouteParamsSubscription() {
+		return this.__currentRoute.params$.subscribe( this.__getRouteParamsObserver.go() );
 	}
 
 }

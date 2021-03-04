@@ -25,7 +25,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 
 	async go() {
-		if (this.__librariesAreStoredLocally()) return;
+		if (this.__librariesStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
 			() => this.__getLibrariesProcessor.go(), executionStatus
@@ -33,7 +33,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 	}
 
 
-	private __librariesAreStoredLocally(): boolean {
+	private __librariesStoredLocally(): boolean {
 		let libsMap: object = this.__librariesInBrowser.get();
 		if (hasValue(libsMap)) {
 			libraryNames.data = Object.keys(libsMap);
