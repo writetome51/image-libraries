@@ -1,10 +1,11 @@
-import { DataTotalService } from '@services/app-paginator/data-total.abstract.service';
+import { DataTotalService } from '@app-paginator/data-total.abstract.service';
 import { Injectable } from '@angular/core';
 import { LibraryImageTotalInBrowserStorageService }
-	from '@services/browser-storage/library-image-total-in-browser-storage.service';
-import { LibraryServicesModule } from '@app/routed-modules/library_module/library-services.module';
+	from '@browser-storage/library-image-total-in-browser-storage.service';
+import { LibraryServicesModule } from '../../../library-services.module';
 import { ProcessGetLibraryImageTotalService }
-	from '@services/process/process-get-image-total/process-get-library-image-total/process-get-library-image-total.service';
+	from './process-get-library-image-total_service/process-get-library-image-total.service';
+
 
 
 @Injectable({providedIn: LibraryServicesModule})

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage/libraries-in-browser-storage.service';
-import { ImageActionMenuServicesModule } from '@app/shared/modules/image-action-menu_module/image-action-menu-services.module';
+	from '@browser-storage/libraries-in-browser-storage.service';
+import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

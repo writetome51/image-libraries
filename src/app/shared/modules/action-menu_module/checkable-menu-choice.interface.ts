@@ -1,4 +1,4 @@
-import { MenuChoice } from './/menu-choice.interface';
+import { MenuChoice } from './menu-choice.interface';
 import { CheckableMenuChoiceData } from './checkable-menu-choice-data.interface';
 
 

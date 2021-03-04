@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage/session-id-in-browser-storage.service';
+	from '@browser-storage/session-id-in-browser-storage.service';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { GlobalActionMenuServicesModule }
-	from '@app/shared/modules/global-action-menu_module/global-action-menu-services.module';
+	from '@global-action-menu_module/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

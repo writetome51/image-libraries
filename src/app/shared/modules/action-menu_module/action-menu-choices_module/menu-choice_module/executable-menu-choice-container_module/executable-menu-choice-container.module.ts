@@ -1,11 +1,11 @@
 import { CheckmarkComponent } from './checkmark.component';
 import { ClickExecuteFunctionDivModule }
-	from '@app/shared/modules/click-execute-function-div_module/click-execute-function-div.module';
+	from '@click-execute-function-div_module/click-execute-function-div.module';
 import { CommonModule } from '@angular/common';
 import { ExecutableMenuChoiceComponent } from './executable-menu-choice.component';
 import { ExecutableMenuChoiceContainerComponent }
 	from './executable-menu-choice-container.component';
-import { HoverableContainerModule } from '@app/shared/modules/hoverable-container_module/hoverable-container.module';
+import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { GetUserImageTotalService } from './get-user-image-total.service';
-import { InterpretGetUserImageTotalResultService }
-	from './interpret-get-user-image-total-result/interpret-get-user-image-total-result.service';
+import { Injectable } from '@angular/core';
+import { InterpretGetUserImageTotalResultService } from
+	'./interpret-get-user-image-total-result_service/interpret-get-user-image-total-result.service';
 import { ProcessGetImageTotalService } from '../process-get-image-total.abstract.service';
 
 

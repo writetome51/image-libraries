@@ -3,11 +3,10 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { SelectedImagesData as selectedImages }
-	from '@runtime-state-data/selected-images.data';
-import { GlobalActionMenuServicesModule }
-	from '@app/shared/modules/global-action-menu_module/global-action-menu-services.module';
-import { RunTasksAfterModifyingLoadedImagesService } from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
+import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
+import { RunTasksAfterModifyingLoadedImagesService }
+	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

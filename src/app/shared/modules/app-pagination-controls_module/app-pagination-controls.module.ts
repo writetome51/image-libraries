@@ -1,6 +1,6 @@
 import { AppPaginationControlsComponent } from './app-pagination-controls.component';
 import { AppValidatingFormInputsModule }
-	from '@app/shared/modules/app-validating-form-inputs_module/app-validating-form-inputs.module';
+	from '@app-validating-form-inputs_module/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { JumpToPageComponent } from './jump-to-page.component';

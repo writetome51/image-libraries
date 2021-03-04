@@ -11,10 +11,10 @@ import { AllImagesServicesModule } from '../../all-images-services.module';
 export class AllImagesPaginatorDataSourceService extends AppPaginatorDataSourceService {
 
 	constructor(
-		__getAllImagesProcessor: ProcessGetAllImagesService,
+		__process_set_loadedImages: ProcessGetAllImagesService,
 		__dataTotal: AllImagesDataTotalService
 	) {
-		super(__getAllImagesProcessor, __dataTotal);
+		super(__process_set_loadedImages, __dataTotal);
 	}
 
 }

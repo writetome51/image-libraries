@@ -1,7 +1,6 @@
 import { AppImage } from '@interfaces/app-image.interface';
 import { Component, Input } from '@angular/core';
-import { GetImageActionMenuChoicesService }
-	from './get-image-action-menu-choices.service';
+import { GetImageActionMenuChoicesService } from './get-image-action-menu-choices.service';
 import { ImageActionMenuChoicesExecutorService }
 	from './image-action-menu-choices-executor_service/image-action-menu-choices-executor.service';
 

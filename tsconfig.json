@@ -30,6 +30,9 @@
 			"@clear-form-on-init_module/*": [
 				"src/app/shared/modules/clear-form-on-init_module/*"
 			],
+			"@click-execute-function-div_module/*": [
+				"src/app/shared/modules/click-execute-function-div_module/*"
+			],
 			"@current-user-inputs_service/*": [
 				"src/app/shared/services/current-user-inputs_service/*"
 			],

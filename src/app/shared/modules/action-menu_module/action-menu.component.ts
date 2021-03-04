@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GetMenuChoices } from './/get-menu-choices.interface';
+import { GetMenuChoices } from './get-menu-choices.interface';
 import { MenuChoice } from './menu-choice.interface';
 import { ActionMenuChoiceExecutorService } from './action-menu-choice-executor.service';
 import { SpecificChoicesExecutorService } from './specific-choices-executor.abstract.service';

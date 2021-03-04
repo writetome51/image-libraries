@@ -4,7 +4,7 @@ import { ProcessDbOperationService }
 import { GetAllImagesService } from './get-all-images.service';
 import { AllImagesServicesModule } from '@app/routed-modules/all-images_module/all-images-services.module';
 import { InterpretGetImagesResultService }
-	from '@services/process/interpret-result/interpret-get-images-result/interpret-get-images-result.service';
+	from '@services/process/interpret-result/interpret-get-images-result_service/interpret-get-images-result.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})

@@ -1,5 +1,4 @@
-import { SelectedImagesData as selectedImages }
-	from '@runtime-state-data/selected-images.data';
+import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 
 

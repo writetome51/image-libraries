@@ -9,7 +9,7 @@ import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetUserImageTotalService }
-	from '@process-get-image-total/process-get-user-image-total/process-get-user-image-total.service';
+	from '@process-get-image-total/process-get-user-image-total_service/process-get-user-image-total.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
+import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 
 
 @Component({

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ActionMenuButtonComponent } from './action-menu-button.component';
 import { NgModule } from '@angular/core';
 import { SprocketWheelComponent } from './sprocket-wheel.component';
-import { HTMLImageModule } from '@app/shared/modules/html-image_module/html-image.module';
+import { HTMLImageModule } from '@html-image_module/html-image.module';
 
 
 @NgModule({

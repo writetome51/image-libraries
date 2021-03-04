@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
 import { ProcessSaveFormDataToDbService }
-	from '@services/process/process-save-form-data-to-db.abstract.service';
+	from '@process/process-save-form-data-to-db.abstract.service';
 
 
 @Component({

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ProcessService } from '@services/process/process.abstract.service';
+import { ProcessSaveFormDataToDbService }
+	from '@process/process-save-form-data-to-db.abstract.service';
 
 
 @Component({
@@ -11,6 +12,6 @@ import { ProcessService } from '@services/process/process.abstract.service';
 })
 export class SearchComponent {
 
-	@Input() processor: ProcessService;
+	@Input() processor: ProcessSaveFormDataToDbService;
 
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubmitFormButtonComponent } from './submit-form-button.component';
 import { ExecuteFunctionButtonModule }
-	from '@app/shared/modules/execute-function-button_module/execute-function-button.module';
+	from '@execute-function-button_module/execute-function-button.module';
 
 
 @NgModule({

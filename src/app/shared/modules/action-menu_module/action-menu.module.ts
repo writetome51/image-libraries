@@ -2,7 +2,7 @@ import { ActionMenuButtonModule } from './action-menu-button_module/action-menu-
 import { ActionMenuChoicesModule } from './action-menu-choices_module/action-menu-choices.module';
 import { ActionMenuComponent } from './action-menu.component';
 import { CommonModule } from '@angular/common';
-import { HoverableContainerModule } from '@app/shared/modules/hoverable-container_module/hoverable-container.module';
+import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
 import { NgModule } from '@angular/core';
 
 

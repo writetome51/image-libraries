@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExecuteFunctionButtonComponent } from './execute-function-button.component';
-import { TinyLoadingSpinnerModule } from '@app/shared/modules/tiny-loading-spinner_module/tiny-loading-spinner.module';
+import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner_module/tiny-loading-spinner.module';
 
 
 @NgModule({

@@ -1,11 +1,10 @@
-import { ProcessDbOperationService }
-	from '@services/process/process-db-operation.abstract.service';
+import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
 import { InterpretDeleteSelectedImagesResultService }
 	from './interpret-delete-selected-images-result_service/interpret-delete-selected-images-result.service';
 import { Injectable } from '@angular/core';
 import { DeleteSelectedImagesService } from './delete-selected-images.service';
 import { GlobalActionMenuServicesModule }
-	from '@app/shared/modules/global-action-menu_module/global-action-menu-services.module';
+	from '@global-action-menu_module/global-action-menu-services.module';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

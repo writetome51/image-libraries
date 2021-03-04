@@ -7,7 +7,7 @@ import { RequestedLibraryData as requestedLibrary }
 import { LibrariesInBrowserStorageService }
 	from '@services/browser-storage/libraries-in-browser-storage.service';
 import { LibraryServicesModule } from '@app/routed-modules/library_module/library-services.module';
-import { RunTasksAfterGettingImagesService } from '@services/process/interpret-result/interpret-get-images-result/run-tasks-after-getting-images.service';
+import { RunTasksAfterGettingImagesService } from '@run-post-success-tasks/run-tasks-after-getting-images.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})

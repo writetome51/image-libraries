@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { RunTasksAfterToggleAddImageToLibraryService }
 	from './run-tasks-after-toggle-add-image-to-library.service';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage/libraries-in-browser-storage.service';
+	from '@browser-storage/libraries-in-browser-storage.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { not } from '@writetome51/not';
 import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
-import { HandleErrorService } from '@services/process/handle-error/handle-error.service';
-import { InterpretResultService }
-	from '@services/process/interpret-result/interpret-result.abstract.service';
+import { HandleErrorService } from '@process/handle-error/handle-error.service';
+import { InterpretResultService } from '@interpret-result/interpret-result.abstract.service';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

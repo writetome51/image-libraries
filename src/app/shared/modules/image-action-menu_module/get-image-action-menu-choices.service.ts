@@ -5,12 +5,12 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
-	from '@services/browser-storage/libraries-in-browser-storage.service';
-import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
+	from '@browser-storage/libraries-in-browser-storage.service';
+import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { GetMenuChoices } from '@app/shared/modules/action-menu_module/get-menu-choices.interface';
+import { GetMenuChoices } from '@action-menu_module/get-menu-choices.interface';
 import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
-import { CheckableMenuChoice } from '@app/shared/modules/action-menu_module/checkable-menu-choice.interface';
+import { CheckableMenuChoice } from '@action-menu_module/checkable-menu-choice.interface';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

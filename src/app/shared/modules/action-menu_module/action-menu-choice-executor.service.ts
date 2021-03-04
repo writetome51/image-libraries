@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MenuChoice } from './/menu-choice.interface';
+import { MenuChoice } from './menu-choice.interface';
 import { SpecificChoicesExecutorService } from './specific-choices-executor.abstract.service';
 
 

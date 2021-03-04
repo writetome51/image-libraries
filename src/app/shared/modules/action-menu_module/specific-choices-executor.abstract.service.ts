@@ -1,6 +1,6 @@
 import { ExecutorConfiguration } from './executor-configuration.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { MenuChoice } from './/menu-choice.interface';
+import { MenuChoice } from './menu-choice.interface';
 import { removeTail } from '@writetome51/array-remove-head-tail';
 
 
