@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLogoutService } from '@run-post-success-tasks/run-tasks-after-logout.service';
@@ -14,7 +14,7 @@ export class RunTasksAfterDeletingUserService implements IDoThis {
 
 	async go() {
 		await this.__runTasksAfterLogout.go();
-		alert.success = 'Account deleted';
+		alert.setSuccess('Account deleted');
 	}
 
 }

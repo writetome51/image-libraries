@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { userDoesntExist } from '@string-constants/mongo-db-realm-function-errors';
 import { noAccountWithThatEmail } from '@string-constants/form-submission-errors';
 import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
@@ -12,7 +12,7 @@ export class HandleGetSecurityQuestionErrorService extends HandleDbOperationErro
 
 	async go(error) {
 		if (error.message.includes(userDoesntExist)) {
-			alert.error = noAccountWithThatEmail;
+			alert.setError(noAccountWithThatEmail);
 		}
 		else await super.go(error);
 	}

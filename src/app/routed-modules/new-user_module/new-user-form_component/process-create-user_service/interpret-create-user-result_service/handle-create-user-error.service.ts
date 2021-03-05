@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { accountAlreadyExists } from '@string-constants/form-submission-errors';
 import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
 import { Injectable } from '@angular/core';
@@ -11,7 +11,7 @@ import { HandleDbOperationErrorService }
 export class HandleCreateUserErrorService extends HandleDbOperationErrorService {
 
 	async go(error) {
-		if (error.message.includes(duplicate)) alert.error = accountAlreadyExists;
+		if (error.message.includes(duplicate)) alert.setError(accountAlreadyExists);
 		else await super.go(error);
 	}
 

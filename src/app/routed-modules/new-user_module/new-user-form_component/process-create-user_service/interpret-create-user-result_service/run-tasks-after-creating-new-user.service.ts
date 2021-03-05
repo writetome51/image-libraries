@@ -1,10 +1,9 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { DBUser } from '@interfaces/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../../new-user-services.module';
-import { RunTasksAfterLoginService }
-	from '@process/run-post-success-tasks/run-tasks-after-login.service';
+import { RunTasksAfterLoginService } from '@run-post-success-tasks/run-tasks-after-login.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})
@@ -16,7 +15,7 @@ export class RunTasksAfterCreatingNewUserService implements IDoThis {
 
 	async go(result: DBUser) {
 		await this.__runTasksAfterLogin.go(result);
-		alert.success = 'Account created.  You\'re signed in.';
+		alert.setSuccess('Account created.  You\'re signed in.');
 	}
 
 }

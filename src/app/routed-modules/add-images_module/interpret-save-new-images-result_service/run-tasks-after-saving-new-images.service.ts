@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -17,7 +17,7 @@ export class RunTasksAfterSavingNewImagesService implements IDoThis {
 	}
 
 	go() {
-		alert.success = 'New images saved';
+		alert.setSuccess('New images saved');
 		newImages.data = [];
 		this.__runTasksAfterModifyingLoadedImages.go();
 	}

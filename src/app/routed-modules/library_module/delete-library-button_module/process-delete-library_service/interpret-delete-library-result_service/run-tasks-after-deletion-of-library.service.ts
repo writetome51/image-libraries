@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { ProcessGetLibrariesService }
 	from '@process/process-get-libraries_service/process-get-libraries.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -20,7 +20,7 @@ export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 	async go() {
 		await this.__updateLoadedLibraries();
 		await this.__redirectToLoggedInHome.go();
-		alert.success = 'Library deleted';
+		alert.setSuccess('Library deleted');
 	}
 
 
