@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { DBUser } from '@interfaces/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -20,7 +20,7 @@ export class RunTasksAfterUpdatingUserService implements IDoThis {
 	go(result: DBUser) {
 		this.__runTasksAfterGettingUser.go(result);
 		if (!(this.resultMessage)) throw new Error(`The "resultMessage" property is not set.`);
-		alert.success = this.resultMessage;
+		alert.setSuccess(this.resultMessage);
 	}
 
 }
