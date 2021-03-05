@@ -6,7 +6,7 @@ import { HandleDbOperationErrorService }
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImageTotalErrorService extends HandleDbOperationErrorService {
+export class HandleGetUserImageTotalErrorService extends HandleDbOperationErrorService {
 
 	async go(error) {
 		imageTotal.setDefault();

@@ -1,12 +1,12 @@
 import { GetUserImageTotalService } from './get-user-image-total.service';
 import { Injectable } from '@angular/core';
 import { InterpretGetUserImageTotalResultService } from
-	'./interpret-get-user-image-total-result_service/interpret-get-user-image-total-result.service';
-import { ProcessGetImageTotalService } from '../process-get-image-total.abstract.service';
+'./interpret-get-user-image-total-result_service/interpret-get-user-image-total-result.service';
+import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
 
 
 @Injectable({providedIn: 'root'})
-export class ProcessGetUserImageTotalService extends ProcessGetImageTotalService {
+export class ProcessGetUserImageTotalService extends ProcessDbOperationService {
 
 	constructor(
 		__getResult: GetUserImageTotalService,
