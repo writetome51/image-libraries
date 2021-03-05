@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { EncryptedItemInBrowserStorageService }
 	from './encrypted-item-in-browser-storage.abstract.service';
+import { DBLibrary } from '@interfaces/db-library.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class LibraryImageTotalInBrowserStorageService
-	extends EncryptedItemInBrowserStorageService<number> {
+export class LibraryInBrowserStorageService
+	extends EncryptedItemInBrowserStorageService<DBLibrary> {
 
 	constructor() {
-		super(localStorage, 'lib-img-total');
+		super(localStorage, 'current-lib');
 	}
 
 }
