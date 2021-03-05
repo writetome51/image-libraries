@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FullSizeImageComponent }
 	from '@app/routed-modules/full-size-image-viewer_module/full-size-image.component';
@@ -22,11 +22,12 @@ export class CanDeactivateGuard implements CanDeactivate<LibraryComponent | Full
 	): boolean {
 
 		if (this.__libraryChanges.exist) {
-			alert.error =
-				'You have unsaved changes to the library.  Please save or discard them first.';
+			alert.setError('You have unsaved changes to the library.  Please save or discard' +
+				' them first.'
+			);
 			return false;
 		}
-		return true;
+		else return true;
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Directive, OnDestroy } from '@angular/core';
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 
 
 @Directive({

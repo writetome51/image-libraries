@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { incorrectPassword, noAccountWithThatEmail }
 	from '@string-constants/form-submission-errors';
 import { Injectable } from '@angular/core';
@@ -22,7 +22,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 
 
 	async go() {
-		if (await this.__userDoesntExist()) alert.error = noAccountWithThatEmail;
+		if (await this.__userDoesntExist()) alert.setError(noAccountWithThatEmail);
 
 		else {
 			let assumedLoggedIn = (!!this.__sessionIDInBrowser.get());
@@ -33,7 +33,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 				await this.__handleNotLoggedInError.go();
 			}
 			else { // Else whether or not user is logged in, the submitted password must be wrong.
-				alert.error = incorrectPassword;
+				alert.setError(incorrectPassword);
 			}
 		}
 	}

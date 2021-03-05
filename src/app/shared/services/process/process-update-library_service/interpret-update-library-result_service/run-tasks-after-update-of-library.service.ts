@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { DBLibrary } from '@interfaces/db-library.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -22,7 +22,7 @@ export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 
 		loadedLibrary.data = result;
 		this.__libraryChanges.unsetAll();
-		alert.success = 'Library updated';
+		alert.setError('Library updated');
 	}
 
 }

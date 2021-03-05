@@ -1,4 +1,4 @@
-import { AlertData as alert } from '@runtime-state-data/static-classes/alert.data';
+import { AlertService as alert } from '@services/alert.service';
 import { ProcessDbOperationService } from './process-db-operation.abstract.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -20,7 +20,7 @@ export abstract class ProcessSaveFormDataToDbService extends ProcessDbOperationS
 	async go() {
 		if (this.__validatingInputs.isValid()) await super.go();
 
-		else alert.error = this.__validatingInputs.error;
+		else alert.setError(this.__validatingInputs.error);
 	}
 
 }
