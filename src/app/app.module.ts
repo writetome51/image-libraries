@@ -19,7 +19,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 	imports: [
 		BrowserModule,
 		FormsModule,
-		HttpClientModule,
+	//	HttpClientModule,
 		HTMLImageModule,
 		LoggedInNavigatorModule,
 		AppRoutingModule
