@@ -24,6 +24,9 @@
 			"@big-loading-spinner_module/*": [
 				"src/app/shared/modules/big-loading-spinner_module/*"
 			],
+			"@browser-storage/*": [
+				"src/app/shared/services/browser-storage/*"
+			],
 			"@clear-alert-on-destroy_module/*": [
 				"src/app/shared/modules/clear-alert-on-destroy_module/*"
 			],
@@ -39,9 +42,6 @@
 			"@decorators/*": [
 				"src/app/shared/decorators/*"
 			],
-			"@interpret-result/*": [
-				"src/app/shared/services/process/interpret-result/*"
-			],
 			"@encrypted-item-in-browser-storage/*": [
 				"src/app/shared/services/encrypted-item-in-browser-storage/*"
 			],
@@ -50,9 +50,6 @@
 			],
 			"@execute-function-button_module/*": [
 				"src/app/shared/modules/execute-function-button_module/*"
-			],
-			"@process-get-image-total/*": [
-				"src/app/shared/services/process/process-get-image-total/*"
 			],
 			"@global-action-menu_module/*": [
 				"src/app/shared/modules/global-action-menu_module/*"
@@ -75,6 +72,9 @@
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
 			],
+			"@interpret-result/*": [
+				"src/app/shared/services/process/interpret-result/*"
+			],
 			"@logged-in-app-navigator_module/*": [
 				"src/app/logged-in-app-navigator_module/*"
 			],
@@ -86,6 +86,9 @@
 			],
 			"@process/*": [
 				"src/app/shared/services/process/*"
+			],
+			"@process-get-image-total/*": [
+				"src/app/shared/services/process/process-get-image-total/*"
 			],
 			"@read-only-data/*": [
 				"src/app/shared/data/read-only/*"
@@ -113,9 +116,6 @@
 			],
 			"@tiny-loading-spinner_module/*": [
 				"src/app/shared/modules/tiny-loading-spinner_module/*"
-			],
-			"@browser-storage/*": [
-				"src/app/shared/services/browser-storage/*"
 			],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
