@@ -11,7 +11,7 @@ export class HandleDbOperationErrorService extends HandleErrorService {
 
 	constructor(
 		private __handleNoRecordMatchError: HandleNoRecordMatchErrorService,
-		protected _handleNotLoggedInError: HandleNotLoggedInErrorService,
+		private __handleNotLoggedInError: HandleNotLoggedInErrorService,
 	) {
 		super();
 	}
@@ -23,7 +23,7 @@ export class HandleDbOperationErrorService extends HandleErrorService {
 				return await this.__handleNoRecordMatchError.go();
 			}
 			if (error.message.includes(notLoggedIn)) {
-				return await this._handleNotLoggedInError.go();
+				return await this.__handleNotLoggedInError.go();
 			}
 		}
 
