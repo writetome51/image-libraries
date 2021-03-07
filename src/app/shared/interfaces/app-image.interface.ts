@@ -1,8 +1,8 @@
-export interface AppImage {
+import { HasName } from '@interfaces/has-name';
+import { HasSrc } from '@interfaces/has-src';
 
-	name: string; // User cannot have two images with same name.
 
-	src: string;
+export interface AppImage extends HasName, HasSrc {
 
 	description?: string;
 

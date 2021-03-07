@@ -1,6 +1,7 @@
-export interface HTMLImage {
+import { HasSrc } from '@interfaces/has-src';
 
-	src: string;
+
+export interface HTMLImage extends HasSrc {
 
 	alt: string;
 
