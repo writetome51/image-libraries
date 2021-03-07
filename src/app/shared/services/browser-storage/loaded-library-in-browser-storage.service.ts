@@ -5,7 +5,7 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class LibraryInBrowserStorageService
+export class LoadedLibraryInBrowserStorageService
 	extends EncryptedItemInBrowserStorageService<DBLibrary> {
 
 	constructor() {
