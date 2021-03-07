@@ -1,11 +1,11 @@
 import { DataTotalService } from '../data-total.abstract.service';
-import { ProcessDbOperationService }
-	from '@services/process/process-db-operation.abstract.service';
 import { DBImage } from '@interfaces/db-image.interface';
-import { hasValue } from '@writetome51/has-value-no-value';
-import { LoadData as load, LoadedImagesData as loadedImages }
+import { LoadData as load }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
+import { LoadedImageStateService }
+	from '@services/loaded-image-state_service/loaded-image-state.service';
+import { SetLoadedImages } from '@interfaces/set-loaded-images.interface';
 
 
 export abstract class AppPaginatorDataSourceService implements BigDatasetPaginatorDataSource {
@@ -16,8 +16,9 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	constructor(
-		private __process_set_loadedImages: ProcessDbOperationService,
-		private __dataTotal: DataTotalService
+		private __setLoadedImages: SetLoadedImages,
+		private __dataTotal: DataTotalService,
+		private __loadedImageState: LoadedImageStateService
 	) {
 	}
 
@@ -28,14 +29,13 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	async getLoad(
-		loadNum: number, itemsPerLoad: number, isLastLoad: boolean
+		loadNumber: number, itemsPerLoad: number, isLastLoad: boolean
 	): Promise<DBImage[]> {
 
-		load.number = loadNum;
-		await this.__process_set_loadedImages.go();
+		load.number = loadNumber;
+		await this.__setLoadedImages.go(load);
 
-		if (hasValue(loadedImages.data)) return loadedImages.data;
-		else return [];
+		return this.__loadedImageState.getLoad();
 	}
 
 }

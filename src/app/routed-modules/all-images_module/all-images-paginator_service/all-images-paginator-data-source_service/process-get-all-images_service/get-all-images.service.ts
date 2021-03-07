@@ -1,12 +1,12 @@
 import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
-import { LoadData as load } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
-import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage/session-id-in-browser-storage.service';
+import { SessionIDInBrowserStorageService } from '@services/browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { AllImagesServicesModule } from '@app/routed-modules/all-images_module/all-images-services.module';
+import { AllImagesServicesModule }
+	from '@app/routed-modules/all-images_module/all-images-services.module';
+import { LoadConfiguration } from '@interfaces/load-configuration.interface';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
@@ -19,7 +19,8 @@ export class GetAllImagesService implements IDoThis {
 	}
 
 
-	async go(): Promise<ImageBatch | HasError> {
+	async go(load: LoadConfiguration): Promise<ImageBatch | HasError> {
+
 		let batch = await this.__realmFn.call('pub_getUserImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			batchSize: load.size,

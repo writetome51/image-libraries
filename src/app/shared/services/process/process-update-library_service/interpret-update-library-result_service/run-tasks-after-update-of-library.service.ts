@@ -3,14 +3,17 @@ import { DBLibrary } from '@interfaces/db-library.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
-import { LoadedLibraryData as loadedLibrary }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LoadedLibraryInBrowserStorageService }
+	from '@browser-storage/loaded-library-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 
-	constructor(private __libraryChanges: LibraryChangesService) {
+	constructor(
+		private __libraryChanges: LibraryChangesService,
+		private __loadedLibrary: LoadedLibraryInBrowserStorageService
+	) {
 	}
 
 
@@ -20,7 +23,7 @@ export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 		delete result._user_id;
 
 
-		loadedLibrary.data = result;
+		this.__loadedLibrary.set(result);
 		this.__libraryChanges.unsetAll();
 		alert.setError('Library updated');
 	}

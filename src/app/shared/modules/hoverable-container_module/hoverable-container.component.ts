@@ -6,7 +6,7 @@ import { Hoverable } from '@interfaces/hoverable.interface';
 To use this component's events (hover) and (unhover), example:
 
 <hoverable-container #reference  (hover)="doStuff()"  (unhover)="doOtherStuff()">
-	<nested-component [class.hovered]="reference.isHovered()"></nested-component>
+	<nested-component [selected]="reference.isHovered()"></nested-component>
 </hoverable-container>
  *********/
 
@@ -14,7 +14,7 @@ To use this component's events (hover) and (unhover), example:
 	selector: 'hoverable-container',
 	template: `
 		<div class="hoverable-container" [class.hovered]="isHovered()"
-			 (mouseenter)="set_hovered()" (mouseleave)="unset_hovered()"
+			 (mouseenter)="set_hovered($event)" (mouseleave)="unset_hovered($event)"
 		>
 			<ng-content></ng-content>
 		</div>
@@ -28,13 +28,15 @@ export class HoverableContainerComponent implements Hoverable {
 	private __hovered = false;
 
 
-	set_hovered(): void {
+	set_hovered(event): void {
+		event.stopPropagation();
 		this.__hovered = true;
 		this.hover.emit();
 	}
 
 
-	unset_hovered(): void {
+	unset_hovered(event): void {
+		event.stopPropagation();
 		this.__hovered = false;
 		this.unhover.emit();
 	}

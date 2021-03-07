@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import { libraryNotFound } from '@string-constants/mongo-db-realm-function-errors';
-import { LoadedLibraryData as loadedLibrary, LoadedImagesData as loadedImages }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
-import { LibraryServicesModule } from '@app/routed-modules/library_module/library-services.module';
+import { LibraryServicesModule } from '../../../../library-services.module';
 import { HandleDbOperationErrorService }
-	from '@services/process/handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
+	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleNoRecordMatchErrorService } from '@handle-db-operation-error_service/handle-no-record-match-error.service';
+import { HandleNotLoggedInErrorService } from '@handle-db-operation-error_service/handle-not-logged-in-error.service';
+import { LoadedImageStateService } from '@services/loaded-image-state_service/loaded-image-state.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
 export class HandleGetLibraryImagesErrorService extends HandleDbOperationErrorService {
 
+	constructor(
+		private __loadedImageStateManager: LoadedImageStateService,
+		__handleNoRecordMatchError: HandleNoRecordMatchErrorService,
+		__handleNotLoggedInError: HandleNotLoggedInErrorService
+	) {
+		super(__handleNoRecordMatchError, __handleNotLoggedInError);
+	}
+
+
 	async go(error) {
-		// If library retrieval unsuccessful, library data must be undefined.
-		loadedLibrary.data = undefined;
-		loadedImages.data = undefined;
+		this.__loadedImageStateManager.setDefault();
 
 		if (not(error.message.includes(libraryNotFound))) await super.go(error);
 	}

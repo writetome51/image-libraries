@@ -1,20 +1,19 @@
 import { DataTotalService } from '@app-paginator/data-total.abstract.service';
 import { Injectable } from '@angular/core';
-import { LibraryImageTotalInBrowserStorageService }
-	from '@browser-storage/library-image-total-in-browser-storage.service';
 import { LibraryServicesModule } from '../../../library-services.module';
-import { ProcessGetLibraryImageTotalService }
-	from './process-get-library-image-total_service/process-get-library-image-total.service';
+import { StoredLibraryImageTotalService } from './stored-library-image-total.service';
+import { AssureRequestedLibraryStoredLocally }
+	from './assure-requested-library-stored-locally.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
 export class LibraryImagesDataTotalService extends DataTotalService {
 
 	constructor(
-		__processStoreTotal: ProcessGetLibraryImageTotalService,
-		__storedTotal: LibraryImageTotalInBrowserStorageService
+		__storeTotal: AssureRequestedLibraryStoredLocally,
+		__storedTotal: StoredLibraryImageTotalService
 	) {
-		super(__processStoreTotal, __storedTotal);
+		super(__storeTotal, __storedTotal);
 	}
 
 }

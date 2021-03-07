@@ -39,11 +39,11 @@
 			"@current-user-inputs_service/*": [
 				"src/app/shared/services/current-user-inputs_service/*"
 			],
+			"@db/*": [
+				"src/app/shared/services/db/*"
+			],
 			"@decorators/*": [
 				"src/app/shared/decorators/*"
-			],
-			"@encrypted-item-in-browser-storage/*": [
-				"src/app/shared/services/encrypted-item-in-browser-storage/*"
 			],
 			"@environments/*": [
 				"src/environments/*"

@@ -1,18 +1,18 @@
 import { HandleGetLibraryImagesErrorService } from './handle-get-library-images-error.service';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterGettingLibraryImagesService }
-	from './run-tasks-after-getting-library-images.service';
-import { LibraryServicesModule } from '@app/routed-modules/library_module/library-services.module';
-import { InterpretDataTransportResultService }
-	from '@services/process/interpret-data-transport-result.service';
+import { LibraryServicesModule } from '../../../../library-services.module';
+import { InterpretDbOperationResultService }
+	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { RunTasksAfterGettingImagesService }
+	from '@run-post-success-tasks/run-tasks-after-getting-images.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
-export class InterpretGetLibraryImagesResultService extends InterpretDataTransportResultService {
+export class InterpretGetLibraryImagesResultService extends InterpretDbOperationResultService {
 
 	constructor(
 		__handleError: HandleGetLibraryImagesErrorService,
-		__runPostSuccessTasks: RunTasksAfterGettingLibraryImagesService,
+		__runPostSuccessTasks: RunTasksAfterGettingImagesService,
 	) {
 		super(__handleError, __runPostSuccessTasks);
 	}

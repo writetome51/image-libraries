@@ -1,16 +1,20 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ImagesLoadedFromData as imagesLoadedFrom, LoadedImagesData as loadedImages }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
+import { LoadedImageStateService }
+	from '@services/loaded-image-state_service/loaded-image-state.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingImagesService implements IDoThis {
 
+	constructor(private __loadedImageState: LoadedImageStateService) {
+	}
+
+
 	async go(result: ImageBatch) {
-		loadedImages.data = result.batch;
-		imagesLoadedFrom.data = result.from;
+		this.__loadedImageState.setLoad(result.batch);
+		this.__loadedImageState.setOrigin(result.from);
 	}
 
 }

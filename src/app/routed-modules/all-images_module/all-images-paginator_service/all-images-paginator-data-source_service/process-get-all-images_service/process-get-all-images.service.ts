@@ -4,10 +4,12 @@ import { GetAllImagesService } from './get-all-images.service';
 import { AllImagesServicesModule } from '../../../all-images-services.module';
 import { InterpretGetImagesResultService } from
 '@interpret-result/interpret-get-images-result_service/interpret-get-images-result.service';
+import { SetLoadedImages } from '@interfaces/set-loaded-images.interface';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
-export class ProcessGetAllImagesService extends ProcessDbOperationService {
+export class ProcessGetAllImagesService extends ProcessDbOperationService
+	implements SetLoadedImages {
 
 	constructor(
 		__getResult: GetAllImagesService,

@@ -2,7 +2,7 @@ import { AlertService } from '@services/alert.service';
 import { AppNameData as appName } from '@read-only-data/app-name.data';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { ResetRuntimeStateDataToDefaultSettingsService as resetRuntimeStateDataToDefaults }
+import { ResetRuntimeStateDataToDefaultSettingsService }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
@@ -23,8 +23,11 @@ export class AppComponent {
 	}
 
 
-	constructor(private __sessionIDInBrowser: SessionIDInBrowserStorageService) {
-		resetRuntimeStateDataToDefaults.go();
+	constructor(
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
+		private __resetRuntimeStateDataToDefaults: ResetRuntimeStateDataToDefaultSettingsService
+	) {
+		this.__resetRuntimeStateDataToDefaults.go();
 	}
 
 
