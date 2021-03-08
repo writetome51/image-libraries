@@ -13,8 +13,7 @@ export class RunTasksAfterGettingImagesService implements IDoThis {
 
 
 	async go(result: ImageBatch) {
-		this.__loadedImageState.setLoad(result.batch);
-		this.__loadedImageState.setOrigin(result.from);
+		this.__loadedImageState.setLoadedImages(result);
 	}
 
 }

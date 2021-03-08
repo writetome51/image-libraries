@@ -7,6 +7,7 @@ import { LoadedImagesData as loadedImages } from './loaded-images.data';
 import { DBImage } from '@interfaces/db-image.interface';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
+import { ImageBatch } from '@interfaces/image-batch.interface';
 
 
 // Created to solve problem of having so many different data structures keeping track of
@@ -22,26 +23,23 @@ export class LoadedImageStateService implements ResettableToDefault {
 	) {}
 
 
-	setOrigin(value: 'all' | 'library' | 'nowhere') {
-		imagesLoadedFrom.status = value;
-		if (value === 'all'){
+	getOrigin(): 'all' | 'library' | 'nowhere' {
+		return imagesLoadedFrom.status;
+	}
+
+
+	setLoadedImages(imageBatch: ImageBatch) {
+		loadedImages.data = imageBatch.images;
+
+		imagesLoadedFrom.status = imageBatch.from;
+		if (imageBatch.from === 'all'){
 			this.__loadedLibrary.remove();
 			requestedLibrary.name = undefined;
 		}
 	}
 
 
-	getOrigin(): 'all' | 'library' | 'nowhere' {
-		return imagesLoadedFrom.status;
-	}
-
-
-	setLoad(value: DBImage[]) {
-		loadedImages.data = value;
-	}
-
-
-	getLoad(): DBImage[] {
+	getLoadedImages(): DBImage[] {
 		return loadedImages.data;
 	}
 
@@ -50,6 +48,7 @@ export class LoadedImageStateService implements ResettableToDefault {
 		imagesLoadedFrom.setDefault();
 		loadedImages.setDefault();
 		this.__loadedLibrary.remove();
+		requestedLibrary.name = undefined;
 	}
 
 }

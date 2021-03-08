@@ -35,7 +35,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 		load.number = loadNumber;
 		await this.__setLoadedImages.go(load);
 
-		return this.__loadedImageState.getLoad();
+		return this.__loadedImageState.getLoadedImages();
 	}
 
 }

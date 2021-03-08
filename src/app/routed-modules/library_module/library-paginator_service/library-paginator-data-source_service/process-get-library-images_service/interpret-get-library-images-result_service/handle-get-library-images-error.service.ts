@@ -13,7 +13,7 @@ import { LoadedImageStateService } from '@services/loaded-image-state_service/lo
 export class HandleGetLibraryImagesErrorService extends HandleDbOperationErrorService {
 
 	constructor(
-		private __loadedImageStateManager: LoadedImageStateService,
+		private __loadedImageState: LoadedImageStateService,
 		__handleNoRecordMatchError: HandleNoRecordMatchErrorService,
 		__handleNotLoggedInError: HandleNotLoggedInErrorService
 	) {
@@ -22,7 +22,7 @@ export class HandleGetLibraryImagesErrorService extends HandleDbOperationErrorSe
 
 
 	async go(error) {
-		this.__loadedImageStateManager.setDefault();
+		this.__loadedImageState.setDefault();
 
 		if (not(error.message.includes(libraryNotFound))) await super.go(error);
 	}
