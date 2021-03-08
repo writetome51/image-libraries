@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LibraryViewerComponent } from './library-viewer.component';
 import { LibraryPaginationControlsComponent }
-	from './library-pagination-controls_component/library-pagination-controls.component';
+	from './library-pagination-controls.component';
 import { ImageSizeSliderModule } from '@image-size-slider_module/image-size-slider.module';
 import { SaveChangesButtonComponent } from './save-changes-button.component';
 import { UndoChangesButtonComponent } from './undo-changes-button.component';

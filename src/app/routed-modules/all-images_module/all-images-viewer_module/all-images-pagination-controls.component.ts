@@ -25,7 +25,6 @@ export class AllImagesPaginationControlsComponent {
 	constructor(
 		public paginator: AllImagesPaginatorService,
 		public jumpToPageInput: AllImagesJumpToPageInputService
-	) {
-	}
+	) {}
 
 }

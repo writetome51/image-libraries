@@ -14,7 +14,7 @@ import { ProcessLoginByPasswordService }
 				<submit-form-button [label]="'Sign In'" [process]="process">
 				</submit-form-button>
 
-				<a [routerLink]="moduleRoutes.SecurityQuestionModule" routerLinkActive="active">
+				<a [routerLink]="modulePath.SecurityQuestionModule" routerLinkActive="active">
 					Forgot Password?
 				</a>
 			</form>
@@ -23,7 +23,7 @@ import { ProcessLoginByPasswordService }
 })
 export class LoginFormComponent {
 
-	moduleRoutes = AppModulePathData;
+	modulePath = AppModulePathData;
 
 
 	constructor(public process: ProcessLoginByPasswordService) {

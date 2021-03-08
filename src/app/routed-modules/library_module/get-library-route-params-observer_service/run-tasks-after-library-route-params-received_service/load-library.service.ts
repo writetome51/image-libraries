@@ -29,9 +29,9 @@ export class LoadLibraryService implements IDoThis {
 			if (this.__libraryDoesntExist(libName)) {
 				return this.__redirectToLoggedInHome.go();
 			}
-			else await this.__paginator.resetToFirstPage();
+			else await this.__paginator.initialize();
 		}
-		await this.__setPaginatorToRequestedPage(pageNumber);
+		await this.__paginator.setCurrentPageNumber(pageNumber);
 	}
 
 
@@ -42,11 +42,6 @@ export class LoadLibraryService implements IDoThis {
 
 	private __libraryDoesntExist(libName) {
 		return not(libraryNames.data.includes(libName));
-	}
-
-
-	private async __setPaginatorToRequestedPage(num) {
-		await this.__paginator.setCurrentPageNumber(num);
 	}
 
 }

@@ -3,6 +3,7 @@ import { AppPaginatorDataSourceService }
 import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
 import { LoadData as load, PageData as page }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { noValue } from '@writetome51/has-value-no-value';
 
 
 export abstract class AppPaginatorService extends BigDatasetPaginator {
@@ -16,9 +17,15 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	}
 
 
-	async resetToFirstPage(): Promise<void> {
-		// this.__dataSource.dataTotal must be set before fetching any pages.
+	// Must be called if no pages have been fetched yet.
+
+	async initialize(): Promise<void> {
 		await this.__dataSource.set_dataTotal();
+	}
+
+
+	async resetToFirstPage(): Promise<void> {
+		await this.initialize();
 
 		// If dataTotal is 0, this triggers error in super.resetToFirstPage():
 		await super.resetToFirstPage().catch(() => {}); // just keep running.
@@ -26,6 +33,8 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 
 
 	async setCurrentPageNumber(num): Promise<void> {
+		if (noValue(this.__dataSource.dataTotal)) await this.initialize();
+
 		// If dataTotal is 0, this triggers error in super.setCurrentPageNumber():
 		await super.setCurrentPageNumber(num).catch(() => {}); // just keep running.
 	}
