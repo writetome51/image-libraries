@@ -1,10 +1,10 @@
-import { IDoThis } from '@interfaces/i-do-this.interface';
 import * as resettableClasses from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
+import { append } from '@writetome51/array-append-prepend';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoadedImageStateService }
 	from './loaded-image-state_service/loaded-image-state.service';
-import { append } from '@writetome51/array-append-prepend';
+import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 
 
 @Injectable({providedIn: 'root'})

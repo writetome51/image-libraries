@@ -1,8 +1,8 @@
+import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
 import { DataTotalService } from '../data-total.abstract.service';
 import { DBImage } from '@interfaces/db-image.interface';
 import { LoadData as load }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
 import { LoadedImageStateService }
 	from '@services/loaded-image-state_service/loaded-image-state.service';
 import { SetLoadedImages } from '@interfaces/set-loaded-images.interface';
