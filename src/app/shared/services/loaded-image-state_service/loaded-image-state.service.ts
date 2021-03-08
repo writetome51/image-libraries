@@ -10,17 +10,10 @@ import { RequestedLibraryData as requestedLibrary }
 import { ImageBatch } from '@interfaces/image-batch.interface';
 
 
-// Created to solve problem of having so many different data structures keeping track of
-// app's current state of loaded images (i.e., are they from a library or are they all the
-// user's images, if they're from a library what library are they from, storing the currently
-// loaded images, etc.
-
 @Injectable({providedIn: 'root'})
 export class LoadedImageStateService implements ResettableToDefault {
 
-	constructor(
-		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {}
+	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {}
 
 
 	getOrigin(): 'all' | 'library' | 'nowhere' {

@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -20,9 +20,9 @@ export class CreateUserService implements IDoThis {
 			'pub_createAndReturnUser',
 			// We don't want to pass entire `currentUser`, but only these 3 properties.
 			{
-				email: currentUser.email,
-				password: currentUser.password,
-				securityQuestion: currentUser.securityQuestion
+				email: currentUserForm.email,
+				password: currentUserForm.password,
+				securityQuestion: currentUserForm.securityQuestion
 			}
 		);
 	}

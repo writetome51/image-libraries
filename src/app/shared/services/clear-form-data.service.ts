@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
 // import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -8,17 +8,17 @@ import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
 export class ClearFormDataService { // implements IDoThis
 
 	static go(): void {
-		currentUser.password = '';
+		currentUserForm.password = '';
 
-		currentUser.passwordAgain = '';
+		currentUserForm.passwordAgain = '';
 
-		currentUser.newPassword = '';
+		currentUserForm.newPassword = '';
 
-		currentUser.securityQuestion = {question: '', answer: ''};
+		currentUserForm.securityQuestion = {question: '', answer: ''};
 
-		currentUser.email = '';
+		currentUserForm.email = '';
 
-		currentUser.newEmail = '';
+		currentUserForm.newEmail = '';
 
 		newLibrary.name = '';
 

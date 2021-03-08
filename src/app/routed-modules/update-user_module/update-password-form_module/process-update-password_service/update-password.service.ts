@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
@@ -25,8 +25,8 @@ export class UpdatePasswordService implements IDoThis {
 	async go(): Promise<DBUser | HasError> {
 		return await this.__realmFn.call('pub_updatePasswordAndReturnUser', {
 			email: this.__emailInBrowser.get(),
-			password: currentUser.password,
-			newPassword: currentUser.newPassword,
+			password: currentUserForm.password,
+			newPassword: currentUserForm.newPassword,
 			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}

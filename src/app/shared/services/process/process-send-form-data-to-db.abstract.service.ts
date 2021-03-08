@@ -6,7 +6,7 @@ import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
 
-export abstract class ProcessSaveFormDataToDbService extends ProcessDbOperationService {
+export abstract class ProcessSendFormDataToDbService extends ProcessDbOperationService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,

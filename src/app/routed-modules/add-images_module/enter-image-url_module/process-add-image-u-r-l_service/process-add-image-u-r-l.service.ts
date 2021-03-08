@@ -1,5 +1,5 @@
-import { ProcessSaveFormDataToDbService }
-	from '@process/process-save-form-data-to-db.abstract.service';
+import { ProcessSendFormDataToDbService }
+	from '@process/process-send-form-data-to-db.abstract.service';
 import { ImageURLInputService } from '../image-url-input.service';
 import { Injectable } from '@angular/core';
 import { InterpretSaveNewImagesResultService }
@@ -9,7 +9,7 @@ import { EnterImageURLServicesModule } from '../enter-image-url-services.module'
 
 
 @Injectable({providedIn: EnterImageURLServicesModule})
-export class ProcessAddImageURLService extends ProcessSaveFormDataToDbService {
+export class ProcessAddImageURLService extends ProcessSendFormDataToDbService {
 
 	constructor(
 		__validatingInput: ImageURLInputService,

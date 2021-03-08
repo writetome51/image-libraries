@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
@@ -17,7 +17,7 @@ export class LoginBySecurityQuestionService implements IDoThis {
 
 	async go(): Promise<DBUser | HasError> {
 		return await this.__realmFn.call('pub_loginBySecurityQuestionAndReturnUser',
-			{email: currentUser.email, securityQuestion: currentUser.securityQuestion}
+			{email: currentUserForm.email, securityQuestion: currentUserForm.securityQuestion}
 		);
 	}
 

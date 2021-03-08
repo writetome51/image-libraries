@@ -1,5 +1,5 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { DBUser } from '@interfaces/db-user.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
@@ -22,9 +22,9 @@ export class UpdateEmailService implements IDoThis {
 
 	async go(): Promise<DBUser | HasError> {
 		return await this.__realmFn.call('pub_updateEmailAndReturnUser', {
-			email: currentUser.email,
-			password: currentUser.password,
-			newEmail: currentUser.newEmail,
+			email: currentUserForm.email,
+			password: currentUserForm.password,
+			newEmail: currentUserForm.newEmail,
 			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}

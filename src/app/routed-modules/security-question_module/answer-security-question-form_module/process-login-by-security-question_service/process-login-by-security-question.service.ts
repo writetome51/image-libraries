@@ -1,5 +1,5 @@
-import { ProcessSaveFormDataToDbService }
-	from '@process/process-save-form-data-to-db.abstract.service';
+import { ProcessSendFormDataToDbService }
+	from '@process/process-send-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
 import { SecurityAnswerLoginInputService } from '../security-answer-login-input.service';
@@ -8,7 +8,7 @@ import { InterpretLoginResultService } from '@interpret-result/interpret-login-r
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class ProcessLoginBySecurityQuestionService extends ProcessSaveFormDataToDbService {
+export class ProcessLoginBySecurityQuestionService extends ProcessSendFormDataToDbService {
 
 	constructor(
 		__validatingInput: SecurityAnswerLoginInputService,

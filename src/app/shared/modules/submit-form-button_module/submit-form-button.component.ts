@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ClickExecuteProcessContainerComponent }
 	from '@abstract-components/click-execute-process-container.abstract.component';
-import { ProcessSaveFormDataToDbService }
-	from '@process/process-save-form-data-to-db.abstract.service';
+import { ProcessSendFormDataToDbService }
+	from '@process/process-send-form-data-to-db.abstract.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { ProcessSaveFormDataToDbService }
 })
 export class SubmitFormButtonComponent extends ClickExecuteProcessContainerComponent {
 
-	@Input() set process(value: ProcessSaveFormDataToDbService) {
+	@Input() set process(value: ProcessSendFormDataToDbService) {
 		this._process = value;
 	}
 

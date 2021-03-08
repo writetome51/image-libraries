@@ -1,7 +1,7 @@
-import { CurrentUserData as currentUser }
-	from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { SecurityQuestion } from '@interfaces/security-question.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
@@ -16,7 +16,7 @@ export class GetSecurityQuestionService implements IDoThis {
 
 
 	async go(): Promise<SecurityQuestion | HasError> {
-		return await this.__realmFn.call('pub_getSecurityQuestion', {email: currentUser.email});
+		return await this.__realmFn.call('pub_getSecurityQuestion', {email: currentUserForm.email});
 	}
 
 }

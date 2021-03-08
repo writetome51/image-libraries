@@ -1,5 +1,5 @@
-import { ProcessSaveFormDataToDbService }
-	from '@process/process-save-form-data-to-db.abstract.service';
+import { ProcessSendFormDataToDbService }
+	from '@process/process-send-form-data-to-db.abstract.service';
 import { Injectable } from '@angular/core';
 import { UpdatePasswordInputsService }
 	from '../update-password-inputs_service/update-password-inputs.service';
@@ -10,7 +10,7 @@ import { UpdateUserServicesModule } from '../../update-user-services.module';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class ProcessUpdatePasswordService extends ProcessSaveFormDataToDbService {
+export class ProcessUpdatePasswordService extends ProcessSendFormDataToDbService {
 
 	constructor(
 		__validatingInputs: UpdatePasswordInputsService,

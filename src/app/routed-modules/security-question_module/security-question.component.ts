@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { CurrentUserData as currentUser } from '@runtime-state-data/static-classes/current-user.data';
+import { CurrentUserFormData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form.data';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
-import { SecurityQuestionModuleTitleData as moduleTitle } from './security-question-module-title.data';
+import { SecurityQuestionModuleTitleData as moduleTitle }
+	from './security-question-module-title.data';
 import { Title } from '@angular/platform-browser';
 
 
@@ -17,7 +19,8 @@ import { Title } from '@angular/platform-browser';
 
 			<form clearFormOnInit clearAlertOnDestroy>
 
-				<get-security-question-form *ngIf="!(haveReceivedQuestion)"></get-security-question-form>
+				<get-security-question-form *ngIf="!(haveReceivedQuestion)">
+				</get-security-question-form>
 
 				<answer-security-question-form *ngIf="haveReceivedQuestion">
 				</answer-security-question-form>
@@ -33,13 +36,14 @@ export class SecurityQuestionComponent {
 
 
 	get question() {
-		return currentUser.question;
+		return currentUserForm.question;
 	}
 
 
 	get haveReceivedQuestion() {
 		return questionStatus.received;
 	}
+
 
 	constructor(private __title: Title) {
 		this.__title.setTitle(moduleTitle.data);
