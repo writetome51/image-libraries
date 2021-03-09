@@ -15,17 +15,16 @@ export class AssureRequestedLibraryStoredLocally implements IDoThis {
 
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService,
-		private __libraryInBrowser: LoadedLibraryInBrowserStorageService
+		private __loadedLibrary: LoadedLibraryInBrowserStorageService
 	) {
 	}
 
 
 	async go() {
+		let library = this.__loadedLibrary.get();
+		if (noValue(library) || library.name !== requestedLibrary.name) {
 
-		if (noValue(this.__libraryInBrowser.get()) ||
-			this.__libraryInBrowser.get().name !== requestedLibrary.name) {
-
-			this.__libraryInBrowser.set(
+			this.__loadedLibrary.set(
 				this.__librariesInBrowser.get()[requestedLibrary.name]
 			);
 		}

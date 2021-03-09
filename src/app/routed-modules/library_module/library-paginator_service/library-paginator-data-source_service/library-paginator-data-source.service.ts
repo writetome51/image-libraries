@@ -6,7 +6,8 @@ import { LibraryImagesDataTotalService }
 import { LibraryServicesModule } from '../../library-services.module';
 import { ProcessGetLibraryImagesService }
 	from './process-get-library-images_service/process-get-library-images.service';
-import { LoadedImageStateService } from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImageStateService }
+	from '@services/loaded-image-state_service/loaded-image-state.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
