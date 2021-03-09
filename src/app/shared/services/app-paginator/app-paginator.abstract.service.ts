@@ -8,7 +8,6 @@ import { noValue } from '@writetome51/has-value-no-value';
 
 export abstract class AppPaginatorService extends BigDatasetPaginator {
 
-
 	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
 
@@ -53,6 +52,5 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 		super.setItemsPerLoad(num);
 		load.size = this.getItemsPerLoad();
 	}
-
 
 }

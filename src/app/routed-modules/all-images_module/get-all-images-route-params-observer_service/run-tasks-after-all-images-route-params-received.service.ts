@@ -35,8 +35,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 
 	private __allImagesNotLoaded(): boolean {
-		return (this.__loadedImageState.getLoadedImages().length === 0) ||
-			not(this.__loadedImageState.getOrigin() === 'all');
+		return not(this.__loadedImageState.getOrigin() === 'all');
 	}
 
 }

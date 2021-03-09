@@ -1,5 +1,5 @@
 import { AssureUserImageTotalStoredLocallyService }
-	from './assure-user-image-total-stored-locally.service';
+	from '@services/assure-user-image-total-stored-locally.service';
 import { AssureLibrariesStoredLocallyService } from './assure-libraries-stored-locally.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';

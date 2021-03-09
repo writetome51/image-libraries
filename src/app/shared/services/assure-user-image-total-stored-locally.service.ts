@@ -5,14 +5,13 @@ import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiti
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetUserImageTotalService }
 	from '@process/process-get-user-image-total_service/process-get-user-image-total.service';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 
 
-@Injectable({providedIn: LoggedInNavigatorServicesModule})
+@Injectable({providedIn: 'root'})
 export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	constructor(
@@ -24,16 +23,20 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	async go() {
 		if (this.__userImageTotalStoredLocally()) return;
-
-		else await executeFunctionRequiringWaiting.go(
-			() => this.__processGetUserImageTotal.go(), executionStatus
-		);
+		else await this.__storeUserImageTotalLocally();
 	}
 
 
 	private __userImageTotalStoredLocally(): boolean {
 		let total = this.__userImageTotalInBrowser.get();
 		return hasValue(total);
+	}
+
+
+	private async __storeUserImageTotalLocally() {
+		await executeFunctionRequiringWaiting.go(
+			() => this.__processGetUserImageTotal.go(), executionStatus
+		);
 	}
 
 }

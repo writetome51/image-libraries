@@ -8,8 +8,8 @@ import { HandleDbOperationErrorService }
 @Injectable({providedIn: ImageActionMenuServicesModule})
 export class HandleAddImageToLibraryErrorService extends HandleDbOperationErrorService {
 
-	async go(errMessage) {
-		console.error(errMessage);
+	async go(error: {message: string}) {
+		console.error(error.message);
 
 		// if (errMessage.includes()) alert.error = 'Library update unsuccessful';
 		// else await super.go(errMessage);
