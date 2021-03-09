@@ -4,11 +4,10 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
-import { LibraryServicesModule } from '../../../library-services.module';
 
 
-@Injectable({providedIn: LibraryServicesModule})
-export class StoredLibraryImageTotalService implements Gettable<number> {
+@Injectable({providedIn: 'root'})
+export class LoadedLibraryImageTotalService implements Gettable<number> {
 
 	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {
 	}

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
 import { LibraryPaginatorService } from '../library-paginator_service/library-paginator.service';
-import { LoadedImagesData as loadedImages }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LoadedLibraryImageTotalService }
+	from '@services/library/loaded-library-image-total.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { LoadedImagesData as loadedImages }
 export class LibraryViewerComponent {
 
 	get imageTotal(): number {
-		return loadedImages.data.length;
+		return this.__loadedLibraryImageTotal.get();
 	}
 
 
@@ -28,8 +28,8 @@ export class LibraryViewerComponent {
 
 	constructor(
 		private __paginator: LibraryPaginatorService,
-		private __libraryChanges: LibraryChangesService
-	) {
-	}
+		private __libraryChanges: LibraryChangesService,
+		private __loadedLibraryImageTotal: LoadedLibraryImageTotalService
+	) {}
 
 }

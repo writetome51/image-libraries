@@ -1,18 +1,20 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { RemoveCachedDataService as removeCachedData } from '@services/remove-cached-data.service';
+import { RemoveCachedDataService } from '@services/remove-cached-data.service';
 import { Router } from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterLogoutService implements IDoThis {
 
-	constructor(private __router: Router) {
-	}
+	constructor(
+		private __router: Router,
+		private __removeCachedData: RemoveCachedDataService,
+	) {}
 
 
 	async go() {
-		removeCachedData.go();
+		this.__removeCachedData.go();
 		await this.__router.navigate(['/']);
 	}
 

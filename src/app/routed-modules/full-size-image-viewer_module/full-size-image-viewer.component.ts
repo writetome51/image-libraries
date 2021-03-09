@@ -4,10 +4,9 @@ import { DBImage } from '@interfaces/db-image.interface';
 import { FullSizeImageViewerModuleTitleData as moduleTitle }
 	from './full-size-image-viewer-module-title.data';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { LoadedImagesData as loadedImages }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
 import { Title } from '@angular/platform-browser';
+import { LoadedImageStateService } from '@services/loaded-image-state_service/loaded-image-state.service';
 
 
 @Component({
@@ -18,7 +17,8 @@ export class FullSizeImageViewerComponent {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __title: Title
+		private __title: Title,
+		private __loadedImageState: LoadedImageStateService
 	) {
 		this.__title.setTitle(moduleTitle.data);
 	}
@@ -34,7 +34,7 @@ export class FullSizeImageViewerComponent {
 
 		return getByTest(
 			(image: DBImage) => image._id === id,
-			loadedImages.data
+			this.__loadedImageState.getLoadedImages()
 		)[0]; // result expected to only have one item.
 	}
 
