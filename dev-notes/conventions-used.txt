@@ -42,7 +42,7 @@ Usage of the word 'Process'
 3. If no errors, executing tasks based on the successful result.
 
 'Process' is used in the names of Services that run a process.
-Those Services follow this naming convention: `Process{Action}Service`
+Those Services follow this naming convention: `Process{Action}Service`.
 Examples:
 ProcessDbOperationService runs a process that involves interaction with a database, and
 its {Action} is 'DbOperation'.
@@ -59,8 +59,8 @@ Load
 
 Any use of the word 'load' is referring to the total pieces of data (each 'piece'
 most likely being an object) the app is allowed to have stored in the browser at once.
-For example, ImagesStorage.getAllLoad() retrieves N of all a user's images, where N is
-the load size.
+For example, AllUserImages.getLoad() retrieves N of all a user's images, where N is the
+load size.
 
 
 Subscribables (Observables)
@@ -90,7 +90,7 @@ imported is not actually used but is referred to in a comment somewhere.  Exampl
 
 export interface DBLibrary {
 
-	// Foreign keys, each relating to `DBImage._id`
+	// Foreign keys, each relating to `DBImage._id`  <----
 	_image_ids: string[];
 
 }
