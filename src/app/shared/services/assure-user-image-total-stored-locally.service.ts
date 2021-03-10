@@ -1,7 +1,3 @@
-import { BackgroundExecutionStatusData as executionStatus }
-	from '@runtime-state-data/background-execution-status.data';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -34,9 +30,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 
 	private async __storeUserImageTotalLocally() {
-		await executeFunctionRequiringWaiting.go(
-			() => this.__processGetUserImageTotal.go(), executionStatus
-		);
+		await this.__processGetUserImageTotal.go();
 	}
 
 }

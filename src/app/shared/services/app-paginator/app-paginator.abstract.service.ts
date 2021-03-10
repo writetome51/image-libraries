@@ -16,26 +16,15 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	}
 
 
-	// Must be called if no pages have been fetched yet.
+	async setCurrentPageNumber(num, option = {reload:false}): Promise<void> {
+		if (noValue(this.__dataSource.dataTotal) || option.reload) {
 
-	async initialize(): Promise<void> {
-		await this.__dataSource.set_dataTotal();
-	}
-
-
-	async resetToFirstPage(): Promise<void> {
-		await this.initialize();
-
-		// If dataTotal is 0, this triggers error in super.resetToFirstPage():
-		await super.resetToFirstPage().catch(() => {}); // just keep running.
-	}
-
-
-	async setCurrentPageNumber(num): Promise<void> {
-		if (noValue(this.__dataSource.dataTotal)) await this.initialize();
-
+			// dataTotal must be reset if option.reload = true, because the only way
+			// to be sure data is refreshing from source is if dataTotal gets refreshed too.
+			await this.__dataSource.set_dataTotal();
+		}
 		// If dataTotal is 0, this triggers error in super.setCurrentPageNumber():
-		await super.setCurrentPageNumber(num).catch(() => {}); // just keep running.
+		await super.setCurrentPageNumber(num, option).catch(() => {}); // just keep running.
 	}
 
 

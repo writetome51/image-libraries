@@ -1,7 +1,8 @@
 import { DataTotalService } from '@app-paginator/data-total.abstract.service';
 import { Injectable } from '@angular/core';
 import { LibraryServicesModule } from '../../../library-services.module';
-import { LoadedLibraryImageTotalService } from '@services/library/loaded-library-image-total.service';
+import { LoadedLibraryImageTotalService }
+	from '@services/library/loaded-library-image-total.service';
 import { AssureRequestedLibraryStoredLocally }
 	from './assure-requested-library-stored-locally.service';
 

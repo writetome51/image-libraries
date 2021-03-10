@@ -32,7 +32,7 @@
 		"@writetome51/array-remove-by-index": ">=2.0.0",
 		"@writetome51/array-remove-by-test": ">=2.1.0",
 		"@writetome51/array-remove-head-tail": ">=2.0.0",
-		"@writetome51/big-dataset-paginator": ">=1.0.2",
+		"@writetome51/big-dataset-paginator": ">=2.0.0",
 		"@writetome51/get-arr-filled": ">=0.0.3",
 		"@writetome51/get-array-copy": ">=1.0.0",
 		"@writetome51/get-array-of-property": "0.0.1",

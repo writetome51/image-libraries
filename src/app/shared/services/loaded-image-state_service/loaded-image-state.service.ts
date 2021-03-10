@@ -8,10 +8,11 @@ import { DBImage } from '@interfaces/db-image.interface';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { ImageBatch } from '@interfaces/image-batch.interface';
+import { Settable } from '@interfaces/settable.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class LoadedImageStateService implements ResettableToDefault {
+export class LoadedImageStateService implements ResettableToDefault, Settable {
 
 	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {}
 
@@ -21,7 +22,7 @@ export class LoadedImageStateService implements ResettableToDefault {
 	}
 
 
-	setLoadedImages(imageBatch: ImageBatch) {
+	set(imageBatch: ImageBatch) {
 		loadedImages.data = imageBatch.images;
 
 		imagesLoadedFrom.status = imageBatch.from;

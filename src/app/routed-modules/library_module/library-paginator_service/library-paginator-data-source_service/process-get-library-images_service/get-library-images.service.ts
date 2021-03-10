@@ -23,14 +23,12 @@ export class GetLibraryImagesService implements IDoThis {
 
 	async go(load: LoadConfiguration): Promise<ImageBatch | HasError> {
 
-		let batch = await this.__realmFn.call('pub_getLibraryImagesBatch', {
+		return await this.__realmFn.call('pub_getLibraryImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),
 			name: requestedLibrary.name,
 			batchSize: load.size,
 			batchNumber: load.number
 		});
-		batch['from'] = 'library';
-		return batch;
 	}
 
 }

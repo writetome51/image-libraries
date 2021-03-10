@@ -20,7 +20,7 @@ export class AssureRequestedLibraryStoredLocally implements IDoThis {
 	}
 
 
-	async go() {
+	go() {
 		let library = this.__loadedLibrary.get();
 		if (noValue(library) || library.name !== requestedLibrary.name) {
 

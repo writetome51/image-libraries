@@ -6,19 +6,28 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AddImagesServicesModule } from '../add-images-services.module';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+import { UserImageTotalInBrowserStorageService }
+	from '@browser-storage/user-image-total-in-browser-storage.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class RunTasksAfterSavingNewImagesService implements IDoThis {
+export class RunTasksAfterSavingNewImagesToAccountService implements IDoThis {
 
 	constructor(
-		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService
+		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
+		private __userImageTotal: UserImageTotalInBrowserStorageService
 	) {
 	}
 
 	go() {
 		alert.setSuccess('New images saved');
-		newImages.data = [];
+		newImages.setDefault();
+		this.__emptyImageDataSoItWillBeForcedToRefresh();
+	}
+
+
+	private __emptyImageDataSoItWillBeForcedToRefresh() {
+		this.__userImageTotal.remove();
 		this.__runTasksAfterModifyingLoadedImages.go();
 	}
 

@@ -1,7 +1,7 @@
 import { AddImagesServicesModule } from '../add-images-services.module';
 import { HandleSaveNewImagesErrorService } from './handle-save-new-images-error.service';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterSavingNewImagesService } from './run-tasks-after-saving-new-images.service';
+import { RunTasksAfterSavingNewImagesToAccountService } from './run-tasks-after-saving-new-images-to-account.service';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
@@ -11,7 +11,7 @@ export class InterpretSaveNewImagesResultService extends InterpretDbOperationRes
 
 	constructor(
 		__handleError: HandleSaveNewImagesErrorService,
-		__runPostSuccessTasks: RunTasksAfterSavingNewImagesService
+		__runPostSuccessTasks: RunTasksAfterSavingNewImagesToAccountService
 	) {
 		super(__handleError, __runPostSuccessTasks);
 	}

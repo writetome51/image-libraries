@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserImageTotalInBrowserStorageService } from '@browser-storage/user-image-total-in-browser-storage.service';
 
 
 @Component({
@@ -6,12 +7,22 @@ import { Component } from '@angular/core';
 	template: `
 		<global-action-menu></global-action-menu>
 
-		<image-size-slider></image-size-slider>
+		<ng-container *ngIf="imageTotal > 0">
+			<image-size-slider></image-size-slider>
+			<image-list></image-list>
+		</ng-container>
 
-		<image-list></image-list>
 
 		<all-images-pagination-controls></all-images-pagination-controls>
 	`
 })
 export class AllImagesViewerComponent {
+
+	get imageTotal(): number {
+		return this.__userImageTotal.get();
+	}
+
+
+	constructor(private __userImageTotal: UserImageTotalInBrowserStorageService) {}
+
 }

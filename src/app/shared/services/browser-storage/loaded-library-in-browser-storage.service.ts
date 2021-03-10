@@ -9,7 +9,7 @@ export class LoadedLibraryInBrowserStorageService
 	extends EncryptedItemInBrowserStorageService<DBLibrary> {
 
 	constructor() {
-		super(localStorage, 'current-lib');
+		super(sessionStorage, 'current-lib');
 	}
 
 }

@@ -23,19 +23,27 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 
 	async go(params): Promise<void> {
+		let pageNum = Number(params[paramID.pageNumber]);
 
-		if (this.__allImagesNotLoaded()) {
-			await this.__paginator.initialize();
-			this.__jumpToPageInput.setMaxValue();
-		}
+		if (this.__allImagesNotLoaded()) await this.__refreshLoadAndSetPage(pageNum);
+		else await this.__setPage(pageNum);
 
-		let page = Number(params[paramID.pageNumber]);
-		await this.__paginator.setCurrentPageNumber(page);
+		this.__jumpToPageInput.setMaxValue();
 	}
 
 
 	private __allImagesNotLoaded(): boolean {
 		return not(this.__loadedImageState.getOrigin() === 'all');
+	}
+
+
+	private async __refreshLoadAndSetPage(num) {
+		await this.__paginator.setCurrentPageNumber(num, {reload: true});
+	}
+
+
+	private async __setPage(num) {
+		await this.__paginator.setCurrentPageNumber(num);
 	}
 
 }

@@ -26,12 +26,11 @@ export class LoadLibraryService implements IDoThis {
 
 		if (this.__libraryNotLoaded(libName)) {
 
-			if (this.__libraryDoesntExist(libName)) {
-				return this.__redirectToLoggedInHome.go();
-			}
-			else await this.__paginator.initialize();
+			if (this.__libraryDoesntExist(libName)) return this.__redirectToLoggedInHome.go();
+
+			else await this.__paginator.setCurrentPageNumber(pageNumber, {reload: true});
 		}
-		await this.__paginator.setCurrentPageNumber(pageNumber);
+		else await this.__paginator.setCurrentPageNumber(pageNumber);
 	}
 
 

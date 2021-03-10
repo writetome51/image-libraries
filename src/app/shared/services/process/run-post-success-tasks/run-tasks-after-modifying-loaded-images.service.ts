@@ -11,11 +11,11 @@ export class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
 
 
 	go(): void {
-		this.__emptyImageCacheSoImagesWillBeForcedToRefresh();
+		this.__emptyLoadedImageCacheSoItWillBeForcedToRefresh();
 	}
 
 
-	private __emptyImageCacheSoImagesWillBeForcedToRefresh() {
+	private __emptyLoadedImageCacheSoItWillBeForcedToRefresh() {
 		this.__loadedImageState.setDefault();
 	}
 
