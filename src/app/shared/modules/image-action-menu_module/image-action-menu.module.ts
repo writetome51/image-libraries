@@ -14,5 +14,4 @@ import { ImageActionMenuServicesModule } from './image-action-menu-services.modu
 	],
 	exports: [ImageActionMenuComponent]
 })
-export class ImageActionMenuModule {
-}
+export class ImageActionMenuModule {}

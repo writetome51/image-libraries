@@ -42,5 +42,4 @@ import { NewUserServicesModule } from './new-user-services.module';
 		])
 	]
 })
-export class NewUserModule {
-}
+export class NewUserModule {}

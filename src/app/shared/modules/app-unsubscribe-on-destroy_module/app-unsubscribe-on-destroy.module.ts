@@ -8,5 +8,4 @@ import { AppUnsubscribeOnDestroyDirective } from './app-unsubscribe-on-destroy.d
 	imports: [CommonModule],
 	exports: [AppUnsubscribeOnDestroyDirective]
 })
-export class AppUnsubscribeOnDestroyModule {
-}
+export class AppUnsubscribeOnDestroyModule {}

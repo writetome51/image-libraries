@@ -29,7 +29,7 @@ const routes: Routes = [
 		redirectTo: '/'
 	},
 
-	// This path must come last, meaning if none of the above paths apply, do this.
+	// Wildcard path must come last, meaning if none of the above paths apply, do this.
 	{path: '**', redirectTo: '/'}
 ];
 
@@ -43,5 +43,4 @@ const routes: Routes = [
 	],
 	exports: [RouterModule]
 })
-export class LibraryRoutingModule {
-}
+export class LibraryRoutingModule {}

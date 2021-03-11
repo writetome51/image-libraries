@@ -14,8 +14,7 @@ export class RunTasksAfterLoginService implements IDoThis {
 	constructor(
 		private __runTasksAfterGettingUser: RunTasksAfterGettingUserService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
-	) {
-	}
+	) {}
 
 
 	async go(result: DBUser) {

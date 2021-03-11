@@ -9,5 +9,4 @@ import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner_module/tiny-load
 	imports: [CommonModule, TinyLoadingSpinnerModule],
 	exports: [ClickExecuteFunctionDivComponent]
 })
-export class ClickExecuteFunctionDivModule {
-}
+export class ClickExecuteFunctionDivModule {}

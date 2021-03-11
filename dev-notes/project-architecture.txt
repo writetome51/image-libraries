@@ -3,8 +3,8 @@ Module's route in the requested url).  These Modules are found in
 /src/app/routed-modules.
 
 
-Any entity (class, interface, constant, etc.) used in more than one Module is found in
-src/app/shared.
+Any entity (class, interface, constant, etc.) used in multiple independent Modules is
+found in src/app/shared.
 
 
 Any form <input> that self-validates during its 'blur' event is an instance of
@@ -13,10 +13,10 @@ interface ValidatingInput (npm package @writetome51/validating-inputs).
 ValidatingInput only represents an input of type 'text', 'password', or 'number'.
 
 
-A Module may use Services that are only used in that Module.  Usually that Module will
-import a Module called (Something)ServicesModule, and those Services will have
-their @Injectable decorator written as:
-@Injectable({providedIn: (Something)ServicesModule})
+A Module may use Services that are only used in that Module.  Usually that Module ——
+let's call it ExampleModule —— will import a Module called ExampleServicesModule, and
+those Services will have their @Injectable decorator written as:
+@Injectable({providedIn: ExampleServicesModule})
 
 
 Any class decorator I've created is an experiment.

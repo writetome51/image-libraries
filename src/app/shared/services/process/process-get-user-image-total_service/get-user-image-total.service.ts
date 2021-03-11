@@ -12,8 +12,7 @@ export class GetUserImageTotalService implements IDoThis {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realmFn: MongoDBRealmFunctionService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<{ dataTotal: number } | HasError> {

@@ -5,5 +5,4 @@ import { ValidatingInputsService } from '@writetome51/validating-inputs';
 
 
 @Bind_ValidatingInputsService_to_Object(CurrentUserFormData)
-export abstract class CurrentUserInputsService extends ValidatingInputsService {
-}
+export abstract class CurrentUserInputsService extends ValidatingInputsService {}

@@ -32,5 +32,4 @@ import { UploadImagesFromDeviceComponent }
 		])
 	]
 })
-export class AddImagesModule {
-}
+export class AddImagesModule {}

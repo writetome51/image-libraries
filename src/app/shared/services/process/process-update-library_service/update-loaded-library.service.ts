@@ -8,8 +8,7 @@ export class UpdateLoadedLibraryService implements IDoThis {
 
 	constructor(
 		private __libraryStorage: GetUserLibrariesService,
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<any> {

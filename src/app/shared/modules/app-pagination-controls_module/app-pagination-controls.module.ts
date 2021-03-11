@@ -23,5 +23,4 @@ import { RouterModule } from '@angular/router';
 	],
 	exports: [AppPaginationControlsComponent]
 })
-export class AppPaginationControlsModule {
-}
+export class AppPaginationControlsModule {}

@@ -6,8 +6,7 @@ import { UserImageTotalInBrowserStorageService }
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingUserImageTotalService {
 
-	constructor(private __imageTotal: UserImageTotalInBrowserStorageService) {
-	}
+	constructor(private __imageTotal: UserImageTotalInBrowserStorageService) {}
 
 
 	go(result: { dataTotal: number }) {

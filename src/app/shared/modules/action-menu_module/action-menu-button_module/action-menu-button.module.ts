@@ -10,5 +10,4 @@ import { HTMLImageModule } from '@html-image_module/html-image.module';
 	imports: [CommonModule, HTMLImageModule],
 	exports: [ActionMenuButtonComponent]
 })
-export class ActionMenuButtonModule {
-}
+export class ActionMenuButtonModule {}

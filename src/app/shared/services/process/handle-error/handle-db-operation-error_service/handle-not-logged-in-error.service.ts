@@ -15,8 +15,7 @@ export class HandleNotLoggedInErrorService implements IDoThis {
 	constructor(
 		private __router: Router,
 		private __removeCachedData: RemoveCachedDataService
-	) {
-	}
+	) {}
 
 
 	async go() {

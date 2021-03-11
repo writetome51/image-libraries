@@ -21,5 +21,4 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 	],
 	exports: [NewLibraryFormComponent]
 })
-export class NewLibraryFormModule {
-}
+export class NewLibraryFormModule {}

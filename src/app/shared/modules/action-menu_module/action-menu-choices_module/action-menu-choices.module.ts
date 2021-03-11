@@ -9,5 +9,4 @@ import { NgModule } from '@angular/core';
 	imports: [CommonModule, MenuChoiceModule],
 	exports: [ActionMenuChoicesComponent]
 })
-export class ActionMenuChoicesModule {
-}
+export class ActionMenuChoicesModule {}

@@ -26,5 +26,4 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 	// inherit from abstract Components:
 	schemas: [NO_ERRORS_SCHEMA]
 })
-export class ExecutableMenuChoiceContainerModule {
-}
+export class ExecutableMenuChoiceContainerModule {}

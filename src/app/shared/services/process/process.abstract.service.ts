@@ -8,8 +8,7 @@ export abstract class ProcessService implements Process {
 	constructor(
 		private __getResult: IDoThis,
 		private __interpretResult: InterpretResultService
-	) {
-	}
+	) {}
 
 
 	async go(...args): Promise<void> {

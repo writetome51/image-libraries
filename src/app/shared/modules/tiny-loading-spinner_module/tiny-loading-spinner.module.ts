@@ -8,5 +8,4 @@ import { TinyLoadingSpinnerComponent } from './tiny-loading-spinner.component';
 	imports: [CommonModule],
 	exports: [TinyLoadingSpinnerComponent]
 })
-export class TinyLoadingSpinnerModule {
-}
+export class TinyLoadingSpinnerModule {}

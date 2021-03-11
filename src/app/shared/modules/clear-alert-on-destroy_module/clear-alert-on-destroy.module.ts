@@ -8,5 +8,4 @@ import { ClearAlertOnDestroyDirective } from './clear-alert-on-destroy.directive
 	imports: [CommonModule],
 	exports: [ClearAlertOnDestroyDirective]
 })
-export class ClearAlertOnDestroyModule {
-}
+export class ClearAlertOnDestroyModule {}

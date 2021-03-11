@@ -10,8 +10,7 @@ import { LibraryNamesData as libraryNames }
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingLibrariesService implements IDoThis {
 
-	constructor(private __localLibraries: LibrariesInBrowserStorageService) {
-	}
+	constructor(private __localLibraries: LibrariesInBrowserStorageService) {}
 
 
 	async go(libraries: DBLibrary[]) {

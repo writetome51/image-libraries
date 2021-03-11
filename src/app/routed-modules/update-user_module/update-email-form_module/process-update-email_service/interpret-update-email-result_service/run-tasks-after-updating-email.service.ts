@@ -6,9 +6,7 @@ import { UpdateUserServicesModule } from '../../../update-user-services.module';
 
 
 @SetResultMessage('Email updated')
-export class __RunTasksAfterUpdatingEmailService extends RunTasksAfterUpdatingUserService {
-}
+export class __RunTasksAfterUpdatingEmailService extends RunTasksAfterUpdatingUserService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class RunTasksAfterUpdatingEmailService extends __RunTasksAfterUpdatingEmailService {
-}
+export class RunTasksAfterUpdatingEmailService extends __RunTasksAfterUpdatingEmailService {}

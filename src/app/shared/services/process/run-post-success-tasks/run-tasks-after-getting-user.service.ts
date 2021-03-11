@@ -13,8 +13,7 @@ export class RunTasksAfterGettingUserService implements IDoThis {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __emailInBrowser: EmailInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	go(result: DBUser): void {

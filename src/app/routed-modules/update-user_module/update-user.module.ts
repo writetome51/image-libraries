@@ -25,5 +25,4 @@ import { UpdateUserServicesModule } from './update-user-services.module';
 		UpdateUserServicesModule,
 	]
 })
-export class UpdateUserModule {
-}
+export class UpdateUserModule {}

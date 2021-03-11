@@ -16,5 +16,4 @@ import { AppValidatingFormInputsModule }
 	],
 	exports: [SearchComponent]
 })
-export class SearchModule {
-}
+export class SearchModule {}

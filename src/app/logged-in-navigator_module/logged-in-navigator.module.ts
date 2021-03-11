@@ -23,5 +23,4 @@ import { NgModule } from '@angular/core';
 	],
 	exports: [LoggedInNavigatorComponent]
 })
-export class LoggedInNavigatorModule {
-}
+export class LoggedInNavigatorModule {}

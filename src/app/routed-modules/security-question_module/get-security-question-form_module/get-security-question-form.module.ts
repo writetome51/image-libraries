@@ -20,5 +20,4 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 	],
 	exports: [GetSecurityQuestionFormComponent]
 })
-export class GetSecurityQuestionFormModule {
-}
+export class GetSecurityQuestionFormModule {}

@@ -16,5 +16,4 @@ import { NgModule } from '@angular/core';
 	],
 	exports: [ActionMenuComponent]
 })
-export class ActionMenuModule {
-}
+export class ActionMenuModule {}

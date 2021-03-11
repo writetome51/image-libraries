@@ -25,5 +25,4 @@ import { ThumbnailImageComponent } from './thumbnail-image.component';
 	],
 	exports: [ThumbnailImageContainerComponent]
 })
-export class ThumbnailImageContainerModule {
-}
+export class ThumbnailImageContainerModule {}

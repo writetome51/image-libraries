@@ -2,5 +2,4 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule()
-export class GlobalActionMenuServicesModule {
-}
+export class GlobalActionMenuServicesModule {}

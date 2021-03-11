@@ -13,8 +13,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 	constructor(
 		private __userImageTotalInBrowser: UserImageTotalInBrowserStorageService,
 		private __processGetUserImageTotal: ProcessGetUserImageTotalService
-	) {
-	}
+	) {}
 
 
 	async go() {

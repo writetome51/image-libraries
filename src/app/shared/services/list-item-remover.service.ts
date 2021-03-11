@@ -15,10 +15,6 @@ export class ListItemRemoverService {
 	}
 
 
-	constructor() {
-	}
-
-
 	remove(index): void {
 		/******************
 		let previousLength = loadedImages.data.length;

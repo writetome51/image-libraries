@@ -14,8 +14,7 @@ export class UserAccountService {
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
-	) {
-	}
+	) {}
 
 
 	async exists(): Promise<{ success: boolean }> {

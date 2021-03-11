@@ -7,9 +7,7 @@ import { PrefixLabel_to_ValidatingInputService }
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'current'})
-export class __CurrentEmailInputService extends LoggedInEmailVerificationInputService {
-}
+export class __CurrentEmailInputService extends LoggedInEmailVerificationInputService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class CurrentEmailInputService extends __CurrentEmailInputService {
-}
+export class CurrentEmailInputService extends __CurrentEmailInputService {}

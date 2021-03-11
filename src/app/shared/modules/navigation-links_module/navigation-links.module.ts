@@ -12,5 +12,4 @@ import { RouterModule } from '@angular/router';
 	],
 	exports: [NavigationLinksComponent]
 })
-export class NavigationLinksModule {
-}
+export class NavigationLinksModule {}

@@ -10,5 +10,4 @@ import { ExecuteFunctionButtonModule }
 	imports: [CommonModule, ExecuteFunctionButtonModule],
 	exports: [SubmitFormButtonComponent]
 })
-export class SubmitFormButtonModule {
-}
+export class SubmitFormButtonModule {}

@@ -31,5 +31,4 @@ import { SiteExplanationComponent } from './site-explanation.component';
 		])
 	]
 })
-export class LoginModule {
-}
+export class LoginModule {}

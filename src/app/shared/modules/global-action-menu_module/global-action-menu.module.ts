@@ -14,5 +14,4 @@ import { NgModule } from '@angular/core';
 	],
 	exports: [GlobalActionMenuComponent]
 })
-export class GlobalActionMenuModule {
-}
+export class GlobalActionMenuModule {}

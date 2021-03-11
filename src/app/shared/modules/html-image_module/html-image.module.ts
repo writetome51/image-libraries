@@ -8,5 +8,4 @@ import { HTMLImageComponent } from './html-image.component';
 	imports: [CommonModule],
 	exports: [HTMLImageComponent]
 })
-export class HTMLImageModule {
-}
+export class HTMLImageModule {}

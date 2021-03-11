@@ -8,5 +8,4 @@ import { ClearFormOnInitDirective } from './clear-form-on-init.directive';
 	imports: [CommonModule],
 	exports: [ClearFormOnInitDirective]
 })
-export class ClearFormOnInitModule {
-}
+export class ClearFormOnInitModule {}

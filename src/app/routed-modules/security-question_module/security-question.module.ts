@@ -34,5 +34,4 @@ import { SecurityQuestionServicesModule } from './security-question-services.mod
 		])
 	]
 })
-export class SecurityQuestionModule {
-}
+export class SecurityQuestionModule {}

@@ -20,8 +20,7 @@ export class CurrentRouteService implements Gettable<string> {
 	constructor(
 		private __router: Router,
 		private __activatedRoute: ActivatedRoute
-	) {
-	}
+	) {}
 
 
 	get(): string {

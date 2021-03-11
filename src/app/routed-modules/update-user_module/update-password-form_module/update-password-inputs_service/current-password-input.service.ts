@@ -6,9 +6,7 @@ import { UpdateUserServicesModule } from '../../update-user-services.module';
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'current'})
-export class __CurrentPasswordInputService extends PasswordInputService {
-}
+export class __CurrentPasswordInputService extends PasswordInputService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class CurrentPasswordInputService extends __CurrentPasswordInputService {
-}
+export class CurrentPasswordInputService extends __CurrentPasswordInputService {}

@@ -11,5 +11,4 @@ import { AppValidatingFormInputComponent }
 	imports: [CommonModule, FormsModule],
 	exports: [AppValidatingFormInputsComponent, AppValidatingFormInputComponent]
 })
-export class AppValidatingFormInputsModule {
-}
+export class AppValidatingFormInputsModule {}

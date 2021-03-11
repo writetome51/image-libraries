@@ -24,5 +24,4 @@ import { AppValidatingFormInputsModule }
 	],
 	exports: [UpdatePasswordFormComponent]
 })
-export class UpdatePasswordFormModule {
-}
+export class UpdatePasswordFormModule {}

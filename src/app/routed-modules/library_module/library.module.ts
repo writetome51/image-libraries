@@ -22,5 +22,4 @@ import { NgModule } from '@angular/core';
 		LibraryRoutingModule,
 	]
 })
-export class LibraryModule {
-}
+export class LibraryModule {}

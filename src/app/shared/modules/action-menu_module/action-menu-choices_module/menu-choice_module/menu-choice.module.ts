@@ -25,5 +25,4 @@ import { SubmenuPointerComponent } from './submenu_component/submenu-pointer.com
 	// inherit from abstract Components:
 	schemas: [NO_ERRORS_SCHEMA]
 })
-export class MenuChoiceModule {
-}
+export class MenuChoiceModule {}

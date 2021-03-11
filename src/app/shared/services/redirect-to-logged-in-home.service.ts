@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({providedIn: 'root'})
 export class RedirectToLoggedInHomeService implements IDoThis {
 
-	constructor(private __router: Router) {
-	}
+	constructor(private __router: Router) {}
 
 
 	async go() {

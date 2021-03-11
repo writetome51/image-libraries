@@ -13,8 +13,7 @@ export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 	constructor(
 		private __libraryChanges: LibraryChangesService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(result: DBLibrary) {

@@ -20,5 +20,4 @@ import { LibrariesListServicesModule } from './libraries-list-services.module';
 	],
 	exports: [LibrariesListComponent]
 })
-export class LibrariesListModule {
-}
+export class LibrariesListModule {}

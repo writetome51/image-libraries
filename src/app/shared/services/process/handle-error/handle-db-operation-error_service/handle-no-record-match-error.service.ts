@@ -17,8 +17,7 @@ export class HandleNoRecordMatchErrorService implements IDoThis {
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __handleNotLoggedInError: HandleNotLoggedInErrorService,
 		private __userAccount: UserAccountService
-	) {
-	}
+	) {}
 
 
 	async go() {

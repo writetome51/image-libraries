@@ -6,8 +6,7 @@ import { PrefixLabel_to_ValidatingInputService }
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new'})
-export class __NewPasswordAgainInputService extends PasswordAgainInputService {
-}
+export class __NewPasswordAgainInputService extends PasswordAgainInputService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
 export class NewPasswordAgainInputService extends __NewPasswordAgainInputService {

@@ -2,5 +2,4 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule()
-export class NewLibraryFormServicesModule {
-}
+export class NewLibraryFormServicesModule {}

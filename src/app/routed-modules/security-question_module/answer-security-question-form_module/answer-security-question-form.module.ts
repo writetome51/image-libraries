@@ -20,5 +20,4 @@ import { NgModule } from '@angular/core';
 	],
 	exports: [AnswerSecurityQuestionFormComponent]
 })
-export class AnswerSecurityQuestionFormModule {
-}
+export class AnswerSecurityQuestionFormModule {}

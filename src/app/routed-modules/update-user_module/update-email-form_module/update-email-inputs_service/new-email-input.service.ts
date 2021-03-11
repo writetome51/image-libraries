@@ -6,9 +6,7 @@ import { PrefixLabel_to_ValidatingInputService }
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new', prefix_propertyToBind: true})
-export class __NewEmailInputService extends EmailInputService {
-}
+export class __NewEmailInputService extends EmailInputService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class NewEmailInputService extends __NewEmailInputService {
-}
+export class NewEmailInputService extends __NewEmailInputService {}

@@ -22,5 +22,4 @@ import { HoverableContainerModule } from '@hoverable-container_module/hoverable-
 		ReArrangeableGridListItemComponent
 	]
 })
-export class ReArrangeableGridListModule {
-}
+export class ReArrangeableGridListModule {}

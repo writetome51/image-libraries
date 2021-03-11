@@ -15,5 +15,4 @@ import { DeleteLibraryButtonServicesModule } from './delete-library-button-servi
 	],
 	exports: [DeleteLibraryButtonComponent]
 })
-export class DeleteLibraryButtonModule {
-}
+export class DeleteLibraryButtonModule {}

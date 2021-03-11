@@ -9,8 +9,7 @@ export abstract class InterpretResultService implements InterpretResult {
 	constructor(
 		private __handleError: HandleErrorService,
 		private __runPostSuccessTasks: IDoThis
-	) {
-	}
+	) {}
 
 
 	async go(result: any | HasError): Promise<void> {

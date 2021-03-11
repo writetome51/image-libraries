@@ -6,9 +6,7 @@ import { UpdateUserServicesModule } from '../../../update-user-services.module';
 
 
 @SetResultMessage('Password updated')
-export class __RunTasksAfterUpdatingPasswordService extends RunTasksAfterUpdatingUserService {
-}
+export class __RunTasksAfterUpdatingPasswordService extends RunTasksAfterUpdatingUserService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class RunTasksAfterUpdatingPasswordService extends __RunTasksAfterUpdatingPasswordService {
-}
+export class RunTasksAfterUpdatingPasswordService extends __RunTasksAfterUpdatingPasswordService {}

@@ -8,5 +8,4 @@ import { BigLoadingSpinnerComponent } from './big-loading-spinner.component';
 	imports: [CommonModule],
 	exports: [BigLoadingSpinnerComponent]
 })
-export class BigLoadingSpinnerModule {
-}
+export class BigLoadingSpinnerModule {}

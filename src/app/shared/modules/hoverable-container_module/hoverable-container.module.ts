@@ -8,5 +8,4 @@ import { HoverableContainerComponent } from './hoverable-container.component';
 	imports: [CommonModule],
 	exports: [HoverableContainerComponent]
 })
-export class HoverableContainerModule {
-}
+export class HoverableContainerModule {}

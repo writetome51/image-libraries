@@ -9,8 +9,7 @@ import { LoadedLibraryInBrowserStorageService }
 @Injectable({providedIn: 'root'})
 export class LoadedLibraryImageTotalService implements Gettable<number> {
 
-	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {
-	}
+	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {}
 
 
 	get(): number {

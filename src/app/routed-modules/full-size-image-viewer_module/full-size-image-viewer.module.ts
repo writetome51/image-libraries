@@ -51,5 +51,4 @@ import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 
 	exports: [FullSizeImageViewerComponent]
 })
-export class FullSizeImageViewerModule {
-}
+export class FullSizeImageViewerModule {}

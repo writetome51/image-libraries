@@ -26,5 +26,4 @@ import { EnterImageURLServicesModule } from './enter-image-url-services.module';
 	],
 	exports: [EnterImageURLComponent]
 })
-export class EnterImageURLModule {
-}
+export class EnterImageURLModule {}

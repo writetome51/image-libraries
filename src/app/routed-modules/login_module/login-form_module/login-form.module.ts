@@ -23,5 +23,4 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 	],
 	exports: [LoginFormComponent]
 })
-export class LoginFormModule {
-}
+export class LoginFormModule {}

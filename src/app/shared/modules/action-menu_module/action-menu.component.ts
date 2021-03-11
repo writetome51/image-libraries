@@ -36,8 +36,7 @@ export class ActionMenuComponent implements OnInit {
 	@Input() getChoicesArgs? = [];
 
 
-	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {
-	}
+	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {}
 
 
 	ngOnInit() {

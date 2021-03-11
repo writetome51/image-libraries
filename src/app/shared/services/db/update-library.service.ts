@@ -13,8 +13,7 @@ export class UpdateLibraryService implements IDoThis {
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(
