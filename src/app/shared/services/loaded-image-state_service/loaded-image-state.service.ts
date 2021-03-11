@@ -1,4 +1,3 @@
-import { ImagesLoadedFromData as imagesLoadedFrom } from './images-loaded-from.data';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryInBrowserStorageService }
@@ -14,22 +13,22 @@ import { Settable } from '@interfaces/settable.interface';
 @Injectable({providedIn: 'root'})
 export class LoadedImageStateService implements ResettableToDefault, Settable {
 
+	private __origin: 'all' | 'library' | 'none' = 'none';
+
+
 	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {}
 
 
-	getOrigin(): 'all' | 'library' | 'nowhere' {
-		return imagesLoadedFrom.status;
+	getOrigin(): 'all' | 'library' | 'none' {
+		return this.__origin;
 	}
 
 
 	set(imageBatch: ImageBatch) {
 		loadedImages.data = imageBatch.images;
+		this.__origin = imageBatch.from;
 
-		imagesLoadedFrom.status = imageBatch.from;
-		if (imageBatch.from === 'all'){
-			this.__loadedLibrary.remove();
-			requestedLibrary.name = undefined;
-		}
+		if (this.__origin === 'all') this.__removeLoadedLibraryData();
 	}
 
 
@@ -39,8 +38,13 @@ export class LoadedImageStateService implements ResettableToDefault, Settable {
 
 
 	setDefault() {
-		imagesLoadedFrom.setDefault();
+		this.__origin = 'none';
 		loadedImages.setDefault();
+		this.__removeLoadedLibraryData();
+	}
+
+
+	private __removeLoadedLibraryData() {
 		this.__loadedLibrary.remove();
 		requestedLibrary.name = undefined;
 	}
