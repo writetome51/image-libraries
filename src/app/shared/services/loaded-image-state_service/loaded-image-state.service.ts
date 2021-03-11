@@ -1,12 +1,12 @@
-import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
+import { DBImage } from '@interfaces/db-image.interface';
+import { ImageBatch } from '@interfaces/image-batch.interface';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
 import { LoadedImagesData as loadedImages } from './loaded-images.data';
-import { DBImage } from '@interfaces/db-image.interface';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
-import { ImageBatch } from '@interfaces/image-batch.interface';
+import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { Settable } from '@interfaces/settable.interface';
 
 
@@ -24,6 +24,11 @@ export class LoadedImageStateService implements ResettableToDefault, Settable {
 	}
 
 
+	getLoadedImages(): DBImage[] {
+		return loadedImages.data;
+	}
+
+
 	set(imageBatch: ImageBatch) {
 		loadedImages.data = imageBatch.images;
 		this.__origin = imageBatch.from;
@@ -32,14 +37,9 @@ export class LoadedImageStateService implements ResettableToDefault, Settable {
 	}
 
 
-	getLoadedImages(): DBImage[] {
-		return loadedImages.data;
-	}
-
-
 	setDefault() {
-		this.__origin = 'none';
 		loadedImages.setDefault();
+		this.__origin = 'none';
 		this.__removeLoadedLibraryData();
 	}
 
