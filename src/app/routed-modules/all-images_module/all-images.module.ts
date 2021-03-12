@@ -12,10 +12,10 @@ import { RouterModule } from '@angular/router';
 @NgModule({
 	declarations: [AllImagesComponent],
 	imports: [
-		CommonModule,
-		BigLoadingSpinnerModule,
 		AllImagesServicesModule,
 		AllImagesViewerModule,
+		CommonModule,
+		BigLoadingSpinnerModule,
 		RouterModule.forChild([
 			{
 				path: modulePath.AllImagesComponent,

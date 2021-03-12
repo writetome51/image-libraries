@@ -15,8 +15,8 @@ import { NgModule } from '@angular/core';
 		LogoutButtonComponent
 	],
 	imports: [
-		CommonModule,
 		BrowserModule,
+		CommonModule,
 		ExecuteFunctionButtonModule,
 		LoggedInNavigatorServicesModule,
 		NavigationLinksModule

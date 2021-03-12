@@ -19,9 +19,9 @@ import { RouterModule } from '@angular/router';
 	],
 	imports: [
 		CommonModule,
-		FormsModule,
 		ClearFormOnInitModule,
 		ClearAlertOnDestroyModule,
+		FormsModule,
 		LibrariesListModule,
 		NewLibraryFormModule,
 		RouterModule.forChild([
