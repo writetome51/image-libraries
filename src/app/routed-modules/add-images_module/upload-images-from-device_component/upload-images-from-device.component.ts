@@ -5,10 +5,22 @@ import { ProcessUploadImagesService }
 
 @Component({
 	selector: 'upload-images-from-device',
-	templateUrl: './upload-images-from-device.component.html',
-	styles: [
-		`div.input-group { margin: auto; }`
-	]
+	template: `
+		<div>
+			<p>Choose images from your own device:</p>
+
+			<div class="input-group">
+				<input type="file" multiple (change)="upload($event.target.files)"
+					class="custom-file-input" id="inputGroupFile01" style="display: none;"
+				/>
+				<label class="custom-file-input btn btn-default" for="inputGroupFile01">
+					Choose File(s)
+				</label>
+			</div>
+
+		</div>
+	`,
+	styles: [`div.input-group {margin: auto;}`]
 })
 export class UploadImagesFromDeviceComponent {
 

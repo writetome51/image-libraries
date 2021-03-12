@@ -1,10 +1,10 @@
 import { DeleteUserService } from './delete-user.service';
 import { DeleteUserInputsService } from '../delete-user-inputs.service';
+import { Injectable } from '@angular/core';
 import { InterpretDeleteUserResultService }
 	from './interpret-delete-user-result_service/interpret-delete-user-result.service';
 import { ProcessSendFormDataToDbService }
 	from '@process/process-send-form-data-to-db.abstract.service';
-import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../update-user-services.module';
 
 

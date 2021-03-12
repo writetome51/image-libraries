@@ -17,11 +17,11 @@ import { UploadImagesFromDeviceComponent }
 		UploadImagesFromDeviceComponent
 	],
 	imports: [
-		CommonModule,
-		FormsModule,
-		BigLoadingSpinnerModule,
 		AddImagesServicesModule,
+		BigLoadingSpinnerModule,
+		CommonModule,
 		EnterImageURLModule,
+		FormsModule,
 		RouterModule.forChild([
 			{
 				path: '',

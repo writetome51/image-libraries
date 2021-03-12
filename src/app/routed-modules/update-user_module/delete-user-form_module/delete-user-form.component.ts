@@ -1,17 +1,27 @@
 import { Component } from '@angular/core';
 import { DeleteUserFormModuleTitleData as thisModuleTitle }
 	from './delete-user-form-module-title.data';
-import { ProcessDeleteUserService }
-	from './process-delete-user_service/process-delete-user.service';
 import { environment } from '@environments/environment';
 import { HTMLImage } from '@interfaces/html-image.interface';
-import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
+import { ProcessDeleteUserService }
+	from './process-delete-user_service/process-delete-user.service';
 import { Title } from '@angular/platform-browser';
+import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 
 
 @Component({
 	selector: 'delete-user-form',
-	templateUrl: './delete-user-form.component.html',
+	template: `
+		<div>
+			<html-image [data]="explodingHead"></html-image>
+			<p class="warning-text">You cannot undo this.</p>
+
+			<p>If you wish to proceed, enter your info and click Delete</p>
+		</div>
+
+		<delete-user-form-inputs clearFormOnInit clearAlertOnDestroy></delete-user-form-inputs>
+		<submit-form-button [label]="'Delete'" [process]="process"></submit-form-button>
+	`,
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })
 export class DeleteUserFormComponent {
@@ -24,7 +34,7 @@ export class DeleteUserFormComponent {
 
 
 	constructor(
-		public processor: ProcessDeleteUserService,
+		public process: ProcessDeleteUserService,
 		private __title: Title
 	) {
 		this.__title.setTitle(parentModuleTitle.data + thisModuleTitle.data);

@@ -1,10 +1,10 @@
+import { DeleteUserFormComponent } from './delete-user-form_module/delete-user-form.component';
 import { LinkedTemplateWithHeading }
 	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
 import { UpdateEmailFormComponent }
 	from './update-email-form_module/update-email-form.component';
 import { UpdatePasswordFormComponent }
 	from './update-password-form_module/update-password-form.component';
-import { DeleteUserFormComponent } from './delete-user-form_module/delete-user-form.component';
 
 
 export class UpdateUserChoiceData {
