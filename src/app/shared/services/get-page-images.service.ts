@@ -17,7 +17,6 @@ export class GetPageImagesService { // implements IDoThis
 			// If the current page doesnt exist it triggers error, so we catch it:
 		catch (e) {
 			console.log(e.message);
-			return undefined;
 		}
 	}
 

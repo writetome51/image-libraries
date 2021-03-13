@@ -1,19 +1,19 @@
-import { BackgroundExecutionStatusData as executionStatus }
-	from '@runtime-state-data/background-execution-status.data';
+import { BackgroundExecutionStatusData as executionStatus } from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetLibraryRouteParamsObserverService }
 	from './get-library-route-params-observer_service/get-library-route-params-observer.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
-import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
+import { RouteParametersSubscriberComponent }
+	from '@abstract-components/route-parameters-subscriber.abstract.component';
 
 
 @Component({
 	selector: 'app-library',
 	templateUrl: './library.component.html'
 })
-export class LibraryComponent extends UnsubscribeOnDestroyDirective {
+export class LibraryComponent extends RouteParametersSubscriberComponent {
 
 	get name() {
 		return requestedLibrary.name;
@@ -26,15 +26,10 @@ export class LibraryComponent extends UnsubscribeOnDestroyDirective {
 
 
 	constructor(
-		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsObserver: GetLibraryRouteParamsObserverService
+		__currentRoute: CurrentRouteService,
+		__getRouteParamsObserver: GetLibraryRouteParamsObserverService
 	) {
-		super();
-
-		let routeParamsSubscription = this.__currentRoute.params$.subscribe(
-			this.__getRouteParamsObserver.go()
-		);
-		this._subscriptions.push(routeParamsSubscription);
+		super(__currentRoute, __getRouteParamsObserver);
 	}
 
 }

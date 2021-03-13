@@ -32,7 +32,6 @@ export abstract class EncryptedItemInBrowserStorageService<T> extends ItemInBrow
 			// @ts-ignore
 			return this.__cryptographer.decrypt(value);
 		}
-		else return undefined;
 	}
 
 }

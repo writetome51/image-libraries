@@ -6,7 +6,8 @@ import { GetAllImagesRouteParamsObserverService }
 	from './get-all-images-route-params-observer_service/get-all-images-route-params-observer.service';
 import { AllImagesModuleTitleData as moduleTitle } from './all-images-module-title.data';
 import { Title } from '@angular/platform-browser';
-import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
+import { RouteParametersSubscriberComponent }
+	from '@abstract-components/route-parameters-subscriber.abstract.component';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destr
 		<all-images-viewer *ngIf="!(gettingImages)"></all-images-viewer>
 	`
 })
-export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
+export class AllImagesComponent extends RouteParametersSubscriberComponent {
 
 	heading = 'All Images';
 
@@ -30,20 +31,14 @@ export class AllImagesComponent extends UnsubscribeOnDestroyDirective {
 
 
 	constructor(
-		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsObserver: GetAllImagesRouteParamsObserverService,
-		private __title: Title
+		private __title: Title,
+		__currentRoute: CurrentRouteService,
+		__getRouteParamsObserver: GetAllImagesRouteParamsObserverService
 	) {
-		super();
-		this.__title.setTitle(moduleTitle.data);
+		super(__currentRoute, __getRouteParamsObserver);
+
+		this.__title.setTitle(moduleTitle.data + this.heading);
 		executionStatus.waiting = true;
-
-		this._subscriptions.push(this.__getRouteParamsSubscription());
-	}
-
-
-	private __getRouteParamsSubscription() {
-		return this.__currentRoute.params$.subscribe( this.__getRouteParamsObserver.go() );
 	}
 
 }

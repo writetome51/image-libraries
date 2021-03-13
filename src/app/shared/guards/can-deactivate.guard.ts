@@ -1,5 +1,6 @@
 import { AlertService as alert } from '@services/alert.service';
-import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot }
+	from '@angular/router';
 import { FullSizeImageComponent }
 	from '@app/routed-modules/full-size-image-viewer_module/full-size-image.component';
 import { Injectable } from '@angular/core';
