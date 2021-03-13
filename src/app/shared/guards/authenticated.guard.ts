@@ -11,8 +11,7 @@ export class AuthenticatedGuard implements CanActivate {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __router: Router
-	) {
-	}
+	) {}
 
 
 	canActivate(): boolean {

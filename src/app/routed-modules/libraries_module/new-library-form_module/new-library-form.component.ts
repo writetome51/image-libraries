@@ -16,7 +16,6 @@ import { ProcessCreateLibraryService }
 })
 export class NewLibraryFormComponent {
 
-	constructor(public process: ProcessCreateLibraryService) {
-	}
+	constructor(public process: ProcessCreateLibraryService) {}
 
 }

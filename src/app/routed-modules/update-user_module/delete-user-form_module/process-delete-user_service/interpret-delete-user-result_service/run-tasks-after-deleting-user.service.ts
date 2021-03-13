@@ -8,8 +8,7 @@ import { UpdateUserServicesModule } from '../../../update-user-services.module';
 @Injectable({providedIn: UpdateUserServicesModule})
 export class RunTasksAfterDeletingUserService implements IDoThis {
 
-	constructor(private __runTasksAfterLogout: RunTasksAfterLogoutService) {
-	}
+	constructor(private __runTasksAfterLogout: RunTasksAfterLogoutService) {}
 
 
 	async go() {

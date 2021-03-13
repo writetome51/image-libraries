@@ -8,8 +8,7 @@ import { ListItemMoverService } from '@services/list-item-mover.service';
 })
 export class ReArrangeableGridListComponent {
 
-	constructor(private  __listItemMover: ListItemMoverService) {
-	}
+	constructor(private  __listItemMover: ListItemMoverService) {}
 
 
 	@Input()

@@ -18,8 +18,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 		private __paginator: AllImagesPaginatorService,
 		private __jumpToPageInput: AllImagesJumpToPageInputService,
 		private __loadedImageState: LoadedImageStateService
-	) {
-	}
+	) {}
 
 
 	async go(params): Promise<void> {

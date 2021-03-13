@@ -12,8 +12,7 @@ export class AssureUserDataLoadedService implements IDoThis {
 	constructor(
 		private __assureUserImageTotalStoredLocally: AssureUserImageTotalStoredLocallyService,
 		private __assureLibrariesStoredLocally: AssureLibrariesStoredLocallyService
-	) {
-	}
+	) {}
 
 
 	async go() {

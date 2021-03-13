@@ -13,8 +13,7 @@ export class RunTasksAfterUpdatingUserService implements IDoThis {
 	resultMessage: string;
 
 
-	constructor(private __runTasksAfterGettingUser: RunTasksAfterGettingUserService) {
-	}
+	constructor(private __runTasksAfterGettingUser: RunTasksAfterGettingUserService) {}
 
 
 	go(result: DBUser) {

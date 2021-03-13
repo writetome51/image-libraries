@@ -9,8 +9,7 @@ import { RunTasksAfterLoginService } from '@run-post-success-tasks/run-tasks-aft
 @Injectable({providedIn: NewUserServicesModule})
 export class RunTasksAfterCreatingNewUserService implements IDoThis {
 
-	constructor(private __runTasksAfterLogin: RunTasksAfterLoginService) {
-	}
+	constructor(private __runTasksAfterLogin: RunTasksAfterLoginService) {}
 
 
 	async go(result: DBUser) {

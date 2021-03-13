@@ -15,8 +15,7 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	go(updatedLibrary: DBLibrary) {

@@ -12,8 +12,7 @@ import { LibrariesListServicesModule } from '../libraries-list-services.module';
 @Injectable({providedIn: LibrariesListServicesModule})
 export class SearchLibrariesService implements IDoThis {
 
-	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
-	}
+	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {}
 
 
 	go(): void {

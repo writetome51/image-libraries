@@ -35,7 +35,6 @@ export class ImageListComponent {
 	}
 
 
-	constructor(private __paginator: AllImagesPaginatorService) {
-	}
+	constructor(private __paginator: AllImagesPaginatorService) {}
 
 }

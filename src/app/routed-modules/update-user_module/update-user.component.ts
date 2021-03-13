@@ -17,8 +17,7 @@ export class UpdateUserComponent {
 	choices: LinkedTemplateWithHeading[] = Object.values(UpdateUserChoiceData);
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
-	}
+	constructor(private __currentRoute: CurrentRouteService) {}
 
 
 	getChoiceHeading(): string {

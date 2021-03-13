@@ -10,8 +10,7 @@ import { NewLibraryFormServicesModule } from '../../new-library-form-services.mo
 @Injectable({providedIn: NewLibraryFormServicesModule})
 export class RunTasksAfterCreatingNewLibraryService implements IDoThis {
 
-	constructor(private __getLibrariesProcessor: ProcessGetLibrariesService) {
-	}
+	constructor(private __getLibrariesProcessor: ProcessGetLibrariesService) {}
 
 
 	async go() {

@@ -13,8 +13,7 @@ export class RunTasksAfterDeletionOfLibraryService implements IDoThis {
 	constructor(
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
 		private __getLibrariesProcessor: ProcessGetLibrariesService
-	) {
-	}
+	) {}
 
 
 	async go() {

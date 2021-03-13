@@ -10,8 +10,7 @@ import { LibraryChangesService } from '@services/library/library-changes.service
 })
 export class UndoChangesButtonComponent {
 
-	constructor(private __libraryChanges: LibraryChangesService) {
-	}
+	constructor(private __libraryChanges: LibraryChangesService) {}
 
 
 	undoChanges() {

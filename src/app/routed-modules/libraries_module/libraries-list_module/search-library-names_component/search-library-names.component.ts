@@ -16,8 +16,7 @@ export class SearchLibraryNamesComponent {
 	constructor(
 		private __seachLibrariesInput: SearchLibrariesInputService,
 		private __searchLibraries: SearchLibrariesService
-	) {
-	}
+	) {}
 
 
 	search() {

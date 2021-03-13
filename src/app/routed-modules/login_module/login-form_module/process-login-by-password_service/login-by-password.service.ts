@@ -11,8 +11,7 @@ import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-functio
 @Injectable({providedIn: LoginFormServicesModule})
 export class LoginByPasswordService implements IDoThis {
 
-	constructor(private __realmFn: MongoDBRealmFunctionService) {
-	}
+	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
 	async go(): Promise<DBUser | HasError> {

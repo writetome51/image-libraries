@@ -18,8 +18,7 @@ export class LoadLibraryService implements IDoThis {
 		private __paginator: LibraryPaginatorService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(libName, pageNumber): Promise<void> {

@@ -24,8 +24,7 @@ import { ProcessUploadImagesService }
 })
 export class UploadImagesFromDeviceComponent {
 
-	constructor(private __processUploadImages: ProcessUploadImagesService) {
-	}
+	constructor(private __processUploadImages: ProcessUploadImagesService) {}
 
 
 	async upload(images: FileList | File[]): Promise<void> {

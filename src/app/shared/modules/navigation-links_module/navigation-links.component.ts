@@ -24,8 +24,7 @@ export class NavigationLinksComponent {
 	@Input() data: Link[];
 
 
-	constructor(private __currentRoute: CurrentRouteService) {
-	}
+	constructor(private __currentRoute: CurrentRouteService) {}
 
 
 	isCurrentPath(path): boolean {

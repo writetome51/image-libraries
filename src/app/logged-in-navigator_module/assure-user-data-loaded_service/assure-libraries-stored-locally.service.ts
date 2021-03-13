@@ -20,8 +20,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 	constructor(
 		private __getLibrariesProcessor: ProcessGetLibrariesService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go() {

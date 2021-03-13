@@ -16,8 +16,7 @@ export class UpdateEmailService implements IDoThis {
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<DBUser | HasError> {

@@ -26,7 +26,6 @@ export class LibraryPaginationControlsComponent {
 	constructor(
 		public paginator: LibraryPaginatorService,
 		public jumpToPageInput: LibraryJumpToPageInputService
-	) {
-	}
+	) {}
 
 }

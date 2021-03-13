@@ -16,8 +16,7 @@ export class AssureRequestedLibraryStoredLocally implements IDoThis {
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	go() {

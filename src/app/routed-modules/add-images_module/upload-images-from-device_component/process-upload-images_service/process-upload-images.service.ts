@@ -12,9 +12,7 @@ import { Process } from '@interfaces/process.interface';
 @Injectable({providedIn: AddImagesServicesModule})
 export class ProcessUploadImagesService implements Process {
 
-
-	constructor(private __processSaveNewImages: ProcessSaveNewImagesService) {
-	}
+	constructor(private __processSaveNewImages: ProcessSaveNewImagesService) {}
 
 
 	async go(files: FileList | File[]): Promise<void> {
@@ -42,6 +40,5 @@ export class ProcessUploadImagesService implements Process {
 			return name.split(' ').join('-');
 		}
 	}
-
 
 }

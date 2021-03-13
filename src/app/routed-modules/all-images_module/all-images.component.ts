@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetAllImagesRouteParamsObserverService }
 	from './get-all-images-route-params-observer_service/get-all-images-route-params-observer.service';
-import { AllImagesModuleTitleData as moduleTitle } from './all-images-module-title.data';
 import { Title } from '@angular/platform-browser';
 import { RouteParametersSubscriberComponent }
 	from '@abstract-components/route-parameters-subscriber.abstract.component';
+import { AppNameData as appName } from '@read-only-data/app-name.data';
 
 
 @Component({
@@ -37,7 +37,7 @@ export class AllImagesComponent extends RouteParametersSubscriberComponent {
 	) {
 		super(__currentRoute, __getRouteParamsObserver);
 
-		this.__title.setTitle(moduleTitle.data + this.heading);
+		this.__title.setTitle(appName.data + ' | ' + this.heading);
 		executionStatus.waiting = true;
 	}
 

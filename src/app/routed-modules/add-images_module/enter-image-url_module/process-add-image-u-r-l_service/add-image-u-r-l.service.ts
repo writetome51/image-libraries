@@ -13,8 +13,7 @@ import { EnterImageURLServicesModule } from '../enter-image-url-services.module'
 @Injectable({providedIn: EnterImageURLServicesModule})
 export class AddImageURLService implements IDoThis {
 
-	constructor(private __saveNewImages: SaveNewImagesService) {
-	}
+	constructor(private __saveNewImages: SaveNewImagesService) {}
 
 
 	async go(): Promise<{ success: true } | HasError> {

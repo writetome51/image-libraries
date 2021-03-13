@@ -12,7 +12,6 @@ import { ProcessLoginBySecurityQuestionService }
 })
 export class AnswerSecurityQuestionFormComponent {
 
-	constructor(public process: ProcessLoginBySecurityQuestionService) {
-	}
+	constructor(public process: ProcessLoginBySecurityQuestionService) {}
 
 }

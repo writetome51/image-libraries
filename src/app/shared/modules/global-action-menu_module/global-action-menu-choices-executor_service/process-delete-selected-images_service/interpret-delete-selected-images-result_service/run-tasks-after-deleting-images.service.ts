@@ -16,8 +16,7 @@ export class RunTasksAfterDeletingImagesService implements IDoThis {
 		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
 		private __currentRoute: CurrentRouteService,
 		private __router: Router
-	) {
-	}
+	) {}
 
 
 	async go() {

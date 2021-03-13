@@ -14,8 +14,7 @@ export class SaveNewImagesService implements IDoThis {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realmFn: MongoDBRealmFunctionService
-	) {
-	}
+	) {}
 
 
 	async go(newImages: AppImage[]): Promise<{ success: true } | HasError> {

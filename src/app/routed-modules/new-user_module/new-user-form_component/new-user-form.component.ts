@@ -16,7 +16,6 @@ import { ProcessCreateUserService }
 })
 export class NewUserFormComponent {
 
-	constructor(public process: ProcessCreateUserService) {
-	}
+	constructor(public process: ProcessCreateUserService) {}
 
 }

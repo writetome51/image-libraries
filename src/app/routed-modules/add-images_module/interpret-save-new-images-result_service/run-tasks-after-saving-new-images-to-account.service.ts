@@ -16,8 +16,7 @@ export class RunTasksAfterSavingNewImagesToAccountService implements IDoThis {
 	constructor(
 		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
 		private __userImageTotal: UserImageTotalInBrowserStorageService
-	) {
-	}
+	) {}
 
 	go() {
 		alert.setSuccess('New images saved');

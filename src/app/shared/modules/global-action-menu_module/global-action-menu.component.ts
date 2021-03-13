@@ -18,7 +18,6 @@ export class GlobalActionMenuComponent {
 	constructor(
 		public getChoices: GetGlobalActionMenuChoicesService,
 		public specificChoicesExecutor: GlobalActionMenuChoicesExecutorService
-	) {
-	}
+	) {}
 
 }

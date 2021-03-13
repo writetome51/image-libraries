@@ -12,7 +12,6 @@ import { ProcessGetSecurityQuestionService }
 })
 export class GetSecurityQuestionFormComponent {
 
-	constructor(public process: ProcessGetSecurityQuestionService) {
-	}
+	constructor(public process: ProcessGetSecurityQuestionService) {}
 
 }

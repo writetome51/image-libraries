@@ -11,8 +11,7 @@ import { SecurityQuestionServicesModule } from '../../security-question-services
 @Injectable({providedIn: SecurityQuestionServicesModule})
 export class LoginBySecurityQuestionService implements IDoThis {
 
-	constructor(private __realmFn: MongoDBRealmFunctionService) {
-	}
+	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
 	async go(): Promise<DBUser | HasError> {

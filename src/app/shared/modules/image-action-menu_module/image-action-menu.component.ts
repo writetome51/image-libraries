@@ -23,7 +23,6 @@ export class ImageActionMenuComponent {
 	constructor(
 		public getChoices: GetImageActionMenuChoicesService,
 		public specificChoicesExecutor: ImageActionMenuChoicesExecutorService
-	) {
-	}
+	) {}
 
 }

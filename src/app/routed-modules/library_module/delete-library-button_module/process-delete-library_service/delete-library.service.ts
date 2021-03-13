@@ -16,8 +16,7 @@ export class DeleteLibraryService implements IDoThis {
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<{ success: true } | HasError> {

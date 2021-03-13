@@ -15,8 +15,7 @@ export class CreateLibraryService implements IDoThis {
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<DBLibrary | HasError> {

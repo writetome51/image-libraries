@@ -15,8 +15,7 @@ export class RemoveImageFromLibraryService implements IDoThis {
 	constructor(
 		private __updateLibrary: UpdateLibraryService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(

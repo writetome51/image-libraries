@@ -18,8 +18,7 @@ export class UpdatePasswordService implements IDoThis {
 		private __realmFn: MongoDBRealmFunctionService,
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __emailInBrowser: EmailInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<DBUser | HasError> {

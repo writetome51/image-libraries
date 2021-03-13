@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageLocationComponent implements OnInit {
 
-	constructor() {
-	}
+	constructor() {}
 
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 }

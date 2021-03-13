@@ -17,8 +17,7 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 		private __loadLibrary: LoadLibraryService,
 		private __jumpToPageInput: LibraryJumpToPageInputService,
 		private __title: Title
-	) {
-	}
+	) {}
 
 
 	async go(params): Promise<void> {

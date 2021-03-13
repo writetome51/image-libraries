@@ -13,8 +13,7 @@ export class LogoutService implements IDoThis {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realmFn: MongoDBRealmFunctionService
-	) {
-	}
+	) {}
 
 
 	async go(): Promise<{ success: true } | HasError> {

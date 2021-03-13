@@ -12,8 +12,7 @@ export class DeleteImageGlyphiconComponent {
 	@Input() image: DBImage;
 
 
-	constructor() {
-	}
+	constructor() {}
 
 
 	async deleteImage(): Promise<void> {

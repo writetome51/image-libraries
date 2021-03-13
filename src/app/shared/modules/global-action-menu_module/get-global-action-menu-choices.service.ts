@@ -25,8 +25,7 @@ export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 	constructor(
 		private __currentRoute: CurrentRouteService,
 		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService
-	) {
-	}
+	) {}
 
 
 	go(): MenuChoice[] {

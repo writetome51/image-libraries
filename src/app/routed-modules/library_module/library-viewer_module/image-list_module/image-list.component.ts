@@ -22,7 +22,6 @@ export class ImageListComponent {
 		private __currentRoute: CurrentRouteService,
 		private __libraryPaginator: LibraryPaginatorService,
 		private __listItemRemover: ListItemRemoverService
-	) {
-	}
+	) {}
 
 }

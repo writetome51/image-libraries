@@ -28,8 +28,7 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 
 	constructor(
 		// if selectMultiple is enabled, hovering is disabled and the image has no routerLink.
-		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService) {
-	}
+		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService) {}
 
 
 	isHovered(container: HoverableContainerComponent): boolean {

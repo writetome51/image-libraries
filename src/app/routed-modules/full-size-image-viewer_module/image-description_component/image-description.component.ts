@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageDescriptionComponent implements OnInit {
 
-	constructor() {
-	}
+	constructor() {}
 
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 }

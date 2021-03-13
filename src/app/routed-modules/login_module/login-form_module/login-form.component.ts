@@ -26,7 +26,6 @@ export class LoginFormComponent {
 	modulePath = AppModulePathData;
 
 
-	constructor(public process: ProcessLoginByPasswordService) {
-	}
+	constructor(public process: ProcessLoginByPasswordService) {}
 
 }

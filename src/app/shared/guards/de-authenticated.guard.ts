@@ -12,8 +12,7 @@ export class DeAuthenticatedGuard implements CanActivate {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService
-	) {
-	}
+	) {}
 
 
 	// Returns true if logged out.

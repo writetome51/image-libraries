@@ -13,8 +13,7 @@ export class ToggleAddImageToLibraryService implements IDoThis {
 	constructor(
 		private __processAddImageToLibrary: ProcessAddImageToLibraryService,
 		private __processRemoveImageFromLibrary: ProcessRemoveImageFromLibraryService
-	) {
-	}
+	) {}
 
 
 	async go(

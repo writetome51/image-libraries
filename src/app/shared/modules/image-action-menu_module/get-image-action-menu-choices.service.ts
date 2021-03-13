@@ -18,8 +18,7 @@ export class GetImageActionMenuChoicesService implements GetMenuChoices {
 
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService
-	) {
-	}
+	) {}
 
 
 	go(image: DBImage): MenuChoice[] {

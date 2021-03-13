@@ -11,8 +11,7 @@ export class UpdateLoadedLibraryService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<any> {
-	}
+	async go(): Promise<any> {}
 
 
 }

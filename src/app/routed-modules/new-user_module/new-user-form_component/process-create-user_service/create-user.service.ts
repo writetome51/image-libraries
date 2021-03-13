@@ -11,8 +11,7 @@ import { NewUserServicesModule } from '../../new-user-services.module';
 @Injectable({providedIn: NewUserServicesModule})
 export class CreateUserService implements IDoThis {
 
-	constructor(private __realmFn: MongoDBRealmFunctionService) {
-	}
+	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
 	async go(): Promise<DBUser | HasError> {

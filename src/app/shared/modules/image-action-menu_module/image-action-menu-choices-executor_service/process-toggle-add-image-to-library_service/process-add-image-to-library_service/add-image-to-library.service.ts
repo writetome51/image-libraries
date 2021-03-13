@@ -14,8 +14,7 @@ export class AddImageToLibraryService implements IDoThis {
 	constructor(
 		private __libraryUpdater: UpdateLibraryService,
 		private __localLibraries: LibrariesInBrowserStorageService,
-	) {
-	}
+	) {}
 
 
 	async go(image_id, libName): Promise<DBLibrary | HasError> {

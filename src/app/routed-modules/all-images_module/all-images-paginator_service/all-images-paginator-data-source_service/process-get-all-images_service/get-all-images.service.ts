@@ -16,8 +16,7 @@ export class GetAllImagesService implements IDoThis {
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
 		private __realmFn: MongoDBRealmFunctionService
-	) {
-	}
+	) {}
 
 
 	async go(load: LoadConfiguration): Promise<ImageBatch | HasError> {

@@ -20,8 +20,7 @@ export class ReArrangeableGridListItemComponent {
 	constructor(
 		private  __listItemMover: ListItemMoverService,
 		private __listItemRemover: ListItemRemoverService
-	) {
-	}
+	) {}
 
 
 	set_isBeingDragged() {

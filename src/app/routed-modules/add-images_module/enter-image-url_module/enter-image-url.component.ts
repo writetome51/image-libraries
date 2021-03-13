@@ -12,7 +12,6 @@ import { ProcessAddImageURLService }
 })
 export class EnterImageURLComponent {
 
-	constructor(public process: ProcessAddImageURLService) {
-	}
+	constructor(public process: ProcessAddImageURLService) {}
 
 }
