@@ -1,4 +1,4 @@
-import { AppAlertComponent } from './app-alert_component/app-alert.component';
+import { AppAlertComponent } from './app-alert.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
