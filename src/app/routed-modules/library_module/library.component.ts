@@ -12,7 +12,13 @@ import { RouteParametersSubscriberComponent }
 
 @Component({
 	selector: 'app-library',
-	templateUrl: './library.component.html'
+	template: `
+		<header><h2>{{name}}</h2></header>
+
+		<big-loading-spinner *ngIf="gettingImages"></big-loading-spinner>
+
+		<library-viewer *ngIf="!(gettingImages)"></library-viewer>
+	`
 })
 export class LibraryComponent extends RouteParametersSubscriberComponent {
 
