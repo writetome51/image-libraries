@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { ItemBeingRemoved } from '@interfaces/item-being-removed.interface';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class ListItemRemoverService {
 
 	private __subject = new Subject();

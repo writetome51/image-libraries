@@ -11,12 +11,12 @@ import { HandleDbOperationErrorService }
 @Injectable({providedIn: AddImagesServicesModule})
 export class HandleSaveNewImagesErrorService extends HandleDbOperationErrorService {
 
-	async go(errMessage) {
-		if (errMessage.includes(duplicate)) alert.setError(imageWithSameNameAlreadyExists);
+	async go(error: {message: string}) {
+		if (error.message.includes(duplicate)) alert.setError(imageWithSameNameAlreadyExists);
 
-		else if (errMessage.includes(sizeRequirement)) alert.setError(imageSizeLimitExceeded);
+		else if (error.message.includes(sizeRequirement)) alert.setError(imageSizeLimitExceeded);
 
-		else await super.go(errMessage);
+		else await super.go(error);
 	}
 
 }

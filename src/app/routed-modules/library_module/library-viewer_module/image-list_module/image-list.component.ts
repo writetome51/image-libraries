@@ -3,7 +3,7 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { DBImage } from '@interfaces/db-image.interface';
 import { LibraryPaginatorService }
 	from '../../library-paginator_service/library-paginator.service';
-import { ListItemRemoverService } from '@services/list-item-remover.service';
+import { ListItemRemoverService } from './list-item-remover.service';
 import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 
 

@@ -7,11 +7,13 @@
 
 	<p *ngIf="(imageTotal === 0)">No images</p>
 
-	<div *ngIf="imageTotal > 0">
-		<image-size-slider></image-size-slider>
-		<image-list></image-list>
-	</div>
+	<ng-container *ngIf="imageTotal > 0">
+		<div>
+			<image-size-slider></image-size-slider>
+			<image-list></image-list>
+		</div>
 
-	<library-pagination-controls *ngIf="imageTotal > 0"></library-pagination-controls>
+		<library-pagination-controls></library-pagination-controls>
+	</ng-container>
 
 </div>

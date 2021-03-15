@@ -1,20 +1,19 @@
-import { errorIfNotInteger } from 'error-if-not-integer';
 import { Injectable } from '@angular/core';
 import { ItemBeingMoved } from '@interfaces/item-being-moved.interface';
 import { moveByIndex } from '@writetome51/array-move-by-index';
-import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { Subject, Subscribable } from 'rxjs';
 
 
-@Injectable({providedIn: 'root'})
-export class ListItemMoverService extends PublicArrayContainer {
+@Injectable()
+export class ListItemMoverService {
 
+	private __list: any[];
 	private __subject = new Subject();
 	private __indexBeingMoved: number;
 
 
-	constructor() {
-		super();
+	setList(value: any[]) {
+		this.__list = value;
 	}
 
 
@@ -24,7 +23,6 @@ export class ListItemMoverService extends PublicArrayContainer {
 
 
 	set indexBeingMoved(value) {
-		errorIfNotInteger(value);
 		this.__indexBeingMoved = value;
 	}
 
@@ -35,7 +33,7 @@ export class ListItemMoverService extends PublicArrayContainer {
 
 
 	moveItemTo(newIndex): void {
-		moveByIndex(this.__indexBeingMoved, newIndex, this.data);
+		moveByIndex(this.__indexBeingMoved, newIndex, this.__list);
 
 		this.__subject.next({
 			indexBeingMoved: this.__indexBeingMoved,
@@ -43,6 +41,5 @@ export class ListItemMoverService extends PublicArrayContainer {
 		});
 		this.__indexBeingMoved = -1;
 	}
-
 
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ListItemMoverService } from '@services/list-item-mover.service';
-import { ListItemRemoverService } from '@services/list-item-remover.service';
+import { ListItemMoverService } from '../list-item-mover.service';
+import { ListItemRemoverService } from '../../list-item-remover.service';
 
 
 @Component({
@@ -9,7 +9,6 @@ import { ListItemRemoverService } from '@services/list-item-remover.service';
 	styleUrls: ['./re-arrangeable-grid-list-item.component.css']
 })
 export class ReArrangeableGridListItemComponent {
-
 
 	@Input() index: number; // required
 	isBeingDragged = false;
@@ -54,6 +53,5 @@ export class ReArrangeableGridListItemComponent {
 		this.__listItemMover.moveItemTo(this.index);
 		this.unset_isBeingDraggedOnto();
 	}
-
 
 }
