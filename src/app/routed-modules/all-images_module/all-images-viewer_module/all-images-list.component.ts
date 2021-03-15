@@ -2,12 +2,12 @@ import { AllImagesPaginatorService }
 	from '../all-images-paginator_service/all-images-paginator.service';
 import { AppModulePathData as appModuleRoutes } from '../../../app-module-path.data';
 import { Component } from '@angular/core';
-import { DBImage } from '@interfaces/db-image.interface';
-import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
+import { ImageListComponent }
+	from '@abstract-components/image-list.abstract.component';
 
 
 @Component({
-	selector: 'image-list',
+	selector: 'all-images-list',
 	template: `
 		<p *ngIf="images && images.length === 0">You have no images in your account.</p>
 
@@ -23,18 +23,15 @@ import { GetPageImagesService as getPageImages } from '@services/get-page-images
 		</ul>
 	`
 })
-export class ImageListComponent {
-
-	get images(): DBImage[] {
-		return getPageImages.go(this.__paginator);
-	}
-
+export class AllImagesListComponent extends ImageListComponent {
 
 	get fullSizeImageRoute() {
 		return '/' + appModuleRoutes.FullSizeImageViewerModule;
 	}
 
 
-	constructor(private __paginator: AllImagesPaginatorService) {}
+	constructor(__paginator: AllImagesPaginatorService) {
+		super(__paginator);
+	}
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UserImageTotalInBrowserStorageService } from '@browser-storage/user-image-total-in-browser-storage.service';
+import { UserImageTotalInBrowserStorageService }
+	from '@browser-storage/user-image-total-in-browser-storage.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { UserImageTotalInBrowserStorageService } from '@browser-storage/user-ima
 
 		<ng-container *ngIf="imageTotal > 0">
 			<image-size-slider></image-size-slider>
-			<image-list></image-list>
+			<all-images-list></all-images-list>
 		</ng-container>
 
 

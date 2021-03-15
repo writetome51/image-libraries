@@ -16,8 +16,8 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 
 	constructor(
-		private __setLoadedImages: SetLoadedImages,
 		private __dataTotal: DataTotalService,
+		private __setLoadedImages: SetLoadedImages,
 		private __loadedImageState: LoadedImageStateService
 	) {}
 

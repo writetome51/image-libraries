@@ -14,11 +14,11 @@ import { LoadedImageStateService }
 export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceService {
 
 	constructor(
-		__setLoadedImages: ProcessGetLibraryImagesService,
 		__dataTotal: LibraryImagesDataTotalService,
+		__setLoadedImages: ProcessGetLibraryImagesService,
 		__loadedImageState: LoadedImageStateService
 	) {
-		super(__setLoadedImages, __dataTotal, __loadedImageState);
+		super(__dataTotal, __setLoadedImages, __loadedImageState);
 	}
 
 }

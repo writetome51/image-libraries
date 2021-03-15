@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImageListComponent } from './image-list.component';
+import { LibraryImagesListComponent } from './library-images-list.component';
 import { ReArrangeableGridListModule }
 	from './re-arrangeable-grid-list_module/re-arrangeable-grid-list.module';
 import { ThumbnailImageContainerModule }
@@ -9,13 +9,13 @@ import { ListItemRemoverService } from './list-item-remover.service';
 
 
 @NgModule({
-	declarations: [ImageListComponent],
+	declarations: [LibraryImagesListComponent],
 	imports: [
 		CommonModule,
 		ThumbnailImageContainerModule,
 		ReArrangeableGridListModule,
 	],
 	providers: [ListItemRemoverService],
-	exports: [ImageListComponent]
+	exports: [LibraryImagesListComponent]
 })
 export class ImageListModule {}

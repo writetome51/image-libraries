@@ -1,4 +1,5 @@
-import { BackgroundExecutionStatusData as executionStatus } from '@runtime-state-data/background-execution-status.data';
+import { BackgroundExecutionStatusData as executionStatus }
+	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetLibraryRouteParamsObserverService }

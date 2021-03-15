@@ -5,7 +5,7 @@ import { AppPaginationControlsModule }
 import { AllImagesViewerComponent } from './all-images-viewer.component';
 import { AllImagesPaginationControlsComponent } from './all-images-pagination-controls.component';
 import { GlobalActionMenuModule } from '@global-action-menu_module/global-action-menu.module';
-import { ImageListComponent } from './image-list.component';
+import { AllImagesListComponent } from './all-images-list.component';
 import { ImageSizeSliderModule } from '@image-size-slider_module/image-size-slider.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container_module/thumbnail-image-container.module';
@@ -15,7 +15,7 @@ import { ThumbnailImageContainerModule }
 	declarations: [
 		AllImagesViewerComponent,
 		AllImagesPaginationControlsComponent,
-		ImageListComponent
+		AllImagesListComponent
 	],
 	imports: [
 		CommonModule,
