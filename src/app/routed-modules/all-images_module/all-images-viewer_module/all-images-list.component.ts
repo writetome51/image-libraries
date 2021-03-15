@@ -9,8 +9,6 @@ import { ImageListComponent }
 @Component({
 	selector: 'all-images-list',
 	template: `
-		<p *ngIf="images && images.length === 0">You have no images in your account.</p>
-
 		<ul *ngIf="images && images.length > 0">
 
 			<li class="grid-list-item" *ngFor="let img of images">
