@@ -2,8 +2,8 @@ import { AllImagesPaginatorService }
 	from '../all-images-paginator_service/all-images-paginator.service';
 import { AppModulePathData as appModuleRoutes } from '../../../app-module-path.data';
 import { Component } from '@angular/core';
-import { ImageListComponent }
-	from '@abstract-components/image-list.abstract.component';
+import { ImagesListComponent }
+	from '@abstract-components/images-list.abstract.component';
 
 
 @Component({
@@ -21,7 +21,7 @@ import { ImageListComponent }
 		</ul>
 	`
 })
-export class AllImagesListComponent extends ImageListComponent {
+export class AllImagesListComponent extends ImagesListComponent {
 
 	get fullSizeImageRoute() {
 		return '/' + appModuleRoutes.FullSizeImageViewerModule;

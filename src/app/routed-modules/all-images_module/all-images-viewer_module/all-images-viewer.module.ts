@@ -9,7 +9,8 @@ import { AllImagesListComponent } from './all-images-list.component';
 import { ImageSizeSliderModule } from '@image-size-slider_module/image-size-slider.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container_module/thumbnail-image-container.module';
-import { ImagesListContainerModule } from '@app/shared/modules/images-list-container_module/images-list-container.module';
+import { ImagesListContainerModule }
+	from '@app/shared/modules/images-list-container_module/images-list-container.module';
 
 
 @NgModule({
@@ -22,9 +23,9 @@ import { ImagesListContainerModule } from '@app/shared/modules/images-list-conta
 		CommonModule,
 		GlobalActionMenuModule,
 		AppPaginationControlsModule,
+		ImagesListContainerModule,
 		ImageSizeSliderModule,
 		ThumbnailImageContainerModule,
-		ImagesListContainerModule,
 	],
 	exports: [AllImagesViewerComponent]
 })

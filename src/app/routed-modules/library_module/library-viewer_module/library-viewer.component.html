@@ -1,19 +1,12 @@
 <div>
 
-	<ng-container *ngIf="changesExist">
-		<save-changes-button></save-changes-button>
-		<undo-changes-button></undo-changes-button>
-	</ng-container>
-
 	<p *ngIf="(imageTotal === 0)">No images</p>
 
-	<ng-container *ngIf="imageTotal > 0">
-		<div>
-			<image-size-slider></image-size-slider>
-			<library-images-list></library-images-list>
-		</div>
+	<library-change-controls></library-change-controls>
 
-		<library-pagination-controls></library-pagination-controls>
-	</ng-container>
+	<images-list-container *ngIf="imageTotal > 0">
+		<library-images-list></library-images-list>
+		<delete-library-button></delete-library-button>
+	</images-list-container>
 
 </div>

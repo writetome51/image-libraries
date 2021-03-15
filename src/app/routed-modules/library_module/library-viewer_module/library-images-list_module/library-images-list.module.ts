@@ -18,4 +18,4 @@ import { ListItemRemoverService } from './list-item-remover.service';
 	providers: [ListItemRemoverService],
 	exports: [LibraryImagesListComponent]
 })
-export class ImageListModule {}
+export class LibraryImagesListModule {}

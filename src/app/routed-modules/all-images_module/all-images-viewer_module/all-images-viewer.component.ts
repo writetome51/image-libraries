@@ -3,6 +3,7 @@ import { AllImagesPaginatorService }
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
+import { ImagesViewerComponent } from '@abstract-components/images-viewer.abstract.component';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 
@@ -21,21 +22,17 @@ import { UserImageTotalInBrowserStorageService }
 		</images-list-container>
 	`
 })
-export class AllImagesViewerComponent {
+export class AllImagesViewerComponent extends ImagesViewerComponent {
 
-	modulePath = appModulePath.AllImagesModule;
-	routeBeforePageNumber = `${this.modulePath}/page`;
-
-
-	get imageTotal(): number {
-		return this.__userImageTotal.get();
-	}
+	routeBeforePageNumber = `${appModulePath.AllImagesModule}/page`;
 
 
 	constructor(
-		private __userImageTotal: UserImageTotalInBrowserStorageService,
-		public paginator: AllImagesPaginatorService,
-		public jumpToPageInput: AllImagesJumpToPageInputService
-	) {}
+		__storedImageTotal: UserImageTotalInBrowserStorageService,
+		paginator: AllImagesPaginatorService,
+		jumpToPageInput: AllImagesJumpToPageInputService
+	) {
+		super(__storedImageTotal, paginator, jumpToPageInput);
+	}
 
 }

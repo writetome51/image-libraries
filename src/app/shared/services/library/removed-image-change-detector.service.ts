@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subscription, Unsubscribable } from 'rxjs';
-import { ListItemRemoverService } from '../../../routed-modules/library_module/library-viewer_module/image-list_module/list-item-remover.service';
+import { ListItemRemoverService } from '../../../routed-modules/library_module/library-viewer_module/library-images-list_module/list-item-remover.service';
 import { LibraryChangesService } from './library-changes.service';
 // import { getCopy } from '@writetome51/array-get-copy';
 

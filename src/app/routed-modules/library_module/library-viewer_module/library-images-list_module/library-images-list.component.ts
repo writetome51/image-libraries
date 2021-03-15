@@ -3,14 +3,14 @@ import { CurrentRouteService } from '@services/current-route.service';
 import { LibraryPaginatorService }
 	from '../../library-paginator_service/library-paginator.service';
 import { ListItemRemoverService } from './list-item-remover.service';
-import { ImageListComponent } from '@abstract-components/image-list.abstract.component';
+import { ImagesListComponent } from '@abstract-components/images-list.abstract.component';
 
 
 @Component({
 	selector: 'library-images-list',
 	templateUrl: './library-images-list.component.html'
 })
-export class LibraryImagesListComponent extends ImageListComponent {
+export class LibraryImagesListComponent extends ImagesListComponent {
 
 	constructor(
 		__paginator: LibraryPaginatorService,

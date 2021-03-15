@@ -75,9 +75,8 @@
 			"@interpret-result/*": [
 				"src/app/shared/services/process/interpret-result/*"
 			],
-			"@logged-in-app-navigator_module/*": [
-				"src/app/logged-in-app-navigator_module/*"
-			],
+			"@logged-in-app-navigator_module/*": ["src/app/logged-in-app-navigator_module/*"],
+			"@modules/*": ["src/app/shared/modules/*"],
 			"@menu-choice_module/*": [
 				"src/app/shared/modules/action-menu_module/action-menu-choices_module/menu-choice_module/*"
 			],

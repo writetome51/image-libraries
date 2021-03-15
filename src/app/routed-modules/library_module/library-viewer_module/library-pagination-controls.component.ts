@@ -9,9 +9,9 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 	selector: 'library-pagination-controls',
 	template: `
 		<app-pagination-controls
-				[routeBeforePage]="routeBeforePageNumber"
-				[paginator]="paginator"
-				[jumpToPageInput]="jumpToPageInput"
+			[routeBeforePageNumber]="routeBeforePageNumber"
+			[paginator]="paginator"
+			[jumpToPageInput]="jumpToPageInput"
 		>
 		</app-pagination-controls>
 	`

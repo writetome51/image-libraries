@@ -9,7 +9,7 @@ import { JumpToPageInputService }
 		<global-action-menu></global-action-menu>
 		<image-size-slider></image-size-slider>
 
-		<ng-content></ng-content><!--  image list  -->
+		<ng-content></ng-content><!--  images list  -->
 
 		<app-pagination-controls
 			[paginator]="paginator"  [routeBeforePageNumber]="routeBeforePageNumber"

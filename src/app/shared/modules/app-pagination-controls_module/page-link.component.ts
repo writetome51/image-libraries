@@ -8,11 +8,11 @@ import { Component, Input } from '@angular/core';
 export class PageLinkComponent {
 
 	@Input() pageNumber: number;
-	@Input() routeBeforePage: string;
+	@Input() routeBeforePageNumber: string;
 
 
 	get routerLink(): any[] {
-		return ['/' + this.routeBeforePage, this.pageNumber];
+		return ['/' + this.routeBeforePageNumber, this.pageNumber];
 	}
 
 }

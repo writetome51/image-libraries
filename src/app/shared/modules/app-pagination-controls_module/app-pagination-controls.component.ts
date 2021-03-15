@@ -11,17 +11,18 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 			<div>
 
 				<page-link *ngIf="currentPage > 1"
-					[pageNumber]="currentPage - 1" [routeBeforePage]="routeBeforePage"
+					[pageNumber]="currentPage - 1"  [routeBeforePageNumber]="routeBeforePageNumber"
 				> previous
 				</page-link>
 
 				<page-link *ngIf="currentPage < totalPages"
-					[pageNumber]="currentPage + 1" [routeBeforePage]="routeBeforePage"
+					[pageNumber]="currentPage + 1"  [routeBeforePageNumber]="routeBeforePageNumber"
 				> next
 				</page-link>
 
 				<jump-to-page *ngIf="jumpToPageInput"
-					[pageNumberInput]="jumpToPageInput.data" [routeBeforePage]="routeBeforePage"
+					[pageNumberInput]="jumpToPageInput.data"
+					[routeBeforePageNumber]="routeBeforePageNumber"
 				></jump-to-page>
 
 			</div>
@@ -31,7 +32,7 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 export class AppPaginationControlsComponent {
 
 	@Input() paginator: { getCurrentPageNumber: () => number, getTotalPages: () => number };
-	@Input() routeBeforePage: string;
+	@Input() routeBeforePageNumber: string;
 
 	// Optional
 	@Input() jumpToPageInput: JumpToPageInputService;
