@@ -1,7 +1,7 @@
 import { StoreImageFilesService } from './store-image-files.service';
 import { ProcessService } from '@process/process.abstract.service';
 import { InterpretStoreImageFilesResultService }
-	from './interpret-store-image-files-result.service';
+	from './interpret-store-image-files-result_service/interpret-store-image-files-result.service';
 
 
 export abstract class ProcessStoreImageFilesService extends ProcessService {
