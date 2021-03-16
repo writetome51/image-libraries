@@ -17,6 +17,9 @@ export class ProcessUploadImagesService implements Process {
 
 	async go(files: FileList | File[]): Promise<void> {
 
+		// First send all images to file storage service, receiving back all
+		// their response objects.  Then pass those objects thru here:
+
 		for (let i = 0, length = files.length; i < length; ++i) {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
@@ -30,7 +33,10 @@ export class ProcessUploadImagesService implements Process {
 
 		return getAppImage.go({
 			name: getFormattedName(file.name),
+
+			// replace with api call that returns image url:
 			src: await getDataURL(file),
+
 			date: new Date(file.lastModified),
 			location: file.location
 		});
