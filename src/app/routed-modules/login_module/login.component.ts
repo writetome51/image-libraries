@@ -27,5 +27,4 @@ export class LoginComponent {
 		this.__title.setTitle(moduleTitle.data);
 	}
 
-
 }

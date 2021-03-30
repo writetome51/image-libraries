@@ -2,9 +2,11 @@ import { StoreImageFilesService } from './store-image-files.service';
 import { ProcessService } from '@process/process.abstract.service';
 import { InterpretStoreImageFilesResultService }
 	from './interpret-store-image-files-result_service/interpret-store-image-files-result.service';
+import { Injectable } from '@angular/core';
 
 
-export abstract class ProcessStoreImageFilesService extends ProcessService {
+@Injectable({providedIn: 'root'})
+export class ProcessStoreImageFilesService extends ProcessService {
 
 	constructor(
 		__getResult: StoreImageFilesService,

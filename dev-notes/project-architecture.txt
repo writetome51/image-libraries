@@ -19,5 +19,5 @@ those Services will have their @Injectable decorator written as:
 @Injectable({providedIn: ExampleServicesModule})
 
 
-Any class decorator I've created is an experiment.
-
+Any class decorator I've created is an experiment.  Wherever they're used, I chose to use
+them instead of implementing a constructor because that seemed messier.

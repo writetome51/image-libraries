@@ -1,3 +1,5 @@
+This is unnecessary to read if you're already familiar with Angular.
+
 Directives
 are classes providing UI content behavior.  Each has an assigned selector
 (a custom element or element attribute).

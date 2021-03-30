@@ -7,25 +7,40 @@ import { NewImagesData as newImages }
 import { ProcessSaveNewImagesService } from './process-save-new-images.service';
 import { AddImagesServicesModule } from '../../add-images-services.module';
 import { Process } from '@interfaces/process.interface';
+import { ProcessStoreImageFilesService }
+	from '../process-store-image-files_service/process-store-image-files.service';
+import { GetBinaryDataService as getBinaryData } from '@services/get-binary-data.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
 export class ProcessUploadImagesService implements Process {
 
-	constructor(private __processSaveNewImages: ProcessSaveNewImagesService) {}
+	constructor(
+		private __processSaveNewImages: ProcessSaveNewImagesService,
+		private __processStoreImageFiles: ProcessStoreImageFilesService
+	) {}
 
 
 	async go(files: FileList | File[]): Promise<void> {
+		// add file size limit checking here (not greater than 500KB)
 
+		let binary = await getBinaryData.go(files[0]);
+		console.log(binary.length);
+		files[0]['src'] = binary;
 		// First send all images to file storage service, receiving back all
-		// their response objects.  Then pass those objects thru here:
+		// their response objects.
+		await this.__processStoreImageFiles.go(files);
 
+		// Then pass those objects thru here:
+
+		/**************
 		for (let i = 0, length = files.length; i < length; ++i) {
 			newImages.data[i] = await this.__getAppImage(files[i]);
 		}
 		await this.__processSaveNewImages.go(newImages.data);
 
 		newImages.data = [];
+		****************/
 	}
 
 

@@ -12,8 +12,12 @@ export class StoreImageFilesService implements IDoThis {
 	constructor(private __imgbbRestAPI: ImgbbRestAPIService) {}
 
 
-	async go(images:  FileList | File[]): Promise<object | HasError> {
-		return getObjectFromSubscription.go(this.__imgbbRestAPI.post('', {images}));
+	async go(images: FileList | File[]): Promise<object | HasError> {
+		console.log('binary length: ', images[0]['src'].length);
+		return getObjectFromSubscription.go(this.__imgbbRestAPI.post(
+			'',
+			{image: images[0]}
+		));
 	}
 
 }
