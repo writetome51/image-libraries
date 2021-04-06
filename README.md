@@ -8,7 +8,7 @@ through them. Kind of like iPhoto in a browser.
 Languages: &nbsp;&nbsp; TypeScript, JavaScript, HTML, CSS  
 Frameworks:  &nbsp;&nbsp; Angular 9.0.x, Twitter Bootstrap  
 Databases: &nbsp;&nbsp;  MongoDB  
-Cloud Services: &nbsp;&nbsp;  MongoDB Realm (formerly MongoDB Stitch)
+Cloud Services: &nbsp;&nbsp;  MongoDB Realm, AWS S3
 
 # Angular app info
 
