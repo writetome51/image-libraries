@@ -1,9 +1,8 @@
-import { ProcessDbOperationService }
-	from '@services/process/process-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretLogoutResultService } from './interpret-logout-result.service';
-import { LogoutService } from './logout.service';
 import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
+import { LogoutService } from './logout.service';
+import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})

@@ -2,13 +2,14 @@ import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
 import { DeleteObjectCommand, ListObjectsCommand, PutObjectCommand, S3Client }
 	from '@aws-sdk/client-s3';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
+import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 
 
 /******************************
 Connects app with AWS S3 (simple-storage-service).
 We're using a single S3 bucket (data container), which contains folders, each of which represents
-a user of this app.
+a user of this app. The folder contain the user's files.
  *****************************/
 
 @Injectable({providedIn: 'root'})
@@ -75,12 +76,10 @@ export class AWSStorageService {
 
 
 	async addFilesToFolderAndReturnURLs(files: File[], folderName: string): Promise<string[]> {
-		let urls = [];
-		for (let i = 0, length = files.length; i < length; ++i) {
-			let url = await this.addFileToFolderAndReturnURL(files[i], folderName);
-			urls.push(url);
-		}
-		return urls;
+		return getArrFilled(
+			files.length,
+			async (i) => await this.addFileToFolderAndReturnURL(files[i], folderName)
+		);
 	}
 
 

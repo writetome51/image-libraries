@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
 import { HandleDbOperationErrorService }
 	from '@handle-db-operation-error_service/handle-db-operation-error.service';
-import { RunTasksAfterLogoutService }
-	from '@process/run-post-success-tasks/run-tasks-after-logout.service';
+import { Injectable } from '@angular/core';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { LoggedInNavigatorServicesModule } from '../../logged-in-navigator-services.module';
+import { RunTasksAfterLogoutService }
+	from '@process/run-post-success-tasks/run-tasks-after-logout.service';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
