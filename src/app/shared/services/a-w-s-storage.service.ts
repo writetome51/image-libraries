@@ -31,13 +31,13 @@ export class AWSStorageService {
 
 	async createFolder(folderName): Promise<void> {
 		folderName = folderName.trim();
-		if (folderName.indexOf('/') !== -1) throw new Error('Folder names cannot contain slashes.');
+		if (includesSlash(folderName)) throw new Error('Folder names cannot include slashes.');
 
 		try {
 			const params = {
 				Bucket: this.__s3Bucket,
 				Key: encodeURIComponent(folderName) + '/',
-				// Gives user ability to read and delete their own data
+				// Gives owner ability to read, add files to, and delete the folder
 				ACL: 'public-read-write'
 			};
 			await this.__s3Client.send(new PutObjectCommand(params));
@@ -45,10 +45,13 @@ export class AWSStorageService {
 		catch (err) {
 			throw new Error('There was an error creating the folder: ' + err.message);
 		}
+
+
+		function includesSlash(name) { return (name.indexOf('/') !== -1); }
 	}
 
 
-	async deleteFolder(folderName) {
+	async deleteFolder(folderName: string) {
 		const folderKey = encodeURIComponent(folderName) + '/';
 		try {
 			const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
@@ -78,29 +81,8 @@ export class AWSStorageService {
 	async addFilesToFolderAndReturnURLs(files: File[], folderName: string): Promise<string[]> {
 		return getArrFilled(
 			files.length,
-			async (i) => await this.addFileToFolderAndReturnURL(files[i], folderName)
+			async (i) => await this.__addFileToFolderAndReturnURL(files[i], folderName)
 		);
-	}
-
-
-	async addFileToFolderAndReturnURL(file: File, folderName: string): Promise<string> {
-
-		const folderKey = encodeURIComponent(folderName) + '/';
-		const fileKey = folderKey + encodeURIComponent(file.name);
-		const uploadParams = {
-			Bucket: this.__s3Bucket,
-			Key: fileKey,
-			Body: file,
-			// Gives user ability to read and delete their own data
-			ACL: 'public-read-write'
-		};
-		try {
-			await this.__s3Client.send(new PutObjectCommand(uploadParams));
-			return this.__getFileURL(fileKey);
-		}
-		catch (err) {
-			alert('There was an error uploading your file: ' + err.message);
-		}
 	}
 
 
@@ -115,12 +97,30 @@ export class AWSStorageService {
 	}
 
 
-	private __getFileURL(fileKey: string): string {
-		const href = 'https://s3.' + this.__region + '.amazonaws.com/';
-		const bucketUrl = href + this.__s3Bucket + '/';
+	private async __addFileToFolderAndReturnURL(file: File, folderName: string): Promise<string> {
 
-		// This is the url that must be assigned to 'src' in image's db record:
-		return bucketUrl + fileKey;
+		const folderKey = encodeURIComponent(folderName) + '/';
+		const fileKey = folderKey + encodeURIComponent(file.name);
+		try {
+			await this.__s3Client.send(new PutObjectCommand({
+				Bucket: this.__s3Bucket,
+				Key: fileKey,
+				Body: file,
+				// Gives owner ability to read and delete the file
+				ACL: 'public-read-write'
+			}));
+			return this.__getFileURL(fileKey);
+		}
+		catch (err) {
+			throw new Error(`There was an error adding file "${file.name}":  ` + err.message);
+		}
+	}
+
+
+	private __getFileURL(fileKey: string): string {
+		const serviceURL = `https://s3.${this.__region}.amazonaws.com/`;
+		const bucketURL = serviceURL + this.__s3Bucket + '/';
+		return bucketURL + fileKey;
 	}
 
 }
