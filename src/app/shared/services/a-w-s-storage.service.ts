@@ -4,6 +4,10 @@ import { DeleteObjectCommand, ListObjectsCommand, PutObjectCommand, S3Client }
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
+import { noValue } from '@writetome51/has-value-no-value';
+import { removeByTest } from '@writetome51/array-remove-by-test';
+import { HasError } from '@interfaces/has-error.interface';
+import { modifyObject } from '@writetome51/modify-object';
 
 
 /******************************
@@ -29,21 +33,19 @@ export class AWSStorageService {
 	});
 
 
-	async createFolder(folderName): Promise<void> {
+	async createFolder(folderName: string): Promise<{ success: true } | HasError> {
 		folderName = folderName.trim();
-		if (includesSlash(folderName)) throw new Error('Folder names cannot include slashes.');
-
+		if (includesSlash(folderName)) return {
+			error: {message: 'Folder names cannot include slashes.'}
+		};
 		try {
-			const params = {
-				Bucket: this.__s3Bucket,
-				Key: encodeURIComponent(folderName) + '/',
-				// Gives owner ability to read, add files to, and delete the folder
-				ACL: 'public-read-write'
-			};
-			await this.__s3Client.send(new PutObjectCommand(params));
+			await this.__insertNewData({ Key: encodeURIComponent(folderName) + '/' });
+			return {success: true};
 		}
 		catch (err) {
-			throw new Error('There was an error creating the folder: ' + err.message);
+			return {
+				error: {message: `There was an error creating the user's folder: ${err.message}`}
+			};
 		}
 
 
@@ -60,13 +62,11 @@ export class AWSStorageService {
 				return {Key: object.Key};
 			});
 			try {
-				const params = {
-					Bucket: this.__s3Bucket,
+				await this.__deleteData({
 					Key: folderKey,
 					Delete: {Objects},
 					Quiet: true,
-				};
-				await this.__s3Client.send(new DeleteObjectCommand(params));
+				});
 			}
 			catch (err) {
 				return alert('There was an error deleting your folder: ' + err.message);
@@ -79,21 +79,18 @@ export class AWSStorageService {
 
 
 	async addFilesToFolderAndReturnURLs(files: File[], folderName: string): Promise<string[]> {
-		return getArrFilled(
+		let urls: string[] = getArrFilled(
 			files.length,
 			async (i) => await this.__addFileToFolderAndReturnURL(files[i], folderName)
 		);
+		removeByTest((value) => noValue(value), urls);
+		return urls;
 	}
 
 
 	async deleteFile(fileKey: string) {
-		try {
-			const params = {Key: fileKey, Bucket: this.__s3Bucket};
-			await this.__s3Client.send(new DeleteObjectCommand(params));
-		}
-		catch (err) {
-			return alert('There was an error deleting your file: ' + err.message);
-		}
+		try { await this.__deleteData({Key: fileKey}); }
+		catch (err) { throw new Error('There was an error deleting your file: ' + err.message); }
 	}
 
 
@@ -102,18 +99,33 @@ export class AWSStorageService {
 		const folderKey = encodeURIComponent(folderName) + '/';
 		const fileKey = folderKey + encodeURIComponent(file.name);
 		try {
-			await this.__s3Client.send(new PutObjectCommand({
-				Bucket: this.__s3Bucket,
-				Key: fileKey,
-				Body: file,
-				// Gives owner ability to read and delete the file
-				ACL: 'public-read-write'
-			}));
+			await this.__insertNewData({Key: fileKey, Body: file});
 			return this.__getFileURL(fileKey);
 		}
 		catch (err) {
 			throw new Error(`There was an error adding file "${file.name}":  ` + err.message);
 		}
+	}
+
+
+	private async __insertNewData(params) {
+		modifyObject(params, this.__getDefaultParams());
+		return await this.__s3Client.send(new PutObjectCommand(params));
+	}
+
+
+	private async __deleteData(params) {
+		modifyObject(params, this.__getDefaultParams());
+		return await this.__s3Client.send(new DeleteObjectCommand(params));
+	}
+
+
+	private __getDefaultParams() {
+		return {
+			Bucket: this.__s3Bucket,
+			// Allows user to read and delete
+			ACL: 'public-read-write'
+		};
 	}
 
 

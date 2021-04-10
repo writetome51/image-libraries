@@ -14,7 +14,6 @@ import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.da
 })
 export class NewLibraryButtonComponent {
 
-
 	get creatingNewLibrary(): boolean {
 		return newLibrary.beingCreated;
 	}
@@ -28,6 +27,5 @@ export class NewLibraryButtonComponent {
 	get label() {
 		return (this.creatingNewLibrary ? 'Cancel' : 'New Library');
 	}
-
 
 }

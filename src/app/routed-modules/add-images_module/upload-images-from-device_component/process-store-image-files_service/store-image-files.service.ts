@@ -1,23 +1,28 @@
+import { AWSStorageService } from '@services/a-w-s-storage.service';
+import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
+import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ImgbbRestAPIService } from '@services/imgbb-rest-api.service';
-import { GetObjectFromSubscriptionService as getObjectFromSubscription }
-	from '@services/get-object-from-subscription.service';
-import { HasError } from '@interfaces/has-error.interface';
 
+
+/******************************
+Each of a user's image files is stored in a cloud folder representing that user. Once an image is
+added to the folder, all we need to know about that image is its url.  The url must be assigned
+to the 'src' of its DBImage.
+ *****************************/
 
 @Injectable({providedIn: 'root'})
 export class StoreImageFilesService implements IDoThis {
 
-	constructor(private __imgbbRestAPI: ImgbbRestAPIService) {}
+	constructor(
+		private __awsStorage: AWSStorageService,
+		private __emailInBrowser: EmailInBrowserStorageService
+	) {}
 
 
-	async go(images: FileList | File[]): Promise<object | HasError> {
-		console.log('binary length: ', images[0]['src'].length);
-		return getObjectFromSubscription.go(this.__imgbbRestAPI.post(
-			'',
-			{image: images[0]}
-		));
+	async go(images: File[]): Promise<string[] | HasError> {
+		let folderName = this.__emailInBrowser.get();
+		return this.__awsStorage.addFilesToFolderAndReturnURLs(images, folderName);
 	}
 
 }
