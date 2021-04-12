@@ -8,7 +8,7 @@ import { HandleDbOperationErrorService }
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class HandleCreateUserErrorService extends HandleDbOperationErrorService {
+export class HandleCreateUserInDbErrorService extends HandleDbOperationErrorService {
 
 	async go(error: {message: string}) {
 		if (error.message.includes(duplicate)) alert.setError(accountAlreadyExists);

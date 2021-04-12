@@ -9,7 +9,7 @@ import { NewUserServicesModule } from '../../new-user-services.module';
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class CreateUserService implements IDoThis {
+export class CreateUserInDbService implements IDoThis {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 

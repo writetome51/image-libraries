@@ -7,7 +7,7 @@ import { RunTasksAfterLoginService } from '@run-post-success-tasks/run-tasks-aft
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class RunTasksAfterCreatingNewUserService implements IDoThis {
+export class RunTasksAfterCreatingUserInDbService implements IDoThis {
 
 	constructor(private __runTasksAfterLogin: RunTasksAfterLoginService) {}
 

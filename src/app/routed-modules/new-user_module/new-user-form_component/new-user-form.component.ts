@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ProcessCreateUserService }
-	from './process-create-user_service/process-create-user.service';
+import { ProcessCreateUserInDbService }
+	from './process-create-user-in-db_service/process-create-user-in-db.service';
 
 
 @Component({
@@ -16,6 +16,6 @@ import { ProcessCreateUserService }
 })
 export class NewUserFormComponent {
 
-	constructor(public process: ProcessCreateUserService) {}
+	constructor(public process: ProcessCreateUserInDbService) {}
 
 }

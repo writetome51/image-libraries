@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewUserInputsService } from './new-user-inputs.service';
+import { NewUserInputsService } from './new-user-inputs_service/new-user-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 

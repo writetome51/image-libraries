@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from '@services/validating-input/email-input.service';
-import { PasswordInputService } from '@services/validating-input/password-input.service';
+import { EmailInputService } from '@validating-input/email-input.service';
+import { PasswordInputService } from '@validating-input/password-input.service';
 import { PasswordAgainInputService } from '@validating-input/password-again-input.service';
 import { SecurityQuestionInputService } from './security-question-input.service';
 import { CurrentUserInputsService }
 	from '@current-user-inputs_service/current-user-inputs.abstract.service';
 import { SecurityAnswerInputService } from '@validating-input/security-answer-input.service';
-import { NewUserServicesModule } from '../new-user-services.module';
+import { NewUserServicesModule } from '../../new-user-services.module';
 
 
 @Injectable({providedIn: NewUserServicesModule})
