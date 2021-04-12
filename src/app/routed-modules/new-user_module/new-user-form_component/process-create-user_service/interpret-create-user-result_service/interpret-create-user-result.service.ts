@@ -1,17 +1,17 @@
-import { HandleCreateUserInDbErrorService } from '../process-create-user-in-db_service/interpret-create-user-in-db-result_service/handle-create-user-in-db-error.service';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterCreatingUserInDbService } from '../process-create-user-in-db_service/interpret-create-user-in-db-result_service/run-tasks-after-creating-user-in-db.service';
 import { NewUserServicesModule } from '../../../new-user-services.module';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { HandleCreateUserErrorService } from './handle-create-user-error.service';
+import { RunTasksAfterCreatingUserService } from './run-tasks-after-creating-user.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class InterpretCreateUserInDbResultService extends InterpretDbOperationResultService {
+export class InterpretCreateUserResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleError: HandleCreateUserInDbErrorService,
-		__runPostSuccessTasks: RunTasksAfterCreatingUserInDbService,
+		__handleError: HandleCreateUserErrorService,
+		__runPostSuccessTasks: RunTasksAfterCreatingUserService,
 	) {
 		super(__handleError, __runPostSuccessTasks);
 	}

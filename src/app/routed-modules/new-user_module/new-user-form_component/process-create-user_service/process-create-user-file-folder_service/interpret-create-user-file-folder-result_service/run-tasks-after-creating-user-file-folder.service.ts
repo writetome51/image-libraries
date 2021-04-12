@@ -1,4 +1,3 @@
-import { AlertService as alert } from '@services/alert.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../../../new-user-services.module';

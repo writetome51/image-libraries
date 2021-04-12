@@ -17,11 +17,8 @@ export class RunTasksAfterGettingUserService implements IDoThis {
 
 
 	go(result: DBUser): void {
-		delete result._id; // for security
-
 		this.__sessionIDInBrowser.set(result.sessionID);
 		this.__emailInBrowser.set(result.email);
-
 	}
 
 }
