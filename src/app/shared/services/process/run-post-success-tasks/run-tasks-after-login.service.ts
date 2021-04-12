@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
 import { RunTasksAfterGettingUserService }
 	from '@services/process/run-post-success-tasks/run-tasks-after-getting-user.service';
-import { SecurityQuestionStatusData as questionStatus }
+import { SecurityQuestionStatusData as securityQuestionStatus }
 	from '@runtime-state-data/security-question-status.data';
 
 
@@ -18,7 +18,7 @@ export class RunTasksAfterLoginService implements IDoThis {
 
 
 	async go(result: DBUser) {
-		questionStatus.received = false;
+		securityQuestionStatus.received = false;
 		this.__runTasksAfterGettingUser.go(result);
 
 		await this.__redirectToLoggedInHome.go();

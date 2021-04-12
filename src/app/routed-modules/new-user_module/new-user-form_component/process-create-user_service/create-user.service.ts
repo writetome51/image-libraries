@@ -3,13 +3,13 @@ import { CurrentUserFormData as currentUserForm }
 import { DBUser } from '@interfaces/db-user.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { NewUserServicesModule } from '../../new-user-services.module';
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class CreateUserInDbService implements IDoThis {
+export class CreateUserService implements IDoThis {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 

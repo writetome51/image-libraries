@@ -2,7 +2,7 @@ import { CreateUserFileFolderService } from './create-user-file-folder.service';
 import { Injectable } from '@angular/core';
 import { InterpretCreateUserFileFolderResultService }
 	from './interpret-create-user-file-folder-result_service/interpret-create-user-file-folder-result.service';
-import { NewUserServicesModule } from '../../new-user-services.module';
+import { NewUserServicesModule } from '../../../new-user-services.module';
 import { ProcessService } from '@process/process.abstract.service';
 
 

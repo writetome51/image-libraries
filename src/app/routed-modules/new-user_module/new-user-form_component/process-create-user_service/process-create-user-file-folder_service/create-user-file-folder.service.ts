@@ -3,7 +3,7 @@ import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { NewUserServicesModule } from '../../new-user-services.module';
+import { NewUserServicesModule } from '../../../new-user-services.module';
 
 
 @Injectable({providedIn: NewUserServicesModule})

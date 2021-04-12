@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { InterpretResultService } from '@interpret-result/interpret-result.abstract.service';
 import { RunTasksAfterCreatingUserFileFolderService }
 	from './run-tasks-after-creating-user-file-folder.service';
-import { NewUserServicesModule } from '../../../new-user-services.module';
+import { NewUserServicesModule } from '../../../../new-user-services.module';
 import { HandleErrorService } from '@process/handle-error/handle-error.service';
 
 
