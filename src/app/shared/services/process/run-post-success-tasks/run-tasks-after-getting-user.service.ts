@@ -1,4 +1,4 @@
-import { DBUser } from '@interfaces/db-user.interface';
+import { UserDBRecord } from '@interfaces/user-db-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { EmailInBrowserStorageService }
@@ -16,7 +16,7 @@ export class RunTasksAfterGettingUserService implements IDoThis {
 	) {}
 
 
-	go(result: DBUser): void {
+	go(result: UserDBRecord): void {
 		this.__sessionIDInBrowser.set(result.sessionID);
 		this.__emailInBrowser.set(result.email);
 	}

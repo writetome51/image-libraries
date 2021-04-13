@@ -1,5 +1,5 @@
 import { AppImage } from '@interfaces/app-image.interface';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 // import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
 import { setArray } from '@writetome51/set-array';
@@ -116,7 +116,7 @@ export class NewImagesData {
 
 export class CurrentPageImagesData {
 
-	static data: DBImage[] = [];
+	static data: ImageDBRecord[] = [];
 
 
 	static setDefault() {

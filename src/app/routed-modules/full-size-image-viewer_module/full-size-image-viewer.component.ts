@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 import { FullSizeImageViewerModuleTitleData as moduleTitle }
 	from './full-size-image-viewer-module-title.data';
 import { getByTest } from '@writetome51/array-get-by-test';
@@ -24,16 +24,16 @@ export class FullSizeImageViewerComponent {
 	}
 
 
-	getCurrentImage(): DBImage {
+	getCurrentImage(): ImageDBRecord {
 		let id = this.__currentRoute.params[paramID.imageID];
 		return this.__getImageByID(id);
 	}
 
 
-	private __getImageByID(id): DBImage {
+	private __getImageByID(id): ImageDBRecord {
 
 		return getByTest(
-			(image: DBImage) => image._id === id,
+			(image: ImageDBRecord) => image._id === id,
 			this.__loadedImageState.getLoadedImages()
 		)[0]; // result expected to only have one item.
 	}

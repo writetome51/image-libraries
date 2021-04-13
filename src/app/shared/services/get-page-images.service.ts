@@ -1,5 +1,5 @@
 // import { IDoThis } from '@interfaces/i-do-this.interface';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
@@ -7,8 +7,8 @@ import { CurrentPageImagesData as currentPageImages }
 export class GetPageImagesService { // implements IDoThis
 
 	static go(
-		paginator: { getCurrentPage: () => DBImage[] }
-	): DBImage[] {
+		paginator: { getCurrentPage: () => ImageDBRecord[] }
+	): ImageDBRecord[] {
 		try {
 			// Caches reference to paginator's current page, which is emptied on logout.
 			currentPageImages.data = paginator.getCurrentPage();

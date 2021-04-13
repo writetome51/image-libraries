@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { DBImage } from '@interfaces/db-image.interface';
 })
 export class DeleteImageGlyphiconComponent {
 
-	@Input() image: DBImage;
+	@Input() image: ImageDBRecord;
 
 
 	constructor() {}

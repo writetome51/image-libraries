@@ -1,5 +1,5 @@
-import { DBImage } from '@interfaces/db-image.interface';
-import { ImageBatch } from '@interfaces/image-batch.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
+import { ImageDBRecordBatch } from '@interfaces/image-db-record-batch.interface';
 import { Injectable } from '@angular/core';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
@@ -24,12 +24,12 @@ export class LoadedImageStateService implements ResettableToDefault, Settable {
 	}
 
 
-	getLoadedImages(): DBImage[] {
+	getLoadedImages(): ImageDBRecord[] {
 		return loadedImages.data;
 	}
 
 
-	set(imageBatch: ImageBatch) {
+	set(imageBatch: ImageDBRecordBatch) {
 		loadedImages.data = imageBatch.images;
 		this.__origin = imageBatch.from;
 

@@ -1,7 +1,7 @@
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
@@ -18,7 +18,7 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 	) {}
 
 
-	go(updatedLibrary: DBLibrary) {
+	go(updatedLibrary: LibraryDBRecord) {
 		this.__updateLocalLibraries(updatedLibrary);
 		this.__updateLoadedLibrary_ifNecessary(updatedLibrary);
 	}

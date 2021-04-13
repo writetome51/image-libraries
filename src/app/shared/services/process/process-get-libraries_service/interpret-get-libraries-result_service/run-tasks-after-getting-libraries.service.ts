@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
@@ -13,7 +13,7 @@ export class RunTasksAfterGettingLibrariesService implements IDoThis {
 	constructor(private __localLibraries: LibrariesInBrowserStorageService) {}
 
 
-	async go(libraries: DBLibrary[]) {
+	async go(libraries: LibraryDBRecord[]) {
 		this.__storeLibrariesLocally(libraries);
 	}
 

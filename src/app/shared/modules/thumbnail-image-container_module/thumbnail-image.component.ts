@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 import { HTMLImage } from '@interfaces/html-image.interface';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
@@ -11,7 +11,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 })
 export class ThumbnailImageComponent {
 
-	@Input() data: DBImage;
+	@Input() data: ImageDBRecord;
 
 
 	get img(): HTMLImage {

@@ -1,6 +1,6 @@
 import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
 import { DataTotalService } from '../data-total.abstract.service';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 import { LoadData as load }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LoadedImageStateService }
@@ -29,7 +29,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 	async getLoad(
 		loadNumber: number, itemsPerLoad: number, isLastLoad: boolean
-	): Promise<DBImage[]> {
+	): Promise<ImageDBRecord[]> {
 
 		load.number = loadNumber;
 		await this.__setLoadedImages.go(load);

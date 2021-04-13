@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { TogglableMenuChoiceData } from '@interfaces/togglable-menu-choice-data.interface';
+import { TogglableMenuChoiceData } from './togglable-menu-choice-data.interface';
 import { GlobalActionMenuServicesModule } from '../global-action-menu-services.module';
 
 

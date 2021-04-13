@@ -1,5 +1,5 @@
 import { AlertService as alert } from '@services/alert.service';
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryChangesService } from '@services/library/library-changes.service';
@@ -16,7 +16,7 @@ export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 	) {}
 
 
-	async go(result: DBLibrary) {
+	async go(result: LibraryDBRecord) {
 		// for security:
 		delete result._id;
 		delete result._user_id;

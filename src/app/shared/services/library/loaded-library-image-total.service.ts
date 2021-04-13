@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { Gettable } from '@interfaces/gettable.interface';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { Injectable } from '@angular/core';
@@ -13,7 +13,7 @@ export class LoadedLibraryImageTotalService implements Gettable<number> {
 
 
 	get(): number {
-		let lib: DBLibrary = this.__loadedLibrary.get();
+		let lib: LibraryDBRecord = this.__loadedLibrary.get();
 		if (hasValue(lib)) return lib._image_ids.length;
 	}
 

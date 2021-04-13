@@ -1,4 +1,4 @@
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { Injectable } from '@angular/core';
 import { SessionIDInBrowserStorageService }
 	from '@services/browser-storage/session-id-in-browser-storage.service';
@@ -18,7 +18,7 @@ export class CreateLibraryService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<DBLibrary | HasError> {
+	async go(): Promise<LibraryDBRecord | HasError> {
 		return await this.__realmFn.call('pub_createAndReturnLibrary', {
 			name: newLibrary.name,
 			sessionID: this.__sessionIDInBrowser.get()

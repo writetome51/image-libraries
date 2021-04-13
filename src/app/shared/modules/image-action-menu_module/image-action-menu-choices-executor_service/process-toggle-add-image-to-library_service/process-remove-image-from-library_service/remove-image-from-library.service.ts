@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DBLibrary } from '@interfaces/db-library.interface';
+import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { removeFirstOf } from '@writetome51/array-remove-all-of-first-of';
@@ -20,7 +20,7 @@ export class RemoveImageFromLibraryService implements IDoThis {
 
 	async go(
 		image_id, libName
-	): Promise<DBLibrary | HasError> {
+	): Promise<LibraryDBRecord | HasError> {
 
 		let lib = this.__librariesInBrowser.get()[libName];
 		removeFirstOf(image_id, lib._image_ids);

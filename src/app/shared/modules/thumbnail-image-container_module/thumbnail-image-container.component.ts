@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DBImage } from '@interfaces/db-image.interface';
+import { ImageDBRecord } from '@interfaces/image-db-record.interface';
 import { Hoverable } from '@interfaces/hoverable.interface';
 import { HoverableContainerComponent } from '@app/shared/modules/hoverable-container_module/hoverable-container.component';
 import { ImageSelectorService as imageSelector } from './image-selector.service';
@@ -15,7 +15,7 @@ import { SelectMutipleImagesSettingService } // tslint:disable-next-line:max-lin
 })
 export class ThumbnailImageContainerComponent implements Hoverable {
 
-	@Input() image: DBImage;
+	@Input() image: ImageDBRecord;
 	@Input() imageRouterLink: (string[] | string) = [];
 	@Input() deleteGlyphiconEnabled = false;
 
