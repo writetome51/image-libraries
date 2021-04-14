@@ -1,4 +1,4 @@
-import { ImageDBRecordBatch } from '@interfaces/image-db-record-batch.interface';
+import { ImageRecordBatch } from '@interfaces/image-record-batch.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
@@ -19,7 +19,7 @@ export class GetAllImagesService implements IDoThis {
 	) {}
 
 
-	async go(load: LoadConfiguration): Promise<ImageDBRecordBatch | HasError> {
+	async go(load: LoadConfiguration): Promise<ImageRecordBatch | HasError> {
 
 		return await this.__realmFn.call('pub_getUserImagesBatch', {
 			sessionID: this.__sessionIDInBrowser.get(),

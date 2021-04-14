@@ -3,4 +3,4 @@ import { HasIDKey } from './has-id-key.interface';
 import { HasUserIDKey } from './has-user-id-key.interface';
 
 
-export interface ImageDBRecord extends AppImage, HasIDKey, HasUserIDKey {}
+export interface ImageRecord extends AppImage, HasIDKey, HasUserIDKey {}

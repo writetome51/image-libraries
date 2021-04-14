@@ -1,6 +1,6 @@
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
-import { UserDBRecord } from '@interfaces/user-db-record.interface';
+import { UserRecord } from '@interfaces/user-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
@@ -14,7 +14,7 @@ export class CreateUserInDbService implements IDoThis {
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
-	async go(): Promise<UserDBRecord | HasError> {
+	async go(): Promise<UserRecord | HasError> {
 		return await this.__realmFn.call(
 			'pub_createAndReturnUser',
 			// We don't want to pass entire `currentUser`, but only these 3 properties.

@@ -1,4 +1,4 @@
-import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
+import { LibraryRecord } from '@interfaces/library-record.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
@@ -19,7 +19,7 @@ export class UpdateLibraryService implements IDoThis {
 	async go(
 		libName: string,
 		changes: object // The keys in `changes` can contain dot-notation.
-	): Promise<LibraryDBRecord | HasError> {
+	): Promise<LibraryRecord | HasError> {
 		return await this.__realmFn.call('pub_updateAndReturnLibrary', {
 			name: libName,
 			changes,

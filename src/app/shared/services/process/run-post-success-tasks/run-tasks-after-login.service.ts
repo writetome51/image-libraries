@@ -1,4 +1,4 @@
-import { UserDBRecord } from '@interfaces/user-db-record.interface';
+import { UserRecord } from '@interfaces/user-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
@@ -17,7 +17,7 @@ export class RunTasksAfterLoginService implements IDoThis {
 	) {}
 
 
-	async go(result: UserDBRecord): Promise<void> {
+	async go(result: UserRecord): Promise<void> {
 		securityQuestionStatus.received = false;
 		this.__runTasksAfterGettingUser.go(result);
 

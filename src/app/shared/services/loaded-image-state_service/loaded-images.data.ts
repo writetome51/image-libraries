@@ -1,11 +1,11 @@
-import { ImageDBRecord } from '@interfaces/image-db-record.interface';
+import { ImageRecord } from '@interfaces/image-record.interface';
 import { setArray } from '@writetome51/set-array';
 // import {ResettableToDefault} from '@interfaces/resettable-to-default';
 
 
 export class LoadedImagesData { // implements ResettableToDefault
 
-	static data: ImageDBRecord[] = [];
+	static data: ImageRecord[] = [];
 
 
 	static setDefault() {

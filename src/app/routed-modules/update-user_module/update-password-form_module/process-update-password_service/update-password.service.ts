@@ -1,6 +1,6 @@
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
-import { UserDBRecord } from '@interfaces/user-db-record.interface';
+import { UserRecord } from '@interfaces/user-record.interface';
 import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
@@ -21,7 +21,7 @@ export class UpdatePasswordService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<UserDBRecord | HasError> {
+	async go(): Promise<UserRecord | HasError> {
 		return await this.__realmFn.call('pub_updatePasswordAndReturnUser', {
 			email: this.__emailInBrowser.get(),
 			password: currentUserForm.password,

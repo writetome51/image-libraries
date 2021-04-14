@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@services/browser-storage/libraries-in-browser-storage.service';
-import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
-import { ImageDBRecord } from '@interfaces/image-db-record.interface';
+import { LibraryRecord } from '@interfaces/library-record.interface';
+import { ImageRecord } from '@interfaces/image-record.interface';
 import { getByTest } from '@writetome51/array-get-by-test';
 
 
@@ -21,9 +21,9 @@ import { getByTest } from '@writetome51/array-get-by-test';
 })
 export class BelongsToLibrariesComponent {
 
-	@Input() image: ImageDBRecord;
+	@Input() image: ImageRecord;
 
-	libraries: LibraryDBRecord[] = [];
+	libraries: LibraryRecord[] = [];
 
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
@@ -31,7 +31,7 @@ export class BelongsToLibrariesComponent {
 		let libsMap: object = this.__librariesInBrowser.get();
 
 		this.libraries = getByTest(
-			(lib: LibraryDBRecord) => lib._image_ids.includes(this.image._id),
+			(lib: LibraryRecord) => lib._image_ids.includes(this.image._id),
 			Object.values(libsMap)
 		);
 

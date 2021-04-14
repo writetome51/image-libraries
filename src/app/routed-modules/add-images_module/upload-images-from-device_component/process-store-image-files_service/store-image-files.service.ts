@@ -8,7 +8,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 /******************************
 Each of a user's image files is stored in a cloud folder representing that user. Once an image is
 added to the folder, all we need to know about that image is its url.  The url must be assigned
-to the 'src' of its ImageDBRecord.
+to the 'src' of its ImageRecord.
  *****************************/
 
 @Injectable({providedIn: 'root'})

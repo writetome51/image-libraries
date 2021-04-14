@@ -2,7 +2,7 @@ import { AppUser } from './app-user.interface';
 import { HasIDKey } from '@interfaces/has-id-key.interface';
 
 
-export interface UserDBRecord extends AppUser, HasIDKey {
+export interface UserRecord extends AppUser, HasIDKey {
 
 	lastLoggedIn: Date;
 

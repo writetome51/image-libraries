@@ -83,11 +83,11 @@ Commented-out Import Statements
 Some files have some imports commented out.  This is because that entity being
 imported is not actually used but is referred to in a comment somewhere.  Example:
 
-// import { ImageDBRecord } from './image-db-record.interface';
+// import { ImageRecord } from './image-record.interface';
 
-export interface LibraryDBRecord {
+export interface LibraryRecord {
 
-	// Foreign keys, each relating to `ImageDBRecord._id`  <----
+	// Foreign keys, each relating to `ImageRecord._id`  <----
 	_image_ids: string[];
 
 }

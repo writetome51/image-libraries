@@ -1,4 +1,4 @@
-import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
+import { LibraryRecord } from '@interfaces/library-record.interface';
 import { Injectable } from '@angular/core';
 import { UpdateLibraryService } from '@services/db/update-library.service';
 import { LibrariesInBrowserStorageService }
@@ -17,7 +17,7 @@ export class AddImageToLibraryService implements IDoThis {
 	) {}
 
 
-	async go(image_id, libName): Promise<LibraryDBRecord | HasError> {
+	async go(image_id, libName): Promise<LibraryRecord | HasError> {
 
 		let lib = this.__localLibraries.get()[libName];
 		let changes = {}, index = lib._image_ids.length;

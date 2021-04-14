@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { ImageDBRecord } from '@interfaces/image-db-record.interface';
-import { LibraryDBRecord } from '@interfaces/library-db-record.interface';
+import { ImageRecord } from '@interfaces/image-record.interface';
+import { LibraryRecord } from '@interfaces/library-record.interface';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
@@ -21,13 +21,13 @@ export class GetImageActionMenuChoicesService implements GetMenuChoices {
 	) {}
 
 
-	go(image: ImageDBRecord): MenuChoice[] {
+	go(image: ImageRecord): MenuChoice[] {
 		this.__manage(image);
 		return menuChoices.images[image.name];
 	}
 
 
-	private __manage(image: ImageDBRecord) {
+	private __manage(image: ImageRecord) {
 		menuChoices.images[image.name] = [
 			{
 				label: choiceLabel.toggleAddImageToLibrary,
@@ -56,7 +56,7 @@ export class GetImageActionMenuChoicesService implements GetMenuChoices {
 
 
 	private __libContainsImage(image_id, libName): boolean {
-		let lib: LibraryDBRecord = this.__librariesInBrowser.get()[libName];
+		let lib: LibraryRecord = this.__librariesInBrowser.get()[libName];
 
 		return lib._image_ids.includes(image_id);
 	}

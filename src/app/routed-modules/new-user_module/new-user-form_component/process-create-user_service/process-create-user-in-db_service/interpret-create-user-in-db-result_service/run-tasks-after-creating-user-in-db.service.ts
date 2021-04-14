@@ -1,4 +1,4 @@
-import { UserDBRecord } from '@interfaces/user-db-record.interface';
+import { UserRecord } from '@interfaces/user-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../../../new-user-services.module';
@@ -13,7 +13,7 @@ export class RunTasksAfterCreatingUserInDbService implements IDoThis {
 	constructor(private __tempUserInBrowser: TemporaryUserInBrowserStorageService) {}
 
 
-	async go(result: UserDBRecord) {
+	async go(result: UserRecord) {
 		// for security:
 		delete result._id;
 		delete result.password;

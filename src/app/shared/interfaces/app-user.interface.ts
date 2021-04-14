@@ -7,6 +7,6 @@ export interface AppUser {
 
 	password: string; // hashed (one-way encryption)
 
-	securityQuestion: SecurityQuestion;  // needed for user to log in if forgot password
+	securityQuestion: SecurityQuestion; // needed for user to log in if forgot password
 
 }
