@@ -3,17 +3,17 @@ import { DeleteObjectCommand, ListObjectsCommand, PutObjectCommand, S3Client }
 	from '@aws-sdk/client-s3';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 import { getArrFilled } from '@writetome51/get-arr-filled';
+import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
+import { modifyObject } from '@writetome51/modify-object';
 import { noValue } from '@writetome51/has-value-no-value';
 import { removeByTest } from '@writetome51/array-remove-by-test';
-import { HasError } from '@interfaces/has-error.interface';
-import { modifyObject } from '@writetome51/modify-object';
 
 
 /******************************
 Connects app with AWS S3 (simple-storage-service).
 We're using a single S3 bucket (data container), which contains folders, each of which represents
-a user of this app. The folder contain the user's files.
+a user of this app. The folder contains the user's files.
  *****************************/
 
 @Injectable({providedIn: 'root'})

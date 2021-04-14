@@ -1,14 +1,13 @@
 import { AlertService as alert } from '@services/alert.service';
 import { accountAlreadyExists } from '@string-constants/form-submission-errors';
 import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
+import { HandleErrorService } from '@process/handle-error/handle-error.service';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../../../new-user-services.module';
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class HandleCreateUserInDbErrorService extends HandleDbOperationErrorService {
+export class HandleCreateUserInDbErrorService extends HandleErrorService {
 
 	async go(error: {message: string}) {
 		if (error.message.includes(duplicate)) alert.setError(accountAlreadyExists);

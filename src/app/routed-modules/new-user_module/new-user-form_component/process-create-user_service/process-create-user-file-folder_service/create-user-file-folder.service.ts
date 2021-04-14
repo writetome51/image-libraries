@@ -1,4 +1,4 @@
-import { AWSStorageService } from '@services/a-w-s-storage.service';
+import { AWSStorageService } from '@services/aws-storage.service';
 import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';

@@ -14,6 +14,7 @@ export class RunTasksAfterCreatingUserService implements IDoThis {
 
 	async go() {
 		await this.__runTasksAfterLogin.go(temporaryUser.data);
+		temporaryUser.data = undefined;
 
 		alert.setSuccess('Account created.  You\'re signed in.');
 	}

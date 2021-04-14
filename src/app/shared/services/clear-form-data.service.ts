@@ -1,8 +1,8 @@
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
-import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
 // import { IDoThis } from '@interfaces/i-do-this.interface';
+import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 
 
 export class ClearFormDataService { // implements IDoThis

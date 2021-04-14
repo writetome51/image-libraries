@@ -22,13 +22,6 @@ export class ProcessUploadImagesService implements Process {
 
 
 	async go(files: FileList | File[]): Promise<void> {
-		// add file size limit checking here (not greater than 500KB)
-
-		let binary = await getBinaryData.go(files[0]);
-		console.log(binary.length);
-		files[0]['src'] = binary;
-		// First send all images to file storage service, receiving back all
-		// their response objects.
 		await this.__processStoreImageFiles.go(files);
 
 		// Then pass those objects thru here:
@@ -48,10 +41,7 @@ export class ProcessUploadImagesService implements Process {
 
 		return getAppImage.go({
 			name: getFormattedName(file.name),
-
-			// replace with api call that returns image url:
-			src: await getDataURL(file),
-
+			src: file.src,
 			date: new Date(file.lastModified),
 			location: file.location
 		});
