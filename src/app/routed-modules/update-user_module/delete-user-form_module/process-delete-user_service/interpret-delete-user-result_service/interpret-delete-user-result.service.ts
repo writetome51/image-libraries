@@ -3,15 +3,15 @@ import { RunTasksAfterDeletingUserService } from './run-tasks-after-deleting-use
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
 export class InterpretDeleteUserResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleErrorService: HandleDbOperationErrorService,
+		__handleErrorService: HandleExistingUserDBOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterDeletingUserService
 	) {
 		super(__handleErrorService, __runPostSuccessTasks);

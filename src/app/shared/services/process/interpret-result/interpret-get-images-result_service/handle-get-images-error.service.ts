@@ -1,17 +1,17 @@
 import { batchDoesntExist } from '@string-constants/mongo-db-realm-function-errors';
 import { Injectable } from '@angular/core';
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { HandleNoRecordMatchErrorService }
-	from '@handle-db-operation-error_service/handle-no-record-match-error.service';
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-no-record-match-error.service';
 import { HandleNotLoggedInErrorService }
-	from '@handle-db-operation-error_service/handle-not-logged-in-error.service';
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-not-logged-in-error.service';
 import { LoadedImageStateService }
 	from '@services/loaded-image-state_service/loaded-image-state.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImagesErrorService extends HandleDbOperationErrorService {
+export class HandleGetImagesErrorService extends HandleExistingUserDBOperationErrorService {
 
 	constructor(
 		private __loadedImageState: LoadedImageStateService,

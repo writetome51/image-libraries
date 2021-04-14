@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AlertService as alert } from '@services/alert.service';
 import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
-export class HandleRemoveImageFromLibraryErrorService extends HandleDbOperationErrorService {
+export class HandleRemoveImageFromLibraryErrorService extends HandleExistingUserDBOperationErrorService {
 
 	async go(errMessage) {
 		console.error(errMessage);

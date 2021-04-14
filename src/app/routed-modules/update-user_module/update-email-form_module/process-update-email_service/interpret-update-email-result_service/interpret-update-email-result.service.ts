@@ -1,5 +1,5 @@
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-email.service';
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
@@ -11,7 +11,7 @@ import { InterpretDbOperationResultService }
 export class InterpretUpdateEmailResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleError: HandleDbOperationErrorService,
+		__handleError: HandleExistingUserDBOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterUpdatingEmailService
 	) {
 		super(__handleError, __runPostSuccessTasks);

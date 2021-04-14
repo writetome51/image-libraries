@@ -7,7 +7,7 @@ import { HandleErrorService } from '../handle-error.service';
 
 
 @Injectable({providedIn: 'root'})
-export class HandleDbOperationErrorService extends HandleErrorService {
+export class HandleExistingUserDBOperationErrorService extends HandleErrorService {
 
 	constructor(
 		private __handleNoRecordMatchError: HandleNoRecordMatchErrorService,

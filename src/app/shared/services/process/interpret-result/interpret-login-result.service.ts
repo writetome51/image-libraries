@@ -1,5 +1,5 @@
-import { HandleDbOperationErrorService }
-	from '@handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLoginService }
 	from '@run-post-success-tasks/run-tasks-after-login.service';
@@ -11,7 +11,7 @@ import { InterpretDbOperationResultService }
 export class InterpretLoginResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleError: HandleDbOperationErrorService,
+		__handleError: HandleExistingUserDBOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterLoginService
 	) {
 		super(__handleError, __runPostSuccessTasks);

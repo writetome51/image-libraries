@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RunTasksAfterGettingLibrariesService } from './run-tasks-after-getting-libraries.service';
-import { HandleDbOperationErrorService }
-	from '../../handle-error/handle-db-operation-error_service/handle-db-operation-error.service';
+import { HandleExistingUserDBOperationErrorService }
+	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { InterpretDbOperationResultService }
 	from '@interpret-result/interpret-db-operation-result.abstract.service';
 
@@ -10,7 +10,7 @@ import { InterpretDbOperationResultService }
 export class InterpretGetLibrariesResultService extends InterpretDbOperationResultService {
 
 	constructor(
-		__handleError: HandleDbOperationErrorService,
+		__handleError: HandleExistingUserDBOperationErrorService,
 		__runPostSuccessTasks: RunTasksAfterGettingLibrariesService
 	) {
 		super(__handleError, __runPostSuccessTasks);
