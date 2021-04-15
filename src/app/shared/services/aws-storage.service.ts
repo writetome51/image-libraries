@@ -35,7 +35,7 @@ export class AWSStorageService {
 
 	async createFolder(folderName: string): Promise<{ success: true } | HasError> {
 		folderName = folderName.trim();
-		if (includesSlash(folderName)) return {
+		if (folderName.includes('/')) return {
 			error: {message: 'Folder names cannot include slashes.'}
 		};
 		try {
@@ -47,33 +47,28 @@ export class AWSStorageService {
 				error: {message: `There was an error creating the user's folder: ${err.message}`}
 			};
 		}
-
-
-		function includesSlash(name) { return (name.indexOf('/') !== -1); }
 	}
 
 
-	async deleteFolder(folderName: string) {
+	async deleteFolder(folderName: string): Promise<{ success: true } | HasError> {
 		const folderKey = encodeURIComponent(folderName) + '/';
 		try {
 			const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
-			const data = await this.__s3Client.send(new ListObjectsCommand(params));
-			const Objects = data.Contents.map(function(object) {
-				return {Key: object.Key};
-			});
-			try {
-				await this.__deleteData({
-					Key: folderKey,
-					Delete: {Objects},
-					Quiet: true,
-				});
-			}
-			catch (err) {
-				return alert('There was an error deleting your folder: ' + err.message);
-			}
+			var objectsToDelete = await this.__getObjectsToDelete(params);
 		}
 		catch (err) {
-			return alert('There was an error deleting your folder: ' + err.message);
+			return {error: {
+				message: `There was an error retrieving the contents of your folder: ${err.message}`
+			}};
+		}
+		try {
+			await this.__deleteData({
+				Key: folderKey, Delete: {Objects: objectsToDelete}, Quiet: true,
+			});
+			return {success: true};
+		}
+		catch (err) {
+			return {error: {message: `There was an error deleting your folder: ${err.message}`}};
 		}
 	}
 
@@ -88,9 +83,14 @@ export class AWSStorageService {
 	}
 
 
-	async deleteFile(fileKey: string) {
-		try { await this.__deleteData({Key: fileKey}); }
-		catch (err) { throw new Error('There was an error deleting your file: ' + err.message); }
+	async deleteFile(fileKey: string): Promise<{ success: true } | HasError> {
+		try {
+			await this.__deleteData({Key: fileKey});
+			return {success: true};
+		}
+		catch (err) {
+			return {error: {message: `There was an error deleting your file: ${err.message}`}};
+		}
 	}
 
 
@@ -133,6 +133,12 @@ export class AWSStorageService {
 		const serviceURL = `https://s3.${this.__region}.amazonaws.com/`;
 		const bucketURL = serviceURL + this.__s3Bucket + '/';
 		return bucketURL + fileKey;
+	}
+
+
+	private async __getObjectsToDelete(params): Promise<{Key: string}[]> {
+		const data = await this.__s3Client.send(new ListObjectsCommand(params));
+		return data.Contents.map((object) => { return {Key: object.Key}; });
 	}
 
 }
