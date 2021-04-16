@@ -17,7 +17,7 @@ import { Title } from '@angular/platform-browser';
 
 		<big-loading-spinner *ngIf="gettingImages"></big-loading-spinner>
 
-		<all-images-viewer *ngIf="!(gettingImages)"></all-images-viewer>
+		<all-images-viewer-container *ngIf="!(gettingImages)"></all-images-viewer-container>
 	`
 })
 export class AllImagesComponent extends RouteParametersSubscriberComponent {

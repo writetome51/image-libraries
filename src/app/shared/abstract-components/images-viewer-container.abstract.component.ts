@@ -4,7 +4,7 @@ import { JumpToPageInputService }
 import { Gettable } from '@interfaces/gettable.interface';
 
 
-export abstract class ImagesViewerComponent {
+export abstract class ImagesViewerContainerComponent {
 
 	get imageTotal(): number {
 		return this.__storedImageTotal.get();

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProcessAddImageURLService }
-	from './process-add-image-u-r-l_service/process-add-image-u-r-l.service';
+	from './process-add-image-u-r-l_service/process-add-image-url.service';
 
 
 @Component({

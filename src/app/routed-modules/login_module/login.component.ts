@@ -10,7 +10,7 @@ import { LoginModuleTitleData as moduleTitle } from './login-module-title.data';
 		<login-form clearFormOnInit clearAlertOnDestroy></login-form>
 
 		<p>Don't have an account?
-			<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">
+			<a [routerLink]="modulePath.NewUserModule" routerLinkActive="active">
 				Create Account
 			</a>
 		</p>
@@ -20,7 +20,7 @@ import { LoginModuleTitleData as moduleTitle } from './login-module-title.data';
 })
 export class LoginComponent {
 
-	moduleRoutes = AppModulePathData;
+	modulePath = AppModulePathData;
 
 
 	constructor(private __title: Title) {

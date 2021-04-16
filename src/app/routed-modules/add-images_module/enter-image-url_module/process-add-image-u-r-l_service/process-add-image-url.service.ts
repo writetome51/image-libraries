@@ -4,7 +4,7 @@ import { ImageURLInputService } from '../image-url-input.service';
 import { Injectable } from '@angular/core';
 import { InterpretSaveNewImagesResultService }
 	from '../../interpret-save-new-images-result_service/interpret-save-new-images-result.service';
-import { AddImageURLService } from './add-image-u-r-l.service';
+import { AddImageURLService } from './add-image-url.service';
 import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
 
 

@@ -11,8 +11,7 @@ import { ProcessLoginByPasswordService }
 			<form>
 				<login-form-inputs></login-form-inputs>
 
-				<submit-form-button [label]="'Sign In'" [process]="process">
-				</submit-form-button>
+				<submit-form-button [label]="'Sign In'" [process]="process"></submit-form-button>
 
 				<a [routerLink]="modulePath.SecurityQuestionModule" routerLinkActive="active">
 					Forgot Password?
