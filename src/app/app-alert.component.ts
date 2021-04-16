@@ -10,7 +10,7 @@ import { AlertService } from '@services/alert.service';
 			 [class.alert-success]="alert.success"
 			 [class.alert-dismissible]="true"
 		>
-			<span class="close" data-dismiss="alert" aria-label="close" (click)="closeMessage()">
+			<span class="close" data-dismiss="alert" aria-label="close" (click)="alert.clear()">
 				<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 			</span>
 
@@ -26,10 +26,5 @@ import { AlertService } from '@services/alert.service';
 export class AppAlertComponent {
 
 	alert = AlertService;
-
-
-	closeMessage() {
-		this.alert.clear();
-	}
 
 }
