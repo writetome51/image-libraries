@@ -9,7 +9,7 @@ import { SessionIDInBrowserStorageService }
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class SaveNewImagesService implements IDoThis {
+export class SaveNewImageRecordsService implements IDoThis {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,

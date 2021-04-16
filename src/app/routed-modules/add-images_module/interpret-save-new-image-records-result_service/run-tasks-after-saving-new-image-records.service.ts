@@ -11,7 +11,7 @@ import { UserImageTotalInBrowserStorageService }
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class RunTasksAfterSavingNewImagesToAccountService implements IDoThis {
+export class RunTasksAfterSavingNewImageRecordsService implements IDoThis {
 
 	constructor(
 		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,

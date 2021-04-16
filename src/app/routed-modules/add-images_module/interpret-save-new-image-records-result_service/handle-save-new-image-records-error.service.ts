@@ -9,7 +9,8 @@ import { HandleExistingUserDBOperationErrorService }
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class HandleSaveNewImagesErrorService extends HandleExistingUserDBOperationErrorService {
+export class HandleSaveNewImageRecordsErrorService
+	extends HandleExistingUserDBOperationErrorService {
 
 	async go(error: {message: string}) {
 		if (error.message.includes(duplicate)) alert.setError(imageWithSameNameAlreadyExists);

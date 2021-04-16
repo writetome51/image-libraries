@@ -6,9 +6,7 @@ import { ClickExecuteProcessContainerComponent }
 
 @Component({
 	selector: 'logout-button',
-	template: `
-		<execute-function-button [container]="this">Sign Out</execute-function-button>
-	`
+	template: `<execute-function-button [container]="this">Sign Out</execute-function-button>`
 })
 export class LogoutButtonComponent extends ClickExecuteProcessContainerComponent {
 
