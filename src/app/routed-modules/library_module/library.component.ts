@@ -17,7 +17,7 @@ import { RouteParametersSubscriberComponent }
 
 		<big-loading-spinner *ngIf="gettingImages"></big-loading-spinner>
 
-		<library-viewer-container *ngIf="!(gettingImages)"></library-viewer-container>
+		<library-viewer *ngIf="!(gettingImages)"></library-viewer>
 	`
 })
 export class LibraryComponent extends RouteParametersSubscriberComponent {

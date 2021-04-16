@@ -3,13 +3,13 @@ import { AllImagesPaginatorService }
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { ImagesViewerContainerComponent } from '@abstract-components/images-viewer-container.abstract.component';
+import { ImagesViewerComponent } from '@abstract-components/images-viewer.abstract.component';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 
 
 @Component({
-	selector: 'all-images-viewer-container',
+	selector: 'all-images-viewer',
 	template: `
 		<p *ngIf="imageTotal === 0">You have no images in your account.</p>
 
@@ -22,7 +22,7 @@ import { UserImageTotalInBrowserStorageService }
 		</images-list-container>
 	`
 })
-export class AllImagesViewerContainerComponent extends ImagesViewerContainerComponent {
+export class AllImagesViewerComponent extends ImagesViewerComponent {
 
 	routeBeforePageNumber = `${appModulePath.AllImagesModule}/page`;
 

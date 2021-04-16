@@ -4,7 +4,7 @@ import { DeleteLibraryButtonModule }
 import { ImagesListContainerModule }
 	from '@modules/images-list-container_module/images-list-container.module';
 import { LibraryImagesListModule } from './library-images-list_module/library-images-list.module';
-import { LibraryViewerContainerComponent } from './library-viewer-container.component';
+import { LibraryViewerComponent } from './library-viewer.component';
 import { LibraryViewerServicesModule } from './library-viewer-services.module';
 import { LibraryChangeControlsModule }
 	from './library-change-controls_module/library-change-controls.module';
@@ -12,7 +12,7 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule({
-	declarations: [LibraryViewerContainerComponent],
+	declarations: [LibraryViewerComponent],
 	imports: [
 		CommonModule,
 		DeleteLibraryButtonModule,
@@ -21,6 +21,6 @@ import { NgModule } from '@angular/core';
 		LibraryViewerServicesModule,
 		LibraryChangeControlsModule,
 	],
-	exports: [LibraryViewerContainerComponent]
+	exports: [LibraryViewerComponent]
 })
 export class LibraryViewerModule {}
