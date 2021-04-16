@@ -1,10 +1,13 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
+import { Gettable } from '@interfaces/gettable.interface';
 import { JumpToPageInputService }
 	from '@app-pagination-controls_module/jump-to-page-input.abstract.service';
-import { Gettable } from '@interfaces/gettable.interface';
 
 
-export abstract class ImagesViewerComponent {
+export abstract class ImagesViewerContainerComponent {
+
+	abstract routeBeforePageNumber;
+
 
 	get imageTotal(): number {
 		return this.__storedImageTotal.get();
