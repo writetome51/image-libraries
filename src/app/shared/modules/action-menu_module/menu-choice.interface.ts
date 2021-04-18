@@ -5,6 +5,6 @@ export interface MenuChoice extends HasLabel {
 
 	submenu?: MenuChoice[];
 
-	data?: any; // to be passed to the choice's process.
+	data?: any; // to be passed to the choice's action.
 
 }

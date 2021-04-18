@@ -4,12 +4,12 @@ import { HandleSaveNewImageRecordsErrorService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterSavingNewImageRecordsService }
 	from './run-tasks-after-saving-new-image-records.service';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class InterpretSaveNewImageRecordsResultService extends InterpretDbOperationResultService {
+export class InterpretSaveNewImageRecordsResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleSaveNewImageRecordsErrorService,

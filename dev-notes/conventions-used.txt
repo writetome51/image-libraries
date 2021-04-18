@@ -41,17 +41,17 @@ Usage of the word 'Process'
 2. Checking that result for errors and, if any, executing tasks based on those errors.
 3. If no errors, executing tasks based on the successful result.
 
-'Process' is used in the names of Services that run a process.
+'Process' is used in the names of Services that run a action.
 Those Services follow this naming convention: `Process{Action}Service`.
 Examples:
-ProcessDbOperationService runs a process that involves interaction with a database, and
+ProcessDbOperationService runs a action that involves interaction with a database, and
 its {Action} is 'DbOperation'.
 ProcessLoginByPasswordService has the {Action} 'LoginByPassword'.
 
 
 Usage of the words 'Execute' and 'Executor'
 
-'Execute' refers to running ANY code.  It could be a process, or something much simpler.
+'Execute' refers to running ANY code.  It could be a action, or something much simpler.
 'Executor' refers to a Service that runs an execution.
 
 

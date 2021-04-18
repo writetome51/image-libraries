@@ -1,18 +1,18 @@
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.abstract.component';
-import { Process } from '@interfaces/process.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export abstract class ClickExecuteProcessContainerComponent
+export abstract class ClickExecuteIDoThisContainerComponent
 	extends ClickExecuteFunctionContainerComponent {
 
-	constructor(protected _process?: Process) {
+	constructor(protected _iDoThis?: IDoThis) {
 		super();
 	}
 
 
 	protected async _func(...args) {
-		await this._process.go(...args);
+		await this._iDoThis.go(...args);
 	}
 
 }

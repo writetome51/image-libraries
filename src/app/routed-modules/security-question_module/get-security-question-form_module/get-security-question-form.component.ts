@@ -7,7 +7,7 @@ import { ProcessGetSecurityQuestionService }
 	selector: 'get-security-question-form',
 	template: `
 		<get-security-question-form-input></get-security-question-form-input>
-		<submit-form-button [label]="'Get Question'" [process]="process"></submit-form-button>
+		<submit-form-button [label]="'Get Question'" [iDoThis]="process"></submit-form-button>
 	`
 })
 export class GetSecurityQuestionFormComponent {

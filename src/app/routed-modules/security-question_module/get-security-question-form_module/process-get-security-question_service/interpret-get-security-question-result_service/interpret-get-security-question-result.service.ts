@@ -4,12 +4,12 @@ import { HandleGetSecurityQuestionErrorService }
 import { RunTasksAfterGettingSecurityQuestionService }
 	from './run-tasks-after-getting-security-question.service';
 import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class InterpretGetSecurityQuestionResultService extends InterpretDbOperationResultService {
+export class InterpretGetSecurityQuestionResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleGetSecurityQuestionErrorService,

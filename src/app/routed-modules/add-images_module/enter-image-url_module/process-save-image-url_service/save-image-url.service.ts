@@ -4,16 +4,16 @@ import { ImageURLData as enteredImageURL } from '@runtime-state-data/image-url.d
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { SaveNewImageRecordsService } from '../../save-new-image-records.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
+import { ProcessSaveNewImageRecordsService } from '@app/routed-modules/add-images_module/process-save-new-image-records_service/process-save-new-image-records.service';
 
 
 @Injectable({providedIn: EnterImageURLServicesModule})
 export class SaveImageURLService implements IDoThis {
 
-	constructor(private __saveNewImages: SaveNewImageRecordsService) {}
+	constructor(private __processSaveNewImageRecords: ProcessSaveNewImageRecordsService) {}
 
 
 	async go(): Promise<{ success: true } | HasError> {
@@ -21,7 +21,7 @@ export class SaveImageURLService implements IDoThis {
 			newImages.data.push(
 				getAppImage.go({name: undefined, src: enteredImageURL.data})
 			);
-			return await this.__saveNewImages.go(newImages.data);
+			await this.__processSaveNewImageRecords.go(newImages.data);
 		}
 		else return {error: {message: 'The URL you entered is either not connected to a' +
 			' resource, or access is denied.'

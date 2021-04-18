@@ -5,7 +5,7 @@ import { LoadData as load }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LoadedImageStateService }
 	from '@services/loaded-image-state_service/loaded-image-state.service';
-import { SetLoadedImages } from '@interfaces/set-loaded-images.interface';
+import { ProcessThatSetsLoadedImagesService } from '@services/process-that-sets-loaded-images.service';
 
 
 export abstract class AppPaginatorDataSourceService implements BigDatasetPaginatorDataSource {
@@ -17,7 +17,7 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 
 	constructor(
 		private __dataTotal: DataTotalService,
-		private __setLoadedImages: SetLoadedImages,
+		private __setLoadedImages: ProcessThatSetsLoadedImagesService,
 		private __loadedImageState: LoadedImageStateService
 	) {}
 

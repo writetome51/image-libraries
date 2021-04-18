@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 	template: `
 		<update-password-form-inputs clearFormOnInit clearAlertOnDestroy>
 		</update-password-form-inputs>
-		<submit-form-button [process]="process"></submit-form-button>
+		<submit-form-button [iDoThis]="process"></submit-form-button>
 	`
 })
 export class UpdatePasswordFormComponent {

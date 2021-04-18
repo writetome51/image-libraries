@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HandleGetUserImageTotalErrorService } from './handle-get-user-image-total-error.service';
 import { RunTasksAfterGettingUserImageTotalService }
 	from './run-tasks-after-getting-user-image-total.service';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretGetUserImageTotalResultService extends InterpretDbOperationResultService {
+export class InterpretGetUserImageTotalResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleGetUserImageTotalErrorService,

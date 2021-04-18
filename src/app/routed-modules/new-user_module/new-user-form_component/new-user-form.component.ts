@@ -9,7 +9,7 @@ import { ProcessCreateUserService }
 		<div class="form-container">
 			<form>
 				<new-user-form-inputs></new-user-form-inputs>
-				<submit-form-button [label]="'Create'" [process]="process"></submit-form-button>
+				<submit-form-button [label]="'Create'" [iDoThis]="process"></submit-form-button>
 			</form>
 		</div>
 	`

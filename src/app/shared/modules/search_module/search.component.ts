@@ -1,17 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { ProcessSendFormDataToDbService }
-	from '@process/process-send-form-data-to-db.abstract.service';
+import { ProcessSendFormDataService }
+	from '@process/process-send-form-data.abstract.service';
 
 
 @Component({
 	selector: 'app-search',
 	template: `
 		<search-form-input></search-form-input>
-		<submit-form-button [process]="processor"></submit-form-button>
+		<submit-form-button [iDoThis]="iDoThis"></submit-form-button>
 	`
 })
 export class SearchComponent {
 
-	@Input() processor: ProcessSendFormDataToDbService;
+	@Input() iDoThis: ProcessSendFormDataService;
 
 }

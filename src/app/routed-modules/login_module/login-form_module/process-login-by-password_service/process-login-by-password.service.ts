@@ -1,5 +1,5 @@
-import { ProcessSendFormDataToDbService }
-	from '@process/process-send-form-data-to-db.abstract.service';
+import { ProcessSendFormDataService }
+	from '@process/process-send-form-data.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretLoginResultService } from '@interpret-result/interpret-login-result.service';
 import { LoginByPasswordService } from './login-by-password.service';
@@ -8,7 +8,7 @@ import { LoginFormServicesModule } from '../login-form-services.module';
 
 
 @Injectable({providedIn: LoginFormServicesModule})
-export class ProcessLoginByPasswordService extends ProcessSendFormDataToDbService {
+export class ProcessLoginByPasswordService extends ProcessSendFormDataService {
 
 	constructor(
 		__validatingInputs: LoginFormInputsService,

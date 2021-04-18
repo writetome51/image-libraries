@@ -20,7 +20,7 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 		</div>
 
 		<delete-user-form-inputs clearFormOnInit clearAlertOnDestroy></delete-user-form-inputs>
-		<submit-form-button [label]="'Delete'" [process]="process"></submit-form-button>
+		<submit-form-button [label]="'Delete'" [iDoThis]="process"></submit-form-button>
 	`,
 	styles: ['.warning-text { color: red; font-weight: bold; }']
 })

@@ -1,5 +1,5 @@
-import { ProcessSendFormDataToDbService }
-	from '@process/process-send-form-data-to-db.abstract.service';
+import { ProcessSendFormDataService }
+	from '@process/process-send-form-data.abstract.service';
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs_service/new-user-inputs.service';
 import { NewUserServicesModule } from '../../new-user-services.module';
@@ -9,7 +9,7 @@ import { InterpretCreateUserResultService }
 
 
 @Injectable({providedIn: NewUserServicesModule})
-export class ProcessCreateUserService extends ProcessSendFormDataToDbService {
+export class ProcessCreateUserService extends ProcessSendFormDataService {
 
 	constructor(
 		__validatingInputs: NewUserInputsService,

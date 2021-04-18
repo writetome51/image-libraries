@@ -5,7 +5,7 @@
 
 import { getClassModificationDecorator } from '@writetome51/get-class-modification-decorator';
 import { UpdateEmailOrPasswordResultProcessorService }
-	from '../update-email-or-password-result-process.service';
+	from '../update-email-or-password-result-action.service';
 
 
 export const __SetResultMessageDecorator = getClassModificationDecorator(

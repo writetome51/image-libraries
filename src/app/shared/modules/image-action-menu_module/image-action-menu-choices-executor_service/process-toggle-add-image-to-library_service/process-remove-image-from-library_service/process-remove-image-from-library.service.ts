@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
+import { ProcessExistingUserDBOperationService } from '@process/process-existing-user-db-operation.abstract.service';
 import { InterpretRemoveImageFromLibraryResultService }
 	from './interpret-remove-image-from-library-result_service/interpret-remove-image-from-library-result.service';
 import { RemoveImageFromLibraryService } from './remove-image-from-library.service';
@@ -7,7 +7,7 @@ import { ImageActionMenuServicesModule } from '../../../image-action-menu-servic
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
-export class ProcessRemoveImageFromLibraryService extends ProcessDbOperationService {
+export class ProcessRemoveImageFromLibraryService extends ProcessExistingUserDBOperationService {
 
 	constructor(
 		__getResult: RemoveImageFromLibraryService,

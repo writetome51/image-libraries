@@ -4,12 +4,12 @@ import { RunTasksAfterCreatingNewLibraryService }
 import { NewLibraryFormServicesModule } from '../../new-library-form-services.module';
 import { HandleUpdateOrNewLibraryErrorService }
 	from '@process/handle-error/handle-update-or-new-library-error.service';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: NewLibraryFormServicesModule})
-export class InterpretCreateLibraryResultService extends InterpretDbOperationResultService {
+export class InterpretCreateLibraryResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleUpdateOrNewLibraryErrorService,

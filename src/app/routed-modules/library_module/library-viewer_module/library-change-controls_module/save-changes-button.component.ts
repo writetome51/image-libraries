@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ProcessUpdateLibraryService }
 	from '@process/process-update-library_service/process-update-library.service';
-import { ClickExecuteProcessContainerComponent }
-	from '@abstract-components/click-execute-process-container.abstract.component';
+import { ClickExecuteIDoThisContainerComponent }
+	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
 
 
 @Component({
@@ -11,10 +11,10 @@ import { ClickExecuteProcessContainerComponent }
 		<execute-function-button [container]="this">Save Changes</execute-function-button>
 	`
 })
-export class SaveChangesButtonComponent extends ClickExecuteProcessContainerComponent {
+export class SaveChangesButtonComponent extends ClickExecuteIDoThisContainerComponent {
 
-	constructor(_process: ProcessUpdateLibraryService) {
-		super(_process);
+	constructor(_iDoThis: ProcessUpdateLibraryService) {
+		super(_iDoThis);
 	}
 
 }

@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { ProcessDbOperationService } from '@process/process-db-operation.abstract.service';
 import { GetAllImagesService } from './get-all-images.service';
 import { AllImagesServicesModule } from '../../../all-images-services.module';
-import { InterpretGetImagesResultService } from
-'@interpret-result/interpret-get-images-result_service/interpret-get-images-result.service';
-import { SetLoadedImages } from '@interfaces/set-loaded-images.interface';
+import { InterpretGetImageRecordsResultService }
+	from '@interpret-result/interpret-get-image-records-result_service/interpret-get-image-records-result.service';
+import { ProcessThatSetsLoadedImagesService }
+	from '@services/process-that-sets-loaded-images.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
-export class ProcessGetAllImagesService extends ProcessDbOperationService
-	implements SetLoadedImages {
+export class ProcessGetAllImagesService extends ProcessThatSetsLoadedImagesService {
 
 	constructor(
-		__getResult: GetAllImagesService,
-		__interpretResult: InterpretGetImagesResultService
+		__getImageRecords: GetAllImagesService,
+		__interpretResult: InterpretGetImageRecordsResultService
 	) {
-		super(__getResult, __interpretResult);
+		super(__getImageRecords, __interpretResult);
 	}
 
 }

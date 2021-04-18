@@ -6,13 +6,13 @@ import { RequestedLibraryData as requestedLibrary }
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
-import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibraryServicesModule } from '../../../library-services.module';
 import { LoadConfiguration } from '@interfaces/load-configuration.interface';
+import { GetImageRecords } from '@interfaces/get-image-records.interface';
 
 
 @Injectable({providedIn: LibraryServicesModule})
-export class GetLibraryImagesService implements IDoThis {
+export class GetLibraryImagesService implements GetImageRecords {
 
 	constructor(
 		private __sessionIDInBrowser: SessionIDInBrowserStorageService,

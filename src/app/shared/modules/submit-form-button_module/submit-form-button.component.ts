@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ClickExecuteProcessContainerComponent }
-	from '@abstract-components/click-execute-process-container.abstract.component';
-import { ProcessSendFormDataToDbService }
-	from '@process/process-send-form-data-to-db.abstract.service';
+import { ClickExecuteIDoThisContainerComponent }
+	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
+import { ProcessSendFormDataService }
+	from '@process/process-send-form-data.abstract.service';
 
 
 @Component({
@@ -13,10 +13,10 @@ import { ProcessSendFormDataToDbService }
 		</execute-function-button>
 	`
 })
-export class SubmitFormButtonComponent extends ClickExecuteProcessContainerComponent {
+export class SubmitFormButtonComponent extends ClickExecuteIDoThisContainerComponent {
 
-	@Input() set process(value: ProcessSendFormDataToDbService) {
-		this._process = value;
+	@Input() set iDoThis(value: ProcessSendFormDataService) {
+		this._iDoThis = value;
 	}
 
 	@Input() label = 'Submit';

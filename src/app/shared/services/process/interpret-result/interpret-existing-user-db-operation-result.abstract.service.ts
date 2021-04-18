@@ -4,7 +4,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResultService } from './interpret-result.abstract.service';
 
 
-export abstract class InterpretDbOperationResultService extends InterpretResultService {
+export abstract class InterpretExistingUserDBOperationResultService extends InterpretResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

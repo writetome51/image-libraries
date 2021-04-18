@@ -1,17 +1,16 @@
 import { AlertService as alert } from '@services/alert.service';
-import { ProcessDbOperationService } from './process-db-operation.abstract.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { ProcessService } from '@process/process.abstract.service';
+import { InterpretResultService } from '@interpret-result/interpret-result.abstract.service';
 
 
-export abstract class ProcessSendFormDataToDbService extends ProcessDbOperationService {
+export abstract class ProcessSendFormDataService extends ProcessService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,
 		__getResult: IDoThis,
-		__interpretResult: InterpretDbOperationResultService
+		__interpretResult: InterpretResultService
 	) {
 		super(__getResult, __interpretResult);
 	}

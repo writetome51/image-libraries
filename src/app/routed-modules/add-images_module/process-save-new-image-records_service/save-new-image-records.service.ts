@@ -1,4 +1,4 @@
-import { AddImagesServicesModule } from './add-images-services.module';
+import { AddImagesServicesModule } from '../add-images-services.module';
 import { AppImage } from '@interfaces/app-image.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';

@@ -6,7 +6,7 @@ import { LoadedImageStateService }
 
 
 @Injectable({providedIn: 'root'})
-export class RunTasksAfterGettingImagesService implements IDoThis {
+export class RunTasksAfterGettingImageRecordsService implements IDoThis {
 
 	constructor(private __loadedImageState: LoadedImageStateService) {}
 

@@ -3,12 +3,12 @@ import { HandleExistingUserDBOperationErrorService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterLoginService }
 	from '@run-post-success-tasks/run-tasks-after-login.service';
-import { InterpretDbOperationResultService }
-	from './interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from './interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretLoginResultService extends InterpretDbOperationResultService {
+export class InterpretLoginResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

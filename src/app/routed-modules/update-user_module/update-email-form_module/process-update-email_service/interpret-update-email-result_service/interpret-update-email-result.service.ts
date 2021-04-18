@@ -3,12 +3,12 @@ import { HandleExistingUserDBOperationErrorService }
 import { Injectable } from '@angular/core';
 import { RunTasksAfterUpdatingEmailService } from './run-tasks-after-updating-email.service';
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
-import { InterpretDbOperationResultService }
-	from '@interpret-result/interpret-db-operation-result.abstract.service';
+import { InterpretExistingUserDBOperationResultService }
+	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class InterpretUpdateEmailResultService extends InterpretDbOperationResultService {
+export class InterpretUpdateEmailResultService extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

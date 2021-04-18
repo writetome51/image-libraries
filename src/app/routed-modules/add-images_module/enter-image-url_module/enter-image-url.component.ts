@@ -7,11 +7,11 @@ import { ProcessSaveImageURLService }
 	selector: 'enter-image-url',
 	template: `
 		<image-url-form-input clearFormOnInit clearAlertOnDestroy></image-url-form-input>
-		<submit-form-button [label]="'Save URL'" [process]="process"></submit-form-button>
+		<submit-form-button [label]="'Save URL'" [iDoThis]="iDoThis"></submit-form-button>
 	`
 })
 export class EnterImageURLComponent {
 
-	constructor(public process: ProcessSaveImageURLService) {}
+	constructor(public iDoThis: ProcessSaveImageURLService) {}
 
 }

@@ -11,7 +11,7 @@ import { LoadedImageStateService }
 
 
 @Injectable({providedIn: 'root'})
-export class HandleGetImagesErrorService extends HandleExistingUserDBOperationErrorService {
+export class HandleGetImageRecordsErrorService extends HandleExistingUserDBOperationErrorService {
 
 	constructor(
 		private __loadedImageState: LoadedImageStateService,
