@@ -4,7 +4,7 @@ import { DeleteObjectCommand, ListObjectsCommand, PutObjectCommand, S3Client }
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { HasError } from '@interfaces/has-error.interface';
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { modifyObject } from '@writetome51/modify-object';
 import { noValue } from '@writetome51/has-value-no-value';
 import { removeByTest } from '@writetome51/array-remove-by-test';
@@ -109,14 +109,21 @@ export class AWSStorageService {
 
 
 	private async __insertNewData(params) {
-		modifyObject(params, this.__getDefaultParams());
-		return await this.__s3Client.send(new PutObjectCommand(params));
+		return await this.__sendCommand(PutObjectCommand, params);
 	}
 
 
 	private async __deleteData(params) {
+		return await this.__sendCommand(DeleteObjectCommand, params);
+	}
+
+
+	private async __sendCommand(
+		command: Type<DeleteObjectCommand | PutObjectCommand>,
+		params
+	) {
 		modifyObject(params, this.__getDefaultParams());
-		return await this.__s3Client.send(new DeleteObjectCommand(params));
+		return await this.__s3Client.send(new command(params));
 	}
 
 
