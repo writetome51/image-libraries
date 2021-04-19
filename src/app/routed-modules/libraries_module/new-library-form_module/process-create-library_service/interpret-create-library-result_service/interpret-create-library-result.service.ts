@@ -9,7 +9,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: NewLibraryFormServicesModule})
-export class InterpretCreateLibraryResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretCreateLibraryResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleUpdateOrNewLibraryErrorService,

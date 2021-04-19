@@ -74,11 +74,13 @@ export class AWSStorageService {
 
 
 	async addFilesToFolderAndReturnURLs(files: File[], folderName: string): Promise<string[]> {
+		// @ts-ignore
 		let urls: string[] = getArrFilled(
 			files.length,
 			async (i) => await this.__addFileToFolderAndReturnURL(files[i], folderName)
 		);
 		removeByTest((value) => noValue(value), urls);
+		console.log(urls);
 		return urls;
 	}
 

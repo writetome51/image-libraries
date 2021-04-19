@@ -4,7 +4,7 @@ import { AllImagesServicesModule } from '../../../all-images-services.module';
 import { InterpretGetImageRecordsResultService }
 	from '@interpret-result/interpret-get-image-records-result_service/interpret-get-image-records-result.service';
 import { ProcessThatSetsLoadedImagesService }
-	from '@services/process-that-sets-loaded-images.service';
+	from '@process/process-that-sets-loaded-images.abstract.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
