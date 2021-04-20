@@ -36,23 +36,26 @@ Any abstract Angular entities have 'abstract' in their file names like so:
 
 Usage of the word 'Process'
 
-'Process' refers to an entire cycle of these steps:
-1. Getting an initial result from some kind of action.
+'Process' is used as both a noun and a verb.
+
+As a noun, it's an entire cycle of these steps:
+1. Executing an action and getting an initial result.
 2. Checking that result for errors and, if any, executing tasks based on those errors.
 3. If no errors, executing tasks based on the successful result.
 
-'Process' is used in the names of Services that run a action.
-Those Services follow this naming convention: `Process{Action}Service`.
+Because of the above steps, every process has an action assigned to it. This is how it
+becomes a verb, used like this: 'process the action'.
+
+'Process' is used in the names of Services that execute a process. Those Services follow
+this naming convention: `Process{Action}Service`.
 Examples:
-ProcessDbOperationService runs a action that involves interaction with a database, and
-its {Action} is 'DbOperation'.
-ProcessLoginByPasswordService has the {Action} 'LoginByPassword'.
+ProcessDBOperationService executes a process whose action is 'DBOperation'.
+ProcessLoginByPasswordService executes a process whose action is 'LoginByPassword'.
 
 
-Usage of the words 'Execute' and 'Executor'
+Usage of the word 'Execute'
 
-'Execute' refers to running ANY code.  It could be a action, or something much simpler.
-'Executor' refers to a Service that runs an execution.
+'Execute' refers to running ANY code. It could be a process, or something much simpler.
 
 
 Load

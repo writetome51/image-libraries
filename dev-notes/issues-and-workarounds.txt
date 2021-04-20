@@ -1,9 +1,27 @@
+Abstract Components that contain Angular decorators
+
+Components that are abstract classes that use Angular decorators inside their definitions,
+such as @Input, must be decorated with @Component.  If not, they will trigger
+an Angular build error: 'Class is using Angular features but is not decorated. Please add
+an explicit Angular decorator.'  You can get away with decorating the class with this
+exact line:
+
+@Component({selector: '', template: ''}) // prevents Angular build error
+
+You don't need to add an abstract Component to a Module's 'declarations'.  However, you'll
+probably need to add the constant NO_ERRORS_SCHEMA (from @angular/core) to the Module's
+'schemas' array. (This would be in any Module with a Component that inherits from the
+abstract Component.) This will prevent more build errors.
+
+
+TypeScript decorators created with getClassModificationDecorator()
+
 Any custom Typescript decorators created by calling getClassModificationDecorator()
 have been pre-transpiled into javascript files.  This is done to avoid an Angular
 build error: 'Function calls are not supported in decorators...'.
 
 
-Combining your own TypeScript Decorators with @Injectable()
+Combining your own TypeScript decorators with @Injectable()
 
 Problem:  Typescript class decorators you make probably won't work when combined with
 @Injectable() (and possibly won't work with other Angular decorators) like so:
