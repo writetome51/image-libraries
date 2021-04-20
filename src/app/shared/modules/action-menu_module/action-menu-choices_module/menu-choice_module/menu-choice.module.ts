@@ -3,7 +3,8 @@ import { ExecutableMenuChoiceContainerModule }
 	from './executable-menu-choice-container_module/executable-menu-choice-container.module';
 import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice.component';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SubmenuComponent } from './submenu_component/submenu.component';
 import { SubmenuPointerComponent } from './submenu_component/submenu-pointer.component';
 

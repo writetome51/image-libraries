@@ -6,7 +6,7 @@ import { JumpToPageInputService }
 
 export abstract class ImagesViewerContainerComponent {
 
-	abstract routeBeforePageNumber;
+	abstract routeBeforePageNumber: string;
 
 
 	get imageTotal(): number {

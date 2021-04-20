@@ -11,6 +11,6 @@ import { TinyLoadingSpinnerModule } from '@tiny-loading-spinner_module/tiny-load
 
 	// To suppress unnecessary angular compiler error concerning Components that
 	// inherit from abstract Components:
-	schemas: [NO_ERRORS_SCHEMA]
+	// schemas: [NO_ERRORS_SCHEMA]
 })
 export class ExecuteFunctionButtonModule {}

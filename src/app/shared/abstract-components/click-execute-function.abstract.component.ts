@@ -2,9 +2,10 @@ import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
 import { ClickExecuteFunctionContainerComponent }
 	from './click-execute-function-container.abstract.component';
-import { Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
+@Component({selector: '', template: ''}) // prevents Angular build error
 export abstract class ClickExecuteFunctionComponent {
 
 	// required.  Instance of the component this component is used in.

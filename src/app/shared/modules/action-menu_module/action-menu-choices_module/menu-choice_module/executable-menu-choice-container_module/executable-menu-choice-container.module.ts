@@ -6,7 +6,8 @@ import { ExecutableMenuChoiceComponent } from './executable-menu-choice.componen
 import { ExecutableMenuChoiceContainerComponent }
 	from './executable-menu-choice-container.component';
 import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 
 @NgModule({

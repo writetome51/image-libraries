@@ -3,8 +3,8 @@ import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../new-user-services.module';
-import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
+import { noValue } from '@writetome51/has-value-no-value';
 import { ProcessCreateUserInDbService }
 	from './process-create-user-in-db_service/process-create-user-in-db.service';
 import { ProcessCreateUserFileFolderService }

@@ -1,4 +1,5 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubmitFormButtonComponent } from './submit-form-button.component';
 import { ExecuteFunctionButtonModule }
