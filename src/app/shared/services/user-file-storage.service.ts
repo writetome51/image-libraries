@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { AWSStorageService } from '@services/aws-storage.service';
-import { ListObjectsCommandOutput } from '@aws-sdk/client-s3';
 
 
 /******************************
@@ -16,13 +15,13 @@ export class UserFileStorageService {
 	constructor(private __awsStorage: AWSStorageService) {}
 
 
-	async createFolder(username: string): Promise<{ success: true } | HasError> {
-		username = username.trim();
-		if (username.includes('/')) return {
+	async createFolder(userName: string): Promise<{ success: true } | HasError> {
+		userName = userName.trim();
+		if (userName.includes('/')) return {
 			error: {message: 'Folder names cannot include slashes.'}
 		};
 		try {
-			await this.__awsStorage.insertNewData({ Key: encodeURIComponent(username) + '/' });
+			await this.__awsStorage.insertNewData({ Key: encodeURIComponent(userName) + '/' });
 			return {success: true};
 		}
 		catch (err) {
@@ -33,10 +32,10 @@ export class UserFileStorageService {
 	}
 
 
-	async deleteFolder(username: string): Promise<{ success: true } | HasError> {
-		const folderKey = encodeURIComponent(username) + '/';
+	async deleteFolder(userName: string): Promise<{ success: true } | HasError> {
+		const folderKey = encodeURIComponent(userName) + '/';
 		try {
-			var objectsToDelete = await this.__getObjectsToDelete(username);
+			var objectsToDelete = await this.__awsStorage.getObjectsToDelete(userName);
 		}
 		catch (err) {
 			return {error: {
@@ -55,11 +54,11 @@ export class UserFileStorageService {
 	}
 
 
-	async addFilesToFolderAndReturnURLs(files: File[], folderName: string): Promise<string[]> {
+	async addFilesAndReturnURLs(files: File[], userName: string): Promise<string[]> {
 
 		let length = files.length, urls = new Array(length);
 		for (let i = 0; i < length; ++i) {
-			urls[i] = await this.__addFileAndReturnURL(files[i], folderName);
+			urls[i] = await this.__addFileAndReturnURL(files[i], userName);
 		}
 		removeByTest((value) => noValue(value), urls);
 		console.log(urls);
@@ -68,8 +67,9 @@ export class UserFileStorageService {
 	}
 
 
-	async deleteFile(fileKey: string): Promise<{ success: true } | HasError> {
+	async deleteFile(fileName: string, folderName: string): Promise<{ success: true } | HasError> {
 		try {
+			const fileKey = this.__getFileKey(fileName, folderName);
 			await this.__awsStorage.deleteData({Key: fileKey});
 			return {success: true};
 		}
@@ -81,8 +81,7 @@ export class UserFileStorageService {
 
 	private async __addFileAndReturnURL(file: File, folderName: string): Promise<string> {
 
-		const folderKey = encodeURIComponent(folderName) + '/';
-		const fileKey = folderKey + encodeURIComponent(file.name);
+		const fileKey = this.__getFileKey(file.name, folderName);
 		try {
 			await this.__awsStorage.insertNewData({Key: fileKey, Body: file});
 			return this.__awsStorage.getFileURL(file.name, folderName);
@@ -92,9 +91,10 @@ export class UserFileStorageService {
 		}
 	}
 
-	private async __getObjectsToDelete(folderName: string): Promise< Array<{Key: string}> > {
-		const data: ListObjectsCommandOutput = await this.__awsStorage.getContents(folderName);
-		return data.Contents.map((object) => { return {Key: object.Key}; });
+
+	private __getFileKey(fileName, folderName) {
+		const folderKey = encodeURIComponent(folderName) + '/';
+		return folderKey + encodeURIComponent(fileName);
 	}
 
 }

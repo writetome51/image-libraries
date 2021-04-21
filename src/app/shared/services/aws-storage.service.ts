@@ -54,10 +54,9 @@ export class AWSStorageService {
 	}
 
 
-	async getContents(folderName): Promise<ListObjectsCommandOutput> {
-		const folderKey = encodeURIComponent(folderName) + '/'
-		const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
-		return await this.__s3Client.send(new ListObjectsCommand(params));
+	async getObjectsToDelete(folderName: string): Promise< Array<{Key: string}> > {
+		const data: ListObjectsCommandOutput = await this.__getContents(folderName);
+		return data.Contents.map((object) => { return {Key: object.Key}; });
 	}
 
 
@@ -73,6 +72,13 @@ export class AWSStorageService {
 		};
 		modifyObject(options, params);
 		return await this.__s3Client.send(new command(options));
+	}
+
+
+	private async __getContents(folderName): Promise<ListObjectsCommandOutput> {
+		const folderKey = encodeURIComponent(folderName) + '/'
+		const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
+		return await this.__s3Client.send(new ListObjectsCommand(params));
 	}
 
 }
