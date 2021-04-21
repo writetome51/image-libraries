@@ -6,9 +6,7 @@ import { notObject } from '@writetome51/is-object-not-object';
 
 export class GetObjectFromSubscriptionService {
 
-	static async go(
-		subscribable: Subscribable<any>
-	): Promise<any> {
+	static async go(subscribable: Subscribable<any>): Promise<any> {
 		let result = await getSubscriptionData(subscribable);
 		return this.__getAsObject(result);
 	}
