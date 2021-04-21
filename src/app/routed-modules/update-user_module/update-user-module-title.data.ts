@@ -1,8 +1,8 @@
-import { AppNameData as appName } from '@read-only-data/app-name.data';
+import { appName } from '@string-constants/app-name';
 
 
 export class UpdateUserModuleTitleData {
 
-	static readonly data = appName.data + ' | Update | ';
+	static readonly data = appName + ' | Update | ';
 
 }

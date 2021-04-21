@@ -1,4 +1,4 @@
-import { AppNameData as appName } from '@read-only-data/app-name.data';
+import { appName } from '@string-constants/app-name';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
@@ -37,7 +37,7 @@ export class AllImagesComponent extends RouteParametersSubscriberComponent {
 	) {
 		super(__currentRoute, __getRouteParamsObserver);
 
-		this.__title.setTitle(appName.data + ' | ' + this.heading);
+		this.__title.setTitle(appName + ' | ' + this.heading);
 		executionStatus.waiting = true;
 	}
 

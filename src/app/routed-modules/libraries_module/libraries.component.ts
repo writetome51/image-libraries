@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
-import { LibrariesModuleTitleData as moduleTitle } from './libraries-module-title.data';
 import { Title } from '@angular/platform-browser';
+import { appName } from '@string-constants/app-name';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class LibrariesComponent {
 	}
 
 	constructor(private __title: Title) {
-		this.__title.setTitle(moduleTitle.data);
+		this.__title.setTitle(appName + ' | ' + this.heading);
 	}
 
 }

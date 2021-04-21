@@ -13,20 +13,18 @@ import { Title } from '@angular/platform-browser';
 	template: `
 		<header><h2>{{heading}}</h2></header>
 
-		<p *ngIf="haveReceivedQuestion">{{question}}</p>
+		<p *ngIf="receivedQuestion">{{question}}</p>
 
 		<div class="form-container">
-
 			<form clearFormOnInit clearAlertOnDestroy>
 
-				<get-security-question-form *ngIf="!(haveReceivedQuestion)">
+				<get-security-question-form *ngIf="!(receivedQuestion)">
 				</get-security-question-form>
 
-				<answer-security-question-form *ngIf="haveReceivedQuestion">
+				<answer-security-question-form *ngIf="receivedQuestion">
 				</answer-security-question-form>
 
 			</form>
-
 		</div>
 	`
 })
@@ -40,7 +38,7 @@ export class SecurityQuestionComponent {
 	}
 
 
-	get haveReceivedQuestion() {
+	get receivedQuestion() {
 		return questionStatus.received;
 	}
 

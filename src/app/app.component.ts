@@ -1,5 +1,5 @@
 import { AlertService } from '@services/alert.service';
-import { AppNameData as appName } from '@read-only-data/app-name.data';
+import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { ResetRuntimeStateDataToDefaultSettingsService }
@@ -14,7 +14,7 @@ import { SessionIDInBrowserStorageService }
 })
 export class AppComponent {
 
-	siteHeading = appName.data;
+	siteHeading = appName;
 	alert = AlertService;
 
 

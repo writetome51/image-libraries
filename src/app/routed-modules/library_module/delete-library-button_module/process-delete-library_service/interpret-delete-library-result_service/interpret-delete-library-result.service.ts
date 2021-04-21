@@ -9,7 +9,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: DeleteLibraryButtonServicesModule})
-export class InterpretDeleteLibraryResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretDeleteLibraryResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

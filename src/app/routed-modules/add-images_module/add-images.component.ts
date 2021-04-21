@@ -1,8 +1,8 @@
+import { appName } from '@string-constants/app-name';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { AddImagesModuleTitleData as moduleTitle } from './add-images-module-title.data';
 
 
 @Component({
@@ -34,7 +34,7 @@ export class AddImagesComponent {
 
 
 	constructor(private __title: Title) {
-		this.__title.setTitle(moduleTitle.data);
+		this.__title.setTitle(appName + ' | ' + this.heading);
 	}
 
 }
