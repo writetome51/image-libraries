@@ -47,8 +47,10 @@ export class AWSStorageService {
 
 	async deleteData(params: {
 		Key: string,
-		// call this.getObjectsToDelete() to get array of `Objects`.
-		Delete?: { Objects: Array<{ Key: string }> },
+		Delete?: { 
+			// call this.getObjectsToDelete() to get array of `Objects`.
+			Objects: Array<{ Key: string }> 
+		},
 		Quiet?: boolean
 	}) {
 		return await this.__sendCommand(DeleteObjectCommand, params);
