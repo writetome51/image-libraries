@@ -12,7 +12,8 @@ export abstract class InterpretResultService implements InterpretResult {
 	) {}
 
 
-	async go(result: any | HasError): Promise<void> {
+	async go(result: any | HasError | undefined): Promise<void> {
+		if (result === undefined) return; // use this to stop process early.
 
 		if (result.error) await this.__handleError.go(result.error);
 
