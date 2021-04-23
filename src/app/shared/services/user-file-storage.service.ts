@@ -19,7 +19,7 @@ export class UserFileStorageService {
 			error: {message: 'Folder names cannot include slashes.'}
 		};
 		try {
-			await this.__awsStorage.insertNewData({ Key: encodeURIComponent(userName) + '/' });
+			await this.__awsStorage.insertNewData({ Key: userName + '/' });
 			return {success: true};
 		}
 		catch (err) {
@@ -31,8 +31,10 @@ export class UserFileStorageService {
 
 
 	async deleteFolder(userName: string): Promise<{ success: true } | HasError> {
-		const folderKey = encodeURIComponent(userName) + '/';
+		const folderKey = userName + '/';
 		try {
+			// When deleting entire folder, the objects inside must be listed as part of
+			// the delete operation.
 			var objectsToDelete = await this.__awsStorage.getObjectsToDelete(userName);
 		}
 		catch (err) {
@@ -59,7 +61,6 @@ export class UserFileStorageService {
 			urls[i] = await this.__addFileAndReturnURL(files[i], userName);
 		}
 		removeByTest((value) => noValue(value), urls);
-		console.log(urls);
 
 		return urls;
 	}

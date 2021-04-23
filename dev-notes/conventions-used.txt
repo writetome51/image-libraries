@@ -95,3 +95,7 @@ export interface LibraryRecord {
 
 }
 
+
+Record
+
+The word 'Record' refers to a saved data structure, most likely saved in a database.

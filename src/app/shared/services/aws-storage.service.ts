@@ -33,9 +33,10 @@ export class AWSStorageService {
 
 	getFileURL(filename: string, folderName: string): string {
 		const bucketURL = `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
-		const folderKey = encodeURIComponent(folderName) + '/';
-		const fileKey = folderKey + encodeURIComponent(filename);
-		return bucketURL + fileKey;
+		// The fileKey should not be URI-encoded.
+		// AWS S3 URI-encodes it for you.  If you encode it first, AWS will double-encode
+		// it and will create a different URL than the one this function returns.
+		return bucketURL + this.getFileKey(filename, folderName);
 	}
 
 
@@ -61,8 +62,7 @@ export class AWSStorageService {
 
 
 	getFileKey(fileName, folderName) {
-		const folderKey = encodeURIComponent(folderName) + '/';
-		return folderKey + encodeURIComponent(fileName);
+		return folderName + '/' + fileName;
 	}
 
 
@@ -82,7 +82,7 @@ export class AWSStorageService {
 
 
 	private async __getContents(folderName): Promise<ListObjectsCommandOutput> {
-		const folderKey = encodeURIComponent(folderName) + '/'
+		const folderKey = folderName + '/'
 		const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
 		return await this.__s3Client.send(new ListObjectsCommand(params));
 	}

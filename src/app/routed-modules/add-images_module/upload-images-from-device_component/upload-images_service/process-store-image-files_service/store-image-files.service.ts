@@ -1,8 +1,8 @@
-import { AWSStorageService } from '@services/aws-storage.service';
 import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { UserFileStorageService } from '@services/user-file-storage.service';
 // import { ImageRecord } from '@interfaces/image-record.interface';
 
 
@@ -16,14 +16,14 @@ to the 'src' of its corresponding ImageRecord.
 export class StoreImageFilesService implements IDoThis {
 
 	constructor(
-		private __awsStorage: AWSStorageService,
+		private __userFileStorage: UserFileStorageService,
 		private __emailInBrowser: EmailInBrowserStorageService
 	) {}
 
 
 	async go(images: File[]): Promise<string[] | HasError> {
-		let folderName = this.__emailInBrowser.get();
-		return this.__awsStorage.addFilesToFolderAndReturnURLs(images, folderName);
+		let userName = this.__emailInBrowser.get();
+		return this.__userFileStorage.addFilesAndReturnURLs(images, userName);
 	}
 
 }
