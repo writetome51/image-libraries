@@ -32,10 +32,9 @@ export class AWSStorageService {
 
 
 	getFileURL(filename: string, folderName: string): string {
+		const bucketURL = `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
 		const folderKey = encodeURIComponent(folderName) + '/';
 		const fileKey = folderKey + encodeURIComponent(filename);
-		const serviceURL = `https://s3.${this.__region}.amazonaws.com/`;
-		const bucketURL = serviceURL + this.__s3Bucket + '/';
 		return bucketURL + fileKey;
 	}
 
@@ -47,16 +46,23 @@ export class AWSStorageService {
 
 	async deleteData(params: {
 		Key: string,
-		Delete?: { Objects: { Key: string }[] },
+		// call this.getObjectsToDelete() to get array of `Objects`.
+		Delete?: { Objects: Array<{ Key: string }> },
 		Quiet?: boolean
 	}) {
 		return await this.__sendCommand(DeleteObjectCommand, params);
 	}
 
 
-	async getObjectsToDelete(folderName: string): Promise< Array<{Key: string}> > {
+	async getObjectsToDelete(folderName: string): Promise< Array<{ Key: string }> > {
 		const data: ListObjectsCommandOutput = await this.__getContents(folderName);
 		return data.Contents.map((object) => { return {Key: object.Key}; });
+	}
+
+
+	getFileKey(fileName, folderName) {
+		const folderKey = encodeURIComponent(folderName) + '/';
+		return folderKey + encodeURIComponent(fileName);
 	}
 
 

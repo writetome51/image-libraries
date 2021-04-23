@@ -5,9 +5,7 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { AWSStorageService } from '@services/aws-storage.service';
 
 
-/******************************
-Each user gets one folder (named after their username). The folder contains the user's files.
-*****************************/
+// Each user gets one folder (named after their username). The folder contains the user's files.
 
 @Injectable({providedIn: 'root'})
 export class UserFileStorageService {
@@ -67,9 +65,9 @@ export class UserFileStorageService {
 	}
 
 
-	async deleteFile(fileName: string, folderName: string): Promise<{ success: true } | HasError> {
+	async deleteFile(fileName: string, userName: string): Promise<{ success: true } | HasError> {
 		try {
-			const fileKey = this.__getFileKey(fileName, folderName);
+			const fileKey = this.__awsStorage.getFileKey(fileName, userName);
 			await this.__awsStorage.deleteData({Key: fileKey});
 			return {success: true};
 		}
@@ -79,22 +77,16 @@ export class UserFileStorageService {
 	}
 
 
-	private async __addFileAndReturnURL(file: File, folderName: string): Promise<string> {
+	private async __addFileAndReturnURL(file: File, userName: string): Promise<string> {
 
-		const fileKey = this.__getFileKey(file.name, folderName);
+		const fileKey = this.__awsStorage.getFileKey(file.name, userName);
 		try {
 			await this.__awsStorage.insertNewData({Key: fileKey, Body: file});
-			return this.__awsStorage.getFileURL(file.name, folderName);
+			return this.__awsStorage.getFileURL(file.name, userName);
 		}
 		catch (err) {
 			throw new Error(`There was an error adding file "${file.name}":  ` + err.message);
 		}
-	}
-
-
-	private __getFileKey(fileName, folderName) {
-		const folderKey = encodeURIComponent(folderName) + '/';
-		return folderKey + encodeURIComponent(fileName);
 	}
 
 }
