@@ -2,7 +2,7 @@ import { AlertService as alert } from '@services/alert.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { notLoggedIn } from '@string-constants/form-submission-errors';
-import { RemoveCachedDataService } from '@services/remove-cached-data.service';
+import { RemoveCachedDataService } from '@services/remove-cached-data_service/remove-cached-data.service';
 import { Router } from '@angular/router';
 
 

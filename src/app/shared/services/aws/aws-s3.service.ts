@@ -15,7 +15,7 @@ a user of this app. The folder contains the user's files.
  *****************************/
 
 @Injectable({providedIn: 'root'})
-export class AWSStorageService {
+export class AWSS3Service {
 
 	private readonly __region = 'us-east-1';
 	private readonly __identityPoolId = 'us-east-1:b3cf6fc7-081d-4b98-8761-c37d78744742';
@@ -31,25 +31,22 @@ export class AWSStorageService {
 	});
 
 
-	getFileURL(filename: string, folderName: string): string {
-		const bucketURL = `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
-		// The fileKey should not be URI-encoded.
-		// AWS S3 URI-encodes it for you.  If you encode it first, AWS will double-encode
-		// it and will create a different URL than the one this function returns.
-		return bucketURL + this.getFileKey(filename, folderName);
+	getBucketURL(): string {
+		return `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
 	}
 
 
-	async insertNewData(params: {Key: string, Body?: any}) {
-		return await this.__sendCommand(PutObjectCommand, params);
+	async insertData(params: {Key: string, Body?: any}) {
+		await this.__sendCommand(PutObjectCommand, params);
 	}
 
 
 	async deleteData(params: {
 		Key: string,
-		Delete?: { 
-			// call this.getObjectsToDelete() to get array of `Objects`.
-			Objects: Array<{ Key: string }> 
+		Delete?: {
+			// Required if you're deleting folder that isn't empty. Objects inside must
+			// be listed here. Call this.getObjectsToDelete() to get array of `Objects`.
+			Objects: Array<{ Key: string }>
 		},
 		Quiet?: boolean
 	}) {
@@ -63,17 +60,12 @@ export class AWSStorageService {
 	}
 
 
-	getFileKey(fileName, folderName) {
-		return folderName + '/' + fileName;
-	}
-
-
 	private async __sendCommand(
 		command: Type<DeleteObjectCommand | PutObjectCommand>,
 		params: object
 	) {
 		let options: DeleteObjectRequest | PutObjectCommandInput = {
-			Key: '',
+			Key: '', // must be overridden
 			Bucket: this.__s3Bucket,
 			// Allows user to read and delete
 			ACL: 'public-read-write'

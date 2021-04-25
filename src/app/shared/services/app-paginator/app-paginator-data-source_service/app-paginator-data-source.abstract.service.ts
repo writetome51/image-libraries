@@ -5,7 +5,8 @@ import { LoadData as load }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LoadedImageStateService }
 	from '@services/loaded-image-state_service/loaded-image-state.service';
-import { ProcessThatSetsLoadedImagesService } from '@process/process-that-sets-loaded-images.abstract.service';
+import { ProcessThatSetsLoadedImagesService }
+	from '@process/process-that-sets-loaded-images.abstract.service';
 
 
 export abstract class AppPaginatorDataSourceService implements BigDatasetPaginatorDataSource {
