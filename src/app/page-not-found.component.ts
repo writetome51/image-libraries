@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
+import { HTMLImage } from '@interfaces/html-image.interface';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { environment } from '@environments/environment';
 })
 export class PageNotFoundComponent {
 
-	readonly faces = {
+	readonly faces: HTMLImage = {
 		src: environment.assets + 'happy-or-sad.png',
 		alt: 'happy and sad faces',
 		width: 362
