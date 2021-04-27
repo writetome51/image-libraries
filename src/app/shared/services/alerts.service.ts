@@ -7,6 +7,11 @@ export class AlertsService {
 	private static __data: Alert[] = [];
 
 
+	static get count() {
+		return this.__data.length;
+	}
+
+
 	static getAlert(index: number): Alert {
 		return this.__data[index];
 	}
