@@ -6,8 +6,6 @@ import { EncryptedItemInBrowserStorageService }
 @Injectable({providedIn: 'root'})
 export class EmailInBrowserStorageService extends EncryptedItemInBrowserStorageService<string> {
 
-	constructor() {
-		super(localStorage, 'eml');
-	}
+	constructor() { super(localStorage, 'eml'); }
 
 }

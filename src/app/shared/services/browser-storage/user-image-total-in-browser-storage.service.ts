@@ -7,8 +7,6 @@ import { EncryptedItemInBrowserStorageService }
 export class UserImageTotalInBrowserStorageService
 	extends EncryptedItemInBrowserStorageService<number> {
 
-	constructor() {
-		super(localStorage, 'usr-img-total');
-	}
+	constructor() { super(localStorage, 'usr-img-total'); }
 
 }

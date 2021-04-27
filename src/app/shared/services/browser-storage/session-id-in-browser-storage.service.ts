@@ -6,8 +6,6 @@ import { EncryptedItemInBrowserStorageService }
 @Injectable({providedIn: 'root'})
 export class SessionIDInBrowserStorageService extends EncryptedItemInBrowserStorageService<string> {
 
-	constructor() {
-		super(localStorage, 'lsd');
-	}
+	constructor() { super(localStorage, 'lsd'); }
 
 }

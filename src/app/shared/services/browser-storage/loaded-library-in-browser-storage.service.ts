@@ -8,8 +8,6 @@ import { LibraryRecord } from '@interfaces/library-record.interface';
 export class LoadedLibraryInBrowserStorageService
 	extends EncryptedItemInBrowserStorageService<LibraryRecord> {
 
-	constructor() {
-		super(sessionStorage, 'current-lib');
-	}
+	constructor() { super(sessionStorage, 'current-lib'); }
 
 }
