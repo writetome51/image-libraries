@@ -1,6 +1,7 @@
-export interface Alert {
+import { HasMessage } from '@interfaces/has-message.interface';
 
-	message: string;
+
+export interface Alert extends HasMessage {
 
 	isError: boolean;
 
