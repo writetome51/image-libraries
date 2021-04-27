@@ -20,7 +20,7 @@ export class AWSStorageService {
 	// Creates folder for `folderName` if it doesn't exist.
 
 	async insertFile(file: File, folderName: string) {
-		await this.__awsS3.insertData({
+		return await this.__awsS3.insertData({
 			Key: this.__getFileKey(file.name, folderName),
 			Body: file
 		});
@@ -28,16 +28,16 @@ export class AWSStorageService {
 
 
 	async deleteFile(name: string, folderName: string) {
-		await this.__awsS3.deleteData({Key: this.__getFileKey(name, folderName)});
+		return await this.__awsS3.deleteData({Key: this.__getFileKey(name, folderName)});
 	}
 
 
 	async deleteFolder(name: string) {
-		await this.__awsS3.deleteData({
-			Key: name + '/',
-			Delete: {Objects: await this.__awsS3.getObjectsToDelete(name)},
-			Quiet: true
-		});
+		let objects = await this.__awsS3.getObjectsInside(name);
+
+		for (let i = 0, length = objects.length; i < length; ++i) {
+			await this.__awsS3.deleteData({Key: objects[i].Key});
+		}
 	}
 
 

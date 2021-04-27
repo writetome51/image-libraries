@@ -1,11 +1,12 @@
 import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
 import {
-	DeleteObjectCommand, DeleteObjectRequest, ListObjectsCommand, ListObjectsCommandOutput,
-	PutObjectCommand, PutObjectCommandInput, S3Client
+	_Object, DeleteObjectCommand, ListObjectsCommand, ListObjectsCommandOutput,
+	PutObjectCommand, S3Client
 } from '@aws-sdk/client-s3';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 import { Injectable, Type } from '@angular/core';
-import { modifyObject } from '@writetome51/modify-object';
+import { noValue } from '@writetome51/has-value-no-value';
+import { append, prepend } from '@writetome51/array-append-prepend';
 
 
 /******************************
@@ -37,15 +38,17 @@ export class AWSS3Service {
 
 
 	async insertData(params: {Key: string, Body?: any}) {
+		// Allows user to read and delete
+		params['ACL'] = 'public-read-write';
 		await this.__sendCommand(PutObjectCommand, params);
 	}
 
 
 	async deleteData(params: {
-		Key: string,
+		Key?: string, // If deleting single object (if folder, it must be empty).
 		Delete?: {
-			// Required if you're deleting folder that isn't empty. Objects inside must
-			// be listed here. Call this.getObjectsToDelete() to get array of `Objects`.
+			// Required if you're deleting multiple objects. Objects inside must
+			// be listed here. Call this.getObjectsInside() to get array of `Objects`.
 			Objects: Array<{ Key: string }>
 		},
 		Quiet?: boolean
@@ -54,9 +57,10 @@ export class AWSS3Service {
 	}
 
 
-	async getObjectsToDelete(folderName: string): Promise< Array<{ Key: string }> > {
-		const data: ListObjectsCommandOutput = await this.__getContents(folderName);
-		return data.Contents.map((object) => { return {Key: object.Key}; });
+	async getObjectsInside(folderName: string): Promise< Array<{ Key: string }> > {
+		const contents: _Object[] = await this.__getContents(folderName);
+
+		return contents.map((object) => { return {Key: object.Key}; });
 	}
 
 
@@ -64,21 +68,18 @@ export class AWSS3Service {
 		command: Type<DeleteObjectCommand | PutObjectCommand>,
 		params: object
 	) {
-		let options: DeleteObjectRequest | PutObjectCommandInput = {
-			Key: '', // must be overridden
-			Bucket: this.__s3Bucket,
-			// Allows user to read and delete
-			ACL: 'public-read-write'
-		};
-		modifyObject(options, params);
-		return await this.__s3Client.send(new command(options));
+		params['Bucket'] = this.__s3Bucket;
+		return await this.__s3Client.send(new command(params));
 	}
 
 
-	private async __getContents(folderName): Promise<ListObjectsCommandOutput> {
-		const folderKey = folderName + '/'
-		const params = {Bucket: this.__s3Bucket, Prefix: folderKey};
-		return await this.__s3Client.send(new ListObjectsCommand(params));
+	private async __getContents(folderName): Promise<_Object[]> {
+		const params = {Bucket: this.__s3Bucket, Prefix: folderName + '/'};
+		let output: ListObjectsCommandOutput =
+			await this.__s3Client.send(new ListObjectsCommand(params));
+
+		if (noValue(output.Contents)) return [];
+		return output.Contents;
 	}
 
 }
