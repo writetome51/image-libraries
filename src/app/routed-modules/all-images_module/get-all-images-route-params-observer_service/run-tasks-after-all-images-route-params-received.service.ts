@@ -13,7 +13,6 @@ import { LoadedImageStateService }
 @Injectable({providedIn: AllImagesServicesModule})
 export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis {
 
-
 	constructor(
 		private __paginator: AllImagesPaginatorService,
 		private __jumpToPageInput: AllImagesJumpToPageInputService,

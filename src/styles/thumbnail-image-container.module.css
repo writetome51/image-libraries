@@ -25,7 +25,7 @@ thumbnail-image-container  image-action-menu  action-menu-button  button  sprock
 }
 
 
-thumbnail-image-container  image-action-menu  button  div span.caret {
+thumbnail-image-container  image-action-menu  button  div  span.caret {
 	position: relative;
 	right: 3px;
 	top: 14px;

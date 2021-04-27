@@ -1,15 +1,15 @@
 import { AlertService as alert } from '@services/alert.service';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
-import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ProcessService } from '@process/process.abstract.service';
 import { InterpretResultService } from '@interpret-result/interpret-result.abstract.service';
+import { GetResult } from '@interfaces/get-result.interface';
 
 
 export abstract class ProcessSendFormDataService extends ProcessService {
 
 	constructor(
 		private __validatingInputs: ValidatingInputsService | ValidatingInputService,
-		__getResult: IDoThis,
+		__getResult: GetResult,
 		__interpretResult: InterpretResultService
 	) {
 		super(__getResult, __interpretResult);

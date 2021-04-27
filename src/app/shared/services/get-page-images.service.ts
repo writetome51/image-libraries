@@ -1,7 +1,7 @@
-// import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ImageRecord } from '@interfaces/image-record.interface';
 import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+// import { IDoThis } from '@interfaces/i-do-this.interface';
+import { ImageRecord } from '@interfaces/image-record.interface';
 
 
 export class GetPageImagesService { // implements IDoThis

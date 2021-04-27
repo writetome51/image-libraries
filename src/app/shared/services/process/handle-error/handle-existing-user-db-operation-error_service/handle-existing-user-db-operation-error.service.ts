@@ -18,6 +18,8 @@ export class HandleExistingUserDBOperationErrorService extends HandleErrorServic
 
 
 	async go(error: { message: string }) {
+		console.log(error.message);
+
 		if (error.message) {
 			if (error.message.includes(noRecordMatchedCriteria)) {
 				return await this.__handleNoRecordMatchError.go();

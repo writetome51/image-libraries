@@ -1,10 +1,10 @@
-This directory contains styles that are global to the app, as well as styles applied to particular 
-Angular modules.
-The stylesheets applied to particular modules have names ending in '.module.css'.
-The reason those styles are here and not tied to specific components in those
-modules is because these styles have module-wide scope.  They won't work in component
+This directory contains styles that are global to the app, as well as styles applied to
+specific Angular Modules.
+The stylesheets applied to specific Modules have names ending in '.module.css'.
+The reason those styles are here and not tied to specific Components in those
+Modules is because these styles have Module-wide scope.  They won't work in Component
 stylesheets.
 
 To be included by the Angular bundler, the stylesheets here must be listed in the
-config file  /angular.json  at  projects.{project-name}.architect.build.options.styles  and
-projects.{project-name}.architect.test.options.styles.
+config file  /angular.json  at  projects.{project-name}.architect.build.options.styles
+and projects.{project-name}.architect.test.options.styles.

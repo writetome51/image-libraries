@@ -3,9 +3,9 @@ import { ProcessSendFormDataService }
 import { Injectable } from '@angular/core';
 import { NewUserInputsService } from '../new-user-inputs_service/new-user-inputs.service';
 import { NewUserServicesModule } from '../../new-user-services.module';
-import { CreateUserService } from './create-user.service';
 import { InterpretCreateUserResultService }
 	from './interpret-create-user-result_service/interpret-create-user-result.service';
+import { CreateUserService } from './create-user.service';
 
 
 @Injectable({providedIn: NewUserServicesModule})

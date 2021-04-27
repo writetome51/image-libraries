@@ -7,7 +7,6 @@ import { LoggedInNavigatorServicesModule } from './logged-in-navigator-services.
 import { LogoutButtonComponent } from './logout-button_component/logout-button.component';
 import { NavigationLinksModule } from '@navigation-links_module/navigation-links.module';
 import { NgModule } from '@angular/core';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -22,10 +21,6 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 		LoggedInNavigatorServicesModule,
 		NavigationLinksModule
 	],
-	exports: [LoggedInNavigatorComponent],
-
-	// To suppress unnecessary angular compiler error concerning Components that
-	// inherit from abstract Components:
-	// schemas: [NO_ERRORS_SCHEMA]
+	exports: [LoggedInNavigatorComponent]
 })
 export class LoggedInNavigatorModule {}

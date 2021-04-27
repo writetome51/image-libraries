@@ -13,6 +13,6 @@ import { ExecuteFunctionButtonModule }
 
 	// To suppress unnecessary angular compiler error concerning Components that
 	// inherit from abstract Components:
-	schemas: [NO_ERRORS_SCHEMA]
+	// schemas: [NO_ERRORS_SCHEMA]
 })
 export class SubmitFormButtonModule {}
