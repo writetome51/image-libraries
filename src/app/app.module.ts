@@ -1,4 +1,4 @@
-import { AppAlertComponent } from './app-alert.component';
+import { AppAlertsModule } from '@app/app-alerts_module/app-alerts.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
@@ -11,7 +11,6 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
 	declarations: [
-		AppAlertComponent,
 		AppComponent,
 		PageNotFoundComponent,
 	],
@@ -19,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		BrowserModule,
 		FormsModule,
 		HTMLImageModule,
+		AppAlertsModule,
 		LoggedInNavigatorModule,
 		AppRoutingModule
 	],

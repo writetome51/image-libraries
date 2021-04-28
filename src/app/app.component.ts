@@ -1,4 +1,4 @@
-import { AlertService } from '@services/alert.service';
+import { AlertsService } from '@services/alerts.service';
 import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
@@ -15,7 +15,7 @@ import { SessionIDInBrowserStorageService }
 export class AppComponent {
 
 	siteHeading = appName;
-	alert = AlertService;
+	alerts = AlertsService;
 
 
 	get loggedIn(): boolean {
