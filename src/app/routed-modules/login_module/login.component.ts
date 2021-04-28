@@ -7,7 +7,7 @@ import { LoginModuleTitleData as moduleTitle } from './login-module-title.data';
 @Component({
 	selector: 'app-login',
 	template: `
-		<login-form clearFormOnInit clearAlertOnDestroy></login-form>
+		<login-form clearFormOnInit clearAlertsOnDestroy></login-form>
 
 		<p>Don't have an account?
 			<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">
