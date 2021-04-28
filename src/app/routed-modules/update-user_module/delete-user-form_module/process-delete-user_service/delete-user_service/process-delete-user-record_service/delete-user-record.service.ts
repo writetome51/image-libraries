@@ -6,7 +6,7 @@ import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
 import { HasError } from '@interfaces/has-error.interface';
-import { UpdateUserServicesModule } from '../../../update-user-services.module';
+import { UpdateUserServicesModule } from '../../../../update-user-services.module';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})

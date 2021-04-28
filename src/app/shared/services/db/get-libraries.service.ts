@@ -8,7 +8,7 @@ import { HasError } from '@interfaces/has-error.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class GetUserLibrariesService implements IDoThis {
+export class GetLibrariesService implements IDoThis {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
