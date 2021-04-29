@@ -19,7 +19,7 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 			<p>If you wish to proceed, enter your info and click Delete</p>
 		</div>
 
-		<delete-user-form-inputs clearFormOnInit clearAlertOnDestroy></delete-user-form-inputs>
+		<delete-user-form-inputs clearFormOnInit clearAlertsOnDestroy></delete-user-form-inputs>
 		<submit-form-button [label]="'Delete'" [iDoThis]="process"></submit-form-button>
 	`,
 	styles: ['.warning-text { color: red; font-weight: bold; }']

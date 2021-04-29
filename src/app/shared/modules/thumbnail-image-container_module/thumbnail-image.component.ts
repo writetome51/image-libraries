@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ImageRecord } from '@interfaces/image-record.interface';
 import { HTMLImage } from '@interfaces/html-image.interface';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { AppImage } from '@interfaces/app-image.interface';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 })
 export class ThumbnailImageComponent {
 
-	@Input() data: ImageRecord;
+	@Input() data: AppImage;
 
 
 	get img(): HTMLImage {

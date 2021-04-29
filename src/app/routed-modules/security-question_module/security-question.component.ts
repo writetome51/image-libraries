@@ -16,7 +16,7 @@ import { Title } from '@angular/platform-browser';
 		<p *ngIf="receivedQuestion">{{question}}</p>
 
 		<div class="form-container">
-			<form clearFormOnInit clearAlertOnDestroy>
+			<form clearFormOnInit clearAlertsOnDestroy>
 
 				<get-security-question-form *ngIf="!(receivedQuestion)">
 				</get-security-question-form>

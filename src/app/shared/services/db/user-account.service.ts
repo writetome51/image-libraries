@@ -1,11 +1,11 @@
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
-import { UserRecord } from '@interfaces/user-record.interface';
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
+import { UserRecord } from '@interfaces/user-record.interface';
 
 
 @Injectable({providedIn: 'root'})

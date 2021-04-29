@@ -11,7 +11,7 @@ import { Settable } from '@interfaces/settable.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class LoadedImageStateService implements ResettableToDefault, Settable {
+export class LoadedImagesStateService implements ResettableToDefault, Settable {
 
 	private __origin: 'all' | 'library' | 'none' = 'none';
 
@@ -24,7 +24,7 @@ export class LoadedImageStateService implements ResettableToDefault, Settable {
 	}
 
 
-	getLoadedImages(): ImageRecord[] {
+	getImages(): ImageRecord[] {
 		return loadedImages.data;
 	}
 

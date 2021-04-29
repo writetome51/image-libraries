@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
 import { AllImagesServicesModule } from '../all-images-services.module';
-import { LoadedImageStateService }
-	from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
@@ -16,7 +16,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 	constructor(
 		private __paginator: AllImagesPaginatorService,
 		private __jumpToPageInput: AllImagesJumpToPageInputService,
-		private __loadedImageState: LoadedImageStateService
+		private __loadedImageState: LoadedImagesStateService
 	) {}
 
 

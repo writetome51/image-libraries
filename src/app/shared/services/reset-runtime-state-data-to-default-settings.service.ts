@@ -2,15 +2,15 @@ import * as resettableClasses from '@runtime-state-data/static-classes/auto-rese
 import { append } from '@writetome51/array-append-prepend';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { LoadedImageStateService }
-	from './loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from './loaded-image-state_service/loaded-images-state.service';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 
 
 @Injectable({providedIn: 'root'})
 export class ResetRuntimeStateDataToDefaultSettingsService implements IDoThis {
 
-	constructor(private __loadedImageState: LoadedImageStateService) {}
+	constructor(private __loadedImageState: LoadedImagesStateService) {}
 
 
 	go(): void {

@@ -1,5 +1,1 @@
-export const SecurityQuestionStatusData = {
-
-	received: false
-
-};
+export const SecurityQuestionStatusData = {received: false};

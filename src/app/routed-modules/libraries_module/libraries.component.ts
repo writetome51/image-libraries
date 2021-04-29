@@ -7,7 +7,7 @@ import { appName } from '@string-constants/app-name';
 @Component({
 	selector: 'app-libraries',
 	template: `
-		<div clearAlertOnDestroy>
+		<div clearAlertsOnDestroy>
 
 			<header><h2>{{heading}}</h2></header>
 

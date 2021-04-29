@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 	selector: 'new-user',
 	template: `
 		<header><h2>{{heading}}</h2></header>
-		<new-user-form clearFormOnInit clearAlertOnDestroy></new-user-form>
+		<new-user-form clearFormOnInit clearAlertsOnDestroy></new-user-form>
 	`
 })
 export class NewUserComponent {

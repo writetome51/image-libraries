@@ -12,6 +12,7 @@ import { LibraryNamesData as libraryNames }
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetLibrariesService }
 	from '@process/process-get-libraries_service/process-get-libraries.service';
+import { LibraryRecord } from '@interfaces/library-record.interface';
 
 
 @Injectable({providedIn: LoggedInNavigatorServicesModule})
@@ -33,7 +34,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 
 	private __librariesStoredLocally(): boolean {
-		let libsMap: object = this.__librariesInBrowser.get();
+		let libsMap: { [libName: string]: LibraryRecord } = this.__librariesInBrowser.get();
 		if (hasValue(libsMap)) {
 			libraryNames.data = Object.keys(libsMap);
 			return true;

@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { GetUserLibrariesService } from '@services/db/get-user-libraries.service';
+import { GetLibrariesService } from '@db/get-libraries.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: 'root'})
 export class UpdateLoadedLibraryService implements IDoThis {
 
-	constructor(
-		private __libraryStorage: GetUserLibrariesService,
-	) {}
+	constructor(private __libraryStorage: GetLibrariesService) {}
 
 
 	async go(): Promise<any> {}

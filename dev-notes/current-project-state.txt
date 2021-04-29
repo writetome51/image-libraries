@@ -1,8 +1,11 @@
 You can create an account.  After clicking 'create' it immediately logs you in and
 takes you to the /libraries route.
+You can delete your account (which removes your record from the db and your image files
+from cloud storage).
+
 You can log in to an existing account (both via email/password or answering your security
 question), and log out.
-You can delete your account.
+
 You can update your email and password.
 
 At the /libraries route, you're shown a list of all your libraries.  You can open a
@@ -19,3 +22,10 @@ You can remove an image from a library.
 You cannot yet do bulk adding to or removing from a library.
 You cannot yet reorder the images in a library.
 You cannot yet search images.
+
+
+4/28/21 2:10 AM
+
+At some point in the last month, refactoring Components caused some styling to break,
+especially in any Component where you view a page of images.  The styling in
+ImageActionMenuComponent is completely screwed.  The width of form text inputs has shrunk.

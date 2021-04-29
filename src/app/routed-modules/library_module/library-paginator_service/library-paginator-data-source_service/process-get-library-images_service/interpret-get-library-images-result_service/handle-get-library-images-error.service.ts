@@ -6,14 +6,14 @@ import { HandleExistingUserDBOperationErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { HandleNoRecordMatchErrorService } from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-no-record-match-error.service';
 import { HandleNotLoggedInErrorService } from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-not-logged-in-error.service';
-import { LoadedImageStateService } from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService } from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
 export class HandleGetLibraryImagesErrorService extends HandleExistingUserDBOperationErrorService {
 
 	constructor(
-		private __loadedImageState: LoadedImageStateService,
+		private __loadedImageState: LoadedImagesStateService,
 		__handleNoRecordMatchError: HandleNoRecordMatchErrorService,
 		__handleNotLoggedInError: HandleNotLoggedInErrorService
 	) {

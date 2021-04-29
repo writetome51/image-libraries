@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewUserServicesModule } from '../../../new-user-services.module';
@@ -15,7 +15,7 @@ export class RunTasksAfterCreatingUserService implements IDoThis {
 	async go(result: UserRecord) {
 		await this.__runTasksAfterLogin.go(result);
 
-		alert.setSuccess('Account created.  You\'re signed in.');
+		alerts.setSuccess('Account created.  You\'re signed in.');
 	}
 
 }

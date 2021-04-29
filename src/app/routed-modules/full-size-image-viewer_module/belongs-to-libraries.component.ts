@@ -28,7 +28,7 @@ export class BelongsToLibrariesComponent {
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
 
-		let libsMap: object = this.__librariesInBrowser.get();
+		let libsMap: { [libName: string]: LibraryRecord } = this.__librariesInBrowser.get();
 
 		this.libraries = getByTest(
 			(lib: LibraryRecord) => lib._image_ids.includes(this.image._id),

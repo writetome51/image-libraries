@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { Injectable } from '@angular/core';
 import { ProcessGetLibrariesService }
 	from '@process/process-get-libraries_service/process-get-libraries.service';
@@ -14,7 +14,7 @@ export class RunTasksAfterCreatingNewLibraryService implements IDoThis {
 
 
 	async go() {
-		alert.setSuccess('Library created');
+		alerts.setSuccess('Library created');
 		newLibrary.beingCreated = false;
 
 		await this.__refreshLoadedLibraryNames();

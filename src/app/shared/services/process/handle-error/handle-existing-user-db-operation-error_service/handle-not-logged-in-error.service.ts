@@ -1,8 +1,9 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { notLoggedIn } from '@string-constants/form-submission-errors';
-import { RemoveCachedDataService } from '@services/remove-cached-data_service/remove-cached-data.service';
+import { RemoveCachedDataService }
+	from '@services/remove-cached-data_service/remove-cached-data.service';
 import { Router } from '@angular/router';
 
 
@@ -21,7 +22,7 @@ export class HandleNotLoggedInErrorService implements IDoThis {
 	async go() {
 		this.__removeCachedData.go();
 		await this.__router.navigate(['/']);
-		alert.setError(notLoggedIn);
+		alerts.setError(notLoggedIn);
 	}
 
 }

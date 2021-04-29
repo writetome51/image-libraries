@@ -3,14 +3,14 @@ import { ProcessExistingUserDBOperationService }
 import { InterpretGetLibrariesResultService }
 	from './interpret-get-libraries-result_service/interpret-get-libraries-result.service';
 import { Injectable } from '@angular/core';
-import { GetUserLibrariesService } from '@db/get-user-libraries.service';
+import { GetLibrariesService } from '@db/get-libraries.service';
 
 
 @Injectable({providedIn: 'root'})
 export class ProcessGetLibrariesService extends ProcessExistingUserDBOperationService {
 
 	constructor(
-		__getResult: GetUserLibrariesService,
+		__getResult: GetLibrariesService,
 		__interpretResult: InterpretGetLibrariesResultService
 	) {
 		super(__getResult, __interpretResult);

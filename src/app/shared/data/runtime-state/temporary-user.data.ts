@@ -1,5 +1,1 @@
-export const TemporaryUserData = {
-
-	data: undefined
-
-};
+export const TemporaryUserData = { data: undefined };

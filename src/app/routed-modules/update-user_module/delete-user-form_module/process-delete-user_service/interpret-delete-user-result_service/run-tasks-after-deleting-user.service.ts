@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
@@ -13,7 +13,7 @@ export class RunTasksAfterDeletingUserService implements IDoThis {
 
 	async go() {
 		await this.__router.navigate(['/']);
-		alert.setSuccess('Account deleted');
+		alerts.setSuccess('Account deleted');
 	}
 
 }

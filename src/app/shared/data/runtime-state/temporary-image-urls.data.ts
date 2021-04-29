@@ -1,5 +1,1 @@
-export const TemporaryImageURLsData = {
-
-	data: undefined
-
-};
+export const TemporaryImageURLsData = { data: undefined };

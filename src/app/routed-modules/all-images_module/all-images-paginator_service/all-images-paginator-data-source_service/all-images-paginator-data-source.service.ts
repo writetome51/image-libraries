@@ -5,8 +5,8 @@ import { ProcessGetAllImagesService }
 	from './process-get-all-images_service/process-get-all-images.service';
 import { Injectable } from '@angular/core';
 import { AllImagesServicesModule } from '../../all-images-services.module';
-import { LoadedImageStateService }
-	from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
@@ -15,7 +15,7 @@ export class AllImagesPaginatorDataSourceService extends AppPaginatorDataSourceS
 	constructor(
 		__dataTotal: AllImagesDataTotalService,
 		__setLoadedImages: ProcessGetAllImagesService,
-		__loadedImageState: LoadedImageStateService
+		__loadedImageState: LoadedImagesStateService
 	) {
 		super(__dataTotal, __setLoadedImages, __loadedImageState);
 	}

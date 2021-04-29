@@ -1,4 +1,3 @@
-import { hasValue } from '@writetome51/has-value-no-value';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { ProcessGetUserImageTotalService }
@@ -24,7 +23,7 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	private __userImageTotalStoredLocally(): boolean {
 		let total = this.__userImageTotalInBrowser.get();
-		return hasValue(total);
+		return (typeof total === 'number') && Number.isInteger(total) && (total > -1);
 	}
 
 

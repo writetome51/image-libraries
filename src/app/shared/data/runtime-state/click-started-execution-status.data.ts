@@ -1,8 +1,4 @@
 import { Waiter } from '@interfaces/waiter.interface';
 
 
-export const ClickStartedExecutionStatusData: Waiter = {
-
-	waiting: false
-
-};
+export const ClickStartedExecutionStatusData: Waiter = { waiting: false };

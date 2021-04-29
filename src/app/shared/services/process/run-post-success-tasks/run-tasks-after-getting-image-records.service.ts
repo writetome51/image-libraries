@@ -1,14 +1,14 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageRecordBatch } from '@interfaces/image-record-batch.interface';
 import { Injectable } from '@angular/core';
-import { LoadedImageStateService }
-	from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingImageRecordsService implements IDoThis {
 
-	constructor(private __loadedImageState: LoadedImageStateService) {}
+	constructor(private __loadedImageState: LoadedImagesStateService) {}
 
 
 	async go(result: ImageRecordBatch) {

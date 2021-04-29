@@ -1,7 +1,7 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs_module/app-validating-form-inputs.module';
-import { ClearAlertOnDestroyModule }
-	from '@clear-alert-on-destroy_module/clear-alert-on-destroy.module';
+import { ClearAlertsOnDestroyModule }
+	from '@modules/clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -20,7 +20,7 @@ import { UpdateEmailFormInputsComponent } from './update-email-form-inputs.compo
 		AppValidatingFormInputsModule,
 		SubmitFormButtonModule,
 		ClearFormOnInitModule,
-		ClearAlertOnDestroyModule
+		ClearAlertsOnDestroyModule
 	],
 	exports: [UpdateEmailFormComponent]
 })

@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
 	selector: 'update-email-form',
 	template: `
-		<update-email-form-inputs clearFormOnInit clearAlertOnDestroy></update-email-form-inputs>
+		<update-email-form-inputs clearFormOnInit clearAlertsOnDestroy></update-email-form-inputs>
 		<submit-form-button [iDoThis]="process"></submit-form-button>
 	`
 })

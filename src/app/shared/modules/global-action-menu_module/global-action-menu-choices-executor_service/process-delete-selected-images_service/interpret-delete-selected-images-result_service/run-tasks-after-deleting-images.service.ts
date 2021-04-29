@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { CurrentRouteService } from '@services/current-route.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -21,7 +21,7 @@ export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	async go() {
 		selectedImages.data.length = 0;
-		alert.setError('Image(s) deleted');
+		alerts.setError('Image(s) deleted');
 		this.__runTasksAfterModifyingLoadedImages.go();
 		await this.__router.navigate([this.__currentRoute.get()]);
 	}

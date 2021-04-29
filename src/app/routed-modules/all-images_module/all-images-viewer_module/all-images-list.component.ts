@@ -13,7 +13,7 @@ import { ImagesListComponent }
 
 			<li class="grid-list-item" *ngFor="let img of images">
 				<thumbnail-image-container [image]="img"
-					[imageRouterLink]="[fullSizeImageRoute, img._id]"
+					[imageRouterLink]="[fullSizeImageRoute, img.name]"
 				>
 				</thumbnail-image-container>
 			</li>

@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { HandleExistingUserDBOperationErrorService }
 	from './handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
@@ -10,7 +10,7 @@ import { libraryAlreadyExists } from '@string-constants/form-submission-errors';
 export class HandleUpdateOrNewLibraryErrorService extends HandleExistingUserDBOperationErrorService{
 
 	async go(error) {
-		if (error.message.includes(duplicate)) alert.setError(libraryAlreadyExists);
+		if (error.message.includes(duplicate)) alerts.setError(libraryAlreadyExists);
 		else await super.go(error);
 	}
 

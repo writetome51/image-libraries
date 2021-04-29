@@ -6,8 +6,8 @@ import { LibraryImagesDataTotalService }
 import { LibraryServicesModule } from '../../library-services.module';
 import { ProcessGetLibraryImagesService }
 	from './process-get-library-images_service/process-get-library-images.service';
-import { LoadedImageStateService }
-	from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
@@ -16,7 +16,7 @@ export class LibraryPaginatorDataSourceService extends AppPaginatorDataSourceSer
 	constructor(
 		__dataTotal: LibraryImagesDataTotalService,
 		__setLoadedImages: ProcessGetLibraryImagesService,
-		__loadedImageState: LoadedImageStateService
+		__loadedImageState: LoadedImagesStateService
 	) {
 		super(__dataTotal, __setLoadedImages, __loadedImageState);
 	}

@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { LibraryRecord } from '@interfaces/library-record.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -24,7 +24,7 @@ export class RunTasksAfterUpdateOfLibraryService implements IDoThis {
 
 		this.__loadedLibrary.set(result);
 		this.__libraryChanges.unsetAll();
-		alert.setError('Library updated');
+		alerts.setSuccess('Library updated');
 	}
 
 }

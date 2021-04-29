@@ -7,7 +7,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretGetLibrariesResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretGetLibrariesResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

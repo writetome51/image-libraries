@@ -1,5 +1,1 @@
-export const RequestedLibraryData = {
-
-	name: ''
-
-};
+export const RequestedLibraryData = { name: '' };

@@ -6,7 +6,8 @@ import { FullSizeImageViewerModuleTitleData as moduleTitle }
 import { getByTest } from '@writetome51/array-get-by-test';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
 import { Title } from '@angular/platform-browser';
-import { LoadedImageStateService } from '@services/loaded-image-state_service/loaded-image-state.service';
+import { LoadedImagesStateService }
+	from '@services/loaded-image-state_service/loaded-images-state.service';
 
 
 @Component({
@@ -18,24 +19,24 @@ export class FullSizeImageViewerComponent {
 	constructor(
 		private __currentRoute: CurrentRouteService,
 		private __title: Title,
-		private __loadedImageState: LoadedImageStateService
+		private __loadedImagesState: LoadedImagesStateService
 	) {
 		this.__title.setTitle(moduleTitle.data);
 	}
 
 
 	getCurrentImage(): ImageRecord {
-		let id = this.__currentRoute.params[paramID.imageID];
-		return this.__getImageByID(id);
+		let name = this.__currentRoute.params[paramID.imageName];
+		return this.__getImage(name);
 	}
 
 
-	private __getImageByID(id): ImageRecord {
+	private __getImage(name): ImageRecord {
 
-		return getByTest(
-			(image: ImageRecord) => image._id === id,
-			this.__loadedImageState.getLoadedImages()
-		)[0]; // result expected to only have one item.
+		return <ImageRecord> getByTest(
+			(image: ImageRecord) => image.name === name,
+			this.__loadedImagesState.getImages()
+		)[0]; // expected to only have one item.
 	}
 
 }

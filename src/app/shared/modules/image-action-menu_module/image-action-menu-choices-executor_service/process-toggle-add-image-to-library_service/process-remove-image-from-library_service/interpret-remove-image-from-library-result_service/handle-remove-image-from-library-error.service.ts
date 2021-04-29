@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
 import { HandleExistingUserDBOperationErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';

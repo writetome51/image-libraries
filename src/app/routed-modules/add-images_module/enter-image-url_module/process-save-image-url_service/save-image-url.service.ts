@@ -7,7 +7,8 @@ import { NewImagesData as newImages }
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
-import { ProcessSaveNewImageRecordsService } from '@app/routed-modules/add-images_module/process-save-new-image-records_service/process-save-new-image-records.service';
+import { ProcessSaveNewImageRecordsService }
+	from '../../process-save-new-image-records_service/process-save-new-image-records.service';
 
 
 @Injectable({providedIn: EnterImageURLServicesModule})

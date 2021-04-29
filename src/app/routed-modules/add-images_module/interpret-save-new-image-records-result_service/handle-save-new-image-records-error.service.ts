@@ -1,4 +1,4 @@
-import { AlertService as alert } from '@services/alert.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 import { duplicate, sizeRequirement } from '@string-constants/mongo-db-realm-function-errors';
 import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 	from '@string-constants/form-submission-errors';
@@ -13,9 +13,9 @@ export class HandleSaveNewImageRecordsErrorService
 	extends HandleExistingUserDBOperationErrorService {
 
 	async go(error: {message: string}) {
-		if (error.message.includes(duplicate)) alert.setError(imageWithSameNameAlreadyExists);
+		if (error.message.includes(duplicate)) alerts.setError(imageWithSameNameAlreadyExists);
 
-		else if (error.message.includes(sizeRequirement)) alert.setError(imageSizeLimitExceeded);
+		else if (error.message.includes(sizeRequirement)) alerts.setError(imageSizeLimitExceeded);
 
 		else await super.go(error);
 	}

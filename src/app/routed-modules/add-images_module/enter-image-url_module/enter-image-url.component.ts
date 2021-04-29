@@ -6,7 +6,7 @@ import { ProcessSaveImageURLService }
 @Component({
 	selector: 'enter-image-url',
 	template: `
-		<image-url-form-input clearFormOnInit clearAlertOnDestroy></image-url-form-input>
+		<image-url-form-input clearFormOnInit clearAlertsOnDestroy></image-url-form-input>
 		<submit-form-button [label]="'Save URL'" [iDoThis]="iDoThis"></submit-form-button>
 	`
 })

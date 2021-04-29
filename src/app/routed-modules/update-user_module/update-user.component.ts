@@ -23,7 +23,7 @@ export class UpdateUserComponent {
 	getChoiceHeading(): string {
 		let currentPath = this.__getCurrentChoicePath();
 
-		let [choice] = getByTest(
+		let [choice] = <LinkedTemplateWithHeading[]> getByTest(
 			(choice: LinkedTemplateWithHeading) => choice.link.path === currentPath,
 			this.choices
 		);

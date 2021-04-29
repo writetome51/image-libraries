@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
 	selector: 'update-password-form',
 	template: `
-		<update-password-form-inputs clearFormOnInit clearAlertOnDestroy>
+		<update-password-form-inputs clearFormOnInit clearAlertsOnDestroy>
 		</update-password-form-inputs>
 		<submit-form-button [iDoThis]="process"></submit-form-button>
 	`
