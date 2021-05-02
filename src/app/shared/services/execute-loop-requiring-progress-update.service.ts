@@ -1,4 +1,5 @@
 import { getRoundedDown } from '@writetome51/get-rounded-up-down';
+import { Progress } from '@interfaces/progress.interface';
 // import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
@@ -9,7 +10,7 @@ export class ExecuteLoopRequiringProgressUpdateService { // implements IDoThis
 	static async go<T>(
 		arr: T[],
 		forEach: (value: T, index?: number, arr?: T[]) => void,
-		progress: { percentageComplete: number },
+		progress: Progress,
 	): Promise<void> {
 
 		for (let i = 0, length = arr.length; i < length; ++i) {

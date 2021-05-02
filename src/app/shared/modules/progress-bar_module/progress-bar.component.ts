@@ -1,32 +1,34 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import { Progress } from '@interfaces/progress.interface';
 
 
 @Component({
 	selector: 'progress-bar',
-	template: `<div #div class="progress-bar fixed-overlay">0 %</div>`,
+	template: `<div #div class="fixed-overlay progress-bar">0 %</div>`,
 	styles: [
 		`.progress-bar {
 			width: 1px;
 			height: 30px;
 			padding-left: 10px;
-			background-color: #04AA6D;
-			text-align: left; color: white;
-			line-height: 30px;
+			background-color: #0d6444;
+			text-align: left; color: white; line-height: 30px;
 		}`
 	]
 })
 export class ProgressBarComponent implements OnDestroy, AfterViewInit {
 
-	@ViewChild('div') progressBar: ElementRef;
-	@Input() progress: {percentageComplete: number};
+	@ViewChild('div') div: ElementRef;
+	@Input() progress: Progress;
 	private __interval;
 
 
 	ngAfterViewInit() {
 		this.__interval = setInterval(
 			() => {
-				this.progressBar.nativeElement.style.width = this.progress.percentageComplete + '%';
-				this.progressBar.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
+								// There can't be a space before the '%' (CSS syntax rule)
+				this.div.nativeElement.style.width = this.progress.percentageComplete + '%';
+
+				this.div.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
 			},
 			100
 		);

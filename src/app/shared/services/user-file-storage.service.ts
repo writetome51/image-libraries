@@ -7,6 +7,8 @@ import { ExecuteLoopRequiringProgressUpdateService as executeLoopRequiringProgre
 	from '@services/execute-loop-requiring-progress-update.service';
 import { UploadingImagesProgressData as uploadingImagesProgress}
 	from '@runtime-state-data/uploading-images-progress.data';
+import { DeletingAllUserImagesProgressData as deletingImagesProgress }
+	from '@runtime-state-data/deleting-all-user-images-progress.data';
 
 
 // Each user gets one folder (named after their username), containing their files.
@@ -34,7 +36,7 @@ export class UserFileStorageService {
 
 	async deleteUser(userName: string): Promise<{ success: true } | HasError> {
 		try {
-			await this.__awsStorage.deleteFolder(userName);
+			await this.__awsStorage.deleteFolder(userName, deletingImagesProgress);
 			return {success: true};
 		}
 		catch (err) {

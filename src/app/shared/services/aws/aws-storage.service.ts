@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { AWSS3Service } from '@services/aws/aws-s3.service';
 import { ExecuteLoopRequiringProgressUpdateService as executeLoopRequiringProgressUpdate}
 	from '@services/execute-loop-requiring-progress-update.service';
-import { DeletingAllUserImagesProgressData as deletingAllUserImagesProgress }
-	from '@runtime-state-data/deleting-all-user-images-progress.data';
+import { Progress } from '@interfaces/progress.interface';
 
 
 @Injectable({providedIn: 'root'})
@@ -36,14 +35,14 @@ export class AWSStorageService {
 	}
 
 
-	async deleteFolder(name: string) {
+	async deleteFolder(name: string, progress: Progress) {
 		let objects = await this.__awsS3.getObjectsInside(name);
-		deletingAllUserImagesProgress.percentageComplete = 0;
+		progress.percentageComplete = 0;
 
 		await executeLoopRequiringProgressUpdate.go(
 			objects,
 			(obj) => this.__awsS3.deleteData({Key: obj.Key}),
-			deletingAllUserImagesProgress
+			progress
 		);
 	}
 
