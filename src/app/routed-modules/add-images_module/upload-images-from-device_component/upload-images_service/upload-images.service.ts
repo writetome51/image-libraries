@@ -11,6 +11,10 @@ import { ProcessStoreImageFilesService }
 	from './process-store-image-files_service/process-store-image-files.service';
 import { TemporaryImageURLsData as temporaryImageURLs }
 	from '@runtime-state-data/temporary-image-urls.data';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
+import { BackgroundExecutionStatusData as executionStatus }
+	from '@runtime-state-data/background-execution-status.data';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
@@ -23,13 +27,18 @@ export class UploadImagesService {
 
 
 	async go(files: FileList | File[]): Promise<void> {
-		await this.__processStoreImageFiles.go(files);
+		await executeFunctionRequiringWaiting.go(
+			async ()=>{
+				await this.__processStoreImageFiles.go(files);
 
-		newImages.data = getArrFilled(
-			files.length,
-			(i) => this.__getAppImage(files[i], temporaryImageURLs.data[i])
+				newImages.data = getArrFilled(
+					files.length,
+					(i) => this.__getAppImage(files[i], temporaryImageURLs.data[i])
+				);
+				await this.__processSaveNewImageRecords.go(newImages.data);
+			},
+			executionStatus
 		);
-		await this.__processSaveNewImageRecords.go(newImages.data);
 	}
 
 

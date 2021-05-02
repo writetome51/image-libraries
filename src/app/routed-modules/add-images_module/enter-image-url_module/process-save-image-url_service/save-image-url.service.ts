@@ -1,4 +1,3 @@
-import { CORSProxyData as corsProxy } from '@read-only-data/cors-proxy.data';
 import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { ImageURLData as enteredImageURL } from '@runtime-state-data/image-url.data';
 import { Injectable } from '@angular/core';
@@ -18,33 +17,16 @@ export class SaveImageURLService implements IDoThis {
 
 
 	async go(): Promise<{ success: true } | HasError> {
-		if (await this.__resourceFound(enteredImageURL.data)) {
-			newImages.data.push(
-				getAppImage.go({name: undefined, src: enteredImageURL.data})
-			);
+		newImages.data.push(
+			getAppImage.go({name: undefined, src: enteredImageURL.data})
+		);
+		try {
 			await this.__processSaveNewImageRecords.go(newImages.data);
+			return {success: true};
 		}
-		else return {error: {message: 'The URL you entered is either not connected to a' +
-			' resource, or access is denied.'
-		}};
-	}
-
-
-	private async __resourceFound(url): Promise<boolean> {
-		url = corsProxy.data + url;
-
-		return new Promise((returnData) => {
-			let request = new XMLHttpRequest();
-
-			request.onreadystatechange = function() {
-				if (this.readyState === 4) {
-					returnData(this.status === 200);
-				}
-			};
-			request.open('GET', url, true);
-			request.send();
-		});
-
+		catch (error) {
+			return {error};
+		}
 	}
 
 }

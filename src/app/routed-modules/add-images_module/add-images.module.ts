@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UploadImagesFromDeviceComponent }
 	from './upload-images-from-device_component/upload-images-from-device.component';
+import { ProgressBarModule } from '@modules/progress-bar_module/progress-bar.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UploadImagesFromDeviceComponent }
 				component: AddImagesComponent,
 				canActivate: [AuthenticatedGuard]
 			}
-		])
+		]),
+		ProgressBarModule
 	]
 })
 export class AddImagesModule {}

@@ -6,7 +6,7 @@ import { Alert } from '@interfaces/alert.interface';
 @Component({
 	selector: 'app-alert',
 	template: `
-		<div class="alert fixed-alert"
+		<div class="alert fixed-alert fixed-overlay"
 			 [class.alert-danger]="data.isError"
 			 [class.alert-success]="!(data.isError)"
 			 [class.alert-dismissible]="true"
@@ -22,11 +22,8 @@ import { Alert } from '@interfaces/alert.interface';
 	`,
 	styles: [`
 		.fixed-alert {
-			display: block;
-			position: fixed;
 			margin: auto;
 			width: 96%;
-			z-index: 1000;
 		}
 	`]
 })

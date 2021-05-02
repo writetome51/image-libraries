@@ -20,8 +20,7 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 
 			<p>If you wish to proceed, enter your info and click Delete</p>
 		</div>
-		<deleting-image-files-progress-bar *ngIf="progress.percentageComplete > 0">
-		</deleting-image-files-progress-bar>
+		<progress-bar *ngIf="progress.percentageComplete > 0" [progress]="progress"></progress-bar>
 
 		<delete-user-form-inputs clearFormOnInit clearAlertsOnDestroy></delete-user-form-inputs>
 		<submit-form-button [label]="'Delete'" [iDoThis]="process"></submit-form-button>
