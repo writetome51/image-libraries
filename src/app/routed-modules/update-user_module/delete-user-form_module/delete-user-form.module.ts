@@ -10,12 +10,14 @@ import { HTMLImageModule } from '@html-image_module/html-image.module';
 import { NgModule } from '@angular/core';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
 import { ProgressBarModule } from '@modules/progress-bar_module/progress-bar.module';
+import { DeleteUserFormInstructionsComponent } from './delete-user-form-instructions.component';
 
 
 @NgModule({
 	declarations: [
 		DeleteUserFormComponent,
-		DeleteUserFormInputsComponent
+		DeleteUserFormInstructionsComponent,
+		DeleteUserFormInputsComponent,
 	],
 	imports: [
 		AppValidatingFormInputsModule,
