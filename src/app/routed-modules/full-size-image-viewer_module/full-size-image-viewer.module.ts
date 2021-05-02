@@ -36,7 +36,7 @@ import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 		GoogleMapsModule,
 		RouterModule.forChild([
 			{
-				path: `:${paramID.imageID}`,
+				path: `:${paramID.imageName}`,
 				component: FullSizeImageViewerComponent,
 				canActivate: [AuthenticatedGuard],
 				canDeactivate: [CanDeactivateGuard]
