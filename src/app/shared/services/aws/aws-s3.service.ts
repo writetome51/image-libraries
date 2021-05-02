@@ -6,7 +6,6 @@ import {
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 import { Injectable, Type } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
-import { append, prepend } from '@writetome51/array-append-prepend';
 
 
 /******************************

@@ -5,6 +5,8 @@ import { environment } from '@environments/environment';
 import { HTMLImage } from '@interfaces/html-image.interface';
 import { ProcessDeleteUserService }
 	from './process-delete-user_service/process-delete-user.service';
+import { DeletingAllUserImagesProgressData }
+	from '@runtime-state-data/deleting-all-user-images-progress.data';
 import { Title } from '@angular/platform-browser';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 
@@ -18,6 +20,8 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 
 			<p>If you wish to proceed, enter your info and click Delete</p>
 		</div>
+		<deleting-image-files-progress-bar *ngIf="progress.percentageComplete > 0">
+		</deleting-image-files-progress-bar>
 
 		<delete-user-form-inputs clearFormOnInit clearAlertsOnDestroy></delete-user-form-inputs>
 		<submit-form-button [label]="'Delete'" [iDoThis]="process"></submit-form-button>
@@ -31,6 +35,8 @@ export class DeleteUserFormComponent {
 		alt: 'Exploding head',
 		width: 124
 	};
+
+	progress = DeletingAllUserImagesProgressData;
 
 
 	constructor(

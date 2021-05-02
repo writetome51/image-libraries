@@ -4,6 +4,8 @@ import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-
 import { ClearAlertsOnDestroyModule }
 	from '@modules/clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { CommonModule } from '@angular/common';
+import { DeletingImageFilesProgressBarComponent }
+	from './deleting-image-files-progress-bar.component';
 import { DeleteUserFormComponent } from './delete-user-form.component';
 import { DeleteUserFormInputsComponent } from './delete-user-form-inputs.component';
 import { HTMLImageModule } from '@html-image_module/html-image.module';
@@ -15,6 +17,7 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 	declarations: [
 		DeleteUserFormComponent,
 		DeleteUserFormInputsComponent,
+		DeletingImageFilesProgressBarComponent,
 	],
 	imports: [
 		AppValidatingFormInputsModule,
