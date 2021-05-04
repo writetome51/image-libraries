@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UploadImagesService } from './upload-images_service/upload-images.service';
+import { UploadRequirementsCheckService } from '@app/routed-modules/add-images_module/upload-images-from-device_component/upload-requirements-check.service';
 
 
 @Component({
@@ -23,11 +24,15 @@ import { UploadImagesService } from './upload-images_service/upload-images.servi
 })
 export class UploadImagesFromDeviceComponent {
 
-	constructor(private __uploadImages: UploadImagesService) {}
+	constructor(
+		private __uploadImages: UploadImagesService,
+		private __requirementsCheck: UploadRequirementsCheckService
+		) {}
 
 
 	async upload(images: FileList | File[]): Promise<void> {
-		await this.__uploadImages.go(images);
+		if (this.__requirementsCheck.passes(images)) await this.__uploadImages.go(images);
+		// Add storage limit per customer. 100MB
 	}
 
 }
