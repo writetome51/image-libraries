@@ -94,7 +94,7 @@ export class LoadData {
 
 	static setDefault() {
 		this.number = 1;
-		this.size = PageData.size * 2;
+		this.size = PageData.size;
 	}
 
 }
