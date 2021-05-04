@@ -2,7 +2,9 @@ import { AppImage } from '@interfaces/app-image.interface';
 import { ImageRecord } from '@interfaces/image-record.interface';
 // import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
+import { not } from '@writetome51/not';
 import { setArray } from '@writetome51/set-array';
+import { getMin } from '@writetome51/get-max-min';
 
 
 // All data structures intended to be auto-reset to their default values when
@@ -38,7 +40,7 @@ export class ActionMenuChoicesData {
 }
 
 
-// Stores names of all libraries belonging to currently logged-in user
+// Stores names of all libraries belonging to logged-in user
 
 export class LibraryNamesData {
 
@@ -63,12 +65,26 @@ export class PageData {
 
 
 	static set size(value) {
+		const pageSizeChoices = [10,20,30,40];
+		if (not(pageSizeChoices.includes(value))) {
+			value = this.closest(pageSizeChoices, value);
+		}
 		this.__size = value;
 	}
 
-
+	// Must be called before LoadData.setDefault()
 	static setDefault() {
 		this.size = 20;
+	}
+
+
+	static closest(numbers, num) {
+		let differences = new Array(numbers.length);
+		for (let i=0, len = numbers.length; i < len; ++i){
+			differences[i] = (Math.abs(numbers[i] - num));
+		}
+		let min = getMin(differences), index = differences.indexOf(min);
+		return numbers[index];
 	}
 
 }
