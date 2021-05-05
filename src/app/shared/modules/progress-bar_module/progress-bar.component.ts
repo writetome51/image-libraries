@@ -4,7 +4,11 @@ import { Progress } from '@interfaces/progress.interface';
 
 @Component({
 	selector: 'progress-bar',
-	template: `<div #div class="fixed-overlay progress-bar">0 %</div>`,
+	template: `
+		<div #bar class="fixed-overlay progress-bar">{{label}}
+			<span #percentage>0 %</span>
+		</div>
+	`,
 	styles: [
 		`.progress-bar {
 			width: 1px;
@@ -17,8 +21,10 @@ import { Progress } from '@interfaces/progress.interface';
 })
 export class ProgressBarComponent implements OnDestroy, AfterViewInit {
 
-	@ViewChild('div') div: ElementRef;
+	@ViewChild('bar') bar: ElementRef;
+	@ViewChild('percentage') percentage: ElementRef;
 	@Input() progress: Progress;
+	@Input() label? = '';
 	private __interval;
 
 
@@ -26,11 +32,11 @@ export class ProgressBarComponent implements OnDestroy, AfterViewInit {
 		this.__interval = setInterval(
 			() => {
 								// There can't be a space before the '%' (CSS syntax rule)
-				this.div.nativeElement.style.width = this.progress.percentageComplete + '%';
+				this.bar.nativeElement.style.width = this.progress.percentageComplete + '%';
 
-				this.div.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
+				this.percentage.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
 			},
-			100
+			200
 		);
 	}
 
