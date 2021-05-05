@@ -12,10 +12,10 @@ import { Progress } from '@interfaces/progress.interface';
 	styles: [
 		`.progress-bar {
 			width: 1px;
-			height: 30px;
+			height: 25px;
 			padding-left: 10px;
-			background-color: #0d6444;
-			text-align: left; color: white; line-height: 30px;
+			background-color: #0e6d4a;
+			text-align: left; color: white; line-height: 25px;
 		}`
 	]
 })
