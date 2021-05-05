@@ -11,12 +11,12 @@ import { UploadingImagesProgressData } from '@runtime-state-data/uploading-image
 	template: `
 		<header><h2>{{heading}}</h2></header>
 		<div><p>{{instructions}}</p></div>
+		<p class="warning-text">{{warning}}</p>
 
-		<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
-		<progress-bar *ngIf="progress.percentageComplete > 0 && progress.percentageComplete < 100"
-			[progress]="progress"
-		>
-		</progress-bar>
+		<ng-container *ngIf="savingNewImages">
+			<big-loading-spinner></big-loading-spinner>
+			<progress-bar [progress]="progress" [label]="'Uploading files: '"></progress-bar>
+		</ng-container>
 
 		<div *ngIf="!(savingNewImages)">
 			<upload-images-from-device></upload-images-from-device>
@@ -30,7 +30,8 @@ export class AddImagesComponent {
 	heading = 'Add Images';
 	progress = UploadingImagesProgressData;
 	instructions = `The images can come from your own device or from somewhere
-	else in the web.`;
+		else in the web.`;
+	warning = 'Do not upload highly sensitive images. They will be accessible at public URLs.'
 
 
 	get savingNewImages() {

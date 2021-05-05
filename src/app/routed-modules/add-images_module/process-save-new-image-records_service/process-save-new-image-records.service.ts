@@ -1,4 +1,5 @@
-import { ProcessExistingUserDBOperationService } from '@process/process-existing-user-db-operation.abstract.service';
+import { ProcessExistingUserDBOperationService }
+	from '@process/process-existing-user-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { SaveNewImageRecordsService } from './save-new-image-records.service';
 import { InterpretSaveNewImageRecordsResultService }

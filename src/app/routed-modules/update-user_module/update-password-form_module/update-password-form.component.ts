@@ -8,6 +8,9 @@ import { Title } from '@angular/platform-browser';
 @Component({
 	selector: 'update-password-form',
 	template: `
+		<p class="warning-text">Since this demo doesn't use SSL, do not use a password that 
+			is truly secret.
+		</p>
 		<update-password-form-inputs clearFormOnInit clearAlertsOnDestroy>
 		</update-password-form-inputs>
 		<submit-form-button [iDoThis]="process"></submit-form-button>

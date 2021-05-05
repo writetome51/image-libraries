@@ -7,6 +7,9 @@ import { Title } from '@angular/platform-browser';
 	selector: 'new-user',
 	template: `
 		<header><h2>{{heading}}</h2></header>
+		<p class="warning-text">Since this demo doesn't use SSL, do not use a password or security 
+			question that is truly secret.
+		</p>
 		<new-user-form clearFormOnInit clearAlertsOnDestroy></new-user-form>
 	`
 })

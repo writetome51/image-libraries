@@ -27,7 +27,7 @@ export class UploadImagesFromDeviceComponent {
 	constructor(
 		private __uploadImages: UploadImagesService,
 		private __requirementsCheck: UploadRequirementsCheckService
-		) {}
+	) {}
 
 
 	async upload(images: FileList | File[]): Promise<void> {

@@ -8,7 +8,6 @@ import { TemporaryImageURLsData as temporaryImageURLs }
 export class RunTasksAfterStoringImageFilesService implements IDoThis {
 
 	async go(imageURLs: string[]) {
-		console.log(imageURLs);
 		temporaryImageURLs.data = imageURLs;
 	}
 

@@ -1,30 +1,34 @@
-import { Injectable } from '@angular/core';
 import { AddImagesServicesModule } from '../add-images-services.module';
 import { AlertsService as alerts } from '@services/alerts.service';
 import { getArrayOfProperty } from '@writetome51/get-array-of-property';
 import { getSum } from '@writetome51/get-sum-average-product';
+import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
 export class UploadRequirementsCheckService {
 
-	private __limitPerUpload = 30000000; // bytes
+	private __byteLimitPerUpload = 31457280;
 	private __legalTypes = ['jpg', 'png'];
 
 
 	passes(files: FileList | File[]): boolean {
-		if (this.__getTotalBytes(files) > this.__limitPerUpload) {
-			alerts.setError(`That exceeds the 30 MB limit per upload`);
-			return false;
+		if (this.__getTotalBytes(files) > this.__byteLimitPerUpload) {
+			return this.__alertErrorAndReturnFalse(`That exceeds the 30 MB limit per upload`);
 		}
 		if (this.__includesIllegalTypes(files)) {
-			alerts.setError(
+			return this.__alertErrorAndReturnFalse(
 				`The files must be one of these types: ${this.__legalTypes.join(', ')}`
 			);
-			return false;
 		}
 		return true;
+	}
+
+
+	private __alertErrorAndReturnFalse(message) {
+		alerts.setError(message);
+		return false;
 	}
 
 

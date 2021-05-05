@@ -1,9 +1,9 @@
-<div class="container-fluid"  style="text-align:center;">
+<div class="container-fluid" style="text-align:center;">
 
 	<header id="site-header">
 
 		<h1>
-			<a routerLink="/"  routerLinkActive="active"  title="home page">{{ siteHeading }}</a>
+			<a routerLink="/" routerLinkActive="active" title="home page">{{ siteHeading }}</a>
 		</h1>
 
 		<logged-in-navigator *ngIf="loggedIn"></logged-in-navigator>
@@ -19,6 +19,7 @@
 	<footer id="site-footer">
 
 		<p>
+			This site does not use https.  Do not pass sensitive information.
 			This site is for demonstration purposes only. It is not intended for commercial use.
 		</p>
 
