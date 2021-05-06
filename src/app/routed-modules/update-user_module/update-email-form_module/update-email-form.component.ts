@@ -1,4 +1,7 @@
+import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
+import { GetFormattedPageTitleService as getFormattedPageTitle }
+	from '@services/get-formatted-page-title.service';
 import { ProcessUpdateEmailService }
 	from './process-update-email_service/process-update-email.service';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
@@ -18,7 +21,7 @@ export class UpdateEmailFormComponent {
 		public process: ProcessUpdateEmailService,
 		private __title: Title
 	) {
-		this.__title.setTitle(parentModuleTitle.data + 'Email');
+		this.__title.setTitle( getFormattedPageTitle.go([appName, parentModuleTitle, 'Email']) );
 	}
 
 }

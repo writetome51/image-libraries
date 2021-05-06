@@ -1,5 +1,6 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
-import { LinkedTemplateWithHeading } from './linked-template-with-heading_interface/linked-template-with-heading.interface';
+import { LinkedTemplateWithHeading }
+	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateUserChoiceData as updateUserChoice } from './update-user-choice.data';

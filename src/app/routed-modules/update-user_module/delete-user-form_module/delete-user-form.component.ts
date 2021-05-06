@@ -1,10 +1,11 @@
+import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
 import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
-import { DeleteUserFormModuleTitleData as thisModuleTitle }
-	from './delete-user-form-module-title.data';
 import { DeletingAllUserImagesProgressData }
 	from '@runtime-state-data/deleting-all-user-images-progress.data';
+import { GetFormattedPageTitleService as getFormattedPageTitle }
+	from '@services/get-formatted-page-title.service';
 import { ProcessDeleteUserService }
 	from './process-delete-user_service/process-delete-user.service';
 import { Title } from '@angular/platform-browser';
@@ -38,7 +39,9 @@ export class DeleteUserFormComponent {
 		public process: ProcessDeleteUserService,
 		private __title: Title
 	) {
-		this.__title.setTitle(parentModuleTitle.data + thisModuleTitle.data);
+		this.__title.setTitle(
+			getFormattedPageTitle.go([appName, parentModuleTitle, 'Delete Account'])
+		);
 	}
 
 }
