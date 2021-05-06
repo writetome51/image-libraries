@@ -11,7 +11,7 @@ import { ProcessLoginByPasswordService }
 			<form>
 				<login-form-inputs></login-form-inputs>
 
-				<submit-form-button [label]="'Sign In'" [iDoThis]="iDoThis"></submit-form-button>
+				<submit-form-button [label]="'Sign In'" [iDoThis]="process"></submit-form-button>
 
 				<a [routerLink]="modulePath.SecurityQuestionModule" routerLinkActive="active">
 					Forgot Password?
@@ -25,6 +25,6 @@ export class LoginFormComponent {
 	modulePath = AppModulePathData;
 
 
-	constructor(public iDoThis: ProcessLoginByPasswordService) {}
+	constructor(public process: ProcessLoginByPasswordService) {}
 
 }

@@ -1,11 +1,11 @@
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
 import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
-// import { IDoThis } from '@interfaces/i-do-this.interface';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export class ClearFormDataService { // implements IDoThis
+export class __ClearFormDataService {
 
 	static go(): void {
 		currentUserForm.password = '';
@@ -26,3 +26,5 @@ export class ClearFormDataService { // implements IDoThis
 	}
 
 }
+
+export const ClearFormDataService: IDoThis = __ClearFormDataService;

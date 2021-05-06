@@ -4,6 +4,8 @@ import { BackgroundExecutionStatusData as executionStatus }
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { UploadingImagesProgressData } from '@runtime-state-data/uploading-images-progress.data';
+import { GetFormattedPageTitleService as getFormattedPageTitle }
+	from '@services/get-formatted-page-title.service';
 
 
 @Component({
@@ -40,7 +42,7 @@ export class AddImagesComponent {
 
 
 	constructor(private __title: Title) {
-		this.__title.setTitle(appName + ' | ' + this.heading);
+		this.__title.setTitle(getFormattedPageTitle.go([appName, this.heading]));
 	}
 
 }
