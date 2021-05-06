@@ -1,19 +1,15 @@
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { Alert } from '@interfaces/alert.interface';
+import { Gettable } from '@interfaces/gettable.interface';
 
 
-export class AlertsService {
+export class __AlertsService {
 
 	private static __data: Alert[] = [];
 
 
-	static get count() {
-		return this.__data.length;
-	}
-
-
-	static getAlert(index: number): Alert {
-		return this.__data[index];
+	static get() {
+		return this.__data;
 	}
 
 
@@ -37,3 +33,5 @@ export class AlertsService {
 	}
 
 }
+
+export const AlertsService: Gettable<Alert[]> = __AlertsService;

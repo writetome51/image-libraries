@@ -9,6 +9,7 @@ import { ProcessDeleteUserImageFilesService }
 	from './process-delete-user-image-files_service/process-delete-user-image-files.service';
 import { userRecordDeleted } from '@string-constants/alert-success-messages';
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
+import { getByTest } from '@writetome51/array-get-by-test';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
@@ -37,10 +38,7 @@ export class DeleteUserService implements IDoThis {
 
 
 	private __alertsIncludesMatch(test: (alert: Alert) => boolean) {
-		for (let i = 0, length = alerts.count; i < length; ++i) {
-			if (test(alerts.getAlert(i))) return true;
-		}
-		return false;
+		return getByTest(test, alerts.get()).length > 0;
 	}
 
 }

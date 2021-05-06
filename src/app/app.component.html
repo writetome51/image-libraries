@@ -10,7 +10,7 @@
 
 	</header>
 
-	<app-alerts *ngIf="alerts.count > 0"></app-alerts>
+	<app-alerts *ngIf="alerts.get().length"></app-alerts>
 
 	<main>
 		<router-outlet></router-outlet>

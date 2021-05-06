@@ -20,22 +20,13 @@ import { Alert } from '@interfaces/alert.interface';
 			<strong>{{data.message}}</strong>
 		</div>
 	`,
-	styles: [`
-		.fixed-alert {
-			margin: auto;
-			width: 96%;
-		}
-	`]
+	styles: [`.fixed-alert { margin: auto; width: 96%; }`]
 })
 export class AppAlertComponent {
 
+	@Input() data: Alert;
 	@Input() index: number;
 
 	alerts = AlertsService;
-
-
-	get data(): Alert {
-		return this.alerts.getAlert(this.index);
-	}
 
 }
