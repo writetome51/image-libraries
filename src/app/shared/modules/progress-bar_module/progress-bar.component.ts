@@ -21,10 +21,10 @@ import { Progress } from '@interfaces/progress.interface';
 })
 export class ProgressBarComponent implements OnDestroy, AfterViewInit {
 
-	@ViewChild('bar') bar: ElementRef;
-	@ViewChild('percentage') percentage: ElementRef;
 	@Input() progress: Progress;
 	@Input() label? = '';
+	@ViewChild('bar') private __bar: ElementRef;
+	@ViewChild('percentage') private __percentage: ElementRef;
 	private __interval;
 
 
@@ -32,9 +32,9 @@ export class ProgressBarComponent implements OnDestroy, AfterViewInit {
 		this.__interval = setInterval(
 			() => {
 								// There can't be a space before the '%' (CSS syntax rule)
-				this.bar.nativeElement.style.width = this.progress.percentageComplete + '%';
+				this.__bar.nativeElement.style.width = this.progress.percentageComplete + '%';
 
-				this.percentage.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
+				this.__percentage.nativeElement.innerHTML = this.progress.percentageComplete + ' %';
 			},
 			200
 		);
