@@ -6,9 +6,7 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 import { Title } from '@angular/platform-browser';
 import { LoadedImagesStateService }
 	from '@services/loaded-image-state_service/loaded-images-state.service';
-import { GetFormattedPageTitleService as getFormattedPageTitle }
-	from '@services/get-formatted-page-title.service';
-import { appName } from '@string-constants/app-name';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 
 
 @Component({
@@ -22,7 +20,7 @@ export class FullSizeImageViewerComponent {
 		private __title: Title,
 		private __loadedImagesState: LoadedImagesStateService
 	) {
-		this.__title.setTitle(getFormattedPageTitle.go([appName, 'Image']));
+		this.__title.setTitle(getPageTitle.go(['Image']));
 	}
 
 

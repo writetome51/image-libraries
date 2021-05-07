@@ -1,11 +1,11 @@
-// import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Waiter } from '@interfaces/waiter.interface';
 
 
 // To help let user know the app is working on their request.
-// While `executionStatus.waiting === true`, you can show 'loading...' message
+// While `executionStatus.waiting === true`, you can show 'working...' message
 
-export class ExecuteFunctionRequiringWaitingService { // implements IDoThis
+export class __ExecuteFunctionRequiringWaitingService {
 
 	static async go<T>(
 		func: (...args) => T,
@@ -21,3 +21,6 @@ export class ExecuteFunctionRequiringWaitingService { // implements IDoThis
 	}
 
 }
+
+export const ExecuteFunctionRequiringWaitingService: IDoThis
+	= __ExecuteFunctionRequiringWaitingService;

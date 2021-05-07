@@ -1,10 +1,10 @@
 import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-// import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageRecord } from '@interfaces/image-record.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export class GetPageImagesService { // implements IDoThis
+export class __GetPageImagesService {
 
 	static go(
 		paginator: { getCurrentPage: () => ImageRecord[] }
@@ -21,3 +21,5 @@ export class GetPageImagesService { // implements IDoThis
 	}
 
 }
+
+export const GetPageImagesService: IDoThis = __GetPageImagesService;

@@ -1,6 +1,5 @@
-import { appName } from '@string-constants/app-name';
-import { GetFormattedPageTitleService as getFormattedPageTitle }
-	from '@services/get-formatted-page-title.service';
+import { GetPageTitleService as getPageTitle }
+	from '@services/get-page-title.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryJumpToPageInputService } from '../../library-jump-to-page-input.service';
@@ -26,9 +25,7 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 		requestedLibrary.name = params[paramID.libName];
 		let pageNum = Number(params[paramID.pageNumber]);
 
-		this.__title.setTitle(
-			getFormattedPageTitle.go([appName, 'Library', requestedLibrary.name])
-		);
+		this.__title.setTitle(getPageTitle.go(['Library', requestedLibrary.name]));
 		await this.__loadLibrary.go(requestedLibrary.name, pageNum);
 
 		this.__jumpToPageInput.setMaxValue();

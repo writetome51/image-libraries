@@ -1,11 +1,9 @@
-import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
 import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
 import { DeletingAllUserImagesProgressData }
 	from '@runtime-state-data/deleting-all-user-images-progress.data';
-import { GetFormattedPageTitleService as getFormattedPageTitle }
-	from '@services/get-formatted-page-title.service';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { ProcessDeleteUserService }
 	from './process-delete-user_service/process-delete-user.service';
 import { Title } from '@angular/platform-browser';
@@ -40,7 +38,7 @@ export class DeleteUserFormComponent {
 		private __title: Title
 	) {
 		this.__title.setTitle(
-			getFormattedPageTitle.go([appName, parentModuleTitle, 'Delete Account'])
+			getPageTitle.go([parentModuleTitle, 'Delete Account'])
 		);
 	}
 

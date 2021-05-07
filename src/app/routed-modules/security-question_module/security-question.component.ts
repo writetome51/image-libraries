@@ -1,9 +1,7 @@
-import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
 import { CurrentUserFormData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form.data';
-import { GetFormattedPageTitleService as getFormattedPageTitle }
-	from '@services/get-formatted-page-title.service';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 import { Title } from '@angular/platform-browser';
@@ -45,7 +43,7 @@ export class SecurityQuestionComponent {
 
 
 	constructor(private __title: Title) {
-		this.__title.setTitle(getFormattedPageTitle.go([appName, 'Security Question']));
+		this.__title.setTitle(getPageTitle.go(['Security Question']));
 	}
 
 }

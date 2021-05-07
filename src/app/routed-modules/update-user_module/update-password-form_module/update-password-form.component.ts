@@ -1,7 +1,5 @@
-import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
-import { GetFormattedPageTitleService as getFormattedPageTitle }
-	from '@services/get-formatted-page-title.service';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { ProcessUpdatePasswordService }
 	from './process-update-password_service/process-update-password.service';
 import { Title } from '@angular/platform-browser';
@@ -25,7 +23,7 @@ export class UpdatePasswordFormComponent {
 		public process: ProcessUpdatePasswordService,
 		private __title: Title
 	) {
-		this.__title.setTitle( getFormattedPageTitle.go([appName, parentModuleTitle, 'Password']) );
+		this.__title.setTitle( getPageTitle.go([parentModuleTitle, 'Password']) );
 	}
 
 }

@@ -13,9 +13,7 @@ export class AWSStorageService {
 
 	getFileURL(fileName: string, folderName: string): string {
 		const bucketURL = this.__awsS3.getBucketURL();
-		// The fileKey should not be URI-encoded.
-		// AWS S3 URI-encodes it for you.  If you encode it first, AWS will double-encode
-		// it and will create a different URL than the one this function returns.
+		// The fileKey should not be URI-encoded. AWS S3 URI-encodes it for you.
 		return bucketURL + this.__getFileKey(fileName, folderName);
 	}
 
@@ -37,9 +35,8 @@ export class AWSStorageService {
 
 	async deleteFolder(name: string, progress: Progress) {
 		let objects = await this.__awsS3.getObjectsInside(name);
-		progress.percentageComplete = 0;
 
-		await executeLoopRequiringProgressUpdate.go(
+		await executeLoopRequiringProgressUpdate.go( // Because this can take several seconds.
 			objects,
 			(obj) => this.__awsS3.deleteData({Key: obj.Key}),
 			progress
