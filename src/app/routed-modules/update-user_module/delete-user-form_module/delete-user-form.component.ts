@@ -13,8 +13,9 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 @Component({
 	selector: 'delete-user-form',
 	template: `
-		<progress-bar *ngIf="deleting" [progress]="progress" [label]="'Deleting files: '">
-		</progress-bar>
+		<progress-bar *ngIf="progress.percentageComplete > 0"
+			[progress]="progress" [label]="'Deleting files: '"
+		></progress-bar>
 
 		<delete-user-form-instructions></delete-user-form-instructions>
 
@@ -26,11 +27,6 @@ export class DeleteUserFormComponent {
 
 	progress = DeletingAllUserImagesProgressData;
 	executionStatus = ClickStartedExecutionStatusData;
-
-
-	get deleting(): boolean {
-		return this.executionStatus.waiting;
-	}
 
 
 	constructor(

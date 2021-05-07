@@ -7,7 +7,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretGetUserImageTotalResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretGetUserImageTotalResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleGetUserImageTotalErrorService,

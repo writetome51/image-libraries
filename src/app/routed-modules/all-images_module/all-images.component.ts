@@ -1,4 +1,3 @@
-import { appName } from '@string-constants/app-name';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
@@ -8,6 +7,7 @@ import { GetAllImagesRouteParamsObserverService }
 import { RouteParametersSubscriberComponent }
 	from '@abstract-components/route-parameters-subscriber.abstract.component';
 import { Title } from '@angular/platform-browser';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 
 
 @Component({
@@ -37,8 +37,8 @@ export class AllImagesComponent extends RouteParametersSubscriberComponent {
 	) {
 		super(__currentRoute, __getRouteParamsObserver);
 
-		this.__title.setTitle(appName + ' | ' + this.heading);
 		executionStatus.waiting = true;
+		this.__title.setTitle(getPageTitle.go([this.heading]));
 	}
 
 }

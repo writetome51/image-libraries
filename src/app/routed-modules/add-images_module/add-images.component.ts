@@ -15,7 +15,9 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 
 		<ng-container *ngIf="savingNewImages">
 			<big-loading-spinner></big-loading-spinner>
-			<progress-bar [progress]="progress" [label]="'Uploading files: '"></progress-bar>
+			<progress-bar *ngIf="progress.percentageComplete > 0"
+				[progress]="progress" [label]="'Uploading files: '"
+			></progress-bar>
 		</ng-container>
 
 		<div *ngIf="!(savingNewImages)">
