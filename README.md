@@ -6,7 +6,7 @@ through them. Kind of like iPhoto in a browser.
 ## Technologies Used
 
 Languages: &nbsp;&nbsp; TypeScript, JavaScript, HTML, CSS  
-Frameworks:  &nbsp;&nbsp; Angular 9.0.x, Twitter Bootstrap  
+Frameworks:  &nbsp;&nbsp; Angular 11, Twitter Bootstrap  
 Databases: &nbsp;&nbsp;  MongoDB  
 Cloud Services: &nbsp;&nbsp;  MongoDB Realm, AWS S3
 
