@@ -4,13 +4,22 @@ import { getArrayOfProperty } from '@writetome51/get-array-of-property';
 import { getSum } from '@writetome51/get-sum-average-product';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
+import { getArrFilled } from '@writetome51/get-arr-filled';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
 export class UploadRequirementsCheckService {
 
 	private __byteLimitPerUpload = 31457280;
-	private __legalTypes = ['jpg', 'png'];
+	private ____legalTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+
+
+	private get __legalTypes(): string[] {
+		return getArrFilled(
+			this.____legalTypes.length,
+			(i) => this.____legalTypes[i].split('/')[1]
+		);
+	}
 
 
 	passes(files: FileList | File[]): boolean {
@@ -33,14 +42,15 @@ export class UploadRequirementsCheckService {
 
 
 	private __getTotalBytes(files: FileList | File[]): number {
-		let bytesOfEach: number[] = getArrayOfProperty('size', [].concat(files));
+		// @ts-ignore
+		let bytesOfEach: number[] = getArrayOfProperty('size', files);
 		return getSum(bytesOfEach);
 	}
 
 
 	private __includesIllegalTypes(files: FileList | File[]) {
 		for (let i = 0, length = files.length; i < length; ++i) {
-			if (not(this.__legalTypes.includes(files[i].type))) return true;
+			if (not(this.____legalTypes.includes(files[i].type))) return true;
 		}
 		return false;
 	}
