@@ -10,13 +10,14 @@ export class GetAppImageService { // implements IDoThis
 
 	static go(properties: AppImage): AppImage {
 		return {
-			name: properties['name'] || (getDateTimeID() + '-' + getRandomInteger([1, 1000])),
-			src: properties['src'],
-			description: properties['description'] || 'image',
-			tags: properties['tags'] || [],
-			date: properties['date'] || undefined,
-			location: properties['location'] || {latitude: undefined, longitude: undefined},
-			rating: properties['rating'] || undefined
+			name: properties.name || (getDateTimeID() + '-' + getRandomInteger([1, 1000])),
+			src: properties.src,
+			size: properties.size || 0,
+			description: properties.description || 'image',
+			tags: properties.tags || [],
+			date: properties.date,
+			location: properties.location || {latitude: undefined, longitude: undefined},
+			rating: properties.rating
 		};
 	}
 

@@ -20,12 +20,12 @@ export class RunTasksAfterSavingNewImageRecordsService implements IDoThis {
 
 	go() {
 		alerts.setSuccess('New images saved');
-		newImages.setDefault();
 		this.__emptyImageDataSoItWillBeForcedToRefresh();
 	}
 
 
 	private __emptyImageDataSoItWillBeForcedToRefresh() {
+		newImages.setDefault();
 		this.__userImageTotal.remove();
 		this.__runTasksAfterModifyingLoadedImages.go();
 	}

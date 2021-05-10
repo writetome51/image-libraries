@@ -8,6 +8,8 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { EnterImageURLServicesModule } from '../enter-image-url-services.module';
 import { ProcessSaveNewImageRecordsService }
 	from '../../process-save-new-image-records_service/process-save-new-image-records.service';
+import { AlertsService as alerts } from '@services/alerts.service';
+import { newImagesSaved } from '@string-constants/alert-success-messages';
 
 
 @Injectable({providedIn: EnterImageURLServicesModule})
@@ -17,12 +19,15 @@ export class SaveImageURLService implements IDoThis {
 
 
 	async go(): Promise<{ success: true } | HasError> {
-		newImages.data.push(
-			getAppImage.go({name: undefined, src: enteredImageURL.data})
-		);
+		alerts.clearAll();
+		newImages.data = [ getAppImage.go({name: undefined, src: enteredImageURL.data, size: 0}) ];
+
 		try {
 			await this.__processSaveNewImageRecords.go(newImages.data);
-			return {success: true};
+
+			if (alerts.includesSuccess(newImagesSaved) && newImages.data.length === 0) {
+				return {success: true};
+			}
 		}
 		catch (error) {
 			return {error};

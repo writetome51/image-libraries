@@ -1,10 +1,9 @@
 import { AddImagesServicesModule } from '../add-images-services.module';
 import { AlertsService as alerts } from '@services/alerts.service';
-import { getArrayOfProperty } from '@writetome51/get-array-of-property';
-import { getSum } from '@writetome51/get-sum-average-product';
 import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 import { getArrFilled } from '@writetome51/get-arr-filled';
+import { GetTotalBytesService as getTotalBytes } from './get-total-bytes.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
@@ -23,7 +22,7 @@ export class UploadRequirementsCheckService {
 
 
 	passes(files: FileList | File[]): boolean {
-		if (this.__getTotalBytes(files) > this.__byteLimitPerUpload) {
+		if (getTotalBytes.go(files) > this.__byteLimitPerUpload) {
 			return this.__alertErrorAndReturnFalse(`That exceeds the 30 MB limit per upload`);
 		}
 		if (this.__includesIllegalTypes(files)) {
@@ -38,13 +37,6 @@ export class UploadRequirementsCheckService {
 	private __alertErrorAndReturnFalse(message) {
 		alerts.setError(message);
 		return false;
-	}
-
-
-	private __getTotalBytes(files: FileList | File[]): number {
-		// @ts-ignore
-		let bytesOfEach: number[] = getArrayOfProperty('size', files);
-		return getSum(bytesOfEach);
 	}
 
 

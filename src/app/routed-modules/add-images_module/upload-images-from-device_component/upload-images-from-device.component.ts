@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UploadImagesService } from './upload-images_service/upload-images.service';
-import { UploadRequirementsCheckService } from '@app/routed-modules/add-images_module/upload-images-from-device_component/upload-requirements-check.service';
+import { UploadRequirementsCheckService } from './upload-requirements-check.service';
 
 
 @Component({
@@ -32,7 +32,6 @@ export class UploadImagesFromDeviceComponent {
 
 	async upload(images: FileList | File[]): Promise<void> {
 		if (this.__requirementsCheck.passes(images)) await this.__uploadImages.go(images);
-		// Add storage limit per customer. 100MB
 	}
 
 }

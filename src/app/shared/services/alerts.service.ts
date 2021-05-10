@@ -1,6 +1,8 @@
 import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { Alert } from '@interfaces/alert.interface';
 import { Gettable } from '@interfaces/gettable.interface';
+import { getByTest } from '@writetome51/array-get-by-test';
+import { not } from '@writetome51/not';
 
 
 export class __AlertsService {
@@ -30,6 +32,21 @@ export class __AlertsService {
 
 	static clearAll() {
 		this.__data = [];
+	}
+
+
+	static includesSuccess(message): boolean {
+		return this.__includesMatch((alert) => not(alert.isError) && (alert.message === message))
+	}
+
+
+	static includesError(message): boolean {
+		return this.__includesMatch((alert) => alert.isError && (alert.message === message))
+	}
+
+
+	private static __includesMatch(test: (alert: Alert) => boolean) {
+		return getByTest(test, this.get()).length > 0;
 	}
 
 }

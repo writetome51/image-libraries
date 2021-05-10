@@ -30,9 +30,7 @@ export class UploadImagesService implements IDoThis {
 	async go(files: FileList | File[]): Promise<void> {
 		await executeFunctionRequiringWaiting.go(
 			async () => {
-				temporaryImageURLs.data = undefined;
 				await this.__processStoreImageFiles.go(files);
-
 				newImages.data = this.__getNewAppImages(files, temporaryImageURLs.data);
 				await this.__processSaveNewImageRecords.go(newImages.data);
 			},
@@ -42,10 +40,7 @@ export class UploadImagesService implements IDoThis {
 
 
 	private __getNewAppImages(files, urls: string[]): AppImage[] {
-		return getArrFilled(
-			files.length,
-			(i) => this.__getAppImage(files[i], urls[i])
-		);
+		return getArrFilled(files.length, (i) => this.__getAppImage(files[i], urls[i]));
 	}
 
 
@@ -54,6 +49,7 @@ export class UploadImagesService implements IDoThis {
 		return getAppImage.go({
 			name: file.name,
 			src: url,
+			size: file.size,
 			date: new Date(file.lastModified)
 		});
 	}

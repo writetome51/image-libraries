@@ -4,6 +4,8 @@ import { HasSrc } from '@interfaces/has-src';
 
 export interface AppImage extends HasName, HasSrc {
 
+	size: number;
+
 	description?: string;
 
 	tags?: string[]; // indexed
