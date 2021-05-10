@@ -15,10 +15,11 @@ import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiti
 	from '@services/execute-function-requiring-waiting.service';
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class UploadImagesService {
+export class UploadImagesService implements IDoThis {
 
 	constructor(
 		private __processSaveNewImageRecords: ProcessSaveNewImageRecordsService,
@@ -28,13 +29,11 @@ export class UploadImagesService {
 
 	async go(files: FileList | File[]): Promise<void> {
 		await executeFunctionRequiringWaiting.go(
-			async ()=>{
+			async () => {
+				temporaryImageURLs.data = undefined;
 				await this.__processStoreImageFiles.go(files);
 
-				newImages.data = getArrFilled(
-					files.length,
-					(i) => this.__getAppImage(files[i], temporaryImageURLs.data[i])
-				);
+				newImages.data = this.__getNewAppImages(files, temporaryImageURLs.data);
 				await this.__processSaveNewImageRecords.go(newImages.data);
 			},
 			executionStatus
@@ -42,13 +41,20 @@ export class UploadImagesService {
 	}
 
 
-	private __getAppImage(file, url): AppImage {
+	private __getNewAppImages(files, urls: string[]): AppImage[] {
+		return getArrFilled(
+			files.length,
+			(i) => this.__getAppImage(files[i], urls[i])
+		);
+	}
+
+
+	private __getAppImage(file: File, url): AppImage {
 
 		return getAppImage.go({
 			name: file.name,
 			src: url,
-			date: new Date(file.lastModified),
-			location: file.location
+			date: new Date(file.lastModified)
 		});
 	}
 
