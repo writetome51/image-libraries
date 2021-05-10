@@ -1,4 +1,4 @@
-import { AddImagesServicesModule } from '../add-images-services.module';
+import { AddImagesServicesModule } from '../../add-images-services.module';
 import { HandleSaveNewImageRecordsErrorService }
 	from './handle-save-new-image-records-error.service';
 import { Injectable } from '@angular/core';
@@ -9,7 +9,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: AddImagesServicesModule})
-export class InterpretSaveNewImageRecordsResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretSaveNewImageRecordsResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleSaveNewImageRecordsErrorService,

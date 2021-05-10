@@ -3,11 +3,12 @@ import { AlertsService as alerts } from '@services/alerts.service';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { AddImagesServicesModule } from '../add-images-services.module';
+import { AddImagesServicesModule } from '../../add-images-services.module';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
+import { newImagesSaved } from '@string-constants/alert-success-messages';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
@@ -19,7 +20,7 @@ export class RunTasksAfterSavingNewImageRecordsService implements IDoThis {
 	) {}
 
 	go() {
-		alerts.setSuccess('New images saved');
+		alerts.setSuccess(newImagesSaved);
 		this.__emptyImageDataSoItWillBeForcedToRefresh();
 	}
 

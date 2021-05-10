@@ -3,7 +3,7 @@ import { duplicate, sizeRequirement } from '@string-constants/mongo-db-realm-fun
 import { imageWithSameNameAlreadyExists, imageSizeLimitExceeded }
 	from '@string-constants/form-submission-errors';
 import { Injectable } from '@angular/core';
-import { AddImagesServicesModule } from '../add-images-services.module';
+import { AddImagesServicesModule } from '../../add-images-services.module';
 import { HandleExistingUserDBOperationErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 
