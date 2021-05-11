@@ -8,12 +8,11 @@ import { environment } from '@environments/environment';
 	template: `
 		<div>
 			<html-image [data]="explodingHead"></html-image>
-			<p class="warning-text">You cannot undo this.</p>
 
+			<p class="warning-text">You cannot undo this.</p>
 			<p>If you wish to proceed, enter your info and click Delete</p>
 		</div>
-	`,
-	styles: ['.warning-text { color: red; font-weight: bold; }']
+	`
 })
 export class DeleteUserFormInstructionsComponent {
 

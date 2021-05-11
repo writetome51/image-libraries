@@ -4,7 +4,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 
 export interface SendFormData extends IDoThis {
 
-	// Semi-public. Intended to be accessed in only one place.
+	// Semi-public.
 	$_validatingInputs: ValidatingInputsService | ValidatingInputService;
 
 }
