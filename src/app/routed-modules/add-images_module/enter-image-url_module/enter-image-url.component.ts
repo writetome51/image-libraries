@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
-import { ProcessSaveImageURLService }
-	from './process-save-image-url_service/process-save-image-url.service';
+import { SaveImageURLService } from './save-image-url.service';
 
 
 @Component({
 	selector: 'enter-image-url',
 	template: `
 		<image-url-form-input clearFormOnInit clearAlertsOnDestroy></image-url-form-input>
-		<submit-form-button [label]="'Save URL'" [iDoThis]="process"></submit-form-button>
+		<submit-form-button [label]="'Save URL'" [iDoThis]="saveImageURL"></submit-form-button>
 	`
 })
 export class EnterImageURLComponent {
 
-	constructor(public process: ProcessSaveImageURLService) {}
+	constructor(public saveImageURL: SaveImageURLService) {}
 
 }
