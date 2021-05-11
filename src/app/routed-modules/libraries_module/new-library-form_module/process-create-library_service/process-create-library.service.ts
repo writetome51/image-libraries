@@ -1,22 +1,22 @@
 import { InterpretCreateLibraryResultService }
 	from './interpret-create-library-result_service/interpret-create-library-result.service';
 import { CreateLibraryService } from './create-library.service';
-import { ProcessSendFormDataService }
-	from '@process/process-send-form-data.abstract.service';
 import { Injectable } from '@angular/core';
 import { LibraryNameInputService } from '../library-name-input.service';
 import { NewLibraryFormServicesModule } from '../new-library-form-services.module';
+import { ProcessService } from '@process/process.abstract.service';
+import { SendFormData } from '@interfaces/send-form-data.interface';
 
 
 @Injectable({providedIn: NewLibraryFormServicesModule})
-export class ProcessCreateLibraryService extends ProcessSendFormDataService {
+export class ProcessCreateLibraryService extends ProcessService implements SendFormData {
 
 	constructor(
-		__validatingInput: LibraryNameInputService,
+		public $_validatingInputs: LibraryNameInputService,
 		__getResult: CreateLibraryService,
 		__interpretResult: InterpretCreateLibraryResultService
 	) {
-		super(__validatingInput, __getResult, __interpretResult);
+		super(__getResult, __interpretResult);
 	}
 
 }

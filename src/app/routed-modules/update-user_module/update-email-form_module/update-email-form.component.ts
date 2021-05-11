@@ -16,10 +16,9 @@ import { Title } from '@angular/platform-browser';
 export class UpdateEmailFormComponent {
 
 	constructor(
-		public process: ProcessUpdateEmailService,
-		private __title: Title
+		public process: ProcessUpdateEmailService, title: Title
 	) {
-		this.__title.setTitle( getPageTitle.go([parentModuleTitle, 'Email']) );
+		title.setTitle( getPageTitle.go([parentModuleTitle, 'Email']) );
 	}
 
 }

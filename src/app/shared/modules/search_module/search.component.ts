@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProcessSendFormDataService }
-	from '@process/process-send-form-data.abstract.service';
+import { SendFormData } from '@interfaces/send-form-data.interface';
 
 
 @Component({
@@ -12,6 +11,6 @@ import { ProcessSendFormDataService }
 })
 export class SearchComponent {
 
-	@Input() iDoThis: ProcessSendFormDataService;
+	@Input() iDoThis: SendFormData;
 
 }

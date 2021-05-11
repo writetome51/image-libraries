@@ -9,13 +9,13 @@ import { ProcessCreateLibraryService }
 		<div class="form-container">
 			<form>
 				<new-library-form-input></new-library-form-input>
-				<submit-form-button [label]="'Create'" [iDoThis]="iDoThis"></submit-form-button>
+				<submit-form-button [label]="'Create'" [iDoThis]="process"></submit-form-button>
 			</form>
 		</div>
 	`
 })
 export class NewLibraryFormComponent {
 
-	constructor(public iDoThis: ProcessCreateLibraryService) {}
+	constructor(public process: ProcessCreateLibraryService) {}
 
 }

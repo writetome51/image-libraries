@@ -1,7 +1,7 @@
 import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -23,8 +23,8 @@ export class LoginComponent {
 	moduleRoutes = AppModulePathData;
 
 
-	constructor(private __title: Title) {
-		this.__title.setTitle(getPageTitle.go(['Sign In']));
+	constructor(title: Title) {
+		title.setTitle(getPageTitle.go(['Sign In']));
 	}
 
 }

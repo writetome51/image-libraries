@@ -29,11 +29,8 @@ export class DeleteUserFormComponent {
 	executionStatus = ClickStartedExecutionStatusData;
 
 
-	constructor(
-		public process: ProcessDeleteUserService,
-		private __title: Title
-	) {
-		this.__title.setTitle(
+	constructor(public process: ProcessDeleteUserService, title: Title) {
+		title.setTitle(
 			getPageTitle.go([parentModuleTitle, 'Delete Account'])
 		);
 	}

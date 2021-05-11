@@ -20,10 +20,9 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 export class UpdatePasswordFormComponent {
 
 	constructor(
-		public process: ProcessUpdatePasswordService,
-		private __title: Title
+		public process: ProcessUpdatePasswordService, title: Title
 	) {
-		this.__title.setTitle( getPageTitle.go([parentModuleTitle, 'Password']) );
+		title.setTitle( getPageTitle.go([parentModuleTitle, 'Password']) );
 	}
 
 }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { areYouSureDeleteLibrary } from '@string-constants/prompts';
 import { ClickExecuteIDoThisContainerComponent }
 	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
+import { Component } from '@angular/core';
 import { ProcessDeleteLibraryService }
 	from './process-delete-library_service/process-delete-library.service';
 
@@ -17,8 +18,7 @@ export class DeleteLibraryButtonComponent extends ClickExecuteIDoThisContainerCo
 
 
 	async execute(): Promise<void> {
-		let confirmed = window.confirm('Are you sure you want to delete the library?');
-
+		const confirmed = window.confirm(areYouSureDeleteLibrary);
 		if (confirmed) await super.execute();
 	}
 

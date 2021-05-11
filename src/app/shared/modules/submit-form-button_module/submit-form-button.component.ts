@@ -1,8 +1,8 @@
+import { AlertsService as alerts } from '@services/alerts.service';
 import { Component, Input } from '@angular/core';
 import { ClickExecuteIDoThisContainerComponent }
 	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
 import { SendFormData } from '@interfaces/send-form-data.interface';
-import { AlertsService as alerts } from '@services/alerts.service';
 
 
 @Component({

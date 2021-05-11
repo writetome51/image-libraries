@@ -1,5 +1,8 @@
-Filenames follow the naming convention Angular recommends for Modules, Components,
-Directives, Services, and etc. (the different Angular entities).
+Conventions Used In This Project
+
+
+File names follow the naming convention Angular recommends for Modules, Components,
+Directives, Services, Guards, etc. (the different Angular entities).
 
 
 Directory names
@@ -55,7 +58,12 @@ ProcessLoginByPasswordService executes a process whose action is 'LoginByPasswor
 
 Usage of the word 'Execute'
 
-'Execute' refers to running ANY code. It could be a process, or something much simpler.
+'Execute' refers to running any code. It could be a process, or something much simpler.
+
+
+Record
+
+The word 'Record' refers to a saved data structure, most likely saved in a database.
 
 
 Load
@@ -64,11 +72,6 @@ Any use of the word 'load' is referring to the total pieces of data (each 'piece
 most likely being an object) the app is allowed to have stored in the browser at once.
 For example, AllUserImages.getLoad() retrieves N of all a user's images, where N is the
 load size.
-
-
-Subscribables (Observables, from Rxjs)
-
-The name of any variable or constant referencing a Subscribable ends with '$'.
 
 
 Path Aliases (paths that begin with '@')
@@ -96,6 +99,12 @@ export interface LibraryRecord {
 }
 
 
-Record
+Subscribables (Observables, from Rxjs)
 
-The word 'Record' refers to a saved data structure, most likely saved in a database.
+The name of any variable or constant referencing a Subscribable ends with '$'.
+
+
+'Semi-Public' Object Properties
+
+Any property beginning with '$_' is 'semi-public', which means it's intended to be
+accessed in only one place outside of its class definition.

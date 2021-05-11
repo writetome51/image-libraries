@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
+import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { Title } from '@angular/platform-browser';
-import { GetPageTitleService as getPageTitle }
-	from '@services/get-page-title.service';
 
 
 @Component({
@@ -30,8 +29,8 @@ export class LibrariesComponent {
 		return newLibrary.beingCreated;
 	}
 
-	constructor(private __title: Title) {
-		this.__title.setTitle(getPageTitle.go([this.heading]));
+	constructor(title: Title) {
+		title.setTitle(getPageTitle.go([this.heading]));
 	}
 
 }

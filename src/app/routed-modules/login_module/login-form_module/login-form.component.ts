@@ -13,9 +13,7 @@ import { ProcessLoginByPasswordService }
 
 				<submit-form-button [label]="'Sign In'" [iDoThis]="process"></submit-form-button>
 
-				<a [routerLink]="modulePath.SecurityQuestionModule" routerLinkActive="active">
-					Forgot Password?
-				</a>
+				<a [routerLink]="modulePath.SecurityQuestionModule">Forgot Password?</a>
 			</form>
 		</div>
 	`

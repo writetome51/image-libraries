@@ -1,4 +1,6 @@
 This is unnecessary to read if you're already familiar with Angular.
+It's intended to be a reminder in case you're rusty.
+
 
 Directives
 are classes providing UI content behavior.  Each has an assigned selector
@@ -36,6 +38,11 @@ are classes that, like Services, are injected, but are used in the app's route
 configurations to control a user's access to app features.  They can be used for security,
 or to improve the quality of the user experience, such as blocking a user from navigating
 away from a page where they haven't yet saved their work.
+
+
+Pipes
+are subclasses of Directives and are used in Component templates. Some are used to
+properly format text in the UI
 
 
 <router-outlet>
