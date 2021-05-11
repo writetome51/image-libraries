@@ -12,4 +12,4 @@ export class TheClass {...}
 
 export const PrefixLabel_to_ValidatingInputService: (
 	params: { prefix: string, prefix_propertyToBind?: boolean }
-) => Function = __PrefixLabel_to_ValidatingInputServiceDecorator;
+) => ClassDecorator = __PrefixLabel_to_ValidatingInputServiceDecorator;
