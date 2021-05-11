@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ClickExecuteIDoThisContainerComponent }
 	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
-import { ProcessSendFormDataService }
-	from '@process/process-send-form-data.abstract.service';
+import { SendFormData } from '@interfaces/send-form-data.interface';
+import { AlertsService as alerts } from '@services/alerts.service';
 
 
 @Component({
@@ -15,11 +15,20 @@ import { ProcessSendFormDataService }
 })
 export class SubmitFormButtonComponent extends ClickExecuteIDoThisContainerComponent {
 
-	@Input() set iDoThis(value: ProcessSendFormDataService) {
-		this._iDoThis = value;
-	}
-
 	@Input() label = 'Submit';
+
+	@Input() set iDoThis(sendFormData: SendFormData) {
+		const sendFormData_go = sendFormData.go;
+		this._iDoThis = sendFormData;
+
+		this._iDoThis.go = async (...args) => {
+			if (sendFormData.$_validatingInputs.isValid()) {
+				await sendFormData_go.apply(sendFormData, args);
+			}
+			else alerts.setError(sendFormData.$_validatingInputs.error);
+		};
+
+	}
 
 
 	// Required to avoid Angular dependency injection error.
