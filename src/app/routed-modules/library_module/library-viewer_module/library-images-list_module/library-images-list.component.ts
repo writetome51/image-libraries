@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { LibraryPaginatorService }
-	from '../../library-paginator_service/library-paginator.service';
-import { ListItemRemoverService } from './list-item-remover.service';
 import { ImagesListComponent } from '@abstract-components/images-list.abstract.component';
+import { LibraryPaginatorService } from '../../library-paginator_service/library-paginator.service';
+import { ListItemRemoverService } from './list-item-remover.service';
 
 
 @Component({
 	selector: 'library-images-list',
-	templateUrl: './library-images-list.component.html'
+	template: `
+		<re-arrangeable-grid-list [data]="images">
+
+			<re-arrangeable-grid-list-item *ngFor="let img of images; let i = index;" [index]="i">
+
+				<thumbnail-image-container [image]="img"></thumbnail-image-container>
+
+			</re-arrangeable-grid-list-item>
+
+		</re-arrangeable-grid-list>
+	`
 })
 export class LibraryImagesListComponent extends ImagesListComponent {
 

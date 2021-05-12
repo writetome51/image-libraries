@@ -1,5 +1,3 @@
-import { BackgroundExecutionStatusData as executionStatus }
-	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetLibraryRouteParamsObserverService }
@@ -13,22 +11,15 @@ import { RouteParametersSubscriberComponent }
 @Component({
 	selector: 'app-library',
 	template: `
-		<header><h2>{{name}}</h2></header>
-
-		<big-loading-spinner *ngIf="gettingImages"></big-loading-spinner>
-
-		<library-viewer *ngIf="!(gettingImages)"></library-viewer>
+		<images-loader [heading]="heading">
+			<library-viewer></library-viewer>
+		</images-loader>
 	`
 })
 export class LibraryComponent extends RouteParametersSubscriberComponent {
 
-	get name() {
+	get heading() {
 		return requestedLibrary.name;
-	}
-
-
-	get gettingImages(): boolean {
-		return executionStatus.waiting;
 	}
 
 

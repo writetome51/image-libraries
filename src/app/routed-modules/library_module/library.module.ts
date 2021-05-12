@@ -6,12 +6,15 @@ import { LibraryRoutingModule } from './library-routing.module';
 import { LibraryViewerModule } from './library-viewer_module/library-viewer.module';
 import { LibraryServicesModule } from './library-services.module';
 import { NgModule } from '@angular/core';
+import { ImagesLoaderModule }
+	from '@modules/images-loader_module/images-loader.module';
 
 
 @NgModule({
 	declarations: [LibraryComponent],
 	imports: [
 		CommonModule,
+		ImagesLoaderModule,
 		BigLoadingSpinnerModule,
 		GlobalActionMenuModule,
 		LibraryViewerModule,

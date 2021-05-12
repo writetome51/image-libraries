@@ -18,8 +18,8 @@ export class NewUserComponent {
 	heading = 'Create Account';
 
 
-	constructor(private __title: Title) {
-		this.__title.setTitle(moduleTitle.data);
+	constructor(title: Title) {
+		title.setTitle(moduleTitle.data);
 	}
 
 }

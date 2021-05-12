@@ -42,8 +42,8 @@ export class SecurityQuestionComponent {
 	}
 
 
-	constructor(private __title: Title) {
-		this.__title.setTitle(getPageTitle.go(['Security Question']));
+	constructor(title: Title) {
+		title.setTitle(getPageTitle.go(['Security Question']));
 	}
 
 }

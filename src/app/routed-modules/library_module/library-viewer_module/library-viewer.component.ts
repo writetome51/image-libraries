@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { LibraryPaginatorService } from '../library-paginator_service/library-paginator.service';
 import { LoadedLibraryImageTotalService }
 	from '@services/library/loaded-library-image-total.service';
-import { ImagesViewerContainerComponent } from '@abstract-components/images-viewer-container.abstract.component';
+import { HasImageTotalComponent } from '@abstract-components/has-image-total.abstract.component';
 import { LibraryJumpToPageInputService }
 	from '@app/routed-modules/library_module/library-jump-to-page-input.service';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
+import { ImagesViewerContainer } from '@interfaces/images-viewer-container.interface';
 
 
 @Component({
@@ -23,17 +24,18 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 		</div>
 	`
 })
-export class LibraryViewerComponent extends ImagesViewerContainerComponent {
+export class LibraryViewerComponent extends HasImageTotalComponent
+	implements ImagesViewerContainer {
 
 	routeBeforePageNumber = `/library/${paramID.libName}/page`;
 
 
 	constructor(
 		__storedImageTotal: LoadedLibraryImageTotalService,
-		paginator: LibraryPaginatorService,
-		jumpToPageInput: LibraryJumpToPageInputService
+		public paginator: LibraryPaginatorService,
+		public jumpToPageInput: LibraryJumpToPageInputService
 	) {
-		super(__storedImageTotal, paginator, jumpToPageInput);
+		super(__storedImageTotal);
 	}
 
 }

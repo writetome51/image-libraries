@@ -7,11 +7,14 @@ import { BigLoadingSpinnerModule } from '@big-loading-spinner_module/big-loading
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ImagesLoaderModule }
+	from '@modules/images-loader_module/images-loader.module';
 
 
 @NgModule({
 	declarations: [AllImagesComponent],
 	imports: [
+		ImagesLoaderModule,
 		AllImagesServicesModule,
 		AllImagesViewerModule,
 		CommonModule,

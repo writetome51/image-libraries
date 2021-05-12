@@ -3,10 +3,11 @@ import { AllImagesPaginatorService }
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { ImagesViewerContainerComponent }
-	from '@abstract-components/images-viewer-container.abstract.component';
+import { HasImageTotalComponent }
+	from '@abstract-components/has-image-total.abstract.component';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
+import { ImagesViewerContainer } from '@interfaces/images-viewer-container.interface';
 
 
 @Component({
@@ -19,17 +20,18 @@ import { UserImageTotalInBrowserStorageService }
 		</images-viewer>
 	`
 })
-export class AllImagesViewerComponent extends ImagesViewerContainerComponent {
+export class AllImagesViewerComponent extends HasImageTotalComponent
+	implements ImagesViewerContainer {
 
 	routeBeforePageNumber = `${appModulePath.AllImagesModule}/page`;
 
 
 	constructor(
 		__storedImageTotal: UserImageTotalInBrowserStorageService,
-		paginator: AllImagesPaginatorService,
-		jumpToPageInput: AllImagesJumpToPageInputService
+		public paginator: AllImagesPaginatorService,
+		public jumpToPageInput: AllImagesJumpToPageInputService
 	) {
-		super(__storedImageTotal, paginator, jumpToPageInput);
+		super(__storedImageTotal);
 	}
 
 }
