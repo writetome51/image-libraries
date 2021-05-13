@@ -12,16 +12,12 @@ import { ImagesViewerContainer } from '@interfaces/images-viewer-container.inter
 @Component({
 	selector: 'library-viewer',
 	template: `
-		<div>
-			<p *ngIf="(imageTotal === 0)">No images</p>
+		<library-change-controls></library-change-controls>
+		<delete-library-button></delete-library-button>
 
-			<library-change-controls></library-change-controls>
-			<delete-library-button></delete-library-button>
-
-			<images-viewer *ngIf="imageTotal > 0" [container]="this">
-				<library-images-list></library-images-list>
-			</images-viewer>
-		</div>
+		<show-images-if-they-exist [container]="this">
+			<library-images-list></library-images-list>
+		</show-images-if-they-exist>
 	`
 })
 export class LibraryViewerComponent extends HasImageTotalComponent
