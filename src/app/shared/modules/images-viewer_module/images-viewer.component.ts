@@ -8,7 +8,7 @@ import { ImagesViewerContainer } from '@interfaces/images-viewer-container.inter
 		<global-action-menu></global-action-menu>
 		<image-size-slider></image-size-slider>
 
-		<ng-content></ng-content><!--  images list  -->
+		<ng-content></ng-content> <!--  images list  -->
 
 		<app-pagination-controls
 			[paginator]="container.paginator"

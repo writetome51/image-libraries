@@ -3,22 +3,19 @@ import { AllImagesModulePathData as modulePath } from './all-images-module-path.
 import { AllImagesServicesModule } from './all-images-services.module';
 import { AllImagesViewerModule } from './all-images-viewer_module/all-images-viewer.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
-import { BigLoadingSpinnerModule } from '@big-loading-spinner_module/big-loading-spinner.module';
 import { CommonModule } from '@angular/common';
+import { ImagesLoaderModule } from '@modules/images-loader_module/images-loader.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ImagesLoaderModule }
-	from '@modules/images-loader_module/images-loader.module';
 
 
 @NgModule({
 	declarations: [AllImagesComponent],
 	imports: [
 		ImagesLoaderModule,
-		AllImagesServicesModule,
 		AllImagesViewerModule,
+		AllImagesServicesModule,
 		CommonModule,
-		BigLoadingSpinnerModule,
 		RouterModule.forChild([
 			{
 				path: modulePath.AllImagesComponent,
