@@ -4,20 +4,23 @@ import { ProcessUpdatePasswordService }
 	from './process-update-password_service/process-update-password.service';
 import { Title } from '@angular/platform-browser';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
+import { changePasswordWarning } from '@string-constants/warnings';
+
 
 
 @Component({
 	selector: 'update-password-form',
 	template: `
-		<p class="warning-text">Since this demo doesn't use SSL, do not use a password that
-			is truly secret.
-		</p>
+		<p class="warning-text">{{warning}}</p>
+
 		<update-password-form-inputs clearFormOnInit clearAlertsOnDestroy>
 		</update-password-form-inputs>
 		<submit-form-button [iDoThis]="process"></submit-form-button>
 	`
 })
 export class UpdatePasswordFormComponent {
+
+	warning = changePasswordWarning;
 
 	constructor(
 		public process: ProcessUpdatePasswordService, title: Title

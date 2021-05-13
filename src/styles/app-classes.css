@@ -42,7 +42,7 @@ li.grid-list-item {
 
 .fixed-overlay {
 	display: block;
-	position: fixed;
+	position: static;
 	z-index: 1000;
 }
 

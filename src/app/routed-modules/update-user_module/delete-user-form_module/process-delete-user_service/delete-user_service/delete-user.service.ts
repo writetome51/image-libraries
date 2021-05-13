@@ -21,7 +21,7 @@ export class DeleteUserService implements IDoThis {
 
 	async go(): Promise<{ success: true } | void> {
 		await this.__processDeleteUserRecord.go(); // will handle its own errors.
-		if (not(alerts.includeSuccess(userRecordDeleted))) return;
+		if (not(alerts.includesSuccess(userRecordDeleted))) return;
 
 		await this.__processDeleteUserImageFiles.go(); // will handle its own errors.
 		return {success: true};

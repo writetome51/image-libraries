@@ -5,7 +5,7 @@ import { getByTest } from '@writetome51/array-get-by-test';
 import { not } from '@writetome51/not';
 
 
-export class __AlertsService {
+export class AlertsService {
 
 	private static __data: Alert[] = [];
 
@@ -16,12 +16,12 @@ export class __AlertsService {
 
 
 	static setSuccess(message) {
-		this.__data.push({message, isError: false});
+		if (not(this.includesSuccess(message))) this.__data.push({message, isError: false});
 	}
 
 
 	static setError(message) {
-		this.__data.push({message, isError: true});
+		if (not(this.includesError(message))) this.__data.push({message, isError: true});
 	}
 
 
@@ -50,5 +50,3 @@ export class __AlertsService {
 	}
 
 }
-
-export const AlertsService: Gettable<Alert[]> = __AlertsService;
