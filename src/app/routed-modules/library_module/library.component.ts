@@ -11,9 +11,9 @@ import { RouteParametersSubscriberComponent }
 @Component({
 	selector: 'app-library',
 	template: `
-		<images-loader [heading]="heading">
+		<loading-content-section [heading]="heading">
 			<library-viewer></library-viewer>
-		</images-loader>
+		</loading-content-section>
 	`
 })
 export class LibraryComponent extends RouteParametersSubscriberComponent {

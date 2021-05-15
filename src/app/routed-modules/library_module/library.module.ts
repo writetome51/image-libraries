@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ImagesLoaderModule } from '@modules/images-loader_module/images-loader.module';
+import { LoadingContentSectionModule } from '@modules/loading-content-section_module/loading-content-section.module';
 import { LibraryComponent } from './library.component';
 import { LibraryRoutingModule } from './library-routing.module';
 import { LibraryViewerModule } from './library-viewer_module/library-viewer.module';
@@ -11,7 +11,7 @@ import { NgModule } from '@angular/core';
 	declarations: [LibraryComponent],
 	imports: [
 		CommonModule,
-		ImagesLoaderModule,
+		LoadingContentSectionModule,
 		LibraryViewerModule,
 		LibraryServicesModule,
 		LibraryRoutingModule,

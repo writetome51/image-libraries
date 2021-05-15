@@ -1,4 +1,4 @@
-export interface SecurityQuestion {
+export interface AnsweredQuestion {
 
 	question: string;
 

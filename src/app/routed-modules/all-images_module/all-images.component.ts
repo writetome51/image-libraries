@@ -11,9 +11,9 @@ import { Title } from '@angular/platform-browser';
 @Component({
 	selector: 'all-images',
 	template: `
-		<images-loader [heading]="heading">
+		<loading-content-section [heading]="heading">
 			<all-images-viewer></all-images-viewer>
-		</images-loader>
+		</loading-content-section>
 	`
 })
 export class AllImagesComponent extends RouteParametersSubscriberComponent {

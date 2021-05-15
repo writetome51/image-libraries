@@ -1,4 +1,4 @@
-import { SecurityQuestion } from './security-question.interface';
+import { AnsweredQuestion } from './answered-question.interface';
 
 
 export interface AppUser {
@@ -7,6 +7,6 @@ export interface AppUser {
 
 	password: string; // hashed (one-way encryption)
 
-	securityQuestion: SecurityQuestion; // needed for user to log in if forgot password
+	securityQuestion: AnsweredQuestion; // needed for user to log in if forgot password
 
 }

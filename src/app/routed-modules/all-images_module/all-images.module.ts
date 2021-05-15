@@ -4,7 +4,7 @@ import { AllImagesServicesModule } from './all-images-services.module';
 import { AllImagesViewerModule } from './all-images-viewer_module/all-images-viewer.module';
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
-import { ImagesLoaderModule } from '@modules/images-loader_module/images-loader.module';
+import { LoadingContentSectionModule } from '@modules/loading-content-section_module/loading-content-section.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
 	declarations: [AllImagesComponent],
 	imports: [
-		ImagesLoaderModule,
+		LoadingContentSectionModule,
 		AllImagesViewerModule,
 		AllImagesServicesModule,
 		CommonModule,

@@ -9,15 +9,13 @@ import { ImagesListComponent }
 @Component({
 	selector: 'all-images-list',
 	template: `
-		<ul *ngIf="images && images.length > 0">
-
+		<ul>
 			<li class="grid-list-item" *ngFor="let img of images">
 				<thumbnail-image-container [image]="img"
 					[imageRouterLink]="[fullSizeImageRoute, img.name]"
 				>
 				</thumbnail-image-container>
 			</li>
-
 		</ul>
 	`
 })

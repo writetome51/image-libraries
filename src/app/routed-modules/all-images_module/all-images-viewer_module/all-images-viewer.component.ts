@@ -12,7 +12,7 @@ import { ImagesViewerContainer } from '@interfaces/images-viewer-container.inter
 	selector: 'all-images-viewer',
 	template: `
 		<show-images-if-they-exist [container]="this"
-			[noImagesMessage]='"You have no images in your account."'
+			[noImagesMessage]="'You have no images in your account.'"
 		>
 			<all-images-list></all-images-list>
 		</show-images-if-they-exist>
