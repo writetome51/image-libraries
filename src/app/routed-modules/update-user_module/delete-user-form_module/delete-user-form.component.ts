@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ClickStartedExecutionStatusData }
-	from '@runtime-state-data/click-started-execution-status.data';
 import { DeletingAllUserImagesProgressData }
 	from '@runtime-state-data/deleting-all-user-images-progress.data';
 import { DeleteUserInputsService } from './delete-user-inputs.service';
@@ -29,7 +27,6 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 export class DeleteUserFormComponent {
 
 	progress = DeletingAllUserImagesProgressData;
-	executionStatus = ClickStartedExecutionStatusData;
 
 
 	constructor(
