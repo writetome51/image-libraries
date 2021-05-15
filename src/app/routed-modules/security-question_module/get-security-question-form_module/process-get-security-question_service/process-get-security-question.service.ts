@@ -6,11 +6,10 @@ import { EmailToGetSecurityQuestionInputService }
 import { GetSecurityQuestionService } from './get-security-question.service';
 import { SecurityQuestionServicesModule } from '../../security-question-services.module';
 import { ProcessService } from '@process/process.abstract.service';
-import { SendFormData } from '@interfaces/send-form-data.interface';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class ProcessGetSecurityQuestionService extends ProcessService implements SendFormData {
+export class ProcessGetSecurityQuestionService extends ProcessService {
 
 	constructor(
 		public $_validatingInputs: EmailToGetSecurityQuestionInputService,

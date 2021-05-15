@@ -1,5 +1,3 @@
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
@@ -18,11 +16,9 @@ export class DeleteUserRecordService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<{ success: true } | HasError> {
+	async go(email, password): Promise<{ success: true } | HasError> {
 		return await this.__realmFn.call('pub_deleteUser', {
-			email: currentUserForm.email,
-			password: currentUserForm.password,
-			sessionID: this.__sessionIDInBrowser.get()
+			email, password, sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
 

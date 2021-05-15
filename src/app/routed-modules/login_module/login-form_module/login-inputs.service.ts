@@ -7,7 +7,7 @@ import { LoginFormServicesModule } from './login-form-services.module';
 
 
 @Injectable({providedIn: LoginFormServicesModule})
-export class LoginFormInputsService extends CurrentUserInputsService {
+export class LoginInputsService extends CurrentUserInputsService {
 
 	constructor(emailInput: EmailInputService, passwordInput: PasswordInputService) {
 		super(emailInput, passwordInput);

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { Progress } from '@interfaces/progress.interface';
 
 
@@ -11,16 +11,13 @@ import { Progress } from '@interfaces/progress.interface';
 	`,
 	styles: [
 		`.progress-bar {
-			position: fixed;
 			width: 1px; /* necessary? */
-			height: 25px; line-height: 25px; /* So text height will fill bar height */
 			text-align: left;
 			padding-left: 10px;
-			background-color: #337ab7; color: white;
 		}`
 	]
 })
-export class ProgressBarComponent {
+export class ProgressBarComponent implements OnDestroy {
 
 	@Input() progress: Progress;
 	@Input() label? = '';
@@ -28,6 +25,11 @@ export class ProgressBarComponent {
 
 	get width(): string {
 		return this.progress.percentageComplete + '%';
+	}
+
+
+	ngOnDestroy() {
+		this.progress.percentageComplete = 0;
 	}
 
 }

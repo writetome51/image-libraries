@@ -2,9 +2,9 @@ import { AlertsService as alerts } from '@services/alerts.service';
 import { Component, Input } from '@angular/core';
 import { ClickExecuteIDoThisContainerComponent }
 	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
-import { SendFormData } from '@interfaces/send-form-data.interface';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { isArray } from '@writetome51/is-array-not-array';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 @Component({
 	selector: 'submit-form-button',
@@ -20,7 +20,7 @@ export class SubmitFormButtonComponent extends ClickExecuteIDoThisContainerCompo
 	@Input() validatingInputs: ValidatingInputService | ValidatingInputsService;
 
 
-	@Input() set iDoThis(sendFormData: SendFormData) {
+	@Input() set iDoThis(sendFormData: IDoThis) {
 		const sendFormData_go = sendFormData.go;
 
 		this._iDoThis = {

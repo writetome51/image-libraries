@@ -3,6 +3,7 @@ import { ClickStartedExecutionStatusData }
 	from '@runtime-state-data/click-started-execution-status.data';
 import { DeletingAllUserImagesProgressData }
 	from '@runtime-state-data/deleting-all-user-images-progress.data';
+import { DeleteUserInputsService } from './delete-user-inputs.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { ProcessDeleteUserService }
 	from './process-delete-user_service/process-delete-user.service';
@@ -20,7 +21,9 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 		<delete-user-form-instructions></delete-user-form-instructions>
 
 		<delete-user-form-inputs clearFormOnInit clearAlertsOnDestroy></delete-user-form-inputs>
-		<submit-form-button [label]="'Delete'" [iDoThis]="process"></submit-form-button>
+		<submit-form-button [label]="'Delete'" [validatingInputs]="inputs"
+			[iDoThis]="process"
+		></submit-form-button>
 	`
 })
 export class DeleteUserFormComponent {
@@ -29,7 +32,11 @@ export class DeleteUserFormComponent {
 	executionStatus = ClickStartedExecutionStatusData;
 
 
-	constructor(public process: ProcessDeleteUserService, title: Title) {
+	constructor(
+		public process: ProcessDeleteUserService,
+		public inputs: DeleteUserInputsService,
+		title: Title
+	) {
 		title.setTitle(
 			getPageTitle.go([parentModuleTitle, 'Delete Account'])
 		);

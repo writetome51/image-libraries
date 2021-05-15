@@ -5,7 +5,8 @@ import { ProcessUpdatePasswordService }
 import { Title } from '@angular/platform-browser';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 import { changePasswordWarning } from '@string-constants/warnings';
-
+import { UpdatePasswordInputsService }
+	from './update-password-inputs_service/update-password-inputs.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { changePasswordWarning } from '@string-constants/warnings';
 
 		<update-password-form-inputs clearFormOnInit clearAlertsOnDestroy>
 		</update-password-form-inputs>
-		<submit-form-button [iDoThis]="process"></submit-form-button>
+
+		<submit-form-button [validatingInputs]="inputs" [iDoThis]="process"></submit-form-button>
 	`
 })
 export class UpdatePasswordFormComponent {
@@ -23,7 +25,9 @@ export class UpdatePasswordFormComponent {
 	warning = changePasswordWarning;
 
 	constructor(
-		public process: ProcessUpdatePasswordService, title: Title
+		public process: ProcessUpdatePasswordService,
+		public inputs: UpdatePasswordInputsService,
+		title: Title
 	) {
 		title.setTitle( getPageTitle.go([parentModuleTitle, 'Password']) );
 	}

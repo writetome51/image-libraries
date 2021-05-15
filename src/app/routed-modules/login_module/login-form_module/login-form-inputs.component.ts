@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginFormInputsService } from './login-form-inputs.service';
+import { LoginInputsService } from './login-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
@@ -9,7 +9,7 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class LoginFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__validatingInputs: LoginFormInputsService) {
+	constructor(__validatingInputs: LoginInputsService) {
 		super(__validatingInputs);
 	}
 

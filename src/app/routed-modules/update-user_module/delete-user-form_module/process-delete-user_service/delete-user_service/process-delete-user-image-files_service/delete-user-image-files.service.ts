@@ -1,5 +1,3 @@
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { HasError } from '@interfaces/has-error.interface';
@@ -13,8 +11,8 @@ export class DeleteUserImageFilesService implements IDoThis {
 	constructor(private __userFileStorage: UserFileStorageService) {}
 
 
-	async go(): Promise<{ success: true } | HasError> {
-		return this.__userFileStorage.deleteUser(currentUserForm.email);
+	async go(email): Promise<{ success: true } | HasError> {
+		return this.__userFileStorage.deleteUser(email);
 	}
 
 }

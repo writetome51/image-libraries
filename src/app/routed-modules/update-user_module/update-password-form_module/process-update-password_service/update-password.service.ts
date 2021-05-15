@@ -1,5 +1,3 @@
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
 import { UserRecord } from '@interfaces/user-record.interface';
 import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
@@ -21,11 +19,11 @@ export class UpdatePasswordService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<UserRecord | HasError> {
+	async go(password, newPassword): Promise<UserRecord | HasError> {
 		return await this.__realmFn.call('pub_updatePasswordAndReturnUser', {
 			email: this.__emailInBrowser.get(),
-			password: currentUserForm.password,
-			newPassword: currentUserForm.newPassword,
+			password,
+			newPassword,
 			sessionID: this.__sessionIDInBrowser.get()
 		});
 	}
