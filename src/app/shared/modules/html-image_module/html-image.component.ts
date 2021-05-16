@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { HTMLImage } from '@interfaces/html-image.interface';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -11,8 +12,4 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 		/>
 	`
 })
-export class HTMLImageComponent {
-
-	@Input() data: HTMLImage;
-
-}
+export class HTMLImageComponent extends HasDataInputComponent<HTMLImage> {}

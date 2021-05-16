@@ -1,10 +1,5 @@
-import { Component, Input } from '@angular/core';
 import { MenuChoice } from '../../menu-choice.interface';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
-@Component({selector: '', template: ''}) // prevents Angular build error
-export abstract class AbstractMenuChoiceComponent {
-
-	@Input() data: MenuChoice;
-
-}
+export abstract class AbstractMenuChoiceComponent extends HasDataInputComponent<MenuChoice> {}

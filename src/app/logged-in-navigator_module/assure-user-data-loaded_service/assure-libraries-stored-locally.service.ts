@@ -19,7 +19,7 @@ import { LibraryRecord } from '@interfaces/library-record.interface';
 export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(
-		private __getLibrariesProcessor: ProcessGetLibrariesService,
+		private __processGetLibraries: ProcessGetLibrariesService,
 		private __librariesInBrowser: LibrariesInBrowserStorageService
 	) {}
 
@@ -28,7 +28,7 @@ export class AssureLibrariesStoredLocallyService implements IDoThis {
 		if (this.__librariesStoredLocally()) return;
 
 		else await executeFunctionRequiringWaiting.go(
-			() => this.__getLibrariesProcessor.go(), executionStatus
+			() => this.__processGetLibraries.go(), executionStatus
 		);
 	}
 

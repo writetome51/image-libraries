@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ClickExecuteFunctionContainerComponent }
 	from '@abstract-components/click-execute-function-container.abstract.component';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.abstract.component';
+import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.component';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.abstract.co
 	`,
 	styles: [`checkmark {position: relative;  top: 5px;  left: 5px;}`]
 })
-export class ExecutableMenuChoiceComponent extends LabelledMenuChoiceComponent {
+export class ExecutableMenuChoiceComponent extends LabeledMenuChoiceComponent {
 
 	@Input() container: ClickExecuteFunctionContainerComponent;
 

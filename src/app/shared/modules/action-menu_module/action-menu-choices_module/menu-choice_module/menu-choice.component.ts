@@ -18,7 +18,6 @@ import { AbstractMenuChoiceComponent } from './abstract-menu-choice.abstract.com
 
 			</hoverable-container>
 		</li>
-
 	`,
 	styleUrls: ['./menu-choice.component.css']
 })
@@ -28,7 +27,7 @@ export class MenuChoiceComponent extends AbstractMenuChoiceComponent {
 
 
 	get hasSubmenu(): boolean {
-		return hasValue(this.data['submenu']);
+		return hasValue(this.data.submenu);
 	}
 
 

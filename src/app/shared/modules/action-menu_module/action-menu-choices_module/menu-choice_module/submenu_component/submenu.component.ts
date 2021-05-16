@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.abstract.component';
+import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.component';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { LabelledMenuChoiceComponent } from '../labelled-menu-choice.abstract.co
 		</ng-container>
 	`
 })
-export class SubmenuComponent extends LabelledMenuChoiceComponent {
+export class SubmenuComponent extends LabeledMenuChoiceComponent {
 
 	@Input() clicked = false;
 

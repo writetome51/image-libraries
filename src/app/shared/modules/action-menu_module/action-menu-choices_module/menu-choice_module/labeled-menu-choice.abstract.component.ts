@@ -2,7 +2,7 @@ import { AbstractMenuChoiceComponent } from './abstract-menu-choice.abstract.com
 import { getByIndex } from '@writetome51/array-get-by-index';
 
 
-export abstract class LabelledMenuChoiceComponent extends AbstractMenuChoiceComponent {
+export abstract class LabeledMenuChoiceComponent extends AbstractMenuChoiceComponent {
 
 	get label(): string {
 		return this.__removeParentLabelsForDisplay(this.data.label);

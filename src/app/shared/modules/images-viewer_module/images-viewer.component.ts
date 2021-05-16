@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ImagesViewerContainer } from '@interfaces/images-viewer-container.interface';
+import { ImagesViewerContainerComponent }
+	from '@abstract-components/images-viewer-container.abstract.component';
 
 
 @Component({
@@ -19,6 +20,6 @@ import { ImagesViewerContainer } from '@interfaces/images-viewer-container.inter
 })
 export class ImagesViewerComponent {
 
-	@Input() container: ImagesViewerContainer;
+	@Input() container: ImagesViewerContainerComponent;
 
 }

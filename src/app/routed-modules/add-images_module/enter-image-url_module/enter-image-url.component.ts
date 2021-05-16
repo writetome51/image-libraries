@@ -8,7 +8,7 @@ import { ImageURLInputService } from './image-url-input.service';
 	template: `
 		<image-url-form-input clearFormOnInit clearAlertsOnDestroy></image-url-form-input>
 		<submit-form-button [label]="'Save URL'" [validatingInputs]="imageURLInput"
-							[iDoThis]="saveImageURL"
+			[iDoThis]="saveImageURL"
 		>
 		</submit-form-button>
 	`

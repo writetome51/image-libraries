@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Link } from '@interfaces/link.interface';
 import { LinkedTemplateWithHeading }
 	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -12,9 +13,8 @@ import { LinkedTemplateWithHeading }
 		</nav>
 	`
 })
-export class UpdateUserChoicesComponent implements OnInit {
-
-	@Input() data: LinkedTemplateWithHeading[];
+export class UpdateUserChoicesComponent extends HasDataInputComponent<LinkedTemplateWithHeading[]>
+	implements OnInit {
 
 	links: Link[];
 

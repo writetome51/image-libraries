@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { InputValidatorService as inputValidator, ValidatingInput }
 	from '@writetome51/validating-inputs';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -12,10 +13,8 @@ import { InputValidatorService as inputValidator, ValidatingInput }
 // Can be used with ValidatingFormInputComponent from '@writetome51/validating-inputs'
 // Also, create equivalent UI component of this for ReactJS.
 
-export class AppValidatingFormInputComponent implements OnInit {
-
-	@Input() data: ValidatingInput;
-
+export class AppValidatingFormInputComponent extends HasDataInputComponent<ValidatingInput>
+	implements OnInit {
 
 	ngOnInit(): void {
 		this.data.triggeredError = '';

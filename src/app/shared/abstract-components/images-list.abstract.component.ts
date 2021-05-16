@@ -1,10 +1,5 @@
 import { ImageRecord } from '@interfaces/image-record.interface';
-import { Component, Input } from '@angular/core';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
-@Component({selector: '', template: ''}) // prevents Angular build error
-export abstract class ImagesListComponent {
-
-	@Input() data: ImageRecord[];
-
-}
+export abstract class ImagesListComponent extends HasDataInputComponent<ImageRecord[]> {}

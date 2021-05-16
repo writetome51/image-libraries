@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -11,8 +12,4 @@ import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 	`,
 	styleUrls: ['./action-menu-choices.component.css']
 })
-export class ActionMenuChoicesComponent {
-
-	@Input() data: MenuChoice[];
-
-}
+export class ActionMenuChoicesComponent extends HasDataInputComponent<MenuChoice[]> {}

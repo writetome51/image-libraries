@@ -8,9 +8,9 @@ import { ListItemRemoverService } from './list-item-remover.service';
 @Component({
 	selector: 'library-images-list',
 	template: `
-		<re-arrangeable-grid-list [data]="images">
+		<re-arrangeable-grid-list [data]="data">
 
-			<re-arrangeable-grid-list-item *ngFor="let img of images; let i = index;" [index]="i">
+			<re-arrangeable-grid-list-item *ngFor="let img of data; let i = index;" [index]="i">
 
 				<thumbnail-image-container [image]="img"></thumbnail-image-container>
 
@@ -26,7 +26,7 @@ export class LibraryImagesListComponent extends ImagesListComponent {
 		private __currentRoute: CurrentRouteService,
 		private __listItemRemover: ListItemRemoverService
 	) {
-		super(__paginator);
+		super();
 	}
 
 }

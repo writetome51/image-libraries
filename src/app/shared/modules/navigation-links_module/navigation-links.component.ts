@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Link } from '@interfaces/link.interface';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -19,12 +20,11 @@ import { Link } from '@interfaces/link.interface';
 		</div>
 	`
 })
-export class NavigationLinksComponent {
+export class NavigationLinksComponent extends HasDataInputComponent<Link[]> {
 
-	@Input() data: Link[];
-
-
-	constructor(private __currentRoute: CurrentRouteService) {}
+	constructor(private __currentRoute: CurrentRouteService) {
+		super();
+	}
 
 
 	isCurrentPath(path): boolean {

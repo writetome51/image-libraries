@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ValidatingInput } from '@writetome51/validating-inputs';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
 
 
 @Component({
@@ -13,8 +14,4 @@ import { ValidatingInput } from '@writetome51/validating-inputs';
 // Can be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
 // Also, create equivalent UI component of this for ReactJS.
 
-export class AppValidatingFormInputsComponent {
-
-	@Input() data: ValidatingInput[];
-
-}
+export class AppValidatingFormInputsComponent extends HasDataInputComponent<ValidatingInput[]> {}
