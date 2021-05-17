@@ -1,8 +1,9 @@
-import { AbstractMenuChoiceComponent } from './abstract-menu-choice.abstract.component';
 import { getByIndex } from '@writetome51/array-get-by-index';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 
 
-export abstract class LabeledMenuChoiceComponent extends AbstractMenuChoiceComponent {
+export abstract class LabeledMenuChoiceComponent extends HasDataInputComponent<MenuChoice> {
 
 	get label(): string {
 		return this.__removeParentLabelsForDisplay(this.data.label);
