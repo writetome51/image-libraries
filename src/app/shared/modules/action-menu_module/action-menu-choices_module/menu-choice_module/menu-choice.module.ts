@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ExecutableMenuChoiceContainerModule }
-	from './executable-menu-choice-container_module/executable-menu-choice-container.module';
+import { ExecutableMenuChoiceContextModule }
+	from './executable-menu-choice-context_module/executable-menu-choice-context.module';
 import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
 import { MenuChoiceComponent } from './menu-choice.component';
 import { NgModule,NO_ERRORS_SCHEMA  } from '@angular/core';
@@ -17,7 +17,7 @@ import { SubmenuPointerComponent } from './submenu_component/submenu-pointer.com
 	imports: [
 		CommonModule,
 		HoverableContainerModule,
-		ExecutableMenuChoiceContainerModule
+		ExecutableMenuChoiceContextModule
 	],
 	exports: [MenuChoiceComponent],
 

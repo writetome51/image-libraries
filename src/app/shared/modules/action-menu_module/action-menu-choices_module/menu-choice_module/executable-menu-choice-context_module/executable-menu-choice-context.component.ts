@@ -7,11 +7,10 @@ import { ClickExecuteFunctionContextComponent }
 
 
 @Component({
-	selector: 'executable-menu-choice-container',
-	template: `
-		<executable-menu-choice [context]="this" [data]="choice"></executable-menu-choice>`
+	selector: 'executable-menu-choice-context',
+	template: `<executable-menu-choice [context]="this" [data]="choice"></executable-menu-choice>`
 })
-export class ExecutableMenuChoiceContainerComponent extends ClickExecuteFunctionContextComponent {
+export class ExecutableMenuChoiceContextComponent extends ClickExecuteFunctionContextComponent {
 
 	@Input() choice: MenuChoice | CheckableMenuChoice;
 

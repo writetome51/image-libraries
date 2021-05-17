@@ -11,8 +11,8 @@ import { AbstractMenuChoiceComponent } from './abstract-menu-choice.abstract.com
 		>
 			<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-				<executable-menu-choice-container *ngIf="!(hasSubmenu)" [choice]="data">
-				</executable-menu-choice-container>
+				<executable-menu-choice-context *ngIf="!(hasSubmenu)" [choice]="data">
+				</executable-menu-choice-context>
 
 				<submenu *ngIf="hasSubmenu" [clicked]="clicked" [data]="data"></submenu>
 
