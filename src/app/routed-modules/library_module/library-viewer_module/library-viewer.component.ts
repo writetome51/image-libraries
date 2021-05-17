@@ -15,9 +15,9 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 		<library-change-controls></library-change-controls>
 		<delete-library-button></delete-library-button>
 
-		<show-images-if-they-exist [container]="this">
+		<images-viewer [context]="this">
 			<library-images-list [data]="images"></library-images-list>
-		</show-images-if-they-exist>
+		</images-viewer>
 	`
 })
 export class LibraryViewerComponent extends ImagesViewerContextComponent {

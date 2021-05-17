@@ -12,11 +12,9 @@ import { UserImageTotalInBrowserStorageService }
 @Component({
 	selector: 'all-images-viewer',
 	template: `
-		<show-images-if-they-exist [container]="this"
-			[noImagesMessage]="'You have no images in your account.'"
-		>
+		<images-viewer [context]="this" [noImagesMessage]="'You have no images in your account.'">
 			<all-images-list [data]="images"></all-images-list>
-		</show-images-if-they-exist>
+		</images-viewer>
 	`
 })
 export class AllImagesViewerComponent extends ImagesViewerContextComponent {

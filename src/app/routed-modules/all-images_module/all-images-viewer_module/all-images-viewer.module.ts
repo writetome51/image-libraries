@@ -2,8 +2,8 @@ import { AllImagesListComponent } from './all-images-list.component';
 import { AllImagesViewerComponent } from './all-images-viewer.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ShowImagesIfTheyExistModule }
-	from '@app/shared/modules/show-images-if-they-exist_module/show-images-if-they-exist.module';
+import { ImagesViewerModule }
+	from '@modules/images-viewer_module/images-viewer.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container_module/thumbnail-image-container.module';
 
@@ -16,7 +16,7 @@ import { ThumbnailImageContainerModule }
 	imports: [
 		CommonModule,
 		ThumbnailImageContainerModule,
-		ShowImagesIfTheyExistModule,
+		ImagesViewerModule,
 	],
 	exports: [AllImagesViewerComponent]
 })

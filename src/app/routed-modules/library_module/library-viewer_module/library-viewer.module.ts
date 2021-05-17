@@ -7,8 +7,7 @@ import { LibraryViewerServicesModule } from './library-viewer-services.module';
 import { LibraryChangeControlsModule }
 	from './library-change-controls_module/library-change-controls.module';
 import { NgModule } from '@angular/core';
-import { ShowImagesIfTheyExistModule }
-	from '@modules/show-images-if-they-exist_module/show-images-if-they-exist.module';
+import { ImagesViewerModule } from '@modules/images-viewer_module/images-viewer.module';
 
 
 @NgModule({
@@ -19,7 +18,7 @@ import { ShowImagesIfTheyExistModule }
 		LibraryImagesListModule,
 		LibraryViewerServicesModule,
 		LibraryChangeControlsModule,
-		ShowImagesIfTheyExistModule,
+		ImagesViewerModule,
 	],
 	exports: [LibraryViewerComponent]
 })
