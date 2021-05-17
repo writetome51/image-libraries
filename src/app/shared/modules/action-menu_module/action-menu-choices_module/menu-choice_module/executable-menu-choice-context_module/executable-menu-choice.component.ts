@@ -9,7 +9,7 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 	selector: 'executable-menu-choice',
 	template: `
 		<click-execute-function-div [context]="context" [funcArgs]="[data]">
-			<div class="label-container">{{ label }}</div>
+			<div class="menu-choice-label-container">{{ label }}</div>
 
 			<!--  Should <checkmark> be removed and placed in modules that use <action-menu> ? -->
 			<!--  It may be better if this component is more generic, like an empty container. -->

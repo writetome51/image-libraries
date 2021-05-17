@@ -2,14 +2,7 @@ li.menu-choice {
 	border-bottom: 1px dotted lightgrey;
 	display: block;
 	width: 100%;
-}
-
-
-hoverable-container {
-	display: inherit;
-	width: 100%;
-	height: 100%;
-	/*	padding: 5px 10px 5px 10px; */
+	height: fit-content;
 }
 
 

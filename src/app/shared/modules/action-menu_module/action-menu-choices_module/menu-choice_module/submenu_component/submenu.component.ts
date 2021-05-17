@@ -6,7 +6,7 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 	selector: 'submenu',
 	template: `
 		<ng-container>
-			<div class="label-container">
+			<div class="menu-choice-label-container">
 				{{ label }} <submenu-pointer></submenu-pointer>
 			</div>
 

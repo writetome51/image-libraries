@@ -11,7 +11,8 @@ import { Component, Input } from '@angular/core';
 				<span class="caret"></span>
 			</div>
 		</button>
-	`
+	`,
+	styles: [`.action-menu-button { padding: 0 10px; }`]
 })
 export class ActionMenuButtonComponent {
 
