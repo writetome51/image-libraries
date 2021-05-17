@@ -1,7 +1,7 @@
 import { AppModulePathData as appModuleRoutes } from '../../../app-module-path.data';
 import { Component } from '@angular/core';
-import { ImagesListComponent }
-	from '@abstract-components/images-list.abstract.component';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { ImageRecord } from '@interfaces/image-record.interface';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { ImagesListComponent }
 		</ul>
 	`
 })
-export class AllImagesListComponent extends ImagesListComponent {
+export class AllImagesListComponent extends HasDataInputComponent<ImageRecord[]> {
 
 	get fullSizeImageRoute() {
 		return '/' + appModuleRoutes.FullSizeImageViewerModule;

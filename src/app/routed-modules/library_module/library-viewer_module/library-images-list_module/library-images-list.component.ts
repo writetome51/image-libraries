@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { ImagesListComponent } from '@abstract-components/images-list.abstract.component';
 import { LibraryPaginatorService } from '../../library-paginator_service/library-paginator.service';
 import { ListItemRemoverService } from './list-item-remover.service';
+import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { ImageRecord } from '@interfaces/image-record.interface';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { ListItemRemoverService } from './list-item-remover.service';
 		</re-arrangeable-grid-list>
 	`
 })
-export class LibraryImagesListComponent extends ImagesListComponent {
+export class LibraryImagesListComponent extends HasDataInputComponent<ImageRecord[]> {
 
 	constructor(
 		__paginator: LibraryPaginatorService,
