@@ -6,7 +6,21 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChi
 
 @Component({
 	selector: 'execute-function-button',
-	templateUrl: './execute-function-button.component.html',
+	template: `
+		<div class="processing-button-container">
+
+			<button #button class="btn btn-default" [type]="type" (click)="execute($event)"
+		  		[style]="width"
+			>
+				<ng-content *ngIf="!(clicked)"></ng-content>
+
+				<tiny-loading-spinner *ngIf="clicked && executionStatus.waiting">
+				</tiny-loading-spinner>
+
+			</button>
+
+		</div>
+	`,
 	styleUrls: ['./execute-function-button.component.css']
 })
 export class ExecuteFunctionButtonComponent extends ClickExecuteFunctionComponent
