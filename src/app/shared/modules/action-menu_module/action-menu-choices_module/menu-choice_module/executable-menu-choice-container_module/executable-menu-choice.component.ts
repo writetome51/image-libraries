@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ClickExecuteFunctionContainerComponent }
-	from '@abstract-components/click-execute-function-container.abstract.component';
+import { ClickExecuteFunctionContextComponent }
+	from '@abstract-components/click-execute-function-context.abstract.component';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.component';
 
@@ -8,7 +8,7 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 @Component({
 	selector: 'executable-menu-choice',
 	template: `
-		<click-execute-function-div [container]="container" [funcArgs]="[data]">
+		<click-execute-function-div [context]="context" [funcArgs]="[data]">
 			<div class="label-container">{{ label }}</div>
 
 			<!--  Should <checkmark> be removed and placed in modules that use <action-menu> ? -->
@@ -21,7 +21,7 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 })
 export class ExecutableMenuChoiceComponent extends LabeledMenuChoiceComponent {
 
-	@Input() container: ClickExecuteFunctionContainerComponent;
+	@Input() context: ClickExecuteFunctionContextComponent;
 
 
 	get checked(): boolean {

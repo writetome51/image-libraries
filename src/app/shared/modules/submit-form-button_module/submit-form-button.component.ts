@@ -1,7 +1,7 @@
 import { AlertsService as alerts } from '@services/alerts.service';
 import { Component, Input } from '@angular/core';
-import { ClickExecuteIDoThisContainerComponent }
-	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
+import { ClickExecuteIDoThisContextComponent }
+	from '@abstract-components/click-execute-i-do-this-context.abstract.component';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { isArray } from '@writetome51/is-array-not-array';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -9,12 +9,12 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 @Component({
 	selector: 'submit-form-button',
 	template: `
-		<execute-function-button [type]="'submit'" [container]="this">
+		<execute-function-button [type]="'submit'" [context]="this">
 			{{label}}
 		</execute-function-button>
 	`
 })
-export class SubmitFormButtonComponent extends ClickExecuteIDoThisContainerComponent {
+export class SubmitFormButtonComponent extends ClickExecuteIDoThisContextComponent {
 
 	@Input() label = 'Submit';
 	@Input() validatingInputs: ValidatingInputService | ValidatingInputsService;

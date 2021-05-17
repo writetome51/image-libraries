@@ -1,6 +1,6 @@
 import { areYouSureDeleteLibrary } from '@string-constants/prompts';
-import { ClickExecuteIDoThisContainerComponent }
-	from '@abstract-components/click-execute-i-do-this-container.abstract.component';
+import { ClickExecuteIDoThisContextComponent }
+	from '@abstract-components/click-execute-i-do-this-context.abstract.component';
 import { Component } from '@angular/core';
 import { ProcessDeleteLibraryService }
 	from './process-delete-library_service/process-delete-library.service';
@@ -8,9 +8,9 @@ import { ProcessDeleteLibraryService }
 
 @Component({
 	selector: 'delete-library-button',
-	template: `<execute-function-button [container]="this">Delete Library</execute-function-button>`
+	template: `<execute-function-button [context]="this">Delete Library</execute-function-button>`
 })
-export class DeleteLibraryButtonComponent extends ClickExecuteIDoThisContainerComponent {
+export class DeleteLibraryButtonComponent extends ClickExecuteIDoThisContextComponent {
 
 	constructor(_iDoThis: ProcessDeleteLibraryService) {
 		super(_iDoThis);

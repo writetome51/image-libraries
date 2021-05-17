@@ -6,7 +6,7 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 import { GetPageImagesService as getPageImages } from '@services/get-page-images.service';
 
 
-export abstract class ImagesViewerContainerComponent {
+export abstract class ImagesViewerContextComponent {
 
 	abstract routeBeforePageNumber: string;
 	abstract paginator: AppPaginatorService;

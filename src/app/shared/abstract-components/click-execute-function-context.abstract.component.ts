@@ -4,7 +4,7 @@ import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiti
 	from '@services/execute-function-requiring-waiting.service';
 
 
-export abstract class ClickExecuteFunctionContainerComponent {
+export abstract class ClickExecuteFunctionContextComponent {
 
 	async execute(funcArgs = []) {
 		await executeFunctionRequiringWaiting.go(

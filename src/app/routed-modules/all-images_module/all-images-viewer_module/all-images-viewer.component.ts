@@ -3,8 +3,8 @@ import { AllImagesPaginatorService }
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { ImagesViewerContainerComponent }
-	from '@abstract-components/images-viewer-container.abstract.component';
+import { ImagesViewerContextComponent }
+	from '@abstract-components/images-viewer-context.abstract.component';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 
@@ -19,7 +19,7 @@ import { UserImageTotalInBrowserStorageService }
 		</show-images-if-they-exist>
 	`
 })
-export class AllImagesViewerComponent extends ImagesViewerContainerComponent {
+export class AllImagesViewerComponent extends ImagesViewerContextComponent {
 
 	routeBeforePageNumber = `${appModulePath.AllImagesModule}/page`;
 

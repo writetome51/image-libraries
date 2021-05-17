@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ImagesViewerContainerComponent }
-	from '@abstract-components/images-viewer-container.abstract.component';
+import { ImagesViewerContextComponent }
+	from '@abstract-components/images-viewer-context.abstract.component';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { ImagesViewerContainerComponent }
 })
 export class ShowImagesIfTheyExistComponent {
 
-	@Input() container: ImagesViewerContainerComponent;
+	@Input() container: ImagesViewerContextComponent;
 	@Input() noImagesMessage = 'No Images';
 
 }
