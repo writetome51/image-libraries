@@ -31,7 +31,8 @@
 							"src/styles/execute-function-button.module.css",
 							"src/styles/action-menu.module.css",
 							"src/styles/global-action-menu.module.css",
-							"src/styles/thumbnail-image-container.module.css"
+							"src/styles/thumbnail-image-container.module.css",
+							"src/styles/progress-bar.module.css"
 						],
 						"scripts": []
 					},
@@ -102,7 +103,8 @@
 							"src/styles/execute-function-button.module.css",
 							"src/styles/action-menu.module.css",
 							"src/styles/global-action-menu.module.css",
-							"src/styles/thumbnail-image-container.module.css"
+							"src/styles/thumbnail-image-container.module.css",
+							"src/styles/progress-bar.module.css"
 						],
 						"scripts": []
 					}

@@ -10,15 +10,6 @@ div.dropdown {
 }
 
 
-div.progress-bar {
-	position: fixed;
-	height: 25px;
-	line-height: 25px; /* So text height will fill bar height */
-	background-color: #337ab7;
-	color: white;
-}
-
-
 .fill-parent {
 	display: inherit;
 	width: inherit;

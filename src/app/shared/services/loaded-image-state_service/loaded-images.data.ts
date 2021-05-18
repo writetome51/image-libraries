@@ -1,9 +1,9 @@
 import { ImageRecord } from '@interfaces/image-record.interface';
 import { setArray } from '@writetome51/set-array';
-// import {ResettableToDefault} from '@interfaces/resettable-to-default';
+import {ResettableToDefault} from '@interfaces/resettable-to-default.interface';
 
 
-export class LoadedImagesData { // implements ResettableToDefault
+export class __LoadedImagesData {
 
 	static data: ImageRecord[] = [];
 
@@ -12,3 +12,5 @@ export class LoadedImagesData { // implements ResettableToDefault
 		setArray(this.data, []);
 	}
 }
+
+export const LoadedImagesData: ResettableToDefault = __LoadedImagesData;
