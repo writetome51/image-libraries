@@ -13,7 +13,7 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 	selector: 'delete-user-form',
 	template: `
 		<progress-bar *ngIf="progress.percentageComplete > 0"
-			[progress]="progress" [label]="'Deleting files: '"
+			[percentageComplete]="progress.percentageComplete"  [label]="'Deleting files: '"
 		></progress-bar>
 
 		<delete-user-form-instructions></delete-user-form-instructions>

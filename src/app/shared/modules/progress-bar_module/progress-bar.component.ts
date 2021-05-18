@@ -1,12 +1,11 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-import { Progress } from '@interfaces/progress.interface';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
 	selector: 'progress-bar',
 	template: `
 		<div class="progress-bar" [style.width]="width">
-			{{label}} <span>{{progress.percentageComplete}} %</span>
+			{{label}} <span>{{percentageComplete}} %</span>
 		</div>
 	`,
 	styles: [
@@ -17,19 +16,14 @@ import { Progress } from '@interfaces/progress.interface';
 		}`
 	]
 })
-export class ProgressBarComponent implements OnDestroy {
+export class ProgressBarComponent {
 
-	@Input() progress: Progress;
+	@Input() percentageComplete: number;
 	@Input() label? = '';
 
 
 	get width(): string {
-		return this.progress.percentageComplete + '%';
-	}
-
-
-	ngOnDestroy() {
-		this.progress.percentageComplete = 0;
+		return this.percentageComplete + '%';
 	}
 
 }
