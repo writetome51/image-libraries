@@ -5,8 +5,10 @@ import { AlertsService } from '@services/alerts.service';
 @Component({
 	selector: 'app-alerts',
 	template: `
-		<app-alert *ngFor="let alert of alerts.get(); let i = index" [data]="alert" [index]="i">
-		</app-alert>
+		<div class="modal-overlay" (click)="alerts.clearAll()">
+			<app-alert *ngFor="let alert of alerts.get(); let i = index" [data]="alert" [index]="i">
+			</app-alert>
+		</div>
 	`
 })
 export class AppAlertsComponent {
