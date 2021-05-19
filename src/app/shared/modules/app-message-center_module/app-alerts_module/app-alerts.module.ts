@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppAlertComponent } from '@app/app-alerts_module/app-alert.component';
-import { AppAlertsComponent } from '@app/app-alerts_module/app-alerts.component';
+import { AppAlertComponent } from './app-alert.component';
+import { AppAlertsComponent } from './app-alerts.component';
 
 
 @NgModule({
