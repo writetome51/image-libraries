@@ -10,20 +10,15 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 		<nav *ngIf="totalPages > 1">
 			<div>
 
-				<page-link *ngIf="currentPage > 1"
-					[pageNumber]="currentPage - 1"  [routeBeforePageNumber]="routeBeforePageNumber"
-				> previous
-				</page-link>
-
-				<page-link *ngIf="currentPage < totalPages"
-					[pageNumber]="currentPage + 1"  [routeBeforePageNumber]="routeBeforePageNumber"
-				> next
-				</page-link>
-
-				<jump-to-page *ngIf="jumpToPageInput"
-					[pageNumberInput]="jumpToPageInput.data"
+				<previous-and-next-page-links
+					[currentPage]="currentPage" [totalPages]="totalPages"
 					[routeBeforePageNumber]="routeBeforePageNumber"
-				></jump-to-page>
+				></previous-and-next-page-links>
+
+				<jump-to-page-controls *ngIf="jumpToPageInput"
+					[input]="jumpToPageInput"
+					[routeBeforePageNumber]="routeBeforePageNumber"
+				></jump-to-page-controls>
 
 			</div>
 		</nav>

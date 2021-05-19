@@ -3,17 +3,17 @@ import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs_module/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { JumpToPageComponent } from './jump-to-page.component';
+import { JumpToPageControlsComponent } from './jump-to-page-controls.component';
 import { NgModule } from '@angular/core';
-import { PageLinkComponent } from './/page-link.component';
 import { RouterModule } from '@angular/router';
+import { PreviousAndNextPageLinksComponent } from './previous-and-next-page-links.component';
 
 
 @NgModule({
 	declarations: [
 		AppPaginationControlsComponent,
-		JumpToPageComponent,
-		PageLinkComponent
+		JumpToPageControlsComponent,
+		PreviousAndNextPageLinksComponent
 	],
 	imports: [
 		CommonModule,
