@@ -7,21 +7,15 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 @Component({
 	selector: 'app-alert',
 	template: `
-		<div class="alert fixed-alert fixed-overlay" (click)="doNothing($event)"
+		<div class="alert app-alert static-block-overlay" (click)="clearAlert(index, $event)"
 			 [class.alert-danger]="data.isError"
 			 [class.alert-success]="!(data.isError)"
 			 [class.alert-dismissible]="true"
 		>
-			<span class="close" data-dismiss="alert" aria-label="close"
-				  (click)="clear($event, index)"
-			>
-				<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-			</span>
-
 			<strong>{{data.message}}</strong>
 		</div>
 	`,
-	styles: [`.fixed-alert { margin: auto; width: 96%; }`]
+	styles: [`.app-alert { margin: auto; width: 96%; }`]
 })
 export class AppAlertComponent extends HasDataInputComponent<Alert> {
 
@@ -30,12 +24,7 @@ export class AppAlertComponent extends HasDataInputComponent<Alert> {
 	alerts = AlertsService;
 
 
-	doNothing(event) {
-		event.stopPropagation();
-	}
-
-
-	clear(event, index) {
+	clearAlert(index, event: Event) {
 		event.stopPropagation();
 		this.alerts.clearAlert(index);
 	}
