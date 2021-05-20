@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DeletingAllUserImagesProgressData }
-	from '@runtime-state-data/deleting-all-user-images-progress.data';
+import { DeletingAllUserFilesProgressData }
+	from '@runtime-state-data/deleting-all-user-files-progress.data';
 
 
 @Component({
@@ -13,6 +13,6 @@ import { DeletingAllUserImagesProgressData }
 })
 export class DeletingFilesProgressBarComponent {
 
-	progress = DeletingAllUserImagesProgressData;
+	progress = DeletingAllUserFilesProgressData;
 
 }

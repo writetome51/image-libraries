@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ProgressBarIsActiveData as progressBarActive }
-	from '@runtime-state-data/progress-bar-is-active.data';
+import { ActiveProgressBarCountData as activeProgressBarCount }
+	from '@runtime-state-data/active-progress-bar-count.data';
 
 
 @Component({
@@ -35,12 +35,12 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
 
 
 	ngOnInit() {
-		progressBarActive.data = true;
+		++activeProgressBarCount.data;
 	}
 
 
 	ngOnDestroy() {
-		progressBarActive.data = false;
+		--activeProgressBarCount.data;
 	}
 
 }
