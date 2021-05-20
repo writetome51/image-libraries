@@ -1,18 +1,17 @@
 import { AppImage } from '@interfaces/app-image.interface';
+import { appName } from '@string-constants/app-name';
+import { getMin } from '@writetome51/get-max-min';
 import { ImageRecord } from '@interfaces/image-record.interface';
-// import { ResettableToDefault } from '@interfaces/resettable-to-default';
 import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
 import { not } from '@writetome51/not';
+import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { setArray } from '@writetome51/set-array';
-import { getMin } from '@writetome51/get-max-min';
 
 
-// All data structures intended to be auto-reset to their default values when
-// the user loads the logged-out home page are defined here.  Each must implement
-// ResettableToDefault.
+// All data structures intended to be reset to their default values when the logged-out home
+// page is loaded are defined here.  Each must be ResettableToDefault.
 
-
-export class ActionMenuChoicesData {
+export const ActionMenuChoicesData: ResettableToDefault = class __ActionMenuChoicesData {
 
 	static global: MenuChoice[];
 	static images: object;
@@ -36,13 +35,10 @@ export class ActionMenuChoicesData {
 
 		this.images = {}; // keys will be image names, values will be menu choices
 	}
+};
 
-}
 
-
-// Stores names of all libraries belonging to logged-in user
-
-export class LibraryNamesData {
+export const UserLibraryNamesData: ResettableToDefault = class __LibraryNamesData {
 
 	static data: string[];
 
@@ -50,11 +46,10 @@ export class LibraryNamesData {
 	static setDefault() {
 		this.data = undefined;
 	}
+};
 
-}
 
-
-export class PageData {
+export const PageData: ResettableToDefault =  class __PageData {
 
 	private static __size;
 
@@ -67,18 +62,20 @@ export class PageData {
 	static set size(value) {
 		const pageSizeChoices = [10,20,30,40];
 		if (not(pageSizeChoices.includes(value))) {
-			value = this.closest(pageSizeChoices, value);
+			value = this.__closest(pageSizeChoices, value);
 		}
 		this.__size = value;
 	}
 
+
 	// Must be called before LoadData.setDefault()
+
 	static setDefault() {
 		this.size = 20;
 	}
 
 
-	static closest(numbers, num) {
+	private static __closest(numbers, num) {
 		let differences = new Array(numbers.length);
 		for (let i=0, len = numbers.length; i < len; ++i){
 			differences[i] = (Math.abs(numbers[i] - num));
@@ -87,10 +84,10 @@ export class PageData {
 		return numbers[index];
 	}
 
-}
+};
 
 
-export class LoadData {
+export const LoadData: ResettableToDefault = class __LoadData {
 
 	static number: number;
 
@@ -113,12 +110,12 @@ export class LoadData {
 		this.size = PageData.size;
 	}
 
-}
+};
 
 
 // Stores images not yet saved to db.
 
-export class NewImagesData {
+export const NewImagesData: ResettableToDefault = class __NewImagesData {
 
 	static data: AppImage[] = [];
 
@@ -126,11 +123,10 @@ export class NewImagesData {
 	static setDefault() {
 		this.data = [];
 	}
+};
 
-}
 
-
-export class CurrentPageImagesData {
+export const CurrentPageImagesData: ResettableToDefault = class __CurrentPageImagesData {
 
 	static data: ImageRecord[] = [];
 
@@ -138,11 +134,11 @@ export class CurrentPageImagesData {
 	static setDefault() {
 		setArray(this.data, []);
 	}
+};
 
-}
 
-
-export class ThumbnailDisplaySettingsData {
+export const ThumbnailDisplaySettingsData: ResettableToDefault =
+	class __ThumbnailDisplaySettingsData {
 
 	static width: number;
 
@@ -150,16 +146,26 @@ export class ThumbnailDisplaySettingsData {
 	static setDefault() {
 		this.width = 100;
 	}
+};
 
-}
 
+export const SearchResultsData: ResettableToDefault = class __SearchResultsData {
 
-export class SearchResultsData {
-
-	static data: any[] = [];
+	static data = [];
 
 
 	static setDefault() {
 		setArray(this.data, []);
 	}
-}
+};
+
+
+export const CurrentPageTitleData: ResettableToDefault = class __CurrentPageTitleData {
+
+	static data: string;
+
+
+	static setDefault() {
+		this.data = appName;
+	}
+};

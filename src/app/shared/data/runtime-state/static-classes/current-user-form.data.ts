@@ -1,22 +1,16 @@
 export class CurrentUserFormData {
 
-	// Bound to 'password' text input.
-	static password = '';
+	static password = ''; // Bound to 'password' input.
 
-	// Bound to 'password again' text input.
-	static passwordAgain = '';
+	static passwordAgain = ''; // Bound to 'password again' input.
 
-	// For when user wants to change password
-	static newPassword = ''; // bound to 'new password' text input
+	static newPassword = ''; // Bound to 'new password' input
 
-	// users create this to allow them to reset their password later
-	static securityQuestion = {question: '', answer: ''}; // bound to 'security question' inputs
+	static securityQuestion = {question: '', answer: ''}; // Bound to 'security question' inputs
 
-	// Bound to 'email' text input
-	static email = '';
+	static email = ''; // Bound to 'email' input
 
-	// For when user wants to change email
-	static newEmail = ''; // bound to 'new email' text input
+	static newEmail = ''; // Bound to 'new email' input
 
 
 	static set question(value) {
@@ -37,6 +31,5 @@ export class CurrentUserFormData {
 	static get answer() {
 		return this.securityQuestion.answer;
 	}
-
 
 }
