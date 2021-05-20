@@ -5,10 +5,10 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { AWSStorageService } from '@services/aws/aws-storage.service';
 import { ExecuteLoopRequiringProgressUpdateService as executeLoopRequiringProgressUpdate}
 	from '@services/execute-loop-requiring-progress-update.service';
-import { UploadingImagesProgressData as uploadingImagesProgress}
-	from '@runtime-state-data/uploading-images-progress.data';
-import { DeletingAllUserImagesProgressData as deletingImagesProgress }
-	from '@runtime-state-data/deleting-all-user-images-progress.data';
+import { UploadingFilesProgressData as uploadingFilesProgress}
+	from '@runtime-state-data/uploading-files-progress.data';
+import { DeletingAllUserFilesProgressData as deletingAllUserFilesProgress }
+	from '@runtime-state-data/deleting-all-user-files-progress.data';
 
 
 // Each user gets one folder (named after their username), containing their files.
@@ -27,20 +27,20 @@ export class UserFileStorageService {
 		await executeLoopRequiringProgressUpdate.go(
 			files,
 			async (file, i) => urls[i] = await this.__addFileAndReturnURL(file, userName),
-			uploadingImagesProgress
+			uploadingFilesProgress
 		)
 		removeByTest((value) => noValue(value), urls);
 		return urls;
 	}
 
 
-	async deleteUser(userName: string): Promise<{ success: true } | HasError> {
+	async deleteUserFiles(userName: string): Promise<{ success: true } | HasError> {
 		try {
-			await this.__awsStorage.deleteFolder(userName, deletingImagesProgress);
+			await this.__awsStorage.deleteFolder(userName, deletingAllUserFilesProgress);
 			return {success: true};
 		}
 		catch (err) {
-			return {error: {message: `There was an error deleting your folder: ${err.message}`}};
+			return {error: {message: `There was an error deleting your files: ${err.message}`}};
 		}
 	}
 

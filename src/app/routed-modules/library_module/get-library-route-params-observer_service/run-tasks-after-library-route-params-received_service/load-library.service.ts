@@ -1,7 +1,7 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibraryPaginatorService } from '../../library-paginator_service/library-paginator.service';
-import { LibraryNamesData as libraryNames }
+import { UserLibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';

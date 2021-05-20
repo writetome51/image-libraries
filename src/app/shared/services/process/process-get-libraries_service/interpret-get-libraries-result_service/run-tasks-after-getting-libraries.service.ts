@@ -3,14 +3,14 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@services/browser-storage/libraries-in-browser-storage.service';
-import { LibraryNamesData as libraryNames }
+import { UserLibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingLibrariesService implements IDoThis {
 
-	constructor(private __localLibraries: LibrariesInBrowserStorageService) {}
+	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {}
 
 
 	async go(libraries: LibraryRecord[]) {
@@ -23,7 +23,7 @@ export class RunTasksAfterGettingLibrariesService implements IDoThis {
 		for (let i = 0, length = libraries.length; i < length; ++i) {
 			libsMap[libraries[i].name] = libraries[i];
 		}
-		this.__localLibraries.set(libsMap);
+		this.__librariesInBrowser.set(libsMap);
 		libraryNames.data = Object.keys(libsMap);
 	}
 

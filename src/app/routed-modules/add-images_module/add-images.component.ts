@@ -2,7 +2,6 @@ import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { UploadingImagesProgressData } from '@runtime-state-data/uploading-images-progress.data';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 
 
@@ -10,16 +9,11 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 	selector: 'add-images',
 	template: `
 		<header><h2>{{heading}}</h2></header>
+
 		<div><p>{{instructions}}</p></div>
 		<p class="warning-text">{{warning}}</p>
 
-		<ng-container *ngIf="savingNewImages">
-			<big-loading-spinner></big-loading-spinner>
-
-			<progress-bar *ngIf="progress.percentageComplete > 0"
-				[percentageComplete]="progress.percentageComplete"  [label]="'Uploading files: '"
-			></progress-bar>
-		</ng-container>
+		<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
 
 		<div *ngIf="!(savingNewImages)">
 			<upload-images-from-device></upload-images-from-device>
@@ -31,7 +25,6 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 export class AddImagesComponent {
 
 	heading = 'Add Images';
-	progress = UploadingImagesProgressData;
 	instructions = `The images can come from your own device or from somewhere
 		else in the web.`;
 	warning = 'Do not upload highly sensitive images. They will be accessible at public URLs.'

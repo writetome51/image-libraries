@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryNamesData as libraryNames }
+import { UserLibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 

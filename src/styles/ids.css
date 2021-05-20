@@ -1,3 +1,10 @@
+#site-footer {
+	position: relative;
+	margin-top: 100px;
+	font-size: x-small;
+}
+
+
 #jump-to-page-number-input {
 	width: 100px;
 	height: 30px;

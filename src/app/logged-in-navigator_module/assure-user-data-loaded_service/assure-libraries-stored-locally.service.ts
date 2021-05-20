@@ -7,7 +7,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
-import { LibraryNamesData as libraryNames }
+import { UserLibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetLibrariesService }

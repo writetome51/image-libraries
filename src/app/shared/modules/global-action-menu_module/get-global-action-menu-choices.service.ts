@@ -5,7 +5,7 @@ import { getArrFilled } from '@writetome51/get-arr-filled';
 import { GetMenuChoices } from '@action-menu_module/get-menu-choices.interface';
 import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { Injectable } from '@angular/core';
-import { LibraryNamesData as libNames }
+import { UserLibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';

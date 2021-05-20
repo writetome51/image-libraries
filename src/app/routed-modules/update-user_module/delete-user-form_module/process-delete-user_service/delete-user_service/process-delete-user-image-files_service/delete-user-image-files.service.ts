@@ -12,7 +12,7 @@ export class DeleteUserImageFilesService implements IDoThis {
 
 
 	async go(email): Promise<{ success: true } | HasError> {
-		return this.__userFileStorage.deleteUser(email);
+		return this.__userFileStorage.deleteUserFiles(email);
 	}
 
 }
