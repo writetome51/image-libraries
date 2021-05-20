@@ -1,4 +1,6 @@
 import { AlertsService } from '@services/alerts.service';
+import { AppMessageCenterToBeVisibleService as appMessageCenterToBeVisible }
+	from '@services/app-message-center-to-be-visible.service';
 import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { CurrentPageTitleData as currentPageTitle }
@@ -8,8 +10,6 @@ import { ResetRuntimeStateDataToDefaultSettingsService }
 	from '@services/reset-runtime-state-data-to-default-settings.service';
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
-import { AppMessageCenterToBeVisibleService as appMessageCenterToBeVisible }
-	from '@services/app-message-center-to-be-visible.service';
 import { Title } from '@angular/platform-browser';
 
 
@@ -30,7 +30,7 @@ export class AppComponent {
 
 
 	get showMessageCenter(): boolean {
-		return appMessageCenterToBeVisible.go();
+		return appMessageCenterToBeVisible.true;
 	}
 
 
