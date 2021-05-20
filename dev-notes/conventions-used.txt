@@ -104,7 +104,16 @@ Subscribables (Observables, from Rxjs)
 The name of any variable or constant referencing a Subscribable ends with '$'.
 
 
-'Semi-Public' Object Properties
+ContextComponents
 
-Any property beginning with '$_' is 'semi-public', which means it's intended to be
-accessed in only one place outside of its class definition.
+Some re-usable Components have @Input properties and need to be nested in an outer
+Component that passes values to those @Inputs.  The outer Component is the context for the
+inner Component.  Some of these re-usable inner Components have an @Input property named
+'context', and its value must be a Component whose name ends with 'ContextComponent'.
+There are ContextComponents made specifically to be the contexts for certain re-usable
+Components, such as ImagesViewerContextComponent being the context for
+ImagesViewerComponent.
+
+If the re-usable inner Component doesn't have a 'context' property, the outer Component it
+is nested in isn't referred to as a ContextComponent, simply because it doesn't need to
+be.
