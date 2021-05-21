@@ -43,7 +43,7 @@ export class SecurityQuestionComponent {
 
 
 	constructor(title: Title) {
-		title.setTitle(getPageTitle.go(['Security Question']));
+		title.setTitle(getPageTitle.go([this.heading]));
 	}
 
 }

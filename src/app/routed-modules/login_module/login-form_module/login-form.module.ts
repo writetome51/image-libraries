@@ -1,8 +1,6 @@
 import { AppValidatingFormInputsModule }
 	from '@app-validating-form-inputs_module/app-validating-form-inputs.module';
 import { CommonModule } from '@angular/common';
-import { ExecuteFunctionButtonModule }
-	from '@execute-function-button_module/execute-function-button.module';
 import { LoginFormComponent } from './login-form.component';
 import { LoginFormInputsComponent } from './login-form-inputs.component';
 import { LoginFormServicesModule } from './login-form-services.module';
@@ -18,7 +16,6 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 		RouterModule,
 		LoginFormServicesModule,
 		AppValidatingFormInputsModule,
-		ExecuteFunctionButtonModule,
 		SubmitFormButtonModule
 	],
 	exports: [LoginFormComponent]
