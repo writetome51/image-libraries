@@ -5,7 +5,8 @@ import { Component, Input } from '@angular/core';
 	selector: 'progress-bar',
 	template: `
 		<div class="app-progress-bar" [style.width]="width">
-			{{label}} <span>{{percentageComplete}} %</span>
+			<span *ngIf="context.label">{{context.label}}</span>
+			<span>{{context.percentageComplete}} %</span>
 		</div>
 	`,
 	styles: [
@@ -23,12 +24,11 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressBarComponent {
 
-	@Input() percentageComplete: number;
-	@Input() label? = '';
+	@Input() context: { percentageComplete: number, label?: string };
 
 
 	get width(): string {
-		return this.percentageComplete + '%';
+		return this.context.percentageComplete + '%';
 	}
 
 }
