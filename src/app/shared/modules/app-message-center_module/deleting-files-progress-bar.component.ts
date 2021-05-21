@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DeletingAllUserFilesProgressData }
 	from '@runtime-state-data/deleting-all-user-files-progress.data';
+import { AppProgressBarComponent } from './app-progress-bar.abstract.component';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { DeletingAllUserFilesProgressData }
 		></progress-bar>
 	`
 })
-export class DeletingFilesProgressBarComponent {
+export class DeletingFilesProgressBarComponent extends AppProgressBarComponent {
 
 	progress = DeletingAllUserFilesProgressData;
 

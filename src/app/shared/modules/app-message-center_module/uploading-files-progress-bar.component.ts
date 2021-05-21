@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-progress.data';
+import { AppProgressBarComponent }
+	from '@modules/app-message-center_module/app-progress-bar.abstract.component';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-
 		></progress-bar>
 	`
 })
-export class UploadingFilesProgressBarComponent {
+export class UploadingFilesProgressBarComponent extends AppProgressBarComponent {
 
 	progress = UploadingFilesProgressData;
 

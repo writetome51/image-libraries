@@ -1,6 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ActiveProgressBarCountData as activeProgressBarCount }
-	from '@runtime-state-data/active-progress-bar-count.data';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -23,7 +21,7 @@ import { ActiveProgressBarCountData as activeProgressBarCount }
 		}`
 	]
 })
-export class ProgressBarComponent implements OnInit, OnDestroy {
+export class ProgressBarComponent {
 
 	@Input() percentageComplete: number;
 	@Input() label? = '';
@@ -31,16 +29,6 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
 
 	get width(): string {
 		return this.percentageComplete + '%';
-	}
-
-
-	ngOnInit() {
-		++activeProgressBarCount.data;
-	}
-
-
-	ngOnDestroy() {
-		--activeProgressBarCount.data;
 	}
 
 }
