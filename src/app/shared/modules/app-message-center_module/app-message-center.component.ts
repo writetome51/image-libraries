@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { AlertsService } from '@services/alerts.service';
+import { AppMessageCenterVisibilityService } from '@services/app-message-center-visibility.service';
 
 
 @Component({
 	selector: 'app-message-center',
 	template: `
-		<div class="fixed-overlay">
-			<app-alerts *ngIf="alerts.get().length" (click)="alerts.clearAll()"></app-alerts>
+		<div class="fixed-overlay" (click)="visibility.clear()">
+			<app-alerts (click)="alerts.clearAll()"></app-alerts>
 
 			<uploading-files-progress-bar></uploading-files-progress-bar>
 
@@ -21,7 +22,7 @@ import { AlertsService } from '@services/alerts.service';
 			padding: 100px;
 			left: 0;
 			top: 0;
-			width: 100%;
+			width: 100%; height: 100%;
 			overflow: auto;
 			background-color: rgb(0, 0, 0);
 			background-color: rgba(0, 0, 0, 0.4);
@@ -31,5 +32,6 @@ import { AlertsService } from '@services/alerts.service';
 export class AppMessageCenterComponent {
 
 	alerts = AlertsService;
+	visibility = AppMessageCenterVisibilityService;
 
 }

@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { DeletingAllUserFilesProgressData }
 	from '@runtime-state-data/deleting-all-user-files-progress.data';
-import { AppProgressBarComponent } from './app-progress-bar.abstract.component';
+import { ProgressBarContextComponent } from './progress-bar-context.abstract.component';
 
 
 @Component({
 	selector: 'deleting-files-progress-bar',
-	template: `
-		<progress-bar *ngIf="progress.percentageComplete > 0"
-			[percentageComplete]="progress.percentageComplete"  [label]="'Deleting files: '"
-		></progress-bar>
-	`
+	template: `<progress-bar *ngIf="percentageComplete > 0" [context]="this"></progress-bar>`
 })
-export class DeletingFilesProgressBarComponent extends AppProgressBarComponent {
+export class DeletingFilesProgressBarComponent extends ProgressBarContextComponent {
 
 	progress = DeletingAllUserFilesProgressData;
+	label = 'Deleting files: ';
 
 }
