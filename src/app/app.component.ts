@@ -1,4 +1,3 @@
-import { AlertsService } from '@services/alerts.service';
 import { AppMessageCenterToBeVisibleService as appMessageCenterToBeVisible }
 	from '@services/app-message-center-to-be-visible.service';
 import { appName } from '@string-constants/app-name';
@@ -20,7 +19,6 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent {
 
 	siteHeading = appName;
-	alerts = AlertsService;
 
 
 	get loggedIn(): boolean {
