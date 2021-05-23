@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ImagesViewerContextComponent }
 	from '@abstract-components/images-viewer-context.abstract.component';
+import { HasContextInputComponent } from '@abstract-components/has-context-input.abstract.component';
 
 
 @Component({
@@ -26,9 +27,8 @@ import { ImagesViewerContextComponent }
 		</div>
 	`
 })
-export class ImagesViewerComponent {
+export class ImagesViewerComponent extends HasContextInputComponent<ImagesViewerContextComponent> {
 
-	@Input() context: ImagesViewerContextComponent;
 	@Input() noImagesMessage = 'No Images';
 
 }

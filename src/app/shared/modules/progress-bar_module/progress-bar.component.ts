@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { HasContextInputComponent }
+	from '@abstract-components/has-context-input.abstract.component';
+import { ProgressBarContextComponent } from './progress-bar-context.abstract.component';
 
 
 @Component({
@@ -22,10 +25,7 @@ import { Component, Input } from '@angular/core';
 		}`
 	]
 })
-export class ProgressBarComponent {
-
-	@Input() context: { percentageComplete: number, label?: string };
-
+export class ProgressBarComponent extends HasContextInputComponent<ProgressBarContextComponent> {
 
 	get width(): string {
 		return this.context.percentageComplete + '%';

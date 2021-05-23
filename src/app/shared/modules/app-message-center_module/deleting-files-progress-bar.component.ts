@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DeletingAllUserFilesProgressData }
 	from '@runtime-state-data/deleting-all-user-files-progress.data';
-import { ProgressBarContextComponent } from './progress-bar-context.abstract.component';
+import { ProgressBarContextComponent }
+	from '@modules/progress-bar_module/progress-bar-context.abstract.component';
 
 
 @Component({

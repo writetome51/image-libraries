@@ -3,15 +3,15 @@ import { ClickStartedExecutionStatusData }
 import { ClickExecuteFunctionContextComponent }
 	from './click-execute-function-context.abstract.component';
 import { Component, Input } from '@angular/core';
+import { HasContextInputComponent }
+	from '@abstract-components/has-context-input.abstract.component';
 
 
 @Component({selector: '', template: ''}) // prevents Angular build error
-export abstract class ClickExecuteFunctionComponent {
+export abstract class ClickExecuteFunctionComponent
+	extends HasContextInputComponent<ClickExecuteFunctionContextComponent>{
 
-	// required.  Instance of the component this component is used in.
-	@Input() context: ClickExecuteFunctionContextComponent;
-
-	// Passed to this.container.execute()
+	// Passed to this.context.execute()
 	@Input() funcArgs: any[] = [];
 
 	clicked = false;
