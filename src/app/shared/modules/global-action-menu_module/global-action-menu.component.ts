@@ -7,9 +7,7 @@ import { GlobalActionMenuChoicesExecutorService }
 @Component({
 	selector: 'global-action-menu',
 	template: `
-		<action-menu [getChoices]="getChoices"
-					 [specificChoicesExecutor]="specificChoicesExecutor"
-		>
+		<action-menu [getChoices]="getChoices" [specificChoicesExecutor]="specificChoicesExecutor">
 		</action-menu>
 	`
 })

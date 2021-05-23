@@ -21,9 +21,9 @@ export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	async go() {
 		selectedImages.data.length = 0;
-		alerts.setError('Image(s) deleted');
 		this.__runTasksAfterModifyingLoadedImages.go();
 		await this.__router.navigate([this.__currentRoute.get()]);
+		alerts.setSuccess('Image(s) deleted');
 	}
 
 }

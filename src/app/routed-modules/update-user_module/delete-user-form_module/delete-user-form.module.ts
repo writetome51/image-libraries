@@ -9,7 +9,6 @@ import { DeleteUserFormInputsComponent } from './delete-user-form-inputs.compone
 import { HTMLImageModule } from '@html-image_module/html-image.module';
 import { NgModule } from '@angular/core';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
-import { ProgressBarModule } from '@modules/app-message-center_module/progress-bar_module/progress-bar.module';
 import { DeleteUserFormInstructionsComponent } from './delete-user-form-instructions.component';
 
 
@@ -25,8 +24,7 @@ import { DeleteUserFormInstructionsComponent } from './delete-user-form-instruct
 		ClearAlertsOnDestroyModule,
 		CommonModule,
 		HTMLImageModule,
-		SubmitFormButtonModule,
-		ProgressBarModule
+		SubmitFormButtonModule
 	],
 	exports: [DeleteUserFormComponent]
 })

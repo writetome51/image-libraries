@@ -8,7 +8,8 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class InterpretDeleteSelectedImagesResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretDeleteSelectedImagesResultService
+		extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,

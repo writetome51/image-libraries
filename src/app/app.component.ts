@@ -1,5 +1,5 @@
-import { AppMessageCenterToBeVisibleService as appMessageCenterToBeVisible }
-	from '@services/app-message-center-to-be-visible.service';
+import { AppMessageCenterVisibilityService as appMessageCenterVisibility }
+	from '@services/app-message-center-visibility.service';
 import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { CurrentPageTitleData as currentPageTitle }
@@ -28,7 +28,7 @@ export class AppComponent {
 
 
 	get showMessageCenter(): boolean {
-		return appMessageCenterToBeVisible.true;
+		return appMessageCenterVisibility.visible;
 	}
 
 

@@ -6,6 +6,7 @@ import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.i
 import { not } from '@writetome51/not';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { setArray } from '@writetome51/set-array';
+import { LoadConfiguration } from '@interfaces/load-configuration.interface';
 
 
 // All data structures intended to be reset to their default values when the logged-out home
@@ -87,7 +88,7 @@ export const PageData: ResettableToDefault =  class __PageData {
 };
 
 
-export const LoadData: ResettableToDefault = class __LoadData {
+export const LoadData: ResettableToDefault & LoadConfiguration = class __LoadData {
 
 	static number: number;
 

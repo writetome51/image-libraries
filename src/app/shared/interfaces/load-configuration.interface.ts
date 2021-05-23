@@ -4,4 +4,6 @@ export interface LoadConfiguration {
 
 	number: number;
 
+	[propName: string]: any;
+
 }
