@@ -16,7 +16,7 @@ export class AppMessageCenterVisibilityService {
 	}
 
 
-	static clear() {
+	static hide() {
 		alerts.clearAll();
 		deletingAllUserFilesProgress.percentageComplete = 0;
 		uploadingFilesProgress.percentageComplete = 0;

@@ -6,7 +6,7 @@ import { AppMessageCenterVisibilityService } from '@services/app-message-center-
 @Component({
 	selector: 'app-message-center',
 	template: `
-		<div class="fixed-overlay" (click)="visibility.clear()">
+		<div class="fixed-overlay" (click)="visibility.hide()">
 			<app-alerts (click)="alerts.clearAll()"></app-alerts>
 
 			<uploading-files-progress-bar></uploading-files-progress-bar>
