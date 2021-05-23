@@ -7,7 +7,7 @@ import { AppMessageCenterVisibilityService } from '@services/app-message-center-
 	selector: 'app-message-center',
 	template: `
 		<div class="fixed-overlay" (click)="visibility.hide()">
-			<app-alerts (click)="alerts.clearAll()"></app-alerts>
+			<app-alerts (click)="clearAlerts($event)"></app-alerts>
 
 			<uploading-files-progress-bar></uploading-files-progress-bar>
 
@@ -33,5 +33,11 @@ export class AppMessageCenterComponent {
 
 	alerts = AlertsService;
 	visibility = AppMessageCenterVisibilityService;
+
+
+	clearAlerts(event) {
+		event.stopPropagation();
+		this.alerts.clearAll();
+	}
 
 }

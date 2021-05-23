@@ -6,7 +6,8 @@ import { UploadingFilesProgressBarComponent }
 	from './uploading-files-progress-bar.component';
 import { DeletingFilesProgressBarComponent }
 	from './deleting-files-progress-bar.component';
-import { ProgressBarModule } from '@modules/progress-bar_module/progress-bar.module';
+import { AppHorizontalProgressBarModule }
+	from './app-horizontal-progress-bar_module/app-horizontal-progress-bar.module';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ProgressBarModule } from '@modules/progress-bar_module/progress-bar.mod
 	imports: [
 		CommonModule,
 		AppAlertsModule,
-		ProgressBarModule
+		AppHorizontalProgressBarModule
 	],
 	exports: [AppMessageCenterComponent]
 })
