@@ -7,7 +7,7 @@ import { Waiter } from '@interfaces/waiter.interface';
 @Component({
 	selector: 'loading-content-section',
 	template: `
-		<ng-container clearExecutionStatusOnDestroy [executionStatus]="loadingStatus">
+		<ng-container setWaitingToFalseOnDestroy [waiter]="loadingStatus">
 			<header><h2>{{heading}}</h2></header>
 
 			<big-loading-spinner *ngIf="loadingStatus.waiting"></big-loading-spinner>

@@ -3,7 +3,7 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 import { Hoverable } from '@interfaces/hoverable.interface';
 import { HoverableContainerComponent }
 	from '@hoverable-container_module/hoverable-container.component';
-import { ImageSelectorService as imageSelector } from './image-selector.service';
+import { ImageSelectorService as imageSelector } from '@services/image-selector.service';
 import { not } from '@writetome51/not';
 import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
