@@ -11,7 +11,8 @@
 	</header>
 
 	<main>
-		<app-message-center *ngIf="showMessageCenter"></app-message-center>
+		<app-message-center *ngIf="messageCenterToBeVisible" (click)="hideMessageCenter()">
+		</app-message-center>
 
 		<router-outlet></router-outlet>
 	</main>

@@ -1,5 +1,4 @@
-import { AppMessageCenterVisibilityService as appMessageCenterVisibility }
-	from '@services/app-message-center-visibility.service';
+import { AppMessageCenterVisibilityService } from '@services/app-message-center-visibility.service';
 import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { CurrentPageTitleData as currentPageTitle }
@@ -19,6 +18,7 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent {
 
 	siteHeading = appName;
+	messageCenterVisibility = AppMessageCenterVisibilityService;
 
 
 	get loggedIn(): boolean {
@@ -27,8 +27,8 @@ export class AppComponent {
 	}
 
 
-	get showMessageCenter(): boolean {
-		return appMessageCenterVisibility.visible;
+	get messageCenterToBeVisible(): boolean {
+		return this.messageCenterVisibility.visible;
 	}
 
 
@@ -39,6 +39,11 @@ export class AppComponent {
 	) {
 		this.__resetRuntimeStateDataToDefaults.go();
 		this.__setDefaultPageTitle();
+	}
+
+
+	hideMessageCenter() {
+		this.messageCenterVisibility.hide();
 	}
 
 
