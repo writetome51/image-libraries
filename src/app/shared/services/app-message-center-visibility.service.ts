@@ -1,6 +1,6 @@
 import { AlertsService as alerts } from '@services/alerts.service';
-import { DeletingAllUserFilesProgressData as deletingAllUserFilesProgress }
-	from '@runtime-state-data/deleting-all-user-files-progress.data';
+import { DeletingFilesProgressData as deletingAllUserFilesProgress }
+	from '@runtime-state-data/deleting-files-progress.data';
 import { UploadingFilesProgressData as uploadingFilesProgress }
 	from '@runtime-state-data/uploading-files-progress.data';
 
