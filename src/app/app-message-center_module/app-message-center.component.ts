@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { AlertsService } from '@services/alerts.service';
-import { AppMessageCenterVisibilityService } from '@services/app-message-center-visibility.service';
 
 
 @Component({
 	selector: 'app-message-center',
 	template: `
-		<div class="fixed-overlay" (click)="visibility.hide()">
+		<div class="fixed-overlay">
 			<app-alerts (click)="clearAlerts($event)"></app-alerts>
 
 			<uploading-files-progress-bar></uploading-files-progress-bar>
@@ -32,7 +31,6 @@ import { AppMessageCenterVisibilityService } from '@services/app-message-center-
 export class AppMessageCenterComponent {
 
 	alerts = AlertsService;
-	visibility = AppMessageCenterVisibilityService;
 
 
 	clearAlerts(event) {
