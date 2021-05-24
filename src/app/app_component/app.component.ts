@@ -1,4 +1,4 @@
-import { AppMessageCenterVisibilityService } from '@services/app-message-center-visibility.service';
+import { AppMessageCenterVisibilityService } from './app-message-center-visibility.service';
 import { appName } from '@string-constants/app-name';
 import { Component, HostListener } from '@angular/core';
 import { CurrentPageTitleData as currentPageTitle }
