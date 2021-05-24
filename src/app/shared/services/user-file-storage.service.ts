@@ -7,8 +7,9 @@ import { ExecuteLoopRequiringProgressUpdateService as executeLoopRequiringProgre
 	from '@services/execute-loop-requiring-progress-update.service';
 import { UploadingFilesProgressData as uploadingFilesProgress}
 	from '@runtime-state-data/uploading-files-progress.data';
-import { DeletingAllUserFilesProgressData as deletingAllUserFilesProgress }
-	from '@runtime-state-data/deleting-all-user-files-progress.data';
+import { DeletingFilesProgressData as deletingFilesProgress }
+	from '@runtime-state-data/deleting-files-progress.data';
+import { AWSS3Service } from '@services/aws/aws-s3.service';
 
 
 // Each user gets one folder (named after their username), containing their files.
@@ -16,7 +17,7 @@ import { DeletingAllUserFilesProgressData as deletingAllUserFilesProgress }
 @Injectable({providedIn: 'root'})
 export class UserFileStorageService {
 
-	constructor(private __awsStorage: AWSStorageService) {}
+	constructor(private __awsStorage: AWSStorageService, private __awsS3: AWSS3Service) {}
 
 
 	// Creates folder for `userName` if it doesn't exist.
@@ -36,7 +37,13 @@ export class UserFileStorageService {
 
 	async deleteUserFiles(userName: string): Promise<{ success: true } | HasError> {
 		try {
-			await this.__awsStorage.deleteFolder(userName, deletingAllUserFilesProgress);
+			let objects = await this.__awsS3.getObjectsInside(userName);
+
+			await executeLoopRequiringProgressUpdate.go(
+				objects,
+				(obj) => this.__awsS3.deleteData({Key: obj.Key}),
+				deletingFilesProgress
+			);
 			return {success: true};
 		}
 		catch (err) {

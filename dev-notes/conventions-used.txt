@@ -63,7 +63,8 @@ Usage of the word 'Execute'
 
 Record
 
-The word 'Record' refers to a saved data structure, most likely saved in a database.
+The word 'Record' is used as a noun, referring to a saved data structure, most likely
+kept in a database.
 
 
 Load

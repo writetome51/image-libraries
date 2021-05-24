@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DeletingAllUserFilesProgressData }
-	from '@runtime-state-data/deleting-all-user-files-progress.data';
+import { DeletingFilesProgressData }
+	from '@runtime-state-data/deleting-files-progress.data';
 import { DeleteUserInputsService } from './delete-user-inputs.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { ProcessDeleteUserService }
@@ -23,7 +23,7 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 })
 export class DeleteUserFormComponent {
 
-	progress = DeletingAllUserFilesProgressData;
+	progress = DeletingFilesProgressData;
 
 
 	constructor(

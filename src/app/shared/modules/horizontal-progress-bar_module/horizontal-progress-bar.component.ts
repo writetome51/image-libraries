@@ -5,15 +5,15 @@ import { ProgressBarContextComponent } from './progress-bar-context.abstract.com
 
 
 @Component({
-	selector: 'progress-bar',
+	selector: 'horizontal-progress-bar',
 	template: `
-		<div class="app-progress-bar" [style.width]="width">
+		<div class="app-horizontal-progress-bar" [style.width]="width">
 			<span *ngIf="context.label">{{context.label}}</span>
 			<span>{{context.percentageComplete}} %</span>
 		</div>
 	`,
 	styles: [
-		`.app-progress-bar {
+		`.app-horizontal-progress-bar {
 			width: 1px; /* necessary? */
 			text-align: left;
 			padding-left: 10px;
@@ -25,7 +25,8 @@ import { ProgressBarContextComponent } from './progress-bar-context.abstract.com
 		}`
 	]
 })
-export class ProgressBarComponent extends HasContextInputComponent<ProgressBarContextComponent> {
+export class HorizontalProgressBarComponent
+	extends HasContextInputComponent<ProgressBarContextComponent> {
 
 	get width(): string {
 		return this.context.percentageComplete + '%';
