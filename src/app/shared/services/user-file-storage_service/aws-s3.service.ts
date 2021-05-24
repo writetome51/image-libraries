@@ -31,11 +31,6 @@ export class AWSS3Service {
 	});
 
 
-	getBucketURL(): string {
-		return `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
-	}
-
-
 	async insertData(params: {Key: string, Body?: any}) {
 		// Allows user to read and delete
 		params['ACL'] = 'public-read-write';
@@ -63,6 +58,18 @@ export class AWSS3Service {
 	}
 
 
+	getFileKey(fileName, folderName) {
+		return folderName + '/' + fileName;
+	}
+
+
+	getFileURL(fileName: string, folderName: string): string {
+		const bucketURL = this.__getBucketURL();
+		// The fileKey should not be URI-encoded. AWS S3 URI-encodes it for you.
+		return bucketURL + this.getFileKey(fileName, folderName);
+	}
+
+
 	private async __sendCommand(
 		command: Type<DeleteObjectCommand | PutObjectCommand>,
 		params: object
@@ -79,6 +86,11 @@ export class AWSS3Service {
 
 		if (noValue(output.Contents)) return [];
 		return output.Contents;
+	}
+
+
+	private __getBucketURL(): string {
+		return `https://` + this.__s3Bucket + '.' + `s3.amazonaws.com/`;
 	}
 
 }
