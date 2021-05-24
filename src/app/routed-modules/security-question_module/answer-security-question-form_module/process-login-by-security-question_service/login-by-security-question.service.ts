@@ -14,9 +14,12 @@ export class LoginBySecurityQuestionService implements IDoThis {
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
-	async go(): Promise<UserRecord | HasError> {
+	async go(answer: string): Promise<UserRecord | HasError> {
 		return await this.__realmFn.call('pub_loginBySecurityQuestionAndReturnUser',
-			{email: currentUserForm.email, securityQuestion: currentUserForm.securityQuestion}
+			{
+				email: currentUserForm.email,
+				securityQuestion: {question: currentUserForm.question, answer}
+			}
 		);
 	}
 

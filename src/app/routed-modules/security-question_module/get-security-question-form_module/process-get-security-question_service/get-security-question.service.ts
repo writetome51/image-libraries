@@ -1,5 +1,3 @@
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { AnsweredQuestion } from '@interfaces/answered-question.interface';
@@ -14,8 +12,8 @@ export class GetSecurityQuestionService implements IDoThis {
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}
 
 
-	async go(): Promise<AnsweredQuestion | HasError> {
-		return await this.__realmFn.call('pub_getSecurityQuestion', {email: currentUserForm.email});
+	async go(email): Promise<AnsweredQuestion | HasError> {
+		return await this.__realmFn.call('pub_getSecurityQuestion', {email});
 	}
 
 }

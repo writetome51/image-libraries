@@ -1,4 +1,4 @@
-import { AppComponent } from './app.component';
+import { AppComponent } from './app_component/app.component';
 import { AppMessageCenterModule } from './app-message-center_module/app-message-center.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule, Title } from '@angular/platform-browser';
