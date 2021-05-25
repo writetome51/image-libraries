@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DeletingFilesProgressData }
 	from '@runtime-state-data/deleting-files-progress.data';
 import { ProgressBarContextComponent }
-	from '@modules/horizontal-progress-bar_module/progress-bar-context.abstract.component';
+	from '@abstract-components/progress-bar-context.abstract.component';
 
 
 @Component({

@@ -1,7 +1,7 @@
-// import { IDoThis } from '@interfaces/i-do-this.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export class RemoveBrowserStorageService { // implements IDoThis
+export class __RemoveBrowserStorageService {
 
 	static go() {
 		localStorage.clear();
@@ -9,3 +9,5 @@ export class RemoveBrowserStorageService { // implements IDoThis
 	}
 
 }
+
+export const RemoveBrowserStorageService: IDoThis = __RemoveBrowserStorageService;

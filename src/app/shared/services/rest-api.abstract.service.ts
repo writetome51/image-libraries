@@ -4,6 +4,8 @@ import { modifyObject } from '@writetome51/modify-object';
 import { Observable } from 'rxjs';
 
 
+// Probably won't need this file soon
+
 export abstract class RestAPIService {
 
 	protected abstract _baseURL: string;

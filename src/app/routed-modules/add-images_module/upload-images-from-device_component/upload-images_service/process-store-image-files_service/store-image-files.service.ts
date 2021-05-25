@@ -2,7 +2,7 @@ import { EmailInBrowserStorageService } from '@browser-storage/email-in-browser-
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { UserFileStorageService } from '@services/user-file-storage.service';
+import { UserFileStorageService } from '@services/user-file-storage_service/user-file-storage.service';
 import { TemporaryImageURLsData as temporaryImageURLs }
 	from '@runtime-state-data/temporary-image-urls.data';
 // import { ImageRecord } from '@interfaces/image-record.interface';

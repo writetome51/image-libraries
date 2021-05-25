@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-progress.data';
 import { ProgressBarContextComponent }
-	from '@modules/horizontal-progress-bar_module/progress-bar-context.abstract.component';
+	from '@abstract-components/progress-bar-context.abstract.component';
 
 
 @Component({

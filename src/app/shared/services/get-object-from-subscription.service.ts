@@ -4,6 +4,7 @@ import { Subscribable } from 'rxjs';
 import { notObject } from '@writetome51/is-object-not-object';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
+// Probably won't need this file soon
 
 export class __GetObjectFromSubscriptionService {
 

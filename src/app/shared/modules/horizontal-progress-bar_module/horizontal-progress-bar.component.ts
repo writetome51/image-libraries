@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { HasContextInputComponent }
 	from '@abstract-components/has-context-input.abstract.component';
-import { ProgressBarContextComponent } from './progress-bar-context.abstract.component';
+import { ProgressBarContextComponent }
+	from '@abstract-components/progress-bar-context.abstract.component';
 
 
 @Component({
