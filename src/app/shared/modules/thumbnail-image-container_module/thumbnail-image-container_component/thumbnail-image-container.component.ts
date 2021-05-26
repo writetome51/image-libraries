@@ -3,7 +3,7 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 import { Hoverable } from '@interfaces/hoverable.interface';
 import { HoverableContainerComponent }
 	from '@hoverable-container_module/hoverable-container.component';
-import { ImageSelectorService as imageSelector } from '@services/image-selector.service';
+import { ImageSelectorService } from '@services/image-selector.service';
 import { not } from '@writetome51/not';
 import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
@@ -29,7 +29,9 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 
 	constructor(
 		// if selectMultiple is enabled, hovering is disabled and the image has no routerLink.
-		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService) {}
+		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService,
+		private __imageSelector: ImageSelectorService
+	) {}
 
 
 	isHovered(container: HoverableContainerComponent): boolean {
@@ -40,7 +42,7 @@ export class ThumbnailImageContainerComponent implements Hoverable {
 
 	toggleSelect(): void {
 		if (not(this.multiSelectEnabled)) return;
-		imageSelector.toggleSelect(this.image);
+		this.__imageSelector.toggleSelect(this.image);
 	}
 
 
