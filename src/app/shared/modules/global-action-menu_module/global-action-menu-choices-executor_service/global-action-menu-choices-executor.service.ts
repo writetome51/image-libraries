@@ -5,7 +5,8 @@ import { ProcessDeleteSelectedImagesService }
 	from './process-delete-selected-images_service/process-delete-selected-images.service';
 import { SpecificChoicesExecutorService }
 	from '@action-menu_module/specific-choices-executor.abstract.service';
-import { ToggleEnableMenuChoiceService } from './toggle-enable-menu-choice.service';
+import { ToggleEnableSelectMultipleImagesService }
+	from './toggle-enable-select-multiple-images.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -13,11 +14,11 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 
 	constructor(
 		processDeleteSelectedImages: ProcessDeleteSelectedImagesService,
-		toggleEnableMenuChoice: ToggleEnableMenuChoiceService
+		toggleEnableSelectMultiple: ToggleEnableSelectMultipleImagesService
 	) {
 		super([
 			{executor: processDeleteSelectedImages, label: choiceLabel.deleteSelectedImages},
-			{executor: toggleEnableMenuChoice, label: choiceLabel.selectMultipleImages}
+			{executor: toggleEnableSelectMultiple, label: choiceLabel.selectMultipleImages}
 		]);
 	}
 

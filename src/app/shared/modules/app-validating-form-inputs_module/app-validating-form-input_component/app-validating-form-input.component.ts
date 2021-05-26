@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InputValidatorService as inputValidator, ValidatingInput }
 	from '@writetome51/validating-inputs';
 import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
