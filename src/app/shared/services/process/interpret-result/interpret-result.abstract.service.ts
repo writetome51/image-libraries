@@ -1,7 +1,7 @@
+import { HandleErrorService } from '@handle-error/handle-error.service';
+import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResult } from '@interfaces/interpret-result.interface';
-import { HandleErrorService } from '../handle-error/handle-error.service';
-import { HasError } from '@interfaces/has-error.interface';
 import { noValue } from '@writetome51/has-value-no-value';
 
 

@@ -1,7 +1,7 @@
-import { removeByIndex } from '@writetome51/array-remove-by-index';
 import { Alert } from '@interfaces/alert.interface';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { not } from '@writetome51/not';
+import { removeByIndex } from '@writetome51/array-remove-by-index';
 
 
 export class AlertsService {

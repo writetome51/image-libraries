@@ -1,5 +1,5 @@
 import { HandleExistingUserDBOperationErrorService }
-	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
+	from '@handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { InterpretResultService } from './interpret-result.abstract.service';
 

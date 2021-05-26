@@ -1,9 +1,10 @@
-export interface LoadConfiguration {
+import { HasAny } from '@interfaces/has-any.interface';
+
+
+export interface LoadConfiguration extends HasAny {
 
 	size: number;
 
 	number: number;
-
-	[propName: string]: any;
 
 }

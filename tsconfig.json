@@ -57,8 +57,11 @@
 			"@guards/*": [
 				"src/app/shared/guards/*"
 			],
-			"@handle-db-operation-error_service/*": [
-				"src/app/shared/services/process/handle-error/handle-db-operation-error_service/*"
+			"@handle-error/*": [
+				"src/app/shared/services/process/handle-error/*"
+			],
+			"@handle-existing-user-db-operation-error_service/*": [
+				"src/app/shared/services/process/handle-error/handle-existing-user-db-operation-error_service/*"
 			],
 			"@hoverable-container_module/*": [
 				"src/app/shared/modules/hoverable-container_module/*"

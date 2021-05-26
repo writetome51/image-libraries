@@ -1,7 +1,8 @@
-export interface Gettable<T> {
+import { HasAny } from '@interfaces/has-any.interface';
+
+
+export interface Gettable<T> extends HasAny {
 
 	get: () => T;
-
-	[propName: string]: any;
 
 }

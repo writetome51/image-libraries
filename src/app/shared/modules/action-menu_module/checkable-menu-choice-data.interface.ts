@@ -1,7 +1,8 @@
-export interface CheckableMenuChoiceData {
+import { HasAny } from '@interfaces/has-any.interface';
+
+
+export interface CheckableMenuChoiceData extends HasAny {
 
 	checked: boolean;
-
-	[propName: string]: any;
 
 }
