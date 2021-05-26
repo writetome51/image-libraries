@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SendFormData } from '@interfaces/send-form-data.interface';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Component({
@@ -11,6 +11,6 @@ import { SendFormData } from '@interfaces/send-form-data.interface';
 })
 export class SearchComponent {
 
-	@Input() iDoThis: SendFormData;
+	@Input() iDoThis: IDoThis;
 
 }

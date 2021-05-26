@@ -3,7 +3,7 @@ import { Gettable } from '@interfaces/gettable.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
-export abstract class DataTotalService implements DataContainer<number> {
+export abstract class DataTotalService implements DataContainer<void, number> {
 
 	constructor(
 		private __storeTotal: IDoThis,

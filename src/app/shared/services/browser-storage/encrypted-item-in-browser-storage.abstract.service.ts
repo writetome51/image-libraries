@@ -6,7 +6,7 @@ import { DataContainer } from '@interfaces/data-container.interface';
 
 
 export abstract class EncryptedItemInBrowserStorageService<T> extends ItemInBrowserStorage
-	implements DataContainer<T> {
+	implements DataContainer<T, T> {
 
 	private __cryptographer = new SimpleCrypto(ecky);
 

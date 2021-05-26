@@ -1,8 +1,8 @@
 import { BackgroundExecutionStatusData as executionStatus }
 	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({

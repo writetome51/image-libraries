@@ -10,11 +10,10 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 
 			<!--  size slider    -->
 			<label for="image-size-control" hidden>Image Size Control</label>
-			Change size:
-			<input type="range" id="image-size-control" min="0" max="400" [(ngModel)]="imageWidth">
+			Change image size:
+			<input type="range" id="image-size-control" min="50" max="400" [(ngModel)]="imageWidth">
 			<!-- / size slider   -->
 
-			Current image width: {{imageWidth}}px
 		</div>
 	`
 })
