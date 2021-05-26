@@ -5,4 +5,4 @@ import { Gettable } from './gettable.interface';
 // Where it stores the data, how it stores it, in what form it stores it, etc.,
 // is up to that object.
 
-export interface DataContainer<T> extends Settable, Gettable<T> {}
+export interface DataContainer<X, Y> extends Settable<X>, Gettable<Y> {}
