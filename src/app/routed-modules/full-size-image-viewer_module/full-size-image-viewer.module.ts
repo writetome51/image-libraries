@@ -18,6 +18,8 @@ import { RouteParamIDData as paramID} from '@read-only-data/route-param-id.data'
 import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { SaveChangesButtonComponent } from './save-changes-button.component';
+import { ExecuteFunctionButtonModule } from '@execute-function-button_module/execute-function-button.module';
+import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { SaveChangesButtonComponent } from './save-changes-button.component';
 	imports: [
 		CommonModule,
 		GoogleMapsModule,
+		ExecuteFunctionButtonModule,
 		RouterModule.forChild([
 			{
 				path: `:${paramID.imageName}`,
@@ -48,7 +51,8 @@ import { SaveChangesButtonComponent } from './save-changes-button.component';
 				pathMatch: 'full',
 				redirectTo: `/${appModulePath.LibraryModule}/` + libModulePath.LibraryComponent
 			}
-		])
+		]),
+		SubmitFormButtonModule
 	],
 
 	exports: [FullSizeImageViewerComponent]

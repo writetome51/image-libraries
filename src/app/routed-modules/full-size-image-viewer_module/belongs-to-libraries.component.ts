@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@services/browser-storage/libraries-in-browser-storage.service';
 import { LibraryRecord } from '@interfaces/library-record.interface';
@@ -19,22 +19,23 @@ import { getByTest } from '@writetome51/array-get-by-test';
 		</ul>
 	`
 })
-export class BelongsToLibrariesComponent {
+export class BelongsToLibrariesComponent implements OnInit {
 
 	@Input() image: ImageRecord;
 
 	libraries: LibraryRecord[] = [];
 
 
-	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {
+	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {}
 
+
+	ngOnInit() {
 		let libsMap: { [libName: string]: LibraryRecord } = this.__librariesInBrowser.get();
 
 		this.libraries = getByTest(
 			(lib: LibraryRecord) => lib._image_ids.includes(this.image._id),
 			Object.values(libsMap)
 		);
-
 	}
 
 }

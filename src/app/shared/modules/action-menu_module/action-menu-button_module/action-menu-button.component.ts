@@ -5,7 +5,8 @@ import { Component, Input } from '@angular/core';
 @Component({
 	selector: 'action-menu-button',
 	template: `
-		<button type="button" class="btn btn-default action-menu-button" (click)="toggleOpenMenu()">
+		<button type="button" class="btn btn-default action-menu-button"
+				(click)="toggleOpenMenu($event)">
 			<div class="sprocket-wheel-caret-container">
 				<sprocket-wheel></sprocket-wheel>
 				<span class="caret"></span>
@@ -20,7 +21,8 @@ export class ActionMenuButtonComponent {
 	readonly label = 'Action';
 
 
-	toggleOpenMenu(): void {
+	toggleOpenMenu(event): void {
+		event.stopPropagation();
 		this.menu.open = !(this.menu.open);
 	}
 

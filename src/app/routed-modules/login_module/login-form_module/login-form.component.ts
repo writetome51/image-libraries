@@ -13,7 +13,7 @@ import { LoginInputsService }
 			<form>
 				<login-form-inputs></login-form-inputs>
 
-				<submit-form-button [label]="'Sign In'" [validatingInputs]="loginInputs"
+				<submit-form-button [label]="'Sign In'" [validatingInputs]="inputs"
 					[iDoThis]="process"
 				></submit-form-button>
 
@@ -28,7 +28,7 @@ export class LoginFormComponent {
 
 
 	constructor(
-		public process: ProcessLoginByPasswordService, public loginInputs: LoginInputsService
+		public process: ProcessLoginByPasswordService, public inputs: LoginInputsService
 	) {}
 
 }
