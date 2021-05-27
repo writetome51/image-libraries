@@ -1,22 +1,15 @@
-<hoverable-container #container>
+<div (click)="toggleSelect()" class="image-container"
+	[class.highlighted-image-container]="image['selected']"
+>
+	<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
+		[class.invisible]="!(image['selected'])"
+	></delete-image-glyphicon>
 
-	<div class="image-container"
-		 [class.highlighted-image-container]="image['selected'] || isHovered(container)"
-		 (click)="toggleSelect()"
-	>
+	<a [routerLink]="getRouterLink()">
+		<thumbnail-image [data]="image"></thumbnail-image>
+	</a>
 
-		<delete-image-glyphicon *ngIf="deleteGlyphiconEnabled" [image]="image"
-			[class.invisible]="!(isHovered(container))"
-		>
-		</delete-image-glyphicon>
+	<image-action-menu [image]="image" [class.invisible]="!(image['selected'])">
+	</image-action-menu>
 
-		<a [routerLink]="getRouterLink()">
-			<thumbnail-image [data]="image"></thumbnail-image>
-		</a>
-
-		<image-action-menu [class.invisible]="!(isHovered(container))" [image]="image">
-		</image-action-menu>
-
-	</div>
-
-</hoverable-container>
+</div>
