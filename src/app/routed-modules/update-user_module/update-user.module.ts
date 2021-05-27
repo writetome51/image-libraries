@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { UpdateEmailFormModule } from './update-email-form_module/update-email-form.module';
 import { UpdatePasswordFormModule }
 	from './update-password-form_module/update-password-form.module';
-import { UpdateUserComponent } from './update-user.component';
+import { UpdateUserComponent } from './update-user_component/update-user.component';
 import { UpdateUserChoicesComponent } from './update-user-choices.component';
 import { UpdateUserRoutingModule } from './update-user-routing.module';
 import { UpdateUserServicesModule } from './update-user-services.module';

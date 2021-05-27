@@ -4,7 +4,7 @@ import { LinkedTemplateWithHeading }
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateUserChoiceData as updateUserChoice } from './update-user-choice.data';
-import { UpdateUserComponent } from './update-user.component';
+import { UpdateUserComponent } from './update-user_component/update-user.component';
 
 
 const routes: Routes = [
