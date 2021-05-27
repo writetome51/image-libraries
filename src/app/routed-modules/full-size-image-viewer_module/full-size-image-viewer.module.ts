@@ -2,7 +2,7 @@ import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image.component';
-import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';
+import { FullSizeImageViewerComponent } from './full-size-image-viewer_component/full-size-image-viewer.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ImageNameComponent } from './image-name_component/image-name.component';
 import { ImageDescriptionComponent }
@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { RouteParamIDData as paramID} from '@read-only-data/route-param-id.data';
 import { BelongsToLibrariesComponent } from './belongs-to-libraries.component';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
+import { SaveChangesButtonComponent } from './save-changes-button.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 		ImageDateComponent,
 		ImageLocationComponent,
 		LocationMapComponent,
-		BelongsToLibrariesComponent
+		BelongsToLibrariesComponent,
+		SaveChangesButtonComponent
 	],
 	imports: [
 		CommonModule,
