@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { GetMenuChoices } from './get-menu-choices.interface';
-import { MenuChoice } from './menu-choice.interface';
 import { ActionMenuChoiceExecutorService } from './action-menu-choice-executor.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuChoicesManager } from './menu-choices-manager.interface';
+import { MenuChoice } from './menu-choice.interface';
 import { SpecificChoicesExecutorService } from './specific-choices-executor.abstract.service';
 
 
@@ -32,7 +32,7 @@ export class ActionMenuComponent implements OnInit {
 	choices: MenuChoice[] = [];
 
 	@Input() specificChoicesExecutor: SpecificChoicesExecutorService;
-	@Input() getChoices: GetMenuChoices;
+	@Input() menuChoicesManager: MenuChoicesManager;
 	@Input() getChoicesArgs? = [];
 
 
@@ -40,7 +40,7 @@ export class ActionMenuComponent implements OnInit {
 
 
 	ngOnInit() {
-		this.choices = this.getChoices.go(...this.getChoicesArgs);
+		this.choices = this.menuChoicesManager.getChoices(...this.getChoicesArgs);
 		this.__menuChoiceExecutor.set(this.specificChoicesExecutor);
 	}
 

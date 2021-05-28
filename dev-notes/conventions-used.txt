@@ -69,7 +69,7 @@ kept in a database.
 
 Load
 
-Any use of the word 'load' is referring to the total pieces of data (each 'piece'
+Any use of the word 'Load' is referring to the total pieces of data (each 'piece'
 most likely being an object) the app is allowed to have stored in the browser at once.
 For example, AllUserImages.getLoad() retrieves N of all a user's images, where N is the
 load size.
@@ -115,6 +115,6 @@ There are ContextComponents made specifically to be the contexts for certain re-
 Components, such as ImagesViewerContextComponent being the context for
 ImagesViewerComponent.
 
-If the re-usable inner Component doesn't have a 'context' property, the outer Component it
-is nested in isn't referred to as a ContextComponent, simply because it doesn't need to
+If the re-usable inner Component doesn't have a 'context' property, the outer Component
+it's nested in isn't referred to as a ContextComponent, simply because it doesn't need to
 be.

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MenuChoice } from './menu-choice.interface';
+import { Settable } from '@interfaces/settable.interface';
 import { SpecificChoicesExecutorService } from './specific-choices-executor.abstract.service';
 
 
 @Injectable()
-export class ActionMenuChoiceExecutorService {
+export class ActionMenuChoiceExecutorService implements Settable<SpecificChoicesExecutorService> {
 
 	private __specificExecutor: SpecificChoicesExecutorService;
 

@@ -1,12 +1,10 @@
-import { ActionMenuChoicesData as menuChoices }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
+import {
+	ActionMenuChoicesData as menuChoices, UserLibraryNamesData as libNames
+} from '@runtime-state-data/static-classes/auto-resettable.data';
 import { CurrentRouteService } from '@services/current-route.service';
-import { getArrFilled } from '@writetome51/get-arr-filled';
-import { GetMenuChoices } from '@action-menu_module/get-menu-choices.interface';
+import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
 import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { Injectable } from '@angular/core';
-import { UserLibraryNamesData as libNames }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { not } from '@writetome51/not';
@@ -20,7 +18,7 @@ import { CheckableMenuChoice } from '@action-menu_module/checkable-menu-choice.i
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
+export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
@@ -28,22 +26,19 @@ export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 	) {}
 
 
-	go(): MenuChoice[] {
-		this.__manage();
+	getChoices(): MenuChoice[] {
+		this.manage();
 		return menuChoices.global;
 	}
 
 
-	private __manage(): void {
-		menuChoices.global = [];
+	manage(): void {
+		if (!(menuChoices.global)) menuChoices.global = [];
 
 		if (notEmpty(selectedImages.data)) {
 			this.__includeManipulateSelected();
 		}
-		else {
-			this.__removeManipulateSelected();
-		}
-
+		else this.__removeManipulateSelected();
 	}
 
 
@@ -51,14 +46,10 @@ export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
 		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
 
-		choice['submenu'] = getArrFilled(libNames.length, (i) => {
-			let libName = libNames[i];
+		choice['submenu'] = libNames.map((libName) => {
 			return {
 				label: libName,
-				data: {
-					_image_ids,
-					libName
-				}
+				data: {_image_ids, libName}
 			};
 		});
 		prepend(choice, menuChoices.global);
@@ -66,14 +57,7 @@ export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 
 
 	private __removeManipulateSelected() {
-		removeByTest(
-			(choice) => (choice.label === choiceLabel.addSelectedToLib),
-			menuChoices.global
-		);
-		removeByTest(
-			(choice) => (choice.label === choiceLabel.deleteSelectedImages),
-			menuChoices.global
-		);
+		this.__removeChoices([choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]);
 
 		let selectMultiple: CheckableMenuChoice = {
 			label: choiceLabel.selectMultipleImages,
@@ -83,6 +67,14 @@ export class GetGlobalActionMenuChoicesService implements GetMenuChoices {
 			}
 		};
 		prepend(selectMultiple, menuChoices.global);
+	}
+
+
+	private __removeChoices(choiceLabels: string[]) {
+		removeByTest(
+			(choice: MenuChoice) => (choiceLabels.includes(choice.label)),
+			menuChoices.global
+		);
 	}
 
 
