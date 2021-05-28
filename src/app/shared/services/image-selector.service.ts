@@ -1,43 +1,83 @@
-import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
-import { removeByTest } from '@writetome51/array-remove-by-test';
 import { LoadedImagesStateService }
 	from '@services/loaded-image-state_service/loaded-images-state.service';
 import { Injectable } from '@angular/core';
+import { removeByTest } from '@writetome51/array-remove-by-test';
+import { Subject, Subscribable } from 'rxjs';
+import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
+import { not } from '@writetome51/not';
+import { HasSubscribable } from '@interfaces/has-subscribable.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class ImageSelectorService {
+export class ImageSelectorService implements HasSubscribable<{ imagesSelected: boolean }>{
+
+	private __subject = new Subject();
+
+
+	get subscribable$(): Subscribable<{ imagesSelected: boolean }> {
+		return this.__subject;
+	}
+
 
 	constructor(private __loadedImagesState: LoadedImagesStateService) {}
 
 
-	toggleSelect(image: { name: string, _id: string, selected?: boolean }) {
+	toggleSelect(image: { name: string, _id: string, selected?: boolean }): void {
 		image.selected ? this.__unSelect(image) : this.__select(image);
 	}
 
 
-	unselectAll() {
+	unselectAll(): void {
 		selectedImages.data.length = 0;
-
-		let loadedImages = this.__loadedImagesState.getImages();
-		for (let i = 0, length = loadedImages.length; i < length; ++i) {
-			delete loadedImages[i]['selected'];
-		}
+		this.__removeSelectedPropertyFromAllLoadedImages();
+		this.__subject.next({imagesSelected: false});
 	}
 
 
 	private __select(image) {
-		image['selected'] = true;
-		selectedImages.data.push({name: image.name, _id: image._id});
+		this.__afterAction_sendMessageToSubscribersIfSelectedOrNot(() => {
+			image['selected'] = true;
+			selectedImages.data.push({name: image.name, _id: image._id});
+		});
 	}
 
 
 	private __unSelect(image: { _id: string, selected?: boolean }) {
-		delete image.selected;
-		removeByTest(
-			(selectedImg: { _id: string }) => selectedImg._id === image._id,
-			selectedImages.data
+		this.__afterAction_sendMessageToSubscribersIfSelectedOrNot(
+			() => {
+				delete image.selected;
+				removeByTest(
+					(selectedImg: { _id: string }) => selectedImg._id === image._id,
+					selectedImages.data
+				);
+			},
+			{selecting: false}
 		);
+	}
+
+
+	private __afterAction_sendMessageToSubscribersIfSelectedOrNot(
+		action, option = {selecting: true},
+	) {
+		const previousLength = selectedImages.data.length;
+		action();
+
+		// We want to only send a message if 'imagesSelected' is changing from true
+		// to false or from false to true.
+
+		if ( (option.selecting && previousLength === 0) ||
+			(not(option.selecting) && previousLength === 1) ) {
+			this.__subject.next({imagesSelected: previousLength === 0});
+		}
+	}
+
+
+	private __removeSelectedPropertyFromAllLoadedImages() {
+		let loadedImages = this.__loadedImagesState.getImages();
+
+		for (let i = 0, length = loadedImages.length; i < length; ++i) {
+			delete loadedImages[i]['selected'];
+		}
 	}
 
 }
