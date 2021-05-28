@@ -15,6 +15,7 @@ import { SelectedImagesData as selectedImages } from '@runtime-state-data/select
 import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
 import { CheckableMenuChoice } from '@action-menu_module/checkable-menu-choice.interface';
+import { getByTest } from '@writetome51/array-get-by-test';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -32,32 +33,20 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	}
 
 
-	manage(): void {
+	manage(data = undefined): void {
 		if (!(menuChoices.global)) menuChoices.global = [];
 
-		if (notEmpty(selectedImages.data)) {
+		this.__includeSelectMultiple();
+
+		if (data && data.imagesSelected) {
 			this.__includeManipulateSelected();
 		}
 		else this.__removeManipulateSelected();
 	}
 
 
-	private __includeManipulateSelected() {
-		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
-		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
-
-		choice['submenu'] = libNames.map((libName) => {
-			return {
-				label: libName,
-				data: {_image_ids, libName}
-			};
-		});
-		prepend(choice, menuChoices.global);
-	}
-
-
-	private __removeManipulateSelected() {
-		this.__removeChoices([choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]);
+	private __includeSelectMultiple() {
+		if (this.__choicesIncludes(choiceLabel.selectMultipleImages)) return;
 
 		let selectMultiple: CheckableMenuChoice = {
 			label: choiceLabel.selectMultipleImages,
@@ -70,6 +59,29 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	}
 
 
+	private __includeManipulateSelected() {
+		this.__includeAddSelected();
+	}
+
+
+	private __removeManipulateSelected() {
+		this.__removeChoices([choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]);
+	}
+
+
+	private __includeAddSelected() {
+		if (this.__choicesIncludes(choiceLabel.addSelectedToLib)) return;
+
+		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
+		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
+
+		choice['submenu'] = libNames.data.map((libName) => {
+			return { label: libName, data: {_image_ids, libName} };
+		});
+		prepend(choice, menuChoices.global);
+	}
+
+
 	private __removeChoices(choiceLabels: string[]) {
 		removeByTest(
 			(choice: MenuChoice) => (choiceLabels.includes(choice.label)),
@@ -78,10 +90,11 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	}
 
 
-	private __includeInGlobal(choice: MenuChoice) {
-		if (not(menuChoices.global.includes(choice))) {
-			prepend(choice, menuChoices.global);
-		}
+	private __choicesIncludes(label: string): boolean {
+		return getByTest(
+			(choice: MenuChoice) => choice.label === label,
+			menuChoices.global
+		).length > 0;
 	}
 
 }

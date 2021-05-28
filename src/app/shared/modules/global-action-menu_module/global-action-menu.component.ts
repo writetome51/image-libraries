@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
-import { GlobalActionMenuChoicesManagerService } from './global-action-menu-choices-manager.service';
+import { Component, OnInit } from '@angular/core';
+import { GlobalActionMenuChoicesManagerService }
+	from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
+import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
+import { GetGlobalActionMenuSubscriptionsService }
+	from '@global-action-menu_module/get-global-action-menu-subscriptions.service';
 
 
 @Component({
 	selector: 'global-action-menu',
 	template: `
-		<action-menu [menuChoicesManager]="getChoices"
-					 [specificChoicesExecutor]="specificChoicesExecutor">
-		</action-menu>
+		<action-menu [menuChoicesManager]="menuChoicesManager"
+			[specificChoicesExecutor]="specificChoicesExecutor"
+		></action-menu>
 	`
 })
-export class GlobalActionMenuComponent {
+export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective implements OnInit {
 
 	constructor(
-		public getChoices: GlobalActionMenuChoicesManagerService,
-		public specificChoicesExecutor: GlobalActionMenuChoicesExecutorService
-	) {}
+		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
+		public specificChoicesExecutor: GlobalActionMenuChoicesExecutorService,
+		public getSubscriptions: GetGlobalActionMenuSubscriptionsService
+	) {
+		super();
+	}
+
+
+	ngOnInit() {
+		this._subscriptions.push(...this.getSubscriptions.go());
+	}
 
 }
