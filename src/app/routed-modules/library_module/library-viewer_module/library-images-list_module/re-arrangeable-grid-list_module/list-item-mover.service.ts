@@ -17,7 +17,7 @@ export class ListItemMoverService {
 	}
 
 
-	get itemBeingMoved(): Subscribable<ItemBeingMoved> {
+	get itemBeingMoved$(): Subscribable<ItemBeingMoved> {
 		return this.__subject;
 	}
 

@@ -5,16 +5,14 @@ import { removeByTest } from '@writetome51/array-remove-by-test';
 import { Subject, Subscribable } from 'rxjs';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { not } from '@writetome51/not';
-import { HasSubscribable } from '@interfaces/has-subscribable.interface';
 
 
 @Injectable({providedIn: 'root'})
-export class ImageSelectorService implements HasSubscribable<{ imagesSelected: boolean }>{
+export class ImageSelectorService {
 
 	private __subject = new Subject();
 
-
-	get subscribable$(): Subscribable<{ imagesSelected: boolean }> {
+	get selectionState$(): Subscribable<{ imagesSelected: boolean }> {
 		return this.__subject;
 	}
 

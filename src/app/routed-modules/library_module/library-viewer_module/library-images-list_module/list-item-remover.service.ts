@@ -10,7 +10,7 @@ export class ListItemRemoverService {
 	private __subject = new Subject();
 
 
-	get itemBeingRemoved(): Subscribable<ItemBeingRemoved> {
+	get itemBeingRemoved$(): Subscribable<ItemBeingRemoved> {
 		return this.__subject;
 	}
 

@@ -13,7 +13,7 @@ export class ReArrangedImagesChangeDetectorService {
 	constructor(
 		private __listItemMover: ListItemMoverService
 	) {
-		this.subscription = this.__listItemMover.itemBeingMoved.subscribe(
+		this.subscription = this.__listItemMover.itemBeingMoved$.subscribe(
 			(imageBeingMoved: ItemBeingMoved) => {
 
 			}
