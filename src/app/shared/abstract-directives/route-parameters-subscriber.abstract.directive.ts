@@ -4,7 +4,7 @@ import { GetRouteParamsObserverService }
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
-export abstract class RouteParametersSubscriberComponent extends UnsubscribeOnDestroyDirective {
+export abstract class RouteParametersSubscriberDirective extends UnsubscribeOnDestroyDirective {
 
 	constructor(
 		private __currentRoute: CurrentRouteService,

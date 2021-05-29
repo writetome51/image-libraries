@@ -1,7 +1,7 @@
 import { Progress } from '@interfaces/progress.interface';
 
 
-export abstract class ProgressBarContextComponent {
+export abstract class ProgressBarContextDirective {
 
 	abstract progress: Progress;
 	abstract label: string;
