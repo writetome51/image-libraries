@@ -4,8 +4,8 @@ import { GetLibraryRouteParamsObserverService }
 	from './get-library-route-params-observer_service/get-library-route-params-observer.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
-import { RouteParametersSubscriberComponent }
-	from '@abstract-components/route-parameters-subscriber.abstract.component';
+import { RouteParametersSubscriberDirective }
+	from '@app/shared/abstract-directives/route-parameters-subscriber.abstract.directive';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { RouteParametersSubscriberComponent }
 		</loading-content-section>
 	`
 })
-export class LibraryComponent extends RouteParametersSubscriberComponent {
+export class LibraryComponent extends RouteParametersSubscriberDirective {
 
 	get heading() {
 		return requestedLibrary.name;

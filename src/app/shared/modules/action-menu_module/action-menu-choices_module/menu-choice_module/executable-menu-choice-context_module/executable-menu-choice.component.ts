@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ClickExecuteFunctionContextComponent }
-	from '@abstract-components/click-execute-function-context.abstract.component';
+import { ClickExecuteFunctionContextDirective }
+	from '@app/shared/abstract-directives/click-execute-function-context.abstract.directive';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.component';
 
@@ -21,7 +21,7 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 })
 export class ExecutableMenuChoiceComponent extends LabeledMenuChoiceComponent {
 
-	@Input() context: ClickExecuteFunctionContextComponent;
+	@Input() context: ClickExecuteFunctionContextDirective;
 
 
 	get checked(): boolean {

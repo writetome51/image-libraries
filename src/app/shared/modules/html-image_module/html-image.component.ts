@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HTMLImage } from '@interfaces/html-image.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -12,4 +12,4 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 		/>
 	`
 })
-export class HTMLImageComponent extends HasDataInputComponent<HTMLImage> {}
+export class HTMLImageComponent extends HasDataInputDirective<HTMLImage> {}

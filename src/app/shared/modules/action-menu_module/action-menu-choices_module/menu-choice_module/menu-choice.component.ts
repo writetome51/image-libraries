@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 
 
@@ -22,7 +22,7 @@ import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 	`,
 	styleUrls: ['./menu-choice.component.css']
 })
-export class MenuChoiceComponent extends HasDataInputComponent<MenuChoice> {
+export class MenuChoiceComponent extends HasDataInputDirective<MenuChoice> {
 
 	clicked = false;
 

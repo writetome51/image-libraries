@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { DeletingFilesProgressData }
 	from '@runtime-state-data/deleting-files-progress.data';
-import { ProgressBarContextComponent }
-	from '@abstract-components/progress-bar-context.abstract.component';
+import { ProgressBarContextDirective }
+	from '@app/shared/abstract-directives/progress-bar-context.abstract.directive';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { ProgressBarContextComponent }
 		</app-horizontal-progress-bar>
 	`
 })
-export class DeletingFilesProgressBarComponent extends ProgressBarContextComponent {
+export class DeletingFilesProgressBarComponent extends ProgressBarContextDirective {
 
 	readonly progress = DeletingFilesProgressData;
 	readonly label = 'Deleting files: ';

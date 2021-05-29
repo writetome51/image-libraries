@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HasContextInputComponent }
-	from '@abstract-components/has-context-input.abstract.component';
-import { ProgressBarContextComponent }
-	from '@abstract-components/progress-bar-context.abstract.component';
+import { HasContextInputDirective }
+	from '@app/shared/abstract-directives/has-context-input.abstract.directive';
+import { ProgressBarContextDirective }
+	from '@app/shared/abstract-directives/progress-bar-context.abstract.directive';
 
 
 @Component({
@@ -27,7 +27,7 @@ import { ProgressBarContextComponent }
 	]
 })
 export class HorizontalProgressBarComponent
-	extends HasContextInputComponent<ProgressBarContextComponent> {
+	extends HasContextInputDirective<ProgressBarContextDirective> {
 
 	get width(): string {
 		return this.context.percentageComplete + '%';

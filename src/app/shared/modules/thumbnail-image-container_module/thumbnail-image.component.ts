@@ -3,14 +3,14 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { AppImage } from '@interfaces/app-image.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
 	selector: 'thumbnail-image',
 	template: `<html-image [data]="img"></html-image>`
 })
-export class ThumbnailImageComponent extends HasDataInputComponent<AppImage> {
+export class ThumbnailImageComponent extends HasDataInputDirective<AppImage> {
 
 	get img(): HTMLImage {
 		return {

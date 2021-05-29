@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ProgressBarContextComponent }
-	from '@abstract-components/progress-bar-context.abstract.component';
+import { ProgressBarContextDirective }
+	from '@app/shared/abstract-directives/progress-bar-context.abstract.directive';
 import { Progress } from '@interfaces/progress.interface';
 
 
@@ -11,7 +11,7 @@ import { Progress } from '@interfaces/progress.interface';
 		</horizontal-progress-bar>
 	`
 })
-export class AppHorizontalProgressBarComponent extends ProgressBarContextComponent{
+export class AppHorizontalProgressBarComponent extends ProgressBarContextDirective{
 
 	@Input() progress: Progress;
 	@Input() label = '';

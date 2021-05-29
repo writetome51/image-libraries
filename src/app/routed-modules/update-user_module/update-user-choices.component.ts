@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Link } from '@interfaces/link.interface';
 import { LinkedTemplateWithHeading }
 	from './linked-template-with-heading_interface/linked-template-with-heading.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 		</nav>
 	`
 })
-export class UpdateUserChoicesComponent extends HasDataInputComponent<LinkedTemplateWithHeading[]>
+export class UpdateUserChoicesComponent extends HasDataInputDirective<LinkedTemplateWithHeading[]>
 	implements OnInit {
 
 	links: Link[];

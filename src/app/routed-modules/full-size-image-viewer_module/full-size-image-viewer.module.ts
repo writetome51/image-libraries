@@ -10,7 +10,6 @@ import { ImageDescriptionComponent }
 import { ImageTagsComponent } from './image-tags_component/image-tags.component';
 import { ImageDateComponent } from './image-date_component/image-date.component';
 import { ImageLocationComponent } from './image-location_component/image-location.component';
-import { LibraryModulePathData as libModulePath } from '../library_module/library-module-path.data';
 import { LocationMapComponent } from './location-map_component/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -20,6 +19,8 @@ import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { SaveChangesButtonComponent } from './save-changes-button.component';
 import { ExecuteFunctionButtonModule } from '@execute-function-button_module/execute-function-button.module';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
+import { AllImagesModulePathData as allImagesModulePath }
+	from '@app/routed-modules/all-images_module/all-images-module-path.data';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-b
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: `/${appModulePath.LibraryModule}/` + libModulePath.LibraryComponent
+				redirectTo: `/${appModulePath.AllImagesModule}/${allImagesModulePath.defaultPath}`
 			}
 		]),
 		SubmitFormButtonModule

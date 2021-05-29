@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { Link } from '@interfaces/link.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective }
+	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -20,7 +21,7 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 		</div>
 	`
 })
-export class NavigationLinksComponent extends HasDataInputComponent<Link[]> {
+export class NavigationLinksComponent extends HasDataInputDirective<Link[]> {
 
 	constructor(private __currentRoute: CurrentRouteService) {
 		super();

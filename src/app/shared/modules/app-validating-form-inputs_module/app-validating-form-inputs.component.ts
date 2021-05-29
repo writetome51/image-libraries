@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingInput } from '@writetome51/validating-inputs';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -14,4 +14,4 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 // Can be used with ValidatingFormInputsComponent from '@writetome51/validating-inputs'
 // Also, create equivalent UI component of this for ReactJS.
 
-export class AppValidatingFormInputsComponent extends HasDataInputComponent<ValidatingInput[]> {}
+export class AppValidatingFormInputsComponent extends HasDataInputDirective<ValidatingInput[]> {}

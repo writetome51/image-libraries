@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AlertsService } from '@services/alerts.service';
 import { Alert } from '@interfaces/alert.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -17,7 +17,7 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 	`,
 	styles: [`.app-alert { margin: auto; width: 96%; }`]
 })
-export class AppAlertComponent extends HasDataInputComponent<Alert> {
+export class AppAlertComponent extends HasDataInputDirective<Alert> {
 
 	@Input() index: number;
 

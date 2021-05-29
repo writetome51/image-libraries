@@ -1,5 +1,5 @@
-import { ClickExecuteFunctionComponent }
-	from '@abstract-components/click-execute-function.abstract.component';
+import { ClickExecuteFunctionDirective }
+	from '@app/shared/abstract-directives/click-execute-function.abstract.directive';
 import { Component } from '@angular/core';
 import { not } from '@writetome51/not';
 
@@ -14,7 +14,7 @@ import { not } from '@writetome51/not';
 		</div>
 	`
 })
-export class ClickExecuteFunctionDivComponent extends ClickExecuteFunctionComponent {
+export class ClickExecuteFunctionDivComponent extends ClickExecuteFunctionDirective {
 
 	get hideLoadingSpinner(): boolean {
 		return not(this.clicked && this.executionStatus.waiting);

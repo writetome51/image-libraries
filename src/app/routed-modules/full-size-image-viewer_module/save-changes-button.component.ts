@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { ClickExecuteIDoThisContextComponent }
-	from '@abstract-components/click-execute-i-do-this-context.abstract.component';
-import { ProcessUpdateImagesService }
-	from '@process/process-update-images.service';
+import { ProcessUpdateImagesService } from '@process/process-update-images.service';
 
 
 @Component({
@@ -13,10 +10,8 @@ import { ProcessUpdateImagesService }
 		></submit-form-button>
 	`
 })
-export class SaveChangesButtonComponent extends ClickExecuteIDoThisContextComponent {
+export class SaveChangesButtonComponent {
 
-	constructor(public process: ProcessUpdateImagesService) {
-		super();
-	}
+	constructor(public process: ProcessUpdateImagesService) {}
 
 }

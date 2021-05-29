@@ -1,5 +1,5 @@
-import { ClickExecuteFunctionComponent }
-	from '@abstract-components/click-execute-function.abstract.component';
+import { ClickExecuteFunctionDirective }
+	from '@app/shared/abstract-directives/click-execute-function.abstract.directive';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild }
 	from '@angular/core';
 
@@ -23,7 +23,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChi
 	`,
 	styleUrls: ['./execute-function-button.component.css']
 })
-export class ExecuteFunctionButtonComponent extends ClickExecuteFunctionComponent
+export class ExecuteFunctionButtonComponent extends ClickExecuteFunctionDirective
 	implements AfterViewInit {
 
 	// If 'submit', it's automatically clicked when pressing RETURN in a form

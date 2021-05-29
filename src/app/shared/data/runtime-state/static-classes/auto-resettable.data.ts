@@ -20,9 +20,8 @@ export const ActionMenuChoicesData: ResettableToDefault = class __ActionMenuChoi
 
 	static setDefault() {
 		this.global = [
-			{label: 'choice 1'},
 
-			// submenu example
+			/************** submenu example
 			{
 				label: 'choice 2',
 				submenu: [
@@ -32,6 +31,7 @@ export const ActionMenuChoicesData: ResettableToDefault = class __ActionMenuChoi
 					{label: 'choice 4'}
 				]
 			}
+			 **************/
 		];
 
 		this.images = {}; // keys will be image names, values will be menu choices

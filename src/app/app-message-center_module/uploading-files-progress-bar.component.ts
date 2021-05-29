@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-progress.data';
-import { ProgressBarContextComponent }
-	from '@abstract-components/progress-bar-context.abstract.component';
+import { ProgressBarContextDirective }
+	from '@app/shared/abstract-directives/progress-bar-context.abstract.directive';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ProgressBarContextComponent }
 		</app-horizontal-progress-bar>
 	`
 })
-export class UploadingFilesProgressBarComponent extends ProgressBarContextComponent {
+export class UploadingFilesProgressBarComponent extends ProgressBarContextDirective {
 
 	progress = UploadingFilesProgressData;
 	label = 'Uploading files: ';

@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ImagesViewerContextComponent }
-	from '@abstract-components/images-viewer-context.abstract.component';
-import { HasContextInputComponent } from '@abstract-components/has-context-input.abstract.component';
+import { ImagesViewerContextDirective }
+	from '@app/shared/abstract-directives/images-viewer-context.abstract.directive';
+import { HasContextInputDirective }
+	from '@app/shared/abstract-directives/has-context-input.abstract.directive';
 
 
 @Component({
@@ -27,7 +28,7 @@ import { HasContextInputComponent } from '@abstract-components/has-context-input
 		</div>
 	`
 })
-export class ImagesViewerComponent extends HasContextInputComponent<ImagesViewerContextComponent> {
+export class ImagesViewerComponent extends HasContextInputDirective<ImagesViewerContextDirective> {
 
 	@Input() noImagesMessage = 'No Images';
 

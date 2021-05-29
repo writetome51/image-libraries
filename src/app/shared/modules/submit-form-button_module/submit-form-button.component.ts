@@ -1,7 +1,7 @@
 import { AlertsService as alerts } from '@services/alerts.service';
 import { Component, Input } from '@angular/core';
-import { ClickExecuteIDoThisContextComponent }
-	from '@abstract-components/click-execute-i-do-this-context.abstract.component';
+import { ClickExecuteIDoThisContextDirective }
+	from '@app/shared/abstract-directives/click-execute-i-do-this-context.abstract.directive';
 import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { isArray } from '@writetome51/is-array-not-array';
 import { IDoThis } from '@interfaces/i-do-this.interface';
@@ -14,7 +14,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 		</execute-function-button>
 	`
 })
-export class SubmitFormButtonComponent extends ClickExecuteIDoThisContextComponent {
+export class SubmitFormButtonComponent extends ClickExecuteIDoThisContextDirective {
 
 	@Input() label = 'Submit';
 	@Input() validatingInputs: ValidatingInputService | ValidatingInputsService;

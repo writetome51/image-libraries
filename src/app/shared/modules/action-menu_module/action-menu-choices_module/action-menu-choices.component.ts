@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
-import { HasDataInputComponent } from '@abstract-components/has-data-input.abstract.component';
+import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -12,4 +12,4 @@ import { HasDataInputComponent } from '@abstract-components/has-data-input.abstr
 	`,
 	styleUrls: ['./action-menu-choices.component.css']
 })
-export class ActionMenuChoicesComponent extends HasDataInputComponent<MenuChoice[]> {}
+export class ActionMenuChoicesComponent extends HasDataInputDirective<MenuChoice[]> {}

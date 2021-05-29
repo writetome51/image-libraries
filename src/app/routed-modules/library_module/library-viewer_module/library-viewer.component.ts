@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { LibraryPaginatorService } from '../library-paginator_service/library-paginator.service';
 import { LoadedLibraryImageTotalService }
 	from '@services/library/loaded-library-image-total.service';
-import { ImagesViewerContextComponent }
-	from '@abstract-components/images-viewer-context.abstract.component';
+import { ImagesViewerContextDirective }
+	from '@app/shared/abstract-directives/images-viewer-context.abstract.directive';
 import { LibraryJumpToPageInputService }
 	from '@app/routed-modules/library_module/library-jump-to-page-input.service';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
@@ -20,7 +20,7 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 		</images-viewer>
 	`
 })
-export class LibraryViewerComponent extends ImagesViewerContextComponent {
+export class LibraryViewerComponent extends ImagesViewerContextDirective {
 
 	routeBeforePageNumber = `/library/${paramID.libName}/page`;
 
