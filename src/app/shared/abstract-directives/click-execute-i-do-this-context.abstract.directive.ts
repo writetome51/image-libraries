@@ -1,5 +1,5 @@
 import { ClickExecuteFunctionContextDirective }
-	from './/click-execute-function-context.abstract.directive';
+	from './click-execute-function-context.abstract.directive';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 

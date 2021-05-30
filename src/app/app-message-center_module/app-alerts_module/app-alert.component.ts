@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { AlertsService } from '@services/alerts.service';
 import { Alert } from '@interfaces/alert.interface';
-import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
+import { HasDataInputDirective }
+	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({

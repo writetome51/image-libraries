@@ -1,16 +1,7 @@
-import { ClickStartedExecutionStatusData as executionStatus }
-	from '@runtime-state-data/click-started-execution-status.data';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
-
-
 export abstract class ClickExecuteFunctionContextDirective {
 
 	async execute(funcArgs = []) {
-		await executeFunctionRequiringWaiting.go(
-			async () => await this._func(...funcArgs),
-			executionStatus
-		);
+		await this._func(...funcArgs);
 	}
 
 

@@ -3,11 +3,12 @@ import { ClickStartedExecutionStatusData }
 import { ClickExecuteFunctionContextDirective }
 	from './click-execute-function-context.abstract.directive';
 import { Directive, Input } from '@angular/core';
-import { HasContextInputDirective }
-	from './/has-context-input.abstract.directive';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
+import { HasContextInputDirective } from './has-context-input.abstract.directive';
 
 
-@Directive({selector: ''}) // prevents Angular build error
+@Directive({selector: '[]'}) // prevents Angular build error
 export abstract class ClickExecuteFunctionDirective
 	extends HasContextInputDirective<ClickExecuteFunctionContextDirective>{
 
@@ -23,7 +24,10 @@ export abstract class ClickExecuteFunctionDirective
 		event.stopPropagation();
 
 		this.clicked = true;
-		await this.context.execute(this.funcArgs);
+		await executeFunctionRequiringWaiting.go(
+			async () => await this.context.execute(this.funcArgs),
+			this.executionStatus
+		);
 		this.clicked = false;
 	}
 

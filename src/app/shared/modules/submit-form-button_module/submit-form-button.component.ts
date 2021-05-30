@@ -2,9 +2,10 @@ import { AlertsService as alerts } from '@services/alerts.service';
 import { Component, Input } from '@angular/core';
 import { ClickExecuteIDoThisContextDirective }
 	from '@app/shared/abstract-directives/click-execute-i-do-this-context.abstract.directive';
-import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
 import { isArray } from '@writetome51/is-array-not-array';
 import { IDoThis } from '@interfaces/i-do-this.interface';
+import { ValidatingInputService, ValidatingInputsService } from '@writetome51/validating-inputs';
+
 
 @Component({
 	selector: 'submit-form-button',

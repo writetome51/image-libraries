@@ -7,8 +7,6 @@ import { GlobalActionMenuServicesModule } from './global-action-menu-services.mo
 import { Injectable } from '@angular/core';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { not } from '@writetome51/not';
-import { notEmpty } from '@writetome51/is-empty-not-empty';
 import { prepend } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
@@ -38,9 +36,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 		this.__includeSelectMultiple();
 
-		if (data && data.imagesSelected) {
-			this.__includeManipulateSelected();
-		}
+		if (selectedImages.data.length) this.__includeManipulateSelected();
 		else this.__removeManipulateSelected();
 	}
 
