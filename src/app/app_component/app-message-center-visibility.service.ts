@@ -17,11 +17,10 @@ export class AppMessageCenterVisibilityService {
 	}
 
 
-	// This can't hide message center if any progress.percentageComplete > 0.
-	// In those cases, user is forced to see progress bar.
-
 	static hide() {
 		alerts.clearAll();
+		deletingFilesProgress.percentageComplete = 0;
+		uploadingFilesProgress.percentageComplete = 0;
 	}
 
 }
