@@ -14,7 +14,15 @@ import { LabeledMenuChoiceComponent } from '../labeled-menu-choice.abstract.comp
 				<menu-choice *ngFor="let choice of data.submenu" [data]="choice"></menu-choice>
 			</ul>
 		</ng-container>
-	`
+	`,
+	styles: [
+		`.dropdown-menu {
+			display: block;
+			top: 0;
+			left: 100%;
+			margin-top: -1px;
+		}`
+	]
 })
 export class SubmenuComponent extends LabeledMenuChoiceComponent {
 
