@@ -2,8 +2,7 @@ import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { ProcessLoginByPasswordService }
 	from './process-login-by-password_service/process-login-by-password.service';
-import { LoginInputsService }
-	from '@app/routed-modules/login_module/login-form_module/login-inputs.service';
+import { LoginInputsService } from './login-inputs.service';
 
 
 @Component({
