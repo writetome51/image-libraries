@@ -1,0 +1,247 @@
+/*************************************************************************************************
+Element defaults
+*************************************************************************************************/
+
+a, a:hover {
+	text-decoration: none;
+	color: #337ab7;
+}
+
+
+button {
+	min-width: max-content;
+	min-height: max-content;
+}
+
+
+div {
+	min-width: min-content;
+}
+
+
+header {
+	margin-bottom: 30px;
+}
+
+
+img {
+	margin: 10px 5px;
+}
+
+
+input {
+	margin: auto;
+	padding: 5px;
+	text-align: center;
+}
+
+
+li {
+	list-style: none;
+}
+
+
+nav {
+	padding: 5px 0;
+	width: auto;
+}
+
+
+ul {
+	padding: 0;
+}
+
+
+
+
+/*************************************************************************************************
+Nested elements
+*************************************************************************************************/
+
+li div {
+	display: flex;
+	height: 100%;
+}
+
+
+nav div {
+	display: inline-flex;
+}
+
+
+
+
+/*************************************************************************************************
+Classes
+*************************************************************************************************/
+
+.centered-nav-block-container {
+	margin: auto;
+}
+
+
+div.dropdown {
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+
+.fill-parent {
+	display: inherit;
+	width: inherit;
+	height: inherit;
+	margin: inherit;
+}
+
+
+li.grid-list-item {
+	display: inline-grid;
+	position: relative;
+	padding: 1px;
+	cursor: move;
+	margin: 0;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+
+.nav-link-container {
+	display: inline;
+	margin: auto;
+	padding: 0 3px;
+	width: 100px;
+}
+
+
+.static-block-overlay {
+	display: block;
+	position: static;
+	z-index: 1000;
+}
+
+
+.warning-text {
+	color: red;
+	font-weight: bold;
+}
+
+
+
+
+/*************************************************************************************************
+IDs
+*************************************************************************************************/
+
+#site-footer {
+	position: relative;
+	margin-top: 100px;
+	font-size: x-small;
+}
+
+
+#jump-to-page-number-input {
+	width: 100px;
+	height: 30px;
+	margin: auto;
+	font-size: 20px;
+}
+
+
+
+
+/*************************************************************************************************
+ActionMenuModule
+*************************************************************************************************/
+
+.menu-choice-label-container {
+	margin: 5px 0 5px 5px;
+}
+
+
+.menu-choice  .hovered {
+	background-color: #ececec;
+}
+
+
+.action-menu-container  button.action-menu-button {
+	padding: 0 10px;
+}
+
+
+.action-menu-container  .menu-choice {
+	width: 100%;
+	height: fit-content;
+}
+
+
+
+
+/*************************************************************************************************
+ExecutionFunctionButtonModule
+*************************************************************************************************/
+
+execute-function-button  tiny-loading-spinner  img {
+	margin: 0;
+	position: relative;
+	bottom: 2px;
+}
+
+
+
+
+/*************************************************************************************************
+ThumbnailImageContainerModule
+*************************************************************************************************/
+
+thumbnail-image-container  thumbnail-image  html-image  img {
+	box-shadow: -2px -2px 10px 3px #dcdcdc;
+}
+
+
+thumbnail-image-container  image-action-menu  action-menu-button  button {
+	height: 30px;
+	padding: 0;
+	width: 40px;
+}
+
+
+thumbnail-image-container  image-action-menu  button  div {
+	margin: auto;
+}
+
+
+thumbnail-image-container  image-action-menu  action-menu-button  button  sprocket-wheel {
+	display: inline;
+}
+
+
+thumbnail-image-container  image-action-menu  action-menu-button  button  sprocket-wheel  img {
+	width: 11px;
+}
+
+
+thumbnail-image-container  image-action-menu  button  div  span.caret {
+	position: relative;
+	right: 3px;
+	top: 14px;
+}
+
+
+thumbnail-image-container  image-action-menu  div.action-menu-container {
+	height: fit-content;
+	position: relative;
+	z-index: 1000;
+}
+
+
+thumbnail-image-container  image-action-menu  ul.action-menu {
+	top: 30px;
+}
+
+
+
+

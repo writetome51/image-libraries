@@ -19,7 +19,7 @@ specific purpose.  They are often used as singletons shared among multiple class
 
 
 Modules
-can contain Components, Directives, Services, and other Modules.
+can contain Components, Directives, Pipes, Services, and other Modules.
 Directives and Components must be declared in a module's 'declarations' array.  This
 makes them belong to that module.  If you want to use those Directives or Components in
 other modules, you must list them in their module's 'exports' array, and import their

@@ -8,6 +8,7 @@
 .validating-input-container input {
 	border: 1px solid #a0a0a0;
 	border-radius: 5px;
+	min-width: 300px;
 }
 
 

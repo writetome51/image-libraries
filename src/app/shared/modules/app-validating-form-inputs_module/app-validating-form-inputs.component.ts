@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ValidatingInput } from '@writetome51/validating-inputs';
-import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
+import { HasDataInputDirective }
+	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
