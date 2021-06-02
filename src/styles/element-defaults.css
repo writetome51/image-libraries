@@ -1,3 +1,7 @@
+/*************************
+Element defaults
+**************************/
+
 a, a:hover {
 	text-decoration: none;
 	color: #337ab7;
@@ -7,6 +11,11 @@ a, a:hover {
 button {
 	min-width: max-content;
 	min-height: max-content;
+}
+
+
+div {
+	min-width: min-content;
 }
 
 
@@ -32,7 +41,7 @@ li {
 }
 
 
-li  div {
+li div {
 	display: flex;
 	height: 100%;
 }
@@ -44,7 +53,7 @@ nav {
 }
 
 
-nav  div {
+nav div {
 	display: inline-flex;
 }
 
@@ -52,3 +61,92 @@ nav  div {
 ul {
 	padding: 0;
 }
+
+
+
+
+/**********************
+App-wide CSS classes
+**********************/
+
+.centered-nav-block-container {
+	margin: auto;
+}
+
+
+div.dropdown {
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+
+.fill-parent {
+	display: inherit;
+	width: inherit;
+	height: inherit;
+	margin: inherit;
+}
+
+
+li.grid-list-item {
+	display: inline-grid;
+	position: relative;
+	padding: 1px;
+	cursor: move;
+	margin: 0;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+
+.nav-link-container {
+	display: inline;
+	margin: auto;
+	padding: 0 3px;
+	width: 100px;
+}
+
+
+.static-block-overlay {
+	display: block;
+	position: static;
+	z-index: 1000;
+}
+
+
+.warning-text {
+	color: red;
+	font-weight: bold;
+}
+
+
+
+
+/**********************
+ActionMenuModule
+**********************/
+
+.menu-choice-label-container {
+	margin: 5px 0 5px 5px;
+}
+
+
+.menu-choice  .hovered {
+	background-color: #ececec;
+}
+
+
+.action-menu-container  button.action-menu-button {
+	padding: 0 10px;
+}
+
+
+.action-menu-container  .menu-choice {
+	width: 100%;
+	height: fit-content;
+}
+
