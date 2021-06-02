@@ -55,3 +55,11 @@ export class TheClass extends __TheClass {
 // TheClass is now injectable.
 
 
+Too Many Stylesheets Listed in /angular.json
+
+There's a limit to how many separate stylesheets the Angular bundler can be configured
+to take in the config file  /angular.json  at
+projects.{project-name}.architect.build.options.styles  and
+projects.{project-name}.architect.test.options.styles.  If you go over the limit, you
+won't get any error message.  But the styles in the excessive stylesheets won't be
+applied.
