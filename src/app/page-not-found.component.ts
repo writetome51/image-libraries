@@ -6,7 +6,7 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 @Component({
 	selector: 'page-not-found',
 	template: `
-		<h2>Oops. Page not found.</h2>
+		<h2>Not found.</h2>
 		<html-image [data]="faces"></html-image>
 		<p>This could make you happy or sad. It depends on you.</p>
 	`

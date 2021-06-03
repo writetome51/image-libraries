@@ -57,6 +57,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	private __includeManipulateSelected() {
 		this.__includeAddSelected();
+		this.__includeDeleteSelected();
 	}
 
 
@@ -72,8 +73,18 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
 
 		choice['submenu'] = libNames.data.map((libName) => {
-			return { label: libName, data: {_image_ids, libName} };
+			return {
+				label: libName,  data: {selectedImages: selectedImages.data, libName}
+			};
 		});
+		prepend(choice, menuChoices.global);
+	}
+
+
+	private __includeDeleteSelected() {
+		if (this.__choicesIncludes(choiceLabel.deleteSelectedImages)) return;
+
+		let choice: MenuChoice = {label: choiceLabel.deleteSelectedImages};
 		prepend(choice, menuChoices.global);
 	}
 

@@ -1,18 +1,17 @@
-import { HandleAddImageToLibraryErrorService } from './handle-add-image-to-library-error.service';
-import { ImageActionMenuServicesModule } from '../../../../image-action-menu-services.module';
+import { HandleAddImagesToLibraryErrorService } from './handle-add-images-to-library-error.service';
 import { Injectable } from '@angular/core';
 import { RunTasksAfterAddingOrRemovingImageFromLibraryService }
-	from '../../run-tasks-after-adding-or-removing-image-from-library.service';
+	from '@modules/image-action-menu_module/image-action-menu-choices-executor_service/process-toggle-add-image-to-library_service/run-tasks-after-adding-or-removing-image-from-library.service';
 import { InterpretExistingUserDBOperationResultService }
 	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
 
-@Injectable({providedIn: ImageActionMenuServicesModule})
-export class InterpretAddImageToLibraryResultService
+@Injectable({providedIn: 'root'})
+export class InterpretAddImagesToLibraryResultService
 	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
-		__handleError: HandleAddImageToLibraryErrorService,
+		__handleError: HandleAddImagesToLibraryErrorService,
 		__runPostSuccessTasks: RunTasksAfterAddingOrRemovingImageFromLibraryService
 	) {
 		super(__handleError, __runPostSuccessTasks);
