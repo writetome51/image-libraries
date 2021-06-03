@@ -1,3 +1,5 @@
-export const SelectedImagesData = {
-	data: [] // data: Array<{name: string, _id: string}>
+export const SelectedImagesData: {
+	data: Array<{ name: string, _id: string }>
+} = {
+	data: []
 };

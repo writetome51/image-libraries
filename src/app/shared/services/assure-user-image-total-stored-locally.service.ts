@@ -23,12 +23,17 @@ export class AssureUserImageTotalStoredLocallyService implements IDoThis {
 
 	private __userImageTotalStoredLocally(): boolean {
 		let total = this.__userImageTotalInBrowser.get();
-		return (typeof total === 'number') && Number.isInteger(total) && (total > -1);
+		return this.__totalIsValid(total);
 	}
 
 
 	private async __storeUserImageTotalLocally() {
 		await this.__processGetUserImageTotal.go();
+	}
+
+
+	private __totalIsValid(total) {
+		return ((typeof total === 'number') && Number.isInteger(total) && (total > -1));
 	}
 
 }

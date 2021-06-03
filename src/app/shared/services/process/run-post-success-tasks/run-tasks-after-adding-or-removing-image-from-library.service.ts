@@ -4,12 +4,11 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibraryRecord } from '@interfaces/library-record.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
-import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
 
 
-@Injectable({providedIn: ImageActionMenuServicesModule})
+@Injectable({providedIn: 'root'})
 export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
 
 	constructor(

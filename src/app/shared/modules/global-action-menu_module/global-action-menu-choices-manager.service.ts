@@ -70,11 +70,11 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 		if (this.__choicesIncludes(choiceLabel.addSelectedToLib)) return;
 
 		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
-		let _image_ids = selectedImages.data.map((img: { _id: string }) => img._id);
 
 		choice['submenu'] = libNames.data.map((libName) => {
 			return {
-				label: libName,  data: {selectedImages: selectedImages.data, libName}
+				label: choiceLabel.addSelectedToLib  + '.' + libName,
+				data: {selectedImages: selectedImages.data,  libName}
 			};
 		});
 		prepend(choice, menuChoices.global);
