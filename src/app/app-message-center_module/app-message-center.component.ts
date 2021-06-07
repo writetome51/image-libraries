@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
 import { AlertsService } from '@services/alerts.service';
+import { Component } from '@angular/core';
+import { DeletingFilesProgressData } from '@runtime-state-data/deleting-files-progress.data';
+import { ProgressBarData } from '@interfaces/progress-bar-data.interface';
+import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-progress.data';
 
 
 @Component({
@@ -8,9 +11,8 @@ import { AlertsService } from '@services/alerts.service';
 		<div class="fixed-overlay">
 			<app-alerts (click)="clearAlerts($event)"></app-alerts>
 
-			<uploading-files-progress-bar></uploading-files-progress-bar>
-
-			<deleting-files-progress-bar></deleting-files-progress-bar>
+			<app-horizontal-progress-bars [data]="progressBarsData">
+			</app-horizontal-progress-bars>
 		</div>
 	`,
 
@@ -21,16 +23,22 @@ import { AlertsService } from '@services/alerts.service';
 			padding: 100px;
 			left: 0;
 			top: 0;
-			width: 100%; height: 100%;
+			width: 100%;
+			height: 100%;
 			overflow: auto;
 			background-color: rgb(0, 0, 0);
-			background-color: rgba(0, 0, 0, 0.4);
+			background-color: rgba(0, 0, 0, 0.3);
 		}`
 	]
 })
 export class AppMessageCenterComponent {
 
 	alerts = AlertsService;
+
+	progressBarsData: ProgressBarData[] = [
+		{progress: UploadingFilesProgressData, label: 'Uploading files: '},
+		{progress: DeletingFilesProgressData, label: 'Deleting files: '}
+	];
 
 
 	clearAlerts(event) {
