@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 		<login-form clearFormOnInit clearAlertsOnDestroy></login-form>
 
 		<p>Don't have an account?
-			<a [routerLink]="moduleRoutes.NewUserModule" routerLinkActive="active">
+			<a [routerLink]="modulePath.NewUserModule" routerLinkActive="active">
 				Create Account
 			</a>
 		</p>
@@ -20,7 +20,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginComponent {
 
-	moduleRoutes = AppModulePathData;
+	modulePath = AppModulePathData;
 
 
 	constructor(title: Title) {
