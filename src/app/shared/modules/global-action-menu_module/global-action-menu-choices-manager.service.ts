@@ -11,7 +11,8 @@ import { SelectMutipleImagesSettingService }
 import { ImagesOrigin } from '@app/shared/types/images-origin.type';
 import { LoadedImagesStateService }
 		from '@services/loaded-image-state_service/loaded-images-state.service';
-import { GlobalActionMenuChoicesService } from './global-action-menu-choices.service';
+import { GlobalActionMenuChoicesService as menuChoices }
+	from './global-action-menu-choices.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -21,7 +22,6 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	constructor(
-		private __menuChoices: GlobalActionMenuChoicesService,
 		private __loadedImagesState: LoadedImagesStateService,
 		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService,
 	) {
@@ -31,7 +31,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	getChoices(): MenuChoice[] {
 		this.manage();
-		return this.__menuChoices.get();
+		return menuChoices.get();
 	}
 
 
@@ -44,7 +44,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeSelectMultiple() {
-		this.__menuChoices.addChoice({
+		menuChoices.addChoice({
 			label: choiceLabel.selectMultipleImages,
 			data: {
 				checked: this.__selectMultipleImagesSetting.get().enabled,
@@ -55,22 +55,24 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeManipulateSelected() {
-		if (this.__menuContext !== 'library') this.__includeAddSelected();
-		else this.__menuChoices.addChoice({label: choiceLabel.removeSelectedFromLib});
+		if (this.__menuContext === 'all') this.__includeAddSelectedToLib();
+		else menuChoices.addChoice({label: choiceLabel.removeSelectedFromLib});
 
-		this.__menuChoices.addChoice({label: choiceLabel.deleteSelectedImages});
+		menuChoices.addChoice({label: choiceLabel.deleteSelectedImages});
 	}
 
 
 	private __removeManipulateSelected() {
-		this.__menuChoices.removeChoices(
-			[choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]
-		);
+		menuChoices.removeChoices([
+			choiceLabel.addSelectedToLib,
+			choiceLabel.deleteSelectedImages,
+			choiceLabel.removeSelectedFromLib
+		]);
 	}
 
 
-	private __includeAddSelected() {
-		this.__menuChoices.addChoice({
+	private __includeAddSelectedToLib() {
+		menuChoices.addChoice({
 			label: choiceLabel.addSelectedToLib,
 			submenu: libNames.data.map((libName) => {
 				return {
