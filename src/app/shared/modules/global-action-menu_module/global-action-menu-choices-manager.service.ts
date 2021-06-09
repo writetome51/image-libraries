@@ -1,39 +1,41 @@
-import {
-	ActionMenuChoicesData as menuChoices, UserLibraryNamesData as libNames
-} from '@runtime-state-data/static-classes/auto-resettable.data';
-import { CurrentRouteService } from '@services/current-route.service';
+import { UserLibraryNamesData as libNames }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
 import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { Injectable } from '@angular/core';
 import { MenuChoice } from '@action-menu_module/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { prepend } from '@writetome51/array-append-prepend';
-import { removeByTest } from '@writetome51/array-remove-by-test';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
-import { CheckableMenuChoice } from '@action-menu_module/checkable-menu-choice.interface';
-import { getByTest } from '@writetome51/array-get-by-test';
+import { ImagesOrigin } from '@app/shared/types/images-origin.type';
+import { LoadedImagesStateService }
+		from '@services/loaded-image-state_service/loaded-images-state.service';
+import { GlobalActionMenuChoicesService } from './global-action-menu-choices.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
+	private readonly __menuContext: ImagesOrigin | "none";
+
+
 	constructor(
-		private __currentRoute: CurrentRouteService,
-		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService
-	) {}
+		private __menuChoices: GlobalActionMenuChoicesService,
+		private __loadedImagesState: LoadedImagesStateService,
+		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService,
+	) {
+		this.__menuContext = this.__loadedImagesState.getOrigin();
+	}
 
 
 	getChoices(): MenuChoice[] {
 		this.manage();
-		return menuChoices.global;
+		return this.__menuChoices.get();
 	}
 
 
 	manage(data = undefined): void {
-		if (!(menuChoices.global)) menuChoices.global = [];
-
 		this.__includeSelectMultiple();
 
 		if (selectedImages.data.length) this.__includeManipulateSelected();
@@ -42,66 +44,41 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeSelectMultiple() {
-		if (this.__choicesIncludes(choiceLabel.selectMultipleImages)) return;
-
-		let selectMultiple: CheckableMenuChoice = {
+		this.__menuChoices.addChoice({
 			label: choiceLabel.selectMultipleImages,
 			data: {
 				checked: this.__selectMultipleImagesSetting.get().enabled,
 				toggleSetting: this.__selectMultipleImagesSetting
 			}
-		};
-		prepend(selectMultiple, menuChoices.global);
+		});
 	}
 
 
 	private __includeManipulateSelected() {
-		this.__includeAddSelected();
-		this.__includeDeleteSelected();
+		if (this.__menuContext !== 'library') this.__includeAddSelected();
+		else this.__menuChoices.addChoice({label: choiceLabel.removeSelectedFromLib});
+
+		this.__menuChoices.addChoice({label: choiceLabel.deleteSelectedImages});
 	}
 
 
 	private __removeManipulateSelected() {
-		this.__removeChoices([choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]);
-	}
-
-
-	private __includeAddSelected() {
-		if (this.__choicesIncludes(choiceLabel.addSelectedToLib)) return;
-
-		let choice: MenuChoice = {label: choiceLabel.addSelectedToLib};
-
-		choice['submenu'] = libNames.data.map((libName) => {
-			return {
-				label: choiceLabel.addSelectedToLib  + '.' + libName,
-				data: {selectedImages: selectedImages.data,  libName}
-			};
-		});
-		prepend(choice, menuChoices.global);
-	}
-
-
-	private __includeDeleteSelected() {
-		if (this.__choicesIncludes(choiceLabel.deleteSelectedImages)) return;
-
-		let choice: MenuChoice = {label: choiceLabel.deleteSelectedImages};
-		prepend(choice, menuChoices.global);
-	}
-
-
-	private __removeChoices(choiceLabels: string[]) {
-		removeByTest(
-			(choice: MenuChoice) => (choiceLabels.includes(choice.label)),
-			menuChoices.global
+		this.__menuChoices.removeChoices(
+			[choiceLabel.addSelectedToLib, choiceLabel.deleteSelectedImages]
 		);
 	}
 
 
-	private __choicesIncludes(label: string): boolean {
-		return getByTest(
-			(choice: MenuChoice) => choice.label === label,
-			menuChoices.global
-		).length > 0;
+	private __includeAddSelected() {
+		this.__menuChoices.addChoice({
+			label: choiceLabel.addSelectedToLib,
+			submenu: libNames.data.map((libName) => {
+				return {
+					label: choiceLabel.addSelectedToLib  + '.' + libName,
+					data: {selectedImages: selectedImages.data,  libName}
+				};
+			})
+		});
 	}
 
 }

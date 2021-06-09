@@ -5,7 +5,7 @@ import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 import { GetGlobalActionMenuSubscriptionsService }
-	from '@global-action-menu_module/get-global-action-menu-subscriptions.service';
+	from './get-global-action-menu-subscriptions.service';
 
 
 @Component({
@@ -21,14 +21,14 @@ export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective imp
 	constructor(
 		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
 		public specificChoicesExecutor: GlobalActionMenuChoicesExecutorService,
-		public getSubscriptions: GetGlobalActionMenuSubscriptionsService
+		private __getSubscriptions: GetGlobalActionMenuSubscriptionsService
 	) {
 		super();
 	}
 
 
 	ngOnInit() {
-		this._subscriptions.push(...this.getSubscriptions.go());
+		this._subscriptions.push(...this.__getSubscriptions.go());
 	}
 
 }
