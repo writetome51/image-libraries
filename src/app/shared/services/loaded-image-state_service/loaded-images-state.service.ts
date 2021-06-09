@@ -8,18 +8,19 @@ import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { Settable } from '@interfaces/settable.interface';
+import { ImagesOrigin } from '@app/shared/types/images-origin.type';
 
 
 @Injectable({providedIn: 'root'})
 export class LoadedImagesStateService implements ResettableToDefault, Settable<ImageRecordBatch> {
 
-	private __origin: 'all' | 'library' | 'none' = 'none';
+	private __origin: ImagesOrigin | 'none' = 'none';
 
 
 	constructor(private __loadedLibrary: LoadedLibraryInBrowserStorageService) {}
 
 
-	getOrigin(): 'all' | 'library' | 'none' {
+	getOrigin(): ImagesOrigin | 'none' {
 		return this.__origin;
 	}
 

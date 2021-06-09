@@ -8,7 +8,8 @@ import { RunTasksAfterGettingImageRecordsService }
 
 
 @Injectable({providedIn: LibraryServicesModule})
-export class InterpretGetLibraryImagesResultService extends InterpretExistingUserDBOperationResultService {
+export class InterpretGetLibraryImagesResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleGetLibraryImagesErrorService,
