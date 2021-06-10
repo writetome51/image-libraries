@@ -7,15 +7,14 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 	selector: 'page-not-found',
 	template: `
 		<h2>Not found.</h2>
-		<html-image [data]="faces"></html-image>
-		<p>This could make you happy or sad. It depends on you.</p>
+		<html-image [data]="image"></html-image>
 	`
 })
 export class PageNotFoundComponent {
 
-	readonly faces: HTMLImage = {
-		src: environment.assets + 'happy-or-sad.png',
-		alt: 'happy and sad faces',
-		width: 362
+	readonly image: HTMLImage = {
+		src: environment.assets + 'bigfoot.png',
+		alt: 'bigfoot',
+		width: 400
 	};
 }
