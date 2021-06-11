@@ -1,7 +1,7 @@
 import { AppPaginatorDataSourceService }
 	from './app-paginator-data-source_service/app-paginator-data-source.abstract.service';
 import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
-import { LoadData as load, PageData as page }
+import { LoadConfigurationData as loadConfig, PageConfigurationData as pageConfig }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
 
@@ -11,8 +11,8 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
 
-		this.setItemsPerLoad(load.size);
-		this.setItemsPerPage(page.size);
+		this.setItemsPerLoad(loadConfig.size);
+		this.setItemsPerPage(pageConfig.size);
 	}
 
 
@@ -32,14 +32,14 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 		// This may cause itemsPerLoad to adjust so itemsPerLoad / itemsPerPage
 		// remains evenly divisible:
 		super.setItemsPerPage(num);
-		page.size = this.getItemsPerPage();
-		load.size = this.getItemsPerLoad(); // in case itemsPerLoad was adjusted.
+		pageConfig.size = this.getItemsPerPage();
+		loadConfig.size = this.getItemsPerLoad(); // in case itemsPerLoad was adjusted.
 	}
 
 
 	setItemsPerLoad(num: number) {
 		super.setItemsPerLoad(num);
-		load.size = this.getItemsPerLoad();
+		loadConfig.size = this.getItemsPerLoad();
 	}
 
 }

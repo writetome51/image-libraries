@@ -1,7 +1,11 @@
 import { BigDatasetPaginatorDataSource } from './big-dataset-paginator-data-source.interface';
+import { BackgroundExecutionStatusData }
+	from '@runtime-state-data/background-execution-status.data';
 import { DataTotalService } from '../data-total.abstract.service';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 import { ImageRecord } from '@interfaces/image-record.interface';
-import { LoadData as load }
+import { LoadConfigurationData as loadConfig }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LoadedImagesStateService }
 	from '@services/loaded-image-state_service/loaded-images-state.service';
@@ -32,10 +36,14 @@ export abstract class AppPaginatorDataSourceService implements BigDatasetPaginat
 		loadNumber: number, itemsPerLoad: number, isLastLoad: boolean
 	): Promise<ImageRecord[]> {
 
-		load.number = loadNumber;
-		await this.__setLoadedImages.go(load);
-
-		return this.__loadedImageState.getImages();
+		return await executeFunctionRequiringWaiting.go(
+			async () => {
+				loadConfig.number = loadNumber;
+				await this.__setLoadedImages.go(loadConfig);
+				return this.__loadedImageState.getImages();
+			},
+			BackgroundExecutionStatusData
+		);
 	}
 
 }
