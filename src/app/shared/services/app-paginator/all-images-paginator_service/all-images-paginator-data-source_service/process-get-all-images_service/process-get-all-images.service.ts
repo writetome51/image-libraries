@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { GetAllImagesService } from './get-all-images.service';
-import { AllImagesServicesModule } from '../../../all-images-services.module';
 import { InterpretGetImageRecordsResultService }
 	from '@interpret-result/interpret-get-image-records-result_service/interpret-get-image-records-result.service';
 import { ProcessThatSetsLoadedImagesService }
 	from '@process/process-that-sets-loaded-images.abstract.service';
 
 
-@Injectable({providedIn: AllImagesServicesModule})
+@Injectable({providedIn: 'root'})
 export class ProcessGetAllImagesService extends ProcessThatSetsLoadedImagesService {
 
 	constructor(

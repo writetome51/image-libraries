@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { GetLibraryImagesService } from './get-library-images.service';
-import { InterpretGetLibraryImagesResultService } from
-'./interpret-get-library-images-result_service/interpret-get-library-images-result.service';
-import { LibraryServicesModule } from '@app/routed-modules/library_module/library-services.module';
 import { ProcessThatSetsLoadedImagesService }
 	from '@process/process-that-sets-loaded-images.abstract.service';
+import { InterpretGetImageRecordsResultService }
+	from '@interpret-result/interpret-get-image-records-result_service/interpret-get-image-records-result.service';
 
 
-@Injectable({providedIn: LibraryServicesModule})
+@Injectable({providedIn: 'root'})
 export class ProcessGetLibraryImagesService extends ProcessThatSetsLoadedImagesService {
 
 	constructor(
 		__getResult: GetLibraryImagesService,
-		__interpretResult: InterpretGetLibraryImagesResultService
+		__interpretResult: InterpretGetImageRecordsResultService
 	) {
 		super(__getResult, __interpretResult);
 	}
