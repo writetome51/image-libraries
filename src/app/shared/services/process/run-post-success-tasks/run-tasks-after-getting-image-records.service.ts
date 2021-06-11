@@ -8,11 +8,11 @@ import { LoadedImagesStateService }
 @Injectable({providedIn: 'root'})
 export class RunTasksAfterGettingImageRecordsService implements IDoThis {
 
-	constructor(private __loadedImageState: LoadedImagesStateService) {}
+	constructor(private __loadedImagesState: LoadedImagesStateService) {}
 
 
 	async go(result: ImageRecordBatch) {
-		this.__loadedImageState.set(result);
+		this.__loadedImagesState.set(result);
 	}
 
 }

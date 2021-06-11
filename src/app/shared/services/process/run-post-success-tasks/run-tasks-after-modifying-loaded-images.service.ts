@@ -1,22 +1,20 @@
-import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 
 
-@Injectable({providedIn: 'root'})
-export class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
+export abstract class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
 
-	constructor(private __loadedImageState: LoadedImagesStateService) {}
+	constructor(private __paginator: AppPaginatorService) {}
 
 
-	go(): void {
-		this.__emptyLoadedImageCacheSoItWillBeForcedToRefresh();
+	async go() {
+		await this.__refreshCurrentPageData();
 	}
 
 
-	private __emptyLoadedImageCacheSoItWillBeForcedToRefresh() {
-		this.__loadedImageState.setDefault();
+	private async __refreshCurrentPageData() {
+		let pageNum = this.__paginator.getCurrentPageNumber();
+		await this.__paginator.setCurrentPageNumber(pageNum, {reload: true});
 	}
 
 }
