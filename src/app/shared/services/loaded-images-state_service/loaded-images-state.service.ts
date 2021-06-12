@@ -9,6 +9,8 @@ import { RequestedLibraryData as requestedLibrary }
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { Settable } from '@interfaces/settable.interface';
 import { ImagesOrigin } from '@app/shared/types/images-origin.type';
+import { LoadConfigurationData as loadConfig }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Injectable({providedIn: 'root'})
@@ -40,6 +42,7 @@ export class LoadedImagesStateService implements ResettableToDefault, Settable<I
 
 	setDefault() {
 		loadedImages.setDefault();
+		loadConfig.number = 1;
 		this.__origin = 'none';
 		this.__removeLoadedLibraryData();
 	}
