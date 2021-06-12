@@ -1,7 +1,12 @@
 import { AddImagesServicesModule } from '../../add-images-services.module';
 import { AppImage } from '@interfaces/app-image.interface';
+import { BackgroundExecutionStatusData as backgroundExecutionStatus }
+	from '@runtime-state-data/background-execution-status.data';
+import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
+	from '@services/execute-function-requiring-waiting.service';
 import { GetAppImageService as getAppImage } from '../../get-app-image.service';
 import { getArrFilled } from '@writetome51/get-arr-filled';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { NewImagesData as newImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
@@ -11,11 +16,6 @@ import { ProcessStoreImageFilesService }
 	from './process-store-image-files_service/process-store-image-files.service';
 import { TemporaryImageURLsData as temporaryImageURLs }
 	from '@runtime-state-data/temporary-image-urls.data';
-import { ExecuteFunctionRequiringWaitingService as executeFunctionRequiringWaiting }
-	from '@services/execute-function-requiring-waiting.service';
-import { BackgroundExecutionStatusData as executionStatus }
-	from '@runtime-state-data/background-execution-status.data';
-import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
@@ -34,7 +34,7 @@ export class UploadImagesService implements IDoThis {
 				newImages.data = this.__getNewAppImages(files, temporaryImageURLs.data);
 				await this.__processSaveNewImageRecords.go(newImages.data);
 			},
-			executionStatus
+			backgroundExecutionStatus
 		);
 	}
 
