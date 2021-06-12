@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 
 
@@ -9,9 +9,14 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 		<a [routerLink]="['/' + routeBeforePageNumber, input.getValue()]">Go</a>
 	`
 })
-export class JumpToPageControlsComponent {
+export class JumpToPageControlsComponent implements OnInit {
 
 	@Input() input: JumpToPageInputService;
 	@Input() routeBeforePageNumber: string;
+
+
+	ngOnInit() {
+		this.input.setMaxValue();
+	}
 
 }

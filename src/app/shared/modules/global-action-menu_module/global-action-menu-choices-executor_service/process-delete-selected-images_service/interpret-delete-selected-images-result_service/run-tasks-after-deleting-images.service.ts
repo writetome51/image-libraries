@@ -1,8 +1,6 @@
 import { AlertsService as alerts } from '@services/alerts.service';
-import { CurrentRouteService } from '@services/current-route.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
 import { RunTasksAfterModifyingLoadedImagesService }
@@ -13,16 +11,14 @@ import { RunTasksAfterModifyingLoadedImagesService }
 export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	constructor(
-		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
-		private __currentRoute: CurrentRouteService,
-		private __router: Router
+		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService
 	) {}
 
 
 	async go() {
 		selectedImages.data.length = 0;
-		this.__runTasksAfterModifyingLoadedImages.go();
-		await this.__router.navigate([this.__currentRoute.get()]);
+		await this.__runTasksAfterModifyingLoadedImages.go();
+
 		alerts.setSuccess('Image(s) deleted');
 	}
 

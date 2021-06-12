@@ -50,7 +50,7 @@ export const UserLibraryNamesData: ResettableToDefault = class __LibraryNamesDat
 };
 
 
-export const PageData: ResettableToDefault =  class __PageData {
+export const PageConfigurationData: ResettableToDefault =  class __PageData {
 
 	private static __size;
 
@@ -88,7 +88,7 @@ export const PageData: ResettableToDefault =  class __PageData {
 };
 
 
-export const LoadData: ResettableToDefault & LoadConfiguration = class __LoadData {
+export const LoadConfigurationData: ResettableToDefault & LoadConfiguration = class __LoadData {
 
 	static number: number;
 
@@ -101,14 +101,14 @@ export const LoadData: ResettableToDefault & LoadConfiguration = class __LoadDat
 
 
 	static set size(value) {
-		if (value < PageData.size) value = PageData.size;
+		if (value < PageConfigurationData.size) value = PageConfigurationData.size;
 		this.__size = value;
 	}
 
 
 	static setDefault() {
 		this.number = 1;
-		this.size = PageData.size;
+		this.size = PageConfigurationData.size;
 	}
 
 };
