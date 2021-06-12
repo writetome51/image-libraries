@@ -1,20 +1,32 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
+import { Injectable } from '@angular/core';
+import { LoadedImagesStateService } from '@services/loaded-image-state_service/loaded-images-state.service';
+import { LibraryPaginatorService } from '@app/shared/services/app-paginator/library-paginator_service/library-paginator.service';
+import { AllImagesPaginatorService } from '@app/shared/services/app-paginator/all-images-paginator_service/all-images-paginator.service';
 
 
-export abstract class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
+@Injectable({providedIn: 'root'})
+export class RunTasksAfterModifyingLoadedImagesService implements IDoThis {
 
-	constructor(private __paginator: AppPaginatorService) {}
+	constructor(
+		private __loadedImagesState: LoadedImagesStateService,
+		private __allImagespaginator: AllImagesPaginatorService,
+		private __libraryPaginator: LibraryPaginatorService
+	) {}
 
 
 	async go() {
-		await this.__refreshCurrentPageData();
+		const paginator = (this.__loadedImagesState.getOrigin() === 'all' ?
+			this.__allImagespaginator : this.__libraryPaginator);
+
+		await this.__refreshCurrentPageData(paginator);
 	}
 
 
-	private async __refreshCurrentPageData() {
-		let pageNum = this.__paginator.getCurrentPageNumber();
-		await this.__paginator.setCurrentPageNumber(pageNum, {reload: true});
+	private async __refreshCurrentPageData(paginator: AppPaginatorService) {
+		let pageNum = paginator.getCurrentPageNumber();
+		await paginator.setCurrentPageNumber(pageNum, {reload: true});
 	}
 
 }
