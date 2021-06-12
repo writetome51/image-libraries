@@ -1,10 +1,9 @@
+import { Injectable } from '@angular/core';
 import { LoadedImagesStateService }
 	from '@services/loaded-image-state_service/loaded-images-state.service';
-import { Injectable } from '@angular/core';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { Subject, Subscribable } from 'rxjs';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
-import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
@@ -33,7 +32,7 @@ export class ImageSelectorService {
 
 
 	private __select(image) {
-		this.__afterAction_sendMessageToSubscribersIfSelectedOrNot(() => {
+		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
 			image['selected'] = true;
 			selectedImages.data.push({name: image.name, _id: image._id});
 		});
@@ -41,30 +40,26 @@ export class ImageSelectorService {
 
 
 	private __unSelect(image: { _id: string, selected?: boolean }) {
-		this.__afterAction_sendMessageToSubscribersIfSelectedOrNot(
-			() => {
-				delete image.selected;
-				removeByTest(
-					(selectedImg: { _id: string }) => selectedImg._id === image._id,
-					selectedImages.data
-				);
-			},
-			{selecting: false}
-		);
+		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
+			delete image.selected;
+			removeByTest(
+				(selectedImg: { _id: string }) => selectedImg._id === image._id,
+				selectedImages.data
+			);
+		});
 	}
 
 
-	private __afterAction_sendMessageToSubscribersIfSelectedOrNot(
-		action, option = {selecting: true},
-	) {
+	private __afterAction_sendMessageToSubscribersIfSelectionStateChanged(action) {
 		const previousLength = selectedImages.data.length;
 		action();
+		const currentLength = selectedImages.data.length;
 
 		// We want to only send a message if 'imagesSelected' is changing from true
 		// to false or from false to true.
 
-		if ( (option.selecting && previousLength === 0) ||
-			(not(option.selecting) && previousLength === 1) ) {
+		if ( (currentLength === 1 && previousLength === 0) ||
+			(currentLength === 0 && previousLength === 1) ) {
 			this.__subject.next({imagesSelected: previousLength === 0});
 		}
 	}
