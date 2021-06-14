@@ -3,7 +3,7 @@ import { RunTasksAfterDeletionOfLibraryService }
 	from './run-tasks-after-deletion-of-library.service';
 import { DeleteLibraryButtonServicesModule } from '../../delete-library-button-services.module';
 import { HandleExistingUserDBOperationErrorService }
-	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
+	from '@handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { InterpretExistingUserDBOperationResultService }
 	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 

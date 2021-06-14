@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
