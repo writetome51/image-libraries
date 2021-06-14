@@ -5,7 +5,7 @@ import { getByTest } from '@writetome51/array-get-by-test';
 import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
 import { Title } from '@angular/platform-browser';
 import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 
 

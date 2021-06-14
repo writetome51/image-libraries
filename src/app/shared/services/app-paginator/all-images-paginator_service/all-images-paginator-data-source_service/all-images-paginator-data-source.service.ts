@@ -5,7 +5,7 @@ import { ProcessGetAllImagesService }
 	from './process-get-all-images_service/process-get-all-images.service';
 import { Injectable } from '@angular/core';
 import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: 'root'})

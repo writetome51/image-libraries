@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { LibraryPaginatorService } from '../../library-paginator_service/library-paginator.service';
+import { LibraryPaginatorService } from '../../../../shared/services/app-paginator/library-paginator_service/library-paginator.service';
 import { ListItemRemoverService } from './list-item-remover.service';
 import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 import { ImageRecord } from '@interfaces/image-record.interface';

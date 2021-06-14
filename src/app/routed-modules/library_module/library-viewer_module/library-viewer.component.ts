@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryPaginatorService } from '../library-paginator_service/library-paginator.service';
+import { LibraryPaginatorService } from '../../../shared/services/app-paginator/library-paginator_service/library-paginator.service';
 import { LoadedLibraryImageTotalService }
 	from '@services/library/loaded-library-image-total.service';
 import { ImagesViewerContextDirective }

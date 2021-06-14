@@ -6,11 +6,13 @@ import { Component, Input } from '@angular/core';
 	selector: 'action-menu-button',
 	template: `
 		<button type="button" class="btn btn-default action-menu-button"
-				(click)="toggleOpenMenu($event)">
+			(click)="toggleOpenMenu($event)"
+		>
 			<div class="sprocket-wheel-caret-container">
 				<sprocket-wheel></sprocket-wheel>
 				<span class="caret"></span>
 			</div>
+
 		</button>
 	`,
 	styles: [`.action-menu-button { padding: 0 10px; }`]

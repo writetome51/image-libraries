@@ -10,7 +10,7 @@ import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
 import { ImagesOrigin } from '@app/shared/types/images-origin.type';
 import { LoadedImagesStateService }
-		from '@services/loaded-image-state_service/loaded-images-state.service';
+		from '@services/loaded-images-state_service/loaded-images-state.service';
 import { GlobalActionMenuChoicesService as menuChoices }
 	from './global-action-menu-choices.service';
 
@@ -18,7 +18,7 @@ import { GlobalActionMenuChoicesService as menuChoices }
 @Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
-	private readonly __menuContext: ImagesOrigin | "none";
+	private readonly __menuContext: ImagesOrigin | 'none';
 
 
 	constructor(

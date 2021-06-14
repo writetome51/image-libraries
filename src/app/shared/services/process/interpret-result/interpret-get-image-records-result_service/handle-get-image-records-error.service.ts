@@ -7,7 +7,7 @@ import { HandleNoRecordMatchErrorService }
 import { HandleNotLoggedInErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-not-logged-in-error.service';
 import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: 'root'})

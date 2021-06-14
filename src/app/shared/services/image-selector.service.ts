@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { Subject, Subscribable } from 'rxjs';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';

@@ -1,7 +1,7 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Injectable } from '@angular/core';
-import { LoadedImagesStateService } from '@services/loaded-image-state_service/loaded-images-state.service';
+import { LoadedImagesStateService } from '@services/loaded-images-state_service/loaded-images-state.service';
 import { LibraryPaginatorService } from '@app/shared/services/app-paginator/library-paginator_service/library-paginator.service';
 import { AllImagesPaginatorService } from '@app/shared/services/app-paginator/all-images-paginator_service/all-images-paginator.service';
 

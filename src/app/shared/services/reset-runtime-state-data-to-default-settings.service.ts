@@ -3,7 +3,7 @@ import { append } from '@writetome51/array-append-prepend';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LoadedImagesStateService }
-	from './loaded-image-state_service/loaded-images-state.service';
+	from './loaded-images-state_service/loaded-images-state.service';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 
 

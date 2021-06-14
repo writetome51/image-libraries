@@ -8,7 +8,7 @@ import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 import { newImagesSaved } from '@string-constants/alert-success-messages';
 import { LoadedImagesStateService }
-	from '@services/loaded-image-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})

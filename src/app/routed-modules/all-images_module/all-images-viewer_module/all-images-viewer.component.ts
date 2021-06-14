@@ -1,5 +1,5 @@
 import { AllImagesPaginatorService }
-	from '../all-images-paginator_service/all-images-paginator.service';
+	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
