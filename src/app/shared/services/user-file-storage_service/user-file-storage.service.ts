@@ -34,7 +34,7 @@ export class UserFileStorageService {
 	}
 
 
-	async deleteUserFiles(userName: string): Promise<{ success: true } | HasError> {
+	async deleteAllUserFiles(userName: string): Promise<{ success: true } | HasError> {
 		try {
 			let objects = await this.__awsS3.getObjectsInside(userName);
 

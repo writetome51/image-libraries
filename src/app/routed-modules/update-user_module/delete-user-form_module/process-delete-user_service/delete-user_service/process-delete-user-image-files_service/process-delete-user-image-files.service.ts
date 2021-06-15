@@ -1,4 +1,4 @@
-import { DeleteUserImageFilesService } from './delete-user-image-files.service';
+import { DeleteAllUserImageFilesService } from './delete-all-user-image-files.service';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../../../update-user-services.module';
 import { ProcessService } from '@process/process.abstract.service';
@@ -10,7 +10,7 @@ import { InterpretDeleteUserImageFilesResultService }
 export class ProcessDeleteUserImageFilesService extends ProcessService {
 
 	constructor(
-		__getResult: DeleteUserImageFilesService,
+		__getResult: DeleteAllUserImageFilesService,
 		__interpretResult: InterpretDeleteUserImageFilesResultService
 	) {
 		super(__getResult, __interpretResult);

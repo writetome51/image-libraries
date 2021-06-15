@@ -15,7 +15,6 @@ import { ProgressBarContextDirective }
 	`,
 	styles: [
 		`.app-horizontal-progress-bar {
-			width: 1px; /* necessary? */
 			text-align: left;
 			padding-left: 10px;
 			position: relative;

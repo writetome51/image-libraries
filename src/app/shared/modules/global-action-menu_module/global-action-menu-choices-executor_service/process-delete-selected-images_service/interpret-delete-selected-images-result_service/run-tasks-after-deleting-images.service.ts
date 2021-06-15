@@ -1,10 +1,9 @@
 import { AlertsService as alerts } from '@services/alerts.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
-import { RunTasksAfterModifyingLoadedImagesService }
-	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+import { ReloadCurrentPageDataService }
+	from '@services/reload-current-page-data.service';
 import { ImageSelectorService } from '@services/image-selector.service';
 
 
@@ -12,16 +11,16 @@ import { ImageSelectorService } from '@services/image-selector.service';
 export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	constructor(
-		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
+		private __reloadCurrentPageData: ReloadCurrentPageDataService,
 		private __imageSelector: ImageSelectorService
 	) {}
 
 
 	async go() {
-		await this.__runTasksAfterModifyingLoadedImages.go();
-		this.__imageSelector.unselectAll();
-
 		alerts.setSuccess('Image(s) deleted');
+
+		this.__imageSelector.unselectAll();
+		await this.__reloadCurrentPageData.go();
 	}
 
 }
