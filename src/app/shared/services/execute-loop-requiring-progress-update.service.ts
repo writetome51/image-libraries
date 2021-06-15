@@ -1,3 +1,4 @@
+import { getRoundedDown } from '@writetome51/get-rounded-up-down';
 import { Progress } from '@interfaces/progress.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
@@ -16,7 +17,7 @@ export class __ExecuteLoopRequiringProgressUpdateService {
 
 		for (let i = 0, length = arr.length; i < length; ++i) {
 			await forEach(arr[i], i, arr);
-			progress.percentageComplete = (((i + 1) / length) * 100);
+			progress.percentageComplete = getRoundedDown(((i + 1) / length) * 100);
 		}
 	};
 }
