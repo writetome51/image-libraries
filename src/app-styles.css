@@ -162,7 +162,7 @@ ActionMenuModule
 }
 
 
-.menu-choice  .hovered {
+.menu-choice:hover {
 	background-color: #ececec;
 }
 
