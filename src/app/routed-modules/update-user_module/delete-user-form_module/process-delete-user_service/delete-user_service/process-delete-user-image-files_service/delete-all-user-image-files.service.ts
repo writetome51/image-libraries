@@ -6,13 +6,13 @@ import { UserFileStorageService } from '@services/user-file-storage_service/user
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class DeleteUserImageFilesService implements IDoThis {
+export class DeleteAllUserImageFilesService implements IDoThis {
 
 	constructor(private __userFileStorage: UserFileStorageService) {}
 
 
 	async go(email): Promise<{ success: true } | HasError> {
-		return this.__userFileStorage.deleteUserFiles(email);
+		return this.__userFileStorage.deleteAllUserFiles(email);
 	}
 
 }
