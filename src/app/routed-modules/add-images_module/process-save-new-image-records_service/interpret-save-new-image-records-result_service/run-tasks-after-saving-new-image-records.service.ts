@@ -1,35 +1,26 @@
-import { Injectable } from '@angular/core';
-import { AlertsService as alerts } from '@services/alerts.service';
-import { NewImagesData as newImages }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AddImagesServicesModule } from '../../add-images-services.module';
-import { UserImageTotalInBrowserStorageService }
-	from '@browser-storage/user-image-total-in-browser-storage.service';
+import { AlertsService as alerts } from '@services/alerts.service';
+import { AllImagesPaginatorService }
+	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
+import { IDoThis } from '@interfaces/i-do-this.interface';
+import { Injectable } from '@angular/core';
 import { newImagesSaved } from '@string-constants/alert-success-messages';
-import { LoadedImagesStateService }
-	from '@services/loaded-images-state_service/loaded-images-state.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
 export class RunTasksAfterSavingNewImageRecordsService implements IDoThis {
 
-	constructor(
-		private __userImageTotal: UserImageTotalInBrowserStorageService,
-		private __loadedImagesState: LoadedImagesStateService
-	) {}
+	constructor(private __allImagesPaginator: AllImagesPaginatorService) {}
 
 
-	go() {
-		this.__emptyImageDataSoItWillBeForcedToRefresh();
+	async go() {
+		await this.refreshAllImages();
 		alerts.setSuccess(newImagesSaved);
 	}
 
 
-	private __emptyImageDataSoItWillBeForcedToRefresh() {
-		newImages.setDefault();
-		this.__userImageTotal.remove();
-		this.__loadedImagesState.setDefault();
+	private async refreshAllImages() {
+		await this.__allImagesPaginator.setCurrentPageNumber(1, {reload: true});
 	}
 
 }
