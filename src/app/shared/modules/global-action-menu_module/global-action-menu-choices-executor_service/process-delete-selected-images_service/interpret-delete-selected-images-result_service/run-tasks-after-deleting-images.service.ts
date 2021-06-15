@@ -5,19 +5,21 @@ import { SelectedImagesData as selectedImages } from '@runtime-state-data/select
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
 import { RunTasksAfterModifyingLoadedImagesService }
 	from '@run-post-success-tasks/run-tasks-after-modifying-loaded-images.service';
+import { ImageSelectorService } from '@services/image-selector.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
 export class RunTasksAfterDeletingImagesService implements IDoThis {
 
 	constructor(
-		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService
+		private __runTasksAfterModifyingLoadedImages: RunTasksAfterModifyingLoadedImagesService,
+		private __imageSelector: ImageSelectorService
 	) {}
 
 
 	async go() {
-		selectedImages.data.length = 0;
 		await this.__runTasksAfterModifyingLoadedImages.go();
+		this.__imageSelector.unselectAll();
 
 		alerts.setSuccess('Image(s) deleted');
 	}

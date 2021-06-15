@@ -1,5 +1,5 @@
 import { AllImagesPaginatorService }
-	from '../../shared/services/app-paginator/all-images-paginator_service/all-images-paginator.service';
+	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
 import { AllImagesServicesModule } from './all-images-services.module';
 import { Injectable } from '@angular/core';
 import { JumpToPageInputService }

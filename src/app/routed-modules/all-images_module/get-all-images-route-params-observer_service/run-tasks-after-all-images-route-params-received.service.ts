@@ -1,5 +1,5 @@
 import { AllImagesPaginatorService }
-	from '../../../shared/services/app-paginator/all-images-paginator_service/all-images-paginator.service';
+	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
 import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
@@ -26,7 +26,7 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 		if (this.__allNotLoaded()) await this.__refreshLoadAndSetPage(pageNum);
 		else await this.__setPage(pageNum);
 
-	//	this.__jumpToPageInput.setMaxValue();
+		//	this.__jumpToPageInput.setMaxValue();
 	}
 
 
