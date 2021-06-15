@@ -34,13 +34,17 @@ export class AlertsService {
 	}
 
 
-	static includesSuccess(message): boolean {
-		return this.__includesMatch((alert) => not(alert.isError) && (alert.message === message))
-	}
+	static includesSuccess(message): boolean { return this.__includesMessage(message); }
 
 
-	static includesError(message): boolean {
-		return this.__includesMatch((alert) => alert.isError && (alert.message === message))
+	static includesError(message): boolean { return this.__includesMessage(message, 'error'); }
+
+
+	private static __includesMessage(message: string, successOrError = 'success') {
+		const isError = (successOrError === 'error');
+		return this.__includesMatch(
+			(alert) => (alert.isError === isError) && (alert.message === message)
+		);
 	}
 
 
