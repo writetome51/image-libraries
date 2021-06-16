@@ -12,8 +12,7 @@ import { HasContextInputDirective } from './has-context-input.abstract.directive
 export abstract class ClickExecuteFunctionDirective
 	extends HasContextInputDirective<ClickExecuteFunctionContextDirective>{
 
-	// Passed to this.context.execute()
-	@Input() funcArgs: any[] = [];
+	@Input() funcArgs = []; // Passed to this.context.execute()
 
 	clicked = false;
 	executionStatus = ClickStartedExecutionStatusData;

@@ -1,8 +1,7 @@
 import { HandleExistingUserDBOperationErrorService }
-	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
+	from '@handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 import { Injectable } from '@angular/core';
-import { RunTasksAfterLoginService }
-	from '@run-post-success-tasks/run-tasks-after-login.service';
+import { RunTasksAfterLoginService } from '@run-post-success-tasks/run-tasks-after-login.service';
 import { InterpretExistingUserDBOperationResultService }
 	from './interpret-existing-user-db-operation-result.abstract.service';
 

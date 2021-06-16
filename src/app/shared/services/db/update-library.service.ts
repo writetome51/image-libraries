@@ -1,8 +1,8 @@
 import { LibraryRecord } from '@interfaces/library-record.interface';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { SessionIDInBrowserStorageService }
-	from '@services/browser-storage/session-id-in-browser-storage.service';
+	from '@browser-storage/session-id-in-browser-storage.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
 

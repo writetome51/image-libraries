@@ -22,7 +22,7 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 		super([
 			{executor: processDeleteSelectedImages, label: choiceLabel.deleteSelectedImages},
 			{executor: addSelectedImagesToLibrary, label: choiceLabel.addSelectedToLib},
-			{executor: toggleEnableSelectMultiple, label: choiceLabel.selectMultipleImages},
+			{executor: toggleEnableSelectMultiple, label: choiceLabel.selectImages},
 		]);
 	}
 

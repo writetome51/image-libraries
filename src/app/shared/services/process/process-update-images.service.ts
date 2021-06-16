@@ -2,7 +2,7 @@ import { ProcessExistingUserDBOperationService }
 	from '@process/process-existing-user-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
 import { InterpretUpdateLibraryResultService }
-	from './process-update-library_service/interpret-update-library-result_service/interpret-update-library-result.service';
+	from './process-update-library_service/interpret-update-library-result.service';
 import { UpdateImagesService } from '@db/update-images.service';
 
 

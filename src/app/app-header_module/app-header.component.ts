@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
 import { appName } from '@string-constants/app-name';
+import { Component } from '@angular/core';
+import { isString } from '@writetome51/is-string-not-string';
 import { SessionIDInBrowserStorageService }
 	from '@browser-storage/session-id-in-browser-storage.service';
-import { isString } from '@writetome51/is-string-not-string';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { isString } from '@writetome51/is-string-not-string';
 				<a routerLink="/" title="home page">{{ siteHeading }}</a>
 			</h1>
 
-			<logged-in-navigator *ngIf="loggedIn"></logged-in-navigator>
+			<logged-in-navigator *ngIf="assumedLoggedIn"></logged-in-navigator>
 		</header>
 	`
 })
@@ -22,9 +22,9 @@ export class AppHeaderComponent {
 	siteHeading = appName;
 
 
-	get loggedIn(): boolean {
+	get assumedLoggedIn(): boolean {
 		const sessionID = this.__sessionIDInBrowser.get();
-		return (isString(sessionID) && sessionID.length > 0);
+		return (isString(sessionID) && sessionID.length > 8);
 	}
 
 

@@ -45,7 +45,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 	private __includeSelectMultiple() {
 		menuChoices.addChoice({
-			label: choiceLabel.selectMultipleImages,
+			label: choiceLabel.selectImages,
 			data: {
 				checked: this.__selectMultipleImagesSetting.get().enabled,
 				toggleSetting: this.__selectMultipleImagesSetting

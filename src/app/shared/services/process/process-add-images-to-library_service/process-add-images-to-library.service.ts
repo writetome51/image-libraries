@@ -1,6 +1,6 @@
 import { InterpretAddImagesToLibraryResultService }
 	from './interpret-add-images-to-library-result_service/interpret-add-images-to-library-result.service';
-import { AddImagesToLibraryService } from '@services/library/add-images-to-library.service';
+import { AddImagesToLibraryService } from '@library/add-images-to-library.service';
 import { ProcessService } from '@process/process.abstract.service';
 import { Injectable } from '@angular/core';
 

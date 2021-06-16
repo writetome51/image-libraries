@@ -3,8 +3,8 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {
-			"@abstract-components/*": [
-				"src/app/shared/abstract-components/*"
+			"@abstract-directives/*": [
+				"src/app/shared/abstract-directives/*"
 			],
 			"@action-menu_module/*": [
 				"src/app/shared/modules/action-menu_module/*"
@@ -78,8 +78,11 @@
 			"@interpret-result/*": [
 				"src/app/shared/services/process/interpret-result/*"
 			],
+			"@library/*": ["src/app/shared/services/library/*"],
 			"@logged-in-app-navigator_module/*": ["src/app/logged-in-app-navigator_module/*"],
-			"@modules/*": ["src/app/shared/modules/*"],
+			"@loading-content-section_module/*": [
+				"src/app/shared/modules/loading-content-section_module/*"
+			],
 			"@menu-choice_module/*": [
 				"src/app/shared/modules/action-menu_module/action-menu-choices_module/menu-choice_module/*"
 			],
@@ -101,12 +104,10 @@
 			"@runtime-state-data/*": [
 				"src/app/shared/data/runtime-state/*"
 			],
-			"@search/*": [
-				"src/app/shared/modules/search/*"
+			"@search_module/*": [
+				"src/app/shared/modules/search_module/*"
 			],
-			"@services/*": [
-				"src/app/shared/services/*"
-			],
+			"@services/*": ["src/app/shared/services/*"],
 			"@string-constants/*": [
 				"src/app/shared/string-constants/*"
 			],
@@ -118,6 +119,9 @@
 			],
 			"@tiny-loading-spinner_module/*": [
 				"src/app/shared/modules/tiny-loading-spinner_module/*"
+			],
+			"@types/*": [
+				"src/app/shared/types/*"
 			],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"

@@ -6,10 +6,11 @@ import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
+import { AlertsService as alerts } from '@services/alerts.service';
 
 
 @Injectable({providedIn: 'root'})
-export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDoThis {
+export class RunTasksAfterUpdatingLibraryService implements IDoThis {
 
 	constructor(
 		private __librariesInBrowser: LibrariesInBrowserStorageService,
@@ -18,8 +19,14 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 
 
 	go(updatedLibrary: LibraryRecord) {
+		// for security:
+		delete updatedLibrary._id;
+		delete updatedLibrary._user_id;
+
 		this.__updateLocalLibraries(updatedLibrary);
 		this.__updateLoadedLibrary_ifNecessary(updatedLibrary);
+
+		alerts.setSuccess('Library updated');
 	}
 
 
@@ -33,12 +40,17 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 
 
 	private __updateLoadedLibrary_ifNecessary(updatedLibrary) {
-		let currentLibrary = this.__loadedLibrary.get();
-		if (hasValue(currentLibrary) && (currentLibrary.name === updatedLibrary.name)) {
+		if (this.__isCurrentlyLoadedLibrary(updatedLibrary)) {
 			this.__loadedLibrary.set(updatedLibrary);
 
 			console.log('updated loaded library');
 		}
+	}
+
+
+	private __isCurrentlyLoadedLibrary(updatedLibrary) {
+		let currentLibrary = this.__loadedLibrary.get();
+		return (hasValue(currentLibrary) && (currentLibrary.name === updatedLibrary.name))
 	}
 
 }

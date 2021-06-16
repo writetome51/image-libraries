@@ -40,7 +40,7 @@ export class AppComponent {
 
 
 	private __setDefaultPageTitle() {
-		// This is the only place where you can set the title with
+		// This is the only place where you can set the <title> with
 		// `title.setTitle(currentPageTitle.data)`.  In all other places, set the title with
 		// `title.setTitle(getPageTitle.go(stringArray))`
 

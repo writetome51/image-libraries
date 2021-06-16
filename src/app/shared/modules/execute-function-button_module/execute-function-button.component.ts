@@ -1,5 +1,5 @@
 import { ClickExecuteFunctionDirective }
-	from '@app/shared/abstract-directives/click-execute-function.abstract.directive';
+	from '@abstract-directives/click-execute-function.abstract.directive';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild }
 	from '@angular/core';
 
