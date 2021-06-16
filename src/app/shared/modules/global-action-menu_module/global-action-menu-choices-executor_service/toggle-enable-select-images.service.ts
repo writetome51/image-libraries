@@ -7,7 +7,7 @@ import { ImageSelectorService } from '@services/image-selector.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class ToggleEnableSelectMultipleImagesService extends ToggleEnableMenuChoiceService {
+export class ToggleEnableSelectImagesService extends ToggleEnableMenuChoiceService {
 
 	constructor(private __imageSelector: ImageSelectorService) {
 		super();

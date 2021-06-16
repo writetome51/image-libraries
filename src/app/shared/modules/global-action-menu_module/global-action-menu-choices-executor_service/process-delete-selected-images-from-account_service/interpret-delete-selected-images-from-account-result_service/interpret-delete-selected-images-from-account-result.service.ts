@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RunTasksAfterDeletingImagesService } from './run-tasks-after-deleting-images.service';
+import { RunTasksAfterDeletingImagesFromAccountService } from './run-tasks-after-deleting-images-from-account.service';
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
 import { HandleExistingUserDBOperationErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
@@ -8,12 +8,12 @@ import { InterpretExistingUserDBOperationResultService }
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class InterpretDeleteSelectedImagesResultService
-		extends InterpretExistingUserDBOperationResultService {
+export class InterpretDeleteSelectedImagesFromAccountResultService
+	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
 		__handleError: HandleExistingUserDBOperationErrorService,
-		__runPostSuccessTasks: RunTasksAfterDeletingImagesService
+		__runPostSuccessTasks: RunTasksAfterDeletingImagesFromAccountService
 	) {
 		super(__handleError, __runPostSuccessTasks);
 	}

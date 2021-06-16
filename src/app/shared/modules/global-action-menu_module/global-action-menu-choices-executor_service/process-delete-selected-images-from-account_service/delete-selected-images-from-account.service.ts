@@ -10,7 +10,7 @@ import { GlobalActionMenuServicesModule }
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class DeleteSelectedImagesService implements IDoThis {
+export class DeleteSelectedImagesFromAccountService implements IDoThis {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,

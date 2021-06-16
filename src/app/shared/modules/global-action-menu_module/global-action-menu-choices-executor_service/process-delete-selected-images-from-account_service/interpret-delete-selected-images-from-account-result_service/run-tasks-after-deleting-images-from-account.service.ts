@@ -8,7 +8,7 @@ import { ImageSelectorService } from '@services/image-selector.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class RunTasksAfterDeletingImagesService implements IDoThis {
+export class RunTasksAfterDeletingImagesFromAccountService implements IDoThis {
 
 	constructor(
 		private __reloadCurrentPageData: ReloadCurrentPageDataService,
