@@ -27,6 +27,8 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 		let libraries = this.__librariesInBrowser.get();
 		libraries[updatedLibrary.name] = updatedLibrary;
 		this.__librariesInBrowser.set(libraries);
+
+		console.log('updated local libraries');
 	}
 
 
@@ -34,6 +36,8 @@ export class RunTasksAfterAddingOrRemovingImageFromLibraryService implements IDo
 		let currentLibrary = this.__loadedLibrary.get();
 		if (hasValue(currentLibrary) && (currentLibrary.name === updatedLibrary.name)) {
 			this.__loadedLibrary.set(updatedLibrary);
+
+			console.log('updated loaded library');
 		}
 	}
 
