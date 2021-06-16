@@ -1,5 +1,5 @@
 import { ProcessAddImagesToLibraryService }
-	from '../../../../services/process/process-add-images-to-library_service/process-add-images-to-library.service';
+	from '@process/process-add-images-to-library_service/process-add-images-to-library.service';
 import { Injectable } from '@angular/core';
 import { ProcessRemoveImageFromLibraryService }
 	from './process-remove-image-from-library_service/process-remove-image-from-library.service';
