@@ -27,8 +27,8 @@
 			"@browser-storage/*": [
 				"src/app/shared/services/browser-storage/*"
 			],
-			"@clear-alert-on-destroy_module/*": [
-				"src/app/shared/modules/clear-alert-on-destroy_module/*"
+			"@clear-alerts-on-destroy_module/*": [
+				"src/app/shared/modules/clear-alerts-on-destroy_module/*"
 			],
 			"@clear-form-on-init_module/*": [
 				"src/app/shared/modules/clear-form-on-init_module/*"
@@ -63,6 +63,9 @@
 			"@handle-existing-user-db-operation-error_service/*": [
 				"src/app/shared/services/process/handle-error/handle-existing-user-db-operation-error_service/*"
 			],
+			"@horizontal-progress-bar_module/*": [
+				"src/app/shared/modules/horizontal-progress-bar_module/*"
+			],
 			"@hoverable-container_module/*": [
 				"src/app/shared/modules/hoverable-container_module/*"
 			],
@@ -71,6 +74,9 @@
 			],
 			"@image-size-slider_module/*": [
 				"src/app/shared/modules/image-size-slider_module/*"
+			],
+			"@images-viewer_module/*": [
+				"src/app/shared/modules/images-viewer_module/*"
 			],
 			"@interfaces/*": [
 				"src/app/shared/interfaces/*"
@@ -120,9 +126,7 @@
 			"@tiny-loading-spinner_module/*": [
 				"src/app/shared/modules/tiny-loading-spinner_module/*"
 			],
-			"@types/*": [
-				"src/app/shared/types/*"
-			],
+			"@types/*": ["src/app/shared/types/*"],
 			"@validating-input/*": [
 				"src/app/shared/services/validating-input/*"
 			],

@@ -2,7 +2,7 @@ import { AnswerSecurityQuestionFormModule }
 	from './answer-security-question-form_module/answer-security-question-form.module';
 import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
 import { ClearAlertsOnDestroyModule }
-	from '@modules/clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
+	from '@clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { DeAuthenticatedGuard } from '@guards/de-authenticated.guard';
 import { GetSecurityQuestionFormModule }

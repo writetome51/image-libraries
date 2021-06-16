@@ -1,7 +1,7 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
 import { ClearAlertsOnDestroyModule }
-	from '@modules/clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
+	from '@clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';

@@ -7,7 +7,7 @@ import { LibraryViewerServicesModule } from './library-viewer-services.module';
 import { LibraryChangeControlsModule }
 	from './library-change-controls_module/library-change-controls.module';
 import { NgModule } from '@angular/core';
-import { ImagesViewerModule } from '@modules/images-viewer_module/images-viewer.module';
+import { ImagesViewerModule } from '@images-viewer_module/images-viewer.module';
 
 
 @NgModule({

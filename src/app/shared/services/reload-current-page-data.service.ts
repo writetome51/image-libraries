@@ -13,11 +13,11 @@ export class ReloadCurrentPageDataService implements IDoThis {
 	async go() {
 		const paginator = this.__getCurrentPaginator.go();
 
-		await this.__reloadCurrentPageData(paginator);
+		await this.__reloadCurrentPage(paginator);
 	}
 
 
-	private async __reloadCurrentPageData(paginator: AppPaginatorService) {
+	private async __reloadCurrentPage(paginator: AppPaginatorService) {
 		let pageNum = paginator.getCurrentPageNumber();
 		await paginator.setCurrentPageNumber(pageNum, {reload: true});
 	}
