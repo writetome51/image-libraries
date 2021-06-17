@@ -6,17 +6,20 @@ import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { RouteParametersSubscriberDirective }
 	from '@app/shared/abstract-directives/route-parameters-subscriber.abstract.directive';
+import { BackgroundExecutionStatusData } from '@runtime-state-data/background-execution-status.data';
 
 
 @Component({
 	selector: 'app-library',
 	template: `
-		<loading-content-section [heading]="heading">
+		<loading-content-section [heading]="heading" [loadingStatus]="backgroundExecutionStatus">
 			<library-viewer></library-viewer>
 		</loading-content-section>
 	`
 })
 export class LibraryComponent extends RouteParametersSubscriberDirective {
+
+	backgroundExecutionStatus = BackgroundExecutionStatusData;
 
 	get heading() {
 		return requestedLibrary.name;

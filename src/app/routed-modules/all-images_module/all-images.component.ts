@@ -6,12 +6,13 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 import { RouteParametersSubscriberDirective }
 	from '@app/shared/abstract-directives/route-parameters-subscriber.abstract.directive';
 import { Title } from '@angular/platform-browser';
+import { BackgroundExecutionStatusData } from '@runtime-state-data/background-execution-status.data';
 
 
 @Component({
 	selector: 'all-images',
 	template: `
-		<loading-content-section [heading]="heading">
+		<loading-content-section [heading]="heading" [loadingStatus]="backgroundExecutionStatus">
 			<all-images-viewer></all-images-viewer>
 		</loading-content-section>
 	`
@@ -19,6 +20,7 @@ import { Title } from '@angular/platform-browser';
 export class AllImagesComponent extends RouteParametersSubscriberDirective {
 
 	heading = 'All Images';
+	backgroundExecutionStatus = BackgroundExecutionStatusData;
 
 
 	constructor(

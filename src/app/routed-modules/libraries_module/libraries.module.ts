@@ -5,11 +5,13 @@ import { ClearAlertsOnDestroyModule }
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LibrariesComponent } from './libraries.component';
-import { LibrariesListModule } from './libraries-list_module/libraries-list.module';
+import { LibraryNamesModule } from './library-names_module/library-names.module';
 import { NewLibraryButtonComponent } from './new-library-button.component';
 import { NewLibraryFormModule } from './new-library-form_module/new-library-form.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoadingContentSectionModule }
+	from '@loading-content-section_module/loading-content-section.module';
 
 
 @NgModule({
@@ -21,8 +23,9 @@ import { RouterModule } from '@angular/router';
 		CommonModule,
 		ClearFormOnInitModule,
 		ClearAlertsOnDestroyModule,
+		LoadingContentSectionModule,
 		FormsModule,
-		LibrariesListModule,
+		LibraryNamesModule,
 		NewLibraryFormModule,
 		RouterModule.forChild([
 			{
