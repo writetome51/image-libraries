@@ -15,6 +15,7 @@ You can delete a library.
 
 You can add images to your account.
 You can view all the images in your account.
+You can delete images from your account.
 
 You can add an image to a library.
 You can remove an image from a library.
@@ -24,8 +25,18 @@ You cannot yet reorder the images in a library.
 You cannot yet search images.
 
 
-4/28/21 2:10 AM
+4/28/21
 
 At some point in the last month, refactoring Components caused some styling to break,
 especially in any Component where you view a page of images.  The styling in
 ImageActionMenuComponent is completely screwed.  The width of form text inputs has shrunk.
+
+
+6/17/21
+
+The problem from the previous entry is solved.  The fix was made by combining multiple
+stylesheets into one file.  Previously they'd been separated into as many as 7 files, and
+the config file /angular.json had been told to bundle them together during the build.
+That had worked until I updated Angular to version 11, which (for unknown reasons) doesn't
+allow the config file to bundle more than 3 or 4 stylesheet files together (so some of the
+styles weren't being include).
