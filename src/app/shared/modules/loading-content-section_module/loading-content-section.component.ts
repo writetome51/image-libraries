@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { BackgroundExecutionStatusData }
-	from '@runtime-state-data/background-execution-status.data';
 import { Waiter } from '@interfaces/waiter.interface';
 
 
@@ -20,6 +18,6 @@ export class LoadingContentSectionComponent {
 
 	@Input() heading: string;
 
-	loadingStatus: Waiter = BackgroundExecutionStatusData;
+	@Input() loadingStatus: Waiter;
 
 }
