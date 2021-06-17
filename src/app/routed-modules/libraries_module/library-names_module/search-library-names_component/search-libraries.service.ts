@@ -3,7 +3,7 @@ import { SearchData as search } from '@runtime-state-data/search.data';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { getByTest } from '@writetome51/array-get-by-test';
-import { UserLibraryNamesData as libraryNames }
+import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibrariesListServicesModule } from '../libraries-list-services.module';

@@ -12,11 +12,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LoadingContentSectionModule }
 	from '@loading-content-section_module/loading-content-section.module';
+import { LibrariesViewerComponent } from '@app/routed-modules/libraries_module/libraries-viewer.component';
 
 
 @NgModule({
 	declarations: [
 		LibrariesComponent,
+		LibrariesViewerComponent,
 		NewLibraryButtonComponent
 	],
 	imports: [
