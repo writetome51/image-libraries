@@ -39,7 +39,7 @@ export const ActionMenuChoicesData: ResettableToDefault = class __ActionMenuChoi
 };
 
 
-export const UserLibraryNamesData: ResettableToDefault = class __LibraryNamesData {
+export const LibraryNamesData: ResettableToDefault = class __LibraryNamesData {
 
 	static data: string[];
 

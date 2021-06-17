@@ -1,4 +1,4 @@
-import { UserLibraryNamesData as libNames }
+import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
 import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';

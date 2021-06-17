@@ -1,5 +1,5 @@
 import {
-	ActionMenuChoicesData as menuChoices, UserLibraryNamesData as libraryNames
+	ActionMenuChoicesData as menuChoices, LibraryNamesData as libraryNames
 } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ImageRecord } from '@interfaces/image-record.interface';
 import { LibraryRecord } from '@interfaces/library-record.interface';

@@ -3,7 +3,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@services/browser-storage/libraries-in-browser-storage.service';
-import { UserLibraryNamesData as libraryNames }
+import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 

@@ -11,7 +11,7 @@ import { LibraryRecord } from '@interfaces/library-record.interface';
 import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
 import { ProcessGetLibrariesService }
 	from '@process/process-get-libraries_service/process-get-libraries.service';
-import { UserLibraryNamesData as libraryNames }
+import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
