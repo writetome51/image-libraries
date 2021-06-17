@@ -3,7 +3,7 @@ import { RunTasksAfterCreatingNewLibraryService }
 	from './run-tasks-after-creating-new-library.service';
 import { NewLibraryFormServicesModule } from '../../new-library-form-services.module';
 import { HandleUpdateOrNewLibraryErrorService }
-	from '@process/handle-error/handle-update-or-new-library-error.service';
+	from '@handle-error/handle-update-or-new-library-error.service';
 import { InterpretExistingUserDBOperationResultService }
 	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 
