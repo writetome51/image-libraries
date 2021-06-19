@@ -39,4 +39,4 @@ stylesheets into one file.  Previously they'd been separated into as many as 7 f
 the config file /angular.json had been told to bundle them together during the build.
 That had worked until I updated Angular to version 11, which (for unknown reasons) doesn't
 allow the config file to bundle more than 3 or 4 stylesheet files together (so some of the
-styles weren't being include).
+styles weren't being included).

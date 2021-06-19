@@ -1,7 +1,7 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Injectable } from '@angular/core';
-import { GetCurrentPaginatorService } from '@services/get-current-paginator.service';
+import { GetCurrentPaginatorService } from '@services/reload-current-page-data_service/get-current-paginator.service';
 
 
 @Injectable({providedIn: 'root'})

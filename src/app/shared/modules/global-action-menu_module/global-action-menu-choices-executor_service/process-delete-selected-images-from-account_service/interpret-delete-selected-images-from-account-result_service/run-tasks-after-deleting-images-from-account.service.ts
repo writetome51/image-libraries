@@ -3,7 +3,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
 import { ReloadCurrentPageDataService }
-	from '@services/reload-current-page-data.service';
+	from '@services/reload-current-page-data_service/reload-current-page-data.service';
 import { ImageSelectorService } from '@services/image-selector.service';
 
 

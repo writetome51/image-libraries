@@ -2,7 +2,7 @@ import { AWSS3Service } from './aws-s3.service';
 import { DeletingFilesProgressData as deletingFilesProgress }
 	from '@runtime-state-data/deleting-files-progress.data';
 import { ExecuteLoopRequiringProgressUpdateService as executeLoopRequiringProgressUpdate}
-	from '@services/execute-loop-requiring-progress-update.service';
+	from '@services/user-file-storage_service/execute-loop-requiring-progress-update.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { noValue } from '@writetome51/has-value-no-value';
