@@ -5,6 +5,8 @@ import { ProcessRemoveImageFromLibraryService }
 	from './process-remove-image-from-library_service/process-remove-image-from-library.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
+import { NameOfLibraryBeingModifiedData as nameOfLibraryBeingModified }
+	from '@runtime-state-data/name-of-library-being-modified.data';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
@@ -19,6 +21,8 @@ export class ToggleAddImageToLibraryService implements IDoThis {
 	async go(
 		data: { image_id: string, libName: string, checked: boolean }
 	): Promise<{ image_id: string, libName: string, checked: boolean }> {
+
+		nameOfLibraryBeingModified.data = data.libName;
 
 		if (data.checked) { // Means user wants to remove image from library...
 			await this.__processRemoveImageFromLibrary.go(data.image_id, data.libName);

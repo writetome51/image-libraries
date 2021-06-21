@@ -24,6 +24,9 @@ You cannot yet do bulk adding to or removing from a library.
 You cannot yet reorder the images in a library.
 You cannot yet search images.
 
+When navigating to /image route, if no ImageRecords are loaded in browser,
+user is redirected to /all-images route.
+
 
 4/28/21
 
