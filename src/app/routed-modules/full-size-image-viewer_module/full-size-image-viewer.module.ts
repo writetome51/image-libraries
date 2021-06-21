@@ -21,6 +21,7 @@ import { ExecuteFunctionButtonModule } from '@execute-function-button_module/exe
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
 import { AllImagesModulePathData as allImagesModulePath }
 	from '@app/routed-modules/all-images_module/all-images-module-path.data';
+import { ImagesLoadedGuard } from './images-loaded.guard';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { AllImagesModulePathData as allImagesModulePath }
 			{
 				path: `:${paramID.imageName}`,
 				component: FullSizeImageViewerComponent,
-				canActivate: [AuthenticatedGuard],
+				canActivate: [AuthenticatedGuard, ImagesLoadedGuard],
 				canDeactivate: [CanDeactivateGuard]
 			},
 			{
