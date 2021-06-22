@@ -3,10 +3,10 @@ import { LibraryRecord } from '@interfaces/library-record.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { removeAllOfEach } from '@writetome51/array-remove-all-of-first-of';
-import { UpdateLibraryService } from '@services/db/update-library.service';
+import { UpdateLibraryService } from '@db/update-library.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../modules/image-action-menu_module/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})

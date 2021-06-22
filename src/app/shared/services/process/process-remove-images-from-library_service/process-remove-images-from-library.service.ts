@@ -4,7 +4,7 @@ import { ProcessExistingUserDBOperationService }
 import { InterpretRemoveImagesFromLibraryResultService }
 	from './interpret-remove-images-from-library-result.service';
 import { RemoveImagesFromLibraryService } from './remove-images-from-library.service';
-import { ImageActionMenuServicesModule } from '../../../image-action-menu-services.module';
+import { ImageActionMenuServicesModule } from '../../../modules/image-action-menu_module/image-action-menu-services.module';
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
