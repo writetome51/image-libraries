@@ -37,5 +37,6 @@ export class __GlobalActionMenuChoicesService {
 
 }
 
-export const GlobalActionMenuChoicesService: Gettable<MenuChoice[]> =
+export const GlobalActionMenuChoicesService:
+	Gettable<MenuChoice[]> & __GlobalActionMenuChoicesService =
 	__GlobalActionMenuChoicesService;

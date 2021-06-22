@@ -9,6 +9,8 @@ import { ToggleEnableSelectImagesService }
 	from './toggle-enable-select-images.service';
 import { AddSelectedImagesToLibraryService }
 	from './add-selected-images-to-library.service';
+import { RemoveSelectedImagesFromLibraryService }
+	from '@global-action-menu_module/global-action-menu-choices-executor_service/remove-selected-images-from-library.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -16,6 +18,7 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 
 	constructor(
 		processDeleteSelectedImages: ProcessDeleteSelectedImagesFromAccountService,
+		removeSelectedImagesFromLib: RemoveSelectedImagesFromLibraryService,
 		addSelectedImagesToLibrary: AddSelectedImagesToLibraryService,
 		toggleEnableSelectImages: ToggleEnableSelectImagesService
 	) {
@@ -23,7 +26,7 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 			{executor: processDeleteSelectedImages, label: choiceLabel.deleteSelectedImages},
 			{executor: addSelectedImagesToLibrary, label: choiceLabel.addSelectedToLib},
 			{executor: toggleEnableSelectImages, label: choiceLabel.selectImages},
-		//	{executor: toggleEnableSelectImages, label: choiceLabel.selectImages},
+			{executor: removeSelectedImagesFromLib, label: choiceLabel.removeSelectedFromLib},
 		]);
 	}
 

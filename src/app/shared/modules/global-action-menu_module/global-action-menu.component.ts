@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalActionMenuChoicesManagerService }
 	from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuChoicesExecutorService }
@@ -6,6 +6,9 @@ import { GlobalActionMenuChoicesExecutorService }
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 import { GetGlobalActionMenuSubscriptionsService }
 	from './get-global-action-menu-subscriptions.service';
+import { ActionMenuChoicesData as actionMenuChoices }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
 
 @Component({
@@ -16,7 +19,8 @@ import { GetGlobalActionMenuSubscriptionsService }
 		></action-menu>
 	`
 })
-export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective implements OnInit {
+export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective
+	implements OnInit, OnDestroy {
 
 	constructor(
 		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
@@ -29,6 +33,14 @@ export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective imp
 
 	ngOnInit() {
 		this._subscriptions.push(...this.__getSubscriptions.go());
+	}
+
+
+	ngOnDestroy() {
+		super.ngOnDestroy();
+
+		actionMenuChoices.setDefault();
+		selectedImages.data.length = 0;
 	}
 
 }

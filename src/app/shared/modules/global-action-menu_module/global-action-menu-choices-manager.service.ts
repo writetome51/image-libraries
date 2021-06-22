@@ -8,25 +8,21 @@ import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { SelectMutipleImagesSettingService }
 	from '@browser-storage/select-mutiple-images-setting.service';
-import { ImagesOrigin } from '@app/shared/types/images-origin.type';
 import { LoadedImagesStateService }
-		from '@services/loaded-images-state_service/loaded-images-state.service';
+	from '@services/loaded-images-state_service/loaded-images-state.service';
 import { GlobalActionMenuChoicesService as menuChoices }
 	from './global-action-menu-choices.service';
+import { LoadedLibraryInBrowserStorageService } from '@browser-storage/loaded-library-in-browser-storage.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
-	private readonly __menuContext: ImagesOrigin | 'none';
-
-
 	constructor(
 		private __loadedImagesState: LoadedImagesStateService,
 		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService,
-	) {
-		this.__menuContext = this.__loadedImagesState.getOrigin();
-	}
+		private __loadedLibraryInBrowser: LoadedLibraryInBrowserStorageService
+	) {}
 
 
 	getChoices(): MenuChoice[] {
@@ -55,10 +51,21 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	private __includeManipulateSelected() {
-		if (this.__menuContext === 'all') this.__includeAddSelectedToLib();
-		else menuChoices.addChoice({label: choiceLabel.removeSelectedFromLib});
+		this.__includeAddToOrRemoveSelectedFromLib();
 
 		menuChoices.addChoice({label: choiceLabel.deleteSelectedImages});
+	}
+
+
+	private __includeAddToOrRemoveSelectedFromLib() {
+		if (this.__loadedImagesState.getOrigin() === 'all') {
+			this.__includeAddSelectedToLib();
+			menuChoices.removeChoices([choiceLabel.removeSelectedFromLib]);
+		}
+		else {
+			this.__includeRemoveSelectedFromLib();
+			menuChoices.removeChoices([choiceLabel.addSelectedToLib]);
+		}
 	}
 
 
@@ -68,6 +75,17 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 			choiceLabel.deleteSelectedImages,
 			choiceLabel.removeSelectedFromLib
 		]);
+	}
+
+
+	private __includeRemoveSelectedFromLib() {
+		menuChoices.addChoice({
+			label: choiceLabel.removeSelectedFromLib,
+			data: {
+				selectedImages: selectedImages.data,
+				libName: this.__loadedLibraryInBrowser.get().name
+			}
+		});
 	}
 
 
