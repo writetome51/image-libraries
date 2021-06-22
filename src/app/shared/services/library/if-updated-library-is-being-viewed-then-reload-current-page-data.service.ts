@@ -18,6 +18,7 @@ export class IfUpdatedLibraryIsBeingViewedThenReloadCurrentPageDataService imple
 	async go(updatedLibraryName: string) {
 		if ((this.__loadedLibrary.get().name === updatedLibraryName)
 			&& (this.__loadedImagesState.getOrigin() === 'library')) {
+
 			await this.__reloadCurrentPageData.go();
 		}
 	}

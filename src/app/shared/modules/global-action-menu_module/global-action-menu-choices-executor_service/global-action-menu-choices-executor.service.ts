@@ -23,6 +23,7 @@ export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecu
 			{executor: processDeleteSelectedImages, label: choiceLabel.deleteSelectedImages},
 			{executor: addSelectedImagesToLibrary, label: choiceLabel.addSelectedToLib},
 			{executor: toggleEnableSelectImages, label: choiceLabel.selectImages},
+		//	{executor: toggleEnableSelectImages, label: choiceLabel.selectImages},
 		]);
 	}
 

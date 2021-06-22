@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { IDoThis } from '@interfaces/i-do-this.interface';
-import { LibraryRecord } from '@interfaces/library-record.interface';
 import { AlertsService as alerts } from '@services/alerts.service';
-import { UpdateLibrariesInBrowserStorageService } from '@library/update-libraries-in-browser-storage.service';
+import { Injectable } from '@angular/core';
 import { IfUpdatedLibraryIsBeingViewedThenReloadCurrentPageDataService }
 	from '@library/if-updated-library-is-being-viewed-then-reload-current-page-data.service';
+import { IDoThis } from '@interfaces/i-do-this.interface';
+import { LibraryRecord } from '@interfaces/library-record.interface';
+import { UpdateLibrariesInBrowserStorageService } from '@library/update-libraries-in-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})
