@@ -2,7 +2,7 @@ import { ProcessAddImagesToLibraryService }
 	from '@process/process-add-images-to-library_service/process-add-images-to-library.service';
 import { Injectable } from '@angular/core';
 import { ProcessRemoveImagesFromLibraryService }
-	from './process-remove-images-from-library_service/process-remove-images-from-library.service';
+	from '../../../../services/process/process-remove-images-from-library_service/process-remove-images-from-library.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageActionMenuServicesModule } from '../../image-action-menu-services.module';
 

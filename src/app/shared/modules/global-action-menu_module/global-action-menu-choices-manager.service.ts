@@ -12,7 +12,8 @@ import { LoadedImagesStateService }
 	from '@services/loaded-images-state_service/loaded-images-state.service';
 import { GlobalActionMenuChoicesService as menuChoices }
 	from './global-action-menu-choices.service';
-import { LoadedLibraryInBrowserStorageService } from '@browser-storage/loaded-library-in-browser-storage.service';
+import { LoadedLibraryInBrowserStorageService }
+	from '@browser-storage/loaded-library-in-browser-storage.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
