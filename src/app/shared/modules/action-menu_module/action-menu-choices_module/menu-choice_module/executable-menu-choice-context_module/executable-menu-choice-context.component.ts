@@ -1,7 +1,7 @@
 import { CheckableMenuChoice } from '../../../checkable-menu-choice.interface';
 import { Component, Input } from '@angular/core';
 import { MenuChoice } from '../../../menu-choice.interface';
-import { ActionMenuChoiceExecutorService } from '../../../action-menu-choice-executor.service';
+import { ActionMenuChoicesExecutorService } from '../../../action-menu-choices-executor.service';
 import { ClickExecuteFunctionContextDirective }
 	from '@app/shared/abstract-directives/click-execute-function-context.abstract.directive';
 
@@ -15,7 +15,7 @@ export class ExecutableMenuChoiceContextComponent extends ClickExecuteFunctionCo
 	@Input() choice: MenuChoice | CheckableMenuChoice;
 
 
-	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {
+	constructor(private __menuChoiceExecutor: ActionMenuChoicesExecutorService) {
 		super();
 	}
 

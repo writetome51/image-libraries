@@ -1,11 +1,8 @@
 import { ExecutorConfiguration } from './executor-configuration.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { MenuChoice } from './menu-choice.interface';
-import { MenuChoiceLabelHierarchyService as labelHierarchy }
-	from './menu-choice-label-hierarchy.service';
 
 
-export abstract class SpecificChoicesExecutorService {
+export abstract class ActionMenuContextChoicesExecutorService {
 
 	private __executorMap: { [label: string]: IDoThis } = {};
 
@@ -15,9 +12,7 @@ export abstract class SpecificChoicesExecutorService {
 	}
 
 
-	async execute({label, data}: MenuChoice): Promise<void> {
-		if (labelHierarchy.hasParent(label)) label = labelHierarchy.getParent(label);
-
+	async execute(label, data): Promise<void> {
 		let iDoThis = this.__executorMap[label];
 		await iDoThis.go(data);
 	}

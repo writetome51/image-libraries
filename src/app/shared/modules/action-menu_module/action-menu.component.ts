@@ -1,8 +1,9 @@
-import { ActionMenuChoiceExecutorService } from './action-menu-choice-executor.service';
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuChoicesManager } from './menu-choices-manager.interface';
+import { ActionMenuChoicesExecutorService } from './action-menu-choices-executor.service';
+import { Component, OnInit } from '@angular/core';
 import { MenuChoice } from './menu-choice.interface';
-import { SpecificChoicesExecutorService } from './specific-choices-executor.abstract.service';
+import { HasContextInputDirective }
+	from '@abstract-directives/has-context-input.abstract.directive';
+import { ActionMenuContext } from '@action-menu_module/action-menu-context.interface';
 
 
 @Component({
@@ -24,24 +25,25 @@ import { SpecificChoicesExecutorService } from './specific-choices-executor.abst
 	`,
 
 	// Creates new instance of service for every instance of this component.
-	providers: [ActionMenuChoiceExecutorService]
+	providers: [ActionMenuChoicesExecutorService]
 })
-export class ActionMenuComponent implements OnInit {
+export class ActionMenuComponent extends HasContextInputDirective<ActionMenuContext>
+	implements OnInit {
 
 	open = false;
 	choices: MenuChoice[] = [];
 
-	@Input() specificChoicesExecutor: SpecificChoicesExecutorService;
-	@Input() menuChoicesManager: MenuChoicesManager;
-	@Input() getChoicesArgs? = [];
 
-
-	constructor(private __menuChoiceExecutor: ActionMenuChoiceExecutorService) {}
+	constructor(private __menuChoicesExecutor: ActionMenuChoicesExecutorService) {
+		super();
+	}
 
 
 	ngOnInit() {
-		this.choices = this.menuChoicesManager.getChoices(...this.getChoicesArgs);
-		this.__menuChoiceExecutor.set(this.specificChoicesExecutor);
+		this.choices =
+			this.context.menuChoicesManager.getChoices(...this.context.getChoicesArgs);
+
+		this.__menuChoicesExecutor.set(this.context.choicesExecutor);
 	}
 
 
