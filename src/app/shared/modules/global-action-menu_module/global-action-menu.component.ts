@@ -1,30 +1,27 @@
+import { ActionMenuContext } from '@action-menu_module/action-menu-context.interface';
+import { ActionMenuChoicesData as actionMenuChoices }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalActionMenuChoicesManagerService }
 	from './global-action-menu-choices-manager.service';
 import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
-import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 import { GetGlobalActionMenuSubscriptionsService }
 	from './get-global-action-menu-subscriptions.service';
-import { ActionMenuChoicesData as actionMenuChoices }
-	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
+import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
 @Component({
 	selector: 'global-action-menu',
-	template: `
-		<action-menu [menuChoicesManager]="menuChoicesManager"
-			[specificChoicesExecutor]="specificChoicesExecutor"
-		></action-menu>
-	`
+	template: `<action-menu [context]="this"></action-menu>`
 })
 export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective
-	implements OnInit, OnDestroy {
+	implements ActionMenuContext, OnInit, OnDestroy {
 
 	constructor(
 		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
-		public specificChoicesExecutor: GlobalActionMenuChoicesExecutorService,
+		public choicesExecutor: GlobalActionMenuChoicesExecutorService,
 		private __getSubscriptions: GetGlobalActionMenuSubscriptionsService
 	) {
 		super();

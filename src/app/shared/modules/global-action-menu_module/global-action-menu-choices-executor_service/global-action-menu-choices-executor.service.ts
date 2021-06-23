@@ -3,29 +3,31 @@ import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { ProcessDeleteSelectedImagesFromAccountService }
 	from './process-delete-selected-images-from-account_service/process-delete-selected-images-from-account.service';
-import { SpecificChoicesExecutorService }
-	from '@action-menu_module/specific-choices-executor.abstract.service';
-import { ToggleEnableSelectImagesService }
-	from './toggle-enable-select-images.service';
-import { AddSelectedImagesToLibraryService }
-	from './add-selected-images-to-library.service';
+import { ActionMenuContextChoicesExecutorService }
+	from '@action-menu_module/action-menu-context-choices-executor.abstract.service';
+import { ToggleEnableImageSelectionService } from './toggle-enable-image-selection.service';
+import { AddSelectedImagesToLibraryService } from './add-selected-images-to-library.service';
 import { RemoveSelectedImagesFromLibraryService }
-	from '@global-action-menu_module/global-action-menu-choices-executor_service/remove-selected-images-from-library.service';
+	from './remove-selected-images-from-library.service';
+import { SelectAllImagesService } from './select-all-images.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class GlobalActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
+export class GlobalActionMenuChoicesExecutorService
+	extends ActionMenuContextChoicesExecutorService {
 
 	constructor(
 		processDeleteSelectedImages: ProcessDeleteSelectedImagesFromAccountService,
 		removeSelectedImagesFromLib: RemoveSelectedImagesFromLibraryService,
 		addSelectedImagesToLibrary: AddSelectedImagesToLibraryService,
-		toggleEnableSelectImages: ToggleEnableSelectImagesService
+		toggleEnableImgSelection: ToggleEnableImageSelectionService,
+		selectAllImages: SelectAllImagesService
 	) {
 		super([
 			{executor: processDeleteSelectedImages, label: choiceLabel.deleteSelectedImages},
 			{executor: addSelectedImagesToLibrary, label: choiceLabel.addSelectedToLib},
-			{executor: toggleEnableSelectImages, label: choiceLabel.selectImages},
+			{executor: toggleEnableImgSelection, label: choiceLabel.enableImageSelection},
+			{executor: selectAllImages, label: choiceLabel.selectAll},
 			{executor: removeSelectedImagesFromLib, label: choiceLabel.removeSelectedFromLib},
 		]);
 	}

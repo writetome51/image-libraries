@@ -1,5 +1,5 @@
-import { SpecificChoicesExecutorService }
-	from '@action-menu_module/specific-choices-executor.abstract.service';
+import { ActionMenuContextChoicesExecutorService }
+	from '@action-menu_module/action-menu-context-choices-executor.abstract.service';
 import { Injectable } from '@angular/core';
 import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { ProcessToggleAddImageToLibraryService } from
@@ -8,7 +8,7 @@ import { ImageActionMenuServicesModule } from '../image-action-menu-services.mod
 
 
 @Injectable({providedIn: ImageActionMenuServicesModule})
-export class ImageActionMenuChoicesExecutorService extends SpecificChoicesExecutorService {
+export class ImageActionMenuChoicesExecutorService extends ActionMenuContextChoicesExecutorService {
 
 	constructor(
 		processToggleAddImageToLibrary: ProcessToggleAddImageToLibraryService

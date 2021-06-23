@@ -4,6 +4,9 @@ import { LoadedImagesStateService }
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { Subject, Subscribable } from 'rxjs';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
+import { CurrentPageImagesData as currentPageImages }
+	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { setArray } from '@writetome51/set-array';
 
 
 @Injectable({providedIn: 'root'})
@@ -21,6 +24,16 @@ export class ImageSelectorService {
 
 	toggleSelect(image: { name: string, _id: string, selected?: boolean }): void {
 		image.selected ? this.__unSelect(image) : this.__select(image);
+	}
+
+
+	selectAll(): void {
+		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
+			for (let i = 0, length = currentPageImages.data.length; i < length; ++i) {
+				currentPageImages.data[i]['selected'] = true;
+			}
+			setArray(selectedImages.data, currentPageImages.data);
+		});
 	}
 
 
