@@ -19,6 +19,8 @@ import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destr
 export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective
 	implements ActionMenuContext, OnInit, OnDestroy {
 
+	getChoicesArgs = [];
+
 	constructor(
 		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
 		public choicesExecutor: GlobalActionMenuChoicesExecutorService,

@@ -31,8 +31,6 @@ export class UpdateLibrariesInBrowserStorageService implements IDoThis {
 	private __updateLoadedLibrary_ifNecessary(updatedLibrary) {
 		if (this.__isCurrentlyLoadedLibrary(updatedLibrary)) {
 			this.__loadedLibrary.set(updatedLibrary);
-
-			console.log('updated loaded library');
 		}
 	}
 

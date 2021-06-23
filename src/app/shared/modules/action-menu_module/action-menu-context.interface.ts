@@ -7,6 +7,6 @@ export interface ActionMenuContext {
 
 	choicesExecutor: ActionMenuContextChoicesExecutorService;
 	menuChoicesManager: MenuChoicesManager;
-	getChoicesArgs?: any[];
+	getChoicesArgs: any[];
 
 }

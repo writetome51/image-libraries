@@ -3,6 +3,7 @@ import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LoadedImagesStateService } from '@services/loaded-images-state_service/loaded-images-state.service';
 import { ReloadCurrentPageDataService } from '@services/reload-current-page-data_service/reload-current-page-data.service';
 import { LoadedLibraryInBrowserStorageService } from '@browser-storage/loaded-library-in-browser-storage.service';
+import { noValue } from '@writetome51/has-value-no-value';
 
 
 @Injectable({providedIn: 'root'})
@@ -16,7 +17,10 @@ export class IfUpdatedLibraryIsBeingViewedThenReloadCurrentPageDataService imple
 
 
 	async go(updatedLibraryName: string) {
-		if ((this.__loadedLibrary.get().name === updatedLibraryName)
+		const loadedLib = this.__loadedLibrary.get();
+		if (noValue(loadedLib)) return;
+
+		if ((loadedLib.name === updatedLibraryName)
 			&& (this.__loadedImagesState.getOrigin() === 'library')) {
 
 			await this.__reloadCurrentPageData.go();
