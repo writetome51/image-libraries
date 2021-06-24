@@ -1,5 +1,4 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
-import { CanDeactivateGuard } from '@guards/can-deactivate.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image.component';
 import { FullSizeImageViewerComponent } from './full-size-image-viewer_component/full-size-image-viewer.component';
@@ -45,8 +44,7 @@ import { ImagesLoadedGuard } from './images-loaded.guard';
 			{
 				path: `:${paramID.imageName}`,
 				component: FullSizeImageViewerComponent,
-				canActivate: [AuthenticatedGuard, ImagesLoadedGuard],
-				canDeactivate: [CanDeactivateGuard]
+				canActivate: [AuthenticatedGuard, ImagesLoadedGuard]
 			},
 			{
 				path: '',

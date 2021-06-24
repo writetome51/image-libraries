@@ -6,7 +6,9 @@ import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.int
 export interface ActionMenuContext {
 
 	choicesExecutor: ActionMenuContextChoicesExecutorService;
+
 	menuChoicesManager: MenuChoicesManager;
+
 	getChoicesArgs: any[]; // passed to this.menuChoicesManager.getChoices()
 
 }
