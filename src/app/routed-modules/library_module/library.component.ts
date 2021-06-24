@@ -1,3 +1,5 @@
+import { BackgroundExecutionStatusData }
+	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
 import { GetLibraryRouteParamsObserverService }
@@ -6,7 +8,6 @@ import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 import { RouteParametersSubscriberDirective }
 	from '@app/shared/abstract-directives/route-parameters-subscriber.abstract.directive';
-import { BackgroundExecutionStatusData } from '@runtime-state-data/background-execution-status.data';
 
 
 @Component({

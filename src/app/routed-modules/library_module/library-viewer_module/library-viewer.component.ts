@@ -13,7 +13,6 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 @Component({
 	selector: 'library-viewer',
 	template: `
-		<library-change-controls></library-change-controls>
 		<delete-library-button></delete-library-button>
 
 		<images-viewer [context]="this">
