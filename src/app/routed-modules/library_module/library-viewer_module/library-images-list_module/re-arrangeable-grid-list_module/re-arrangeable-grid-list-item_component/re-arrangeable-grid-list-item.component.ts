@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ListItemMoverService } from '../list-item-mover.service';
-import { ListItemRemoverService } from '../../list-item-remover.service';
+import { ListRearrangerService } from '../list-rearranger.service';
+import { IndexBeingMovedData as indexBeingMoved } from '../index-being-moved.data';
 
 
 @Component({
@@ -16,15 +16,12 @@ export class ReArrangeableGridListItemComponent {
 	draggedOntoFromLeft = false;
 
 
-	constructor(
-		private  __listItemMover: ListItemMoverService,
-		private __listItemRemover: ListItemRemoverService
-	) {}
+	constructor(private  __listRearranger: ListRearrangerService) {}
 
 
 	set_isBeingDragged() {
 		this.isBeingDragged = true;
-		this.__listItemMover.indexBeingMoved = this.index;
+		indexBeingMoved.data = this.index;
 	}
 
 
@@ -34,12 +31,9 @@ export class ReArrangeableGridListItemComponent {
 
 
 	set_isBeingDraggedOnto() {
-		if (this.index < this.__listItemMover.indexBeingMoved) {
-			this.draggedOntoFromRight = true;
-		}
-		else if (this.index > this.__listItemMover.indexBeingMoved) {
-			this.draggedOntoFromLeft = true;
-		}
+		if (this.index < indexBeingMoved.data) this.draggedOntoFromRight = true;
+
+		else if (this.index > indexBeingMoved.data) this.draggedOntoFromLeft = true;
 	}
 
 
@@ -50,7 +44,7 @@ export class ReArrangeableGridListItemComponent {
 
 
 	dropDraggedItemHere() {
-		this.__listItemMover.moveItemTo(this.index);
+		this.__listRearranger.moveItemTo(this.index);
 		this.unset_isBeingDraggedOnto();
 	}
 

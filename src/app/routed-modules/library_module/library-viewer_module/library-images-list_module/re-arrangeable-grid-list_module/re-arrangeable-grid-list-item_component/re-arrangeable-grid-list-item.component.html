@@ -7,8 +7,8 @@
 		mwlDraggable (dragStart)="set_isBeingDragged()" (dragEnd)="unset_isBeingDragged()"
 		[class.being-dragged]="isBeingDragged"
 
-		mwlDroppable (drop)="dropDraggedItemHere()" (dragOver)="set_isBeingDraggedOnto()"
-		(dragLeave)="unset_isBeingDraggedOnto()"
+		mwlDroppable (drop)="dropDraggedItemHere()"
+		   (dragOver)="set_isBeingDraggedOnto()" (dragLeave)="unset_isBeingDraggedOnto()"
 		dragOverClass="item-dragged-onto"
 		[class.item-dragged-onto-from-left]="draggedOntoFromLeft"
 		[class.item-dragged-onto-from-right]="draggedOntoFromRight"

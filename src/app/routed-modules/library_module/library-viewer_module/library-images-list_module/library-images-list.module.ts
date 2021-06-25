@@ -5,7 +5,7 @@ import { ReArrangeableGridListModule }
 	from './re-arrangeable-grid-list_module/re-arrangeable-grid-list.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container_module/thumbnail-image-container.module';
-import { ListItemRemoverService } from './list-item-remover.service';
+import { AppUnsubscribeOnDestroyModule } from '@app/shared/modules/app-unsubscribe-on-destroy_module/app-unsubscribe-on-destroy.module';
 
 
 @NgModule({
@@ -14,8 +14,8 @@ import { ListItemRemoverService } from './list-item-remover.service';
 		CommonModule,
 		ThumbnailImageContainerModule,
 		ReArrangeableGridListModule,
+		AppUnsubscribeOnDestroyModule
 	],
-	providers: [ListItemRemoverService],
 	exports: [LibraryImagesListComponent]
 })
 export class LibraryImagesListModule {}
