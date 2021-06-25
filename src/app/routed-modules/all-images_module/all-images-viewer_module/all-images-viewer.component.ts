@@ -4,7 +4,7 @@ import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-inpu
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { ImagesViewerContextDirective }
-	from '@app/shared/abstract-directives/images-viewer-context.abstract.directive';
+	from '@abstract-directives/images-viewer-context.abstract.directive';
 import { UserImageTotalInBrowserStorageService }
 	from '@browser-storage/user-image-total-in-browser-storage.service';
 

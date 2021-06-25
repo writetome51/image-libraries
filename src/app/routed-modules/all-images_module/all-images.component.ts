@@ -1,12 +1,13 @@
+import { BackgroundExecutionStatusData }
+	from '@runtime-state-data/background-execution-status.data';
 import { Component } from '@angular/core';
 import { CurrentRouteService } from '@services/current-route.service';
-import { GetAllImagesRouteParamsObserverService } from
-'./get-all-images-route-params-observer_service/get-all-images-route-params-observer.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { RouteParametersSubscriberDirective }
-	from '@app/shared/abstract-directives/route-parameters-subscriber.abstract.directive';
+	from '@abstract-directives/route-parameters-subscriber.abstract.directive';
+import { RunTasksAfterAllImagesRouteParamsReceivedService }
+	from './run-tasks-after-all-images-route-params-received.service';
 import { Title } from '@angular/platform-browser';
-import { BackgroundExecutionStatusData } from '@runtime-state-data/background-execution-status.data';
 
 
 @Component({
@@ -26,9 +27,9 @@ export class AllImagesComponent extends RouteParametersSubscriberDirective {
 	constructor(
 		title: Title,
 		__currentRoute: CurrentRouteService,
-		__getRouteParamsObserver: GetAllImagesRouteParamsObserverService
+		__runTasksAfterRouteParamsReceived: RunTasksAfterAllImagesRouteParamsReceivedService
 	) {
-		super(__currentRoute, __getRouteParamsObserver);
+		super(__currentRoute, __runTasksAfterRouteParamsReceived);
 
 		title.setTitle(getPageTitle.go([this.heading]));
 	}

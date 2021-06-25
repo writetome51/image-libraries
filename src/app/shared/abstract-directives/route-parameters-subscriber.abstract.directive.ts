@@ -1,6 +1,5 @@
 import { CurrentRouteService } from '@services/current-route.service';
-import { GetRouteParamsObserverService }
-	from '@services/get-route-params-observer.abstract.service';
+import { IDoThis } from '@interfaces/i-do-this.interface';
 import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
@@ -8,7 +7,7 @@ export abstract class RouteParametersSubscriberDirective extends UnsubscribeOnDe
 
 	constructor(
 		private __currentRoute: CurrentRouteService,
-		private __getRouteParamsObserver: GetRouteParamsObserverService
+		private __runTasksAfterRouteParamsReceived: IDoThis
 	) {
 		super();
 		this._subscriptions.push(this.__getRouteParamsSubscription());
@@ -16,7 +15,9 @@ export abstract class RouteParametersSubscriberDirective extends UnsubscribeOnDe
 
 
 	private __getRouteParamsSubscription() {
-		return this.__currentRoute.params$.subscribe(this.__getRouteParamsObserver.go());
+		return this.__currentRoute.params$.subscribe(
+			async (params) => await this.__runTasksAfterRouteParamsReceived.go(params)
+		);
 	}
 
 }

@@ -6,7 +6,6 @@ import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
-import { AlertsService as alerts } from '@services/alerts.service';
 
 
 @Injectable({providedIn: 'root'})

@@ -1,6 +1,6 @@
-import { AppModulePathData as appModuleRoutes } from '../../../app-module-path.data';
+import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
+import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
 import { ImageRecord } from '@interfaces/image-record.interface';
 
 
@@ -19,7 +19,7 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 export class AllImagesListComponent extends HasDataInputDirective<ImageRecord[]> {
 
 	get fullSizeImageRoute() {
-		return '/' + appModuleRoutes.FullSizeImageViewerModule;
+		return '/' + appModulePath.FullSizeImageViewerModule;
 	}
 
 }

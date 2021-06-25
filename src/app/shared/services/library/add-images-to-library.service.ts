@@ -13,13 +13,13 @@ export class AddImagesToLibraryService implements IDoThis {
 
 	constructor(
 		private __updateLibrary: UpdateLibraryService,
-		private __localLibraries: LibrariesInBrowserStorageService,
+		private __librariesInBrowser: LibrariesInBrowserStorageService,
 	) {}
 
 
 	async go(newImageIDs: string[], libName: string): Promise<LibraryRecord | HasError> {
 
-		let lib = this.__localLibraries.get()[libName];
+		let lib = this.__librariesInBrowser.get()[libName];
 		let changes = { _image_ids: getMergedArrays([lib._image_ids, newImageIDs]) };
 
 		return await this.__updateLibrary.go(libName, changes);
