@@ -7,6 +7,7 @@ import { ReArrangeableGridListModule }
 	from './re-arrangeable-grid-list_module/re-arrangeable-grid-list.module';
 import { ThumbnailImageContainerModule }
 	from '@thumbnail-image-container_module/thumbnail-image-container.module';
+import { LibraryImagesListServicesModule } from './library-images-list-services.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ThumbnailImageContainerModule }
 		CommonModule,
 		ThumbnailImageContainerModule,
 		ReArrangeableGridListModule,
-		AppUnsubscribeOnDestroyModule
+		AppUnsubscribeOnDestroyModule,
+		LibraryImagesListServicesModule
 	],
 	exports: [LibraryImagesListComponent]
 })

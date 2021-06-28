@@ -4,13 +4,17 @@ import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstr
 import { ListRearrangerService } from './list-rearranger.service';
 import { Unsubscribable } from 'rxjs';
 import { PageImagesData } from './page-images.data';
+import { LoadedLibraryInBrowserStorageService }
+	from '@browser-storage/loaded-library-in-browser-storage.service';
+import { ProcessChangeLibraryImagesOrderService }
+	from '@process/process-change-library-images-order_service/process-change-library-images-order.service';
 
 
 @Component({
 	selector: 'library-images-list',
 	template: `
 		<re-arrangeable-grid-list [data]="pageImages.data"
-			unsubscribeOnDestroy [subscriptions]="[subscription]"
+			unsubscribeOnDestroy [subscriptions]="[listOrderSubscription]"
 		>
 			<re-arrangeable-grid-list-item *ngFor="let img of pageImages.data; let i = index;"
 				[index]="i"
@@ -25,13 +29,13 @@ import { PageImagesData } from './page-images.data';
 export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecord[]>
 	implements OnInit {
 
-	subscription: Unsubscribable;
+	listOrderSubscription: Unsubscribable;
 	pageImages: {data: ImageRecord[]} = PageImagesData;
 
 
 	constructor(
 		private __listRearranger: ListRearrangerService,
-		private __updateLibraryImagesOrder
+		private __processChangeLibraryImagesOrder: ProcessChangeLibraryImagesOrderService
 	) {
 		super();
 	}
@@ -40,13 +44,8 @@ export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecor
 	ngOnInit() {
 		this.pageImages.data = this.data;
 
-		this.subscription = this.__listRearranger.rearrangedList$.subscribe(
-			(list: ImageRecord[]) => {
-				// May not need this line:
-				//	this.pageImages.data = list;
-
-				this.__updateLibraryImagesOrder.go(list);
-			}
+		this.listOrderSubscription = this.__listRearranger.rearrangedList$.subscribe(
+			async (list: ImageRecord[]) => await this.__processChangeLibraryImagesOrder.go(list)
 		);
 	}
 

@@ -1,4 +1,3 @@
-import { AlertsService as alerts } from '@services/alerts.service';
 import { Injectable } from '@angular/core';
 import { IfUpdatedLibraryIsBeingViewedThenReloadCurrentPageDataService }
 	from '@library/if-updated-library-is-being-viewed-then-reload-current-page-data.service';
@@ -10,7 +9,7 @@ import { RunTasksAfterGettingLibraryFromDBService as runTasksAfterGettingLibrary
 
 
 @Injectable({providedIn: 'root'})
-export class RunTasksAfterUpdatingLibraryService implements IDoThis {
+export class RunTasksAfterChangingLibraryImagesOrderService implements IDoThis {
 
 	constructor(
 		private __updateLibrariesInBrowser: UpdateLibrariesInBrowserStorageService,
@@ -23,10 +22,6 @@ export class RunTasksAfterUpdatingLibraryService implements IDoThis {
 		runTasksAfterGettingLibraryFromDB.go(updatedLibrary);
 
 		this.__updateLibrariesInBrowser.go(updatedLibrary);
-
-		alerts.setSuccess('Library updated');
-
-		await this.__ifUpdatedLibraryIsBeingViewedThenReloadCurrentPageData.go(updatedLibrary.name);
 	}
 
 }

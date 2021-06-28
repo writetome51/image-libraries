@@ -27,8 +27,6 @@ export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 		let pageNum = Number(params[paramID.pageNumber]);
 		await this.__loadLibrary.go(requestedLibrary.name, pageNum);
-
-		this.__jumpToPageInput.setMaxValue();
 	}
 
 }

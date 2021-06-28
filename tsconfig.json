@@ -18,6 +18,9 @@
 			"@app-pagination-controls_module/*": [
 				"src/app/shared/modules/app-pagination-controls_module/*"
 			],
+			"@app-unsubscribe-on-destroy_module/*": [
+				"src/app/shared/modules/app-unsubscribe-on-destroy_module/*"
+			],
 			"@app-validating-form-inputs_module/*": [
 				"src/app/shared/modules/app-validating-form-inputs_module/*"
 			],
