@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ListRearrangerService } from './list-rearranger.service';
+import { ListRearrangerService } from '../list-rearranger.service';
 
 
 @Component({

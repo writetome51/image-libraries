@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { Subject, Subscribable } from 'rxjs';
-import { IndexBeingMovedData as indexBeingMoved } from './index-being-moved.data';
-import { getArrayCopy } from '@writetome51/get-array-copy';
-import { not } from '@writetome51/not';
+import { IndexBeingMovedData as indexBeingMoved } from './re-arrangeable-grid-list_module/index-being-moved.data';
 
 
 @Injectable()
@@ -24,7 +22,6 @@ export class ListRearrangerService {
 
 
 	moveItemTo(newIndex): void {
-		this.__list = getArrayCopy(this.__list);
 		moveByIndex(indexBeingMoved.data, newIndex, this.__list);
 
 		this.__subject.next(this.__list);

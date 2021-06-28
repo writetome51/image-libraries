@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 import { HoverableContainerModule } from '@hoverable-container_module/hoverable-container.module';
-import { ListRearrangerService } from './list-rearranger.service';
+import { ListRearrangerService } from '../list-rearranger.service';
 import { NgModule } from '@angular/core';
 import { ReArrangeableGridListComponent } from './re-arrangeable-grid-list.component';
 import { ReArrangeableGridListItemComponent }
