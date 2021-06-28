@@ -7,7 +7,8 @@ import { ImagesViewerContextDirective }
 	from '@app/shared/abstract-directives/images-viewer-context.abstract.directive';
 import { LibraryJumpToPageInputService }
 	from '@app/routed-modules/library_module/library-jump-to-page-input.service';
-import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data';
+import { RequestedLibraryData as requestedLibrary }
+	from '@runtime-state-data/requested-library.data';
 
 
 @Component({
@@ -22,7 +23,7 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 })
 export class LibraryViewerComponent extends ImagesViewerContextDirective {
 
-	routeBeforePageNumber = `/library/${paramID.libName}/page`;
+	routeBeforePageNumber = `/library/${requestedLibrary.name}/page`;
 
 
 	constructor(
