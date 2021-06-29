@@ -8,7 +8,7 @@ import { RunTasksAfterChangingLibraryImagesOrderService }
 
 
 @Injectable({providedIn: 'root'})
-export class InterpretChangeLibraryImagesOrderResultService
+export class InterpretSaveLibraryImagesOrderResultService
 	extends InterpretExistingUserDBOperationResultService {
 
 	constructor(
