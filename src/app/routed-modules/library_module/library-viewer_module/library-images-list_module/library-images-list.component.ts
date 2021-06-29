@@ -4,10 +4,9 @@ import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstr
 import { ListRearrangerService } from './list-rearranger.service';
 import { Unsubscribable } from 'rxjs';
 import { PageImagesData } from './page-images.data';
-import { LoadedLibraryInBrowserStorageService }
-	from '@browser-storage/loaded-library-in-browser-storage.service';
 import { ProcessChangeLibraryImagesOrderService }
 	from '@process/process-change-library-images-order_service/process-change-library-images-order.service';
+import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({
@@ -45,11 +44,15 @@ export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecor
 		this.pageImages.data = this.data;
 
 		this.listOrderSubscription = this.__listRearranger.rearrangedList$.subscribe(
-			async (list: ImageRecord[]) => {
-				this.pageImages.data = list;
-				await this.__processChangeLibraryImagesOrder.go(list);
-			}
+			async (list: ImageRecord[]) => this.__runTasksAfterGettingRearrangedImages(list)
 		);
+	}
+
+
+	private async __runTasksAfterGettingRearrangedImages(images) {
+		this.pageImages.data = images;
+		await this.__processChangeLibraryImagesOrder.go(images);
+		this.pageImages.data = this.data;
 	}
 
 }
