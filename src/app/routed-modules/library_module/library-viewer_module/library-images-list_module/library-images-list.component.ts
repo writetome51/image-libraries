@@ -45,7 +45,10 @@ export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecor
 		this.pageImages.data = this.data;
 
 		this.listOrderSubscription = this.__listRearranger.rearrangedList$.subscribe(
-			async (list: ImageRecord[]) => await this.__processChangeLibraryImagesOrder.go(list)
+			async (list: ImageRecord[]) => {
+				this.pageImages.data = list;
+				await this.__processChangeLibraryImagesOrder.go(list);
+			}
 		);
 	}
 
