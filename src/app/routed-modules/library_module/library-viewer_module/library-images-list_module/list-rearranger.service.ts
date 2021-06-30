@@ -25,7 +25,6 @@ export class ListRearrangerService {
 
 
 	moveItemTo(newIndex): void {
-		this.__list = getArrayCopy(this.__list);
 		moveByIndex(indexBeingMoved.data, newIndex, this.__list);
 
 		this.__subject.next(this.__list);

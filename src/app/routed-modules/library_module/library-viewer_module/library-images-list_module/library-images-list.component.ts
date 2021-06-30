@@ -3,10 +3,10 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
 import { ListRearrangerService } from './list-rearranger.service';
 import { Unsubscribable } from 'rxjs';
-import { PageImagesData } from './page-images.data';
-import { ProcessChangeLibraryImagesOrderService }
-	from '@process/process-change-library-images-order_service/process-change-library-images-order.service';
+import { ProcessSaveLibraryImagesOrderService }
+	from '@process/process-save-library-images-order_service/process-save-library-images-order.service';
 import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { setArray } from '@writetome51/set-array';
 
 
 @Component({
@@ -29,30 +29,30 @@ export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecor
 	implements OnInit {
 
 	listOrderSubscription: Unsubscribable;
-	pageImages: {data: ImageRecord[]} = PageImagesData;
+	pageImages = CurrentPageImagesData;
 
 
 	constructor(
 		private __listRearranger: ListRearrangerService,
-		private __processChangeLibraryImagesOrder: ProcessChangeLibraryImagesOrderService
+		private __processSaveLibraryImagesOrder: ProcessSaveLibraryImagesOrderService
 	) {
 		super();
 	}
 
 
 	ngOnInit() {
-		this.pageImages.data = this.data;
+		this.pageImages = CurrentPageImagesData;
 
 		this.listOrderSubscription = this.__listRearranger.rearrangedList$.subscribe(
-			async (list: ImageRecord[]) => this.__runTasksAfterGettingRearrangedImages(list)
+			async (list: ImageRecord[]) => await this.__runTasksAfterGettingRearrangedImages(list)
 		);
 	}
 
 
 	private async __runTasksAfterGettingRearrangedImages(images) {
-		this.pageImages.data = images;
-		await this.__processChangeLibraryImagesOrder.go(images);
-		this.pageImages.data = this.data;
+		console.log(images);
+		setArray(this.pageImages.data, images);
+		await this.__processSaveLibraryImagesOrder.go(images);
 	}
 
 }

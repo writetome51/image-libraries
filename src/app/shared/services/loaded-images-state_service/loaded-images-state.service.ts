@@ -11,6 +11,7 @@ import { Settable } from '@interfaces/settable.interface';
 import { ImagesOrigin } from '@app/shared/types/images-origin.type';
 import { LoadConfigurationData as loadConfig }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { setArray } from '@writetome51/set-array';
 
 
 @Injectable({providedIn: 'root'})
@@ -33,7 +34,7 @@ export class LoadedImagesStateService implements ResettableToDefault, Settable<I
 
 
 	set(imageBatch: ImageRecordBatch) {
-		loadedImages.data = imageBatch.images;
+		setArray(loadedImages.data, imageBatch.images);
 		this.__origin = imageBatch.from;
 
 		if (this.__origin === 'all') this.__removeLoadedLibraryData();

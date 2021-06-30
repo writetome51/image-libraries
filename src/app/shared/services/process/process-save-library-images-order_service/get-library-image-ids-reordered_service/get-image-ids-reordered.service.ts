@@ -30,6 +30,7 @@ export class GetImageIDsReorderedService implements IDoThis {
 		let page_image_ids = pageImagesInNewOrder.map((image) => image._id);
 
 		this.__replacePage(pageNum, page_image_ids, _image_ids);
+		console.log(_image_ids);
 		return _image_ids;
 	}
 

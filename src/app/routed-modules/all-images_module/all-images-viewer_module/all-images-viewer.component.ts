@@ -13,7 +13,7 @@ import { UserImageTotalInBrowserStorageService }
 	selector: 'all-images-viewer',
 	template: `
 		<images-viewer [context]="this" [noImagesMessage]="'You have no images in your account.'">
-			<all-images-list [data]="images"></all-images-list>
+			<all-images-list></all-images-list>
 		</images-viewer>
 	`
 })
@@ -23,11 +23,11 @@ export class AllImagesViewerComponent extends ImagesViewerContextDirective {
 
 
 	constructor(
-		__storedImageTotal: UserImageTotalInBrowserStorageService,
+		public __storedImageTotal: UserImageTotalInBrowserStorageService,
 		public paginator: AllImagesPaginatorService,
 		public jumpToPageInput: AllImagesJumpToPageInputService
 	) {
-		super(__storedImageTotal);
+		super();
 	}
 
 }

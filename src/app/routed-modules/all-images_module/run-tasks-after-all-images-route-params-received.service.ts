@@ -8,6 +8,8 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 import { AllImagesServicesModule } from './all-images-services.module';
 import { LoadedImagesStateService }
 	from '@services/loaded-images-state_service/loaded-images-state.service';
+import { SetCurrentPageImagesService as setCurrentPageImages }
+	from '@services/set-current-page-images.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
@@ -23,10 +25,8 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 	async go(params): Promise<void> {
 		let pageNum = Number(params[paramID.pageNumber]);
 
-		if (this.__imagesNotLoaded()) await this.__refreshLoadAndSetPage(pageNum);
+		if (this.__imagesNotLoaded()) await this.__reloadPage(pageNum);
 		else await this.__setPage(pageNum);
-
-		//	this.__jumpToPageInput.setMaxValue();
 	}
 
 
@@ -35,13 +35,13 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 	}
 
 
-	private async __refreshLoadAndSetPage(num) {
-		await this.__paginator.setCurrentPageNumber(num, {reload: true});
+	private async __reloadPage(num) {
+		await setCurrentPageImages.go(num, this.__paginator, {reload: true});
 	}
 
 
 	private async __setPage(num) {
-		await this.__paginator.setCurrentPageNumber(num);
+		await setCurrentPageImages.go(num, this.__paginator);
 	}
 
 }

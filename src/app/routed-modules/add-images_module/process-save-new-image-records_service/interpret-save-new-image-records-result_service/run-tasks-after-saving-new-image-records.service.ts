@@ -5,6 +5,8 @@ import { AllImagesPaginatorService }
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { newImagesSaved } from '@string-constants/alert-success-messages';
+import { SetCurrentPageImagesService as setCurrentPageImages }
+	from '@services/set-current-page-images.service';
 
 
 @Injectable({providedIn: AddImagesServicesModule})
@@ -20,7 +22,7 @@ export class RunTasksAfterSavingNewImageRecordsService implements IDoThis {
 
 
 	private async refreshAllImages() {
-		await this.__allImagesPaginator.setCurrentPageNumber(1, {reload: true});
+		await setCurrentPageImages.go(1, this.__allImagesPaginator, {reload: true});
 	}
 
 }

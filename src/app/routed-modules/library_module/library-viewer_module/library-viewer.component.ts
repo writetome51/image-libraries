@@ -27,11 +27,11 @@ export class LibraryViewerComponent extends ImagesViewerContextDirective {
 
 
 	constructor(
-		__storedImageTotal: LoadedLibraryImageTotalService,
+		public __storedImageTotal: LoadedLibraryImageTotalService,
 		public paginator: LibraryPaginatorService,
 		public jumpToPageInput: LibraryJumpToPageInputService
 	) {
-		super(__storedImageTotal);
+		super();
 	}
 
 }
