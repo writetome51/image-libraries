@@ -1,7 +1,8 @@
 import { ProcessExistingUserDBOperationService }
 	from '@process/process-existing-user-db-operation.abstract.service';
 import { Injectable } from '@angular/core';
-import { SaveLibraryImagesOrderService } from './save-library-images-order.service';
+import { SaveLibraryImagesOrderService }
+	from './save-library-images-order_service/save-library-images-order.service';
 import { InterpretSaveLibraryImagesOrderResultService }
 	from './interpret-save-library-images-order-result.service';
 

@@ -9,7 +9,7 @@ import { replaceAdjacentAt } from '@writetome51/array-replace-adjacent-at';
 
 
 @Injectable({providedIn: 'root'})
-export class GetEntireLibraryImageIDsReorderedService implements IDoThis {
+export class GetLibraryImageIDsReorderedService implements IDoThis {
 
 	constructor(
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService,

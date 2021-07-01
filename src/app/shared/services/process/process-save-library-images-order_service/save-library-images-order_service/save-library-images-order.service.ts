@@ -4,17 +4,17 @@ import { UpdateLibraryService } from '@db/update-library.service';
 import { HasError } from '@interfaces/has-error.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageRecord } from '@interfaces/image-record.interface';
-import { ReorderLoadedImagesService }
-	from './get-library-image-ids-reordered_service/reorder-loaded-images.service';
+import { ReorderLoadedImagesService } from './reorder-loaded-images.service';
 import { RequestedLibraryData } from '@runtime-state-data/requested-library.data';
+import { GetLibraryImageIDsReorderedService } from './get-library-image-ids-reordered.service';
 
 
 @Injectable({providedIn: 'root'})
 export class SaveLibraryImagesOrderService implements IDoThis {
 
 	constructor(
-		private __getLibraryImageIDsReordered: ReorderLoadedImagesService,
-		private __reorderLoadedImages,
+		private __getLibraryImageIDsReordered: GetLibraryImageIDsReorderedService,
+		private __reorderLoadedImages: ReorderLoadedImagesService,
 		private __updateLibrary: UpdateLibraryService
 	) {}
 
@@ -22,7 +22,7 @@ export class SaveLibraryImagesOrderService implements IDoThis {
 	async go(pageImagesInNewOrder: ImageRecord[]): Promise<LibraryRecord | HasError> {
 		const _image_ids = await this.__getLibraryImageIDsReordered.go(pageImagesInNewOrder);
 
-		this.__reorderLoadedImages.go(_image_ids);
+		await this.__reorderLoadedImages.go(_image_ids);
 
 		return await this.__updateLibrary.go(RequestedLibraryData.name, { _image_ids });
 	}
