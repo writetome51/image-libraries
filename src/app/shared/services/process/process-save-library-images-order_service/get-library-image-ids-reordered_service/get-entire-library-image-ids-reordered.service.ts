@@ -9,7 +9,7 @@ import { replaceAdjacentAt } from '@writetome51/array-replace-adjacent-at';
 
 
 @Injectable({providedIn: 'root'})
-export class GetImageIDsReorderedService implements IDoThis {
+export class GetEntireLibraryImageIDsReorderedService implements IDoThis {
 
 	constructor(
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService,
@@ -23,14 +23,13 @@ export class GetImageIDsReorderedService implements IDoThis {
 	}
 
 
-	private __get_image_ids_inNewOrder(pageImagesInNewOrder, _image_ids){
+	private __get_image_ids_inNewOrder(pageImagesInNewOrder, _image_ids): string[] {
 
 		const pageNum = this.__libPaginator.getCurrentPageNumber();
 
 		let page_image_ids = pageImagesInNewOrder.map((image) => image._id);
 
 		this.__replacePage(pageNum, page_image_ids, _image_ids);
-		console.log(_image_ids);
 		return _image_ids;
 	}
 

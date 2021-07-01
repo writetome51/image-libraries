@@ -26,6 +26,7 @@
 		"@aws-sdk/client-s3": "^3.3.0",
 		"@aws-sdk/credential-provider-cognito-identity": "^3.3.0",
 		"@writetome51/array-append-prepend": ">=4.0.0",
+		"@writetome51/array-get-adjacent-at": ">=3.0.0",
 		"@writetome51/array-get-by-index": ">=2.0.1",
 		"@writetome51/array-get-by-test": ">=4.0.2",
 		"@writetome51/array-get-head-tail": ">=2.0.0",
