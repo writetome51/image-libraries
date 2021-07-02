@@ -9,7 +9,6 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 
 		<nav *ngIf="totalPages > 1">
 			<div>
-
 				<previous-and-next-page-links
 					[currentPage]="currentPage" [totalPages]="totalPages"
 					[routeBeforePageNumber]="routeBeforePageNumber"
@@ -19,9 +18,16 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 					[input]="jumpToPageInput"
 					[routeBeforePageNumber]="routeBeforePageNumber"
 				></jump-to-page-controls>
-
 			</div>
 		</nav>
+
+		<label for="page-size-menu">Images per page:</label>
+		<select name="page-size-menu" id="page-size-menu">
+			<option *ngFor="let size of pageSizes"
+				[value]="size" [(ngModel)]="chosenSize" [selected]="size === defaultSize"
+			>{{size}}
+			</option>
+  		</select>
 	`
 })
 export class AppPaginationControlsComponent {
@@ -32,14 +38,12 @@ export class AppPaginationControlsComponent {
 	// Optional
 	@Input() jumpToPageInput: JumpToPageInputService;
 
+	defaultSize = 20;
+	pageSizes = [10, this.defaultSize, 30, 40];
+	chosenSize;
 
-	get currentPage(): number {
-		return this.paginator.getCurrentPageNumber();
-	}
+	get currentPage(): number { return this.paginator.getCurrentPageNumber(); }
 
-
-	get totalPages(): number {
-		return this.paginator.getTotalPages();
-	}
+	get totalPages(): number { return this.paginator.getTotalPages(); }
 
 }
