@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
+import { PaginationControlsPaginator } from './pagination-controls-paginator.interface';
 
 
 @Component({
@@ -21,26 +22,16 @@ import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
 			</div>
 		</nav>
 
-		<label for="page-size-menu">Images per page:</label>
-		<select name="page-size-menu" id="page-size-menu">
-			<option *ngFor="let size of pageSizes"
-				[value]="size" [(ngModel)]="chosenSize" [selected]="size === defaultSize"
-			>{{size}}
-			</option>
-  		</select>
+		<page-size-menu [paginator]="paginator"></page-size-menu>
 	`
 })
 export class AppPaginationControlsComponent {
 
-	@Input() paginator: { getCurrentPageNumber: () => number, getTotalPages: () => number };
+	@Input() paginator: PaginationControlsPaginator;
 	@Input() routeBeforePageNumber: string;
 
 	// Optional
 	@Input() jumpToPageInput: JumpToPageInputService;
-
-	defaultSize = 20;
-	pageSizes = [10, this.defaultSize, 30, 40];
-	chosenSize;
 
 	get currentPage(): number { return this.paginator.getCurrentPageNumber(); }
 
