@@ -5,10 +5,11 @@ import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
 import { LibraryPaginatorService }
 	from '@app-paginator/library-paginator_service/library-paginator.service';
+import { LibraryImagesListServicesModule } from '../../library-images-list-services.module';
 import { replaceAdjacentAt } from '@writetome51/array-replace-adjacent-at';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryImagesListServicesModule})
 export class GetLibraryImageIDsReorderedService implements IDoThis {
 
 	constructor(

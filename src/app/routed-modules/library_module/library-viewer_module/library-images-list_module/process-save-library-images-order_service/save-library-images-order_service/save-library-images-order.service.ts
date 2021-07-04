@@ -7,9 +7,10 @@ import { ImageRecord } from '@interfaces/image-record.interface';
 import { ReorderLoadedImagesService } from './reorder-loaded-images.service';
 import { RequestedLibraryData } from '@runtime-state-data/requested-library.data';
 import { GetLibraryImageIDsReorderedService } from './get-library-image-ids-reordered.service';
+import { LibraryImagesListServicesModule } from '../../library-images-list-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryImagesListServicesModule})
 export class SaveLibraryImagesOrderService implements IDoThis {
 
 	constructor(

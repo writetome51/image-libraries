@@ -3,7 +3,6 @@ import { CurrentPageImagesData as currentPageImages }
 import { getArrFilled } from '@writetome51/get-arr-filled';
 import { getAdjacentAt } from '@writetome51/array-get-adjacent-at';
 import { getRoundedUp } from '@writetome51/get-rounded-up-down';
-import { GetLibraryImageIDsReorderedService } from './get-library-image-ids-reordered.service';
 import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageRecord } from '@interfaces/image-record.interface';
@@ -12,13 +11,13 @@ import { LoadedImagesStateService }
 import { LibraryPaginatorService }
 	from '@app-paginator/library-paginator_service/library-paginator.service';
 import { setArray } from '@writetome51/set-array';
+import { LibraryImagesListServicesModule } from '../../library-images-list-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryImagesListServicesModule})
 export class ReorderLoadedImagesService implements IDoThis {
 
 	constructor(
-		private __getEntireLibImageIDsReordered: GetLibraryImageIDsReorderedService,
 		private __loadedImagesState: LoadedImagesStateService,
 		private __libPaginator: LibraryPaginatorService
 	) {}

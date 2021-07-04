@@ -5,9 +5,10 @@ import { SaveLibraryImagesOrderService }
 	from './save-library-images-order_service/save-library-images-order.service';
 import { InterpretSaveLibraryImagesOrderResultService }
 	from './interpret-save-library-images-order-result.service';
+import { LibraryImagesListServicesModule } from '../library-images-list-services.module';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: LibraryImagesListServicesModule})
 export class ProcessSaveLibraryImagesOrderService extends ProcessExistingUserDBOperationService {
 
 	constructor(
