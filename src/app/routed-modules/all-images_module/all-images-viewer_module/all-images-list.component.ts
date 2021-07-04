@@ -1,7 +1,5 @@
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
-import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
-import { ImageRecord } from '@interfaces/image-record.interface';
 import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
@@ -17,7 +15,7 @@ import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-r
 		</ul>
 	`
 })
-export class AllImagesListComponent extends HasDataInputDirective<ImageRecord[]> {
+export class AllImagesListComponent {
 
 	pageImages = CurrentPageImagesData;
 

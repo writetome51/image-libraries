@@ -23,7 +23,7 @@ export class AllImagesViewerComponent extends ImagesViewerContextDirective {
 
 
 	constructor(
-		public __storedImageTotal: UserImageTotalInBrowserStorageService,
+		protected _storedImageTotal: UserImageTotalInBrowserStorageService,
 		public paginator: AllImagesPaginatorService,
 		public jumpToPageInput: AllImagesJumpToPageInputService
 	) {

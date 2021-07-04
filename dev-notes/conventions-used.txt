@@ -100,7 +100,7 @@ export interface LibraryRecord {
 }
 
 
-Subscribables (Observables, from Rxjs)
+Subscribables (Observables, from Rxjs library)
 
 The name of any variable or constant referencing a Subscribable ends with '$'.
 

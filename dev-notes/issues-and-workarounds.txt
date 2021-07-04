@@ -1,4 +1,4 @@
-Abstract Components that contain Angular decorators
+Abstract Components or Directives that contain Angular decorators
 
 Components that are abstract classes that use Angular decorators inside their definitions,
 such as @Input, must be decorated with @Component.  If not, they will trigger
@@ -8,10 +8,15 @@ exact line:
 
 @Component({selector: '', template: ''}) // prevents Angular build error
 
-You don't need to add an abstract Component to a Module's 'declarations'.  However, you'll
-probably need to add the constant NO_ERRORS_SCHEMA (from @angular/core) to the Module's
-'schemas' array. (This would be in any Module with a Component that inherits from the
-abstract Component.) This will prevent more build errors.
+The same goes for abstract Directives, but instead of the above @Component() decorator
+they'll need this line:
+
+@Directive({selector: '[]'}) // prevents Angular build error
+
+You don't need to add an abstract Component or Directive to a Module's 'declarations'.
+You may need to add the constant NO_ERRORS_SCHEMA (from @angular/core) to the Module's
+'schemas' array.  (This would be in any Module with a Component or Directive that inherits
+from the abstract Component or Directive.)  This will prevent more build errors.
 
 
 TypeScript decorators created with getClassModificationDecorator()

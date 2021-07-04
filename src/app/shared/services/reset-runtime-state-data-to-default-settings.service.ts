@@ -10,12 +10,12 @@ import { ResettableToDefault } from '@interfaces/resettable-to-default.interface
 @Injectable({providedIn: 'root'})
 export class ResetRuntimeStateDataToDefaultSettingsService implements IDoThis {
 
-	constructor(private __loadedImageState: LoadedImagesStateService) {}
+	constructor(private __loadedImagesState: LoadedImagesStateService) {}
 
 
 	go(): void {
 		let resettables: ResettableToDefault[] = Object.values(resettableClasses);
-		append(this.__loadedImageState, resettables);
+		append(this.__loadedImagesState, resettables);
 
 		for (let i = 0, length = resettables.length; i < length; ++i) {
 			resettables[i].setDefault();

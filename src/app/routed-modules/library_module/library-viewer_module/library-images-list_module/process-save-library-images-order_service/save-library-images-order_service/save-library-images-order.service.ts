@@ -1,13 +1,13 @@
-import { LibraryRecord } from '@interfaces/library-record.interface';
-import { Injectable } from '@angular/core';
-import { UpdateLibraryService } from '@db/update-library.service';
+import { GetLibraryImageIDsReorderedService } from './get-library-image-ids-reordered.service';
 import { HasError } from '@interfaces/has-error.interface';
+import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { ImageRecord } from '@interfaces/image-record.interface';
+import { LibraryImagesListServicesModule } from '../../library-images-list-services.module';
+import { LibraryRecord } from '@interfaces/library-record.interface';
 import { ReorderLoadedImagesService } from './reorder-loaded-images.service';
 import { RequestedLibraryData } from '@runtime-state-data/requested-library.data';
-import { GetLibraryImageIDsReorderedService } from './get-library-image-ids-reordered.service';
-import { LibraryImagesListServicesModule } from '../../library-images-list-services.module';
+import { UpdateLibraryService } from '@db/update-library.service';
 
 
 @Injectable({providedIn: LibraryImagesListServicesModule})

@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageRecord } from '@interfaces/image-record.interface';
-import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
-import { ListRearrangerService } from './list-rearranger.service';
-import { Unsubscribable } from 'rxjs';
-import { ProcessSaveLibraryImagesOrderService }
-	from '@process/process-save-library-images-order_service/process-save-library-images-order.service';
 import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { ImageRecord } from '@interfaces/image-record.interface';
+import { ListRearrangerService } from './list-rearranger.service';
+import { ProcessSaveLibraryImagesOrderService }
+	from './process-save-library-images-order_service/process-save-library-images-order.service';
 import { setArray } from '@writetome51/set-array';
+import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
 
 
 @Component({
 	selector: 'library-images-list',
 	template: `
-		<re-arrangeable-grid-list [data]="pageImages.data"
-			unsubscribeOnDestroy [subscriptions]="[listOrderSubscription]"
-		>
+		<re-arrangeable-grid-list [data]="pageImages.data">
+
 			<re-arrangeable-grid-list-item *ngFor="let img of pageImages.data; let i = index;"
 				[index]="i"
 			>
@@ -25,10 +23,8 @@ import { setArray } from '@writetome51/set-array';
 		</re-arrangeable-grid-list>
 	`
 })
-export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecord[]>
-	implements OnInit {
+export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective implements OnInit {
 
-	listOrderSubscription: Unsubscribable;
 	pageImages = CurrentPageImagesData;
 
 
@@ -41,16 +37,15 @@ export class LibraryImagesListComponent extends HasDataInputDirective<ImageRecor
 
 
 	ngOnInit() {
-		this.pageImages = CurrentPageImagesData;
-
-		this.listOrderSubscription = this.__listRearranger.rearrangedList$.subscribe(
-			async (list: ImageRecord[]) => await this.__runTasksAfterGettingRearrangedImages(list)
-		);
+		this._subscriptions = [
+			this.__listRearranger.rearrangedList$.subscribe(async (list: ImageRecord[]) =>
+				await this.__runTasksAfterGettingRearrangedImages(list)
+			)
+		];
 	}
 
 
 	private async __runTasksAfterGettingRearrangedImages(images) {
-		console.log(images);
 		setArray(this.pageImages.data, images);
 		await this.__processSaveLibraryImagesOrder.go(images);
 	}

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ImagesViewerContextDirective }
-	from '@app/shared/abstract-directives/images-viewer-context.abstract.directive';
+	from '@abstract-directives/images-viewer-context.abstract.directive';
 import { HasContextInputDirective }
-	from '@app/shared/abstract-directives/has-context-input.abstract.directive';
+	from '@abstract-directives/has-context-input.abstract.directive';
 
 
 @Component({
