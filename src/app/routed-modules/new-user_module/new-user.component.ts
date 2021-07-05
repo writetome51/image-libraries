@@ -20,7 +20,7 @@ export class NewUserComponent {
 
 
 	constructor(title: Title) {
-		title.setTitle(getPageTitle.go(['Create Account']));
+		title.setTitle(getPageTitle.go([this.heading]));
 	}
 
 }
