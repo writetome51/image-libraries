@@ -63,6 +63,7 @@
 		"@writetome51/not": ">=2.0.1",
 		"@writetome51/public-array-container": ">=4.0.0",
 		"@writetome51/set-array": ">=2.0.2",
+		"@writetome51/to-str": ">=0.0.1",
 		"@writetome51/unsubscribe-on-destroy-directive": ">=0.0.1",
 		"@writetome51/validating-inputs": ">=3.1.0",
 		"angular-draggable-droppable": "^4.3.8",
