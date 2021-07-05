@@ -16,7 +16,7 @@ export class JumpToPageControlsComponent implements OnInit {
 
 
 	ngOnInit() {
-		this.input.setMaxValue();
+	//	this.input.setMaxValue();
 	}
 
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
-import { PaginationControlsPaginator } from './pagination-controls-paginator.interface';
+import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 
 
 @Component({
@@ -27,7 +27,7 @@ import { PaginationControlsPaginator } from './pagination-controls-paginator.int
 })
 export class AppPaginationControlsComponent {
 
-	@Input() paginator: PaginationControlsPaginator;
+	@Input() paginator: AppPaginatorService;
 	@Input() routeBeforePageNumber: string;
 
 	// Optional
