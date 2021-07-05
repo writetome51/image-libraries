@@ -24,6 +24,7 @@ export class ListRearrangerService {
 
 
 	moveItemTo(newIndex): void {
+		if (indexBeingMoved.data === newIndex) return;
 		moveByIndex(indexBeingMoved.data, newIndex, this.__list);
 
 		this.__subject.next(this.__list);
