@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
-import { Title } from '@angular/platform-browser';
 import { newUserPasswordQuestionWarning } from '@string-constants/warnings';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({

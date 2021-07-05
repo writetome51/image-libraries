@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IndexBeingMovedData as indexBeingMoved }
-	from './re-arrangeable-grid-list_module/index-being-moved.data';
+import { IndexBeingMovedData as indexBeingMoved } from './index-being-moved.data';
 import { LibraryImagesListServicesModule } from './library-images-list-services.module';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { Subject, Subscribable } from 'rxjs';
