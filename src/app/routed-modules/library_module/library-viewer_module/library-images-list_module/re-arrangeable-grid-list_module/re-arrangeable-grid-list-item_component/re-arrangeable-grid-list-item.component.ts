@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ListRearrangerService } from '../../list-rearranger.service';
-import { IndexBeingMovedData as indexBeingMoved } from '../index-being-moved.data';
+import { IndexBeingMovedData as indexBeingMoved } from '../../index-being-moved.data';
 
 
 @Component({
