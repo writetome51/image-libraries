@@ -16,6 +16,7 @@ button {
 
 div {
 	min-width: min-content;
+	min-height: min-content;
 }
 
 
@@ -104,6 +105,12 @@ li.grid-list-item {
 }
 
 
+.hoverable-container {
+	width: inherit;
+	height: inherit;
+}
+
+
 .invisible {
 	visibility: hidden;
 }
@@ -131,7 +138,6 @@ li.grid-list-item {
 
 
 
-
 /*************************************************************************************************
 IDs
 *************************************************************************************************/
@@ -156,6 +162,12 @@ IDs
 /*************************************************************************************************
 ActionMenuModule
 *************************************************************************************************/
+
+.action-menu-container {
+	min-height: 0;
+	max-height: max-content;
+}
+
 
 .menu-choice-label-container {
 	margin: 5px 0 5px 5px;
