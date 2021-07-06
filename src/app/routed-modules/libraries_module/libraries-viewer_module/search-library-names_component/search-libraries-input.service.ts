@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SearchInputService } from '@validating-input/search-input.service';
-import { LibraryNamesServicesModule } from '../library-names-services.module';
+import { LibrariesViewerServicesModule } from '../libraries-viewer-services.module';
 
 
-@Injectable({providedIn: LibraryNamesServicesModule})
+@Injectable({providedIn: LibrariesViewerServicesModule})
 export class SearchLibrariesInputService extends SearchInputService {
 
 	constructor() {

@@ -2,4 +2,4 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule()
-export class LibraryNamesServicesModule {}
+export class LibrariesViewerServicesModule {}

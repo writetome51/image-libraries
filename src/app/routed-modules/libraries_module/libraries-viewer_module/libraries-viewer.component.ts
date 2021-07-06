@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { NewLibraryData } from '@runtime-state-data/new-library.data';
 import { LibraryNamesData } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { NewLibraryData } from '@runtime-state-data/new-library.data';
+import { SearchedLibraryNamesData } from './searched-library-names.data';
 
 
 @Component({
 	selector: 'libraries-viewer',
 	template: `
-		<library-names [data]="libraryNames.data"></library-names>
+		<p *ngIf="libraryNames.data && libraryNames.data.length === 0">{{noLibrariesMessage}}</p>
+
+		<search-library-names></search-library-names>
+
+		<library-names [data]="names"></library-names>
 
 		<new-library-button></new-library-button>
 
@@ -17,5 +22,13 @@ export class LibrariesViewerComponent {
 
 	newLibrary = NewLibraryData;
 	libraryNames = LibraryNamesData;
+	searchedLibraryNames = SearchedLibraryNamesData;
+	noLibrariesMessage = 'You have no libraries right now';
+
+	get names() {
+		return this.searchedLibraryNames.data ?
+			this.searchedLibraryNames.data :
+			this.libraryNames.data;
+	}
 
 }
