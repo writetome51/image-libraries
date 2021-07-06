@@ -7,11 +7,11 @@ import { SearchedLibraryNamesData } from './searched-library-names.data';
 @Component({
 	selector: 'libraries-viewer',
 	template: `
-		<p *ngIf="libraryNames.data && libraryNames.data.length === 0">{{noLibrariesMessage}}</p>
+		<p *ngIf="!(librariesExist)">{{noLibrariesMessage}}</p>
 
-		<search-library-names></search-library-names>
+		<search-library-names *ngIf="librariesExist" clearFormOnInit></search-library-names>
 
-		<library-names [data]="names"></library-names>
+		<library-links [labels]="names"></library-links>
 
 		<new-library-button></new-library-button>
 
@@ -25,10 +25,13 @@ export class LibrariesViewerComponent {
 	searchedLibraryNames = SearchedLibraryNamesData;
 	noLibrariesMessage = 'You have no libraries right now';
 
+	get librariesExist() {
+		return (this.libraryNames.data.length);
+	}
+
 	get names() {
-		return this.searchedLibraryNames.data ?
-			this.searchedLibraryNames.data :
-			this.libraryNames.data;
+		return this.searchedLibraryNames.data ? this.searchedLibraryNames.data
+			: this.libraryNames.data;
 	}
 
 }
