@@ -1,0 +1,22 @@
+<div>
+	<div class="library-name-search-input-container  validating-input-container">
+
+		<label for="{{input.id}}" [hidden]="input.hideLabel">
+			{{input.label}}
+		</label>
+
+		<input [type]="input.__type"
+			id="{{input.id}}" class="validating-input"
+			[name]="input.id"
+			[placeholder]="input.label"
+			[minLength]="input.minLength"
+			autocomplete="on"
+
+			(input)="search()"
+			[(ngModel)]="input.objectToBind[input.propertyToBind]"
+		/>
+
+		<clear-field-button></clear-field-button>
+
+	</div>
+</div>

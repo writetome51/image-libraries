@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
-import { LibrariesViewerServicesModule } from '../libraries-viewer-services.module';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { SearchData as search } from '@runtime-state-data/search.data';
 import { SearchedLibraryNamesData as searchedLibraryNames } from '../searched-library-names.data';
+import { SearchLibraryNamesServicesModule } from './search-library-names-services.module';
 
 
-@Injectable({providedIn: LibrariesViewerServicesModule})
+@Injectable({providedIn: SearchLibraryNamesServicesModule})
 export class SearchLibrariesService implements IDoThis {
 
 	constructor(private __librariesInBrowser: LibrariesInBrowserStorageService) {}
