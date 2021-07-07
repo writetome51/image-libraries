@@ -2,7 +2,6 @@ import { GetPageTitleService as getPageTitle }
 	from '@services/get-page-title.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { LibraryJumpToPageInputService } from '../library-jump-to-page-input.service';
 import { LibraryServicesModule } from '../library-services.module';
 import { LoadLibraryService } from './load-library.service';
 import { RequestedLibraryData as requestedLibrary }
@@ -15,9 +14,7 @@ import { Title } from '@angular/platform-browser';
 export class RunTasksAfterLibraryRouteParamsReceivedService implements IDoThis {
 
 	constructor(
-		private __loadLibrary: LoadLibraryService,
-		private __jumpToPageInput: LibraryJumpToPageInputService,
-		private __title: Title
+		private __loadLibrary: LoadLibraryService, private __title: Title
 	) {}
 
 

@@ -5,7 +5,7 @@ import { LibraryPaginatorService }
 	from '@app-paginator/library-paginator_service/library-paginator.service';
 import { LoadedLibraryImageTotalService }
 	from '@services/library/loaded-library-image-total.service';
-import { LibraryJumpToPageInputService } from '../library-jump-to-page-input.service';
+import { LibraryJumpToPageInputService } from './library-jump-to-page-input.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 
