@@ -1,4 +1,4 @@
-import { ExecutorConfiguration } from './executor-configuration.interface';
+import { ExecutorConfiguration } from '@interfaces/executor-configuration.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 
 
