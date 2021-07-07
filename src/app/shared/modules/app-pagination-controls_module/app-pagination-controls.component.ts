@@ -10,15 +10,10 @@ import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.servi
 
 		<nav *ngIf="totalPages > 1">
 			<div>
-				<previous-and-next-page-links
-					[currentPage]="currentPage" [totalPages]="totalPages"
-					[routeBeforePageNumber]="routeBeforePageNumber"
-				></previous-and-next-page-links>
+				<previous-and-next-page-links [context]="this"></previous-and-next-page-links>
 
-				<jump-to-page-controls *ngIf="jumpToPageInput"
-					[input]="jumpToPageInput"
-					[routeBeforePageNumber]="routeBeforePageNumber"
-				></jump-to-page-controls>
+				<jump-to-page-controls *ngIf="jumpToPageInput" [context]="this">
+				</jump-to-page-controls>
 			</div>
 		</nav>
 
@@ -36,5 +31,9 @@ export class AppPaginationControlsComponent {
 	get currentPage(): number { return this.paginator.getCurrentPageNumber(); }
 
 	get totalPages(): number { return this.paginator.getTotalPages(); }
+
+	get jumpToPageInputValue():number {
+		return this.jumpToPageInput.getValue();
+	}
 
 }
