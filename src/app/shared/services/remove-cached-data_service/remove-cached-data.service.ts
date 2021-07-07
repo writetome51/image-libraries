@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ResetRuntimeStateDataToDefaultSettingsService }
 	from '../reset-runtime-state-data-to-default-settings.service';
 import { RemoveBrowserStorageService as removeBrowserStorage }
-	from '@services/remove-cached-data_service/remove-browser-storage.service';
+	from './remove-browser-storage.service';
 
 
 @Injectable({providedIn: 'root'})

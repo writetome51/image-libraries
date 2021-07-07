@@ -1,9 +1,9 @@
 import { LibraryNamesData as libNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager.interface';
 import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { Injectable } from '@angular/core';
-import { MenuChoice } from '@action-menu_module/menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
 import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { SelectMutipleImagesSettingService }

@@ -110,7 +110,7 @@ ContextComponents
 Some re-usable Components have @Input properties and need to be nested in an outer
 Component that passes values to those @Inputs.  The outer Component is the context for the
 inner Component.  Some of these re-usable inner Components have an @Input property named
-'context', and its value must be a Component whose name ends with 'ContextComponent'.
+'context', and its value must be a Component whose name includes 'Context'.
 These are cases where there are ContextComponents made specifically to be the contexts for
 certain re-usable Components, such as ImagesViewerContextComponent being the context for
 ImagesViewerComponent.

@@ -1,9 +1,9 @@
 import { ActionMenuChoicesExecutorService } from './action-menu-choices-executor.service';
 import { Component, OnInit } from '@angular/core';
-import { MenuChoice } from './menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { HasContextInputDirective }
 	from '@abstract-directives/has-context-input.abstract.directive';
-import { ActionMenuContext } from '@action-menu_module/action-menu-context.interface';
+import { ActionMenuContext } from '@interfaces/action-menu-context.interface';
 
 
 @Component({

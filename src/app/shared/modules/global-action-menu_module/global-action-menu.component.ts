@@ -1,4 +1,4 @@
-import { ActionMenuContext } from '@action-menu_module/action-menu-context.interface';
+import { ActionMenuContext } from '@interfaces/action-menu-context.interface';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -31,7 +31,7 @@ export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective
 
 
 	ngOnInit() {
-		this._subscriptions.push(...this.__getSubscriptions.go());
+		this._subscriptions = this.__getSubscriptions.go();
 	}
 
 

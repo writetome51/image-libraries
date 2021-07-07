@@ -1,6 +1,6 @@
-import { CheckableMenuChoice } from '../../../checkable-menu-choice.interface';
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice.interface';
 import { Component, Input } from '@angular/core';
-import { MenuChoice } from '../../../menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { ActionMenuChoicesExecutorService } from '../../../action-menu-choices-executor.service';
 import { ClickExecuteFunctionContextDirective }
 	from '@app/shared/abstract-directives/click-execute-function-context.abstract.directive';

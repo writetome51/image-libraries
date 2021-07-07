@@ -1,7 +1,7 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Component, Input } from '@angular/core';
-import { SetCurrentPageImagesService as setCurrentPageImages }
-	from '@services/set-current-page-images.service';
+import { ReloadCurrentPageDataService as reloadCurrentPageData }
+	from '@services/reload-current-page-data.service';
 
 
 @Component({
@@ -33,7 +33,7 @@ export class PageSizeMenuComponent {
 		this.__chosenSize = value;
 
 		this.__configurePaginator(this.paginator, value);
-		this.__reloadCurrentPageData(this.paginator);
+		reloadCurrentPageData.go(this.paginator);
 	}
 
 	get chosenSize(): number { return this.__chosenSize; }
@@ -47,11 +47,6 @@ export class PageSizeMenuComponent {
 		paginator.setItemsPerPage(value);
 
 		paginator.setItemsPerLoad(value > this.defaultPageSize ? value : value * 2);
-	}
-
-
-	private __reloadCurrentPageData(paginator) {
-		setCurrentPageImages.go(paginator.getCurrentPageNumber(), paginator, {reload: true});
 	}
 
 }

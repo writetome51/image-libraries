@@ -2,7 +2,7 @@ import { AppImage } from '@interfaces/app-image.interface';
 import { appName } from '@string-constants/app-name';
 import { getMin } from '@writetome51/get-max-min';
 import { ImageRecord } from '@interfaces/image-record.interface';
-import { MenuChoice } from '@app/shared/modules/action-menu_module/menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { not } from '@writetome51/not';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { setArray } from '@writetome51/set-array';

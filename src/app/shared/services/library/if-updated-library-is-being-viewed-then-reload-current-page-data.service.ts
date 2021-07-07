@@ -5,8 +5,8 @@ import { LoadedImagesStateService }
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
 import { noValue } from '@writetome51/has-value-no-value';
-import { ReloadCurrentPageDataService }
-	from '@services/reload-current-page-data_service/reload-current-page-data.service';
+import { ReloadCurrentPageDataWithCurrentPaginatorService }
+	from '@services/reload-current-page-data-with-current-paginator_service/reload-current-page-data-with-current-paginator.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +14,7 @@ export class IfUpdatedLibraryIsBeingViewedThenReloadCurrentPageDataService imple
 
 	constructor(
 		private __loadedImagesState: LoadedImagesStateService,
-		private __reloadCurrentPageData: ReloadCurrentPageDataService,
+		private __reloadCurrentPageData: ReloadCurrentPageDataWithCurrentPaginatorService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
 	) {}
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { hasValue } from '@writetome51/has-value-no-value';
 import { HasDataInputDirective }
 	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
-import { MenuChoice } from '@action-menu_module/menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 
 
 @Component({

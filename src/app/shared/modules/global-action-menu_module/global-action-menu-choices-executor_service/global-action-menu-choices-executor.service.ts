@@ -4,7 +4,7 @@ import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 import { ProcessDeleteSelectedImagesFromAccountService }
 	from './process-delete-selected-images-from-account_service/process-delete-selected-images-from-account.service';
 import { ActionMenuContextChoicesExecutorService }
-	from '@action-menu_module/action-menu-context-choices-executor.abstract.service';
+	from '@services/action-menu-context-choices-executor.abstract.service';
 import { ToggleEnableImageSelectionService } from './toggle-enable-image-selection.service';
 import { AddSelectedImagesToLibraryService } from './add-selected-images-to-library.service';
 import { RemoveSelectedImagesFromLibraryService }

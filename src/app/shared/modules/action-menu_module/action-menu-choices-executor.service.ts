@@ -1,8 +1,8 @@
 // import { ActionMenuComponent } from '@action-menu_module/action-menu.component';
 import { ActionMenuContextChoicesExecutorService }
-	from './action-menu-context-choices-executor.abstract.service';
+	from '@services/action-menu-context-choices-executor.abstract.service';
 import { Injectable } from '@angular/core';
-import { MenuChoice } from './menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { MenuChoiceLabelHierarchyService as labelHierarchy }
 	from './menu-choice-label-hierarchy.service';
 import { Settable } from '@interfaces/settable.interface';

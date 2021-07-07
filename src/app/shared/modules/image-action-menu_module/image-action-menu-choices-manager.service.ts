@@ -6,11 +6,11 @@ import { LibraryRecord } from '@interfaces/library-record.interface';
 import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
-import { MenuChoice } from '@action-menu_module/menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { MenuChoiceLabelData as choiceLabel } from './menu-choice-label.data';
-import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager.interface';
 import { ImageActionMenuServicesModule } from './image-action-menu-services.module';
-import { CheckableMenuChoice } from '@action-menu_module/checkable-menu-choice.interface';
+import { CheckableMenuChoice } from '@interfaces/checkable-menu-choice.interface';
 import { setArray } from '@writetome51/set-array';
 
 
