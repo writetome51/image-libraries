@@ -1,8 +1,8 @@
 import { HasAny } from '@interfaces/has-any.interface';
 
 
-export interface Gettable<T> extends HasAny {
+export interface Gettable<TypeToGet> extends HasAny {
 
-	get: () => T;
+	get: () => TypeToGet;
 
 }

@@ -1,5 +1,5 @@
-export interface Settable<T> {
+export interface Settable<TypeToSet> {
 
-	set: (arg?: T) => any;
+	set: (arg?: TypeToSet) => any;
 
 }

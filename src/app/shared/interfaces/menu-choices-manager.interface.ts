@@ -1,4 +1,4 @@
-import { MenuChoice } from './menu-choice.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 
 
 export interface MenuChoicesManager {

@@ -1,5 +1,1 @@
-export interface Waiter {
-
-	waiting: boolean
-
-}
+export interface Waiter { waiting: boolean }

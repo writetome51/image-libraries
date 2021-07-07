@@ -1,6 +1,6 @@
 import { ActionMenuContextChoicesExecutorService }
-	from '@action-menu_module/action-menu-context-choices-executor.abstract.service';
-import { MenuChoicesManager } from '@action-menu_module/menu-choices-manager.interface';
+	from '@services/action-menu-context-choices-executor.abstract.service';
+import { MenuChoicesManager } from '@interfaces/menu-choices-manager.interface';
 
 
 export interface ActionMenuContext {

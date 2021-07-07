@@ -1,5 +1,1 @@
-export interface Progress {
-
-	percentageComplete: number;
-
-}
+export interface Progress { percentageComplete: number; }
