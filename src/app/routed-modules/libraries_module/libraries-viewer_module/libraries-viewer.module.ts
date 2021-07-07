@@ -1,30 +1,19 @@
-import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
+import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module'
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { LibraryLinksComponent } from './library-links.component';
 import { LibrariesViewerComponent } from './libraries-viewer.component';
-import { LibrariesViewerServicesModule } from './libraries-viewer-services.module';
-import { NewLibraryButtonComponent } from './new-library-button.component';
-import { NewLibraryFormModule } from './new-library-form_module/new-library-form.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SearchLibraryNamesComponent }
-	from './search-library-names_component/search-library-names.component';
+import { SearchLibraryNamesModule }
+	from './search-library-names_module/search-library-names.module';
 
 
 @NgModule({
-	declarations: [
-		LibrariesViewerComponent,
-		SearchLibraryNamesComponent,
-		NewLibraryButtonComponent,
-		LibraryLinksComponent
-	],
+	declarations: [LibrariesViewerComponent, LibraryLinksComponent],
 	imports: [
 		CommonModule,
-		FormsModule,
 		ClearFormOnInitModule,
-		NewLibraryFormModule,
-		LibrariesViewerServicesModule,
+		SearchLibraryNamesModule,
 		RouterModule
 	],
 	exports: [LibrariesViewerComponent]

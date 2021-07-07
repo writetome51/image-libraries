@@ -1,1 +1,1 @@
-export const SearchedLibraryNamesData = {data: undefined};
+export const SearchedLibraryNamesData: { data: string[] } = { data: undefined };

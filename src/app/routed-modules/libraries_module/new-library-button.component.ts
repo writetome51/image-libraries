@@ -18,11 +18,9 @@ export class NewLibraryButtonComponent {
 		return newLibrary.beingCreated;
 	}
 
-
 	set creatingNewLibrary(value){
 		newLibrary.beingCreated = value;
 	}
-
 
 	get label() {
 		return (this.creatingNewLibrary ? 'Cancel' : 'New Library');

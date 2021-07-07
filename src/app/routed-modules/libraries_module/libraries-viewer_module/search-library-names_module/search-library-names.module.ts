@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HTMLImageModule } from '@html-image_module/html-image.module';
 import { NgModule } from '@angular/core';
 import { SearchLibraryNamesComponent }
-	from './search-library-names.component';
+	from './search-library-names_component/search-library-names.component';
 import { SearchLibraryNamesServicesModule } from './search-library-names-services.module';
 
 
