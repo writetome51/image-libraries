@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
+import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
 import { ProgressBarData } from '@interfaces/progress-bar-data.interface';
-import { HasDataInputDirective }
-	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
@@ -12,5 +11,4 @@ import { HasDataInputDirective }
 		></app-horizontal-progress-bar>
 	`
 })
-export class AppHorizontalProgressBarsComponent
-	extends HasDataInputDirective<ProgressBarData[]> {}
+export class AppHorizontalProgressBarsComponent extends HasDataInputDirective<ProgressBarData[]> {}
