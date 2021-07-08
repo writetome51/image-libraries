@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { IndexBeingMovedData as indexBeingMoved } from './index-being-moved.data';
 import { LibraryImagesListServicesModule } from './library-images-list-services.module';
 import { moveByIndex } from '@writetome51/array-move-by-index';
 import { Subject, Subscribable } from 'rxjs';
@@ -22,12 +21,11 @@ export class ListRearrangerService {
 	}
 
 
-	moveItemTo(newIndex): void {
-		if (indexBeingMoved.data === newIndex) return;
-		moveByIndex(indexBeingMoved.data, newIndex, this.__list);
+	moveItem(fromIndex, toIndex): void {
+		if (fromIndex === toIndex) return;
+		moveByIndex(fromIndex, toIndex, this.__list);
 
 		this.__subject.next(this.__list);
-		indexBeingMoved.data = -1;
 	}
 
 }
