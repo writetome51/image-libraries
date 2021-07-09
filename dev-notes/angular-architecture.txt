@@ -4,7 +4,7 @@ It's intended to be a reminder in case you're rusty.
 
 Directives
 are classes providing UI content behavior.  Each has an assigned selector
-(a custom element or element attribute).
+(a custom html element or element attribute).
 
 
 Components
