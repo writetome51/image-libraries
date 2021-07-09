@@ -11,16 +11,14 @@ import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destr
 @Component({
 	selector: 'library-images-list',
 	template: `
-		<re-arrangeable-grid-list [data]="pageImages.data">
-
+		<ul>
 			<re-arrangeable-grid-list-item *ngFor="let img of pageImages.data; let i = index;"
 				[index]="i"
 			>
 				<thumbnail-image-container [image]="img"></thumbnail-image-container>
 
 			</re-arrangeable-grid-list-item>
-
-		</re-arrangeable-grid-list>
+		</ul>>
 	`
 })
 export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective implements OnInit {
@@ -37,6 +35,8 @@ export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective im
 
 
 	ngOnInit() {
+		this.__listRearranger.setList(this.pageImages.data);
+
 		this._subscriptions = [
 			this.__listRearranger.rearrangedList$.subscribe(async (list: ImageRecord[]) =>
 				await this.__runTasksAfterGettingRearrangedImages(list)
