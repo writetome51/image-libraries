@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { JumpToPageInputService } from './jump-to-page-input.abstract.service';
+import { JumpToPageInputService } from '@validating-input/jump-to-page-input.abstract.service';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 
 

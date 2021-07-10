@@ -8,7 +8,6 @@ import { HasContextInputDirective }
 	selector: 'previous-and-next-page-links',
 	template: `
 		<a *ngIf="context.currentPage > 1" [routerLink]="previousPageLink">previous</a>
-		 |
 		<a *ngIf="context.currentPage < context.totalPages" [routerLink]="nextPageLink">next</a>
 	`
 })

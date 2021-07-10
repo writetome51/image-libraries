@@ -16,9 +16,8 @@ import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destr
 				[index]="i"
 			>
 				<thumbnail-image-container [image]="img"></thumbnail-image-container>
-
 			</re-arrangeable-grid-list-item>
-		</ul>>
+		</ul>
 	`
 })
 export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective implements OnInit {

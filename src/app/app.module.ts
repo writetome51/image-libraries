@@ -1,5 +1,5 @@
 import { AppComponent } from './app_component/app.component';
-import { AppHeaderModule } from '@app/app-header_module/app-header.module';
+import { AppHeaderModule } from './app-header_module/app-header.module';
 import { AppFooterComponent } from './app-footer.component';
 import { AppMessageCenterModule } from './app-message-center_module/app-message-center.module';
 import { AppRoutingModule } from './app-routing.module';

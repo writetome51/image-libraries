@@ -1,7 +1,7 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Gettable } from '@interfaces/gettable.interface';
 import { JumpToPageInputService }
-	from '@app-pagination-controls_module/jump-to-page-input.abstract.service';
+	from '@validating-input/jump-to-page-input.abstract.service';
 
 
 export abstract class ImagesViewerContextDirective {

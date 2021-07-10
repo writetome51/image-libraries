@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JumpToPageInputService }
-	from '@app-pagination-controls_module/jump-to-page-input.abstract.service';
+	from '@validating-input/jump-to-page-input.abstract.service';
 import { LibraryPaginatorService }
 	from '@app-paginator/library-paginator_service/library-paginator.service';
 import { LibraryViewerServicesModule } from './library-viewer-services.module';
