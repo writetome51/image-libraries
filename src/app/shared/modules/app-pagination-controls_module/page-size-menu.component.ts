@@ -1,5 +1,10 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Component, Input } from '@angular/core';
+import { ConfigurePaginatorService as configurePaginator }
+	from '@app-paginator/configure-paginator.service';
+import { hasValue } from '@writetome51/has-value-no-value';
+import { PageSizeInBrowserStorageService }
+	from '@browser-storage/page-size-in-browser-storage.service';
 import { ReloadCurrentPageDataService as reloadCurrentPageData }
 	from '@services/reload-current-page-data.service';
 
@@ -20,33 +25,28 @@ import { ReloadCurrentPageDataService as reloadCurrentPageData }
 export class PageSizeMenuComponent {
 
 	@Input() paginator: AppPaginatorService;
-	readonly defaultPageSize = 20;
 
-	// must be multiples or divisibles of defaultPageSize
-	readonly pageSizes = [10, 20, 40, 60];
+	// must be multiples or divisibles of the default pageSize
+	readonly pageSizes = [10, 20, 40, 60, 80];
 
-	private __chosenSize = this.defaultPageSize;
+	private __chosenSize: number;
 
 
 	set chosenSize(value) {
 		value = Number(value);
 		this.__chosenSize = value;
 
-		this.__configurePaginator(this.paginator, value);
+		this.__pageSizeInBrowser.set(value);
+		configurePaginator.go(this.paginator, value);
 		reloadCurrentPageData.go(this.paginator);
 	}
 
 	get chosenSize(): number { return this.__chosenSize; }
 
 
-	private __configurePaginator(paginator, value) {
-		// Because itemsPerPage can't be greater than itemsPerLoad, if `value` is greater than
-		// itemsPerLoad, the itemsPerLoad must be assigned `value` first.
-
-		if (value > paginator.getItemsPerLoad()) paginator.setItemsPerLoad(value);
-		paginator.setItemsPerPage(value);
-
-		paginator.setItemsPerLoad(value > this.defaultPageSize ? value : value * 2);
+	constructor(private __pageSizeInBrowser: PageSizeInBrowserStorageService) {
+		const storedPageSize = this.__pageSizeInBrowser.get();
+		if (hasValue(storedPageSize)) this.__chosenSize = storedPageSize;
 	}
 
 }
