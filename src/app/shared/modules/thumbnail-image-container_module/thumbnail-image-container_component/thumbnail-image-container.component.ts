@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { ImageRecord } from '@interfaces/image-record.interface';
 import { ImageSelectorService } from '@services/image-selector.service';
 import { not } from '@writetome51/not';
-import { SelectMutipleImagesSettingService }
-	from '@browser-storage/select-mutiple-images-setting.service';
+import { EnableImageSelectionSettingService }
+	from '@browser-storage/enable-image-selection-setting.service';
 
 
 @Component({
@@ -18,26 +18,26 @@ export class ThumbnailImageContainerComponent {
 	@Input() deleteGlyphiconEnabled = false;
 
 
-	get multiSelectEnabled(): boolean {
-		return this.__selectMultipleImagesSetting.get().enabled;
+	private get __imageSelectionEnabled(): boolean {
+		return this.__enableImageSelectionSetting.get().enabled;
 	}
 
 
 	constructor(
-		private __selectMultipleImagesSetting: SelectMutipleImagesSettingService,
+		private __enableImageSelectionSetting: EnableImageSelectionSettingService,
 		private __imageSelector: ImageSelectorService
 	) {}
 
 
 	toggleSelect(): void {
-		if (not(this.multiSelectEnabled)) return;
+		if (not(this.__imageSelectionEnabled)) return;
 		this.__imageSelector.toggleSelect(this.image);
 	}
 
 
 	getRouterLink(): string[] | string {
 		// if selectMultiple is enabled, the image has no routerLink.
-		if (this.multiSelectEnabled) return [];
+		if (this.__imageSelectionEnabled) return [];
 		else return this.imageRouterLink;
 	}
 
