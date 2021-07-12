@@ -1,4 +1,4 @@
-import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
+import { AppPaginatorService } from './app-paginator.abstract.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { noValue } from '@writetome51/has-value-no-value';
 

@@ -7,6 +7,7 @@ import { not } from '@writetome51/not';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { setArray } from '@writetome51/set-array';
 import { LoadConfiguration } from '@interfaces/load-configuration.interface';
+import { PageConfigurationData } from '@runtime-state-data/page-configuration.data';
 
 
 // All data structures intended to be reset to their default values when the logged-out home
@@ -50,42 +51,6 @@ export const LibraryNamesData: ResettableToDefault = class __LibraryNamesData {
 };
 
 
-export const PageConfigurationData: ResettableToDefault =  class __PageData {
-
-	private static __size;
-
-
-	static get size(): number {
-		return this.__size;
-	}
-
-
-	static set size(value) {
-		const pageSizeChoices = [10,20,30,40];
-		if (not(pageSizeChoices.includes(value))) {
-			value = this.__closest(pageSizeChoices, value);
-		}
-		this.__size = value;
-	}
-
-
-	// Must be called before LoadData.setDefault()
-
-	static setDefault() {
-		this.size = 20;
-	}
-
-
-	private static __closest(numbers, num) {
-		let differences = new Array(numbers.length);
-		for (let i=0, len = numbers.length; i < len; ++i){
-			differences[i] = (Math.abs(numbers[i] - num));
-		}
-		let min = getMin(differences), index = differences.indexOf(min);
-		return numbers[index];
-	}
-
-};
 
 
 export const LoadConfigurationData: ResettableToDefault & LoadConfiguration = class __LoadData {
