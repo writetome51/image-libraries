@@ -40,6 +40,13 @@ input {
 input[type='text'], input[type='password'] {
 	margin: 10px;
 	padding: 5px;
+	min-width: 300px;
+}
+
+
+input[type='number'] {
+	min-width:100px;
+	max-width: 100px;
 }
 
 
@@ -156,11 +163,35 @@ IDs
 
 
 #jump-to-page-number-input {
-	width: 100px;
+	max-width: 50px;
 	height: 30px;
 	margin: auto;
 	font-size: 20px;
 }
+
+
+
+
+/*************************************************************************************************
+AppValidatingFormInputsModule
+*************************************************************************************************/
+
+.validating-input-container {
+	margin: 10px;
+	padding: 5px;
+}
+
+
+.validating-input-container input {
+	border: 1px solid #a0a0a0;
+	border-radius: 5px;
+}
+
+
+.validating-input-container.validating-input-with-error input {
+	border: 1px solid red;
+}
+
 
 
 
@@ -259,7 +290,3 @@ thumbnail-image-container  image-action-menu  div.action-menu-container {
 thumbnail-image-container  image-action-menu  ul.action-menu {
 	top: 30px;
 }
-
-
-
-

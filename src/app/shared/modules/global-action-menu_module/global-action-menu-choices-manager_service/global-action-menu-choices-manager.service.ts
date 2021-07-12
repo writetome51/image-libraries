@@ -27,7 +27,7 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 	manage(data = undefined): void {
 		this.__includeImageSelectionChoices.go();
 
-		if (data.imagesSelected) this.__choicesOnManipulatingSelectedImages.include();
+		if (data && data.imagesSelected) this.__choicesOnManipulatingSelectedImages.include();
 		else this.__choicesOnManipulatingSelectedImages.remove();
 	}
 

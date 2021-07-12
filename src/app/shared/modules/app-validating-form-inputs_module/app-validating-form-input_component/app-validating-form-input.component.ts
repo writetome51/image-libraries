@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
 import { InputValidatorService as inputValidator, ValidatingInput }
 	from '@writetome51/validating-inputs';
-import { HasDataInputDirective } from '@app/shared/abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
 	selector: 'app-validating-form-input',
-	templateUrl: './app-validating-form-input.component.html',
-	styleUrls: ['./app-validating-form-input.component.css']
+	templateUrl: './app-validating-form-input.component.html'
 })
 
 // Can be used with ValidatingFormInputComponent from '@writetome51/validating-inputs'

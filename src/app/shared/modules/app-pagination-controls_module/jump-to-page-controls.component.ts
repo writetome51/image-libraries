@@ -1,5 +1,5 @@
 import { AppPaginationControlsComponent } from './app-pagination-controls.component';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HasContextInputDirective }
 	from '@abstract-directives/has-context-input.abstract.directive';
 
@@ -14,15 +14,10 @@ import { HasContextInputDirective }
 	`
 })
 export class JumpToPageControlsComponent
-	extends HasContextInputDirective<AppPaginationControlsComponent> implements OnInit {
+	extends HasContextInputDirective<AppPaginationControlsComponent> {
 
 	get linkToRequestedPage() {
 		return ['/' + this.context.routeBeforePageNumber, this.context.jumpToPageInputValue];
-	}
-
-
-	ngOnInit() {
-		//	this.input.setMaxValue();
 	}
 
 }
