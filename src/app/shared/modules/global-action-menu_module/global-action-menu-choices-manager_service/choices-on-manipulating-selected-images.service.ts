@@ -51,10 +51,7 @@ export class ChoicesOnManipulatingSelectedImagesService {
 	private __includeRemoveSelectedFromLib() {
 		menuChoices.addChoice({
 			label: choiceLabel.removeSelectedFromLib,
-			data: {
-				selectedImages: selectedImages.data,
-				libName: this.__loadedLibraryInBrowser.get().name
-			}
+			data: {libName: this.__loadedLibraryInBrowser.get().name}
 		});
 	}
 
@@ -65,7 +62,7 @@ export class ChoicesOnManipulatingSelectedImagesService {
 			submenu: libNames.data.map((libName) => {
 				return {
 					label: choiceLabel.addSelectedToLib  + '.' + libName,
-					data: {selectedImages: selectedImages.data,  libName}
+					data: {libName}
 				};
 			})
 		});
