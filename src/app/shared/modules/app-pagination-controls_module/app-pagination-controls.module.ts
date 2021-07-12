@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { JumpToPageControlsComponent } from './jump-to-page-controls.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PreviousAndNextPageLinksComponent } from './previous-and-next-page-links.component';
 import { PageSizeMenuComponent } from './page-size-menu.component';
 
 
@@ -14,7 +13,6 @@ import { PageSizeMenuComponent } from './page-size-menu.component';
 	declarations: [
 		AppPaginationControlsComponent,
 		JumpToPageControlsComponent,
-		PreviousAndNextPageLinksComponent,
 		PageSizeMenuComponent
 	],
 	imports: [
