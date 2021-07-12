@@ -13,11 +13,11 @@ import { RequestedLibraryData as requestedLibrary }
 @Component({
 	selector: 'library-viewer',
 	template: `
-		<delete-library-button></delete-library-button>
-
 		<images-viewer [context]="this">
 			<library-images-list></library-images-list>
 		</images-viewer>
+
+		<delete-library-button></delete-library-button>
 	`
 })
 export class LibraryViewerComponent extends ImagesViewerContextDirective {

@@ -6,7 +6,7 @@ import { ThumbnailDisplaySettingsData as thumbnailDisplaySettings }
 @Component({
 	selector: 'image-size-slider',
 	template: `
-		<div id="input-container">
+		<div id="image-size-control-container">
 
 			<!--  size slider    -->
 			<label for="image-size-control" hidden>Image Size Control</label>
