@@ -3,7 +3,7 @@ import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalActionMenuChoicesManagerService }
-	from './global-action-menu-choices-manager.service';
+	from './global-action-menu-choices-manager_service/global-action-menu-choices-manager.service';
 import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
 import { GetGlobalActionMenuSubscriptionsService }

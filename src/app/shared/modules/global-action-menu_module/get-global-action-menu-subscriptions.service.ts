@@ -1,9 +1,8 @@
 import { GlobalActionMenuChoicesManagerService }
-	from './global-action-menu-choices-manager.service';
+	from './global-action-menu-choices-manager_service/global-action-menu-choices-manager.service';
+import { GlobalActionMenuServicesModule } from './global-action-menu-services.module';
 import { ImageSelectorService } from '@services/image-selector.service';
 import { Injectable } from '@angular/core';
-import { GlobalActionMenuServicesModule }
-	from '@global-action-menu_module/global-action-menu-services.module';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Unsubscribable } from 'rxjs';
 
