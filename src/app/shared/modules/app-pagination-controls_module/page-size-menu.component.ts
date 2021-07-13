@@ -2,6 +2,7 @@ import { AppPaginationControlsComponent } from './app-pagination-controls.compon
 import { Component } from '@angular/core';
 import { ConfigurePaginatorService as configurePaginator }
 	from '@app-paginator/configure-paginator.service';
+import { DefaultPageSizeData as defaultPageSize } from '@read-only-data/default-page-size.data';
 import { HasContextInputDirective }
 	from '@abstract-directives/has-context-input.abstract.directive';
 import { hasValue } from '@writetome51/has-value-no-value';
@@ -28,10 +29,8 @@ import { ReloadCurrentPageDataService as reloadCurrentPageData }
 export class PageSizeMenuComponent
 	extends HasContextInputDirective<AppPaginationControlsComponent> {
 
-	// must be multiples or divisibles of the default pageSize
 	readonly pageSizes = [10, 20, 40, 60, 80];
-
-	private __chosenSize = 40;
+	private __chosenSize = defaultPageSize.data;
 
 
 	set chosenSize(value) {
