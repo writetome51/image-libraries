@@ -1,6 +1,6 @@
 import { AllImagesPaginatorService }
 	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
-import { AllImagesJumpToPageInputService } from '../all-images-jump-to-page-input.service';
+import { AllImagesJumpToPageInputService } from './all-images-jump-to-page-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { ImagesViewerContextDirective }

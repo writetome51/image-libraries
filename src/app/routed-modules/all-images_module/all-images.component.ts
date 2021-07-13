@@ -6,7 +6,7 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 import { RouteParametersSubscriberDirective }
 	from '@abstract-directives/route-parameters-subscriber.abstract.directive';
 import { RunTasksAfterAllImagesRouteParamsReceivedService }
-	from './run-tasks-after-all-images-route-params-received.service';
+	from './run-tasks-after-all-images-route-params-received_service/run-tasks-after-all-images-route-params-received.service';
 import { Title } from '@angular/platform-browser';
 
 
