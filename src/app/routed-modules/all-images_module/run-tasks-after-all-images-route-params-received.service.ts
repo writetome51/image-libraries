@@ -8,14 +8,14 @@ import { RouteParamIDData as paramID } from '@read-only-data/route-param-id.data
 import { AllImagesServicesModule } from './all-images-services.module';
 import { LoadedImagesStateService }
 	from '@services/loaded-images-state_service/loaded-images-state.service';
-import { SetCurrentPageImagesService as setCurrentPageImages }
-	from '@services/set-current-page-images.service';
+import { SetCurrentPageImagesService } from '@services/set-current-page-images.service';
 
 
 @Injectable({providedIn: AllImagesServicesModule})
 export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis {
 
 	constructor(
+		private __setCurrentPageImages: SetCurrentPageImagesService,
 		private __paginator: AllImagesPaginatorService,
 		private __jumpToPageInput: AllImagesJumpToPageInputService,
 		private __loadedImageState: LoadedImagesStateService
@@ -36,12 +36,12 @@ export class RunTasksAfterAllImagesRouteParamsReceivedService implements IDoThis
 
 
 	private async __reloadPage(num) {
-		await setCurrentPageImages.go(num, this.__paginator, {reload: true});
+		await this.__setCurrentPageImages.go(num, this.__paginator, {reload: true});
 	}
 
 
 	private async __setPage(num) {
-		await setCurrentPageImages.go(num, this.__paginator);
+		await this.__setCurrentPageImages.go(num, this.__paginator);
 	}
 
 }

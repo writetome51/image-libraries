@@ -1,16 +1,18 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
-import { SetCurrentPageImagesService as setCurrentPageImages }
-	from '@services/set-current-page-images.service';
+import { SetCurrentPageImagesService } from '@services/set-current-page-images.service';
+import { Injectable } from '@angular/core';
 
 
-export class __ReloadCurrentPageDataService {
+@Injectable({providedIn: 'root'})
+export class ReloadCurrentPageDataService implements IDoThis {
 
-	static async go(paginator: AppPaginatorService) {
+	constructor(private __setCurrentPageImages: SetCurrentPageImagesService) {}
+
+
+	async go(paginator: AppPaginatorService) {
 		let pageNum = paginator.getCurrentPageNumber();
-		await setCurrentPageImages.go(pageNum, paginator, {reload: true});
+		await this.__setCurrentPageImages.go(pageNum, paginator, {reload: true});
 	}
 
 }
-
-export const ReloadCurrentPageDataService: IDoThis = __ReloadCurrentPageDataService;

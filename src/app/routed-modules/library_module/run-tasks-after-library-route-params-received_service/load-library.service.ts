@@ -10,14 +10,14 @@ import { LoadedLibraryInBrowserStorageService }
 import { noValue } from '@writetome51/has-value-no-value';
 import { not } from '@writetome51/not';
 import { RedirectToLoggedInHomeService } from '@services/redirect-to-logged-in-home.service';
-import { SetCurrentPageImagesService as setCurrentPageImages }
-	from '@services/set-current-page-images.service';
+import { SetCurrentPageImagesService } from '@services/set-current-page-images.service';
 
 
 @Injectable({providedIn: LibraryServicesModule})
 export class LoadLibraryService implements IDoThis {
 
 	constructor(
+		private __setCurrentPageImages: SetCurrentPageImagesService,
 		private __paginator: LibraryPaginatorService,
 		private __redirectToLoggedInHome: RedirectToLoggedInHomeService,
 		private __loadedLibrary: LoadedLibraryInBrowserStorageService
@@ -30,9 +30,9 @@ export class LoadLibraryService implements IDoThis {
 
 			if (this.__libraryDoesntExist(libName)) return this.__redirectToLoggedInHome.go();
 
-			else await setCurrentPageImages.go(pageNumber, this.__paginator, {reload: true});
+			else await this.__setCurrentPageImages.go(pageNumber, this.__paginator, {reload: true});
 		}
-		else await setCurrentPageImages.go(pageNumber, this.__paginator);
+		else await this.__setCurrentPageImages.go(pageNumber, this.__paginator);
 	}
 
 
