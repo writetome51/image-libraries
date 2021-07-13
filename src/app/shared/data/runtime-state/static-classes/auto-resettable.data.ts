@@ -1,13 +1,11 @@
 import { AppImage } from '@interfaces/app-image.interface';
 import { appName } from '@string-constants/app-name';
-import { getMin } from '@writetome51/get-max-min';
 import { ImageRecord } from '@interfaces/image-record.interface';
 import { MenuChoice } from '@interfaces/menu-choice.interface';
-import { not } from '@writetome51/not';
 import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 import { setArray } from '@writetome51/set-array';
 import { LoadConfiguration } from '@interfaces/load-configuration.interface';
-import { PageConfigurationData } from '@runtime-state-data/page-configuration.data';
+import { DefaultPageSizeData as defaultPageSize } from '@read-only-data/default-page-size.data';
 
 
 // All data structures intended to be reset to their default values when the logged-out home
@@ -20,20 +18,7 @@ export const ActionMenuChoicesData: ResettableToDefault = class __ActionMenuChoi
 
 
 	static setDefault() {
-		this.global = [
-
-			/************** submenu example
-			{
-				label: 'choice 2',
-				submenu: [
-					{
-						label: 'choice 3', submenu: [{label: 'choice 3A'}]
-					},
-					{label: 'choice 4'}
-				]
-			}
-			 **************/
-		];
+		this.global = [];
 
 		this.images = {}; // keys will be image names, values will be menu choices
 	}
@@ -51,29 +36,15 @@ export const LibraryNamesData: ResettableToDefault = class __LibraryNamesData {
 };
 
 
-
-
 export const LoadConfigurationData: ResettableToDefault & LoadConfiguration = class __LoadData {
 
 	static number: number;
-
-	private static __size;
-
-
-	static get size(): number {
-		return this.__size;
-	}
-
-
-	static set size(value) {
-		if (value < PageConfigurationData.size) value = PageConfigurationData.size;
-		this.__size = value;
-	}
+	static size;
 
 
 	static setDefault() {
 		this.number = 1;
-		this.size = PageConfigurationData.size;
+		this.size = defaultPageSize.data * 3;
 	}
 
 };
