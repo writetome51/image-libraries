@@ -1,22 +1,15 @@
 import { AppPaginatorDataSourceService }
 	from './app-paginator-data-source_service/app-paginator-data-source.abstract.service';
 import { BigDatasetPaginator } from '@writetome51/big-dataset-paginator';
-import { ConfigurePaginatorService as configurePaginator } from './configure-paginator.service';
 import { LoadConfigurationData as loadConfig }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { noValue } from '@writetome51/has-value-no-value';
-import { PageSizeInBrowserStorageService }
-	from '@browser-storage/page-size-in-browser-storage.service';
 
 
 export abstract class AppPaginatorService extends BigDatasetPaginator {
 
-	constructor(
-		private __pageSizeInBrowser: PageSizeInBrowserStorageService,
-		private __dataSource: AppPaginatorDataSourceService
-	) {
+	constructor(private __dataSource: AppPaginatorDataSourceService) {
 		super(__dataSource);
-		configurePaginator.go(this, this.__pageSizeInBrowser.get());
 	}
 
 
