@@ -7,7 +7,6 @@ import { LoadConfigurationData as loadConfig }
 import { noValue } from '@writetome51/has-value-no-value';
 import { PageSizeInBrowserStorageService }
 	from '@browser-storage/page-size-in-browser-storage.service';
-import { PageConfigurationData as pageConfig } from '@runtime-state-data/page-configuration.data';
 
 
 export abstract class AppPaginatorService extends BigDatasetPaginator {
@@ -36,24 +35,27 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 
 
 	setItemsPerPage(num: number) {
-		// This may cause itemsPerLoad to adjust so itemsPerLoad / itemsPerPage
-		// remains evenly divisible:
+		// If itemsPerLoad isn't evenly divisible by `num`, this adjusts itemsPerLoad to the next
+		// lowest number that is:
 		super.setItemsPerPage(num);
-		pageConfig.size = this.getItemsPerPage();
+
 		loadConfig.size = this.getItemsPerLoad(); // in case itemsPerLoad was adjusted.
 	}
 
 
 	setItemsPerLoad(num: number) {
+		// If `num` isn't evenly divisible by itemsPerPage, this sets itemsPerLoad to the next
+		// lowest number that is:
 		super.setItemsPerLoad(num);
+
+		// in case itemsPerLoad was adjusted, get its value from the paginator:
 		loadConfig.size = this.getItemsPerLoad();
 	}
 
 
 	private __assurePageDoesntExceedLimit(pageNum){
 		const totalPages = this.getTotalPages();
-		if (pageNum > totalPages) pageNum = totalPages;
-		return pageNum;
+		return (pageNum > totalPages ? totalPages : pageNum);
 	}
 
 }
