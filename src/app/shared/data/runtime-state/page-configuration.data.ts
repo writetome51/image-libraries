@@ -1,6 +1,6 @@
 export const PageConfigurationData =  class __PageData {
 
-	private static __size = 20;
+	private static __size = 10;
 
 
 	static get size(): number {

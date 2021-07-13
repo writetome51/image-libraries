@@ -23,7 +23,7 @@ import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.servi
 			</div>
 		</nav>
 
-		<page-size-menu [paginator]="paginator"></page-size-menu>
+		<page-size-menu [context]="this"></page-size-menu>
 	`
 })
 export class AppPaginationControlsComponent {

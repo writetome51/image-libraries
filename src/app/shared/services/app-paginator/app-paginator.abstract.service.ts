@@ -28,6 +28,8 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 			// to be sure data is refreshing from source is if dataTotal gets refreshed too.
 			await this.__dataSource.set_dataTotal();
 		}
+		num = this.__assurePageDoesntExceedLimit(num);
+
 		// If dataTotal is 0, this triggers error in super.setCurrentPageNumber():
 		await super.setCurrentPageNumber(num, option).catch(() => {}); // just keep running.
 	}
@@ -45,6 +47,13 @@ export abstract class AppPaginatorService extends BigDatasetPaginator {
 	setItemsPerLoad(num: number) {
 		super.setItemsPerLoad(num);
 		loadConfig.size = this.getItemsPerLoad();
+	}
+
+
+	private __assurePageDoesntExceedLimit(pageNum){
+		const totalPages = this.getTotalPages();
+		if (pageNum > totalPages) pageNum = totalPages;
+		return pageNum;
 	}
 
 }
