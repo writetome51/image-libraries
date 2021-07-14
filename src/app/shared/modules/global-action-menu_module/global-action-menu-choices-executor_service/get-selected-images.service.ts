@@ -5,15 +5,14 @@ import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
-export class __GetIDsOfSelectedImagesService {
+export class __GetSelectedImagesService {
 
-	static go(): string[] {
+	static go(): ImageRecord[] {
 		return getByTest(
 			(image: ImageRecord) => image['selected'],
-			currentPageImages.data,
-			(image) => image._id
+			currentPageImages.data
 		);
 	}
 
 }
-export const GetIDsOfSelectedImagesService: IDoThis = __GetIDsOfSelectedImagesService;
+export const GetSelectedImagesService: IDoThis = __GetSelectedImagesService;
