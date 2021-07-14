@@ -6,9 +6,10 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 @Component({
 	selector: 'page-not-found',
 	template: `
-		<h2>Not Found</h2>
+		<h2>NOT FOUND</h2>
 		<html-image [data]="image"></html-image>
-	`
+	`,
+	styles: [`html-image {position: relative; right:20px;}`]
 })
 export class PageNotFoundComponent {
 

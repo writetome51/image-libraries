@@ -6,16 +6,23 @@ import { SearchLibrariesService } from './search-libraries.service';
 
 @Component({
 	selector: 'clear-field-button',
-	template: `<html-image [data]="image" role="button" (click)="clearSearch()"></html-image>`
+	template: `
+		<div [style.display]="'inline-block'" [style.position]="'relative'"
+			 [style.top]="'3px'"
+			 [style.width]="image.width + 'px'"
+			 [style.height]="image.height + 'px'"
+			 [style.background-image]="'url(' + image.src + ')'"
+			 [style.background-repeat]="'no-repeat'"
+			 role="button"
+			 (click)="clearSearch()"
+		></div>`
 })
 export class ClearFieldButtonComponent {
 
 	image = {
 		src: environment.assets + 'clear-field-button.png',
-		width: 22,
-		height: 18,
-		alt: 'clear-search',
-		title: 'clear search'
+		width: 16,
+		height: 15
 	};
 
 

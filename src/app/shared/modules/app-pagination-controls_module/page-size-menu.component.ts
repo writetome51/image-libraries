@@ -1,7 +1,5 @@
 import { AppPaginationControlsComponent } from './app-pagination-controls.component';
 import { Component } from '@angular/core';
-import { ConfigurePaginatorService as configurePaginator }
-	from '@app-paginator/configure-paginator.service';
 import { DefaultPageSizeData as defaultPageSize } from '@read-only-data/default-page-size.data';
 import { HasContextInputDirective }
 	from '@abstract-directives/has-context-input.abstract.directive';
@@ -9,8 +7,7 @@ import { hasValue } from '@writetome51/has-value-no-value';
 import { PageSizeInBrowserStorageService }
 	from '@browser-storage/page-size-in-browser-storage.service';
 import { Router } from '@angular/router';
-import { ReloadCurrentPageDataService as reloadCurrentPageData }
-	from '@services/reload-current-page-data.service';
+import { ReloadCurrentPageDataService } from '@services/reload-current-page-data.service';
 
 
 @Component({
@@ -44,7 +41,8 @@ export class PageSizeMenuComponent
 
 	constructor(
 		private __pageSizeInBrowser: PageSizeInBrowserStorageService,
-		private __router: Router
+		private __router: Router,
+		private __reloadCurrentPageData: ReloadCurrentPageDataService
 	) {
 		super();
 		const storedPageSize = this.__pageSizeInBrowser.get();
@@ -52,18 +50,18 @@ export class PageSizeMenuComponent
 	}
 
 
-	private __runTasksAfterSettingChosenSize(value){
+	private async __runTasksAfterSettingChosenSize(value){
 		this.__pageSizeInBrowser.set(value);
-		configurePaginator.go(this.context.paginator, value);
-		this.__resetToFirstPage();
+		await this.__resetToFirstPage();
 	}
 
 
-	private __resetToFirstPage() {
+	private async __resetToFirstPage() {
 		// If already on page 1, reloadData without changing URL:
-		if (this.context.currentPage === 1) reloadCurrentPageData.go(this.context.paginator);
-
-		else this.__router.navigate(['/' + this.context.routeBeforePageNumber, 1]);
+		if (this.context.currentPage === 1) {
+			await this.__reloadCurrentPageData.go(this.context.paginator);
+		}
+		else await this.__router.navigate(['/' + this.context.routeBeforePageNumber, 1]);
 	}
 
 }
