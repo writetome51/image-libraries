@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { LoadedImagesStateService }
 	from '@services/loaded-images-state_service/loaded-images-state.service';
-import { removeByTest } from '@writetome51/array-remove-by-test';
 import { Subject, Subscribable } from 'rxjs';
-import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
-import { setArray } from '@writetome51/set-array';
 
 
 @Injectable({providedIn: 'root'})
 export class ImageSelectorService {
 
 	private __subject = new Subject();
+	private __selectionCount = 0;
 
 	get selectionState$(): Subscribable<{ imagesSelected: boolean }> {
 		return this.__subject;
@@ -29,17 +27,18 @@ export class ImageSelectorService {
 
 	selectAll(): void {
 		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
+			this.__selectionCount = currentPageImages.data.length;
+
 			for (let i = 0, length = currentPageImages.data.length; i < length; ++i) {
 				currentPageImages.data[i]['selected'] = true;
 			}
-			setArray(selectedImages.data, currentPageImages.data);
 		});
 	}
 
 
 	unselectAll(): void {
-		selectedImages.data.length = 0;
-		this.__removeSelectedPropertyFromAllLoadedImages();
+		this.__selectionCount = 0;
+		this.__removeSelectedPropertyFromAllCurrentPageImages();
 		this.__subject.next({imagesSelected: false});
 	}
 
@@ -47,42 +46,38 @@ export class ImageSelectorService {
 	private __select(image) {
 		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
 			image['selected'] = true;
-			selectedImages.data.push({name: image.name, _id: image._id});
+			++this.__selectionCount;
 		});
 	}
 
 
 	private __unSelect(image: { _id: string, selected?: boolean }) {
 		this.__afterAction_sendMessageToSubscribersIfSelectionStateChanged(() => {
-			delete image.selected;
-			removeByTest(
-				(selectedImg: { _id: string }) => selectedImg._id === image._id,
-				selectedImages.data
-			);
+			delete image['selected'];
+			--this.__selectionCount;
 		});
 	}
 
 
 	private __afterAction_sendMessageToSubscribersIfSelectionStateChanged(action) {
-		const previousLength = selectedImages.data.length;
+		const previousCount = this.__selectionCount;
 		action();
-		const currentLength = selectedImages.data.length;
+		const currentCount = this.__selectionCount;
 
 		// We want to only send a message if 'imagesSelected' is changing from true
 		// to false or from false to true.
 
-		if ( (currentLength === 1 && previousLength === 0) ||
-			(currentLength === 0 && previousLength === 1) ) {
-			this.__subject.next({imagesSelected: previousLength === 0});
+		if ( (currentCount === 1 && previousCount === 0) ||
+			(currentCount === 0 && previousCount === 1) ) {
+			this.__subject.next({imagesSelected: previousCount === 0});
 		}
 	}
 
 
-	private __removeSelectedPropertyFromAllLoadedImages() {
-		let loadedImages = this.__loadedImagesState.getImages();
+	private __removeSelectedPropertyFromAllCurrentPageImages() {
 
-		for (let i = 0, length = loadedImages.length; i < length; ++i) {
-			delete loadedImages[i]['selected'];
+		for (let i = 0, length = currentPageImages.data.length; i < length; ++i) {
+			delete currentPageImages.data[i]['selected'];
 		}
 	}
 
