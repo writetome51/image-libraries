@@ -9,7 +9,6 @@ import { LoadedImagesStateService }
 import { LoadedLibraryInBrowserStorageService }
 	from '@browser-storage/loaded-library-in-browser-storage.service';
 import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
-import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})

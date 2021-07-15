@@ -1,4 +1,6 @@
 import { ActionMenuContext } from '@interfaces/action-menu-context.interface';
+import { ActionMenuContextDirective }
+	from '@abstract-directives/action-menu-context.abstract.directive';
 import { ActionMenuChoicesData as actionMenuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -8,38 +10,40 @@ import { GlobalActionMenuChoicesExecutorService }
 	from './global-action-menu-choices-executor_service/global-action-menu-choices-executor.service';
 import { GetGlobalActionMenuSubscriptionsService }
 	from './get-global-action-menu-subscriptions.service';
-import { SelectedImagesData as selectedImages } from '@runtime-state-data/selected-images.data';
-import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destroy-directive';
+import { Unsubscribable } from 'rxjs';
 
 
 @Component({
 	selector: 'global-action-menu',
-	template: `<action-menu [context]="this"></action-menu>`
+	template: `
+		<action-menu [context]="this"  unsubscribeOnDestroy [subscriptions]="subscriptions">
+		</action-menu>
+	`
 })
-export class GlobalActionMenuComponent extends UnsubscribeOnDestroyDirective
+export class GlobalActionMenuComponent extends ActionMenuContextDirective
 	implements ActionMenuContext, OnInit, OnDestroy {
 
-	getChoicesArgs = [];
+	subscriptions: Unsubscribable[];
+
 
 	constructor(
-		public menuChoicesManager: GlobalActionMenuChoicesManagerService,
-		public choicesExecutor: GlobalActionMenuChoicesExecutorService,
+		menuChoicesManager: GlobalActionMenuChoicesManagerService,
+		choicesExecutor: GlobalActionMenuChoicesExecutorService,
 		private __getSubscriptions: GetGlobalActionMenuSubscriptionsService
 	) {
-		super();
+		super(menuChoicesManager, choicesExecutor);
 	}
 
 
 	ngOnInit() {
-		this._subscriptions = this.__getSubscriptions.go();
+		this.subscriptions = this.__getSubscriptions.go();
 	}
 
 
 	ngOnDestroy() {
-		super.ngOnDestroy();
-
 		actionMenuChoices.setDefault();
-		selectedImages.data.length = 0;
+
+		// selectedImages.data.length = 0;
 	}
 
 }
