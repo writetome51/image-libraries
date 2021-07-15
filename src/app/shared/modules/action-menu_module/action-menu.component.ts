@@ -1,9 +1,9 @@
+import { ActionMenuContext } from '@interfaces/action-menu-context.interface';
 import { ActionMenuChoicesExecutorService } from './action-menu-choices-executor.service';
 import { Component, OnInit } from '@angular/core';
-import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { HasContextInputDirective }
 	from '@abstract-directives/has-context-input.abstract.directive';
-import { ActionMenuContext } from '@interfaces/action-menu-context.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 
 
 @Component({
@@ -40,8 +40,7 @@ export class ActionMenuComponent extends HasContextInputDirective<ActionMenuCont
 
 
 	ngOnInit() {
-		this.choices =
-			this.context.menuChoicesManager.getChoices(...this.context.getChoicesArgs);
+		this.choices = this.context.getChoices();
 
 		this.__menuChoicesExecutor.set(this.context.choicesExecutor);
 	}

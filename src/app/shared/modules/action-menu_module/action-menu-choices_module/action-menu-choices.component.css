@@ -2,7 +2,7 @@
 	display: block;
 	cursor: pointer;
 	width: max-content;
-	z-index: 1000;
+	z-index: 2000;
 	background-color: white;
 
 	/*  This makes sure there's no gap between the dropdown button and the menu, and

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice.interface';
-import { HasDataInputDirective }
-	from '@app/shared/abstract-directives/has-data-input.abstract.directive';
+import { HasDataInputDirective } from '@abstract-directives/has-data-input.abstract.directive';
 
 
 @Component({
