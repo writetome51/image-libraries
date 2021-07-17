@@ -7,7 +7,7 @@ import { MenuChoice } from '@interfaces/menu-choice.interface';
 
 export abstract class ActionMenuContextDirective implements ActionMenuContext {
 
-	getChoicesArgs: any[];
+	getChoicesArgs = [];
 
 
 	constructor(

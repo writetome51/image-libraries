@@ -7,6 +7,8 @@ export interface HTMLImage extends HasSrc {
 
 	width: number;
 
+	height?: number;
+
 	title?: string;
 
 }

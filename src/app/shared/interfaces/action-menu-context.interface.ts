@@ -1,14 +1,12 @@
 import { ActionMenuContextChoicesExecutorService }
 	from '@services/action-menu-context-choices-executor.abstract.service';
-import { MenuChoicesManager } from '@interfaces/menu-choices-manager.interface';
+import { MenuChoice } from '@interfaces/menu-choice.interface';
 
 
 export interface ActionMenuContext {
 
 	choicesExecutor: ActionMenuContextChoicesExecutorService;
 
-	menuChoicesManager: MenuChoicesManager;
-
-	getChoicesArgs: any[]; // passed to this.menuChoicesManager.getChoices()
+	getChoices: (...args) => MenuChoice[];
 
 }

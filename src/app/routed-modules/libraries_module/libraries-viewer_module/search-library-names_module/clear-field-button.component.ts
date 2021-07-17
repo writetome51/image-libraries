@@ -15,7 +15,8 @@ import { SearchLibrariesService } from './search-libraries.service';
 			 [style.background-repeat]="'no-repeat'"
 			 role="button"
 			 (click)="clearSearch()"
-		></div>`
+		></div>
+	`
 })
 export class ClearFieldButtonComponent {
 
