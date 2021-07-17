@@ -5,19 +5,22 @@ import { environment } from '@environments/environment';
 @Component({
 	selector: 'tiny-loading-spinner',
 	template: `
-		<div class="loading-spinner-container">
-			<img [src]="littleSpinner.src" [width]="littleSpinner.width"
-				 [height]="littleSpinner.height"
-				 alt="Waiting for response"
-			/>
+		<div>
+			<div class="tiny-loading-spinner-container"
+				 [style.position]="'relative'" [style.margin]="'auto'"
+				 [style.width]="image.width + 'px'"
+				 [style.height]="image.height + 'px'"
+				 [style.background-image]="'url(' + image.src + ')'"
+				 [style.background-repeat]="'no-repeat'"
+			></div>
 		</div>
 	`,
-	styleUrls: [`./tiny-loading-spinner.component.css`]
+	styles: [`div {margin: auto;}`]
 })
 export class TinyLoadingSpinnerComponent {
 
-	littleSpinner = {
-		src: environment.assets + 'gear-24px.gif',
+	image = {
+		src: environment.assets + 'tiny-loading-spinner.gif',
 		width: 24,
 		height: 24,
 	};

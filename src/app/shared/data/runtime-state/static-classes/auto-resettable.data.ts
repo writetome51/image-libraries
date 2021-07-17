@@ -63,7 +63,8 @@ export const NewImagesData: ResettableToDefault = class __NewImagesData {
 };
 
 
-export const CurrentPageImagesData: ResettableToDefault = class __CurrentPageImagesData {
+export const CurrentPageImagesData: ResettableToDefault & { data: ImageRecord[] } =
+	class __CurrentPageImagesData {
 
 	static data: ImageRecord[] = [];
 

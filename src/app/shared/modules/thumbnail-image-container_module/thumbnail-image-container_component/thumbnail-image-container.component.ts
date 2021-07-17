@@ -18,11 +18,6 @@ export class ThumbnailImageContainerComponent {
 	@Input() deleteGlyphiconEnabled = false;
 
 
-	private get __imageSelectionEnabled(): boolean {
-		return this.__enableImageSelectionSetting.get().enabled;
-	}
-
-
 	constructor(
 		private __enableImageSelectionSetting: EnableImageSelectionSettingService,
 		private __imageSelector: ImageSelectorService
@@ -30,14 +25,14 @@ export class ThumbnailImageContainerComponent {
 
 
 	toggleSelect(): void {
-		if (not(this.__imageSelectionEnabled)) return;
+		if (not(this.__enableImageSelectionSetting.enabled)) return;
 		this.__imageSelector.toggleSelect(this.image);
 	}
 
 
 	getRouterLink(): string[] | string {
-		// if selectMultiple is enabled, the image has no routerLink.
-		if (this.__imageSelectionEnabled) return [];
+		// if image selection is enabled, the image has no routerLink.
+		if (this.__enableImageSelectionSetting.enabled) return [];
 		else return this.imageRouterLink;
 	}
 

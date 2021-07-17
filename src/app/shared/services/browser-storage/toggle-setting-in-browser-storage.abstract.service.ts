@@ -6,6 +6,11 @@ import { EncryptedItemInBrowserStorageService }
 export abstract class ToggleSettingInBrowserStorageService
 	extends EncryptedItemInBrowserStorageService<{ enabled: boolean }> {
 
+	get enabled() {
+		return this.get().enabled;
+	}
+
+
 	get(): { enabled: boolean } {
 		let value = super.get();
 		if (hasValue(value)) return value;
