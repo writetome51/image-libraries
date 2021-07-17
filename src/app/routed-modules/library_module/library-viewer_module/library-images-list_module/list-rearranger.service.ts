@@ -5,7 +5,7 @@ import { Subject, Subscribable } from 'rxjs';
 
 
 @Injectable({providedIn: LibraryImagesListServicesModule})
-export class ListRearrangerService {
+export class ListRearrangerService implements Subscribable<any[]> {
 
 	private __list: any[];
 	private __subject = new Subject();
@@ -16,8 +16,8 @@ export class ListRearrangerService {
 	}
 
 
-	get rearrangedList$(): Subscribable<any[]> {
-		return this.__subject;
+	subscribe(callback) {
+		return this.__subject.subscribe(callback);
 	}
 
 

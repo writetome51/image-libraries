@@ -8,6 +8,7 @@ import { RouteParametersSubscriberDirective }
 import { RunTasksAfterAllImagesRouteParamsReceivedService }
 	from './run-tasks-after-all-images-route-params-received_service/run-tasks-after-all-images-route-params-received.service';
 import { Title } from '@angular/platform-browser';
+import { SubscribableCurrentRouteParamsService } from '@services/subscribable-current-route-params.service';
 
 
 @Component({
@@ -26,10 +27,10 @@ export class AllImagesComponent extends RouteParametersSubscriberDirective {
 
 	constructor(
 		title: Title,
-		__currentRoute: CurrentRouteService,
+		__currentRouteParams$: SubscribableCurrentRouteParamsService,
 		__runTasksAfterRouteParamsReceived: RunTasksAfterAllImagesRouteParamsReceivedService
 	) {
-		super(__currentRoute, __runTasksAfterRouteParamsReceived);
+		super(__currentRouteParams$, __runTasksAfterRouteParamsReceived);
 
 		title.setTitle(getPageTitle.go([this.heading]));
 	}

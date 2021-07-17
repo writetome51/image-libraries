@@ -1,3 +1,4 @@
+import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component, OnInit } from '@angular/core';
 import { CurrentPageImagesData } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ImageRecord } from '@interfaces/image-record.interface';
@@ -12,21 +13,28 @@ import { UnsubscribeOnDestroyDirective } from '@writetome51/unsubscribe-on-destr
 	selector: 'library-images-list',
 	template: `
 		<ul>
-			<re-arrangeable-grid-list-item *ngFor="let img of pageImages.data; let i = index;"
+			<re-arrangeable-grid-list-item *ngFor="let image of pageImages.data; let i = index;"
 				[index]="i"
 			>
-				<thumbnail-image-container [image]="img"></thumbnail-image-container>
+				<thumbnail-image-container [image]="image"
+					[imageRouterLink]="[fullSizeImageRoute, image.name]"
+				></thumbnail-image-container>
+
 			</re-arrangeable-grid-list-item>
 		</ul>
 	`
 })
 export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective implements OnInit {
 
-	pageImages = CurrentPageImagesData;
+	pageImages: { data: ImageRecord[] } = CurrentPageImagesData;
+
+	get fullSizeImageRoute() {
+		return '/' + appModulePath.FullSizeImageViewerModule;
+	}
 
 
 	constructor(
-		private __listRearranger: ListRearrangerService,
+		private __listRearranger$: ListRearrangerService,
 		private __processSaveLibraryImagesOrder: ProcessSaveLibraryImagesOrderService
 	) {
 		super();
@@ -34,10 +42,10 @@ export class LibraryImagesListComponent extends UnsubscribeOnDestroyDirective im
 
 
 	ngOnInit() {
-		this.__listRearranger.setList(this.pageImages.data);
+		this.__listRearranger$.setList(this.pageImages.data);
 
 		this._subscriptions = [
-			this.__listRearranger.rearrangedList$.subscribe(async (list: ImageRecord[]) =>
+			this.__listRearranger$.subscribe(async (list: ImageRecord[]) =>
 				await this.__runTasksAfterGettingRearrangedImages(list)
 			)
 		];
