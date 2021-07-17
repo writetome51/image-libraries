@@ -144,6 +144,12 @@ li.grid-list-item {
 }
 
 
+span.caret {
+	position: relative;
+	bottom: 13px;
+}
+
+
 .warning-text {
 	color: red;
 	font-weight: bold;
@@ -237,6 +243,18 @@ execute-function-button  tiny-loading-spinner  img {
 	margin: 0;
 	position: relative;
 	bottom: 2px;
+}
+
+
+
+
+/*************************************************************************************************
+GlobalActionMenuModule
+*************************************************************************************************/
+
+global-action-menu  .sprocket-wheel-container {
+	margin: 10px 5px;
+	margin-top:15px;
 }
 
 
