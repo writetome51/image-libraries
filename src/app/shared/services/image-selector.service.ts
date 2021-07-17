@@ -1,23 +1,16 @@
-import { Injectable } from '@angular/core';
-import { LoadedImagesStateService }
-	from '@services/loaded-images-state_service/loaded-images-state.service';
-import { Subject, Subscribable } from 'rxjs';
 import { CurrentPageImagesData as currentPageImages }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { ImagesSelectedStateService } from '@services/images-selected-state.service';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({providedIn: 'root'})
 export class ImageSelectorService {
 
-	private __subject = new Subject();
 	private __selectionCount = 0;
 
-	get selectionState$(): Subscribable<{ imagesSelected: boolean }> {
-		return this.__subject;
-	}
 
-
-	constructor(private __loadedImagesState: LoadedImagesStateService) {}
+	constructor(private __imagesSelectedState$: ImagesSelectedStateService) {}
 
 
 	toggleSelect(image: { name: string, _id: string, selected?: boolean }): void {
@@ -39,7 +32,7 @@ export class ImageSelectorService {
 	unselectAll(): void {
 		this.__selectionCount = 0;
 		this.__removeSelectedPropertyFromAllCurrentPageImages();
-		this.__subject.next({imagesSelected: false});
+		this.__imagesSelectedState$.next({imagesSelected: false});
 	}
 
 
@@ -69,7 +62,7 @@ export class ImageSelectorService {
 
 		if ( (currentCount === 1 && previousCount === 0) ||
 			(currentCount === 0 && previousCount === 1) ) {
-			this.__subject.next({imagesSelected: previousCount === 0});
+			this.__imagesSelectedState$.next({imagesSelected: previousCount === 0});
 		}
 	}
 
