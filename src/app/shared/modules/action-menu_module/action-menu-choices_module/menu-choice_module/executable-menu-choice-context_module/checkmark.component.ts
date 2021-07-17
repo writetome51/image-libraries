@@ -5,18 +5,20 @@ import { environment } from '@environments/environment';
 @Component({
 	selector: 'checkmark',
 	template: `
-		<img [src]="checkmark.src" [width]="checkmark.width" [height]="checkmark.height"
-			 [alt]="checkmark.alt"
-		/>
+		<div [style.display]="'inline-block'" [style.position]="'relative'"
+			 [style.width]="image.width + 'px'"
+			 [style.height]="image.height + 'px'"
+			 [style.background-image]="'url(' + image.src + ')'"
+			 [style.background-repeat]="'no-repeat'"
+		></div>
 	`
 })
 export class CheckmarkComponent {
 
-	checkmark = {
+	image = {
 		src: environment.assets + 'checkmark.png',
 		width: 20,
 		height: 16,
-		alt: 'checkmark'
 	};
 
 }

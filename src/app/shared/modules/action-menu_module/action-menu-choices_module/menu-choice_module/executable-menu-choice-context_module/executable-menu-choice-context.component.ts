@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { ActionMenuChoicesExecutorService } from '../../../action-menu-choices-executor.service';
 import { ClickExecuteFunctionContextDirective }
-	from '@app/shared/abstract-directives/click-execute-function-context.abstract.directive';
+	from '@abstract-directives/click-execute-function-context.abstract.directive';
 
 
 @Component({
