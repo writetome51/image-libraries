@@ -4,17 +4,18 @@ import { Injectable } from '@angular/core';
 import { MenuChoice } from '@interfaces/menu-choice.interface';
 import { GlobalActionMenuChoicesService as menuChoices }
 	from '../global-action-menu-choices.service';
-import { IncludeImageSelectionChoicesService } from './include-image-selection-choices.service';
-import { ChoicesOnManipulatingSelectedImagesService }
-	from './choices-on-manipulating-selected-images.service';
+import { ImageSelectionChoicesManagerService } from './image-selection-choices-manager.service';
+import { ManipulateSelectedImagesChoicesManagerService }
+	from './manipulate-selected-images-choices-manager.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
 export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager {
 
 	constructor(
-		private __choicesOnManipulatingSelectedImages: ChoicesOnManipulatingSelectedImagesService,
-		private __includeImageSelectionChoices: IncludeImageSelectionChoicesService
+		private __manipulateSelectedImagesChoicesManager:
+			ManipulateSelectedImagesChoicesManagerService,
+		private __imageSelectionChoicesManager: ImageSelectionChoicesManagerService
 	) {}
 
 
@@ -25,10 +26,8 @@ export class GlobalActionMenuChoicesManagerService implements MenuChoicesManager
 
 
 	manage(data = undefined): void {
-		this.__includeImageSelectionChoices.go();
-
-		if (data && data.imagesSelected) this.__choicesOnManipulatingSelectedImages.include();
-		else this.__choicesOnManipulatingSelectedImages.remove();
+		this.__imageSelectionChoicesManager.manage(data);
+		this.__manipulateSelectedImagesChoicesManager.manage(data);
 	}
 
 }

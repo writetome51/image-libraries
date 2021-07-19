@@ -42,8 +42,6 @@ export class GlobalActionMenuComponent extends ActionMenuContextDirective
 
 	ngOnDestroy() {
 		actionMenuChoices.setDefault();
-
-		// selectedImages.data.length = 0;
 	}
 
 }

@@ -12,7 +12,7 @@ import { MenuChoiceLabelData as choiceLabel } from '../menu-choice-label.data';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class ChoicesOnManipulatingSelectedImagesService {
+export class ManipulateSelectedImagesChoicesManagerService {
 
 	constructor(
 		private __loadedImagesState: LoadedImagesStateService,
@@ -20,17 +20,23 @@ export class ChoicesOnManipulatingSelectedImagesService {
 	) {}
 
 
-	include() {
+	manage(data = undefined) {
+		if (data && data.imagesSelected) this.__include();
+		else this.__remove();
+	}
+
+
+	private __include() {
 		this.__includeAddToOrRemoveSelectedFromLib();
 		menuChoices.addChoice({label: choiceLabel.deleteSelectedImages});
 	}
 
 
-	remove() {
+	private __remove() {
 		menuChoices.removeChoices([
 			choiceLabel.addSelectedToLib,
-			choiceLabel.deleteSelectedImages,
-			choiceLabel.removeSelectedFromLib
+			choiceLabel.removeSelectedFromLib,
+			choiceLabel.deleteSelectedImages
 		]);
 	}
 

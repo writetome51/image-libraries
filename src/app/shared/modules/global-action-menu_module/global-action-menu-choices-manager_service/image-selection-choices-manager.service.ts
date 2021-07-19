@@ -8,17 +8,18 @@ import { GlobalActionMenuChoicesService as menuChoices }
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
-export class IncludeImageSelectionChoicesService {
+export class ImageSelectionChoicesManagerService {
 
 	constructor(private __enableImageSelectionSetting: EnableImageSelectionSettingService) {}
 
 
-	go() {
+	manage(data = undefined) {
 		this.__includeEnableSelection();
 
-		if (this.__enableImageSelectionSetting.get().enabled) {
+		if (data && data.selectionEnabled) {
 			menuChoices.addChoice({label: choiceLabel.selectAll});
 		}
+		else menuChoices.removeChoices([choiceLabel.selectAll]);
 	}
 
 
@@ -26,7 +27,7 @@ export class IncludeImageSelectionChoicesService {
 		menuChoices.addChoice({
 			label: choiceLabel.enableImageSelection,
 			data: {
-				checked: this.__enableImageSelectionSetting.get().enabled,
+				checked: this.__enableImageSelectionSetting.enabled,
 				toggleSetting: this.__enableImageSelectionSetting
 			}
 		});
