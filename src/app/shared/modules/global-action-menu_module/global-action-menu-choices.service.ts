@@ -1,7 +1,7 @@
 import { ActionMenuChoicesData as menuChoices }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { MenuChoice } from '@interfaces/menu-choice.interface';
-import { prepend } from '@writetome51/array-append-prepend';
+import { append } from '@writetome51/array-append-prepend';
 import { removeByTest } from '@writetome51/array-remove-by-test';
 import { getByTest } from '@writetome51/array-get-by-test';
 import { Gettable } from '@interfaces/gettable.interface';
@@ -16,7 +16,7 @@ export class __GlobalActionMenuChoicesService {
 
 	static addChoice(choice: MenuChoice) {
 		if (this.__choicesIncludes(choice.label)) return;
-		prepend(choice, menuChoices.global);
+		append(choice, menuChoices.global);
 	}
 
 

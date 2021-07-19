@@ -16,7 +16,7 @@ export class ImageSelectionChoicesManagerService {
 	manage(data = undefined) {
 		this.__includeEnableSelection();
 
-		if (data && data.selectionEnabled) {
+		if (this.__enableImageSelectionSetting.enabled) {
 			menuChoices.addChoice({label: choiceLabel.selectAll});
 		}
 		else menuChoices.removeChoices([choiceLabel.selectAll]);
