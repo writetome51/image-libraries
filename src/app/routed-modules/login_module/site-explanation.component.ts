@@ -20,7 +20,6 @@ export class SiteExplanationComponent {
 
 	explanation = `This application lets you save images to your account
 	(either uploaded from your own device or found elsewhere on the web), then organize them in
-	libraries.  Inside each library you can rearrange the image order, add
-	descriptions, tags, and do searches.`;
+	libraries.  Inside each library you can rearrange the image order.`;
 
 }
