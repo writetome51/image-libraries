@@ -10,7 +10,7 @@ import { LoadConfigurationData as loadConfig }
 import { LoadedImagesStateService }
 	from '@services/loaded-images-state_service/loaded-images-state.service';
 import { ProcessThatSetsLoadedImagesService }
-	from '@process/process-that-sets-loaded-images.abstract.service';
+	from '../process-that-sets-loaded-images.abstract.service';
 
 
 export abstract class AppPaginatorDataSourceService implements BigDatasetPaginatorDataSource {

@@ -1,5 +1,5 @@
 import { AssureUserDataLoadedService }
-	from './assure-user-data-loaded_service/assure-user-data-loaded.service';
+	from '@services/assure-user-data-loaded_service/assure-user-data-loaded.service';
 import { Component } from '@angular/core';
 import { Link } from '@interfaces/link.interface';
 import { LoggedInNavigatorLinkData } from './logged-in-navigator-link.data';

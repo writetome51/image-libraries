@@ -57,12 +57,9 @@ export class ImageSelectorService {
 		action();
 		const currentCount = this.__selectionCount;
 
-		// We want to only send a message if 'imagesSelected' is changing from true
-		// to false or from false to true.
-
-		if ( (currentCount === 1 && previousCount === 0) ||
-			(currentCount === 0 && previousCount === 1) ) {
-			this.__imagesSelectedState$.next({imagesSelected: previousCount === 0});
+		// We want to only send a message if 'imagesSelected' is changing value.
+		if (previousCount !== currentCount) {
+			this.__imagesSelectedState$.next({imagesSelected: currentCount > 0});
 		}
 	}
 

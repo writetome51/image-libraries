@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GetLibraryImagesService } from './get-library-images.service';
 import { ProcessThatSetsLoadedImagesService }
-	from '@process/process-that-sets-loaded-images.abstract.service';
+	from '@app-paginator/process-that-sets-loaded-images.abstract.service';
 import { InterpretGetImageRecordsResultService }
 	from '@interpret-result/interpret-get-image-records-result_service/interpret-get-image-records-result.service';
 

@@ -8,6 +8,7 @@ import { GlobalActionMenuServicesModule }
 	from '@global-action-menu_module/global-action-menu-services.module';
 import { GetSelectedImagesService as getSelectedImages} from '../get-selected-images.service';
 import { ImageRecord } from '@interfaces/image-record.interface';
+import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -19,7 +20,10 @@ export class DeleteSelectedImagesFromAccountService implements IDoThis {
 	) {}
 
 
-	async go(): Promise<{ success: true } | HasError> {
+	async go(): Promise<{ success: true } | HasError | void> {
+		const confirmed = window.confirm('Are you sure you want to delete the selected images?');
+		if (not(confirmed)) return;
+
 		const imageNames = getSelectedImages.go().map((img: ImageRecord) => img.name);
 
 		return this.__realmFn.call('pub_deleteImages', {

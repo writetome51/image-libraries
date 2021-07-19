@@ -5,7 +5,7 @@ import { InterpretExistingUserDBOperationResultService }
 	from '@interpret-result/interpret-existing-user-db-operation-result.abstract.service';
 import { LibraryImagesListServicesModule } from '../library-images-list-services.module';
 import { RunTasksAfterChangingLibraryImagesOrderService }
-	from '@run-post-success-tasks/run-tasks-after-changing-library-images-order.service';
+	from './run-tasks-after-changing-library-images-order.service';
 
 
 @Injectable({providedIn: LibraryImagesListServicesModule})
