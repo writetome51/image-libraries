@@ -8,14 +8,13 @@ import { Injectable } from '@angular/core';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { LibraryRecord } from '@interfaces/library-record.interface';
-import { LoggedInNavigatorServicesModule } from '../logged-in-navigator-services.module';
-import { ProcessGetLibrariesService }
-	from '@process/process-get-libraries_service/process-get-libraries.service';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { ProcessGetLibrariesService }
+	from '@process/process-get-libraries_service/process-get-libraries.service';
 
 
-@Injectable({providedIn: LoggedInNavigatorServicesModule})
+@Injectable({providedIn: 'root'})
 export class AssureLibrariesStoredLocallyService implements IDoThis {
 
 	constructor(
