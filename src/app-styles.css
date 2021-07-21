@@ -207,8 +207,18 @@ ActionMenuModule
 *************************************************************************************************/
 
 .action-menu-container {
+	display: flex;
 	min-height: 0;
 	max-height: max-content;
+}
+
+
+.action-menu-container  ul {
+	display: flex;
+}
+
+.action-menu-container  li {
+	display: list-item;
 }
 
 
@@ -253,8 +263,9 @@ GlobalActionMenuModule
 *************************************************************************************************/
 
 global-action-menu  .sprocket-wheel-container {
-	margin: 10px 5px;
-	margin-top:15px;
+	margin-left: 5px;
+	margin-top: 15px;
+	margin-bottom: 10px;
 }
 
 
@@ -283,6 +294,8 @@ thumbnail-image-container  image-action-menu  button  div {
 
 thumbnail-image-container  image-action-menu  action-menu-button  button  sprocket-wheel {
 	display: inline;
+	position: relative;
+	top: 5px;
 }
 
 
@@ -293,7 +306,6 @@ thumbnail-image-container  image-action-menu  action-menu-button  button  sprock
 
 thumbnail-image-container  image-action-menu  button  div  span.caret {
 	position: relative;
-	right: 3px;
 	top: 14px;
 }
 

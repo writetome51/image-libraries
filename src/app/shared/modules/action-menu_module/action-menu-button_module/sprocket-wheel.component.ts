@@ -13,6 +13,7 @@ import { HTMLImage } from '@interfaces/html-image.interface';
 			 [style.height]="image.height + 'px'"
 			 [style.background-image]="'url(' + image.src + ')'"
 			 [style.background-repeat]="'no-repeat'"
+			 [style.margin-right]="'4px'"
 		></div>
 	`
 })
