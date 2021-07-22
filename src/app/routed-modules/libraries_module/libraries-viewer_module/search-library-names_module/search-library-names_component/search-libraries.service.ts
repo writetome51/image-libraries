@@ -18,7 +18,9 @@ export class SearchLibrariesService implements IDoThis {
 
 
 	go(): void {
-		libNameSearchResults.data = getByTest(this.__test, libraryNames.data);
+		search.text.length ?
+			libNameSearchResults.data = getByTest(this.__test, libraryNames.data) :
+			libNameSearchResults.data = undefined;
 	}
 
 
