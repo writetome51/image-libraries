@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
 import { SearchData as search } from '@runtime-state-data/search.data';
-import { SearchLibrariesService } from './search-libraries.service';
+import { LibraryNameSearchResultsData as libNameSearchResults }
+	from '../library-name-search-results.data';
 
 
 @Component({
@@ -27,12 +28,9 @@ export class ClearFieldButtonComponent {
 	};
 
 
-	constructor(private __searchLibraries: SearchLibrariesService) {}
-
-
 	clearSearch() {
 		search.text = '';
-		this.__searchLibraries.go();
+		libNameSearchResults.data = undefined;
 	}
 
 }

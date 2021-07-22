@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LibraryNamesData } from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryNameSearchResultsData } from './library-name-search-results.data';
 import { not } from '@writetome51/not';
-import { SearchedLibraryNamesData } from './searched-library-names.data';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { SearchedLibraryNamesData } from './searched-library-names.data';
 export class LibrariesViewerComponent {
 
 	libraryNames = LibraryNamesData;
-	searchedLibraryNames = SearchedLibraryNamesData;
+	libNameSearchResults = LibraryNameSearchResultsData;
 
 	get librariesExist() {
 		return (this.libraryNames.data && this.libraryNames.data.length);
@@ -30,7 +30,7 @@ export class LibrariesViewerComponent {
 	}
 
 	get names(): string[] {
-		return this.searchedLibraryNames.data ? this.searchedLibraryNames.data
+		return this.libNameSearchResults.data ? this.libNameSearchResults.data
 			: this.libraryNames.data;
 	}
 

@@ -5,9 +5,10 @@ import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
 import { LibraryNamesData as libraryNames }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
+import { LibraryNameSearchResultsData as libNameSearchResults }
+	from '../../library-name-search-results.data';
 import { SearchData as search } from '@runtime-state-data/search.data';
-import { SearchedLibraryNamesData as searchedLibraryNames } from '../searched-library-names.data';
-import { SearchLibraryNamesServicesModule } from './search-library-names-services.module';
+import { SearchLibraryNamesServicesModule } from '../search-library-names-services.module';
 
 
 @Injectable({providedIn: SearchLibraryNamesServicesModule})
@@ -17,7 +18,7 @@ export class SearchLibrariesService implements IDoThis {
 
 
 	go(): void {
-		searchedLibraryNames.data = getByTest(this.__test, libraryNames.data);
+		libNameSearchResults.data = getByTest(this.__test, libraryNames.data);
 	}
 
 
