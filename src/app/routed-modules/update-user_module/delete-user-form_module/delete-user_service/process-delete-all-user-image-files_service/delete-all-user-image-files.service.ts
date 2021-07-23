@@ -1,7 +1,7 @@
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
 import { HasError } from '@interfaces/has-error.interface';
-import { UpdateUserServicesModule } from '../../../../update-user-services.module';
+import { UpdateUserServicesModule } from '../../../update-user-services.module';
 import { UserFileStorageService }
 	from '@services/user-file-storage_service/user-file-storage.service';
 
