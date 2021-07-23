@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RunTasksAfterDeletingImagesFromAccountService } from './run-tasks-after-deleting-images-from-account.service';
+import { RunTasksAfterDeletingImagesFromAccountService }
+	from './run-tasks-after-deleting-images-from-account.service';
 import { GlobalActionMenuServicesModule } from '../../../global-action-menu-services.module';
 import { HandleExistingUserDBOperationErrorService }
 	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';

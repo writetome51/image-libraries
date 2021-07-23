@@ -7,7 +7,7 @@ import { InterpretDeleteUserImageFilesResultService }
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class ProcessDeleteUserImageFilesService extends ProcessService {
+export class ProcessDeleteAllUserImageFilesService extends ProcessService {
 
 	constructor(
 		__getResult: DeleteAllUserImageFilesService,

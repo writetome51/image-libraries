@@ -51,20 +51,36 @@ export class UserFileStorageService {
 	}
 
 
-	async deleteFile(fileName: string, userName: string): Promise<{ success: true } | HasError> {
+	async deleteUserFiles(
+		fileNames: string[], userName: string
+	): Promise<{ success: true } | HasError> {
 		try {
-			await this.__awsS3.deleteData({Key: this.__awsS3.getFileKey(fileName, userName)});
+			await executeLoopRequiringProgressUpdate.go(
+				fileNames,
+				(fileName) => this.__deleteFile(fileName, userName),
+				deletingFilesProgress
+			);
 			return {success: true};
 		}
+		catch (error) { return {error}; }
+	}
+
+
+	private async __deleteFile(
+		fileName: string, userName: string
+	): Promise<void> {
+		try {
+			await this.__awsS3.deleteData({Key: this.__awsS3.getFileKey(fileName, userName)});
+		}
 		catch (err) {
-			return {error: {message: `There was an error deleting your file: ${err.message}`}};
+			throw new Error(`There was an error deleting the file ${fileName}: ${err.message}`);
 		}
 	}
 
 
 	private async __addFileAndReturnURL(file: File, userName: string): Promise<string> {
 		try {
-			await this.insertFile(file, userName);
+			await this.__insertFile(file, userName);
 			return this.__awsS3.getFileURL(file.name, userName);
 		}
 		catch (err) {
@@ -75,7 +91,7 @@ export class UserFileStorageService {
 
 	// Creates folder for `folderName` if it doesn't exist.
 
-	private async insertFile(file: File, folderName: string) {
+	private async __insertFile(file: File, folderName: string) {
 		return await this.__awsS3.insertData({
 			Key: this.__awsS3.getFileKey(file.name, folderName),
 			Body: file

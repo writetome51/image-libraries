@@ -17,6 +17,7 @@ export class DeleteUserRecordService implements IDoThis {
 
 
 	async go(email, password): Promise<{ success: true } | HasError> {
+		// Deletes user record and all related records.
 		return await this.__realmFn.call('pub_deleteUser', {
 			email, password, sessionID: this.__sessionIDInBrowser.get()
 		});

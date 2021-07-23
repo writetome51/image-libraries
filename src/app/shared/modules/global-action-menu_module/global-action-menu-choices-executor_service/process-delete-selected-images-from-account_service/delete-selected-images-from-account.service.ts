@@ -9,6 +9,7 @@ import { GlobalActionMenuServicesModule }
 import { GetSelectedImagesService as getSelectedImages} from '../get-selected-images.service';
 import { ImageRecord } from '@interfaces/image-record.interface';
 import { not } from '@writetome51/not';
+import { DeleteSelectedImageFilesService } from './delete-selected-image-files.service';
 
 
 @Injectable({providedIn: GlobalActionMenuServicesModule})
@@ -16,7 +17,8 @@ export class DeleteSelectedImagesFromAccountService implements IDoThis {
 
 	constructor(
 		private __realmFn: MongoDBRealmFunctionService,
-		private __sessionIDInBrowser: SessionIDInBrowserStorageService
+		private __sessionIDInBrowser: SessionIDInBrowserStorageService,
+		private __deleteSelectedImageFiles: DeleteSelectedImageFilesService
 	) {}
 
 
@@ -25,6 +27,8 @@ export class DeleteSelectedImagesFromAccountService implements IDoThis {
 		if (not(confirmed)) return;
 
 		const imageNames = getSelectedImages.go().map((img: ImageRecord) => img.name);
+
+		await this.__deleteSelectedImageFiles.go(imageNames);
 
 		return this.__realmFn.call('pub_deleteImages', {
 			sessionID: this.__sessionIDInBrowser.get(),

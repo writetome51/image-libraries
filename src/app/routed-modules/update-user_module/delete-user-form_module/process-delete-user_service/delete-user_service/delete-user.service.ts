@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { not } from '@writetome51/not';
 import { ProcessDeleteUserRecordService }
 	from './process-delete-user-record_service/process-delete-user-record.service';
-import { ProcessDeleteUserImageFilesService }
-	from './process-delete-user-image-files_service/process-delete-user-image-files.service';
+import { ProcessDeleteAllUserImageFilesService }
+	from './process-delete-user-image-files_service/process-delete-all-user-image-files.service';
 import { userRecordDeleted } from '@string-constants/alert-success-messages';
 import { UpdateUserServicesModule } from '../../../update-user-services.module';
 
@@ -15,7 +15,7 @@ export class DeleteUserService implements IDoThis {
 
 	constructor(
 		private __processDeleteUserRecord: ProcessDeleteUserRecordService,
-		private __processDeleteUserImageFiles: ProcessDeleteUserImageFilesService
+		private __processDeleteAllUserImageFiles: ProcessDeleteAllUserImageFilesService
 	) {}
 
 
@@ -23,7 +23,7 @@ export class DeleteUserService implements IDoThis {
 		await this.__processDeleteUserRecord.go(email, password); // will handle its own errors.
 		if (not(alerts.includesSuccess(userRecordDeleted))) return;
 
-		await this.__processDeleteUserImageFiles.go(email); // will handle its own errors.
+		await this.__processDeleteAllUserImageFiles.go(email); // will handle its own errors.
 		return {success: true};
 	}
 
