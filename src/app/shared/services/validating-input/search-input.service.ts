@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SearchData } from '@runtime-state-data/search.data';
+import { SearchData } from '@runtime-state-data/static-classes/auto-resettable.data';
 import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 
 

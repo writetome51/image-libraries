@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
-import { SearchData as search } from '@runtime-state-data/search.data';
 import { LibraryNameSearchResultsData as libNameSearchResults }
 	from '../library-name-search-results.data';
+import { SearchData as search } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({

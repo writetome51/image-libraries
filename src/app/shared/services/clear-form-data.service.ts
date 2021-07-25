@@ -3,7 +3,7 @@ import { CurrentUserFormData as currentUserForm }
 import { ImageURLData as imageURL} from '@runtime-state-data/image-url.data';
 import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { SearchData as search } from '@runtime-state-data/search.data';
+import { SearchData as search } from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 export class __ClearFormDataService {

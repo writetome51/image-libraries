@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { LibrariesInBrowserStorageService }
 	from '@browser-storage/libraries-in-browser-storage.service';
-import { LibraryNamesData as libraryNames }
+import { LibraryNamesData as libraryNames, SearchData as search }
 	from '@runtime-state-data/static-classes/auto-resettable.data';
 import { LibraryNameSearchResultsData as libNameSearchResults }
 	from '../../library-name-search-results.data';
-import { SearchData as search } from '@runtime-state-data/search.data';
 import { SearchLibraryNamesServicesModule } from '../search-library-names-services.module';
 
 

@@ -87,15 +87,19 @@ export const ThumbnailDisplaySettingsData: ResettableToDefault =
 };
 
 
-export const SearchResultsData: ResettableToDefault = class __SearchResultsData {
+export const SearchData: ResettableToDefault = class __SearchData {
 
-	static data = [];
+	static by: 'name' | 'tag' | 'rating' | '';
+
+	static text = '';
 
 
 	static setDefault() {
-		setArray(this.data, []);
+		this.by = '';
+		this.text = '';
 	}
-};
+
+}
 
 
 export const CurrentPageTitleData: ResettableToDefault = class __CurrentPageTitleData {
