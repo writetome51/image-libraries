@@ -19,7 +19,7 @@ import { UploadingFilesProgressData } from '@runtime-state-data/uploading-files-
 	styles: [
 		`.fixed-overlay {
 			position: fixed;
-			z-index: 1000;
+			z-index: 5000;
 			padding: 100px;
 			left: 0;
 			top: 0;

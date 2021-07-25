@@ -1,8 +1,6 @@
 import { appName } from '@string-constants/app-name';
 import { Component } from '@angular/core';
-import { isString } from '@writetome51/is-string-not-string';
-import { SessionIDInBrowserStorageService }
-	from '@browser-storage/session-id-in-browser-storage.service';
+import { SessionIDAppearsValidService } from '@services/session-id-appears-valid.service';
 
 
 @Component({
@@ -23,11 +21,10 @@ export class AppHeaderComponent {
 
 
 	get assumedLoggedIn(): boolean {
-		const sessionID = this.__sessionIDInBrowser.get();
-		return (isString(sessionID) && sessionID.length > 8);
+		return this.__sessionIDAppearsValid.go();
 	}
 
 
-	constructor(private __sessionIDInBrowser: SessionIDInBrowserStorageService) {}
+	constructor(private __sessionIDAppearsValid: SessionIDAppearsValidService) {}
 
 }
