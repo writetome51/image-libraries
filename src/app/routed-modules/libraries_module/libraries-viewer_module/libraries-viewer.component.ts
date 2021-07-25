@@ -10,7 +10,7 @@ import { not } from '@writetome51/not';
 		<p *ngIf="librariesDontExist">You have no libraries</p>
 
 		<ng-container *ngIf="librariesExist">
-			<search-library-names clearFormOnInit></search-library-names>
+			<search-library-names></search-library-names>
 
 			<library-links [labels]="names"></library-links>
 		</ng-container>
