@@ -1,4 +1,4 @@
-import { ClearFieldButtonComponent } from './clear-field-button.component';
+import { ClearSearchFieldButtonComponent } from './clear-search-field-button.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HTMLImageModule } from '@html-image_module/html-image.module';
@@ -11,7 +11,7 @@ import { SearchLibraryNamesServicesModule } from './search-library-names-service
 @NgModule({
 	declarations: [
 		SearchLibraryNamesComponent,
-		ClearFieldButtonComponent
+		ClearSearchFieldButtonComponent
 	],
 	imports: [
 		CommonModule,

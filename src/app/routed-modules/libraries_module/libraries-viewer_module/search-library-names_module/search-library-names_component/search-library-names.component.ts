@@ -10,8 +10,10 @@ import { SearchLibrariesService } from './search-libraries.service';
 		`div.library-name-search-input-container {
 			margin: 5px auto 10px 30px;
 		}`,
-		`clear-field-button {
-			position: relative;  right: 35px; z-index: 1000;
+		`clear-search-field-button {
+			position: relative;
+			right: 35px;
+			z-index: 1000;
 		}`,
 		`input {margin-left:auto;  margin-right: auto;  padding-right: 30px;}`
 	]

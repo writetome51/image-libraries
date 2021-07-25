@@ -1,4 +1,4 @@
-export class CurrentUserFormData {
+export class CurrentUserFormInputsData {
 
 	static password = ''; // Bound to 'password' input.
 
@@ -30,6 +30,21 @@ export class CurrentUserFormData {
 
 	static get answer() {
 		return this.securityQuestion.answer;
+	}
+
+
+	static setDefault() {
+		this.password = '';
+
+		this.passwordAgain = '';
+
+		this.newPassword = '';
+
+		this.securityQuestion = {question: '', answer: ''};
+
+		this.email = '';
+
+		this.newEmail = '';
 	}
 
 }

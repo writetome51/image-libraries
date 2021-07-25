@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
+import { CurrentUserFormInputsData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';

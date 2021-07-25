@@ -17,7 +17,9 @@ import { Waiter } from '@interfaces/waiter.interface';
 			</loading-content-section>
 
 			<new-library-button></new-library-button>
-			<new-library-form *ngIf="newLibrary.beingCreated" clearFormOnInit></new-library-form>
+			<new-library-form *ngIf="newLibrary.beingCreated"
+				clearFormOnInit [inputData]="[newLibrary]"
+			></new-library-form>
 		</div>
 	`
 })

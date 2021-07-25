@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
-import { LibraryNameSearchResultsData as libNameSearchResults }
-	from '../library-name-search-results.data';
-import { SearchData as search } from '@runtime-state-data/static-classes/auto-resettable.data';
+import {
+	LibraryNameSearchResultsData as libNameSearchResults,
+	SearchData as search
+} from '@runtime-state-data/static-classes/auto-resettable.data';
 
 
 @Component({
-	selector: 'clear-field-button',
+	selector: 'clear-search-field-button',
 	template: `
 		<div [style.display]="'inline-block'" [style.position]="'relative'"
 			 [style.top]="'3px'"
@@ -19,7 +20,7 @@ import { SearchData as search } from '@runtime-state-data/static-classes/auto-re
 		></div>
 	`
 })
-export class ClearFieldButtonComponent {
+export class ClearSearchFieldButtonComponent {
 
 	image = {
 		src: environment.assets + 'clear-field-button.png',

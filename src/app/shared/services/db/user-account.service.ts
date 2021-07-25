@@ -1,5 +1,5 @@
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
+import { CurrentUserFormInputsData as currentUserForm }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { HasError } from '@interfaces/has-error.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';

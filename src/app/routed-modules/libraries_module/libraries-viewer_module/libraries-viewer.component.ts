@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { LibraryNamesData } from '@runtime-state-data/static-classes/auto-resettable.data';
-import { LibraryNameSearchResultsData } from './library-name-search-results.data';
+import {
+	LibraryNamesData, LibraryNameSearchResultsData
+} from '@runtime-state-data/static-classes/auto-resettable.data';
 import { not } from '@writetome51/not';
 
 

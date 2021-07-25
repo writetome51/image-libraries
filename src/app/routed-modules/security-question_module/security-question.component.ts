@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CurrentUserFormData as currentUserForm }
-	from '@runtime-state-data/static-classes/current-user-form.data';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
@@ -15,8 +15,9 @@ import { Title } from '@angular/platform-browser';
 		<p *ngIf="receivedQuestion">{{question}}</p>
 
 		<div class="form-container">
-			<form clearFormOnInit clearAlertsOnDestroy>
-
+			<form clearAlertsOnDestroy
+				  clearFormOnInit [inputData]="[currentUserFormInputs]"
+			>
 				<get-security-question-form *ngIf="!(receivedQuestion)">
 				</get-security-question-form>
 
@@ -30,12 +31,11 @@ import { Title } from '@angular/platform-browser';
 export class SecurityQuestionComponent {
 
 	heading = 'Security Question';
-
+	currentUserFormInputs = CurrentUserFormInputsData;
 
 	get question() {
-		return currentUserForm.question;
+		return this.currentUserFormInputs.question;
 	}
-
 
 	get receivedQuestion() {
 		return questionStatus.received;

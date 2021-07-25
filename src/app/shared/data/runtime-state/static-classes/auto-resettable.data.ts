@@ -66,25 +66,25 @@ export const NewImagesData: ResettableToDefault = class __NewImagesData {
 export const CurrentPageImagesData: ResettableToDefault & { data: ImageRecord[] } =
 	class __CurrentPageImagesData {
 
-	static data: ImageRecord[] = [];
+		static data: ImageRecord[] = [];
 
 
-	static setDefault() {
-		setArray(this.data, []);
-	}
-};
+		static setDefault() {
+			setArray(this.data, []);
+		}
+	};
 
 
 export const ThumbnailDisplaySettingsData: ResettableToDefault =
 	class __ThumbnailDisplaySettingsData {
 
-	static width: number;
+		static width: number;
 
 
-	static setDefault() {
-		this.width = 100;
-	}
-};
+		static setDefault() {
+			this.width = 100;
+		}
+	};
 
 
 export const SearchData: ResettableToDefault = class __SearchData {
@@ -99,7 +99,7 @@ export const SearchData: ResettableToDefault = class __SearchData {
 		this.text = '';
 	}
 
-}
+};
 
 
 export const CurrentPageTitleData: ResettableToDefault = class __CurrentPageTitleData {
@@ -111,3 +111,16 @@ export const CurrentPageTitleData: ResettableToDefault = class __CurrentPageTitl
 		this.data = appName;
 	}
 };
+
+
+export const LibraryNameSearchResultsData: ResettableToDefault =
+	class __LibraryNameSearchResultsData {
+
+		static data: string[];
+
+
+		static setDefault() {
+			this.data = undefined;
+		}
+
+	};

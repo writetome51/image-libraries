@@ -1,3 +1,7 @@
 export const ImageURLData = {
-	data: '' // the url
+	data: '', // the url
+
+	setDefault: function() {
+		this.data = ''
+	}
 };
