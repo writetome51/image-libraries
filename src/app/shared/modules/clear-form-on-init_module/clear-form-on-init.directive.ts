@@ -1,12 +1,17 @@
-import { Directive, OnInit } from '@angular/core';
-import { ClearFormDataService as clearFormData } from '@services/clear-form-data.service';
+import { Directive, Input, OnInit } from '@angular/core';
+import { ResettableToDefault } from '@interfaces/resettable-to-default.interface';
 
 
 @Directive({ selector: '[clearFormOnInit]' })
 export class ClearFormOnInitDirective implements OnInit {
 
+	@Input() inputData : ResettableToDefault[];
+
+
 	ngOnInit(): void {
-		clearFormData.go();
+		for (let i = 0, length = this.inputData.length; i < length; ++i) {
+			this.inputData[i].setDefault();
+		}
 	}
 
 }
