@@ -9,7 +9,7 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 	selector: 'app-login',
 	template: `
 		<login-form clearAlertsOnDestroy
-			clearFormOnInit [inputData]="[currentUserFormInputs]"
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
 		></login-form>
 
 		<p>Don't have an account?

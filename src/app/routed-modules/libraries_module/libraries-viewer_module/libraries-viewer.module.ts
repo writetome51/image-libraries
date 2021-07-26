@@ -1,4 +1,4 @@
-import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module'
+import { ResetToDefaultOnInitModule } from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module'
 import { CommonModule } from '@angular/common';
 import { LibraryLinksComponent } from './library-links.component';
 import { LibrariesViewerComponent } from './libraries-viewer.component';
@@ -12,7 +12,7 @@ import { SearchLibraryNamesModule }
 	declarations: [LibrariesViewerComponent, LibraryLinksComponent],
 	imports: [
 		CommonModule,
-		ClearFormOnInitModule,
+		ResetToDefaultOnInitModule,
 		SearchLibraryNamesModule,
 		RouterModule
 	],

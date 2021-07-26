@@ -6,16 +6,22 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 import { Title } from '@angular/platform-browser';
 import { UpdateEmailInputsService }
 	from './update-email-inputs_service/update-email-inputs.service';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 
 
 @Component({
 	selector: 'update-email-form',
 	template: `
-		<update-email-form-inputs clearFormOnInit clearAlertsOnDestroy></update-email-form-inputs>
+		<update-email-form-inputs clearAlertsOnDestroy
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+		></update-email-form-inputs>
 		<submit-form-button [validatingInputs]="inputs" [iDoThis]="process"></submit-form-button>
 	`
 })
 export class UpdateEmailFormComponent {
+
+	currentUserFormInputs = CurrentUserFormInputsData;
 
 	constructor(
 		public process: ProcessUpdateEmailService,

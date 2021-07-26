@@ -12,7 +12,7 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 		<p class="warning-text">{{warning}}</p>
 
 		<new-user-form clearAlertsOnDestroy
-			clearFormOnInit [inputData]="[currentUserFormInputs]"
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
 		></new-user-form>
 	`
 })

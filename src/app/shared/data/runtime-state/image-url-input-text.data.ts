@@ -1,4 +1,4 @@
-export const ImageURLData = {
+export const ImageURLInputTextData = {
 	data: '', // the url
 
 	setDefault: function() {

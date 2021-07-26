@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UpdatePasswordFormComponent } from './update-password-form.component';
 import { UpdatePasswordFormInputsComponent } from './update-password-form-inputs.component';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
-import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
+import { ResetToDefaultOnInitModule } from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module';
 import { ClearAlertsOnDestroyModule }
 	from '@clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { AppValidatingFormInputsModule }
@@ -18,7 +18,7 @@ import { AppValidatingFormInputsModule }
 	imports: [
 		CommonModule,
 		SubmitFormButtonModule,
-		ClearFormOnInitModule,
+		ResetToDefaultOnInitModule,
 		ClearAlertsOnDestroyModule,
 		AppValidatingFormInputsModule
 	],

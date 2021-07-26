@@ -16,7 +16,7 @@ import { Title } from '@angular/platform-browser';
 
 		<div class="form-container">
 			<form clearAlertsOnDestroy
-				  clearFormOnInit [inputData]="[currentUserFormInputs]"
+				resetToDefaultOnInit [data]="[currentUserFormInputs]"
 			>
 				<get-security-question-form *ngIf="!(receivedQuestion)">
 				</get-security-question-form>

@@ -7,6 +7,8 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 import { changePasswordWarning } from '@string-constants/warnings';
 import { UpdatePasswordInputsService }
 	from './update-password-inputs_service/update-password-inputs.service';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 
 
 @Component({
@@ -14,8 +16,9 @@ import { UpdatePasswordInputsService }
 	template: `
 		<p class="warning-text">{{warning}}</p>
 
-		<update-password-form-inputs clearFormOnInit clearAlertsOnDestroy>
-		</update-password-form-inputs>
+		<update-password-form-inputs clearAlertsOnDestroy
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+		></update-password-form-inputs>
 
 		<submit-form-button [validatingInputs]="inputs" [iDoThis]="process"></submit-form-button>
 	`
@@ -23,6 +26,7 @@ import { UpdatePasswordInputsService }
 export class UpdatePasswordFormComponent {
 
 	warning = changePasswordWarning;
+	currentUserFormInputs = CurrentUserFormInputsData;
 
 	constructor(
 		public process: ProcessUpdatePasswordService,

@@ -1,6 +1,6 @@
 import { AnswerSecurityQuestionFormModule }
 	from './answer-security-question-form_module/answer-security-question-form.module';
-import { ClearFormOnInitModule } from '@clear-form-on-init_module/clear-form-on-init.module';
+import { ResetToDefaultOnInitModule } from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module';
 import { ClearAlertsOnDestroyModule }
 	from '@clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { CommonModule } from '@angular/common';
@@ -19,7 +19,7 @@ import { SecurityQuestionServicesModule } from './security-question-services.mod
 		CommonModule,
 		GetSecurityQuestionFormModule,
 		AnswerSecurityQuestionFormModule,
-		ClearFormOnInitModule,
+		ResetToDefaultOnInitModule,
 		ClearAlertsOnDestroyModule,
 		SecurityQuestionServicesModule,
 		RouterModule.forChild([

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { DeleteUserService } from './delete-user_service/delete-user.service';
 import { DeleteUserInputsService } from './delete-user-inputs.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
@@ -11,14 +13,19 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 	template: `
 		<delete-user-form-instructions></delete-user-form-instructions>
 
-		<delete-user-form-inputs clearFormOnInit clearAlertsOnDestroy></delete-user-form-inputs>
+		<delete-user-form-inputs clearAlertsOnDestroy
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+		></delete-user-form-inputs>
 
 		<submit-form-button [label]="'Delete'" [validatingInputs]="inputs"
-			[iDoThis]="deleteUser"
+							[iDoThis]="deleteUser"
 		></submit-form-button>
 	`
 })
 export class DeleteUserFormComponent {
+
+	currentUserFormInputs = CurrentUserFormInputsData;
+
 
 	constructor(
 		public deleteUser: DeleteUserService,
