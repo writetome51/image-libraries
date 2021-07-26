@@ -11,8 +11,8 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 		<header><h2>{{heading}}</h2></header>
 		<p class="warning-text">{{warning}}</p>
 
-		<new-user-form  clearAlertsOnDestroy
-			clearFormOnInit [inputData]="[currentUserForm]"
+		<new-user-form clearAlertsOnDestroy
+			clearFormOnInit [inputData]="[currentUserFormInputs]"
 		></new-user-form>
 	`
 })
@@ -20,7 +20,7 @@ export class NewUserComponent {
 
 	heading = 'Create Account';
 	warning = newUserPasswordQuestionWarning;
-	currentUserForm = CurrentUserFormInputsData
+	currentUserFormInputs = CurrentUserFormInputsData
 
 
 	constructor(title: Title) {

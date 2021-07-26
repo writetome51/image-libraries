@@ -1,7 +1,8 @@
 import { AlertsService as alerts } from '@services/alerts.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { Injectable } from '@angular/core';
-import { NewLibraryData as newLibrary } from '@runtime-state-data/new-library.data';
+import { NewLibraryBeingCreatedData as newLibraryBeingCreated }
+	from '@runtime-state-data/new-library-being-created.data';
 import { NewLibraryFormServicesModule } from '../../new-library-form-services.module';
 import { ProcessGetLibrariesService }
 	from '@process/process-get-libraries_service/process-get-libraries.service';
@@ -15,7 +16,7 @@ export class RunTasksAfterCreatingNewLibraryService implements IDoThis {
 
 	async go() {
 		alerts.setSuccess('Library created');
-		newLibrary.beingCreated = false;
+		newLibraryBeingCreated.true = false;
 
 		await this.__refreshLoadedLibraryNames();
 	}

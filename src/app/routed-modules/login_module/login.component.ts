@@ -8,8 +8,8 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 @Component({
 	selector: 'app-login',
 	template: `
-		<login-form  clearAlertsOnDestroy
-			clearFormOnInit [inputData]="[currentUserForm]"
+		<login-form clearAlertsOnDestroy
+			clearFormOnInit [inputData]="[currentUserFormInputs]"
 		></login-form>
 
 		<p>Don't have an account?
@@ -24,7 +24,7 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 export class LoginComponent {
 
 	modulePath = AppModulePathData;
-	currentUserForm = CurrentUserFormInputsData;
+	currentUserFormInputs = CurrentUserFormInputsData;
 
 
 	constructor(title: Title) {
