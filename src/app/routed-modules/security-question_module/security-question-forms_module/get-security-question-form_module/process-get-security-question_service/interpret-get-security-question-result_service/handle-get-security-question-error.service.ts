@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { AlertsService as alerts } from '@services/alerts.service';
 import { userDoesntExist } from '@string-constants/mongo-db-realm-function-errors';
 import { noAccountWithThatEmail } from '@string-constants/form-submission-errors';
-import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../../../security-question-services.module';
 import { HandleExistingUserDBOperationErrorService }
-	from '@process/handle-error/handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
+	from '@handle-existing-user-db-operation-error_service/handle-existing-user-db-operation-error.service';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

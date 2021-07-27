@@ -10,7 +10,7 @@ import { CurrentUserFormInputsData }
 		<div class="form-container">
 			<form>
 				<login-form-inputs
-					resetToDefaultOnInit [data]="[currentUserFormInputs]"
+					resetToDefaultOnInit [resettables]="[currentUserFormInputs]"
 				></login-form-inputs>
 
 				<submit-login-form-button></submit-login-form-button>

@@ -2,10 +2,10 @@ import { CurrentUserFormInputsData as currentUserForm }
 	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { UserRecord } from '@interfaces/user-record.interface';
 import { Injectable } from '@angular/core';
-import { MongoDBRealmFunctionService } from '@services/db/mongo-db-realm-function.service';
+import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
-import { SecurityQuestionServicesModule } from '../../security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

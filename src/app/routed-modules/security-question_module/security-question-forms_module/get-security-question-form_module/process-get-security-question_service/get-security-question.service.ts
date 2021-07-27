@@ -3,7 +3,7 @@ import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service
 import { AnsweredQuestion } from '@interfaces/answered-question.interface';
 import { IDoThis } from '@interfaces/i-do-this.interface';
 import { HasError } from '@interfaces/has-error.interface';
-import { SecurityQuestionServicesModule } from '../../security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})

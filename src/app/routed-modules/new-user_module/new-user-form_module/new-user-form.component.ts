@@ -9,7 +9,7 @@ import { CurrentUserFormInputsData }
 		<div class="form-container">
 			<form>
 				<new-user-form-inputs
-					resetToDefaultOnInit [data]="[currentUserFormInputs]"
+					resetToDefaultOnInit [resettables]="[currentUserFormInputs]"
 				></new-user-form-inputs>
 
 				<submit-new-user-form-button></submit-new-user-form-button>

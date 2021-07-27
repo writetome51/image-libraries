@@ -8,7 +8,7 @@ import { ImageURLInputTextData } from '@runtime-state-data/image-url-input-text.
 	selector: 'enter-image-url',
 	template: `
 		<image-url-form-input clearAlertsOnDestroy
-			resetToDefaultOnInit [data]="[imageURLInputText]"
+			resetToDefaultOnInit [resettables]="[imageURLInputText]"
 		></image-url-form-input>
 
 		<submit-form-button [label]="'Save URL'" [validatingInputs]="imageURLInput"

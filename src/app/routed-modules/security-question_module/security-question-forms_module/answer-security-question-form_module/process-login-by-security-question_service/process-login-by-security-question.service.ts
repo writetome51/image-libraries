@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginBySecurityQuestionService } from './login-by-security-question.service';
-import { SecurityQuestionServicesModule } from '../../security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
 import { InterpretLoginResultService } from '@interpret-result/interpret-login-result.service';
 import { ProcessService } from '@process/process.abstract.service';
 

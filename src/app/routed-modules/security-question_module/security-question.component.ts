@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CurrentUserFormInputsData }
 	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
-import { SecurityQuestionStatusData as questionStatus }
+import { SecurityQuestionStatusData }
 	from '@runtime-state-data/security-question-status.data';
 import { Title } from '@angular/platform-browser';
 
@@ -12,33 +12,20 @@ import { Title } from '@angular/platform-browser';
 	template: `
 		<header><h2>{{heading}}</h2></header>
 
-		<p *ngIf="receivedQuestion">{{question}}</p>
+		<p *ngIf="questionStatus.received">{{question}}</p>
 
-		<div class="form-container">
-			<form clearAlertsOnDestroy
-				resetToDefaultOnInit [data]="[currentUserFormInputs]"
-			>
-				<get-security-question-form *ngIf="!(receivedQuestion)">
-				</get-security-question-form>
-
-				<answer-security-question-form *ngIf="receivedQuestion">
-				</answer-security-question-form>
-
-			</form>
-		</div>
+		<security-question-forms [receivedQuestion]="questionStatus.received">
+		</security-question-forms>
 	`
 })
 export class SecurityQuestionComponent {
 
 	heading = 'Security Question';
 	currentUserFormInputs = CurrentUserFormInputsData;
+	questionStatus = SecurityQuestionStatusData;
 
 	get question() {
 		return this.currentUserFormInputs.question;
-	}
-
-	get receivedQuestion() {
-		return questionStatus.received;
 	}
 
 

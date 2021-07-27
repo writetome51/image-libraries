@@ -17,7 +17,7 @@ import { CurrentUserFormInputsData }
 		<p class="warning-text">{{warning}}</p>
 
 		<update-password-form-inputs clearAlertsOnDestroy
-			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+			resetToDefaultOnInit [resettables]="[currentUserFormInputs]"
 		></update-password-form-inputs>
 
 		<submit-form-button [validatingInputs]="inputs" [iDoThis]="process"></submit-form-button>

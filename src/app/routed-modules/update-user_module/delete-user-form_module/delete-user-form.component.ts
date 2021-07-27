@@ -14,11 +14,11 @@ import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-m
 		<delete-user-form-instructions></delete-user-form-instructions>
 
 		<delete-user-form-inputs clearAlertsOnDestroy
-			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+			resetToDefaultOnInit [resettables]="[currentUserFormInputs]"
 		></delete-user-form-inputs>
 
 		<submit-form-button [label]="'Delete'" [validatingInputs]="inputs"
-							[iDoThis]="deleteUser"
+			[iDoThis]="deleteUser"
 		></submit-form-button>
 	`
 })

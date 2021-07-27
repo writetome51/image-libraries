@@ -19,7 +19,7 @@ import { Waiter } from '@interfaces/waiter.interface';
 
 			<new-library-button></new-library-button>
 			<new-library-form *ngIf="newLibraryBeingCreated.true"
-				resetToDefaultOnInit [data]="[newLibraryNameInputText]"
+				resetToDefaultOnInit [resettables]="[newLibraryNameInputText]"
 			></new-library-form>
 		</div>
 	`

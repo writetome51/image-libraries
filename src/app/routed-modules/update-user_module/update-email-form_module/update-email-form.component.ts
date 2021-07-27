@@ -14,7 +14,7 @@ import { CurrentUserFormInputsData }
 	selector: 'update-email-form',
 	template: `
 		<update-email-form-inputs clearAlertsOnDestroy
-			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+			resetToDefaultOnInit [resettables]="[currentUserFormInputs]"
 		></update-email-form-inputs>
 
 		<submit-form-button [validatingInputs]="inputs" [iDoThis]="process"></submit-form-button>

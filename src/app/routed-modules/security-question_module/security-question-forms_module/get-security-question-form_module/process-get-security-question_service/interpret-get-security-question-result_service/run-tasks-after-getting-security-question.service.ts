@@ -4,7 +4,7 @@ import { CurrentUserFormInputsData as currentUserForm }
 import { SecurityQuestionStatusData as questionStatus }
 	from '@runtime-state-data/security-question-status.data';
 import { IDoThis } from '@interfaces/i-do-this.interface';
-import { SecurityQuestionServicesModule } from '../../../security-question-services.module';
+import { SecurityQuestionServicesModule } from '../../../../security-question-services.module';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
