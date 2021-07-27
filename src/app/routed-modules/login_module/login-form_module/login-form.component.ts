@@ -1,14 +1,18 @@
 import { AppModulePathData } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
+import { LoginInputsService } from './login-inputs.service';
 import { ProcessLoginByPasswordService }
 	from './process-login-by-password_service/process-login-by-password.service';
-import { LoginInputsService } from './login-inputs.service';
 
 
 @Component({
 	selector: 'login-form',
 	template: `
-		<div class="form-container">
+		<div class="form-container"
+			resetToDefaultOnInit [data]="[currentUserFormInputs]"
+		>
 			<form>
 				<login-form-inputs></login-form-inputs>
 
@@ -24,6 +28,7 @@ import { LoginInputsService } from './login-inputs.service';
 export class LoginFormComponent {
 
 	modulePath = AppModulePathData;
+	currentUserFormInputs = CurrentUserFormInputsData;
 
 
 	constructor(

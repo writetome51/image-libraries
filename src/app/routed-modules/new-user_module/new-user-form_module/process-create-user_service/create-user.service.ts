@@ -2,11 +2,11 @@ import { UserRecord } from '@interfaces/user-record.interface';
 import { Injectable } from '@angular/core';
 import { MongoDBRealmFunctionService } from '@db/mongo-db-realm-function.service';
 import { HasError } from '@interfaces/has-error.interface';
-import { NewUserServicesModule } from '../../new-user-services.module';
+import { NewUserFormServicesModule } from '../new-user-form-services.module';
 import { GetResult } from '@interfaces/get-result.interface';
 
 
-@Injectable({providedIn: NewUserServicesModule})
+@Injectable({providedIn: NewUserFormServicesModule})
 export class CreateUserService implements GetResult {
 
 	constructor(private __realmFn: MongoDBRealmFunctionService) {}

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { newUserPasswordQuestionWarning } from '@string-constants/warnings';
 import { Title } from '@angular/platform-browser';
-import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 
 
 @Component({
@@ -11,16 +10,13 @@ import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/cu
 		<header><h2>{{heading}}</h2></header>
 		<p class="warning-text">{{warning}}</p>
 
-		<new-user-form clearAlertsOnDestroy
-			resetToDefaultOnInit [data]="[currentUserFormInputs]"
-		></new-user-form>
+		<new-user-form clearAlertsOnDestroy></new-user-form>
 	`
 })
 export class NewUserComponent {
 
 	heading = 'Create Account';
 	warning = newUserPasswordQuestionWarning;
-	currentUserFormInputs = CurrentUserFormInputsData
 
 
 	constructor(title: Title) {

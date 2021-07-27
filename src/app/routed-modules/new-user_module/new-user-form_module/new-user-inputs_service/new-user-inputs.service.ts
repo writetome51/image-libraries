@@ -6,10 +6,10 @@ import { SecurityQuestionInputService } from './security-question-input.service'
 import { CurrentUserInputsService }
 	from '@current-user-inputs_service/current-user-inputs.abstract.service';
 import { SecurityAnswerInputService } from '@validating-input/security-answer-input.service';
-import { NewUserServicesModule } from '../../new-user-services.module';
+import { NewUserFormServicesModule } from '../new-user-form-services.module';
 
 
-@Injectable({providedIn: NewUserServicesModule})
+@Injectable({providedIn: NewUserFormServicesModule})
 export class NewUserInputsService extends CurrentUserInputsService {
 
 	constructor(

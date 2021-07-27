@@ -2,4 +2,4 @@ import { NgModule } from '@angular/core';
 
 
 @NgModule()
-export class NewUserServicesModule {}
+export class NewUserFormServicesModule {}

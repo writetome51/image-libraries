@@ -1,4 +1,3 @@
-import { ResetToDefaultOnInitModule } from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module';
 import { ClearAlertsOnDestroyModule }
 	from '@clear-alerts-on-destroy_module/clear-alerts-on-destroy.module';
 import { CommonModule } from '@angular/common';
@@ -15,7 +14,6 @@ import { SiteExplanationComponent } from './site-explanation.component';
 	declarations: [LoginComponent, SiteExplanationComponent],
 	imports: [
 		CommonModule,
-		ResetToDefaultOnInitModule,
 		ClearAlertsOnDestroyModule,
 		HoverableContainerModule,
 		LoginFormModule,
