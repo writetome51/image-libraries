@@ -1,6 +1,6 @@
 import { AllImagesPaginatorService }
 	from '@app-paginator/all-images-paginator_service/all-images-paginator.service';
-import { AllImagesJumpToPageInputService } from './all-images-jump-to-page-input.service';
+import { AllImagesJumpToPageNumberInputService } from './all-images-jump-to-page-number-input.service';
 import { AppModulePathData as appModulePath } from '@app/app-module-path.data';
 import { Component } from '@angular/core';
 import { ImagesViewerContextDirective }
@@ -25,7 +25,7 @@ export class AllImagesViewerComponent extends ImagesViewerContextDirective {
 	constructor(
 		protected _storedImageTotal: UserImageTotalInBrowserStorageService,
 		public paginator: AllImagesPaginatorService,
-		public jumpToPageInput: AllImagesJumpToPageInputService
+		public jumpToPageNumberInput: AllImagesJumpToPageNumberInputService
 	) {
 		super();
 	}

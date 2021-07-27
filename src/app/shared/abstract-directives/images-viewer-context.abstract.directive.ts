@@ -8,7 +8,7 @@ export abstract class ImagesViewerContextDirective {
 
 	abstract routeBeforePageNumber: string;
 	abstract paginator: AppPaginatorService;
-	abstract jumpToPageInput: ValidatingJumpToPageNumberInputService;
+	abstract jumpToPageNumberInput: ValidatingJumpToPageNumberInputService;
 	protected abstract _storedImageTotal: Gettable<number>;
 
 

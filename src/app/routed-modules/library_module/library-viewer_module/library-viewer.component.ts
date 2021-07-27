@@ -5,7 +5,7 @@ import { LibraryPaginatorService }
 	from '@app-paginator/library-paginator_service/library-paginator.service';
 import { LoadedLibraryImageTotalService }
 	from '@services/library/loaded-library-image-total.service';
-import { LibraryJumpToPageInputService } from './library-jump-to-page-input.service';
+import { LibraryJumpToPageNumberInputService } from './library-jump-to-page-number-input.service';
 import { RequestedLibraryData as requestedLibrary }
 	from '@runtime-state-data/requested-library.data';
 
@@ -28,7 +28,7 @@ export class LibraryViewerComponent extends ImagesViewerContextDirective {
 	constructor(
 		protected _storedImageTotal: LoadedLibraryImageTotalService,
 		public paginator: LibraryPaginatorService,
-		public jumpToPageInput: LibraryJumpToPageInputService
+		public jumpToPageNumberInput: LibraryJumpToPageNumberInputService
 	) {
 		super();
 	}

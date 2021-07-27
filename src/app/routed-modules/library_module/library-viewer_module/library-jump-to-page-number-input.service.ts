@@ -7,7 +7,7 @@ import { LibraryViewerServicesModule } from './library-viewer-services.module';
 
 
 @Injectable({providedIn: LibraryViewerServicesModule})
-export class LibraryJumpToPageInputService extends ValidatingJumpToPageNumberInputService {
+export class LibraryJumpToPageNumberInputService extends ValidatingJumpToPageNumberInputService {
 
 	constructor(_paginator: LibraryPaginatorService) {
 		super(_paginator);

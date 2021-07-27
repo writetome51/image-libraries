@@ -24,7 +24,7 @@ import { HasContextInputDirective }
 				<app-pagination-controls
 					[paginator]="context.paginator"
 					[routeBeforePageNumber]="context.routeBeforePageNumber"
-					[jumpToPageInput]="context.jumpToPageInput"
+					[jumpToPageInput]="context.jumpToPageNumberInput"
 				></app-pagination-controls>
 
 			</ng-container>

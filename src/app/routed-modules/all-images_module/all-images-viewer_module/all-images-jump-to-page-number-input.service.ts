@@ -6,7 +6,7 @@ import { ValidatingJumpToPageNumberInputService } from '@validating-input/valida
 
 
 @Injectable({providedIn: AllImagesServicesModule})
-export class AllImagesJumpToPageInputService extends ValidatingJumpToPageNumberInputService {
+export class AllImagesJumpToPageNumberInputService extends ValidatingJumpToPageNumberInputService {
 
 	constructor(_paginator: AllImagesPaginatorService) {
 		super(_paginator);
