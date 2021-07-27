@@ -11,7 +11,7 @@ import { ResetToDefaultOnInitModule }
 	from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
 import { SubmitNewUserFormButtonComponent }
-	from './submit-new-user-form-button.component';
+	from './submit-new-user-form-button_component/submit-new-user-form-button.component';
 
 
 @NgModule({

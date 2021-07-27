@@ -1,9 +1,9 @@
 import { AlertsService as alerts } from '@services/alerts.service';
 import { accountAlreadyExists } from '@string-constants/form-submission-errors';
 import { duplicate } from '@string-constants/mongo-db-realm-function-errors';
-import { HandleErrorService } from '@process/handle-error/handle-error.service';
+import { HandleErrorService } from '@handle-error/handle-error.service';
 import { Injectable } from '@angular/core';
-import { NewUserFormServicesModule } from '../../new-user-form-services.module';
+import { NewUserFormServicesModule } from '../../../new-user-form-services.module';
 
 
 @Injectable({providedIn: NewUserFormServicesModule})
