@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InterpretLoginResultService } from '@interpret-result/interpret-login-result.service';
 import { LoginByPasswordService } from './login-by-password.service';
-import { LoginFormServicesModule } from '../login-form-services.module';
+import { LoginFormServicesModule } from '../../login-form-services.module';
 import { ProcessService } from '@process/process.abstract.service';
 
 

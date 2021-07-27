@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CurrentUserFormInputsData }
 	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { DeleteUserService } from './delete-user_service/delete-user.service';
-import { DeleteUserInputsService } from './delete-user-inputs.service';
+import { ValidatingDeleteUserInputsService } from './validating-delete-user-inputs.service';
 import { GetPageTitleService as getPageTitle } from '@services/get-page-title.service';
 import { Title } from '@angular/platform-browser';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
@@ -29,7 +29,7 @@ export class DeleteUserFormComponent {
 
 	constructor(
 		public deleteUser: DeleteUserService,
-		public inputs: DeleteUserInputsService,
+		public inputs: ValidatingDeleteUserInputsService,
 		title: Title
 	) {
 		title.setTitle(

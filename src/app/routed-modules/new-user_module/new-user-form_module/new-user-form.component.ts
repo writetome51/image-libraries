@@ -6,11 +6,12 @@ import { CurrentUserFormInputsData }
 @Component({
 	selector: 'new-user-form',
 	template: `
-		<div class="form-container"
-			resetToDefaultOnInit [data]="[currentUserFormInputs]"
-		>
+		<div class="form-container">
 			<form>
-				<new-user-form-inputs></new-user-form-inputs>
+				<new-user-form-inputs
+					resetToDefaultOnInit [data]="[currentUserFormInputs]"
+				></new-user-form-inputs>
+
 				<submit-new-user-form-button></submit-new-user-form-button>
 			</form>
 		</div>

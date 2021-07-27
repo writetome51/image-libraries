@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { SearchLibrariesInputService } from '../search-libraries-input.service';
+import { ValidatingSearchLibrariesInputService }
+	from '../validating-search-libraries-input.service';
 import { SearchLibrariesService } from './search-libraries.service';
 
 
@@ -26,7 +27,7 @@ export class SearchLibraryNamesComponent {
 
 
 	constructor(
-		private __seachLibrariesInput: SearchLibrariesInputService,
+		private __seachLibrariesInput: ValidatingSearchLibrariesInputService,
 		private __searchLibraries: SearchLibrariesService
 	) {}
 

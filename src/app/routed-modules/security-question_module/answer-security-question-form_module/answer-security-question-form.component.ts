@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProcessLoginBySecurityQuestionService }
 	from './process-login-by-security-question_service/process-login-by-security-question.service';
-import { SecurityAnswerLoginInputService } from './security-answer-login-input.service';
+import { ValidatingSecurityAnswerLoginInputService } from './validating-security-answer-login-input.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class AnswerSecurityQuestionFormComponent {
 
 	constructor(
 		public process: ProcessLoginBySecurityQuestionService,
-		public input: SecurityAnswerLoginInputService
+		public input: ValidatingSecurityAnswerLoginInputService
 	) {}
 
 }

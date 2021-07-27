@@ -5,8 +5,8 @@ import { ProcessUpdatePasswordService }
 import { Title } from '@angular/platform-browser';
 import { UpdateUserModuleTitleData as parentModuleTitle } from '../update-user-module-title.data';
 import { changePasswordWarning } from '@string-constants/warnings';
-import { UpdatePasswordInputsService }
-	from './update-password-inputs_service/update-password-inputs.service';
+import { ValidatingUpdatePasswordInputsService }
+	from './validating-update-password-inputs_service/validating-update-password-inputs.service';
 import { CurrentUserFormInputsData }
 	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 
@@ -30,7 +30,7 @@ export class UpdatePasswordFormComponent {
 
 	constructor(
 		public process: ProcessUpdatePasswordService,
-		public inputs: UpdatePasswordInputsService,
+		public inputs: ValidatingUpdatePasswordInputsService,
 		title: Title
 	) {
 		title.setTitle( getPageTitle.go([parentModuleTitle, 'Password']) );

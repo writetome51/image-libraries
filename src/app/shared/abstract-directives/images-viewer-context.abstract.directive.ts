@@ -1,14 +1,14 @@
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 import { Gettable } from '@interfaces/gettable.interface';
-import { JumpToPageInputService }
-	from '@validating-input/jump-to-page-input.abstract.service';
+import { ValidatingJumpToPageNumberInputService }
+	from '@validating-input/validating-jump-to-page-number-input.abstract.service';
 
 
 export abstract class ImagesViewerContextDirective {
 
 	abstract routeBeforePageNumber: string;
 	abstract paginator: AppPaginatorService;
-	abstract jumpToPageInput: JumpToPageInputService;
+	abstract jumpToPageInput: ValidatingJumpToPageNumberInputService;
 	protected abstract _storedImageTotal: Gettable<number>;
 
 

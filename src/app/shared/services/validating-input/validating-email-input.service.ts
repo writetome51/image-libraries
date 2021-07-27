@@ -5,7 +5,7 @@ import { not } from '@writetome51/not';
 
 
 @Injectable({providedIn: 'root'})
-export class EmailInputService extends ValidatingTextInputService {
+export class ValidatingEmailInputService extends ValidatingTextInputService {
 
 	constructor() {
 		super();

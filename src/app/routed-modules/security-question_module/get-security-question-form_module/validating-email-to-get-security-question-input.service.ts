@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { EmailInputService } from '@validating-input/email-input.service';
-import { CurrentUserFormInputsData } from '@runtime-state-data/static-classes/current-user-form-inputs.data';
+import { ValidatingEmailInputService } from '@validating-input/validating-email-input.service';
+import { CurrentUserFormInputsData }
+	from '@runtime-state-data/static-classes/current-user-form-inputs.data';
 import { SecurityQuestionServicesModule } from '../security-question-services.module';
 
 
 @Injectable({providedIn: SecurityQuestionServicesModule})
-export class EmailToGetSecurityQuestionInputService extends EmailInputService {
+export class ValidatingEmailToGetSecurityQuestionInputService extends ValidatingEmailInputService {
 
 	constructor() {
 		super();

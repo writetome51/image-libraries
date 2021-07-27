@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputComponent, } from '@writetome51/validating-inputs';
-import { SearchInputService } from '@validating-input/search-input.service';
+import { ValidatingSearchInputService } from '@validating-input/validating-search-input.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { SearchInputService } from '@validating-input/search-input.service';
 })
 export class SearchFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__validatingInput: SearchInputService) {
+	constructor(__validatingInput: ValidatingSearchInputService) {
 		super(__validatingInput);
 	}
 

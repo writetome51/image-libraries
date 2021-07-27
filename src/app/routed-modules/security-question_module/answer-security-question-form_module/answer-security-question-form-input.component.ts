@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ValidatingFormInputComponent, } from '@writetome51/validating-inputs';
-import { SecurityAnswerLoginInputService } from './security-answer-login-input.service';
+import { ValidatingSecurityAnswerLoginInputService } from './validating-security-answer-login-input.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { SecurityAnswerLoginInputService } from './security-answer-login-input.s
 })
 export class AnswerSecurityQuestionFormInputComponent extends ValidatingFormInputComponent {
 
-	constructor(__validatingInput: SecurityAnswerLoginInputService) {
+	constructor(__validatingInput: ValidatingSecurityAnswerLoginInputService) {
 		super(__validatingInput);
 	}
 

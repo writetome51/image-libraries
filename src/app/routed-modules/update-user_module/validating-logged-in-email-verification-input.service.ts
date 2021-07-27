@@ -1,4 +1,4 @@
-import { EmailInputService } from '@services/validating-input/email-input.service';
+import { ValidatingEmailInputService } from '@validating-input/validating-email-input.service';
 import { EmailInBrowserStorageService }
 	from '@services/browser-storage/email-in-browser-storage.service';
 import { Injectable } from '@angular/core';
@@ -6,7 +6,7 @@ import { UpdateUserServicesModule } from './update-user-services.module';
 
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class LoggedInEmailVerificationInputService extends EmailInputService {
+export class ValidatingLoggedInEmailVerificationInputService extends ValidatingEmailInputService {
 
 	constructor(private  __emailInBrowser: EmailInBrowserStorageService) {
 		super();

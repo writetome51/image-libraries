@@ -4,7 +4,7 @@ import { ValidatingTextInputService } from '@writetome51/validating-inputs';
 
 
 @Injectable({providedIn: 'root'})
-export class SearchInputService extends ValidatingTextInputService {
+export class ValidatingSearchInputService extends ValidatingTextInputService {
 
 	constructor() {
 		super();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DeleteUserInputsService } from './delete-user-inputs.service';
+import { ValidatingDeleteUserInputsService } from './validating-delete-user-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
@@ -9,7 +9,7 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class DeleteUserFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__validatingInputs: DeleteUserInputsService) {
+	constructor(__validatingInputs: ValidatingDeleteUserInputsService) {
 		super(__validatingInputs);
 	}
 

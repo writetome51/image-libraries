@@ -9,10 +9,16 @@ import { RouterModule } from '@angular/router';
 import { ResetToDefaultOnInitModule }
 	from '@app/shared/modules/reset-to-default-on-init_module/reset-to-default-on-init.module';
 import { SubmitFormButtonModule } from '@submit-form-button_module/submit-form-button.module';
+import { SubmitLoginFormButtonComponent }
+	from './submit-login-form-button_component/submit-login-form-button.component';
 
 
 @NgModule({
-	declarations: [LoginFormComponent, LoginFormInputsComponent],
+	declarations: [
+		LoginFormComponent,
+		LoginFormInputsComponent,
+		SubmitLoginFormButtonComponent
+	],
 	imports: [
 		CommonModule,
 		RouterModule,

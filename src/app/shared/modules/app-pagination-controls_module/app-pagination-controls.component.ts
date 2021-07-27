@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { JumpToPageInputService } from '@validating-input/jump-to-page-input.abstract.service';
+import { ValidatingJumpToPageNumberInputService } from '@validating-input/validating-jump-to-page-number-input.abstract.service';
 import { AppPaginatorService } from '@app-paginator/app-paginator.abstract.service';
 
 
@@ -32,7 +32,7 @@ export class AppPaginationControlsComponent {
 	@Input() routeBeforePageNumber: string;
 
 	// Optional
-	@Input() jumpToPageInput: JumpToPageInputService;
+	@Input() jumpToPageInput: ValidatingJumpToPageNumberInputService;
 
 	get currentPage(): number { return this.paginator.getCurrentPageNumber(); }
 

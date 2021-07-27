@@ -5,7 +5,7 @@ import { NewUserFormServicesModule } from '../new-user-form-services.module';
 
 
 @Injectable({providedIn: NewUserFormServicesModule})
-export class SecurityQuestionInputService extends ValidatingTextInputService {
+export class ValidatingSecurityQuestionInputService extends ValidatingTextInputService {
 
 	constructor() {
 		super();

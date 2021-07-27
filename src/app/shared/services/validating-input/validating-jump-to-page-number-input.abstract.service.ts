@@ -1,7 +1,7 @@
 import { ValidatingNumberInputService } from '@writetome51/validating-inputs';
 
 
-export abstract class JumpToPageInputService extends ValidatingNumberInputService {
+export abstract class ValidatingJumpToPageNumberInputService extends ValidatingNumberInputService {
 
 	private __pageNumber = 1;
 

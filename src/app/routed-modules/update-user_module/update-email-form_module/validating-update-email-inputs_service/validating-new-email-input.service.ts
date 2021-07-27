@@ -1,4 +1,4 @@
-import { EmailInputService } from '@validating-input/email-input.service';
+import { ValidatingEmailInputService } from '@validating-input/validating-email-input.service';
 import { Injectable } from '@angular/core';
 import { UpdateUserServicesModule } from '../../update-user-services.module';
 import { PrefixLabel_to_ValidatingInputService }
@@ -6,7 +6,7 @@ import { PrefixLabel_to_ValidatingInputService }
 
 
 @PrefixLabel_to_ValidatingInputService({prefix: 'new', prefix_propertyToBind: true})
-export class __NewEmailInputService extends EmailInputService {}
+export class __ValidatingNewEmailInputService extends ValidatingEmailInputService {}
 
 @Injectable({providedIn: UpdateUserServicesModule})
-export class NewEmailInputService extends __NewEmailInputService {}
+export class ValidatingNewEmailInputService extends __ValidatingNewEmailInputService {}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UpdatePasswordInputsService }
-	from './update-password-inputs_service/update-password-inputs.service';
+import { ValidatingUpdatePasswordInputsService }
+	from './validating-update-password-inputs_service/validating-update-password-inputs.service';
 import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 
 
@@ -10,7 +10,7 @@ import { ValidatingFormInputsComponent } from '@writetome51/validating-inputs';
 })
 export class UpdatePasswordFormInputsComponent extends ValidatingFormInputsComponent {
 
-	constructor(__validatingInputs: UpdatePasswordInputsService) {
+	constructor(__validatingInputs: ValidatingUpdatePasswordInputsService) {
 		super(__validatingInputs);
 	}
 
