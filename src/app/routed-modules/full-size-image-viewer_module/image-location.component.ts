@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'image-location',
-	templateUrl: './image-location.component.html'
+	template: `
+		<label for="image-location" hidden>Image Location</label>
+<input type="text" id="image-location"/>
+	`
 })
 export class ImageLocationComponent implements OnInit {
 

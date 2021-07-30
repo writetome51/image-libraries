@@ -1,14 +1,14 @@
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
 import { CommonModule } from '@angular/common';
 import { FullSizeImageComponent } from './full-size-image.component';
-import { FullSizeImageViewerComponent } from './full-size-image-viewer_component/full-size-image-viewer.component';
+import { FullSizeImageViewerComponent } from './full-size-image-viewer.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { ImageNameComponent } from './image-name_component/image-name.component';
+import { ImageNameComponent } from './image-name.component';
 import { ImageDescriptionComponent }
-	from './image-description_component/image-description.component';
-import { ImageTagsComponent } from './image-tags_component/image-tags.component';
-import { ImageDateComponent } from './image-date_component/image-date.component';
-import { ImageLocationComponent } from './image-location_component/image-location.component';
+	from './image-description.component';
+import { ImageTagsComponent } from './image-tags.component';
+import { ImageDateComponent } from './image-date.component';
+import { ImageLocationComponent } from './image-location.component';
 import { LocationMapComponent } from './location-map_component/location-map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';

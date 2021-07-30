@@ -11,7 +11,17 @@ import { GetPageTitleService as getPageTitle } from '@services/get-page-title.se
 
 @Component({
 	selector: 'full-size-image-viewer',
-	templateUrl: './full-size-image-viewer.component.html'
+	template: `
+		<!--
+		This will be a full-page view of a selected image.
+		Here you'll be able to add/remove tags, add/change image name, date, description, location.
+		-->
+		<full-size-image [data]="getCurrentImage()"></full-size-image>
+
+		<image-name></image-name>
+
+		<belongs-to-libraries [image]="getCurrentImage()"></belongs-to-libraries>
+	`
 })
 export class FullSizeImageViewerComponent {
 
