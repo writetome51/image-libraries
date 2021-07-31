@@ -13,10 +13,14 @@ import { MenuChoice } from '@interfaces/menu-choice.interface';
 		>
 			<hoverable-container class="fill-parent" (unhover)="unclick()">
 
-				<executable-menu-choice-context *ngIf="!(hasSubmenu)" [choice]="data">
-				</executable-menu-choice-context>
+				<submenu *ngIf="hasSubmenu; else showExecutableChoice"
+					[clicked]="clicked" [data]="data"
+				></submenu>
 
-				<submenu *ngIf="hasSubmenu" [clicked]="clicked" [data]="data"></submenu>
+				<ng-template #showExecutableChoice>
+					<executable-menu-choice-context [choice]="data">
+					</executable-menu-choice-context>
+				</ng-template>
 
 			</hoverable-container>
 		</li>

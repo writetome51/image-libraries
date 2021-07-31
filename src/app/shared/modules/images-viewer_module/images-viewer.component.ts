@@ -9,10 +9,9 @@ import { HasContextInputDirective }
 	selector: 'images-viewer',
 	template: `
 		<div>
-			<p *ngIf="context.imageTotal === 0">{{ noImagesMessage }}</p>
+			<p *ngIf="context.imageTotal === 0; else showImages">{{ noImagesMessage }}</p>
 
-			<ng-container *ngIf="context.imageTotal > 0">
-
+			<ng-template #showImages>
 				<div id="size-slider-and-action-menu-container">
 					<div id="slider-container"><image-size-slider></image-size-slider></div>
 
@@ -26,8 +25,8 @@ import { HasContextInputDirective }
 					[routeBeforePageNumber]="context.routeBeforePageNumber"
 					[jumpToPageInput]="context.jumpToPageNumberInput"
 				></app-pagination-controls>
+			</ng-template>
 
-			</ng-container>
 		</div>
 	`,
 	styles: [

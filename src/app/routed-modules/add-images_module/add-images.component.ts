@@ -13,13 +13,14 @@ import { Title } from '@angular/platform-browser';
 		<div><p>{{instructions}}</p></div>
 		<p class="warning-text">{{warning}}</p>
 
-		<big-loading-spinner *ngIf="savingNewImages"></big-loading-spinner>
+		<big-loading-spinner *ngIf="savingNewImages; else showAddingControls"></big-loading-spinner>
 
-		<div *ngIf="!(savingNewImages)">
-			<upload-images-from-device></upload-images-from-device>
-
-			<enter-image-url></enter-image-url>
-		</div>
+		<ng-template #showAddingControls>
+			<div>
+				<upload-images-from-device></upload-images-from-device>
+				<enter-image-url></enter-image-url>
+			</div>
+		</ng-template>
 	`
 })
 export class AddImagesComponent {
@@ -27,7 +28,7 @@ export class AddImagesComponent {
 	heading = 'Add Images';
 	instructions = `The images can come from your own device or from somewhere
 		else in the web.`;
-	warning = 'Do not upload highly sensitive images. They will be accessible at public URLs.'
+	warning = 'Do not upload highly sensitive images. They will be accessible at public URLs.';
 
 
 	get savingNewImages() {
